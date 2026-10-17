@@ -179,12 +179,24 @@
  }
  function updateWalkingProgress(){
   if(!walkingInfo||!locationFix||!maneuvers.length)return;
-  const points=walkingInfo.shape;let nearest=0,smallest=Infinity;
-  for(let i=0;i<points.length;i++){const d=(points[i][0]-locationFix.lat)**2+(points[i][1]-locationFix.lng)**2;if(d<smallest){smallest=d;nearest=i}}
-  const routeOffsetMeters=Math.sqrt(smallest)*111000;
+  // Find the closest point on a walking segment (not just a vertex), in metres.
+  // The longitude scale varies by latitude; correct it to avoid false alerts.
+  const points=walkingInfo.shape,metresPerLat=111320,metresPerLon=111320*Math.cos(locationFix.lat*Math.PI/180);
+  let nearest=0,smallest=Infinity;
+  for(let i=0;i<points.length-1;i++){
+   const a=points[i],b=points[i+1];
+   const ax=(a[1]-locationFix.lng)*metresPerLon,ay=(a[0]-locationFix.lat)*metresPerLat;
+   const bx=(b[1]-locationFix.lng)*metresPerLon,by=(b[0]-locationFix.lat)*metresPerLat;
+   const vx=bx-ax,vy=by-ay,lengthSquared=vx*vx+vy*vy;
+   const t=lengthSquared>0?Math.max(0,Math.min(1,-(ax*vx+ay*vy)/lengthSquared)):0;
+   const dx=ax+t*vx,dy=ay+t*vy,d=dx*dx+dy*dy;
+   if(d<smallest){smallest=d;nearest=i+(t>.5?1:0)}
+  }
+  const routeOffsetMeters=Math.sqrt(smallest);
+  const warningLimit=Math.max(90,Math.min(220,(locationFix.accuracy||25)*2));
   const next=maneuvers.find(m=>m.begin_shape_index>=nearest)||maneuvers[maneuvers.length-1];
   const el=$('tripRouteSteps');
-  if(el&&next)el.innerHTML=(routeOffsetMeters>125?'<div class="tripOffRoute">You may be off the walking route. Stop and check your surroundings; tap Replan or use Google Maps.</div>':'')+'<div class="tripStep"><b>Next:</b> '+escTrip(next.instruction||'Continue along the route')+'</div>'+maneuvers.filter(m=>m.begin_shape_index>nearest).slice(1,6).map(m=>'<div class="tripStep">'+escTrip(m.instruction||'Continue')+'</div>').join('');
+  if(el&&next)el.innerHTML=(routeOffsetMeters>warningLimit?'<div class="tripOffRoute">You may be off the walking route. Stop and check your surroundings; tap Replan or use Google Maps.</div>':'')+'<div class="tripStep"><b>Next:</b> '+escTrip(next.instruction||'Continue along the route')+'</div>'+maneuvers.filter(m=>m.begin_shape_index>nearest).slice(1,6).map(m=>'<div class="tripStep">'+escTrip(m.instruction||'Continue')+'</div>').join('');
  }
  function closeRoute(){gpsFollow=false;walkingInfo=null;maneuvers=[];if($('startNavigation'))$('startNavigation').textContent='▶ Start GPS guidance';if(walkingShape){map.removeLayer(walkingShape);walkingShape=null;}$('tripRoute').classList.add('hidden')}
  $('tripToggle').onclick=()=>{const open=$('tripPanel').classList.contains('hidden');$('tripPanel').classList.toggle('hidden',!open);$('tripToggle').setAttribute('aria-expanded',String(open))};
