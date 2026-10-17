@@ -6,6 +6,8 @@
  'use strict';
  if(typeof L==='undefined'||typeof map==='undefined'||!map)return;
  const STORAGE='atlas-my-hotel-v1';
+ const SETUP_KEY='atlas-first-hotel-prompt-v1';
+ let welcomeActive=false;
  const $=id=>document.getElementById(id);
  const escTrip=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','"':'&quot;',"'":'&#39;'}[c]));
  let hotel=null,hotelMarker=null,hotelLayer=L.layerGroup().addTo(map),searchLayer=L.layerGroup().addTo(map);
@@ -13,9 +15,10 @@
  const validPoint=(lat,lng)=>Number.isFinite(lat)&&Number.isFinite(lng)&&lat>=52.1&&lat<=52.55&&lng>=4.55&&lng<=5.3;
  try{const h=JSON.parse(localStorage.getItem(STORAGE)||'null');if(h&&validPoint(h.lat,h.lng)&&typeof h.name==='string')hotel=h;}catch{}
  const wrap=document.createElement('div');wrap.className='tripTools';
- wrap.innerHTML='<button type="button" id="tripToggle" class="floating" aria-expanded="false" aria-controls="tripPanel">⌂ My trip</button>'+
+ wrap.innerHTML='<button type="button" id="tripToggle" class="floating" aria-expanded="false" aria-controls="tripPanel">⌂ My hotel & routes</button>'+
  '<section class="tripPanel hidden" id="tripPanel" aria-label="Hotel and route planner">'+
- '<div class="tripHead"><b>My Amsterdam trip</b><button type="button" id="tripClose" aria-label="Close trip planner">×</button></div>'+
+ '<div class="tripHead"><b>My Amsterdam trip</b><button type="button" id="tripClose" aria-label="Close trip planner">×</button></div>'+ 
+ '<div id="tripWelcome" class="tripWelcome hidden"><b>Welcome to Amsterdam!</b><p>Start by choosing your hotel. We’ll save it on this device, so you can plan routes to coffeeshops from there.</p><button type="button" id="tripSkipWelcome">Skip for now →</button></div>'+
  '<div class="tripHotel" id="tripHotelState"></div>'+
  '<label class="tripLabel" for="hotelSearch">Find your hotel</label>'+
  '<div class="tripSearch"><input id="hotelSearch" type="search" autocomplete="off" placeholder="Hotel name or address…"><button type="button" id="hotelFind">Find</button></div>'+
@@ -43,13 +46,24 @@
    hotelMarker=L.marker([hotel.lat,hotel.lng],{icon:markerIcon,title:'My hotel: '+hotel.name}).bindPopup('<b>My hotel: '+escTrip(hotel.name)+'</b>').addTo(hotelLayer);
   }
  }
+ function markWelcomeDone(){
+  welcomeActive=false;
+  $('tripWelcome').classList.add('hidden');
+  try{localStorage.setItem(SETUP_KEY,'seen')}catch{}
+ }
+ function closeWelcome(){
+  if(!welcomeActive)return;
+  markWelcomeDone();
+ }
  function saveHotel(name,lat,lng,address){
   if(!validPoint(lat,lng))return;
+  const wasWelcome=welcomeActive;
   hotel={name:String(name).slice(0,110),address:String(address||'').slice(0,180),lat,lng};
   try{localStorage.setItem(STORAGE,JSON.stringify(hotel));}catch{}
   $('hotelMatches').innerHTML='';
   updateHotelUI();map.flyTo([lat,lng],15);
   showMessage('Hotel saved on this device. Choose a coffeeshop to plan a walk from here.');
+  if(wasWelcome){markWelcomeDone();$('tripPanel').classList.add('hidden');$('tripToggle').setAttribute('aria-expanded','false');}
  }
  function addressFor(p){
   return [p.street&&(p.street+' '+(p.housenumber||'')),p.postcode,p.city||p.district].filter(Boolean).join(', ');
@@ -90,13 +104,14 @@
  }
  let chooseTap=false;
  function hotelByMap(){
+  const duringWelcome=welcomeActive;
   chooseTap=true;$('tripPanel').classList.add('hidden');$('tripToggle').setAttribute('aria-expanded','false');
   showMessage('Tap the hotel entrance on the map.');
   map.once('click',event=>{
    if(!chooseTap)return;chooseTap=false;
    const name=window.prompt('Hotel name (saved on this device):','My hotel');
    if(name&&name.trim())saveHotel(name.trim(),event.latlng.lat,event.latlng.lng,'Pin selected on map');
-   $('tripPanel').classList.remove('hidden');$('tripToggle').setAttribute('aria-expanded','true');
+   if(!duringWelcome||!hotel){$('tripPanel').classList.remove('hidden');$('tripToggle').setAttribute('aria-expanded','true');}
   });
  }
  function setLocation(lat,lng,accuracy,follow){
@@ -199,7 +214,8 @@
   if(el&&next)el.innerHTML=(routeOffsetMeters>warningLimit?'<div class="tripOffRoute">You may be off the walking route. Stop and check your surroundings; tap Replan or use Google Maps.</div>':'')+'<div class="tripStep"><b>Next:</b> '+escTrip(next.instruction||'Continue along the route')+'</div>'+maneuvers.filter(m=>m.begin_shape_index>nearest).slice(1,6).map(m=>'<div class="tripStep">'+escTrip(m.instruction||'Continue')+'</div>').join('');
  }
  function closeRoute(){gpsFollow=false;walkingInfo=null;maneuvers=[];if($('startNavigation'))$('startNavigation').textContent='▶ Start GPS guidance';if(walkingShape){map.removeLayer(walkingShape);walkingShape=null;}$('tripRoute').classList.add('hidden')}
- $('tripToggle').onclick=()=>{const open=$('tripPanel').classList.contains('hidden');$('tripPanel').classList.toggle('hidden',!open);$('tripToggle').setAttribute('aria-expanded',String(open))};
+ $('tripToggle').onclick=()=>{const open=$('tripPanel').classList.contains('hidden');if(!open)closeWelcome();$('tripPanel').classList.toggle('hidden',!open);$('tripToggle').setAttribute('aria-expanded',String(open))};
+ $('tripSkipWelcome').onclick=()=>{markWelcomeDone();$('tripPanel').classList.add('hidden');$('tripToggle').setAttribute('aria-expanded','false')};
  $('tripClose').onclick=()=>$('tripToggle').click();
  $('hotelFind').onclick=hotelLookup;$('nearbyHotels').onclick=()=>{$('hotelSearch').value='hotel';hotelLookup()};$('hideHotelPins').onclick=()=>{searchLayer.clearLayers();$('hotelMatches').innerHTML=''};
  $('hotelSearch').addEventListener('keydown',e=>{if(e.key==='Enter')hotelLookup()});
@@ -212,5 +228,13 @@
  $('startNavigation').onclick=()=>{if(!walkingInfo){showMessage('Plan a walking route first.');return;}if(gpsFollow){gpsFollow=false;$('startNavigation').textContent='▶ Start GPS guidance';showMessage('Map following stopped. Live location can stay on.');return;}gpsFollow=true;$('startNavigation').textContent='■ Stop following';if(gpsWatch===null)startGPS();if(locationFix)map.panTo([locationFix.lat,locationFix.lng]);showMessage('GPS guidance is on while this page is open. Keep aware of your surroundings and cross safely.')};
  window.addEventListener('pagehide',stopGPS);
  updateHotelUI();
+ let shouldPrompt=false;
+ try{shouldPrompt=!hotel&&!localStorage.getItem(SETUP_KEY)}catch{shouldPrompt=!hotel}
+ if(shouldPrompt){
+  welcomeActive=true;
+  $('tripWelcome').classList.remove('hidden');
+  $('tripPanel').classList.remove('hidden');
+  $('tripToggle').setAttribute('aria-expanded','true');
+ }
  window.AtlasTrip={planTo,hotel:()=>hotel,gps:()=>locationFix,open:()=>{$('tripPanel').classList.remove('hidden');$('tripToggle').setAttribute('aria-expanded','true')},fromGPS:s=>{if(locationFix)planTo(s,locationFix);else{$('tripPanel').classList.remove('hidden');$('tripToggle').setAttribute('aria-expanded','true');showMessage('Enable live GPS, then select this shop again to route from your position.')}}};
 })();
