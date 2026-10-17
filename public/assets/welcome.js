@@ -36,7 +36,11 @@
   if(hotel)feedback.textContent='Search by hotel name, hostel, apartment or street address.';
   if(hotel&&window.innerWidth<650)hotelStage.scrollIntoView({behavior:'smooth',block:'start'});
  }
- function mapUrl(){return 'map.html?from=welcome&v=hotel-first-v1'}
+ function mapUrl(){
+  const qs=new URLSearchParams(window.location.search||'');
+  const shop=(qs.get('shop')||'').trim().slice(0,110);
+  return 'map.html?from=welcome&v=hotel-first-v1'+(shop?'&shop='+encodeURIComponent(shop):'');
+ }
  function openMap(){
   try{localStorage.setItem(SEEN_KEY,'seen')}catch(e){}
   window.location.assign(mapUrl());
