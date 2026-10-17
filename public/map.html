@@ -334,6 +334,185 @@ html,body{height:100%;width:100%;overflow:hidden}
  }
  .tripTools>.floating:active,.shopsToggle:active,.detail .detailRouteMain button:active{transform:translateY(1px)}
 }
+
+<style id="atlas-strong-controls">
+/* Make map actions identifiable above detailed map tiles. This block is intentionally
+   last in the cascade; keep mobile hit targets 44px or larger. */
+.mapWrap .floating,
+.mapWrap .base-switch {
+ box-shadow:0 4px 14px rgba(9,46,28,.20),0 1px 3px rgba(9,46,28,.14);
+}
+.mapWrap button:focus-visible,
+.mapWrap a:focus-visible {
+ outline:3px solid #e5b354;
+ outline-offset:3px;
+}
+.tripTools>.floating {
+ min-height:48px;
+ display:inline-flex;
+ align-items:center;
+ padding:11px 16px;
+ border:2px solid #f0f6e9;
+ border-radius:13px;
+ background:#18563c;
+ color:#fffaf0;
+ font-size:13px;
+ font-weight:850;
+ letter-spacing:.15px;
+ box-shadow:0 6px 20px rgba(8,49,27,.34),0 0 0 1px rgba(10,65,36,.12);
+}
+.tripTools>.floating:hover,
+.tripTools>.floating[aria-expanded="true"] {
+ background:#0e4932;
+ color:#fff;
+ border-color:#d2f0bf;
+}
+.shopsToggle {
+ background:#e2f0d7;
+ border:2px solid #fff;
+ color:#184c35;
+ font-size:12px;
+ font-weight:850;
+ border-radius:13px;
+ box-shadow:0 5px 18px rgba(17,53,28,.27);
+}
+.shopsToggle:hover,
+.shopsToggle[aria-expanded="true"]{background:#cce8ba;color:#103e2a}
+.shopsToggle span{
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ min-width:29px;
+ height:24px;
+ border-radius:8px;
+ background:#18583d;
+ color:#fff!important;
+ padding:0 5px;
+ font-size:11px;
+ font-weight:850;
+}
+.base-switch {
+ padding:4px;
+ background:#fffef8;
+ border:2px solid #fff;
+ border-radius:14px;
+ gap:3px;
+ box-shadow:0 5px 19px rgba(11,52,30,.23);
+}
+.base-switch .floating {
+ min-height:41px;
+ border:0;
+ border-radius:10px;
+ background:transparent;
+ color:#386047;
+ font-weight:800;
+ box-shadow:none;
+}
+.base-switch .floating:hover{background:#e8f2e4;color:#154e34}
+.base-switch .floating.active,
+.base-switch .floating[aria-pressed="true"] {
+ background:#195a3e;
+ color:#fffdf3;
+ box-shadow:0 2px 6px rgba(5,53,26,.22);
+}
+.mapActions #routeKeyButton:not(.routeControlHidden){
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ background:#d5e8c8;
+ color:#245437;
+ border:2px solid #fff;
+ border-radius:11px;
+ font-weight:850;
+}
+.mapActions #routeKeyButton[aria-expanded="true"]{background:#17583d;color:#fff}
+.detail{border:1px solid #cbdccf}
+.detail .detailRouteMain button{
+ border:1px solid #cadfce!important;
+ box-shadow:0 2px 5px rgba(17,59,34,.12);
+ font-weight:830!important;
+}
+.detail .detailRouteMain .detailPrimary{
+ background:#165b3c!important;
+ color:#fff!important;
+ border-color:#125134!important;
+ box-shadow:0 3px 10px rgba(15,72,38,.27);
+}
+.detail .detailRouteMain .detailPrimary:hover{background:#0d4930!important}
+.detail .detailRouteMain button.secondary{
+ background:#e7f1e2!important;
+ color:#204e35!important;
+ border-color:#c6dcc5!important;
+}
+.detail .detailRouteMain button.secondary:hover{background:#cfe7cb!important}
+.detail .detailBottom a.reviewLink{
+ background:#fff2d6!important;
+ color:#684813!important;
+ border:1px solid #ead4a3!important;
+ font-weight:850!important;
+ box-shadow:0 2px 6px rgba(77,55,19,.09);
+}
+.detail .detailBottom a.reviewLink:hover{background:#ffe6b4!important}
+.detailStar{border-width:2px;box-shadow:0 2px 7px rgba(35,62,37,.13)}
+.detailStar.saved{background:#ffedbf;border-color:#e2bb65}
+@media(max-width:760px){
+ .tripTools{left:9px!important;top:9px!important}
+ .tripTools>.floating{
+  min-height:46px!important;
+  padding:10px 12px!important;
+  font-size:12px!important;
+  white-space:nowrap;
+ }
+ .shopsToggle{
+  display:inline-flex!important;
+  left:auto!important;
+  right:9px!important;
+  top:9px!important;
+  min-height:46px!important;
+  padding:9px 11px!important;
+ }
+ .mapActions{
+  top:67px!important;
+  left:auto!important;
+  right:9px!important;
+  width:auto!important;
+  max-width:calc(100% - 18px)!important;
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  flex-wrap:nowrap;
+  gap:5px;
+ }
+ .base-switch{
+  margin-left:0!important;
+  padding:3px;
+  gap:2px;
+ }
+ .base-switch .floating{
+  min-height:40px!important;
+  padding:8px 11px!important;
+  font-size:12px!important;
+ }
+ .mapActions #routeKeyButton:not(.routeControlHidden){
+  min-height:45px;
+  padding:8px 10px;
+  font-size:11px;
+ }
+ .routePanel{top:123px!important;max-height:calc(100% - 146px)!important}
+ .detail .detailRouteMain button{
+  min-height:48px!important;
+  font-size:12px!important;
+  line-height:1.25;
+ }
+ .detail .detailBottom a.reviewLink{font-size:12px!important;min-height:44px!important}
+}
+@media(max-width:360px){
+ .tripTools>.floating{font-size:11px!important;padding:9px 10px!important}
+ .shopsToggle{font-size:11px!important;padding:9px!important}
+ .base-switch .floating{padding:8px!important;font-size:11px!important}
+ .mapActions #routeKeyButton:not(.routeControlHidden){padding:8px!important}
+}
+</style>
 </style>
 </head>
 <body>
