@@ -2,7 +2,7 @@
 // This is route data, not live service or departure information.
 // Endpoint is fixed, with no caller-supplied URL or arbitrary Overpass query.
 const OSM_QUERY = '[out:json][timeout:35];relation["type"="route"]["route"~"^(tram|subway|light_rail|ferry)$"](52.24,4.65,52.52,5.20);out tags geom(52.14,4.54,52.56,5.27);';
-const HOSTS = ['https://overpass.kumi.systems/api/interpreter','https://overpass-api.de/api/interpreter'];
+const HOSTS = ['https://overpass.private.coffee/api/interpreter','https://overpass.kumi.systems/api/interpreter','https://overpass-api.de/api/interpreter'];
 export async function onRequestGet(context) {
  const cache = caches.default;
  try {
