@@ -139,18 +139,23 @@ function addMarker(s){if(!map||!Number.isFinite(s.lat)||!Number.isFinite(s.lng)|
 const ROUTE_CACHE='atlas-osm-individual-routes-v1';
 const ROUTE_QUERY='[out:json][timeout:35];relation["type"="route"]["route"~"^(tram|subway|light_rail|ferry)$"](52.24,4.65,52.52,5.20);out tags geom(52.14,4.54,52.56,5.27);';
 const TRAM_COLORS=['#d14f48','#9e4ab1','#138a8f','#d07719','#416fd0','#ba5277','#4b904a','#9a694b','#d09e24','#4e64a3','#b34e43','#459a9c','#936dc1','#ac7529','#4b8368','#cb6598','#677d21','#c15a35','#4674b9','#936c42'];
+const TRAM_IDS=['1','2','4','5','6','7','8','9','11','12','13','14','17','18','19','25','26','27','29'];
 const METRO_COLORS={'50':'#168947','51':'#d66f2c','52':'#255abc','53':'#a8469c','54':'#cf383e'};
+const FERRY_COLORS=['#168caa','#ab6bc4','#3a9880','#cf8743','#5b75c5','#c35d89','#8a913a','#338ca0'];
 const ROUTE_MODES=['metro','tram','ferry'];
 const colourForLine=(line)=>{
  if(line.mode==='metro')return METRO_COLORS[line.ref]||'#297cb7';
- if(line.mode==='ferry')return '#268ba4';
- const index=Math.abs(parseInt(line.ref,10)||line.ref.split('').reduce((n,c)=>n+c.charCodeAt(0),0));
- return TRAM_COLORS[index%TRAM_COLORS.length];
+ if(line.mode==='ferry'){
+  const n=Number.parseInt(String(line.ref).replace(/[^0-9]/g,''),10);
+  return FERRY_COLORS[(Number.isFinite(n)?n:0)%FERRY_COLORS.length];
+ }
+ const listed=TRAM_IDS.indexOf(line.ref);
+ return TRAM_COLORS[listed>=0?listed:Math.abs(parseInt(line.ref,10)||0)%TRAM_COLORS.length];
 };
 function unpackRoutes(json){
  if(!json||!Array.isArray(json.elements))throw Error('Route data did not contain line geometry.');
  const groups=new Map();
- const knownTrams=new Set(['1','2','4','5','6','7','8','9','11','12','13','14','17','18','19','25','26','27','29']);
+ const knownTrams=new Set(TRAM_IDS);
  for(const item of json.elements){
   if(item.type!=='relation'||!Array.isArray(item.members))continue;
   const tags=item.tags||{},raw=String(tags.ref||'').trim();
