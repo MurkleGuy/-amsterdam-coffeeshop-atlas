@@ -291,7 +291,7 @@ function setMapMode(mode){
  }
  $('routeKeyButton').classList.toggle('routeControlHidden',mode==='street');
  if(isLines){
-  $('routePanel').dataset.mode='metro';setRouteKeyVisible(true);loadRoutes();
+  $('routePanel').dataset.mode='metro';setRouteKeyVisible(false);loadRoutes();
  }else if(mode==='bus'){
   $('routePanel').dataset.mode='bus';$('routeInfo').textContent='Bus view uses OpenStreetMap public transport tiles. It includes other transit lines too; numbers and route shapes may not be current. For accurate buses, use GVB or Google Maps transit.';
   $('routeKey').innerHTML='<p><b>GVB bus route numbers</b></p><p class="busNumberList">18 · 22 · 34 · 36 · 38 · 39 · 41 · 42 · 47 · 49 · 62 · 68 · 218 · 246 · 247 · 267 · 369</p><p>These are reference service numbers, not a complete bus key. This background contains several types of public transport, not individually isolated buses. <a href="https://gvb.nl/reisinformatie/haltes-en-dienstregeling" target="_blank" rel="noopener">Look up current GVB routes ↗</a></p>';
