@@ -140,6 +140,201 @@ html,body{height:100%;width:100%;overflow:hidden}
 }
  .tripRouteCaution{font-size:10px;line-height:1.4;color:#6c6352;background:#fff8e9;border-radius:8px;padding:8px;margin:2px 0 5px}.tripOffRoute{font-size:11px;font-weight:750;background:#fff0d5;color:#74521c;border-radius:8px;padding:9px;line-height:1.45;margin-bottom:7px}
 </style>
+
+<style id="atlas-map-button-contrast-v1">
+/* Prominent but restrained branded controls above a busy map. */
+.mapWrap .floating,
+.mapWrap .detail button,
+.mapWrap .detail a,
+.mapWrap .tripPanel button,
+.mapWrap .routePanel button{
+  -webkit-tap-highlight-color:transparent;
+}
+.mapWrap button:focus-visible,
+.mapWrap a:focus-visible{
+  outline:3px solid #f0ca59!important;
+  outline-offset:3px!important;
+}
+.tripTools>.floating{
+  background:#17563e!important;
+  color:#fff!important;
+  border:2px solid #f7fff8!important;
+  border-radius:14px!important;
+  min-height:49px!important;
+  padding:12px 15px!important;
+  box-shadow:0 6px 22px rgba(11,42,27,.38),inset 0 1px 0 rgba(255,255,255,.15)!important;
+  font-size:13px!important;
+  font-weight:850!important;
+  letter-spacing:.05px;
+  white-space:nowrap;
+}
+.tripTools>.floating:hover{background:#207553!important}
+.tripTools>.floating[aria-expanded="true"]{background:#0e3e2e!important;box-shadow:0 0 0 3px #c7e4c2,0 7px 20px rgba(8,33,21,.35)!important}
+.shopsToggle{
+  background:#fffefa!important;
+  border:2px solid #22694a!important;
+  color:#164b34!important;
+  border-radius:14px!important;
+  font-weight:850!important;
+  box-shadow:0 7px 24px rgba(10,43,24,.31)!important;
+  min-height:49px;
+  white-space:nowrap;
+}
+.shopsToggle:hover{background:#e7f5e6!important}
+.shopsToggle[aria-expanded="true"]{background:#dbeddf!important}
+.shopsToggle span{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:#dceee0!important;
+  color:#195c3d!important;
+  padding:3px 7px;
+  min-width:34px;
+  border-radius:8px;
+  font-weight:850;
+  font-size:11px;
+  font-variant-numeric:tabular-nums;
+}
+.base-switch{
+  background:#fffefa!important;
+  border:2px solid #d0e3d4!important;
+  padding:4px!important;
+  border-radius:15px!important;
+  gap:3px!important;
+  box-shadow:0 6px 22px rgba(13,40,27,.28)!important;
+}
+.base-switch .floating{
+  background:transparent!important;
+  color:#315b45!important;
+  border:0!important;
+  border-radius:10px!important;
+  box-shadow:none!important;
+  padding:10px 13px!important;
+  min-height:44px!important;
+  font-weight:850!important;
+  font-size:12px!important;
+}
+.base-switch .floating.active,
+.base-switch .floating[aria-pressed="true"]{
+  background:#1b6747!important;
+  color:#fff!important;
+  box-shadow:0 2px 7px rgba(21,77,47,.27)!important;
+}
+.base-switch .floating:not(.active):hover{background:#e8f1e7!important}
+.mapActions #routeKeyButton:not(.routeControlHidden){
+  background:#fffefa!important;
+  color:#195c42!important;
+  border:2px solid #277351!important;
+  border-radius:13px!important;
+  font-weight:850!important;
+  min-height:42px!important;
+  box-shadow:0 5px 16px rgba(12,41,24,.26)!important;
+}
+.mapActions #routeKeyButton[aria-expanded="true"]{background:#d8efdc!important}
+.leaflet-control-zoom a{
+  width:39px!important;
+  height:40px!important;
+  line-height:39px!important;
+  font-size:23px!important;
+  font-weight:800!important;
+  color:#19563a!important;
+}
+.leaflet-control-zoom{
+  border:2px solid #d6e5d7!important;
+  border-radius:11px!important;
+  overflow:hidden;
+  box-shadow:0 6px 20px rgba(14,38,24,.25)!important;
+}
+.detail .detailRouteMain button{
+  min-height:51px;
+  font-weight:800!important;
+  letter-spacing:.05px;
+}
+.detail .detailRouteMain .detailPrimary{
+  background:#176848!important;
+  border:2px solid #13583d!important;
+  color:#fff!important;
+  box-shadow:0 4px 12px rgba(20,85,52,.26)!important;
+}
+.detail .detailRouteMain .detailPrimary:hover{background:#0f5439!important}
+.detail .detailRouteMain .secondary{
+  background:#e7f2e8!important;
+  color:#194e36!important;
+  border:1.5px solid #afcfb8!important;
+  box-shadow:0 2px 7px rgba(19,67,35,.08);
+}
+.detail .detailRouteMain .secondary:hover{background:#d4ead8!important}
+.detail .detailBottom .reviewLink{
+  background:#fffdf6!important;
+  border:1.5px solid #b2cfbb!important;
+  color:#1c603f!important;
+  box-shadow:0 2px 8px rgba(17,58,32,.1);
+  font-weight:830!important;
+}
+.detailStar{width:44px!important;height:44px!important;border:2px solid #b4d0bd!important;color:#226a48!important;box-shadow:0 2px 8px rgba(12,58,31,.1)!important}
+.detailStar.saved{color:#aa741d!important;background:#fff2ca!important;border-color:#e7c885!important}
+/* Stack the two primary map toolbars on narrow phones to avoid collisions. */
+@media(max-width:760px){
+ .tripTools{top:9px!important;left:9px!important}
+ .tripTools>.floating{
+   min-height:47px!important;
+   padding:11px 13px!important;
+   font-size:12px!important;
+ }
+ .shopsToggle{
+   display:flex!important;
+   left:9px!important;
+   top:69px!important;
+   min-height:46px!important;
+   padding:9px 11px!important;
+   font-size:12px!important;
+ }
+ .mapActions{
+   top:69px!important;
+   right:9px!important;
+   left:auto!important;
+   max-width:calc(100% - 130px)!important;
+   flex-wrap:nowrap!important;
+   gap:0!important;
+ }
+ .base-switch{padding:3px!important;margin-left:auto!important}
+ .base-switch .floating{
+   padding:9px 9px!important;
+   min-height:42px!important;
+   font-size:11px!important;
+ }
+ .mapActions #routeKeyButton:not(.routeControlHidden){
+   position:absolute!important;
+   top:54px!important;
+   right:0!important;
+   min-height:40px!important;
+   padding:8px 11px!important;
+   font-size:11px!important;
+ }
+ .routePanel{
+   top:172px!important;
+   max-height:calc(100% - 193px)!important;
+ }
+ .detail .detailRouteMain button{
+   min-height:51px!important;
+   padding:10px 7px!important;
+   font-size:11px!important;
+ }
+ .detail .detailBottom .reviewLink{min-height:46px!important}
+}
+@media(max-width:360px){
+ .tripTools>.floating{font-size:11px!important;padding:10px 11px!important}
+ .shopsToggle{padding:8px 9px!important;font-size:11px!important}
+ .base-switch .floating{padding:8px 7px!important;font-size:10.5px!important}
+ .mapActions{max-width:calc(100% - 122px)!important}
+}
+@media(prefers-reduced-motion:no-preference){
+ .tripTools>.floating,.shopsToggle,.base-switch .floating,.detail .detailRouteMain button,.detail .detailBottom a{
+   transition:background-color .16s ease,box-shadow .16s ease,transform .16s ease;
+ }
+ .tripTools>.floating:active,.shopsToggle:active,.detail .detailRouteMain button:active{transform:translateY(1px)}
+}
+</style>
 </head>
 <body>
 <div class="app">
