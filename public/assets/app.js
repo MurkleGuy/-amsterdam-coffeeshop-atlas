@@ -33,7 +33,24 @@ function toggleSaved(id){if(state.saved.has(id))state.saved.delete(id);else stat
 function showPanel(s){if(!s){$('placePanel').classList.add('is-hidden');return;}const panel=$('placePanel');panel.classList.remove('is-hidden');panel.innerHTML=`<div class="panel-cover">${s.photo?photoHtml(s):'<div class="panel-letter">'+esc(initial(s))+'</div>'}<button type="button" class="panel-close" id="panelClose" aria-label="Close place details">×</button></div><div class="panel-body"><span class="panel-overline">${esc(area(s))} · COFFEESHOP ATLAS</span><h3>${esc(name(s))}</h3><p class="panel-address">⌖ ${esc(s.address)}</p><div class="panel-help">Included on the published 2026 address reference. Name, current trading status, hours and appearance are not independently verified.</div><div class="panel-actions"><a class="primary" href="${walking(s)}" rel="noopener noreferrer" target="_blank">↗ Walking route</a><a href="${googleMaps(s)}" rel="noopener noreferrer" target="_blank">View in Google Maps</a><button type="button" id="panelSave">${state.saved.has(s.id)?'★ Saved place':'☆ Save this place'}</button><a href="${googleMaps(s)}" rel="noopener noreferrer" target="_blank">Check recent photos ↗</a></div>${s.photo?`<p class="panel-credit">Historic photo: ${esc(s.photo.author)}, ${esc(s.photo.license)}. <a href="${esc(photoSource(s))}" target="_blank" rel="noopener">Source &amp; license ↗</a></p>`:'<p class="panel-credit">A verified shop photo or official logo can be added later.</p>'}</div>`;
  $('panelClose').onclick=()=>{state.selected=null;showPanel(null);render();};$('panelSave').onclick=()=>toggleSaved(s.id);
 }
-function switchMobile(mode){const app=$('atlasApp');app.classList.toggle('map-mode',mode==='map');$('showListBtn').classList.toggle('active',mode!=='map');$('showMapBtn').classList.toggle('active',mode==='map');if(mode==='map'&&state.map){requestAnimationFrame(()=>requestAnimationFrame(()=>state.map.invalidateSize({pan:false,animate:false})));setTimeout(()=>state.map?.invalidateSize({pan:false,animate:false}),250);}}
+function ensureMapReady(){
+ const node=$('map'),rect=node.getBoundingClientRect();
+ // Leaflet cannot calculate tiles or marker panes while its parent is display:none.
+ if(rect.width<50||rect.height<50)return;
+ if(!state.map){if(initMap()){restoreMarkers();refreshMarkers(filtered());}}
+ if(state.map){state.map.invalidateSize({pan:false,animate:false});}
+}
+function switchMobile(mode){
+ const app=$('atlasApp'),show=mode==='map';
+ app.classList.toggle('map-mode',show);
+ $('showListBtn').classList.toggle('active',!show);
+ $('showMapBtn').classList.toggle('active',show);
+ if(show){
+  requestAnimationFrame(()=>requestAnimationFrame(ensureMapReady));
+  setTimeout(ensureMapReady,180);
+  setTimeout(ensureMapReady,650);
+ }
+}
 function selectPlace(id,switchMap=false){const s=shops.find(x=>x.id===id);if(!s)return;state.selected=id;showPanel(s);render();if(switchMap||window.innerWidth<=780)switchMobile('map');if(state.map&&s.lat!=null){state.map.flyTo([s.lat,s.lng],Math.max(16,state.map.getZoom()),{duration:.65});}else if(s.lat==null){$('pinProgress').textContent='Locating this address. Google Maps link is available in details.';}
 }
 function bindEvents(){
@@ -64,6 +81,19 @@ function parsePoint(s){if(typeof s!=='string')return null;const m=s.match(/POINT
 async function geocodeOne(s){const url=new URL('https://api.pdok.nl/bzk/locatieserver/search/v3_1/free');url.searchParams.set('q',s.postcode+' '+s.number+(s.suffix?' '+s.suffix:'')+' Amsterdam');url.searchParams.set('fq','type:adres');url.searchParams.set('rows','12');const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),10000);try{const r=await fetch(url,{signal:ctrl.signal});if(!r.ok)throw Error('PDOK '+r.status);const d=await r.json();const pc=s.postcode.replace(/\s/g,'').toLowerCase();const matches=(d.response?.docs||[]).filter(x=>String(x.postcode||'').replace(/\s/g,'').toLowerCase()===pc&&parseInt(x.huisnummer,10)===parseInt(s.number,10));const preferred=s.suffix?matches.find(x=>String(x.huisletter||x.huisnummertoevoeging||'').toUpperCase()===s.suffix.toUpperCase()):null;const p=parsePoint((preferred||matches[0])?.centroide_ll);state.errors=0;return p&&p[0]>52.10&&p[0]<52.55&&p[1]>4.55&&p[1]<5.35?{lat:p[0],lng:p[1]}:null;}catch{state.errors++;if(state.errors>10)state.disabledGeo=true;return null;}finally{clearTimeout(timer);}}
 function persistCoords(){try{localStorage.setItem(COORD_KEY,JSON.stringify(state.coords));}catch{}}
 async function locateAddresses(){const missing=shops.filter(s=>s.lat==null);if(!missing.length){updateProgress('All 167 addresses located.');return;}let index=0,done=0;async function worker(){while(index<missing.length&&!state.disabledGeo){let s=missing[index++];const found=await geocodeOne(s);done++;if(found){s.lat=found.lat;s.lng=found.lng;state.coords[s.id]=found;addMarker(s);}if(done%8===0||done===missing.length){persistCoords();updateProgress(`${done}/${missing.length} remaining-address checks completed`);render();}}}await Promise.all(Array.from({length:5},worker));persistCoords();render();updateProgress(state.disabledGeo?'Address geocoding unavailable. All 167 places remain searchable with Google Maps links.':`${shops.filter(s=>s.lat!=null).length} pins located. Other addresses remain searchable.`);}
-function boot(){featured();bindEvents();initMap();restoreMarkers();render();locateAddresses();window.addEventListener('resize',()=>{if(state.map&&(!window.matchMedia('(max-width: 780px)').matches||$('atlasApp').classList.contains('map-mode'))){requestAnimationFrame(()=>state.map.invalidateSize({pan:false,animate:false}));}});}
+function boot(){
+ featured();
+ bindEvents();
+ // Desktop is visible on load; on mobile wait until the user opens the Map tab.
+ if(window.innerWidth>780)initMap();
+ restoreMarkers();
+ render();
+ locateAddresses();
+ window.addEventListener('resize',()=>{
+  const visible=window.innerWidth>780||$('atlasApp').classList.contains('map-mode');
+  if(visible)requestAnimationFrame(()=>requestAnimationFrame(ensureMapReady));
+ });
+ window.addEventListener('pageshow',()=>{if(window.innerWidth>780||$('atlasApp').classList.contains('map-mode'))setTimeout(ensureMapReady,120);});
+}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();
