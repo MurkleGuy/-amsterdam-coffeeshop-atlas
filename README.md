@@ -24,3 +24,10 @@ Pins are resolved by a third-party Dutch public geocoder as visitors browse and 
 
 ## Repo scope
 This is independent of the two existing Crispy Clean projects and must not share their Cloudflare deployment or GitHub repository.
+
+## Public transport map and Google Maps destinations
+- The map at `public/map.html` includes a Street / Transport switch. The transport basemap is [ÖPNVKarte by MeMoMaps](https://publictransportmap.org/en/), based on OpenStreetMap public transport route and stop records. It can show metro, tram, ferry and other transit modes. It is *not* a real-time timetable or service-disruption feed.
+- We keep OpenStreetMap street tiles beneath the transport map so failed transit tiles do not cause a completely blank map. Maintain the map-provider attribution shown in the viewer. The MeMoMaps shared public tile service is suited to small projects; high-traffic production use requires self-hosting or an approved commercial provider.
+- Google Maps buttons target the **business name plus the listed postal address** when a named coffeeshop is present. Unnamed entries use the street address as a fallback. These search links **do not guarantee** a specific business result.
+- For an exact Google Business Profile destination, obtain and independently verify its official Google Maps **Place ID**, then populate that shop's `googlePlaceId` in the `official` array in `public/map.html`. The map automatically adds `query_place_id` for search links and `destination_place_id` for navigation. Never invent Place IDs or assume the municipality's address alone proves the Google listing.
+- Both walking and transit directions are handed off to Google Maps, which chooses the route based on the visitor's origin, availability and timetable. This site does not calculate routes itself.
