@@ -9,7 +9,7 @@
  const $=id=>document.getElementById(id);
  const escTrip=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','"':'&quot;',"'":'&#39;'}[c]));
  let hotel=null,hotelMarker=null,hotelLayer=L.layerGroup().addTo(map),searchLayer=L.layerGroup().addTo(map);
- let locationMarker=null,accuracyCircle=null,gpsWatch=null,locationFix=null,walkingShape=null,walkingInfo=null,lastShop=null,maneuvers=[];
+ let locationMarker=null,accuracyCircle=null,gpsWatch=null,locationFix=null,walkingShape=null,walkingInfo=null,lastShop=null,maneuvers=[],gpsFollow=false;
  const validPoint=(lat,lng)=>Number.isFinite(lat)&&Number.isFinite(lng)&&lat>=52.1&&lat<=52.55&&lng>=4.55&&lng<=5.3;
  try{const h=JSON.parse(localStorage.getItem(STORAGE)||'null');if(h&&validPoint(h.lat,h.lng)&&typeof h.name==='string')hotel=h;}catch{}
  const wrap=document.createElement('div');wrap.className='tripTools';
@@ -26,7 +26,7 @@
  '<div class="tripRoute hidden" id="tripRoute">'+
  '<div class="tripRouteHead"><b>Walking route</b><button type="button" id="routeClose">×</button></div>'+
  '<div id="tripRouteSummary"></div><div id="tripRouteSteps"></div>'+
- '<div class="tripRow"><button type="button" id="routeRefresh">Replan</button><a id="googleWalkFallback" target="_blank" rel="noopener">Google Maps</a></div>'+
+ '<div class="tripRow"><button type="button" id="startNavigation">▶ Start GPS guidance</button><button type="button" id="routeRefresh">Replan</button><a id="googleWalkFallback" target="_blank" rel="noopener">Google Maps</a></div>'+
  '</div>'+
  '<p class="tripNote">Hotel details stay on this device. Hotel search uses Photon/OSM. Planning a walk sends the start and destination coordinates to a public walking-route service. GPS only works with permission while this page is open. Do not use this as a safety-critical navigation app.</p>'+
  '</section>';
@@ -107,13 +107,13 @@
    locationMarker=L.circleMarker([lat,lng],{radius:8,color:'#fff',weight:3,fillColor:'#2778d5',fillOpacity:1}).bindPopup('My live location').addTo(map);
    accuracyCircle=L.circle([lat,lng],{radius:accuracy||20,color:'#2778d5',weight:1,fillOpacity:.08,interactive:false}).addTo(map);
   }else{locationMarker.setLatLng([lat,lng]);accuracyCircle.setLatLng([lat,lng]);accuracyCircle.setRadius(Math.max(accuracy||20,10));}
-  if(follow)map.flyTo([lat,lng],16);
+  if(follow)map.flyTo([lat,lng],16);else if(gpsFollow&&walkingInfo)map.panTo([lat,lng],{animate:true,duration:.3});
   showMessage('Live GPS on · accuracy roughly '+Math.round(accuracy||0)+' m. Stop it when finished.');
   if(walkingInfo)updateWalkingProgress();
  }
  function stopGPS(){
   if(gpsWatch!==null){navigator.geolocation.clearWatch(gpsWatch);gpsWatch=null;}
-  $('gpsToggle').textContent='◎ Start live location';
+  $('gpsToggle').textContent='◎ Start live location';gpsFollow=false;if($('startNavigation'))$('startNavigation').textContent='▶ Start GPS guidance';
   showMessage('Live GPS stopped. Location is not saved.');
  }
  function startGPS(){
@@ -185,7 +185,7 @@
   const el=$('tripRouteSteps');
   if(el&&next)el.innerHTML='<div class="tripStep"><b>Next:</b> '+escTrip(next.instruction||'Continue along the route')+'</div>'+maneuvers.filter(m=>m.begin_shape_index>nearest).slice(1,6).map(m=>'<div class="tripStep">'+escTrip(m.instruction||'Continue')+'</div>').join('');
  }
- function closeRoute(){walkingInfo=null;maneuvers=[];if(walkingShape){map.removeLayer(walkingShape);walkingShape=null;}$('tripRoute').classList.add('hidden')}
+ function closeRoute(){gpsFollow=false;walkingInfo=null;maneuvers=[];if($('startNavigation'))$('startNavigation').textContent='▶ Start GPS guidance';if(walkingShape){map.removeLayer(walkingShape);walkingShape=null;}$('tripRoute').classList.add('hidden')}
  $('tripToggle').onclick=()=>{const open=$('tripPanel').classList.contains('hidden');$('tripPanel').classList.toggle('hidden',!open);$('tripToggle').setAttribute('aria-expanded',String(open))};
  $('tripClose').onclick=()=>$('tripToggle').click();
  $('hotelFind').onclick=hotelLookup;$('nearbyHotels').onclick=()=>{$('hotelSearch').value='hotel';hotelLookup()};$('hideHotelPins').onclick=()=>{searchLayer.clearLayers();$('hotelMatches').innerHTML=''};
@@ -196,6 +196,7 @@
  $('gpsCentre').onclick=()=>{if(locationFix)map.flyTo([locationFix.lat,locationFix.lng],16);else showMessage('Turn on live location first.')};
  $('routeClose').onclick=closeRoute;
  $('routeRefresh').onclick=()=>{if(lastShop)planTo(lastShop,locationFix||hotel)};
+ $('startNavigation').onclick=()=>{if(!walkingInfo){showMessage('Plan a walking route first.');return;}if(gpsFollow){gpsFollow=false;$('startNavigation').textContent='▶ Start GPS guidance';showMessage('Map following stopped. Live location can stay on.');return;}gpsFollow=true;$('startNavigation').textContent='■ Stop following';if(gpsWatch===null)startGPS();if(locationFix)map.panTo([locationFix.lat,locationFix.lng]);showMessage('GPS guidance is on while this page is open. Keep aware of your surroundings and cross safely.')};
  window.addEventListener('pagehide',stopGPS);
  updateHotelUI();
  window.AtlasTrip={planTo,hotel:()=>hotel,gps:()=>locationFix,open:()=>{$('tripPanel').classList.remove('hidden');$('tripToggle').setAttribute('aria-expanded','true')},fromGPS:s=>{if(locationFix)planTo(s,locationFix);else{$('tripPanel').classList.remove('hidden');$('tripToggle').setAttribute('aria-expanded','true');showMessage('Enable live GPS, then select this shop again to route from your position.')}}};
