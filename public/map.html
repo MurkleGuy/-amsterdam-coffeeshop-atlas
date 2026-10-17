@@ -192,24 +192,25 @@ function renderList(){const arr=filtered();$('shopsToggleCount').textContent=arr
  refreshClusters(arr);
 }
 function refreshClusters(visible){if(!map||!clusters)return;clusters.clearLayers();for(const s of visible){const marker=geoMarkers[s.id];if(marker)clusters.addLayer(marker)}}
+
 function showDetail(s){
  const panel=$('detail'),wrap=document.querySelector('.mapWrap');
  if(!s){panel.classList.add('hidden');wrap.classList.remove('has-detail');return;}
  panel.classList.remove('hidden');wrap.classList.add('has-detail');
- const title=s.name||s.street+' '+s.number;
- panel.innerHTML=`<div class="detailHead"><div><span class="eyebrow">${esc(getArea(s))} · ADDRESS ${s.id} / ${ALL_COUNT}</span><h3>${esc(title)}</h3></div><button class="close" id="closeDetail" aria-label="Close details">×</button></div>
+ const title=s.name||s.street+' '+s.number,saved=isSaved(s);
+ panel.innerHTML=`<div class="detailHead"><div><span class="eyebrow">${esc(getArea(s))} · ADDRESS ${s.id} / ${ALL_COUNT}</span><h3>${esc(title)}</h3></div>
+ <div class="detailHeadActions"><button type="button" id="detailFav" class="detailStar ${saved?'saved':''}" aria-pressed="${saved?'true':'false'}" aria-label="${saved?'Remove from saved shops':'Save this coffeeshop'}" title="${saved?'Remove from saved':'Save this shop'}">${saved?'★':'☆'}</button><button class="close" id="closeDetail" aria-label="Close details">×</button></div></div>
  <p class="detailAddress">${esc(s.address)}</p>
- <div class="detailRouteMain"><button id="planWalkAtlas" class="action">🧭 Walk on map</button><button id="moreRoutes" class="action secondary" aria-expanded="false" aria-controls="moreRouteChoices">Other routes ▾</button></div>
- <div class="detailRouteMore hidden" id="moreRouteChoices"><button id="walkGoogleHotel" class="action secondary">⌂ Hotel → Walk</button><button id="hotelGoogleTransit" class="action secondary">🚋 Hotel → Transit</button><button id="walkFromGPS" class="action secondary">◎ From GPS</button></div>
- <div class="detailBottom"><button id="detailFav" class="action secondary">${isSaved(s)?'★ Saved':'☆ Save place'}</button><a class="secondary" href="${gmaps(s)}" target="_blank" rel="noopener">${s.name?'Find shop in Google Maps ↗':'View address in Google Maps ↗'}</a></div>
- <p class="detailFinePrint">2026 address reference · Check business details and safe pedestrian crossings before travelling.</p>`;
+ <div class="detailRouteMain">
+  <button id="planWalkAtlas" class="action detailPrimary">🧭 Walk on map</button>
+  <button id="hotelGoogleTransit" class="action secondary">🚋 Public transport <small>From your hotel</small></button>
+  <button id="walkGoogleHotel" class="action secondary">⌂ Walk from hotel</button>
+  <button id="walkFromGPS" class="action secondary">◎ Walk from GPS</button>
+ </div>
+ <div class="detailBottom"><a class="secondary reviewLink" href="${gmaps(s)}" target="_blank" rel="noopener">${s.name?'★ Check Google reviews ↗':'View address on Google Maps ↗'}</a></div>
+ <p class="detailFinePrint">${s.name?'Opens Google Maps using the shop name and address; confirm the correct listing.':'Shop name not verified; this opens the published address.'} Walking routes rely on mapped footpaths and crossings.</p>`;
  $('closeDetail').onclick=()=>{showDetail(null);selected=null;renderList()};
  $('detailFav').onclick=()=>toggleFav(s.id);
- $('moreRoutes').onclick=()=>{
-  const el=$('moreRouteChoices'),expanded=el.classList.toggle('hidden')===false;
-  $('moreRoutes').setAttribute('aria-expanded',String(expanded));
-  $('moreRoutes').textContent=expanded?'Other routes ▴':'Other routes ▾';
- };
  $('planWalkAtlas').onclick=()=>{showDetail(null);window.AtlasTrip?.planTo(s)};
  $('walkGoogleHotel').onclick=()=>{const h=window.AtlasTrip?.hotel();if(!h){window.AtlasTrip?.open();return;}const u=new URL(walk(s));u.searchParams.set('origin',h.lat+','+h.lng);window.open(u.toString(),'_blank','noopener')};
  $('hotelGoogleTransit').onclick=()=>{const h=window.AtlasTrip?.hotel();if(!h){window.AtlasTrip?.open();return;}const u=new URL(transit(s));u.searchParams.set('origin',h.lat+','+h.lng);window.open(u.toString(),'_blank','noopener')};
