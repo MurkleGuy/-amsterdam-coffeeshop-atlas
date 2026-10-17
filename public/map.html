@@ -78,7 +78,7 @@ html,body{height:100%;width:100%;overflow:hidden}
   </aside>
   <div class="mapWrap">
    <div id="map" role="region" aria-label="Interactive map of Amsterdam coffeeshop locations"></div>
-   <div class="mapActions"><div class="base-switch" role="group" aria-label="Map view"><button type="button" id="streetMode" class="floating" aria-pressed="false">Street</button><button type="button" id="transportMode" class="floating active" aria-pressed="true">Tracks</button><button type="button" id="routesMode" class="floating" aria-pressed="false">Lines</button></div><button type="button" id="routeKeyButton" class="floating routeControlHidden" aria-expanded="false" aria-controls="routePanel">▤ Key</button><button id="resetMap" class="floating">⌖ Amsterdam</button><button id="locateMap" class="floating">◎ My location</button></div><section class="routePanel hidden" id="routePanel" aria-label="Individual transport line colour key"><div class="routePanelHead"><b>Transport lines · reference</b><button type="button" id="closeRoutePanel" aria-label="Close route key">×</button></div><p id="routeInfo" class="routeInfo" role="status">Choose Lines to load numbered routes.</p><div class="routePanelTools"><button type="button" id="routeAll">All</button><button type="button" id="routeNone">None</button><button type="button" id="routeRetry" class="routeControlHidden">Retry</button></div><div class="routePanelList" id="routeKey"></div><small class="routeDisclaimer">2025 municipal route map. Some routes changed in 2026; missing lines are not shown. Colours are illustrative. Use Google Maps or GVB for current journeys.</small></section>
+   <div class="mapActions"><div class="base-switch" role="group" aria-label="Map view"><button type="button" id="streetMode" class="floating" aria-pressed="false">Street</button><button type="button" id="transportMode" class="floating" aria-pressed="false">Bus</button><button type="button" id="routesMode" class="floating active" aria-pressed="true">Metro</button></div><button type="button" id="routeKeyButton" class="floating routeControlHidden" aria-expanded="false" aria-controls="routePanel">▤ Key</button><button id="resetMap" class="floating">⌖ Amsterdam</button><button id="locateMap" class="floating">◎ My location</button></div><section class="routePanel hidden" id="routePanel" aria-label="Individual transport line colour key"><div class="routePanelHead"><b>Metro & tram lines · reference</b><button type="button" id="closeRoutePanel" aria-label="Close route key">×</button></div><p id="routeInfo" class="routeInfo" role="status">Choose Lines to load numbered routes.</p><div class="routePanelTools"><button type="button" id="routeAll">All</button><button type="button" id="routeNone">None</button><button type="button" id="routeRetry" class="routeControlHidden">Retry</button></div><div class="routePanelList" id="routeKey"></div><small class="routeDisclaimer">2025 municipal route map. Some routes changed in 2026; missing lines are not shown. Colours are illustrative. Use Google Maps or GVB for current journeys.</small></section>
    <div id="detail" class="detail hidden" role="dialog" aria-label="Selected coffeeshop details"></div>
    <div class="mapLegend" id="legend"><b>2026 city address list</b><div class="row"><i class="legendDot"></i><span><span id="pinnedCount">0</span> pinned of 167 published addresses</span></div><div style="margin-top:4px">Markers appear as locations are checked.</div></div>
   </div>
@@ -129,7 +129,7 @@ function renderList(){const arr=filtered();$('listCount').textContent=`${arr.len
  refreshClusters(arr);
 }
 function refreshClusters(visible){if(!map||!clusters)return;clusters.clearLayers();for(const s of visible){const marker=geoMarkers[s.id];if(marker)clusters.addLayer(marker)}}
-function showDetail(s){const panel=$('detail');if(!s){panel.classList.add('hidden');return}panel.classList.remove('hidden');panel.innerHTML=`<div class="detailHead"><div><span class="eyebrow">${esc(getArea(s))} · ADDRESS ${s.id} / ${ALL_COUNT}</span><h3>${esc(s.name||s.street+' '+s.number)}</h3></div><button class="close" id="closeDetail" aria-label="Close details">×</button></div><p>${esc(s.address)}</p><div class="notice">Address is on Amsterdam's 2026 tolerance list. ${s.name?"Google Maps directions search for the named coffeeshop, not just the house number. Confirm the correct business before travelling.":"This address has no verified shop name, so directions use the published street address."}</div><div class="buttons"><a href="${walk(s)}" target="_blank" rel="noopener">↗ Walk</a><a href="${transit(s)}" target="_blank" rel="noopener">🚋 Transit</a><a class="secondary" href="${gmaps(s)}" target="_blank" rel="noopener">${s.name?"Find shop in Google Maps":"View address in Google Maps"}</a><button id="detailFav" class="action secondary">${isSaved(s)?'★ Saved':'☆ Save place'}</button></div>`;$('closeDetail').onclick=()=>{panel.classList.add('hidden');selected=null;renderList()};$('detailFav').onclick=()=>toggleFav(s.id);
+function showDetail(s){const panel=$('detail');if(!s){panel.classList.add('hidden');return}panel.classList.remove('hidden');panel.innerHTML=`<div class="detailHead"><div><span class="eyebrow">${esc(getArea(s))} · ADDRESS ${s.id} / ${ALL_COUNT}</span><h3>${esc(s.name||s.street+' '+s.number)}</h3></div><button class="close" id="closeDetail" aria-label="Close details">×</button></div><p>${esc(s.address)}</p><div class="notice">Address is on Amsterdam's 2026 tolerance list. ${s.name?"Google Maps directions search for the named coffeeshop, not just the house number. Confirm the correct business before travelling.":"This address has no verified shop name, so directions use the published street address."}</div><div class="buttons"><a href="${walk(s)}" target="_blank" rel="noopener">↗ Walk</a><a href="${transit(s)}" target="_blank" rel="noopener">🚋 Transit</a><a class="secondary" href="${gmaps(s)}" target="_blank" rel="noopener">${s.name?"Find shop in Google Maps":"View address in Google Maps"}</a><button id="planWalkAtlas" class="action">🧭 Walk on map</button><button id="walkGoogleHotel" class="action secondary">⌂ From hotel</button><button id="walkFromGPS" class="action secondary">◎ From GPS</button><button id="detailFav" class="action secondary">${isSaved(s)?'★ Saved':'☆ Save place'}</button></div>`;$('closeDetail').onclick=()=>{panel.classList.add('hidden');selected=null;renderList()};$('detailFav').onclick=()=>toggleFav(s.id);$('planWalkAtlas').onclick=()=>window.AtlasTrip?.planTo(s);$('walkGoogleHotel').onclick=()=>{const h=window.AtlasTrip?.hotel();if(!h){window.AtlasTrip?.open();return;}const u=new URL(walk(s));u.searchParams.set('origin',h.lat+','+h.lng);window.open(u.toString(),'_blank','noopener')};$('walkFromGPS').onclick=()=>window.AtlasTrip?.planTo(s,window.AtlasTrip?.gps());
 }
 function selectShop(id){const s=official.find(x=>x.id===id);if(!s)return;selected=id;showDetail(s);renderList();if(map&&s.lat!=null){map.flyTo([s.lat,s.lng],Math.max(16,map.getZoom()),{duration:.6});let mark=geoMarkers[s.id];if(mark){const later=()=>{mark.openPopup()};setTimeout(later,540)}}}
 function refreshPinCount(){let n=official.filter(s=>Number.isFinite(s.lat)).length;$('pinnedCount').textContent=n;}
@@ -264,17 +264,20 @@ async function loadRoutes(){
 }
 function setMapMode(mode){
  if(!map)return;
- const isTracks=mode==='transit',isLines=mode==='routes';
+ const isTracks=mode==='bus',isLines=mode==='routes';
  if(isTracks){if(!map.hasLayer(transportLayer))transportLayer.addTo(map)}
  else if(map.hasLayer(transportLayer))map.removeLayer(transportLayer);
  if(routeLayer){if(isLines&&!map.hasLayer(routeLayer))routeLayer.addTo(map);else if(!isLines&&map.hasLayer(routeLayer))map.removeLayer(routeLayer)}
  for(const [id,active] of [['streetMode',mode==='street'],['transportMode',isTracks],['routesMode',isLines]]){
   $(id).classList.toggle('active',active);$(id).setAttribute('aria-pressed',String(active));
  }
- $('routeKeyButton').classList.toggle('routeControlHidden',!isLines);
+ $('routeKeyButton').classList.toggle('routeControlHidden',mode==='street');
  if(isLines){
-  setRouteKeyVisible(true);
-  loadRoutes();
+  $('routePanel').dataset.mode='metro';setRouteKeyVisible(true);loadRoutes();
+ }else if(mode==='bus'){
+  $('routePanel').dataset.mode='bus';$('routeInfo').textContent='Bus view uses OpenStreetMap public transport tiles. It includes other transit lines too; numbers and route shapes may not be current. For accurate buses, use GVB or Google Maps transit.';
+  $('routeKey').innerHTML='<p>Bus routes are shown on the transport map when mapped by OpenStreetMap. <a href="https://gvb.nl/reisinformatie/haltes-en-dienstregeling" target="_blank" rel="noopener">Check GVB bus services ↗</a></p>';
+  $('routeAll').disabled=true;$('routeNone').disabled=true;$('routeRetry').classList.add('routeControlHidden');setRouteKeyVisible(false);
  }else setRouteKeyVisible(false);
  try{localStorage.setItem('atlas-map-layer-v1',mode)}catch(e){}
  map.invalidateSize({pan:false,animate:false});
@@ -290,22 +293,22 @@ function initMap(){
   maxZoom:19,className:'atlas-muted-base',
   attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>'
  }).addTo(map);
- transportLayer=L.tileLayer('https://tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png',{
-  maxZoom:19,maxNativeZoom:18,opacity:0.47,
-  attribution:'Tracks &copy; <a href="https://www.openrailwaymap.org/" target="_blank" rel="noopener">OpenRailwayMap</a> (CC BY-SA 2.0), map data &copy; OpenStreetMap contributors'
+ transportLayer=L.tileLayer('https://tile.memomaps.de/tilegen/{z}/{x}/{y}.png',{
+  maxZoom:19,maxNativeZoom:18,opacity:1,
+  attribution:'Public transport map &copy; <a href="https://memomaps.de/" target="_blank" rel="noopener">MeMoMaps</a> (CC BY-SA), data &copy; OpenStreetMap contributors'
  });
  transportLayer.on('tileload',()=>{tileFailures=0;});
  transportLayer.on('tileerror',()=>{
   tileFailures++;
   if(tileFailures>=5&&map.hasLayer(transportLayer)){
    setMapMode('street');
-   setStatus('Transport map tiles are unavailable. Street map is still working; try Transport again later.');
+   setStatus('Bus map tiles are unavailable. Street and Metro modes still work.');
   }
  });
  map.createPane('routesPane');map.getPane('routesPane').style.zIndex='435';
  routeLayer=L.layerGroup();
- let startMode='transit';
- try{const storedMode=localStorage.getItem('atlas-map-layer-v1');if(['street','transit','routes'].includes(storedMode))startMode=storedMode}catch(e){}
+ let startMode='routes';
+ try{const storedMode=localStorage.getItem('atlas-map-layer-v1');if(['street','routes','bus'].includes(storedMode))startMode=storedMode}catch(e){}
  setMapMode(startMode);
  clusters=window.L.markerClusterGroup?L.markerClusterGroup({showCoverageOnHover:false,maxClusterRadius:43,spiderfyOnMaxZoom:true}):L.layerGroup();
  map.addLayer(clusters);return true;
@@ -318,7 +321,7 @@ async function geocode(s){const queries=[`${s.postcode} ${s.number}${s.suffix?' 
 async function geocodeAll(){const missing=official.filter(s=>s.lat==null);if(!missing.length){setStatus('All 167 official addresses are pinned. Tap a pin or search a shop.',true);return}let idx=0,done=0,found=0;async function worker(){while(idx<missing.length&&!pdokDisabled){const s=missing[idx++],coord=await geocode(s);done++;if(coord){s.lat=coord.lat;s.lng=coord.lng;cache[s.id]=coord;found++;addMarker(s)}if(done%5===0||done===missing.length){saveCoords();refreshPinCount();renderList();setStatus(`Checking official address coordinates: ${done}/${missing.length} checked · ${official.filter(s=>s.lat!=null).length} pins shown`)} }}await Promise.all(Array.from({length:6},worker));saveCoords();refreshPinCount();renderList();let total=official.filter(s=>s.lat!=null).length;if(total===ALL_COUNT)setStatus('All 167 published addresses located and pinned.',true);else if(total>0)setStatus(`${total} of ${ALL_COUNT} official addresses pinned. Unresolved addresses remain searchable below.`,true);else setStatus('Map pin service unavailable. All 167 addresses remain searchable; choose Google Maps or walking directions for any address.');}
 function onLocate(){if(!navigator.geolocation){setStatus('Location is unavailable on this browser. You can still search all coffeeshops.');return;}setStatus('Asking your phone for its approximate location…');navigator.geolocation.getCurrentPosition(pos=>{myPos=[pos.coords.latitude,pos.coords.longitude];sortedByDistance=true;$('nearby').classList.add('active');if(map){L.circleMarker(myPos,{radius:8,color:'#fff',weight:3,fillColor:'#2980d4',fillOpacity:1}).addTo(map).bindPopup('Your location');map.flyTo(myPos,14)}renderList();setStatus('Showing nearby shops first (where their coordinates are available).',true)},()=>setStatus('Location not shared. The full city map is still available.'),{enableHighAccuracy:false,timeout:10000,maximumAge:300000})}
 function downloadCSV(){const pins=official.filter(s=>s.lat!=null),lines=['name,address,latitude,longitude',...pins.map(s=>[s.name||'Coffeeshop',s.address,s.lat,s.lng].map(x=>'"'+String(x).replaceAll('"','""')+'"').join(','))];let blob=new Blob([lines.join('\n')],{type:'text/csv;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='amsterdam-coffeeshops-pinned.csv';a.click();URL.revokeObjectURL(a.href)}
-function main(){restore();$('topCount').textContent=ALL_COUNT;$('favCount').textContent=favs.size;initMap();for(const s of official)if(s.lat!=null)addMarker(s);refreshPinCount();renderList();$('search').addEventListener('input',renderList);$('area').addEventListener('change',renderList);$('allTab').onclick=()=>{currentTab='all';$('allTab').classList.add('active');$('savedTab').classList.remove('active');renderList()};$('savedTab').onclick=()=>{currentTab='saved';$('savedTab').classList.add('active');$('allTab').classList.remove('active');renderList()};$('resetMap').onclick=()=>map?.flyTo([52.3695,4.8975],12);$('streetMode').onclick=()=>setMapMode('street');$('transportMode').onclick=()=>{tileFailures=0;setMapMode('transit');};$('routesMode').onclick=()=>setMapMode('routes');$('routeKeyButton').onclick=()=>setRouteKeyVisible($('routePanel').classList.contains('hidden'));$('closeRoutePanel').onclick=()=>setRouteKeyVisible(false);$('routeAll').onclick=()=>{if(routeLines){enabledRouteKeys=new Set(routeLines.map(r=>r.key));drawRoutes();renderRouteKey()}};$('routeNone').onclick=()=>{if(routeLines){enabledRouteKeys=new Set();drawRoutes();renderRouteKey()}};$('routeRetry').onclick=()=>loadRoutes();$('locateMap').onclick=onLocate;$('nearby').onclick=onLocate;$('exportBtn').onclick=downloadCSV;if(official.some(s=>s.lat!=null))setStatus(`Loaded ${official.filter(s=>s.lat!=null).length} cached markers; refreshing missing locations…`,true);geocodeAll();}
+function main(){restore();$('topCount').textContent=ALL_COUNT;$('favCount').textContent=favs.size;initMap();for(const s of official)if(s.lat!=null)addMarker(s);refreshPinCount();renderList();$('search').addEventListener('input',renderList);$('area').addEventListener('change',renderList);$('allTab').onclick=()=>{currentTab='all';$('allTab').classList.add('active');$('savedTab').classList.remove('active');renderList()};$('savedTab').onclick=()=>{currentTab='saved';$('savedTab').classList.add('active');$('allTab').classList.remove('active');renderList()};$('resetMap').onclick=()=>map?.flyTo([52.3695,4.8975],12);$('streetMode').onclick=()=>setMapMode('street');$('transportMode').onclick=()=>{tileFailures=0;setMapMode('bus');};$('routesMode').onclick=()=>setMapMode('routes');$('routeKeyButton').onclick=()=>{const mode=$('routePanel').dataset.mode;if(mode==='metro'&&routeLines)renderRouteKey();setRouteKeyVisible($('routePanel').classList.contains('hidden'))};$('closeRoutePanel').onclick=()=>setRouteKeyVisible(false);$('routeAll').onclick=()=>{if($('routePanel').dataset.mode==='metro'&&routeLines){enabledRouteKeys=new Set(routeLines.map(r=>r.key));drawRoutes();renderRouteKey()}};$('routeNone').onclick=()=>{if($('routePanel').dataset.mode==='metro'&&routeLines){enabledRouteKeys=new Set();drawRoutes();renderRouteKey()}};$('routeRetry').onclick=()=>{if($('routePanel').dataset.mode==='metro')loadRoutes()};$('locateMap').onclick=onLocate;$('nearby').onclick=onLocate;$('exportBtn').onclick=downloadCSV;if(official.some(s=>s.lat!=null))setStatus(`Loaded ${official.filter(s=>s.lat!=null).length} cached markers; refreshing missing locations…`,true);geocodeAll();}
 main();
 window.addEventListener('message',event=>{
  if(event.origin!==window.location.origin)return;
@@ -328,5 +331,6 @@ window.addEventListener('message',event=>{
  if(field){field.value=query;field.dispatchEvent(new Event('input',{bubbles:true}));}
 });
 </script>
+<script src="assets/atlas-trip.js?v=1"></script>
 </body>
 </html>
