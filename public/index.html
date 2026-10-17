@@ -15,7 +15,7 @@
   <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script defer src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
   <script defer src="assets/shops.js"></script>
-  <script defer src="assets/app.js?v=mapfix2"></script>
+  <script defer src="assets/app.js?v=original-map-v1"></script>
 </head>
 <body>
   <header class="site-header">
@@ -55,25 +55,11 @@
     </section>
 
     <section id="explore" class="explorer-section">
-      <div class="content-wrap explorer-top"><div><span class="small-label">THE CITY IN YOUR POCKET</span><h2>The <em>interactive map.</em></h2><p>Pick a neighbourhood, search by name or street, or tap a marker to see more.</p></div><div class="map-feature"><span class="feature-dot"></span><span id="mapProgress">Loading addresses…</span></div></div>
-      <div class="atlas-app content-wrap" id="atlasApp">
-        <aside class="directory" aria-label="Coffeeshop directory">
-          <div class="directory-head"><div class="directory-strap"><span class="green-dot"></span> EXPLORE AMSTERDAM <span class="directory-count" id="visibleCount">167 places</span></div><div class="directory-title-row"><h3>Find a coffeeshop</h3><button type="button" class="plain-button" id="resetFilters">Reset</button></div>
-            <div class="directory-search"><span aria-hidden="true">⌕</span><label class="sr-only" for="shopSearch">Search shops</label><input id="shopSearch" type="search" placeholder="Name, postcode or street…"></div>
-            <div class="filter-line"><label class="sr-only" for="areaSelect">Neighbourhood</label><select id="areaSelect"><option value="all">All neighbourhoods</option><option value="Centrum">Centrum</option><option value="West">West</option><option value="Nieuw-West">Nieuw-West</option><option value="Zuid">Zuid</option><option value="Oost">Oost</option><option value="Noord">Noord</option><option value="Zuidoost">Zuidoost</option></select><button type="button" class="nearby-btn" id="nearbyBtn" title="Find places near you">⌖ Nearby</button></div>
-            <div class="directory-tabs" role="group" aria-label="Places display"><button class="is-active" type="button" id="allTab">All places</button><button type="button" id="savedTab">Saved <span id="savedCount">0</span></button></div>
-          </div>
-          <div id="shopList" class="shop-list" aria-live="polite"></div>
-          <div class="directory-footer"><span id="pinProgress">Map coordinates load as you browse.</span><button type="button" id="downloadCsv" title="Download list of addresses">↓ CSV</button></div>
-        </aside>
-        <div class="map-area" id="mapArea">
-          <div id="map" role="application" aria-label="Interactive map of Amsterdam cannabis coffeeshops"></div>
-          <div class="map-toolbar"><button type="button" id="locateBtn" class="map-tool">⌖ <span>My location</span></button><button type="button" id="resetMapBtn" class="map-tool">↺ <span>Reset map</span></button></div>
-          <div class="map-legend"><span class="legend-icon"></span><span><b id="mapCount">0 mapped</b> of 167 published addresses</span></div>
-          <article class="place-panel is-hidden" id="placePanel" aria-label="Selected coffeeshop information"></article>
-        </div>
-        <div class="mobile-switch" role="group" aria-label="Mobile map display"><button type="button" class="active" id="showListBtn">☷ List</button><button type="button" id="showMapBtn">⌖ Map</button></div>
+      <div class="content-wrap explorer-top"><div><span class="small-label">THE CITY IN YOUR POCKET</span><h2>The <em>interactive map.</em></h2><p>Pick a neighbourhood, search by name or street, or tap a marker to see more.</p></div><div class="map-feature"><span class="feature-dot"></span><span id="mapProgress">Original interactive map</span></div></div>
+      <div class="content-wrap atlas-map-embed">
+        <iframe id="mapFrame" title="Amsterdam coffeeshop interactive map with location search and favourites" src="map.html" loading="eager" allow="geolocation" referrerpolicy="strict-origin-when-cross-origin"></iframe>
       </div>
+      <div class="content-wrap full-map-link"><a href="map.html" target="_blank" rel="noopener">Open the original map full screen ↗</a></div>
       <div class="content-wrap map-caveat">The atlas uses Amsterdam's published 2026 cannabis-tolerance address list. It is <strong>not</strong> a live licensing, opening-hours or availability feed; verify individual businesses before visiting. Name matches and historic photos may be out of date.</div>
     </section>
 
