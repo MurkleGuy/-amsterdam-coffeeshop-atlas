@@ -25,7 +25,7 @@
  '<p class="tripNote" id="gpsMessage">GPS is off. Your browser will ask permission when you turn it on.</p>'+
  '<div class="tripRoute hidden" id="tripRoute">'+
  '<div class="tripRouteHead"><b>Walking route</b><button type="button" id="routeClose">×</button></div>'+
- '<div id="tripRouteSummary"></div><div id="tripRouteSteps"></div>'+
+ '<div id="tripRouteSummary"></div><p class="tripRouteCaution">Walking paths come from OpenStreetMap. Use marked pavements and legal crossings. Never follow a route through traffic or restricted land. Accessibility and stairs have not been independently checked.</p><div id="tripRouteSteps"></div>'+
  '<div class="tripRow"><button type="button" id="startNavigation">▶ Start GPS guidance</button><button type="button" id="routeRefresh">Replan</button><a id="googleWalkFallback" target="_blank" rel="noopener">Google Maps</a></div>'+
  '</div>'+
  '<p class="tripNote">Hotel details stay on this device. Hotel search uses Photon/OSM. Planning a walk sends the start and destination coordinates to a public walking-route service. GPS only works with permission while this page is open. Do not use this as a safety-critical navigation app.</p>'+
@@ -154,7 +154,7 @@
   $('tripPanel').classList.remove('hidden');$('tripToggle').setAttribute('aria-expanded','true');
   $('tripRoute').classList.remove('hidden');$('tripRouteSummary').textContent='Planning walking route…';$('tripRouteSteps').innerHTML='';
   $('googleWalkFallback').href=googleFrom(s);
-  const body={locations:[{lat:startSource.lat,lon:startSource.lng},{lat:s.lat,lon:s.lng}],costing:'pedestrian',units:'kilometers',directions_options:{language:'en-US',units:'kilometers'}};
+  const body={locations:[{lat:startSource.lat,lon:startSource.lng},{lat:s.lat,lon:s.lng}],costing:'pedestrian',costing_options:{pedestrian:{walkway_factor:.8,sidewalk_factor:.8,alley_factor:3,driveway_factor:7,max_hiking_difficulty:0}},units:'kilometers',directions_options:{language:'en-US',units:'kilometers'}};
   try{
    const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),13000);
    let response;
@@ -181,9 +181,10 @@
   if(!walkingInfo||!locationFix||!maneuvers.length)return;
   const points=walkingInfo.shape;let nearest=0,smallest=Infinity;
   for(let i=0;i<points.length;i++){const d=(points[i][0]-locationFix.lat)**2+(points[i][1]-locationFix.lng)**2;if(d<smallest){smallest=d;nearest=i}}
+  const routeOffsetMeters=Math.sqrt(smallest)*111000;
   const next=maneuvers.find(m=>m.begin_shape_index>=nearest)||maneuvers[maneuvers.length-1];
   const el=$('tripRouteSteps');
-  if(el&&next)el.innerHTML='<div class="tripStep"><b>Next:</b> '+escTrip(next.instruction||'Continue along the route')+'</div>'+maneuvers.filter(m=>m.begin_shape_index>nearest).slice(1,6).map(m=>'<div class="tripStep">'+escTrip(m.instruction||'Continue')+'</div>').join('');
+  if(el&&next)el.innerHTML=(routeOffsetMeters>125?'<div class="tripOffRoute">You may be off the walking route. Stop and check your surroundings; tap Replan or use Google Maps.</div>':'')+'<div class="tripStep"><b>Next:</b> '+escTrip(next.instruction||'Continue along the route')+'</div>'+maneuvers.filter(m=>m.begin_shape_index>nearest).slice(1,6).map(m=>'<div class="tripStep">'+escTrip(m.instruction||'Continue')+'</div>').join('');
  }
  function closeRoute(){gpsFollow=false;walkingInfo=null;maneuvers=[];if($('startNavigation'))$('startNavigation').textContent='▶ Start GPS guidance';if(walkingShape){map.removeLayer(walkingShape);walkingShape=null;}$('tripRoute').classList.add('hidden')}
  $('tripToggle').onclick=()=>{const open=$('tripPanel').classList.contains('hidden');$('tripPanel').classList.toggle('hidden',!open);$('tripToggle').setAttribute('aria-expanded',String(open))};
