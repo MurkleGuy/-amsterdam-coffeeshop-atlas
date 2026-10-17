@@ -92,8 +92,25 @@ const $=id=>document.getElementById(id);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const hav=(a,b)=>{const R=6371,toR=Math.PI/180,dLat=(b[0]-a[0])*toR,dLng=(b[1]-a[1])*toR,x=Math.sin(dLat/2)**2+Math.cos(a[0]*toR)*Math.cos(b[0]*toR)*Math.sin(dLng/2)**2;return 2*R*Math.asin(Math.sqrt(x));};
 const getArea=s=>{let p=parseInt(s.postcode.slice(0,4));if(p>=1100)return'Zuidoost';if(p>=1020&&p<1040)return'Noord';if(p>=1040&&p<1060)return'West';if(p>=1060&&p<1070)return'Nieuw-West';if(p>=1070&&p<1090)return'Zuid';if(p>=1090&&p<1100)return'Oost';return'Centrum';};
-const gmaps=s=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(s.address);
-const walk=s=>'https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(s.address)+'&travelmode=walking';
+/* Name + address searches the Google business, with verified Place IDs supported in future. */
+const businessDestination=s=>s.name
+ ?[s.name,s.street+' '+s.number+(s.suffix||''),s.postcode,'Amsterdam','Netherlands'].join(', ')
+ :s.address;
+const gmaps=s=>{
+ const u=new URL('https://www.google.com/maps/search/');
+ u.searchParams.set('api','1');u.searchParams.set('query',businessDestination(s));
+ if(s.googlePlaceId)u.searchParams.set('query_place_id',s.googlePlaceId);
+ return u.toString();
+};
+const directions=(s,travelmode)=>{
+ const u=new URL('https://www.google.com/maps/dir/');
+ u.searchParams.set('api','1');u.searchParams.set('destination',businessDestination(s));
+ u.searchParams.set('travelmode',travelmode);
+ if(s.googlePlaceId)u.searchParams.set('destination_place_id',s.googlePlaceId);
+ return u.toString();
+};
+const walk=s=>directions(s,'walking');
+const transit=s=>directions(s,'transit');
 function setStatus(text,done=false){$('statusText').textContent=text;$('statusDot').className='dot'+(done?' done':'');}
 function saveFavs(){try{localStorage.setItem(FAV_KEY,JSON.stringify([...favs]))}catch(e){}}
 function saveCoords(){try{localStorage.setItem(GEO_KEY,JSON.stringify(cache))}catch(e){}}
@@ -106,11 +123,11 @@ function renderList(){const arr=filtered();$('listCount').textContent=`${arr.len
  refreshClusters(arr);
 }
 function refreshClusters(visible){if(!map||!clusters)return;clusters.clearLayers();for(const s of visible){const marker=geoMarkers[s.id];if(marker)clusters.addLayer(marker)}}
-function showDetail(s){const panel=$('detail');if(!s){panel.classList.add('hidden');return}panel.classList.remove('hidden');panel.innerHTML=`<div class="detailHead"><div><span class="eyebrow">${esc(getArea(s))} · ADDRESS ${s.id} / ${ALL_COUNT}</span><h3>${esc(s.name||s.street+' '+s.number)}</h3></div><button class="close" id="closeDetail" aria-label="Close details">×</button></div><p>${esc(s.address)}</p><div class="notice">Address is on Amsterdam's 2026 tolerance list. Check that this shop is currently trading before visiting.</div><div class="buttons"><a href="${walk(s)}" target="_blank" rel="noopener">↗ Walking directions</a><a class="secondary" href="${gmaps(s)}" target="_blank" rel="noopener">Google Maps</a><button id="detailFav" class="action secondary">${isSaved(s)?'★ Saved':'☆ Save place'}</button></div>`;$('closeDetail').onclick=()=>{panel.classList.add('hidden');selected=null;renderList()};$('detailFav').onclick=()=>toggleFav(s.id);
+function showDetail(s){const panel=$('detail');if(!s){panel.classList.add('hidden');return}panel.classList.remove('hidden');panel.innerHTML=`<div class="detailHead"><div><span class="eyebrow">${esc(getArea(s))} · ADDRESS ${s.id} / ${ALL_COUNT}</span><h3>${esc(s.name||s.street+' '+s.number)}</h3></div><button class="close" id="closeDetail" aria-label="Close details">×</button></div><p>${esc(s.address)}</p><div class="notice">Address is on Amsterdam's 2026 tolerance list. ${s.name?"Google Maps directions search for the named coffeeshop, not just the house number. Confirm the correct business before travelling.":"This address has no verified shop name, so directions use the published street address."}</div><div class="buttons"><a href="${walk(s)}" target="_blank" rel="noopener">↗ Walk</a><a href="${transit(s)}" target="_blank" rel="noopener">🚋 Transit</a><a class="secondary" href="${gmaps(s)}" target="_blank" rel="noopener">${s.name?"Find shop in Google Maps":"View address in Google Maps"}</a><button id="detailFav" class="action secondary">${isSaved(s)?'★ Saved':'☆ Save place'}</button></div>`;$('closeDetail').onclick=()=>{panel.classList.add('hidden');selected=null;renderList()};$('detailFav').onclick=()=>toggleFav(s.id);
 }
 function selectShop(id){const s=official.find(x=>x.id===id);if(!s)return;selected=id;showDetail(s);renderList();if(map&&s.lat!=null){map.flyTo([s.lat,s.lng],Math.max(16,map.getZoom()),{duration:.6});let mark=geoMarkers[s.id];if(mark){const later=()=>{mark.openPopup()};setTimeout(later,540)}}}
 function refreshPinCount(){let n=official.filter(s=>Number.isFinite(s.lat)).length;$('pinnedCount').textContent=n;}
-function addMarker(s){if(!map||!Number.isFinite(s.lat)||!Number.isFinite(s.lng)||geoMarkers[s.id])return;const ico=L.divIcon({className:'pinIcon',html:'<div class="pin"><span>•</span></div>',iconSize:[26,26],iconAnchor:[13,26]});let m=L.marker([s.lat,s.lng],{icon:ico,title:s.name||s.address});m.bindPopup(`<div style="min-width:170px"><b style="font-size:13px">${esc(s.name||s.street+' '+s.number)}</b><div style="font-size:11px;color:#607269;margin:4px 0">${esc(s.address)}</div><a href="${walk(s)}" target="_blank" rel="noopener" style="font-size:12px;font-weight:bold;color:#1b6847">Walking directions ↗</a></div>`);m.on('click',()=>{selected=s.id;showDetail(s);renderList()});geoMarkers[s.id]=m;}
+function addMarker(s){if(!map||!Number.isFinite(s.lat)||!Number.isFinite(s.lng)||geoMarkers[s.id])return;const ico=L.divIcon({className:'pinIcon',html:'<div class="pin"><span>•</span></div>',iconSize:[26,26],iconAnchor:[13,26]});let m=L.marker([s.lat,s.lng],{icon:ico,title:s.name||s.address});m.bindPopup(`<div style="min-width:170px"><b style="font-size:13px">${esc(s.name||s.street+' '+s.number)}</b><div style="font-size:11px;color:#607269;margin:4px 0">${esc(s.address)}</div><div style="display:flex;gap:11px;flex-wrap:wrap;margin-top:6px"><a href="${walk(s)}" target="_blank" rel="noopener" style="font-size:12px;font-weight:bold;color:#1b6847">Walk ↗</a><a href="${transit(s)}" target="_blank" rel="noopener" style="font-size:12px;font-weight:bold;color:#1b6847">Transit ↗</a><a href="${gmaps(s)}" target="_blank" rel="noopener" style="font-size:12px;font-weight:bold;color:#1b6847">${s.name?"Shop on Maps ↗":"Address ↗"}</a></div></div>`);m.on('click',()=>{selected=s.id;showDetail(s);renderList()});geoMarkers[s.id]=m;}
 function setMapMode(mode){
  if(!map)return;
  const isTransit=mode==='transit';
