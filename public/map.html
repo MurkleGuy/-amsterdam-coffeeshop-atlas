@@ -74,6 +74,48 @@ html,body{height:100%;width:100%;overflow:hidden}
  .main{height:100%;grid-template-rows:minmax(330px,54%) minmax(0,46%)}
 }
 </style>
+
+<style id="atlas-fullscreen-drawer">
+/* Compact shop details: primary walk, optional routes, and Google listing at bottom. */
+.detail{width:min(390px,calc(100% - 26px));padding:15px}
+.detail .detailAddress{margin:5px 0 0;font-size:12px}
+.detailRouteMain,.detailRouteMore,.detailBottom{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:11px}
+.detailRouteMore.hidden{display:none}
+.detailRouteMore{margin-top:7px}
+.detailRouteMore button:last-child{grid-column:1/-1}
+.detail .detailRouteMain button,.detail .detailRouteMore button,.detail .detailBottom button,.detail .detailBottom a{min-width:0;display:flex;align-items:center;justify-content:center;min-height:39px;border-radius:9px;padding:9px 8px;font-size:11px;font-weight:750;line-height:1.2;text-align:center}
+.detail .detailBottom{margin-top:8px}
+.detail .detailBottom a{border:1px solid #d8e5da}
+.detail .detailFinePrint{font-size:10px;line-height:1.35;color:#7c887f;margin:9px 0 0}
+.detail .eyebrow{font-size:9px}
+.shopsToggle,.shopDrawerHead{display:none}
+/* Native mobile map: the map fills the screen; shops are a closable bottom drawer. */
+@media(max-width:760px){
+ html,body,.app{height:100%;min-height:0;overflow:hidden}
+ .main{position:relative!important;display:block!important;height:100%!important;min-height:0!important}
+ .mapWrap{position:absolute;inset:0;height:100%!important;width:100%!important;min-height:0!important;grid-row:auto!important}
+ #map{height:100%!important;min-height:0}
+ .sidebar{position:absolute!important;z-index:560!important;top:auto!important;left:0;right:0;bottom:0;height:min(74%,590px)!important;max-height:90%;border:0!important;border-radius:18px 18px 0 0;background:#f4f6f0;box-shadow:0 -12px 45px rgba(6,34,20,.25);transform:translateY(calc(100% + 10px));transition:transform .22s ease;pointer-events:none;min-height:0;grid-row:auto!important}
+ .sidebar.open{transform:translateY(0);pointer-events:auto}
+ .shopDrawerHead{display:flex;justify-content:space-between;align-items:center;flex:none;background:#fff;padding:12px 15px;border-bottom:1px solid #e4ece4;border-radius:18px 18px 0 0;color:#254d38;font-size:14px}
+ .shopDrawerHead button{background:#edf4ee;color:#245c44;border:0;border-radius:9px;width:32px;height:32px;font-size:20px}
+ .shopsToggle{display:flex;position:absolute;z-index:424;top:57px;left:9px;align-items:center;gap:6px;font-size:11px;padding:9px 11px}
+ .shopsToggle span{color:#638c73;font-variant-numeric:tabular-nums}
+ .mapActions{left:auto!important;right:9px!important;top:9px!important;width:auto!important;max-width:calc(100% - 102px)!important;gap:4px}
+ .base-switch .floating{font-size:11px;padding:8px 8px}
+ .mapActions #routeKeyButton{font-size:10px;padding:8px 7px}
+ .routePanel{top:57px!important;right:9px!important;max-height:calc(100% - 85px)!important}
+ .mapLegend{max-width:185px!important;bottom:41px!important;left:8px!important;opacity:.92;padding:6px 8px!important}
+ .mapLegend>b{font-size:10px}
+ .mapLegend div:last-child{display:none}
+ .mapWrap.has-detail .mapLegend{display:none}
+ .detail{left:8px!important;right:8px!important;bottom:10px!important;width:auto!important;max-height:calc(100% - 104px);overflow-y:auto;border-radius:17px;padding:14px!important;box-shadow:0 15px 35px rgba(15,47,30,.26)}
+ .detail .detailHead h3{font-size:16px}
+ .detail .detailRouteMain button,.detail .detailRouteMore button,.detail .detailBottom button,.detail .detailBottom a{padding:10px 7px!important;min-height:43px!important;font-size:11px!important}
+ .tripTools{z-index:456!important}
+ .tripPanel{max-height:calc(100% - 70px)!important}
+}
+</style>
 </head>
 <body>
 <div class="app">
