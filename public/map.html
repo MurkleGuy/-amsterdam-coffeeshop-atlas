@@ -157,7 +157,7 @@ function unpackRoutes(json){
   const mode=tags.route==='subway'?'metro':tags.route==='tram'||tags.route==='light_rail'?'tram':tags.route==='ferry'?'ferry':null;
   if(!mode||!raw)continue;
   const ref=mode==='metro'?raw.replace(/^M/i,''):raw;
-  if(!/^[A-Z]?\\d{1,3}[A-Z]?$/.test(ref))continue;
+  if(!/^[A-Z]?\d{1,3}[A-Z]?$/.test(ref))continue;
   // GVB's 2026 tram reference network; old OSM relation 3 is not an active 2026 line.
   if(mode==='tram'&&!knownTrams.has(ref))continue;
   if(mode==='metro'&&!Object.hasOwn(METRO_COLORS,ref))continue;
