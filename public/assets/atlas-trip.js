@@ -19,7 +19,7 @@
  '<div class="tripHotel" id="tripHotelState"></div>'+
  '<label class="tripLabel" for="hotelSearch">Find your hotel</label>'+
  '<div class="tripSearch"><input id="hotelSearch" type="search" autocomplete="off" placeholder="Hotel name or address…"><button type="button" id="hotelFind">Find</button></div>'+
- '<div id="hotelMatches" class="hotelMatches" role="status"></div>'+
+ '<div class="tripRow"><button type="button" id="nearbyHotels">Show nearby hotels</button><button type="button" id="hideHotelPins">Hide search pins</button></div><div id="hotelMatches" class="hotelMatches" role="status"></div>'+
  '<div class="tripRow"><button type="button" id="hotelByTap">⌖ Pick on map</button><button type="button" id="hotelClear">Forget hotel</button></div>'+
  '<div class="tripRow"><button type="button" id="gpsToggle">◎ Start live location</button><button type="button" id="gpsCentre">Centre</button></div>'+
  '<p class="tripNote" id="gpsMessage">GPS is off. Your browser will ask permission when you turn it on.</p>'+
@@ -188,7 +188,7 @@
  function closeRoute(){walkingInfo=null;maneuvers=[];if(walkingShape){map.removeLayer(walkingShape);walkingShape=null;}$('tripRoute').classList.add('hidden')}
  $('tripToggle').onclick=()=>{const open=$('tripPanel').classList.contains('hidden');$('tripPanel').classList.toggle('hidden',!open);$('tripToggle').setAttribute('aria-expanded',String(open))};
  $('tripClose').onclick=()=>$('tripToggle').click();
- $('hotelFind').onclick=hotelLookup;
+ $('hotelFind').onclick=hotelLookup;$('nearbyHotels').onclick=()=>{$('hotelSearch').value='hotel';hotelLookup()};$('hideHotelPins').onclick=()=>{searchLayer.clearLayers();$('hotelMatches').innerHTML=''};
  $('hotelSearch').addEventListener('keydown',e=>{if(e.key==='Enter')hotelLookup()});
  $('hotelByTap').onclick=hotelByMap;
  $('hotelClear').onclick=()=>{hotel=null;try{localStorage.removeItem(STORAGE)}catch{}updateHotelUI();showMessage('Saved hotel removed.')};
@@ -198,5 +198,5 @@
  $('routeRefresh').onclick=()=>{if(lastShop)planTo(lastShop,locationFix||hotel)};
  window.addEventListener('pagehide',stopGPS);
  updateHotelUI();
- window.AtlasTrip={planTo,hotel:()=>hotel,gps:()=>locationFix,open:()=>$('tripToggle').click()};
+ window.AtlasTrip={planTo,hotel:()=>hotel,gps:()=>locationFix,open:()=>{$('tripPanel').classList.remove('hidden');$('tripToggle').setAttribute('aria-expanded','true')},fromGPS:s=>{if(locationFix)planTo(s,locationFix);else{$('tripPanel').classList.remove('hidden');$('tripToggle').setAttribute('aria-expanded','true');showMessage('Enable live GPS, then select this shop again to route from your position.')}}};
 })();
