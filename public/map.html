@@ -40,6 +40,7 @@ button,input,select{font:inherit}button{cursor:pointer}a{color:inherit}
 .leaflet-marker-icon.pinIcon{margin-left:-18px!important;margin-top:-40px!important}
 .marker-cluster-small,.marker-cluster-medium,.marker-cluster-large{background:rgba(231,244,224,.80)!important;border:1px solid rgba(34,106,73,.15)!important;box-shadow:0 2px 12px rgba(20,51,32,.18)}
 .marker-cluster-small div,.marker-cluster-medium div,.marker-cluster-large div{background:#235b43!important;color:#fffdf2!important;font-weight:700!important;font-size:12px!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.13)}
+.atlas-muted-base .leaflet-tile{filter:saturate(.65) contrast(.92) brightness(1.05)}
 .leaflet-container a.leaflet-popup-close-button{color:#597e66}.leaflet-control-attribution{font-size:10px!important}
 .notice{background:#fff5dd;color:#745b27;border-radius:10px;padding:10px 12px;font-size:11px;line-height:1.4}
 @media(max-width:760px){.mapActions{left:9px;right:9px;max-width:none;top:9px}.mapActions>.floating{display:none}.base-switch{margin-left:auto}.base-switch .floating{padding:7px 8px;font-size:11px}.app{height:100dvh;min-height:0;grid-template-rows:auto minmax(0,1fr)}.topbar{padding:10px 12px;gap:7px}.brand{gap:8px}.brandMark{width:35px;height:35px;border-radius:10px;font-size:18px}.brand h1{font-size:14px;letter-spacing:-.3px}.brand small{font-size:9px}.topChip{font-size:10px;padding:6px 8px}.headerButton{display:none}.main{grid-template-columns:1fr;grid-template-rows:minmax(310px,53%) minmax(0,47%)}.mapWrap{grid-row:1}.sidebar{grid-row:2;border-right:0;border-top:1px solid #c7d9ca}.controls{padding:11px 12px}.controls .eyebrow,.controls h2,.controls .desc{display:none}.filters{grid-template-columns:1fr 100px;margin-top:7px}.tabline{margin-top:5px}.list{padding:5px 8px 18px}.listing{padding:9px;grid-template-columns:23px minmax(0,1fr) 25px}.num{height:23px;width:23px;font-size:10px}.l-address{margin-top:2px}.l-meta{display:none}.mapLegend{left:9px;bottom:9px;font-size:10px;max-width:210px;padding:7px 9px}.mapActions{right:10px;top:10px}.floating{padding:8px 10px;font-size:11px}.detail{left:10px;right:10px;bottom:9px;width:auto;padding:12px}.detail h3{font-size:15px}.detail .buttons{margin-top:10px}.detail .buttons a,.detail .buttons button{padding:9px 10px}}
@@ -149,24 +150,15 @@ function initMap(){
  if(!window.L){setStatus('Map library could not load. Search the complete list and open each address in Google Maps.');$('legend').innerHTML='<b>Map requires an internet connection.</b><br>All 167 addresses remain in the list.';return false;}
  map=L.map('map',{zoomControl:false,preferCanvas:true}).setView([52.3695,4.8975],12);
  L.control.zoom({position:'bottomright'}).addTo(map);
- // Clean light basemap keeps street and place names legible.
- // The OpenRailwayMap transparent overlay shows mapped metro, tram and rail tracks.
- // Ferry route coverage is not guaranteed: Google Transit directions remain available per shop.
- streetLayer=L.tileLayer('https://basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{
-  maxZoom:19,subdomains:'abcd',attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>'
+ // OpenStreetMap community raster tiles do not require an API key.
+ // The atlas-muted-base CSS softens the map labels and streets without hiding them.
+ // OpenRailwayMap adds mapped metro, tram and rail tracks. For ferries, use the Google Transit link.
+ streetLayer=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{
+  maxZoom:19,className:'atlas-muted-base',
+  attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>'
  }).addTo(map);
- let baseTileFailures=0;
- streetLayer.on('tileerror',()=>{
-  if(++baseTileFailures>=5&&!map._atlasFallback){
-   map._atlasFallback=true;
-   // Fall back to the standard basemap if the cleaner tiles are unreachable.
-   const fallback=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'});
-   fallback.addTo(map);fallback.bringToBack();map.removeLayer(streetLayer);
-   streetLayer=fallback;
-  }
- });
  transportLayer=L.tileLayer('https://tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png',{
-  maxZoom:19,maxNativeZoom:18,opacity:0.65,
+  maxZoom:19,maxNativeZoom:18,opacity:0.47,
   attribution:'Tracks &copy; <a href="https://www.openrailwaymap.org/" target="_blank" rel="noopener">OpenRailwayMap</a> (CC BY-SA 2.0), map data &copy; OpenStreetMap contributors'
  });
  transportLayer.on('tileload',()=>{tileFailures=0;});
