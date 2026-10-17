@@ -98,6 +98,11 @@ html,body{height:100%;width:100%;overflow:hidden}
 .detail .detailBottom{display:block;margin-top:9px}
 .detail .detailBottom a{display:flex;width:100%;min-height:42px;text-decoration:none;align-items:center;justify-content:center;text-align:center;background:#f1f5ef!important;color:#285b42!important}
 .detail .detailFinePrint{margin-top:7px;color:#738177;font-size:10px;line-height:1.4}
+.tripWelcome{display:block;padding:12px;background:#eaf5e9;border-radius:11px;border:1px solid #cbdccc;line-height:1.45}
+.tripWelcome.hidden{display:none}
+.tripWelcome b{font-size:15px;color:#24583f}
+.tripWelcome p{margin:6px 0 9px;font-size:12px;line-height:1.45;color:#4b6c59}
+.tripWelcome button{border:1px solid #bfd4c5;background:#fff;border-radius:8px;color:#285d44;padding:8px 11px;font-size:12px;font-weight:700}
 .tripTools>.floating{padding:12px 15px;font-size:13px;border:1px solid #bfdac4;background:#fffdf7;color:#235941;min-height:45px;box-shadow:0 4px 18px rgba(15,46,28,.2)}
 @media(max-width:760px){
  .tripTools>.floating{padding:11px 14px;font-size:13px;min-height:45px}
@@ -440,6 +445,6 @@ window.addEventListener('message',event=>{
  if(field){field.value=query;field.dispatchEvent(new Event('input',{bubbles:true}));if(query)openShops();}
 });
 </script>
-<script src="assets/atlas-trip.js?v=4"></script>
+<script src="assets/atlas-trip.js?v=5"></script>
 </body>
 </html>
