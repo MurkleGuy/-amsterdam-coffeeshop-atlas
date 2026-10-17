@@ -9,9 +9,10 @@
  const photoSource=s=>'https://commons.wikimedia.org/wiki/File:'+encodeURIComponent(s.photo.file);
  let pendingSearch=null,mapLoaded=false;
  function sendSearch(query){
-  pendingSearch=String(query??'').trim();
-  $('explore')?.scrollIntoView({behavior:'smooth',block:'start'});
-  if(mapLoaded){$('mapFrame')?.contentWindow?.postMessage({type:'ATLAS_SEARCH',query:pendingSearch},location.origin);}
+  const shop=String(query??'').trim().slice(0,110);
+  const params=shop?'?shop='+encodeURIComponent(shop):'';
+  // Gallery browsing leads into the hotel-first welcome rather than bypassing setup.
+  location.assign('index.html'+params);
  }
  function showPhotos(){
   const ids=[47,97,40,81];
