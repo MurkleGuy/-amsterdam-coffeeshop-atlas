@@ -113,8 +113,9 @@ html,body{height:100%;width:100%;overflow:hidden}
  .detail .detailHead h3{font-size:16px}
  .detail .detailRouteMain button,.detail .detailRouteMore button,.detail .detailBottom button,.detail .detailBottom a{padding:10px 7px!important;min-height:43px!important;font-size:11px!important}
  .tripTools{z-index:456!important}
- .tripPanel{max-height:calc(100% - 70px)!important}
+ .tripPanel{max-height:min(72dvh,570px)!important}
 }
+ .tripRouteCaution{font-size:10px;line-height:1.4;color:#6c6352;background:#fff8e9;border-radius:8px;padding:8px;margin:2px 0 5px}.tripOffRoute{font-size:11px;font-weight:750;background:#fff0d5;color:#74521c;border-radius:8px;padding:9px;line-height:1.45;margin-bottom:7px}
 </style>
 </head>
 <body>
@@ -420,6 +421,6 @@ window.addEventListener('message',event=>{
  if(field){field.value=query;field.dispatchEvent(new Event('input',{bubbles:true}));if(query)openShops();}
 });
 </script>
-<script src="assets/atlas-trip.js?v=2"></script>
+<script src="assets/atlas-trip.js?v=3"></script>
 </body>
 </html>
