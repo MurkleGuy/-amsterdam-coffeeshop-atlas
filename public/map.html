@@ -78,7 +78,7 @@ html,body{height:100%;width:100%;overflow:hidden}
   </aside>
   <div class="mapWrap">
    <div id="map" role="region" aria-label="Interactive map of Amsterdam coffeeshop locations"></div>
-   <div class="mapActions"><div class="base-switch" role="group" aria-label="Map view"><button type="button" id="streetMode" class="floating" aria-pressed="false">Street</button><button type="button" id="transportMode" class="floating active" aria-pressed="true">Tracks</button><button type="button" id="routesMode" class="floating" aria-pressed="false">Lines</button></div><button type="button" id="routeKeyButton" class="floating routeControlHidden" aria-expanded="false" aria-controls="routePanel">▤ Key</button><button id="resetMap" class="floating">⌖ Amsterdam</button><button id="locateMap" class="floating">◎ My location</button></div><section class="routePanel hidden" id="routePanel" aria-label="Individual transport line colour key"><div class="routePanelHead"><b>Transport lines</b><button type="button" id="closeRoutePanel" aria-label="Close route key">×</button></div><p id="routeInfo" class="routeInfo" role="status">Choose Lines to load numbered routes.</p><div class="routePanelTools"><button type="button" id="routeAll">All</button><button type="button" id="routeNone">None</button><button type="button" id="routeRetry" class="routeControlHidden">Retry</button></div><div class="routePanelList" id="routeKey"></div><small class="routeDisclaimer">Route geometry from OpenStreetMap, not live GVB service information. Colours are for this map only; check Google Maps for journeys.</small></section>
+   <div class="mapActions"><div class="base-switch" role="group" aria-label="Map view"><button type="button" id="streetMode" class="floating" aria-pressed="false">Street</button><button type="button" id="transportMode" class="floating active" aria-pressed="true">Tracks</button><button type="button" id="routesMode" class="floating" aria-pressed="false">Lines</button></div><button type="button" id="routeKeyButton" class="floating routeControlHidden" aria-expanded="false" aria-controls="routePanel">▤ Key</button><button id="resetMap" class="floating">⌖ Amsterdam</button><button id="locateMap" class="floating">◎ My location</button></div><section class="routePanel hidden" id="routePanel" aria-label="Individual transport line colour key"><div class="routePanelHead"><b>Transport lines · reference</b><button type="button" id="closeRoutePanel" aria-label="Close route key">×</button></div><p id="routeInfo" class="routeInfo" role="status">Choose Lines to load numbered routes.</p><div class="routePanelTools"><button type="button" id="routeAll">All</button><button type="button" id="routeNone">None</button><button type="button" id="routeRetry" class="routeControlHidden">Retry</button></div><div class="routePanelList" id="routeKey"></div><small class="routeDisclaimer">2025 municipal route map. Some routes changed in 2026; missing lines are not shown. Colours are illustrative. Use Google Maps or GVB for current journeys.</small></section>
    <div id="detail" class="detail hidden" role="dialog" aria-label="Selected coffeeshop details"></div>
    <div class="mapLegend" id="legend"><b>2026 city address list</b><div class="row"><i class="legendDot"></i><span><span id="pinnedCount">0</span> pinned of 167 published addresses</span></div><div style="margin-top:4px">Markers appear as locations are checked.</div></div>
   </div>
@@ -225,49 +225,40 @@ function drawRoutes(){
   if(!enabledRouteKeys.has(line.key))continue;
   const label=(line.mode==='metro'?'Metro ':line.mode==='tram'?'Tram ':'Ferry ')+line.ref;
   const path=L.polyline(line.paths,{pane:'routesPane',color:colourForLine(line),weight:line.mode==='metro'?3.7:2.8,opacity:.90,lineCap:'round',lineJoin:'round',interactive:true});
-  path.bindPopup('<b>'+esc(label)+'</b><br><small>Approximate OpenStreetMap route. Check live GVB service information before travelling.</small>');
+  path.bindPopup('<b>'+esc(label)+'</b><br><small>2025 reference geometry, not verified for 2026. Use Google Maps/GVB for current services.</small>');
   routeLayer.addLayer(path);
  }
- if(routeLines)$('routeInfo').textContent=routeLines.length+' mapped lines · '+enabledRouteKeys.size+' visible. Tick lines to show or hide them.';
+ if(routeLines)$('routeInfo').textContent=routeLines.length+' saved metro/tram routes · '+enabledRouteKeys.size+' visible. Reference geometry from 2025; some 2026 services may differ.';
 }
 async function loadRoutes(){
  if(routeLines){drawRoutes();renderRouteKey();return;}
  if(routeLoadPromise)return routeLoadPromise;
- $('routeInfo').textContent='Loading numbered tram, metro and ferry routes…';
+ $('routeInfo').textContent='Loading saved metro and tram lines…';
  $('routeRetry').classList.add('routeControlHidden');
- let saved=null;
- try{saved=JSON.parse(localStorage.getItem(ROUTE_CACHE)||'null')}catch(e){}
- if(saved&&Array.isArray(saved.lines)&&saved.lines.length&&Date.now()-saved.savedAt<7*86400000){
-  routeLines=saved.lines;enabledRouteKeys=new Set(routeLines.map(r=>r.key));drawRoutes();renderRouteKey();return;
- }
  routeLoadPromise=(async()=>{
   try{
-   let result;
-   const fetchJSON=async url=>{
-    const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),30000);
-    try{
-     const response=await fetch(url,{signal:ctrl.signal,cache:'default'});
-     if(!response.ok)throw Error('HTTP '+response.status);
-     return await response.json();
-    }finally{clearTimeout(timer)}
-   };
-   try{result=await fetchJSON('/api/transport-routes')}catch(error){
-    // Direct Overpass is a fallback for static-only Pages deployments.
-    result=await fetchJSON('https://overpass.private.coffee/api/interpreter?data='+encodeURIComponent(ROUTE_QUERY));
-   }
-   const lines=unpackRoutes(result);
-   if(!lines.length)throw Error('No mapped route geometries were returned.');
-   routeLines=lines;enabledRouteKeys=new Set(lines.map(r=>r.key));drawRoutes();renderRouteKey();
-   try{localStorage.setItem(ROUTE_CACHE,JSON.stringify({savedAt:Date.now(),lines}))}catch(e){}
+   // Local dataset is always tried first: no Overpass, proxy or API key is needed.
+   const resp=await fetch('assets/gvb-routes-2025.json?v=1',{cache:'default'});
+   if(!resp.ok)throw Error('Saved line map file missing: HTTP '+resp.status);
+   const payload=await resp.json();
+   if(payload.reference_year!==2025||!Array.isArray(payload.lines)||payload.lines.length<15)throw Error('Unexpected local route dataset');
+   const lines=payload.lines.filter(line=>
+    ['metro','tram'].includes(line.mode)&&
+    /^(metro|tram):\\d+$/.test(line.key)&&
+    Array.isArray(line.paths)&&line.paths.some(segment=>
+     Array.isArray(segment)&&segment.length>1&&segment.every(p=>
+      Array.isArray(p)&&p.length===2&&Number.isFinite(p[0])&&Number.isFinite(p[1])&&p[0]>52.15&&p[0]<52.5&&p[1]>4.6&&p[1]<5.2
+     )
+    )
+   );
+   if(lines.length<15)throw Error('Saved route data is incomplete');
+   routeLines=lines;
+   enabledRouteKeys=new Set(lines.map(r=>r.key));
+   drawRoutes();renderRouteKey();
   }catch(error){
-   if(saved&&Array.isArray(saved.lines)&&saved.lines.length){
-    routeLines=saved.lines;enabledRouteKeys=new Set(routeLines.map(r=>r.key));drawRoutes();renderRouteKey();
-    $('routeInfo').textContent='Showing saved route map; live route-source refresh was unavailable.';
-   }else{
-    $('routeInfo').textContent='Routes could not load. Try Retry, or use Tracks to see the railway and tram network.';
-    $('routeRetry').classList.remove('routeControlHidden');
-   }
-  }finally{routeLoadPromise=null}
+   $('routeInfo').textContent='The saved transport map did not load. Please press Retry, or switch to Tracks.';
+   $('routeRetry').classList.remove('routeControlHidden');
+  }finally{routeLoadPromise=null;}
  })();
  return routeLoadPromise;
 }
