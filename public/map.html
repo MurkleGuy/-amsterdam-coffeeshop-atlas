@@ -33,8 +33,13 @@ button,input,select{font:inherit}button{cursor:pointer}a{color:inherit}
 .mapActions{position:absolute;z-index:420;top:18px;right:18px;display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end;max-width:calc(100% - 35px)}.floating{background:#fff;border:1px solid #d4e2d7;box-shadow:var(--shadow);border-radius:11px;padding:10px 13px;display:flex;align-items:center;gap:6px;color:#1d4231;font-size:12px;font-weight:700}.floating:hover{background:#edf7ef}
 .base-switch{display:flex;gap:3px;background:#fff;padding:4px;border-radius:12px;box-shadow:var(--shadow);border:1px solid #d1e2d4}.base-switch .floating{box-shadow:none;border:none;padding:8px 10px;border-radius:8px}.base-switch .floating.active{background:#236953;color:white}.base-switch button:focus-visible{outline:2px solid #1c8454;outline-offset:2px}.mapLegend{position:absolute;z-index:420;bottom:18px;left:18px;background:#fff;border-radius:11px;padding:10px 13px;box-shadow:var(--shadow);font-size:11px;color:#60766a;max-width:270px}.mapLegend b{color:var(--ink)}.mapLegend .row{display:flex;gap:7px;align-items:center;margin-top:3px}.legendDot{width:9px;height:9px;background:var(--green);border-radius:50%;display:inline-block}
 .detail{position:absolute;z-index:450;right:18px;bottom:18px;width:min(360px,calc(100% - 36px));border-radius:16px;background:#fff;box-shadow:0 17px 48px rgba(21,47,34,.24);padding:17px;border:1px solid #d6e2da}.detail.hidden{display:none}.detailHead{display:flex;justify-content:space-between;gap:9px}.detail h3{margin:0;font-size:17px;line-height:1.3}.detail p{font-size:12px;color:#788a7d;margin:6px 0}.close{border:0;background:#f0f6f1;border-radius:8px;font-size:17px;color:#61836c;width:30px;height:30px;flex:none}.detail .buttons{display:flex;gap:7px;flex-wrap:wrap;margin-top:16px}.detail a,.detail button.action{background:#1d6348;color:white;border:0;padding:11px 13px;font-size:12px;text-decoration:none;font-weight:720;border-radius:9px}.detail .secondary{background:#edf3ee!important;color:#21533d!important}
-.pinIcon{background:transparent;border:0}.pin{width:26px;height:26px;border:2px solid white;background:#206950;border-radius:10px 10px 10px 2px;box-shadow:0 3px 10px rgba(12,30,20,.32);transform:rotate(-45deg);display:grid;place-items:center}.pin>span{transform:rotate(45deg);font-size:13px;filter:grayscale(1) brightness(0) invert(1)}.leaflet-marker-icon.pinIcon{margin-left:-13px!important;margin-top:-26px!important}
-.marker-cluster-small,.marker-cluster-medium,.marker-cluster-large{background:rgba(42,123,84,.24)}.marker-cluster-small div,.marker-cluster-medium div,.marker-cluster-large div{background:#245b43;color:white;font-weight:800}
+.pinIcon{background:transparent;border:0;overflow:visible!important}
+.pin{width:35px;height:35px;border:2.5px solid #fcfff7;background:linear-gradient(145deg,#246448,#154932);border-radius:13px 13px 13px 3px;box-shadow:0 4px 13px rgba(15,51,33,.30);transform:rotate(-45deg);display:grid;place-items:center;transition:background .18s,box-shadow .18s}
+.pinSymbol{display:grid;place-items:center;transform:rotate(45deg);color:#fffbe7;height:24px;width:24px}
+.pinIcon:hover .pin{background:#367d56;box-shadow:0 6px 20px rgba(15,51,33,.43)}
+.leaflet-marker-icon.pinIcon{margin-left:-18px!important;margin-top:-40px!important}
+.marker-cluster-small,.marker-cluster-medium,.marker-cluster-large{background:rgba(231,244,224,.80)!important;border:1px solid rgba(34,106,73,.15)!important;box-shadow:0 2px 12px rgba(20,51,32,.18)}
+.marker-cluster-small div,.marker-cluster-medium div,.marker-cluster-large div{background:#235b43!important;color:#fffdf2!important;font-weight:700!important;font-size:12px!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.13)}
 .leaflet-container a.leaflet-popup-close-button{color:#597e66}.leaflet-control-attribution{font-size:10px!important}
 .notice{background:#fff5dd;color:#745b27;border-radius:10px;padding:10px 12px;font-size:11px;line-height:1.4}
 @media(max-width:760px){.mapActions{left:9px;right:9px;max-width:none;top:9px}.mapActions>.floating{display:none}.base-switch{margin-left:auto}.base-switch .floating{padding:7px 8px;font-size:11px}.app{height:100dvh;min-height:0;grid-template-rows:auto minmax(0,1fr)}.topbar{padding:10px 12px;gap:7px}.brand{gap:8px}.brandMark{width:35px;height:35px;border-radius:10px;font-size:18px}.brand h1{font-size:14px;letter-spacing:-.3px}.brand small{font-size:9px}.topChip{font-size:10px;padding:6px 8px}.headerButton{display:none}.main{grid-template-columns:1fr;grid-template-rows:minmax(310px,53%) minmax(0,47%)}.mapWrap{grid-row:1}.sidebar{grid-row:2;border-right:0;border-top:1px solid #c7d9ca}.controls{padding:11px 12px}.controls .eyebrow,.controls h2,.controls .desc{display:none}.filters{grid-template-columns:1fr 100px;margin-top:7px}.tabline{margin-top:5px}.list{padding:5px 8px 18px}.listing{padding:9px;grid-template-columns:23px minmax(0,1fr) 25px}.num{height:23px;width:23px;font-size:10px}.l-address{margin-top:2px}.l-meta{display:none}.mapLegend{left:9px;bottom:9px;font-size:10px;max-width:210px;padding:7px 9px}.mapActions{right:10px;top:10px}.floating{padding:8px 10px;font-size:11px}.detail{left:10px;right:10px;bottom:9px;width:auto;padding:12px}.detail h3{font-size:15px}.detail .buttons{margin-top:10px}.detail .buttons a,.detail .buttons button{padding:9px 10px}}
@@ -127,7 +132,7 @@ function showDetail(s){const panel=$('detail');if(!s){panel.classList.add('hidde
 }
 function selectShop(id){const s=official.find(x=>x.id===id);if(!s)return;selected=id;showDetail(s);renderList();if(map&&s.lat!=null){map.flyTo([s.lat,s.lng],Math.max(16,map.getZoom()),{duration:.6});let mark=geoMarkers[s.id];if(mark){const later=()=>{mark.openPopup()};setTimeout(later,540)}}}
 function refreshPinCount(){let n=official.filter(s=>Number.isFinite(s.lat)).length;$('pinnedCount').textContent=n;}
-function addMarker(s){if(!map||!Number.isFinite(s.lat)||!Number.isFinite(s.lng)||geoMarkers[s.id])return;const ico=L.divIcon({className:'pinIcon',html:'<div class="pin"><span>•</span></div>',iconSize:[26,26],iconAnchor:[13,26]});let m=L.marker([s.lat,s.lng],{icon:ico,title:s.name||s.address});m.bindPopup(`<div style="min-width:170px"><b style="font-size:13px">${esc(s.name||s.street+' '+s.number)}</b><div style="font-size:11px;color:#607269;margin:4px 0">${esc(s.address)}</div><div style="display:flex;gap:11px;flex-wrap:wrap;margin-top:6px"><a href="${walk(s)}" target="_blank" rel="noopener" style="font-size:12px;font-weight:bold;color:#1b6847">Walk ↗</a><a href="${transit(s)}" target="_blank" rel="noopener" style="font-size:12px;font-weight:bold;color:#1b6847">Transit ↗</a><a href="${gmaps(s)}" target="_blank" rel="noopener" style="font-size:12px;font-weight:bold;color:#1b6847">${s.name?"Shop on Maps ↗":"Address ↗"}</a></div></div>`);m.on('click',()=>{selected=s.id;showDetail(s);renderList()});geoMarkers[s.id]=m;}
+function addMarker(s){if(!map||!Number.isFinite(s.lat)||!Number.isFinite(s.lng)||geoMarkers[s.id])return;const ico=L.divIcon({className:'pinIcon',html:'<div class="pin"><span class="pinSymbol" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h11v3a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4v-3Z"/><path d="M16 13h2a2 2 0 0 1 0 4h-2"/><path d="M10 10c-1-3 1-5 5-6 0 4-2 6-5 6Z"/><path d="M10 10l3-4"/></svg></span></div>',iconSize:[36,40],iconAnchor:[18,40],popupAnchor:[0,-37]});let m=L.marker([s.lat,s.lng],{icon:ico,title:s.name||s.address});m.bindPopup(`<div style="min-width:170px"><b style="font-size:13px">${esc(s.name||s.street+' '+s.number)}</b><div style="font-size:11px;color:#607269;margin:4px 0">${esc(s.address)}</div><div style="display:flex;gap:11px;flex-wrap:wrap;margin-top:6px"><a href="${walk(s)}" target="_blank" rel="noopener" style="font-size:12px;font-weight:bold;color:#1b6847">Walk ↗</a><a href="${transit(s)}" target="_blank" rel="noopener" style="font-size:12px;font-weight:bold;color:#1b6847">Transit ↗</a><a href="${gmaps(s)}" target="_blank" rel="noopener" style="font-size:12px;font-weight:bold;color:#1b6847">${s.name?"Shop on Maps ↗":"Address ↗"}</a></div></div>`);m.on('click',()=>{selected=s.id;showDetail(s);renderList()});geoMarkers[s.id]=m;}
 function setMapMode(mode){
  if(!map)return;
  const isTransit=mode==='transit';
@@ -144,9 +149,26 @@ function initMap(){
  if(!window.L){setStatus('Map library could not load. Search the complete list and open each address in Google Maps.');$('legend').innerHTML='<b>Map requires an internet connection.</b><br>All 167 addresses remain in the list.';return false;}
  map=L.map('map',{zoomControl:false,preferCanvas:true}).setView([52.3695,4.8975],12);
  L.control.zoom({position:'bottomright'}).addTo(map);
- // Maintain a working street map beneath the public transport tiles.
- streetLayer=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
- transportLayer=L.tileLayer('https://tile.memomaps.de/tilegen/{z}/{x}/{y}.png',{maxZoom:19,maxNativeZoom:18,attribution:'Map &copy; <a href="https://memomaps.de/" target="_blank" rel="noopener">MeMoMaps</a> CC BY-SA, data &copy; OpenStreetMap contributors'});
+ // Clean light basemap keeps street and place names legible.
+ // The OpenRailwayMap transparent overlay shows mapped metro, tram and rail tracks.
+ // Ferry route coverage is not guaranteed: Google Transit directions remain available per shop.
+ streetLayer=L.tileLayer('https://basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{
+  maxZoom:19,subdomains:'abcd',attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>'
+ }).addTo(map);
+ let baseTileFailures=0;
+ streetLayer.on('tileerror',()=>{
+  if(++baseTileFailures>=5&&!map._atlasFallback){
+   map._atlasFallback=true;
+   // Fall back to the standard basemap if the cleaner tiles are unreachable.
+   const fallback=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'});
+   fallback.addTo(map);fallback.bringToBack();map.removeLayer(streetLayer);
+   streetLayer=fallback;
+  }
+ });
+ transportLayer=L.tileLayer('https://tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png',{
+  maxZoom:19,maxNativeZoom:18,opacity:0.65,
+  attribution:'Tracks &copy; <a href="https://www.openrailwaymap.org/" target="_blank" rel="noopener">OpenRailwayMap</a> (CC BY-SA 2.0), map data &copy; OpenStreetMap contributors'
+ });
  transportLayer.on('tileload',()=>{tileFailures=0;});
  transportLayer.on('tileerror',()=>{
   tileFailures++;
