@@ -135,15 +135,151 @@ function selectShop(id){const s=official.find(x=>x.id===id);if(!s)return;selecte
 function refreshPinCount(){let n=official.filter(s=>Number.isFinite(s.lat)).length;$('pinnedCount').textContent=n;}
 /* Cannabis pin icon: Font Awesome Free 7.3.1, by Fonticons Inc., Icons CC BY 4.0. Attribution in /credits.html. */
 function addMarker(s){if(!map||!Number.isFinite(s.lat)||!Number.isFinite(s.lng)||geoMarkers[s.id])return;const ico=L.divIcon({className:'pinIcon',html:'<div class="pin"><span class="pinSymbol" aria-hidden="true"><svg viewBox="0 0 64 64" width="28" height="28" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M31.71,3.5 L29.77,5.63 L28.22,10.48 L27.25,9.9 L26.28,11.26 L26.67,16.1 L25.31,16.68 L25.89,22.69 L25.31,23.66 L25.31,26.57 L20.85,21.34 L19.49,21.34 L16.78,17.85 L15.23,18.62 L10.96,16.1 L9.41,15.91 L8.64,16.68 L8.83,19.4 L10.38,22.89 L9.22,24.05 L12.52,27.73 L11.93,28.9 L16.97,34.91 L14.26,34.52 L13.48,35.3 L9.41,34.33 L9.22,35.68 L5.92,36.07 L4.37,37.04 L4.37,38.01 L8.06,41.11 L8.06,42.66 L11.55,43.24 L12.52,44.41 L16.97,45.38 L15.23,47.12 L12.52,48.48 L12.9,49.45 L10.58,52.36 L11.35,53.71 L14.65,53.91 L15.81,54.88 L18.14,53.71 L19.49,53.91 L25.31,51.19 L30.55,46.93 L30.35,59.92 L30.93,60.5 L32.87,60.5 L33.45,59.92 L33.26,46.93 L37.53,50.61 L44.31,53.91 L45.67,53.71 L47.99,54.88 L49.16,53.91 L52.45,53.71 L53.23,52.55 L50.9,49.64 L50.9,48.29 L46.64,45.38 L51.29,44.41 L52.26,43.24 L56.33,42.08 L55.75,41.11 L57.88,39.76 L59.63,37.43 L57.88,36.07 L54.59,35.68 L54.39,34.33 L50.32,35.3 L49.16,34.71 L46.64,34.91 L51.87,28.7 L51.1,27.73 L54.59,24.05 L53.42,22.69 L54.97,19.01 L54.97,16.49 L54.39,15.91 L51.48,16.49 L48.19,18.82 L47.41,17.27 L43.92,21.72 L42.95,21.14 L39.85,25.41 L38.49,26.38 L38.49,23.86 L37.91,23.08 L38.3,17.27 L37.53,16.1 L36.94,16.3 L36.94,10.29 L36.36,9.9 L35.39,10.48 L33.84,5.44Z M10.58,18.23 L12.71,18.82 L16.2,21.72 L17.36,21.34 L20.08,25.99 L21.24,24.44 L22.79,26.77 L23.57,29.87 L24.15,30.26 L25.12,29.09 L27.06,32.58 L28.03,32.97 L28.41,32.39 L27.25,25.99 L28.8,25.21 L27.64,22.69 L27.25,19.2 L28.61,19.79 L28.99,19.4 L28.22,13.78 L28.99,14.16 L29.77,13.58 L30.16,9.7 L31.9,5.83 L33.45,9.32 L34.04,13.58 L34.62,14.16 L35.2,13.58 L35.59,14.55 L34.23,19.01 L35.2,19.59 L36.56,19.2 L36.17,22.5 L34.81,25.41 L35.78,26.18 L36.56,25.99 L35.39,32 L35.78,32.78 L36.75,32.39 L38.69,28.9 L39.27,29.67 L40.43,28.51 L42.57,24.24 L42.95,25.21 L43.92,25.6 L46.25,21.34 L47.22,22.11 L50.13,19.4 L53.04,18.04 L52.65,20.37 L50.52,24.05 L51.1,25.41 L47.03,28.7 L48.77,29.67 L47.03,31.42 L43.73,33.55 L44.89,34.33 L42.18,36.85 L42.18,37.62 L43.92,38.79 L47.41,36.85 L48.96,37.82 L51.1,36.85 L52.26,37.62 L55.56,37.43 L57.11,38.01 L53.04,40.14 L52.07,41.5 L49.16,41.31 L48.58,43.05 L45.09,42.86 L44.12,44.02 L41.21,44.6 L41.79,46.15 L44.89,46.73 L45.09,47.9 L47.22,48.48 L47.8,49.64 L50.9,51.97 L45.86,51.97 L44.12,50.61 L42.76,51.19 L40.82,49.64 L39.66,49.84 L35.2,46.35 L37.14,45.38 L35.2,43.83 L42.95,41.5 L42.18,40.72 L37.53,41.69 L34.62,41.69 L41.6,32.78 L41.02,31.81 L33.07,40.53 L32.48,24.44 L31.71,24.05 L31.13,28.12 L30.93,40.53 L22.98,32.19 L22.4,33.16 L29.19,41.89 L22.21,40.72 L21.24,41.11 L21.63,42.08 L28.61,44.02 L22.4,47.51 L22.79,48.29 L28.61,46.35 L24.15,49.84 L23.18,49.26 L20.85,51.19 L19.49,50.61 L17.75,51.97 L16.2,51.58 L13.1,52.16 L16.2,48.67 L18.72,48.09 L18.91,46.73 L22.02,46.35 L22.6,44.6 L19.49,44.02 L18.72,42.86 L15.23,43.05 L14.26,41.5 L11.55,41.5 L11.16,40.34 L6.51,38.01 L8.06,37.43 L11.93,37.62 L12.52,36.85 L15.81,38.4 L16.39,37.04 L19.69,38.59 L21.82,37.82 L21.82,37.04 L18.72,34.33 L19.88,33.16 L14.84,29.67 L16.59,28.51 L12.52,25.41 L13.29,24.24 L11.74,21.92Z"/></svg></span></div>',iconSize:[36,40],iconAnchor:[18,40],popupAnchor:[0,-37]});let m=L.marker([s.lat,s.lng],{icon:ico,title:s.name||s.address});m.bindPopup(`<div style="min-width:170px"><b style="font-size:13px">${esc(s.name||s.street+' '+s.number)}</b><div style="font-size:11px;color:#607269;margin:4px 0">${esc(s.address)}</div><div style="display:flex;gap:11px;flex-wrap:wrap;margin-top:6px"><a href="${walk(s)}" target="_blank" rel="noopener" style="font-size:12px;font-weight:bold;color:#1b6847">Walk ↗</a><a href="${transit(s)}" target="_blank" rel="noopener" style="font-size:12px;font-weight:bold;color:#1b6847">Transit ↗</a><a href="${gmaps(s)}" target="_blank" rel="noopener" style="font-size:12px;font-weight:bold;color:#1b6847">${s.name?"Shop on Maps ↗":"Address ↗"}</a></div></div>`);m.on('click',()=>{selected=s.id;showDetail(s);renderList()});geoMarkers[s.id]=m;}
+
+const ROUTE_CACHE='atlas-osm-individual-routes-v1';
+const ROUTE_QUERY='[out:json][timeout:35];relation["type"="route"]["route"~"^(tram|subway|light_rail|ferry)$"](52.24,4.65,52.52,5.20);out tags geom(52.14,4.54,52.56,5.27);';
+const TRAM_COLORS=['#d14f48','#9e4ab1','#138a8f','#d07719','#416fd0','#ba5277','#4b904a','#9a694b','#d09e24','#4e64a3','#b34e43','#459a9c','#936dc1','#ac7529','#4b8368','#cb6598','#677d21','#c15a35','#4674b9','#936c42'];
+const METRO_COLORS={'50':'#168947','51':'#d66f2c','52':'#255abc','53':'#a8469c','54':'#cf383e'};
+const ROUTE_MODES=['metro','tram','ferry'];
+const colourForLine=(line)=>{
+ if(line.mode==='metro')return METRO_COLORS[line.ref]||'#297cb7';
+ if(line.mode==='ferry')return '#268ba4';
+ const index=Math.abs(parseInt(line.ref,10)||line.ref.split('').reduce((n,c)=>n+c.charCodeAt(0),0));
+ return TRAM_COLORS[index%TRAM_COLORS.length];
+};
+function unpackRoutes(json){
+ if(!json||!Array.isArray(json.elements))throw Error('Route data did not contain line geometry.');
+ const groups=new Map();
+ const knownTrams=new Set(['1','2','4','5','6','7','8','9','11','12','13','14','17','18','19','25','26','27','29']);
+ for(const item of json.elements){
+  if(item.type!=='relation'||!Array.isArray(item.members))continue;
+  const tags=item.tags||{},raw=String(tags.ref||'').trim();
+  const mode=tags.route==='subway'?'metro':tags.route==='tram'||tags.route==='light_rail'?'tram':tags.route==='ferry'?'ferry':null;
+  if(!mode||!raw)continue;
+  const ref=mode==='metro'?raw.replace(/^M/i,''):raw;
+  if(!/^[A-Z]?\\d{1,3}[A-Z]?$/.test(ref))continue;
+  // GVB's 2026 tram reference network; old OSM relation 3 is not an active 2026 line.
+  if(mode==='tram'&&!knownTrams.has(ref))continue;
+  if(mode==='metro'&&!Object.hasOwn(METRO_COLORS,ref))continue;
+  const provider=[tags.operator,tags.network,tags.name].join(' ').toLowerCase();
+  if(/connexxion|htm |ret |european sleeper|ns international/.test(provider))continue;
+  const key=mode+':'+ref;
+  if(!groups.has(key))groups.set(key,{key,mode,ref,paths:[],seen:new Set()});
+  const group=groups.get(key);
+  for(const member of item.members){
+   if(member.type!=='way'||!Array.isArray(member.geometry)||member.geometry.length<2)continue;
+   const coords=member.geometry.filter(p=>Number.isFinite(p.lat)&&Number.isFinite(p.lon)).map(p=>[+p.lat.toFixed(5),+p.lon.toFixed(5)]);
+   if(coords.length<2||!coords.some(p=>p[0]>=52.14&&p[0]<=52.56&&p[1]>=4.54&&p[1]<=5.27))continue;
+   const endpoints=[coords[0].join(','),coords[coords.length-1].join(',')].sort().join('|');
+   const signature=endpoints+':'+coords.length;
+   if(group.seen.has(signature))continue;
+   group.seen.add(signature);group.paths.push(coords);
+  }
+ }
+ return [...groups.values()].filter(g=>g.paths.length>0).map(g=>({key:g.key,mode:g.mode,ref:g.ref,paths:g.paths})).sort((a,b)=>ROUTE_MODES.indexOf(a.mode)-ROUTE_MODES.indexOf(b.mode)||(parseInt(a.ref,10)||0)-(parseInt(b.ref,10)||0)||a.ref.localeCompare(b.ref));
+}
+function setRouteKeyVisible(open){
+ $('routePanel').classList.toggle('hidden',!open);
+ $('routeKeyButton').setAttribute('aria-expanded',String(open));
+}
+function renderRouteKey(){
+ const holder=$('routeKey');
+ holder.innerHTML='';
+ if(!routeLines){
+  $('routeAll').disabled=true;$('routeNone').disabled=true;
+  return;
+ }
+ $('routeAll').disabled=false;$('routeNone').disabled=false;
+ const fragments=[];
+ for(const mode of ROUTE_MODES){
+  const subset=routeLines.filter(r=>r.mode===mode);
+  if(!subset.length)continue;
+  fragments.push('<div class="routeGroupHeading">'+(mode==='metro'?'Metro':mode==='tram'?'Trams':'Ferries')+'</div>');
+  for(const line of subset){
+   const color=colourForLine(line);
+   const checked=enabledRouteKeys.has(line.key)?' checked':'';
+   const label=(mode==='metro'?'Metro ':mode==='tram'?'Tram ':'Ferry ')+line.ref;
+   fragments.push('<div class="routeRow"><label class="routeCheck"><input type="checkbox" data-route="'+esc(line.key)+'"'+checked+'><span class="routeSwatch" style="background:'+color+'"></span><span class="routeLabel">'+esc(label)+'</span></label><button type="button" class="routeZoom" data-routezoom="'+esc(line.key)+'" aria-label="Show only '+esc(label)+'" title="Show only '+esc(label)+'">⌖</button></div>');
+  }
+ }
+ holder.innerHTML=fragments.join('');
+ holder.querySelectorAll('[data-route]').forEach(el=>el.onchange=()=>{
+  if(el.checked)enabledRouteKeys.add(el.dataset.route);else enabledRouteKeys.delete(el.dataset.route);
+  drawRoutes();
+ });
+ holder.querySelectorAll('[data-routezoom]').forEach(el=>el.onclick=()=>{
+  const key=el.dataset.routezoom;
+  enabledRouteKeys=new Set([key]);drawRoutes();renderRouteKey();
+  const shape=routeLayer.getLayers()[0];if(shape&&shape.getBounds&&shape.getBounds().isValid())map.fitBounds(shape.getBounds(),{padding:[24,24],maxZoom:14});
+ });
+}
+function drawRoutes(){
+ if(!routeLayer||!routeLines)return;
+ routeLayer.clearLayers();
+ for(const line of routeLines){
+  if(!enabledRouteKeys.has(line.key))continue;
+  const label=(line.mode==='metro'?'Metro ':line.mode==='tram'?'Tram ':'Ferry ')+line.ref;
+  const path=L.polyline(line.paths,{pane:'routesPane',color:colourForLine(line),weight:line.mode==='metro'?3.7:2.8,opacity:.90,lineCap:'round',lineJoin:'round',interactive:true});
+  path.bindPopup('<b>'+esc(label)+'</b><br><small>Approximate OpenStreetMap route. Check live GVB service information before travelling.</small>');
+  routeLayer.addLayer(path);
+ }
+ if(routeLines)$('routeInfo').textContent=routeLines.length+' mapped lines · '+enabledRouteKeys.size+' visible. Tick lines to show or hide them.';
+}
+async function loadRoutes(){
+ if(routeLines){drawRoutes();renderRouteKey();return;}
+ if(routeLoadPromise)return routeLoadPromise;
+ $('routeInfo').textContent='Loading numbered tram, metro and ferry routes…';
+ $('routeRetry').classList.add('routeControlHidden');
+ let saved=null;
+ try{saved=JSON.parse(localStorage.getItem(ROUTE_CACHE)||'null')}catch(e){}
+ if(saved&&Array.isArray(saved.lines)&&saved.lines.length&&Date.now()-saved.savedAt<7*86400000){
+  routeLines=saved.lines;enabledRouteKeys=new Set(routeLines.map(r=>r.key));drawRoutes();renderRouteKey();return;
+ }
+ routeLoadPromise=(async()=>{
+  try{
+   let result;
+   const fetchJSON=async url=>{
+    const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),30000);
+    try{
+     const response=await fetch(url,{signal:ctrl.signal,cache:'default'});
+     if(!response.ok)throw Error('HTTP '+response.status);
+     return await response.json();
+    }finally{clearTimeout(timer)}
+   };
+   try{result=await fetchJSON('/api/transport-routes')}catch(error){
+    // Direct Overpass is a fallback for static-only Pages deployments.
+    result=await fetchJSON('https://overpass.private.coffee/api/interpreter?data='+encodeURIComponent(ROUTE_QUERY));
+   }
+   const lines=unpackRoutes(result);
+   if(!lines.length)throw Error('No mapped route geometries were returned.');
+   routeLines=lines;enabledRouteKeys=new Set(lines.map(r=>r.key));drawRoutes();renderRouteKey();
+   try{localStorage.setItem(ROUTE_CACHE,JSON.stringify({savedAt:Date.now(),lines}))}catch(e){}
+  }catch(error){
+   if(saved&&Array.isArray(saved.lines)&&saved.lines.length){
+    routeLines=saved.lines;enabledRouteKeys=new Set(routeLines.map(r=>r.key));drawRoutes();renderRouteKey();
+    $('routeInfo').textContent='Showing saved route map; live route-source refresh was unavailable.';
+   }else{
+    $('routeInfo').textContent='Routes could not load. Try Retry, or use Tracks to see the railway and tram network.';
+    $('routeRetry').classList.remove('routeControlHidden');
+   }
+  }finally{routeLoadPromise=null}
+ })();
+ return routeLoadPromise;
+}
 function setMapMode(mode){
  if(!map)return;
- const isTransit=mode==='transit';
- if(isTransit){if(!map.hasLayer(transportLayer))transportLayer.addTo(map);}
+ const isTracks=mode==='transit',isLines=mode==='routes';
+ if(isTracks){if(!map.hasLayer(transportLayer))transportLayer.addTo(map)}
  else if(map.hasLayer(transportLayer))map.removeLayer(transportLayer);
- $('streetMode').classList.toggle('active',!isTransit);
- $('transportMode').classList.toggle('active',isTransit);
- $('streetMode').setAttribute('aria-pressed',String(!isTransit));
- $('transportMode').setAttribute('aria-pressed',String(isTransit));
+ if(routeLayer){if(isLines&&!map.hasLayer(routeLayer))routeLayer.addTo(map);else if(!isLines&&map.hasLayer(routeLayer))map.removeLayer(routeLayer)}
+ for(const [id,active] of [['streetMode',mode==='street'],['transportMode',isTracks],['routesMode',isLines]]){
+  $(id).classList.toggle('active',active);$(id).setAttribute('aria-pressed',String(active));
+ }
+ $('routeKeyButton').classList.toggle('routeControlHidden',!isLines);
+ if(isLines){
+  setRouteKeyVisible(true);
+  loadRoutes();
+ }else setRouteKeyVisible(false);
  try{localStorage.setItem('atlas-map-layer-v1',mode)}catch(e){}
  map.invalidateSize({pan:false,animate:false});
 }
@@ -170,8 +306,10 @@ function initMap(){
    setStatus('Transport map tiles are unavailable. Street map is still working; try Transport again later.');
   }
  });
+ map.createPane('routesPane');map.getPane('routesPane').style.zIndex='435';
+ routeLayer=L.layerGroup();
  let startMode='transit';
- try{if(localStorage.getItem('atlas-map-layer-v1')==='street')startMode='street'}catch(e){}
+ try{const storedMode=localStorage.getItem('atlas-map-layer-v1');if(['street','transit','routes'].includes(storedMode))startMode=storedMode}catch(e){}
  setMapMode(startMode);
  clusters=window.L.markerClusterGroup?L.markerClusterGroup({showCoverageOnHover:false,maxClusterRadius:43,spiderfyOnMaxZoom:true}):L.layerGroup();
  map.addLayer(clusters);return true;
@@ -184,7 +322,7 @@ async function geocode(s){const queries=[`${s.postcode} ${s.number}${s.suffix?' 
 async function geocodeAll(){const missing=official.filter(s=>s.lat==null);if(!missing.length){setStatus('All 167 official addresses are pinned. Tap a pin or search a shop.',true);return}let idx=0,done=0,found=0;async function worker(){while(idx<missing.length&&!pdokDisabled){const s=missing[idx++],coord=await geocode(s);done++;if(coord){s.lat=coord.lat;s.lng=coord.lng;cache[s.id]=coord;found++;addMarker(s)}if(done%5===0||done===missing.length){saveCoords();refreshPinCount();renderList();setStatus(`Checking official address coordinates: ${done}/${missing.length} checked · ${official.filter(s=>s.lat!=null).length} pins shown`)} }}await Promise.all(Array.from({length:6},worker));saveCoords();refreshPinCount();renderList();let total=official.filter(s=>s.lat!=null).length;if(total===ALL_COUNT)setStatus('All 167 published addresses located and pinned.',true);else if(total>0)setStatus(`${total} of ${ALL_COUNT} official addresses pinned. Unresolved addresses remain searchable below.`,true);else setStatus('Map pin service unavailable. All 167 addresses remain searchable; choose Google Maps or walking directions for any address.');}
 function onLocate(){if(!navigator.geolocation){setStatus('Location is unavailable on this browser. You can still search all coffeeshops.');return;}setStatus('Asking your phone for its approximate location…');navigator.geolocation.getCurrentPosition(pos=>{myPos=[pos.coords.latitude,pos.coords.longitude];sortedByDistance=true;$('nearby').classList.add('active');if(map){L.circleMarker(myPos,{radius:8,color:'#fff',weight:3,fillColor:'#2980d4',fillOpacity:1}).addTo(map).bindPopup('Your location');map.flyTo(myPos,14)}renderList();setStatus('Showing nearby shops first (where their coordinates are available).',true)},()=>setStatus('Location not shared. The full city map is still available.'),{enableHighAccuracy:false,timeout:10000,maximumAge:300000})}
 function downloadCSV(){const pins=official.filter(s=>s.lat!=null),lines=['name,address,latitude,longitude',...pins.map(s=>[s.name||'Coffeeshop',s.address,s.lat,s.lng].map(x=>'"'+String(x).replaceAll('"','""')+'"').join(','))];let blob=new Blob([lines.join('\n')],{type:'text/csv;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='amsterdam-coffeeshops-pinned.csv';a.click();URL.revokeObjectURL(a.href)}
-function main(){restore();$('topCount').textContent=ALL_COUNT;$('favCount').textContent=favs.size;initMap();for(const s of official)if(s.lat!=null)addMarker(s);refreshPinCount();renderList();$('search').addEventListener('input',renderList);$('area').addEventListener('change',renderList);$('allTab').onclick=()=>{currentTab='all';$('allTab').classList.add('active');$('savedTab').classList.remove('active');renderList()};$('savedTab').onclick=()=>{currentTab='saved';$('savedTab').classList.add('active');$('allTab').classList.remove('active');renderList()};$('resetMap').onclick=()=>map?.flyTo([52.3695,4.8975],12);$('streetMode').onclick=()=>setMapMode('street');$('transportMode').onclick=()=>{tileFailures=0;setMapMode('transit');};$('locateMap').onclick=onLocate;$('nearby').onclick=onLocate;$('exportBtn').onclick=downloadCSV;if(official.some(s=>s.lat!=null))setStatus(`Loaded ${official.filter(s=>s.lat!=null).length} cached markers; refreshing missing locations…`,true);geocodeAll();}
+function main(){restore();$('topCount').textContent=ALL_COUNT;$('favCount').textContent=favs.size;initMap();for(const s of official)if(s.lat!=null)addMarker(s);refreshPinCount();renderList();$('search').addEventListener('input',renderList);$('area').addEventListener('change',renderList);$('allTab').onclick=()=>{currentTab='all';$('allTab').classList.add('active');$('savedTab').classList.remove('active');renderList()};$('savedTab').onclick=()=>{currentTab='saved';$('savedTab').classList.add('active');$('allTab').classList.remove('active');renderList()};$('resetMap').onclick=()=>map?.flyTo([52.3695,4.8975],12);$('streetMode').onclick=()=>setMapMode('street');$('transportMode').onclick=()=>{tileFailures=0;setMapMode('transit');};$('routesMode').onclick=()=>setMapMode('routes');$('routeKeyButton').onclick=()=>setRouteKeyVisible($('routePanel').classList.contains('hidden'));$('closeRoutePanel').onclick=()=>setRouteKeyVisible(false);$('routeAll').onclick=()=>{if(routeLines){enabledRouteKeys=new Set(routeLines.map(r=>r.key));drawRoutes();renderRouteKey()}};$('routeNone').onclick=()=>{if(routeLines){enabledRouteKeys=new Set();drawRoutes();renderRouteKey()}};$('routeRetry').onclick=()=>loadRoutes();$('locateMap').onclick=onLocate;$('nearby').onclick=onLocate;$('exportBtn').onclick=downloadCSV;if(official.some(s=>s.lat!=null))setStatus(`Loaded ${official.filter(s=>s.lat!=null).length} cached markers; refreshing missing locations…`,true);geocodeAll();}
 main();
 window.addEventListener('message',event=>{
  if(event.origin!==window.location.origin)return;
