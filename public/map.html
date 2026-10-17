@@ -44,6 +44,24 @@ button,input,select{font:inherit}button{cursor:pointer}a{color:inherit}
 .leaflet-container a.leaflet-popup-close-button{color:#597e66}.leaflet-control-attribution{font-size:10px!important}
 .notice{background:#fff5dd;color:#745b27;border-radius:10px;padding:10px 12px;font-size:11px;line-height:1.4}
 @media(max-width:760px){.routePanel{top:65px;right:9px;max-height:calc(100% - 78px);width:min(300px,calc(100% - 18px))}.mapActions{left:9px;right:9px;max-width:none;top:9px}.mapActions>.floating{display:none}.base-switch{margin-left:auto}.base-switch .floating{padding:7px 8px;font-size:11px}.app{height:100dvh;min-height:0;grid-template-rows:auto minmax(0,1fr)}.topbar{padding:10px 12px;gap:7px}.brand{gap:8px}.brandMark{width:35px;height:35px;border-radius:10px;font-size:18px}.brand h1{font-size:14px;letter-spacing:-.3px}.brand small{font-size:9px}.topChip{font-size:10px;padding:6px 8px}.headerButton{display:none}.main{grid-template-columns:1fr;grid-template-rows:minmax(310px,53%) minmax(0,47%)}.mapWrap{grid-row:1}.sidebar{grid-row:2;border-right:0;border-top:1px solid #c7d9ca}.controls{padding:11px 12px}.controls .eyebrow,.controls h2,.controls .desc{display:none}.filters{grid-template-columns:1fr 100px;margin-top:7px}.tabline{margin-top:5px}.list{padding:5px 8px 18px}.listing{padding:9px;grid-template-columns:23px minmax(0,1fr) 25px}.num{height:23px;width:23px;font-size:10px}.l-address{margin-top:2px}.l-meta{display:none}.mapLegend{left:9px;bottom:9px;font-size:10px;max-width:210px;padding:7px 9px}.mapActions{right:10px;top:10px}.floating{padding:8px 10px;font-size:11px}.detail{left:10px;right:10px;bottom:9px;width:auto;padding:12px}.detail h3{font-size:15px}.detail .buttons{margin-top:10px}.detail .buttons a,.detail .buttons button{padding:9px 10px}}
+/* Saved accommodation, GPS and walking route planner */
+.tripTools{position:absolute;z-index:455;left:12px;top:12px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;max-width:calc(100% - 24px)}
+.tripTools>.floating{background:#fffdf7;border-color:#d1dfd2;box-shadow:0 5px 20px rgba(16,43,30,.18);font-weight:800}
+.tripPanel{display:flex;flex-direction:column;gap:10px;max-height:min(530px,calc(100dvh - 240px));overflow-y:auto;overscroll-behavior:contain;width:min(350px,calc(100vw - 36px));background:rgba(255,255,253,.985);padding:13px;border-radius:15px;border:1px solid #d7e4da;box-shadow:0 15px 35px rgba(15,48,30,.23);color:#1c4531;font-size:12px}
+.tripPanel.hidden{display:none}.tripHead,.tripRouteHead{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.tripHead b{font-size:15px}.tripHead button,.tripRouteHead button{border:0;background:#eff5f0;border-radius:8px;color:#306549;width:29px;height:29px;font-size:18px}
+.tripHotel{padding:10px 11px;background:#eff6ef;border-radius:10px;line-height:1.45}.tripHotel b,.tripHotel small{display:block}.tripHotel small{color:#577967}
+.tripLabel{font-weight:750;color:#315c43}.tripSearch{display:flex;gap:6px}.tripSearch input{min-width:0;flex:1;border:1px solid #d1e0d7;border-radius:8px;padding:10px;color:#203e2f;background:white}
+.tripPanel button,.tripPanel .tripRow a{font:inherit;cursor:pointer}.tripSearch button,.tripRow button,.tripRow a{border:1px solid #d0dfd4;background:#ebf4ee;color:#225d43;padding:8px 9px;border-radius:8px;font-weight:700;text-decoration:none;text-align:center}
+.tripSearch button{background:#276b4c;color:white}.tripRow{display:flex;gap:6px;flex-wrap:wrap}.tripRow button:disabled{opacity:.43}
+.hotelMatches{display:flex;flex-direction:column;gap:5px;max-height:184px;overflow:auto}
+.hotelMatch{display:flex;flex-direction:column;text-align:left;gap:3px;background:#fff;border:1px solid #d8e5dc;border-radius:8px;padding:8px;color:#224b37;font-size:12px}
+.hotelMatch strong{font-weight:750}.hotelMatch small{font-size:10px;color:#6c8575}.tripNote{font-size:10px;line-height:1.45;color:#63806e;margin:0}
+.tripRoute{display:flex;flex-direction:column;gap:7px;background:#f0f8fa;border:1px solid #c8dfe7;padding:10px;border-radius:11px}.tripRoute.hidden{display:none}
+.tripRouteSummary{font-weight:700}.tripStep{padding:6px 3px;border-bottom:1px solid #d4e5e8;line-height:1.4}
+.hotelPin{background:#fff6dc;border:2px solid #c39043;color:#7b5521;border-radius:11px 11px 11px 3px;transform:rotate(-45deg);box-shadow:0 3px 12px rgba(56,46,20,.3);display:grid;place-items:center;font-size:25px}
+.hotelPin>span{transform:rotate(45deg)}
+@media(max-width:760px){.tripTools{left:8px;top:8px}.tripTools>.floating{padding:8px 9px;font-size:11px}.tripPanel{width:min(315px,calc(100vw - 16px));max-height:min(450px,calc(100dvh - 240px));padding:11px}.routePanel{top:62px;}}
 </style>
 
 <style id="embedded-atlas-fixes">
