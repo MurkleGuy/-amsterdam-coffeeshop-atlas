@@ -24,3 +24,13 @@ h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:Manrope,system-ui,sans-serif}h1 em,
 .full-map-link{margin:15px auto 0;display:flex;justify-content:flex-end}
 .full-map-link a{color:#276d48;font-size:12px;font-weight:800;text-decoration:underline;text-underline-offset:4px}
 @media(max-width:780px){.atlas-map-embed{height:min(940px,94dvh);min-height:690px;border-radius:15px}.full-map-link{justify-content:center}}
+
+/* Prominent entry to the dedicated full-viewport map on phones. */
+.atlas-map-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 auto 12px;color:#587661;font-size:12px}
+.atlas-map-toolbar a{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:#266d4e;border:1px solid #266d4e;border-radius:11px;color:white;padding:11px 14px;text-decoration:none;font-size:12px;font-weight:800;white-space:nowrap}
+.atlas-map-toolbar a:hover,.atlas-map-toolbar a:focus-visible{background:#1a533a;color:white}
+@media(max-width:780px){
+ .atlas-map-toolbar{align-items:center;font-size:10px;gap:8px}
+ .atlas-map-toolbar a{padding:10px 12px;font-size:11px}
+ .atlas-map-embed{height:92dvh;min-height:530px;max-height:1000px}
+}
