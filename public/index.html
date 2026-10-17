@@ -1,65 +1,64 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#132c27">
-  <meta name="description" content="Explore Amsterdam's cannabis coffeeshops on one interactive map. Browse official 2026 addresses, shop photos, neighbourhoods and walking directions.">
-  <title>Amsterdam Coffeeshop Atlas | Explore the city</title>
-  <link rel="preconnect" href="https://commons.wikimedia.org">
-  <link rel="stylesheet" href="assets/styles.css">
-  <script defer src="assets/shops.js"></script>
-  <script defer src="assets/app.js?v=original-map-v2"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#123c30">
+<meta name="description" content="Plan your Amsterdam coffeeshop visit. See how the Atlas works, choose your hotel or accommodation, and explore coffeeshops, walking routes and local public transport on an interactive map.">
+<title>Welcome | Amsterdam Coffeeshop Atlas</title>
+<link rel="preconnect" href="https://photon.komoot.io">
+<link rel="stylesheet" href="assets/welcome.css?v=1">
+<script defer src="assets/welcome.js?v=1"></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="header-inner content-wrap">
-      <a href="#home" class="logo-lockup" aria-label="Coffeeshop Atlas home">
-        <span class="mark" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M24 42c9-11 14-19 14-26a14 14 0 10-28 0c0 7 5 15 14 26Z" stroke="currentColor" stroke-width="2.8"/><circle cx="24" cy="16.5" r="5.5" stroke="currentColor" stroke-width="2.8"/></svg></span>
-        <span class="logo-type"><strong>COFFEESHOP</strong><span>ATLAS <i>AMSTERDAM</i></span></span>
-      </a>
-      <nav class="nav-links" aria-label="Primary navigation"><a href="#explore">Explore map</a><a href="#featured">Shop photos</a><a href="#about">About the atlas</a></nav>
-      <a class="header-cta" href="#explore">Open the map <span aria-hidden="true">↗</span></a>
-    </div>
-  </header>
-
-  <main id="home">
-    <section class="hero content-wrap" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <span class="eyebrow"><span class="eyebrow-dot"></span> YOUR AMSTERDAM CITY COMPANION</span>
-        <h1 id="hero-title">Find your<br>next <em>coffeeshop.</em></h1>
-        <p class="hero-sub">Every corner has a story. Explore the city's coffeeshops, discover their storefronts and find your way there — all in one beautiful map.</p>
-        <form class="hero-search" id="heroSearchForm" role="search"><label class="sr-only" for="heroSearch">Search a coffeeshop or neighbourhood</label><span aria-hidden="true" class="search-icon">⌕</span><input id="heroSearch" type="search" placeholder="Search a shop or neighbourhood…" autocomplete="off"><button type="submit">Explore <span aria-hidden="true">→</span></button></form>
-        <div class="hero-stats"><div><strong>167</strong><span>published addresses</span></div><span class="stat-line"></span><div><strong>7</strong><span>areas to explore</span></div><span class="stat-line"></span><div><strong>2026</strong><span>municipal reference</span></div></div>
-      </div>
-      <div class="hero-visual" aria-label="Photographs of Amsterdam coffeeshops">
-        <div class="hero-photo hero-photo-main" data-photo="47"><span class="photo-name">Original Dampkring <small>Centrum · Amsterdam</small></span></div>
-        <div class="hero-photo hero-photo-top" data-photo="97"><span class="photo-name">Grey Area <small>Jordaan</small></span></div>
-        <div class="hero-photo hero-photo-bottom" data-photo="40"><span class="photo-name">Barney's <small>Haarlemmerstraat</small></span></div>
-        <span class="hero-seal">GET LOST<br>IN THE CITY<br><b>✳</b></span>
-      </div>
-    </section>
-
-    <section class="marquee"><div class="marquee-inner content-wrap"><span>DISCOVER THE CITY</span><b>✳</b><span>FIND YOUR SPOT</span><b>✳</b><span>SAVE YOUR FAVOURITES</span><b>✳</b><span>EXPLORE LIKE A LOCAL</span></div></section>
-
-    <section id="featured" class="featured-section content-wrap">
-      <div class="section-heading"><div><span class="small-label">A GLIMPSE INSIDE THE ATLAS</span><h2>Familiar names. <em>Real places.</em></h2><p>A few shops you can explore, with archived storefront photographs from openly licensed sources.</p></div><a class="text-link" href="#explore">See all 167 places <span aria-hidden="true">↗</span></a></div>
-      <div class="featured-grid" id="featuredGrid" aria-live="polite"></div>
-      <p class="photo-note">Photos are historical, not live storefront views. Credits and licensing are linked on each photo.</p>
-    </section>
-
-    <section id="explore" class="explorer-section">
-      <div class="content-wrap explorer-top"><div><span class="small-label">THE CITY IN YOUR POCKET</span><h2>The <em>interactive map.</em></h2><p>Pick your hotel when you first open the map (or skip), then explore coffeeshops, plan walking routes and check their Google reviews. Metro/tram reference lines are from 2025; check current GVB services before travelling.</p></div><div class="map-feature"><span class="feature-dot"></span><span id="mapProgress">Street and public transport map</span></div></div>
-      <div class="content-wrap atlas-map-toolbar"><span>Your hotel, your map, your Amsterdam</span><a href="map.html?v=hotel-setup-v1" target="_blank" rel="noopener">⛶ Open full-screen map ↗</a></div>
-      <div class="content-wrap atlas-map-embed">
-        <iframe id="mapFrame" title="Amsterdam coffeeshop interactive map with location search and favourites" src="map.html?v=hotel-setup-v1" loading="eager" allow="geolocation" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-      </div>
-      <div class="content-wrap full-map-link"><a href="map.html?v=hotel-setup-v1" target="_blank" rel="noopener">Open the Atlas map and trip planner full screen ↗</a></div>
-      <div class="content-wrap map-caveat">The atlas uses Amsterdam's published 2026 cannabis-tolerance address list. It is <strong>not</strong> a live licensing, opening-hours or availability feed; verify individual businesses before visiting. Name matches and historic photos may be out of date.</div>
-    </section>
-
-    <section class="how-section content-wrap" id="about"><div class="how-lead"><span class="small-label">A BETTER WAY TO WANDER</span><h2>Your city guide,<br><em>without the guesswork.</em></h2><p>Built for the kind of city day when the next good spot might be just around the corner.</p></div><div class="how-items"><div class="how-item"><span class="how-number">01</span><div><h3>Find your area</h3><p>Browse the city neighbourhood by neighbourhood, from the canal belt to the outer districts.</p></div></div><div class="how-item"><span class="how-number">02</span><div><h3>See the place</h3><p>View credited photographs when available, or use a direct Google Maps link for recent imagery.</p></div></div><div class="how-item"><span class="how-number">03</span><div><h3>Save it for later</h3><p>Star a few places and keep a shortlist saved on your own device. No account required.</p></div></div></div></section>
-  </main>
-  <footer class="footer"><div class="content-wrap footer-inner"><div class="footer-brand"><span>COFFEESHOP ATLAS</span><p>An independent Amsterdam explorer. Not affiliated with any business or local authority. Intended for adults aged 18+.</p></div><div class="footer-nav"><a href="#explore">Explore map</a><a href="#featured">Shop photographs</a><a href="credits.html">Photo, map &amp; icon credits</a></div></div><div class="footer-bottom content-wrap"><span>© 2026 Coffeeshop Atlas. Independent guide.</span><span>Map data © OpenStreetMap contributors · Address reference: City of Amsterdam</span></div></footer>
+<header class="site-header">
+ <div class="site-inner">
+  <a class="brand" href="index.html" aria-label="Amsterdam Coffeeshop Atlas welcome"><span class="brand-pin" aria-hidden="true">✳</span><span><strong>COFFEESHOP</strong><small>ATLAS <em>AMSTERDAM</em></small></span></a>
+  <nav aria-label="Site"><a href="discover.html#featured">Shop photos</a><a href="discover.html#about">About</a></nav>
+ </div>
+</header>
+<main class="welcome-layout" id="start">
+ <section class="introduction" aria-labelledby="welcomeTitle">
+  <div class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> YOUR AMSTERDAM EXPLORER</div>
+  <h1 id="welcomeTitle">Your Amsterdam trip, <em>mapped out.</em></h1>
+  <p class="intro-copy">Discover coffeeshops around the city and find your way to them, starting from where you're staying.</p>
+  <div class="intro-points" aria-label="How the Atlas works">
+   <div class="intro-point"><span class="step-number">01</span><div><h2>Choose where you're staying</h2><p>Find your hotel, hostel or apartment so the Atlas knows where to start your journeys.</p></div></div>
+   <div class="intro-point"><span class="step-number">02</span><div><h2>Explore the map</h2><p>Browse 167 published coffeeshop addresses, search the city and save places you like.</p></div></div>
+   <div class="intro-point"><span class="step-number">03</span><div><h2>Plan your route</h2><p>See walking paths and transit connections. Check Google Maps or GVB for current journey details.</p></div></div>
+  </div>
+  <div class="intro-meta"><span><b>167</b> published addresses</span><span><b>Street · Metro · Bus</b> map views</span></div>
+ </section>
+ <section class="journey-card" aria-label="Set up your visit">
+  <div class="card-stripe"><span class="map-dot" aria-hidden="true">●</span><span>PLAN YOUR VISIT</span><span class="step-tag" id="stepTag">STEP 1 OF 2</span></div>
+  <div id="introStage" class="stage">
+   <div class="welcome-mark" aria-hidden="true">⌂</div>
+   <h2>Let's find your starting point.</h2>
+   <p>Tell us where you're staying, and we'll put your accommodation on the map. From there, simply pick a coffeeshop to plan your walk.</p>
+   <div class="saved-trip hidden" id="savedTrip">
+    <span class="saved-icon" aria-hidden="true">⌂</span>
+    <div><small>YOUR SAVED ACCOMMODATION</small><strong id="savedHotelName"></strong></div>
+   </div>
+   <button type="button" class="primary-button" id="chooseHotel">Choose my accommodation <span aria-hidden="true">→</span></button>
+   <button type="button" class="primary-button hidden" id="continueSaved">Open my Amsterdam map <span aria-hidden="true">→</span></button>
+   <button type="button" class="text-button" id="exploreWithoutHotel">I'm visiting without accommodation — explore map</button>
+  </div>
+  <div id="hotelStage" class="stage hidden" aria-labelledby="hotelTitle">
+   <button type="button" class="back-button" id="backToIntro">← Back to introduction</button>
+   <div class="step-label">SET YOUR STARTING POINT</div>
+   <h2 id="hotelTitle">Where are you staying?</h2>
+   <p>Search for your hotel, hostel, apartment or address in Amsterdam. Select the correct result to open the map.</p>
+   <form id="hotelForm" class="hotel-form" role="search">
+    <label for="hotelSearch">Accommodation name or address</label>
+    <div class="hotel-search-row"><input id="hotelSearch" type="search" placeholder="e.g. Hotel Estheréa, Amsterdam" autocomplete="street-address" minlength="3" maxlength="110" required><button type="submit" id="hotelSearchButton">Find</button></div>
+   </form>
+   <div id="hotelFeedback" class="hotel-feedback" role="status" aria-live="polite">Search by hotel name or street address.</div>
+   <div id="hotelResults" class="hotel-results" aria-label="Accommodation search results"></div>
+   <div class="hotel-footer"><span>Can't find yours? Try its street address, or choose it later in My hotel &amp; routes.</span><button type="button" class="text-button" id="skipHotel">Continue without saving a hotel →</button></div>
+  </div>
+  <div class="privacy-footnote"><span aria-hidden="true">◈</span> Saved hotels stay on this device. Search terms go to OpenStreetMap-based Photon. We don't request GPS access until you choose to enable it.</div>
+ </section>
+</main>
+<footer class="page-footer"><span>Independent Amsterdam guide · Adults 18+ · Check local rules and official travel information.</span><a href="discover.html">See the shop photo gallery and more about the Atlas ↗</a></footer>
 </body>
 </html>
