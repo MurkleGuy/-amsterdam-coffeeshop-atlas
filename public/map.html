@@ -320,6 +320,35 @@ html,body{height:100%;width:100%;overflow:hidden}
  .mapActions #routeKeyButton:not(.routeControlHidden){padding:8px!important}
 }
 </style>
+
+<style id="atlas-shop-intelligence-v1">
+.discoverToolbar{display:grid;gap:5px;margin:10px 0 7px;padding:9px 10px;border-radius:11px;background:#eaf3e9;border:1px solid #d1e3d2}
+.discoverToolbar label{font-size:10px;letter-spacing:1px;font-weight:850;color:#326c4c;text-transform:uppercase}
+.discoverToolbar select{width:100%;background:#fff;color:#235039;border:1px solid #bfd7c3;border-radius:9px;min-height:39px;font-size:12px;font-weight:770;padding:7px 10px}
+.discoverToolbar small{color:#617b69;line-height:1.45;font-size:10px}
+.listIntel{display:flex;gap:4px;flex-wrap:wrap;margin-top:5px;align-items:center}
+.ratingTag,.menuTag,.rankTag{font-size:10px;font-weight:780;display:inline-flex;align-items:center;border-radius:6px;padding:3px 6px;line-height:1.4}
+.ratingTag{background:#fff2d3;color:#694d1b}.ratingTag small{font-weight:600;margin-left:4px;color:#705b33}
+.menuTag{background:#e0eddf;color:#2e6549}.rankTag{background:#215e43;color:#fff}
+.shopIntel{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:10px 0 3px}
+.shopIntel>a,.shopIntel>span{min-width:0;border-radius:10px;border:1px solid #d6e3d8;padding:10px 10px;display:flex;flex-direction:column;gap:5px;text-decoration:none;line-height:1.35}
+.shopIntel>a:hover,.shopIntel>a:focus-visible{outline:2px solid #4f916d;outline-offset:1px}
+.shopIntel strong{display:block;font-size:13px;font-weight:860}
+.shopIntel strong small{display:inline;font-weight:550;font-size:10px}
+.shopIntel a span{color:#4f725e;font-weight:700;font-size:10px}
+.shopIntel a span small{display:block;margin-top:3px;font-size:9px;font-weight:550;line-height:1.35;color:#778779}
+.shopRatingCard{background:#fff6e3;color:#705019;border-color:#eddbb5!important}
+.shopMenuCard{background:#e8f3e6;color:#205d3e;border-color:#cde0cd!important}
+.shopUnrated,.shopNoMenu{background:#f4f7f1;color:#78877b;font-size:10px;line-height:1.45;justify-content:center}
+@media(max-width:760px){
+ .shopIntel{gap:6px;margin:9px 0 3px}
+ .shopIntel>a,.shopIntel>span{padding:8px 8px}
+ .shopIntel strong{font-size:12px}
+ .shopIntel a span{font-size:10px}
+ .shopIntel a span small{font-size:9px}
+}
+@media(max-width:360px){.shopIntel{grid-template-columns:1fr}.shopIntel>span{display:none}}
+</style>
 </head>
 <body>
 <div class="app">
@@ -429,11 +458,15 @@ function showDetail(s){
  const panel=$('detail'),wrap=document.querySelector('.mapWrap');
  if(!s){panel.classList.add('hidden');wrap.classList.remove('has-detail');return;}
  panel.classList.remove('hidden');wrap.classList.add('has-detail');
- const title=s.name||s.street+' '+s.number,saved=isSaved(s);
+ const title=s.name||s.street+' '+s.number,saved=isSaved(s),rating=ratingFor(s),menu=menuFor(s),rank=rating?.reviews>=INTEL.rankingMinReviews?rankedPlace(s.id):0;
  panel.innerHTML=`<div class="detailHead"><div><span class="eyebrow">${esc(getArea(s))} · ADDRESS ${s.id} / ${ALL_COUNT}</span><h3>${esc(title)}</h3></div>
  <div class="detailHeadActions"><button type="button" id="detailFav" class="detailStar ${saved?'saved':''}" aria-pressed="${saved?'true':'false'}" aria-label="${saved?'Remove from saved shops':'Save this coffeeshop'}" title="${saved?'Remove from saved':'Save this shop'}">${saved?'★':'☆'}</button><button class="close" id="closeDetail" aria-label="Close details">×</button></div></div>
  <p class="detailAddress">${esc(s.address)}</p>
  ${s.nameNote?`<div class="shopNameNotice" role="note">${esc(s.nameNote)} ${s.nameSource?`<a href="${esc(s.nameSource)}" target="_blank" rel="noopener">Check source ↗</a>`:''}</div>`:''}
+ <div class="shopIntel">
+  ${rating?`<a class="shopRatingCard" href="${esc(rating.url)}" target="_blank" rel="noopener"><strong>★ ${rating.rating.toFixed(1)}<small> / 5</small></strong><span>Greenmeister · ${rating.reviews} reviews${rank?' · Ranked #'+rank:''}<small>Community score, checked ${fmtMenuDate(rating.checkedAt)} ↗</small></span></a>`:'<span class="shopUnrated">Community score not yet checked</span>'}
+  ${menu?`<a class="shopMenuCard" href="${esc(menu.url)}" target="_blank" rel="noopener"><strong>▤ Latest menu ↗</strong><span>Photo: ${fmtMenuDate(menu.photoDate)}<small>View current newest at source; stock and prices can change</small></span></a>`:'<span class="shopNoMenu">No menu photo verified within the last 120 days</span>'}
+ </div>
  <div class="detailRouteMain">
   <button id="planWalkAtlas" class="action detailPrimary">🧭 Walk on map</button>
   <button id="hotelGoogleTransit" class="action secondary">🚋 Public transport <small>From your hotel</small></button>
