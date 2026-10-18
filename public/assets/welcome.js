@@ -123,7 +123,8 @@
   searchController=new AbortController();
   const signal=searchController.signal,sequence=++searchSequence;
   submit.disabled=true;submit.textContent='Finding…';feedback.textContent='Searching accommodation and addresses near Amsterdam…';
-  const timeout=setTimeout(()=>searchController.abort(),16000);
+  const controller=searchController;
+  const timeout=setTimeout(()=>controller.abort(),16000);
   try{
    let features=await photonSearch(queryText(term),signal);
    let places=uniqueLocations(features);
