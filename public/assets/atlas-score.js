@@ -50,8 +50,9 @@ function seating(shop){
 }
 function listTag(shop){
  const a=assess(shop),s=seating(shop);
- return (a?.score!=null?'<span class="atlasTag">Atlas ★ '+a.score.toFixed(1)+' · '+esc(a.confidence)+' ('+a.reviewers+')</span>':a?.reviewers?'<span class="atlasPendingTag">Atlas · reviewing '+a.reviewers+' recent report'+(a.reviewers===1?'':'s')+'</span>':'')
- +(s&&(s.kind==="reported"||s.kind==="none")?'<span class="seatTag'+(s.kind==="none"?' noSeats':'')+'">↳ '+esc(s.label)+'</span>':'');
+ const source=window.ATLAS_INTEL?.ratings?.[shop.id];
+ return (a?.score!=null?'<span class="atlasTag">Atlas ★ '+a.score.toFixed(1)+' · '+esc(a.confidence)+' ('+a.reviewers+')</span>':a?.reviewers?'<span class="atlasPendingTag">Atlas · '+a.reviewers+' recent report'+(a.reviewers===1?'':'s')+' · unscored</span>':source?'<span class="atlasPendingTag">Atlas · current quality unverified</span>':'<span class="atlasPendingTag">Atlas · needs review</span>')
+ +(s&&(s.kind==="reported"||s.kind==="none"||s.kind==="listed")?'<span class="seatTag'+(s.kind==="none"?' noSeats':'')+'">↳ '+esc(s.label)+'</span>':'');
 }
 function detail(shop){
  const a=assess(shop),s=seating(shop);
