@@ -125,7 +125,7 @@ if(archive&&format(archiveDate)&&fresh(archiveDate,intel.maxMenuAgeDays||120)&&v
  area.appendChild(actions);
  area.appendChild(make("div","The original site opens directly in your browser. Menu dates are photograph dates, not confirmation of today's stock, prices or availability.","info"));
 }
-if(!ownerOK&&!(!$("archivePanel").classList.contains("hidden")))$("noMenuPanel").classList.remove("hidden");
+if(!ownerOK&&$("archivePanel").classList.contains("hidden"))$("noMenuPanel").classList.remove("hidden");
 })();
 </script>
 </body>
