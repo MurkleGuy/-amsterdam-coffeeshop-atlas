@@ -97,7 +97,7 @@ html,body{height:100%;width:100%;overflow:hidden}
 .detail .detailRouteMain button small{font-size:10px;font-weight:550;line-height:1.2}
 .detail .detailBottom{display:block;margin-top:9px}
 .detail .detailBottom a{display:flex;width:100%;min-height:42px;text-decoration:none;align-items:center;justify-content:center;text-align:center;background:#f1f5ef!important;color:#285b42!important}
-.detail .detailFinePrint{margin-top:7px;color:#738177;font-size:10px;line-height:1.4}
+.detail .detailFinePrint{margin-top:7px;color:#738177;font-size:10px;line-height:1.4}.shopNameNotice{margin:9px 0;padding:9px 11px;border-radius:9px;background:#fff7e5;border:1px solid #e6d7b4;color:#765b31;font-size:11px;line-height:1.5}.shopNameNotice a{display:inline;font-weight:850;color:#5a4626;text-decoration:underline;text-underline-offset:2px}
 .tripWelcome{display:block;padding:12px;background:#eaf5e9;border-radius:11px;border:1px solid #cbdccc;line-height:1.45}
 .tripWelcome.hidden{display:none}
 .tripWelcome b{font-size:15px;color:#24583f}
@@ -366,7 +366,7 @@ const hav=(a,b)=>{const R=6371,toR=Math.PI/180,dLat=(b[0]-a[0])*toR,dLng=(b[1]-a
 const getArea=s=>{let p=parseInt(s.postcode.slice(0,4));if(p>=1100)return'Zuidoost';if(p>=1020&&p<1040)return'Noord';if(p>=1040&&p<1060)return'West';if(p>=1060&&p<1070)return'Nieuw-West';if(p>=1070&&p<1090)return'Zuid';if(p>=1090&&p<1100)return'Oost';return'Centrum';};
 /* Name + address searches the Google business, with verified Place IDs supported in future. */
 const businessDestination=s=>s.name
- ?[s.name,s.street+' '+s.number+(s.suffix||''),s.postcode,'Amsterdam','Netherlands'].join(', ')
+ ?[s.name,s.mapsAddress||[s.street+' '+s.number+(s.suffix||''),s.postcode,'Amsterdam','Netherlands'].join(', ')].join(', ')
  :s.address;
 const gmaps=s=>{
  const u=new URL('https://www.google.com/maps/search/');
@@ -404,6 +404,7 @@ function showDetail(s){
  panel.innerHTML=`<div class="detailHead"><div><span class="eyebrow">${esc(getArea(s))} · ADDRESS ${s.id} / ${ALL_COUNT}</span><h3>${esc(title)}</h3></div>
  <div class="detailHeadActions"><button type="button" id="detailFav" class="detailStar ${saved?'saved':''}" aria-pressed="${saved?'true':'false'}" aria-label="${saved?'Remove from saved shops':'Save this coffeeshop'}" title="${saved?'Remove from saved':'Save this shop'}">${saved?'★':'☆'}</button><button class="close" id="closeDetail" aria-label="Close details">×</button></div></div>
  <p class="detailAddress">${esc(s.address)}</p>
+ ${s.nameNote?`<div class="shopNameNotice" role="note">${esc(s.nameNote)} ${s.nameSource?`<a href="${esc(s.nameSource)}" target="_blank" rel="noopener">Check source ↗</a>`:''}</div>`:''}
  <div class="detailRouteMain">
   <button id="planWalkAtlas" class="action detailPrimary">🧭 Walk on map</button>
   <button id="hotelGoogleTransit" class="action secondary">🚋 Public transport <small>From your hotel</small></button>
