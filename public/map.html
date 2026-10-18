@@ -392,6 +392,87 @@ body.menuViewerOpen{overflow:hidden}
 }
 </style>
 <style id="atlas-score-v1">
+/* Mobile menu card: explicit typography instead of inheriting the large generic button font. */
+.detail .shopIntel button.shopMenuCard{
+ box-sizing:border-box;
+ min-width:0;
+ width:100%;
+ max-width:100%;
+ border-radius:10px;
+ padding:10px!important;
+ display:flex;
+ flex-direction:column;
+ align-items:flex-start;
+ justify-content:center;
+ gap:5px;
+ font-size:11px!important;
+ line-height:1.35;
+ font-weight:500;
+ text-align:left;
+ white-space:normal;
+ overflow-wrap:anywhere;
+}
+.detail .shopIntel button.shopMenuCard strong{
+ display:block;
+ margin:0;
+ font-size:12px!important;
+ font-weight:850;
+ line-height:1.3;
+}
+.detail .shopIntel button.shopMenuCard .menuDate{
+ display:block;
+ margin:0;
+ font-size:11px!important;
+ line-height:1.35;
+ font-weight:650;
+ color:#315f48;
+}
+.detail .shopIntel button.shopMenuCard .menuHint{
+ display:block;
+ margin:0;
+ font-size:10px!important;
+ line-height:1.35;
+ font-weight:500;
+ color:#607b67;
+}
+.menuPhotoStatus{
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ gap:14px;
+ justify-content:center;
+ width:min(460px,100%);
+ min-width:0;
+ overflow-wrap:anywhere;
+}
+.menuPhotoStatus a{
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ padding:10px 14px;
+ max-width:100%;
+ border:1px solid #c4d8be;
+ border-radius:9px;
+ background:#f2f8e9;
+ color:#235a3a;
+ font-size:12px;
+ font-weight:800;
+ text-decoration:none;
+ text-align:center;
+ white-space:normal;
+}
+.menuPhotoStatus a:hover,.menuPhotoStatus a:focus-visible{
+ background:#deebd5;
+ outline:2px solid #b8d2ac;
+ outline-offset:2px;
+}
+.menuPhotoStatus.hidden{display:none!important}
+@media(max-width:760px){
+ .detail .shopIntel button.shopMenuCard{padding:9px!important}
+ .menuPhotoStatus{font-size:13px;padding:20px 10px}
+ .menuPhotoStatus a{width:100%}
+}
+
 /* Keep editorial citations separate from navigation buttons. The old .detail a selector
    turned every citation into a large green button, overlapping text on narrow screens. */
 .detail .atlasVerdict a:not(.atlasSeat),.detail .shopNameNotice a{
@@ -501,12 +582,12 @@ body.menuViewerOpen{overflow:hidden}
 <div id="menuViewer" class="atlasMenuViewer hidden" role="dialog" aria-modal="true" aria-labelledby="menuViewerTitle">
  <div class="menuViewerWindow">
   <header class="menuViewerHeader">
-   <div><small>COFFEESHOP ATLAS · MENU VIEWER</small><h2 id="menuViewerTitle">Latest menu</h2><p id="menuViewerDate"></p><span id="menuPhotoDate" class="hidden" aria-hidden="true"></span></div>
+   <div><small>COFFEESHOP ATLAS · MENU VIEWER</small><h2 id="menuViewerTitle">Latest menu</h2><p id="menuViewerDate"></p></div>
    <button id="menuViewerClose" type="button" aria-label="Close menu">×</button>
   </header>
   <div class="menuViewerBody">
    <div id="menuPhotoScroll" class="menuPhotoScroll">
-    <p id="menuPhotoStatus" class="menuPhotoStatus" role="status">Loading menu photograph…</p>
+    <div id="menuPhotoStatus" class="menuPhotoStatus" role="status"><span id="menuPhotoMessage">Loading menu photograph…</span><a id="menuDirectPhoto" href="https://www.coffeeshopmenus.org/" target="_blank" rel="noopener noreferrer">Open menu photo directly ↗</a></div>
     <img id="menuPhoto" class="hidden" alt="Latest menu photograph" decoding="async" referrerpolicy="no-referrer">
    </div>
    <div class="menuPhotoControls" aria-label="Menu photograph controls">
@@ -602,30 +683,47 @@ function renderList(){const arr=filtered(),view=$('exploreMode').value;$('discov
 }
 function refreshClusters(visible){if(!map||!clusters)return;clusters.clearLayers();for(const s of visible){const marker=geoMarkers[s.id];if(marker)clusters.addLayer(marker)}}
 
-let menuReturnFocus=null,menuImages=[],menuPhotoIndex=0,menuZoomed=false;
+let menuReturnFocus=null,menuImages=[],menuPhotoIndex=0,menuZoomed=false,menuImageDateText="",menuLoadTimer=null,menuLoadRequestId=0;
+function clearMenuLoadTimer(){
+ if(menuLoadTimer!==null){clearTimeout(menuLoadTimer);menuLoadTimer=null;}
+}
 function showMenuPhoto(index){
  if(!menuImages.length||index<0||index>=menuImages.length)return;
+ clearMenuLoadTimer();
+ const requestId=++menuLoadRequestId;
  menuPhotoIndex=index;menuZoomed=false;
- const pic=$('menuPhoto');
+ const pic=$('menuPhoto'),status=$('menuPhotoStatus'),message=$('menuPhotoMessage');
+ const directPhoto=$('menuDirectPhoto'),url=menuImages[index];
  $('menuPhotoScroll').classList.remove('zoomed');
  $('menuZoom').textContent='Zoom image';
  $('menuPhotoCounter').textContent=(index+1)+' of '+menuImages.length;
  $('menuPrev').disabled=index===0;
  $('menuNext').disabled=index===menuImages.length-1;
- $('menuPhotoStatus').textContent='Loading menu photograph…';
- $('menuPhotoStatus').classList.remove('hidden');
+ directPhoto.href=url;
+ message.textContent='Loading menu photograph from the publisher…';
+ status.classList.remove('hidden');
  pic.classList.add('hidden');
+ pic.onload=null;pic.onerror=null;
+ pic.removeAttribute('src');
+ const failed=reason=>{
+  if(requestId!==menuLoadRequestId)return;
+  clearMenuLoadTimer();
+  pic.onload=null;pic.onerror=null;
+  pic.classList.add('hidden');
+  pic.removeAttribute('src');
+  message.textContent=reason;
+ };
  pic.onload=()=>{
-  $('menuPhotoStatus').classList.add('hidden');
+  if(requestId!==menuLoadRequestId)return;
+  clearMenuLoadTimer();
+  if(!pic.naturalWidth){failed('The menu image was empty. Open the photo directly, or try the original menu page below.');return;}
+  status.classList.add('hidden');
   pic.classList.remove('hidden');
  };
- pic.onerror=()=>{
-  pic.classList.add('hidden');
-  $('menuPhotoStatus').textContent='This menu image could not be loaded from the original publisher. Use “Open original menu” below.';
- };
- pic.removeAttribute('src');
- pic.alt='Menu photograph '+(index+1)+' of '+menuImages.length+' from CoffeeshopMenus.org, dated '+$('menuPhotoDate').textContent;
- pic.src=menuImages[index];
+ pic.onerror=()=>failed('This menu photo could not be displayed here. Open the photo directly, or use the original menu page below.');
+ pic.alt='Menu photograph '+(index+1)+' of '+menuImages.length+' from CoffeeshopMenus.org, dated '+menuImageDateText;
+ pic.src=url;
+ menuLoadTimer=setTimeout(()=>failed('The photo is taking too long to load here. Open the photo directly, or use the original menu page below.'),12000);
  $('menuPhotoScroll').scrollTop=0;
  $('menuPhotoScroll').scrollLeft=0;
 }
@@ -639,7 +737,7 @@ function openMenuViewer(s,menu){
  menuReturnFocus=document.activeElement;
  menuImages=photos;
  $('menuViewerTitle').textContent='Latest verified menu · '+(s.name||s.address);
- $('menuPhotoDate').textContent=fmtMenuDate(menu.photoDate);
+ menuImageDateText=fmtMenuDate(menu.photoDate);
  $('menuViewerDate').textContent='Photo dated '+fmtMenuDate(menu.photoDate)+' · Photos hosted by CoffeeshopMenus.org';
  $('menuOriginal').href=menu.url;
  $('menuViewer').classList.remove('hidden');
@@ -651,9 +749,10 @@ function closeMenuViewer(){
  const modal=$('menuViewer');
  if(modal.classList.contains('hidden'))return;
  modal.classList.add('hidden');
+ clearMenuLoadTimer();menuLoadRequestId++;
  const pic=$('menuPhoto');
  pic.onload=null;pic.onerror=null;pic.removeAttribute('src');
- menuImages=[];menuPhotoIndex=0;menuZoomed=false;
+ menuImages=[];menuPhotoIndex=0;menuZoomed=false;menuImageDateText='';
  $('menuPhotoScroll').classList.remove('zoomed');
  document.body.classList.remove('menuViewerOpen');
  if(menuReturnFocus?.isConnected)menuReturnFocus.focus();
@@ -679,7 +778,7 @@ function showDetail(s){
  ${window.AtlasScore?.detail(s)||""}
  <div class="shopIntel">
   ${rating?`<a class="shopRatingCard" href="${esc(rating.url)}" target="_blank" rel="noopener"><strong>★ ${rating.rating.toFixed(1)}<small> / 5</small></strong><span>${esc(rating.source||'Community')} · ${rating.reviews} reviews${rank?' · Community #'+rank:''}<small>Historical average, not our verdict${rating.reviews<INTEL.rankingMinReviews?' · Small sample':''}, checked ${fmtMenuDate(rating.checkedAt)} ↗</small></span></a>`:'<span class="shopUnrated">Community score not yet checked</span>'}
-  ${menu?`<button type="button" class="shopMenuCard" id="viewMenuInside"><strong>▤ View latest menu</strong><span>Photo: ${fmtMenuDate(menu.photoDate)}<small>View within Atlas · original source credited</small></span></button>`:'<span class="shopNoMenu">No menu photo verified within the last 120 days</span>'}
+  ${menu?`<button type="button" class="shopMenuCard" id="viewMenuInside"><strong>▤ View menu photos</strong><span class="menuDate">Photo dated ${fmtMenuDate(menu.photoDate)}</span><small class="menuHint">Opens menu viewer</small></button>`:'<span class="shopNoMenu">No menu photo verified within the last 120 days</span>'}
  </div>
  <div class="detailRouteMain">
   <button id="planWalkAtlas" class="action detailPrimary">🧭 Walk on map</button>
