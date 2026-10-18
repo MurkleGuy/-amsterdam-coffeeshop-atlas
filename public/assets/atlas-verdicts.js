@@ -45,7 +45,11 @@ window.ATLAS_VERDICTS={
     }
 
     ,9:{
+      seating:{kind:"listed",label:"Smoking area listed; seating not verified",date:"2026-10-18",url:"https://en.greenmeister.com/coffeeshop/boere-jongens-amsterdam"},
       observations:[
+        {reviewer:"smoking greenoil1",date:"2026-04-01",quality:4,experience:4,note:"Describes the neighbourhood location as less hectic while maintaining quality.",url:"https://de.greenmeister.nl/coffeeshop/boere-jongens-amsterdam"},
+        {reviewer:"leafy kushkush1",date:"2026-03-25",quality:5,note:"Short positive report about flower; offers no information about staff or seating.",url:"https://de.greenmeister.nl/coffeeshop/boere-jongens-amsterdam"},
+        {reviewer:"wild speed1",date:"2026-03-15",service:5,note:"Reports helpful staff recommendations at this branch.",url:"https://de.greenmeister.nl/coffeeshop/boere-jongens-amsterdam"},
         {reviewer:"10eurofootlong115",date:"2025-10-03",service:5,note:"Reports helpful staff who discussed choices.",url:"https://en.greenmeister.com/coffeeshop/boere-jongens-amsterdam"},
         {reviewer:"rotten kushkush111",date:"2025-09-23",quality:4,note:"Reports a consistent experience over time, without identifying a current strain.",url:"https://en.greenmeister.com/coffeeshop/boere-jongens-amsterdam"}
       ]
@@ -124,6 +128,44 @@ window.ATLAS_VERDICTS={
         {reviewer:"10eurofootlong115",date:"2025-09-27",quality:4,service:5,value:5,note:"Praises products, price and welcoming staff.",url:"https://en.greenmeister.com/coffeeshop/boerejongens-utrechtsestraat-amsterdam"},
         {reviewer:"puff puff pass",date:"2025-09-27",service:5,note:"Reports helpful, familiar service, without a specific flower assessment.",url:"https://en.greenmeister.com/coffeeshop/boerejongens-utrechtsestraat-amsterdam"}
       ]
+    }
+
+    ,96:{
+      observations:[
+        {reviewer:"mac sailor1111",date:"2026-08-22",quality:4,service:5,note:"Praises the products and helpful staff.",url:"https://en.greenmeister.com/coffeeshop/hunters-coffeeshop-amsterdam"},
+        {reviewer:"soft dab",date:"2025-11-11",service:1,experience:2,note:"Complains about repeated stock shortages and an unhelpful shop policy.",url:"https://en.greenmeister.com/coffeeshop/hunters-coffeeshop-amsterdam"},
+        {reviewer:"captain hottie1",date:"2025-11-08",service:5,note:"Praises staff and selection, without reviewing a particular flower batch.",url:"https://en.greenmeister.com/coffeeshop/hunters-coffeeshop-amsterdam"},
+        {reviewer:"superduper joint1",date:"2025-09-12",quality:2,service:5,note:"Appreciates advice from staff but says hash quality has declined.",url:"https://en.greenmeister.com/coffeeshop/hunters-coffeeshop-amsterdam"},
+        {reviewer:"werschhh",date:"2025-07-20",quality:4,note:"Long-term customer says purchases are usually good, but selection can vary.",url:"https://en.greenmeister.com/coffeeshop/hunters-coffeeshop-amsterdam"},
+        {reviewer:"asyouwere25",date:"2025-07-01",service:5,note:"Positive about a knowledgeable staff member.",url:"https://en.greenmeister.com/coffeeshop/hunters-coffeeshop-amsterdam"}
+      ]
+    },
+    149:{
+      seating:{kind:"listed",label:"Indoor seating and terrace listed; not independently checked",date:"2026-10-18",url:"https://en.greenmeister.com/coffeeshop/hunters-amsterdam-utrechtsestraat"},
+      observations:[],
+      reviewNote:"The prominent public comments examined largely predate our 540-day window. A high lifetime star rating and an owner description do not establish recent flower quality."
+    },
+    18:{
+      observations:[],
+      reviewNote:"Older comments discuss a relaxed shop and occasional limited free seats, but no adequately recent first-hand product-and-service evidence was found in the visible sample."
+    },
+    41:{
+      seating:{kind:"listed",label:"Smoking area listed; present seating unverified",date:"2026-10-18",url:"https://en.greenmeister.com/coffeeshop/coffeeshop-amsterdam"},
+      observations:[],
+      reviewNote:"Prominent comments include complaints about price and quality from 2023; these are too old to support a 2026 verdict."
+    },
+    139:{
+      seating:{kind:"listed",label:"Smoking area listed; seating arrangements unverified",date:"2026-10-18",url:"https://en.greenmeister.com/coffeeshop/de-kade-amsterdam"},
+      observations:[],
+      reviewNote:"A refreshed menu is not proof that currently sold flower or service has been reviewed recently. The accessible highlighted comments were predominantly from 2023 or earlier."
+    },
+    14:{
+      observations:[],
+      reviewNote:"High historical rating, but the readily visible comments were old; no recent quality/service verdict is warranted."
+    },
+    59:{
+      observations:[],
+      reviewNote:"Boerejongens Sloterdijk has many historical stars, but sampled prominent reviews were mostly years old and included past criticism of pricing; current quality is unverified."
     }
   }
 };
