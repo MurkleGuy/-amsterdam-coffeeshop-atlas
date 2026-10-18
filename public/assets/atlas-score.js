@@ -64,10 +64,10 @@ function detail(shop){
   const reason=a?.reviewers?(a.spread===false&&a.reviewers>=4?'Review dates are too clustered for a trustworthy recommendation.':'We need more independent, dated reports describing both product quality and staff service.')
    :ext?'The available community average is historical. We have not established enough recent product and service evidence for our own score.'
    :'No individually matched community-rating source has been validated for this address.';
-  const recentNote=a?.record?.reviewNote?'<p>'+esc(a.record.reviewNote)+'</p>':'';
-  const community=ext?'<p>'+esc(ext.source)+' historical rating: '+Number(ext.rating).toFixed(1)+'/5 from '+ext.reviews+' reviews. <a href="'+esc(ext.url)+'" target="_blank" rel="noopener">Inspect original ↗</a></p>':'';
+  const recentNote=a?.record?.reviewNote?'<details class="atlasMore"><summary>Review notes</summary><p>'+esc(a.record.reviewNote)+'</p></details>':'';
+  // The separately linked community-rating card directly below is the source link; no duplicate button.
   const previews=notes?'<details class="atlasMore"><summary>Read '+a.reviewers+' dated reports</summary><ul>'+notes+'</ul><p>Individual remarks are not verified facts about current products or staff.</p></details>':'';
-  return '<section class="atlasVerdict atlasPending" aria-label="Atlas Score"><div class="atlasScoreHead"><strong>Atlas Score</strong><span>Not enough recent evidence</span></div><p>'+reason+'</p>'+seats+recentNote+community+previews+'</section>';
+  return '<section class="atlasVerdict atlasPending" aria-label="Atlas Score"><div class="atlasScoreHead"><strong>Atlas Score</strong><span>Not enough recent evidence</span></div><p>'+reason+'</p>'+seats+recentNote+previews+'</section>';
  }
  const metrics=dims.map(k=>'<div><span>'+labels[k]+'</span><strong>'+(a.measures[k].count?a.measures[k].value.toFixed(1)+'/5':'Not verified')+'</strong></div>').join('');
  const reviews=a.sample.slice(0,4).map(r=>'<li>'+esc(r.note)+' <a href="'+esc(r.url)+'" target="_blank" rel="noopener">'+fmt(r.date)+' ↗</a></li>').join('');
