@@ -361,7 +361,17 @@ body.menuViewerOpen{overflow:hidden}
 .menuViewerHeader p{margin:0;font-size:11px;color:#cbe4cf}
 .menuViewerHeader button{border:2px solid #e6f2e6;border-radius:10px;width:42px;height:42px;flex:none;background:#28684b;color:white;font-size:27px;cursor:pointer}
 .menuViewerBody{flex:1;min-height:0;background:#fff}
-.menuViewerBody iframe{display:block;width:100%;height:100%;border:0;background:white}
+.menuViewerBody{display:flex;flex-direction:column;min-height:0;overflow:hidden}
+.menuPhotoScroll{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;display:flex;justify-content:safe center;align-items:safe center;background:#162b23;padding:10px}
+.menuPhotoScroll img{display:block;width:auto;max-width:100%;max-height:100%;height:auto;object-fit:contain;background:#fff;border-radius:4px;box-shadow:0 2px 14px rgba(0,0,0,.25)}
+.menuPhotoScroll img.hidden,.menuPhotoStatus.hidden{display:none}
+.menuPhotoScroll.zoomed{display:block;text-align:left}
+.menuPhotoScroll.zoomed img{width:auto;max-width:none;max-height:none;height:auto;margin:0}
+.menuPhotoStatus{color:#e5efe3;font-size:13px;text-align:center;padding:35px 18px;max-width:430px;margin:auto;line-height:1.5}
+.menuPhotoControls{display:flex;align-items:center;justify-content:center;gap:7px;background:#e9f1e7;border-top:1px solid #d0ddcf;padding:8px 10px}
+.menuPhotoControls button{min-height:39px;border:1px solid #bdcfbf;border-radius:8px;padding:8px 12px;background:#fff;color:#20583a;font-size:12px;font-weight:800;cursor:pointer}
+.menuPhotoControls button:disabled{opacity:.35;cursor:not-allowed}
+.menuPhotoControls span{font-size:12px;color:#38664a;white-space:nowrap;min-width:40px;text-align:center;font-weight:800}
 .menuViewerFooter{padding:11px 17px;display:flex;gap:14px;align-items:center;justify-content:space-between;border-top:1px solid #d7e4d9}
 .menuViewerFooter p{font-size:11px;line-height:1.45;color:#617365;max-width:580px;margin:0}
 .menuViewerFooter a{display:inline-flex;align-items:center;justify-content:center;background:#216747;color:#fff;border-radius:9px;padding:10px 14px;text-align:center;text-decoration:none;font-size:12px;font-weight:800;white-space:nowrap}
@@ -375,6 +385,10 @@ body.menuViewerOpen{overflow:hidden}
  .menuViewerFooter{padding:10px 12px;flex-direction:column;gap:8px;align-items:stretch}
  .menuViewerFooter p{font-size:10px}
  .menuViewerFooter a{min-height:43px;white-space:normal}
+ .menuPhotoScroll{padding:5px}
+ .menuPhotoControls{gap:5px;padding:7px 6px;flex-wrap:wrap}
+ .menuPhotoControls button{padding:8px 7px;font-size:11px;min-height:40px}
+ .menuPhotoControls span{font-size:11px;min-width:33px}
 }
 </style>
 </head>
@@ -411,14 +425,23 @@ body.menuViewerOpen{overflow:hidden}
 <div id="menuViewer" class="atlasMenuViewer hidden" role="dialog" aria-modal="true" aria-labelledby="menuViewerTitle">
  <div class="menuViewerWindow">
   <header class="menuViewerHeader">
-   <div><small>COFFEESHOP ATLAS · MENU VIEWER</small><h2 id="menuViewerTitle">Latest menu</h2><p id="menuViewerDate"></p></div>
+   <div><small>COFFEESHOP ATLAS · MENU VIEWER</small><h2 id="menuViewerTitle">Latest menu</h2><p id="menuViewerDate"></p><span id="menuPhotoDate" class="hidden" aria-hidden="true"></span></div>
    <button id="menuViewerClose" type="button" aria-label="Close menu">×</button>
   </header>
   <div class="menuViewerBody">
-   <iframe id="menuFrame" title="Latest menu source" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+   <div id="menuPhotoScroll" class="menuPhotoScroll">
+    <p id="menuPhotoStatus" class="menuPhotoStatus" role="status">Loading menu photograph…</p>
+    <img id="menuPhoto" class="hidden" alt="Latest menu photograph" decoding="async" referrerpolicy="no-referrer">
+   </div>
+   <div class="menuPhotoControls" aria-label="Menu photograph controls">
+    <button type="button" id="menuPrev" aria-label="Previous menu photo">← Previous</button>
+    <span id="menuPhotoCounter" aria-live="polite"></span>
+    <button type="button" id="menuNext" aria-label="Next menu photo">Next →</button>
+    <button type="button" id="menuZoom">Zoom image</button>
+   </div>
   </div>
   <footer class="menuViewerFooter">
-   <p>Displayed from the original source when embedding is permitted. Menu photos are third-party material; prices and availability may have changed. If it looks blank, open the original.</p>
+   <p>Menu photos are displayed directly from CoffeeshopMenus.org, with source watermark preserved. Stock and prices may have changed. If a photo fails, open the original.</p>
    <a id="menuOriginal" href="https://www.coffeeshopmenus.org/" target="_blank" rel="noopener">Open original latest menu ↗</a>
   </footer>
  </div>
@@ -497,28 +520,70 @@ function renderList(){const arr=filtered(),view=$('exploreMode').value;$('discov
 }
 function refreshClusters(visible){if(!map||!clusters)return;clusters.clearLayers();for(const s of visible){const marker=geoMarkers[s.id];if(marker)clusters.addLayer(marker)}}
 
-let menuReturnFocus=null;
+let menuReturnFocus=null,menuImages=[],menuPhotoIndex=0,menuZoomed=false;
+function showMenuPhoto(index){
+ if(!menuImages.length||index<0||index>=menuImages.length)return;
+ menuPhotoIndex=index;menuZoomed=false;
+ const pic=$('menuPhoto');
+ $('menuPhotoScroll').classList.remove('zoomed');
+ $('menuZoom').textContent='Zoom image';
+ $('menuPhotoCounter').textContent=(index+1)+' of '+menuImages.length;
+ $('menuPrev').disabled=index===0;
+ $('menuNext').disabled=index===menuImages.length-1;
+ $('menuPhotoStatus').textContent='Loading menu photograph…';
+ $('menuPhotoStatus').classList.remove('hidden');
+ pic.classList.add('hidden');
+ pic.onload=()=>{
+  $('menuPhotoStatus').classList.add('hidden');
+  pic.classList.remove('hidden');
+ };
+ pic.onerror=()=>{
+  pic.classList.add('hidden');
+  $('menuPhotoStatus').textContent='This menu image could not be loaded from the original publisher. Use “Open original menu” below.';
+ };
+ pic.removeAttribute('src');
+ pic.alt='Menu photograph '+(index+1)+' of '+menuImages.length+' from CoffeeshopMenus.org, dated '+$('menuPhotoDate').textContent;
+ pic.src=menuImages[index];
+ $('menuPhotoScroll').scrollTop=0;
+ $('menuPhotoScroll').scrollLeft=0;
+}
 function openMenuViewer(s,menu){
  if(!menu||!/^https:\/\/www\.coffeeshopmenus\.org\//.test(menu.url))return;
- const modal=$('menuViewer'),frame=$('menuFrame');
+ const photos=(Array.isArray(menu.images)?menu.images:[]).filter(link=>typeof link==='string'&&/^https:\/\/www\.coffeeshopmenus\.org\/.+\.(jpg|jpeg|png)$/i.test(link));
+ if(!photos.length){
+  window.open(menu.url,'_blank','noopener');
+  return;
+ }
  menuReturnFocus=document.activeElement;
- $('menuViewerTitle').textContent='Latest menu · '+(s.name||s.address);
- $('menuViewerDate').textContent='Last checked photo: '+fmtMenuDate(menu.photoDate)+' · Source: CoffeeshopMenus.org';
+ menuImages=photos;
+ $('menuViewerTitle').textContent='Latest verified menu · '+(s.name||s.address);
+ $('menuPhotoDate').textContent=fmtMenuDate(menu.photoDate);
+ $('menuViewerDate').textContent='Photo dated '+fmtMenuDate(menu.photoDate)+' · Photos hosted by CoffeeshopMenus.org';
  $('menuOriginal').href=menu.url;
- frame.title='Latest dated menu for '+(s.name||s.address)+' from CoffeeshopMenus.org';
- frame.src=menu.url;
- modal.classList.remove('hidden');
+ $('menuViewer').classList.remove('hidden');
  document.body.classList.add('menuViewerOpen');
+ showMenuPhoto(0);
  $('menuViewerClose').focus();
 }
 function closeMenuViewer(){
  const modal=$('menuViewer');
  if(modal.classList.contains('hidden'))return;
  modal.classList.add('hidden');
- $('menuFrame').src='about:blank';
+ const pic=$('menuPhoto');
+ pic.onload=null;pic.onerror=null;pic.removeAttribute('src');
+ menuImages=[];menuPhotoIndex=0;menuZoomed=false;
+ $('menuPhotoScroll').classList.remove('zoomed');
  document.body.classList.remove('menuViewerOpen');
  if(menuReturnFocus?.isConnected)menuReturnFocus.focus();
  menuReturnFocus=null;
+}
+function toggleMenuZoom(){
+ if(!menuImages.length)return;
+ menuZoomed=!menuZoomed;
+ $('menuPhotoScroll').classList.toggle('zoomed',menuZoomed);
+ $('menuZoom').textContent=menuZoomed?'Fit image':'Zoom image';
+ $('menuPhotoScroll').scrollTop=0;
+ $('menuPhotoScroll').scrollLeft=0;
 }
 function showDetail(s){
  const panel=$('detail'),wrap=document.querySelector('.mapWrap');
@@ -745,7 +810,7 @@ function openShops(){
 function closeShops(){
  $('shopDrawer').classList.remove('open');$('shopsToggle').setAttribute('aria-expanded','false');
 }
-function main(){$('menuViewerClose').onclick=closeMenuViewer;$('menuViewer').addEventListener('click',event=>{if(event.target===$('menuViewer'))closeMenuViewer()});document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMenuViewer()});restore();$('topCount').textContent=ALL_COUNT;$('favCount').textContent=favs.size;initMap();for(const s of official)if(s.lat!=null)addMarker(s);refreshPinCount();renderList();$('search').addEventListener('input',renderList);$('area').addEventListener('change',renderList);$('exploreMode').addEventListener('change',renderList);$('allTab').onclick=()=>{currentTab='all';$('allTab').classList.add('active');$('savedTab').classList.remove('active');renderList()};$('savedTab').onclick=()=>{currentTab='saved';$('savedTab').classList.add('active');$('allTab').classList.remove('active');renderList()};$('resetMap').onclick=()=>map?.flyTo([52.3695,4.8975],12);$('streetMode').onclick=()=>setMapMode('street');$('transportMode').onclick=()=>{tileFailures=0;setMapMode('bus');};$('routesMode').onclick=()=>setMapMode('routes');$('routeKeyButton').onclick=()=>{const mode=$('routePanel').dataset.mode;if(mode==='metro'&&routeLines)renderRouteKey();setRouteKeyVisible($('routePanel').classList.contains('hidden'))};$('closeRoutePanel').onclick=()=>setRouteKeyVisible(false);$('routeAll').onclick=()=>{if($('routePanel').dataset.mode==='metro'&&routeLines){enabledRouteKeys=new Set(routeLines.map(r=>r.key));drawRoutes();renderRouteKey()}};$('routeNone').onclick=()=>{if($('routePanel').dataset.mode==='metro'&&routeLines){enabledRouteKeys=new Set();drawRoutes();renderRouteKey()}};$('routeRetry').onclick=()=>{if($('routePanel').dataset.mode==='metro')loadRoutes()};$('locateMap').onclick=onLocate;$('nearby').onclick=onLocate;$('shopsToggle').onclick=()=>{$('shopDrawer').classList.contains('open')?closeShops():openShops()};$('closeShops').onclick=closeShops;$('exportBtn').onclick=downloadCSV;if(official.some(s=>s.lat!=null))setStatus(`Loaded ${official.filter(s=>s.lat!=null).length} cached markers; refreshing missing locations…`,true);geocodeAll();}
+function main(){$('menuViewerClose').onclick=closeMenuViewer;$('menuPrev').onclick=()=>showMenuPhoto(menuPhotoIndex-1);$('menuNext').onclick=()=>showMenuPhoto(menuPhotoIndex+1);$('menuZoom').onclick=toggleMenuZoom;$('menuViewer').addEventListener('click',event=>{if(event.target===$('menuViewer'))closeMenuViewer()});document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMenuViewer()});restore();$('topCount').textContent=ALL_COUNT;$('favCount').textContent=favs.size;initMap();for(const s of official)if(s.lat!=null)addMarker(s);refreshPinCount();renderList();$('search').addEventListener('input',renderList);$('area').addEventListener('change',renderList);$('exploreMode').addEventListener('change',renderList);$('allTab').onclick=()=>{currentTab='all';$('allTab').classList.add('active');$('savedTab').classList.remove('active');renderList()};$('savedTab').onclick=()=>{currentTab='saved';$('savedTab').classList.add('active');$('allTab').classList.remove('active');renderList()};$('resetMap').onclick=()=>map?.flyTo([52.3695,4.8975],12);$('streetMode').onclick=()=>setMapMode('street');$('transportMode').onclick=()=>{tileFailures=0;setMapMode('bus');};$('routesMode').onclick=()=>setMapMode('routes');$('routeKeyButton').onclick=()=>{const mode=$('routePanel').dataset.mode;if(mode==='metro'&&routeLines)renderRouteKey();setRouteKeyVisible($('routePanel').classList.contains('hidden'))};$('closeRoutePanel').onclick=()=>setRouteKeyVisible(false);$('routeAll').onclick=()=>{if($('routePanel').dataset.mode==='metro'&&routeLines){enabledRouteKeys=new Set(routeLines.map(r=>r.key));drawRoutes();renderRouteKey()}};$('routeNone').onclick=()=>{if($('routePanel').dataset.mode==='metro'&&routeLines){enabledRouteKeys=new Set();drawRoutes();renderRouteKey()}};$('routeRetry').onclick=()=>{if($('routePanel').dataset.mode==='metro')loadRoutes()};$('locateMap').onclick=onLocate;$('nearby').onclick=onLocate;$('shopsToggle').onclick=()=>{$('shopDrawer').classList.contains('open')?closeShops():openShops()};$('closeShops').onclick=closeShops;$('exportBtn').onclick=downloadCSV;if(official.some(s=>s.lat!=null))setStatus(`Loaded ${official.filter(s=>s.lat!=null).length} cached markers; refreshing missing locations…`,true);geocodeAll();}
 main();
 // A gallery search can be carried through the hotel-first setup onto this map.
 try{
