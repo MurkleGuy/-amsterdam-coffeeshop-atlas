@@ -779,13 +779,20 @@ function closeShops(){
 }
 function main(){restore();$('topCount').textContent=ALL_COUNT;$('favCount').textContent=favs.size;initMap();for(const s of official)if(s.lat!=null)addMarker(s);refreshPinCount();renderList();$('search').addEventListener('input',renderList);$('area').addEventListener('change',renderList);$('exploreMode').addEventListener('change',renderList);$('allTab').onclick=()=>{currentTab='all';$('allTab').classList.add('active');$('savedTab').classList.remove('active');renderList()};$('savedTab').onclick=()=>{currentTab='saved';$('savedTab').classList.add('active');$('allTab').classList.remove('active');renderList()};$('resetMap').onclick=()=>map?.flyTo([52.3695,4.8975],12);$('streetMode').onclick=()=>setMapMode('street');$('transportMode').onclick=()=>{tileFailures=0;setMapMode('bus');};$('routesMode').onclick=()=>setMapMode('routes');$('routeKeyButton').onclick=()=>{const mode=$('routePanel').dataset.mode;if(mode==='metro'&&routeLines)renderRouteKey();setRouteKeyVisible($('routePanel').classList.contains('hidden'))};$('closeRoutePanel').onclick=()=>setRouteKeyVisible(false);$('routeAll').onclick=()=>{if($('routePanel').dataset.mode==='metro'&&routeLines){enabledRouteKeys=new Set(routeLines.map(r=>r.key));drawRoutes();renderRouteKey()}};$('routeNone').onclick=()=>{if($('routePanel').dataset.mode==='metro'&&routeLines){enabledRouteKeys=new Set();drawRoutes();renderRouteKey()}};$('routeRetry').onclick=()=>{if($('routePanel').dataset.mode==='metro')loadRoutes()};$('locateMap').onclick=onLocate;$('nearby').onclick=onLocate;$('shopsToggle').onclick=()=>{$('shopDrawer').classList.contains('open')?closeShops():openShops()};$('closeShops').onclick=closeShops;$('exportBtn').onclick=downloadCSV;if(official.some(s=>s.lat!=null))setStatus(`Loaded ${official.filter(s=>s.lat!=null).length} cached markers; refreshing missing locations…`,true);geocodeAll();}
 main();
-// A gallery search can be carried through the hotel-first setup onto this map.
+// Restore the exact shop details when returning from its menu page.
+// Gallery queries remain searches, so the hotel-first flow is preserved.
 try{
- const incomingShop=(new URLSearchParams(window.location.search).get('shop')||'').trim().slice(0,110);
- if(incomingShop){
-  $('search').value=incomingShop;
-  renderList();
-  openShops();
+ const incomingParams=new URLSearchParams(window.location.search);
+ const shopId=Number(incomingParams.get('shopId'));
+ const matchedShop=Number.isSafeInteger(shopId)&&shopId>0?official.find(s=>s.id===shopId):null;
+ if(matchedShop)selectShop(matchedShop.id);
+ else{
+  const incomingShop=(incomingParams.get('shop')||'').trim().slice(0,110);
+  if(incomingShop){
+   $('search').value=incomingShop;
+   renderList();
+   openShops();
+  }
  }
 }catch(e){}
 window.addEventListener('message',event=>{
