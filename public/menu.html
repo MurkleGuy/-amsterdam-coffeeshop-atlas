@@ -92,7 +92,7 @@ if(!shop){$("shopTitle").textContent="Coffeeshop not found";$("shopAddress").tex
 document.title=(shop.name||"Coffeeshop")+" menu | Amsterdam Coffeeshop Atlas";
 $("shopTitle").textContent=shop.name||"Coffeeshop";
 $("shopAddress").textContent=shop.address;
-const back="map.html?shop="+encodeURIComponent(shop.name||shop.street);
+const back="map.html?shopId="+encodeURIComponent(shop.id);
 $("backToMap").href=back;$("noMenuBack").href=back;
 const owned=approvedMenus[id];
 const ownerOK=owned&&owned.approved===true&&owned.verifiedShop===true&&format(owned.updatedAt)&&fresh(owned.updatedAt,120);
