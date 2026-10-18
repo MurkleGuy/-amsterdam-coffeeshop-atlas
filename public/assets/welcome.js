@@ -39,7 +39,7 @@
  function mapUrl(){
   const qs=new URLSearchParams(window.location.search||'');
   const shop=(qs.get('shop')||'').trim().slice(0,110);
-  return 'map.html?from=welcome&v=hotel-first-v3'+(shop?'&shop='+encodeURIComponent(shop):'');
+  return 'map.html?from=welcome&v=hotel-first-v4'+(shop?'&shop='+encodeURIComponent(shop):'');
  }
  function openMap(){
   try{localStorage.setItem(SEEN_KEY,'seen')}catch(e){}
