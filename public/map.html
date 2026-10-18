@@ -350,128 +350,21 @@ html,body{height:100%;width:100%;overflow:hidden}
 @media(max-width:360px){.shopIntel{grid-template-columns:1fr}.shopIntel>span{display:none}}
 </style>
 
-<style id="atlas-menu-viewer-v1">
-body.menuViewerOpen{overflow:hidden}
-.atlasMenuViewer{position:fixed;inset:0;z-index:10000;background:rgba(6,25,18,.72);display:flex;align-items:center;justify-content:center;padding:12px}
-.atlasMenuViewer.hidden{display:none}
-.menuViewerWindow{width:min(940px,100%);height:min(92dvh,980px);min-height:320px;display:flex;flex-direction:column;background:#fcfff8;border:1px solid #d8e9d8;box-shadow:0 18px 70px rgba(3,18,10,.38);border-radius:18px;overflow:hidden}
-.menuViewerHeader{padding:13px 18px;background:#195139;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.menuViewerHeader small{font-size:10px;font-weight:850;color:#b8e5c1;letter-spacing:1.2px}
-.menuViewerHeader h2{margin:4px 0;font-size:19px;line-height:1.2;letter-spacing:-.3px}
-.menuViewerHeader p{margin:0;font-size:11px;color:#cbe4cf}
-.menuViewerHeader button{border:2px solid #e6f2e6;border-radius:10px;width:42px;height:42px;flex:none;background:#28684b;color:white;font-size:27px;cursor:pointer}
-.menuViewerBody{flex:1;min-height:0;background:#fff}
-.menuViewerBody{display:flex;flex-direction:column;min-height:0;overflow:hidden}
-.menuPhotoScroll{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;display:flex;justify-content:safe center;align-items:safe center;background:#162b23;padding:10px}
-.menuPhotoScroll img{display:block;width:auto;max-width:100%;max-height:100%;height:auto;object-fit:contain;background:#fff;border-radius:4px;box-shadow:0 2px 14px rgba(0,0,0,.25)}
-.menuPhotoScroll img.hidden,.menuPhotoStatus.hidden{display:none}
-.menuPhotoScroll.zoomed{display:block;text-align:left}
-.menuPhotoScroll.zoomed img{width:auto;max-width:none;max-height:none;height:auto;margin:0}
-.menuPhotoStatus{color:#e5efe3;font-size:13px;text-align:center;padding:35px 18px;max-width:430px;margin:auto;line-height:1.5}
-.menuPhotoControls{display:flex;align-items:center;justify-content:center;gap:7px;background:#e9f1e7;border-top:1px solid #d0ddcf;padding:8px 10px}
-.menuPhotoControls button{min-height:39px;border:1px solid #bdcfbf;border-radius:8px;padding:8px 12px;background:#fff;color:#20583a;font-size:12px;font-weight:800;cursor:pointer}
-.menuPhotoControls button:disabled{opacity:.35;cursor:not-allowed}
-.menuPhotoControls span{font-size:12px;color:#38664a;white-space:nowrap;min-width:40px;text-align:center;font-weight:800}
-.menuViewerFooter{padding:11px 17px;display:flex;gap:14px;align-items:center;justify-content:space-between;border-top:1px solid #d7e4d9}
-.menuViewerFooter p{font-size:11px;line-height:1.45;color:#617365;max-width:580px;margin:0}
-.menuViewerFooter a{display:inline-flex;align-items:center;justify-content:center;background:#216747;color:#fff;border-radius:9px;padding:10px 14px;text-align:center;text-decoration:none;font-size:12px;font-weight:800;white-space:nowrap}
-.shopIntel button.shopMenuCard{cursor:pointer;text-align:left;font:inherit;width:100%;border:1px solid #cde0cd;background:#e8f3e6;color:#205d3e;display:flex;flex-direction:column}
-.shopIntel button.shopMenuCard:hover{background:#cfe8cd}
-@media(max-width:760px){
- .atlasMenuViewer{padding:0}
- .menuViewerWindow{width:100%;height:100dvh;max-height:none;border-radius:0;border:0}
- .menuViewerHeader{padding:12px 14px}
- .menuViewerHeader h2{font-size:17px}
- .menuViewerFooter{padding:10px 12px;flex-direction:column;gap:8px;align-items:stretch}
- .menuViewerFooter p{font-size:10px}
- .menuViewerFooter a{min-height:43px;white-space:normal}
- .menuPhotoScroll{padding:5px}
- .menuPhotoControls{gap:5px;padding:7px 6px;flex-wrap:wrap}
- .menuPhotoControls button{padding:8px 7px;font-size:11px;min-height:40px}
- .menuPhotoControls span{font-size:11px;min-width:33px}
-}
-</style>
+
 <style id="atlas-score-v1">
-/* Mobile menu card: explicit typography instead of inheriting the large generic button font. */
-.detail .shopIntel button.shopMenuCard{
- box-sizing:border-box;
- min-width:0;
- width:100%;
- max-width:100%;
- border-radius:10px;
- padding:10px!important;
- display:flex;
- flex-direction:column;
- align-items:flex-start;
- justify-content:center;
- gap:5px;
- font-size:11px!important;
- line-height:1.35;
- font-weight:500;
- text-align:left;
- white-space:normal;
- overflow-wrap:anywhere;
+/* Menu references use a separate Atlas page; no third-party image hotlinking. */
+.detail .shopIntel>a.shopMenuCard{
+ display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:4px;
+ min-width:0;width:100%;box-sizing:border-box;padding:10px!important;
+ border:1px solid #cde0cd!important;border-radius:10px;
+ background:#e8f3e6!important;color:#205d3e!important;
+ text-align:left;text-decoration:none;font-size:11px!important;
+ font-weight:550;line-height:1.35;overflow-wrap:anywhere;
 }
-.detail .shopIntel button.shopMenuCard strong{
- display:block;
- margin:0;
- font-size:12px!important;
- font-weight:850;
- line-height:1.3;
-}
-.detail .shopIntel button.shopMenuCard .menuDate{
- display:block;
- margin:0;
- font-size:11px!important;
- line-height:1.35;
- font-weight:650;
- color:#315f48;
-}
-.detail .shopIntel button.shopMenuCard .menuHint{
- display:block;
- margin:0;
- font-size:10px!important;
- line-height:1.35;
- font-weight:500;
- color:#607b67;
-}
-.menuPhotoStatus{
- display:flex;
- flex-direction:column;
- align-items:center;
- gap:14px;
- justify-content:center;
- width:min(460px,100%);
- min-width:0;
- overflow-wrap:anywhere;
-}
-.menuPhotoStatus a{
- display:inline-flex;
- align-items:center;
- justify-content:center;
- padding:10px 14px;
- max-width:100%;
- border:1px solid #c4d8be;
- border-radius:9px;
- background:#f2f8e9;
- color:#235a3a;
- font-size:12px;
- font-weight:800;
- text-decoration:none;
- text-align:center;
- white-space:normal;
-}
-.menuPhotoStatus a:hover,.menuPhotoStatus a:focus-visible{
- background:#deebd5;
- outline:2px solid #b8d2ac;
- outline-offset:2px;
-}
-.menuPhotoStatus.hidden{display:none!important}
-@media(max-width:760px){
- .detail .shopIntel button.shopMenuCard{padding:9px!important}
- .menuPhotoStatus{font-size:13px;padding:20px 10px}
- .menuPhotoStatus a{width:100%}
-}
+.detail .shopIntel>a.shopMenuCard strong{font-size:12px!important;font-weight:850;line-height:1.3}
+.detail .shopIntel>a.shopMenuCard .menuDate{color:#315f48;font-size:11px!important;font-weight:650;line-height:1.3}
+.detail .shopIntel>a.shopMenuCard .menuHint{color:#607b67;font-size:10px!important;font-weight:500;line-height:1.3}
+.detail .shopIntel>a.shopMenuCard:hover,.detail .shopIntel>a.shopMenuCard:focus-visible{background:#cfe8cd!important;outline:2px solid #2c7952;outline-offset:1px}
 
 /* Keep editorial citations separate from navigation buttons. The old .detail a selector
    turned every citation into a large green button, overlapping text on narrow screens. */
@@ -526,7 +419,7 @@ body.menuViewerOpen{overflow:hidden}
 }
 .detail .shopIntel>a.shopRatingCard span{color:#6f5125}
 .detail .shopIntel>a.shopRatingCard span small{color:#806744}
-.detail .shopIntel>button.shopMenuCard{overflow-wrap:anywhere}
+
 @media(max-width:760px){
  .detail .atlasVerdict{overflow-wrap:anywhere}
  .detail .shopIntel>a.shopRatingCard{min-width:0}
@@ -577,30 +470,6 @@ body.menuViewerOpen{overflow:hidden}
    <div id="detail" class="detail hidden" role="dialog" aria-label="Selected coffeeshop details"></div>
    <div class="mapLegend" id="legend"><b>2026 city address list</b><div class="row"><i class="legendDot"></i><span><span id="pinnedCount">0</span> pinned of 167 published addresses</span></div><div style="margin-top:4px">Markers appear as locations are checked.</div></div>
   </div>
- </div>
-</div>
-<div id="menuViewer" class="atlasMenuViewer hidden" role="dialog" aria-modal="true" aria-labelledby="menuViewerTitle">
- <div class="menuViewerWindow">
-  <header class="menuViewerHeader">
-   <div><small>COFFEESHOP ATLAS · MENU VIEWER</small><h2 id="menuViewerTitle">Latest menu</h2><p id="menuViewerDate"></p></div>
-   <button id="menuViewerClose" type="button" aria-label="Close menu">×</button>
-  </header>
-  <div class="menuViewerBody">
-   <div id="menuPhotoScroll" class="menuPhotoScroll">
-    <div id="menuPhotoStatus" class="menuPhotoStatus" role="status"><span id="menuPhotoMessage">Loading menu photograph…</span><a id="menuDirectPhoto" href="https://www.coffeeshopmenus.org/" target="_blank" rel="noopener noreferrer">Open menu photo directly ↗</a></div>
-    <img id="menuPhoto" class="hidden" alt="Latest menu photograph" decoding="async" referrerpolicy="no-referrer">
-   </div>
-   <div class="menuPhotoControls" aria-label="Menu photograph controls">
-    <button type="button" id="menuPrev" aria-label="Previous menu photo">← Previous</button>
-    <span id="menuPhotoCounter" aria-live="polite"></span>
-    <button type="button" id="menuNext" aria-label="Next menu photo">Next →</button>
-    <button type="button" id="menuZoom">Zoom image</button>
-   </div>
-  </div>
-  <footer class="menuViewerFooter">
-   <p>Menu photos are displayed directly from CoffeeshopMenus.org, with source watermark preserved. Stock and prices may have changed. If a photo fails, open the original.</p>
-   <a id="menuOriginal" href="https://www.coffeeshopmenus.org/" target="_blank" rel="noopener">Open original latest menu ↗</a>
-  </footer>
  </div>
 </div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -683,89 +552,6 @@ function renderList(){const arr=filtered(),view=$('exploreMode').value;$('discov
 }
 function refreshClusters(visible){if(!map||!clusters)return;clusters.clearLayers();for(const s of visible){const marker=geoMarkers[s.id];if(marker)clusters.addLayer(marker)}}
 
-let menuReturnFocus=null,menuImages=[],menuPhotoIndex=0,menuZoomed=false,menuImageDateText="",menuLoadTimer=null,menuLoadRequestId=0;
-function clearMenuLoadTimer(){
- if(menuLoadTimer!==null){clearTimeout(menuLoadTimer);menuLoadTimer=null;}
-}
-function showMenuPhoto(index){
- if(!menuImages.length||index<0||index>=menuImages.length)return;
- clearMenuLoadTimer();
- const requestId=++menuLoadRequestId;
- menuPhotoIndex=index;menuZoomed=false;
- const pic=$('menuPhoto'),status=$('menuPhotoStatus'),message=$('menuPhotoMessage');
- const directPhoto=$('menuDirectPhoto'),url=menuImages[index];
- $('menuPhotoScroll').classList.remove('zoomed');
- $('menuZoom').textContent='Zoom image';
- $('menuPhotoCounter').textContent=(index+1)+' of '+menuImages.length;
- $('menuPrev').disabled=index===0;
- $('menuNext').disabled=index===menuImages.length-1;
- directPhoto.href=url;
- message.textContent='Loading menu photograph from the publisher…';
- status.classList.remove('hidden');
- pic.classList.add('hidden');
- pic.onload=null;pic.onerror=null;
- pic.removeAttribute('src');
- const failed=reason=>{
-  if(requestId!==menuLoadRequestId)return;
-  clearMenuLoadTimer();
-  pic.onload=null;pic.onerror=null;
-  pic.classList.add('hidden');
-  pic.removeAttribute('src');
-  message.textContent=reason;
- };
- pic.onload=()=>{
-  if(requestId!==menuLoadRequestId)return;
-  clearMenuLoadTimer();
-  if(!pic.naturalWidth){failed('The menu image was empty. Open the photo directly, or try the original menu page below.');return;}
-  status.classList.add('hidden');
-  pic.classList.remove('hidden');
- };
- pic.onerror=()=>failed('This menu photo could not be displayed here. Open the photo directly, or use the original menu page below.');
- pic.alt='Menu photograph '+(index+1)+' of '+menuImages.length+' from CoffeeshopMenus.org, dated '+menuImageDateText;
- menuLoadTimer=setTimeout(()=>failed('The photo is taking too long to load here. Open the photo directly, or use the original menu page below.'),12000);
- pic.src=url;
- $('menuPhotoScroll').scrollTop=0;
- $('menuPhotoScroll').scrollLeft=0;
-}
-function openMenuViewer(s,menu){
- if(!menu||!/^https:\/\/www\.coffeeshopmenus\.org\//.test(menu.url))return;
- const photos=(Array.isArray(menu.images)?menu.images:[]).filter(link=>typeof link==='string'&&/^https:\/\/www\.coffeeshopmenus\.org\/.+\.(jpg|jpeg|png)$/i.test(link));
- if(!photos.length){
-  window.open(menu.url,'_blank','noopener');
-  return;
- }
- menuReturnFocus=document.activeElement;
- menuImages=photos;
- $('menuViewerTitle').textContent='Latest verified menu · '+(s.name||s.address);
- menuImageDateText=fmtMenuDate(menu.photoDate);
- $('menuViewerDate').textContent='Photo dated '+fmtMenuDate(menu.photoDate)+' · Photos hosted by CoffeeshopMenus.org';
- $('menuOriginal').href=menu.url;
- $('menuViewer').classList.remove('hidden');
- document.body.classList.add('menuViewerOpen');
- showMenuPhoto(0);
- $('menuViewerClose').focus();
-}
-function closeMenuViewer(){
- const modal=$('menuViewer');
- if(modal.classList.contains('hidden'))return;
- modal.classList.add('hidden');
- clearMenuLoadTimer();menuLoadRequestId++;
- const pic=$('menuPhoto');
- pic.onload=null;pic.onerror=null;pic.removeAttribute('src');
- menuImages=[];menuPhotoIndex=0;menuZoomed=false;menuImageDateText='';
- $('menuPhotoScroll').classList.remove('zoomed');
- document.body.classList.remove('menuViewerOpen');
- if(menuReturnFocus?.isConnected)menuReturnFocus.focus();
- menuReturnFocus=null;
-}
-function toggleMenuZoom(){
- if(!menuImages.length)return;
- menuZoomed=!menuZoomed;
- $('menuPhotoScroll').classList.toggle('zoomed',menuZoomed);
- $('menuZoom').textContent=menuZoomed?'Fit image':'Zoom image';
- $('menuPhotoScroll').scrollTop=0;
- $('menuPhotoScroll').scrollLeft=0;
-}
 function showDetail(s){
  const panel=$('detail'),wrap=document.querySelector('.mapWrap');
  if(!s){panel.classList.add('hidden');wrap.classList.remove('has-detail');return;}
@@ -778,7 +564,7 @@ function showDetail(s){
  ${window.AtlasScore?.detail(s)||""}
  <div class="shopIntel">
   ${rating?`<a class="shopRatingCard" href="${esc(rating.url)}" target="_blank" rel="noopener"><strong>★ ${rating.rating.toFixed(1)}<small> / 5</small></strong><span>${esc(rating.source||'Community')} · ${rating.reviews} reviews${rank?' · Community #'+rank:''}<small>Historical average, not our verdict${rating.reviews<INTEL.rankingMinReviews?' · Small sample':''}, checked ${fmtMenuDate(rating.checkedAt)} ↗</small></span></a>`:'<span class="shopUnrated">Community score not yet checked</span>'}
-  ${menu?`<button type="button" class="shopMenuCard" id="viewMenuInside"><strong>▤ View menu photos</strong><span class="menuDate">Photo dated ${fmtMenuDate(menu.photoDate)}</span><small class="menuHint">Opens menu viewer</small></button>`:'<span class="shopNoMenu">No menu photo verified within the last 120 days</span>'}
+  ${menu?`<a class="shopMenuCard" href="menu.html?shop=${encodeURIComponent(s.id)}"><strong>▤ Menu reference</strong><span class="menuDate">Photo dated ${fmtMenuDate(menu.photoDate)}</span><small class="menuHint">Open Atlas menu page</small></a>`:'<span class="shopNoMenu">No menu photo verified within the last 120 days</span>'}
  </div>
  <div class="detailRouteMain">
   <button id="planWalkAtlas" class="action detailPrimary">🧭 Walk on map</button>
@@ -788,7 +574,6 @@ function showDetail(s){
  </div>
  <div class="detailBottom"><a class="secondary reviewLink" href="${gmaps(s)}" target="_blank" rel="noopener">${s.name?'★ Check Google reviews ↗':'View address on Google Maps ↗'}</a></div>
  <p class="detailFinePrint">${s.name?'Opens Google Maps using the shop name and address; confirm the correct listing.':'Shop name not verified; this opens the published address.'} Walking routes rely on mapped footpaths and crossings.</p>`;
- if(menu)$('viewMenuInside').onclick=()=>openMenuViewer(s,menu);
  $('closeDetail').onclick=()=>{showDetail(null);selected=null;renderList()};
  $('detailFav').onclick=()=>toggleFav(s.id);
  $('planWalkAtlas').onclick=()=>{showDetail(null);window.AtlasTrip?.planTo(s)};
@@ -992,7 +777,7 @@ function openShops(){
 function closeShops(){
  $('shopDrawer').classList.remove('open');$('shopsToggle').setAttribute('aria-expanded','false');
 }
-function main(){$('menuViewerClose').onclick=closeMenuViewer;$('menuPrev').onclick=()=>showMenuPhoto(menuPhotoIndex-1);$('menuNext').onclick=()=>showMenuPhoto(menuPhotoIndex+1);$('menuZoom').onclick=toggleMenuZoom;$('menuViewer').addEventListener('click',event=>{if(event.target===$('menuViewer'))closeMenuViewer()});document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMenuViewer()});restore();$('topCount').textContent=ALL_COUNT;$('favCount').textContent=favs.size;initMap();for(const s of official)if(s.lat!=null)addMarker(s);refreshPinCount();renderList();$('search').addEventListener('input',renderList);$('area').addEventListener('change',renderList);$('exploreMode').addEventListener('change',renderList);$('allTab').onclick=()=>{currentTab='all';$('allTab').classList.add('active');$('savedTab').classList.remove('active');renderList()};$('savedTab').onclick=()=>{currentTab='saved';$('savedTab').classList.add('active');$('allTab').classList.remove('active');renderList()};$('resetMap').onclick=()=>map?.flyTo([52.3695,4.8975],12);$('streetMode').onclick=()=>setMapMode('street');$('transportMode').onclick=()=>{tileFailures=0;setMapMode('bus');};$('routesMode').onclick=()=>setMapMode('routes');$('routeKeyButton').onclick=()=>{const mode=$('routePanel').dataset.mode;if(mode==='metro'&&routeLines)renderRouteKey();setRouteKeyVisible($('routePanel').classList.contains('hidden'))};$('closeRoutePanel').onclick=()=>setRouteKeyVisible(false);$('routeAll').onclick=()=>{if($('routePanel').dataset.mode==='metro'&&routeLines){enabledRouteKeys=new Set(routeLines.map(r=>r.key));drawRoutes();renderRouteKey()}};$('routeNone').onclick=()=>{if($('routePanel').dataset.mode==='metro'&&routeLines){enabledRouteKeys=new Set();drawRoutes();renderRouteKey()}};$('routeRetry').onclick=()=>{if($('routePanel').dataset.mode==='metro')loadRoutes()};$('locateMap').onclick=onLocate;$('nearby').onclick=onLocate;$('shopsToggle').onclick=()=>{$('shopDrawer').classList.contains('open')?closeShops():openShops()};$('closeShops').onclick=closeShops;$('exportBtn').onclick=downloadCSV;if(official.some(s=>s.lat!=null))setStatus(`Loaded ${official.filter(s=>s.lat!=null).length} cached markers; refreshing missing locations…`,true);geocodeAll();}
+function main(){restore();$('topCount').textContent=ALL_COUNT;$('favCount').textContent=favs.size;initMap();for(const s of official)if(s.lat!=null)addMarker(s);refreshPinCount();renderList();$('search').addEventListener('input',renderList);$('area').addEventListener('change',renderList);$('exploreMode').addEventListener('change',renderList);$('allTab').onclick=()=>{currentTab='all';$('allTab').classList.add('active');$('savedTab').classList.remove('active');renderList()};$('savedTab').onclick=()=>{currentTab='saved';$('savedTab').classList.add('active');$('allTab').classList.remove('active');renderList()};$('resetMap').onclick=()=>map?.flyTo([52.3695,4.8975],12);$('streetMode').onclick=()=>setMapMode('street');$('transportMode').onclick=()=>{tileFailures=0;setMapMode('bus');};$('routesMode').onclick=()=>setMapMode('routes');$('routeKeyButton').onclick=()=>{const mode=$('routePanel').dataset.mode;if(mode==='metro'&&routeLines)renderRouteKey();setRouteKeyVisible($('routePanel').classList.contains('hidden'))};$('closeRoutePanel').onclick=()=>setRouteKeyVisible(false);$('routeAll').onclick=()=>{if($('routePanel').dataset.mode==='metro'&&routeLines){enabledRouteKeys=new Set(routeLines.map(r=>r.key));drawRoutes();renderRouteKey()}};$('routeNone').onclick=()=>{if($('routePanel').dataset.mode==='metro'&&routeLines){enabledRouteKeys=new Set();drawRoutes();renderRouteKey()}};$('routeRetry').onclick=()=>{if($('routePanel').dataset.mode==='metro')loadRoutes()};$('locateMap').onclick=onLocate;$('nearby').onclick=onLocate;$('shopsToggle').onclick=()=>{$('shopDrawer').classList.contains('open')?closeShops():openShops()};$('closeShops').onclick=closeShops;$('exportBtn').onclick=downloadCSV;if(official.some(s=>s.lat!=null))setStatus(`Loaded ${official.filter(s=>s.lat!=null).length} cached markers; refreshing missing locations…`,true);geocodeAll();}
 main();
 // A gallery search can be carried through the hotel-first setup onto this map.
 try{
