@@ -112,5 +112,18 @@ window.ATLAS_VERDICTS={
       observations:[],
       reviewNote:"A historic reputation for large smoking rooms is not a verified 2026 seating or product-quality assessment."
     }
+
+    ,132:{
+      observations:[
+        {reviewer:"little afro1",date:"2026-03-01",quality:4,value:4,experience:4,note:"Returning visitor praises flower, prices and relaxed atmosphere.",url:"https://en.greenmeister.com/coffeeshop/bluebird-amsterdam"}
+      ]
+    },
+    148:{
+      observations:[
+        {reviewer:"dampu",date:"2026-09-10",service:5,note:"Reports good help from staff and praises an edible; no flower quality observation.",url:"https://en.greenmeister.com/coffeeshop/boerejongens-utrechtsestraat-amsterdam"},
+        {reviewer:"10eurofootlong115",date:"2025-09-27",quality:4,service:5,value:5,note:"Praises products, price and welcoming staff.",url:"https://en.greenmeister.com/coffeeshop/boerejongens-utrechtsestraat-amsterdam"},
+        {reviewer:"puff puff pass",date:"2025-09-27",service:5,note:"Reports helpful, familiar service, without a specific flower assessment.",url:"https://en.greenmeister.com/coffeeshop/boerejongens-utrechtsestraat-amsterdam"}
+      ]
+    }
   }
 };
