@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#163f30">
+<meta name="robots" content="noindex,follow">
+<title>Menu reference | Amsterdam Coffeeshop Atlas</title>
+<style>
+:root{color-scheme:light;--dark:#163e30;--forest:#215e45;--ink:#243b30;--muted:#6a8071;--line:#dae5da;--cream:#f5f7f0}
+*{box-sizing:border-box}
+body{margin:0;min-height:100dvh;background:var(--cream);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+a{color:var(--forest)}
+header{background:var(--dark);color:white;padding:18px max(16px,calc((100vw - 800px)/2));display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-size:12px;letter-spacing:1.3px;font-weight:900}
+header a{background:#e4f2e4;border-radius:9px;padding:9px 12px;color:#23553a;font-weight:800;text-decoration:none;font-size:13px;white-space:nowrap}
+main{max-width:800px;margin:auto;padding:22px 15px 55px}
+.eyebrow{text-transform:uppercase;letter-spacing:1.7px;color:#53846c;font-size:11px;font-weight:850;margin:0 0 8px}
+h1{font-size:clamp(24px,6vw,38px);margin:0;line-height:1.13;letter-spacing:-.6px}
+.address{color:var(--muted);font-size:13px;margin:11px 0 21px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:17px;padding:19px;margin:15px 0;box-shadow:0 2px 13px #234b3210;min-width:0}
+.panel h2{margin:0 0 9px;font-size:19px;line-height:1.3}
+.panel p{color:#5f7565;font-size:14px;margin:8px 0;line-height:1.55}
+.date{display:inline-flex;padding:5px 9px;background:#e8f1e7;border-radius:7px;font-size:12px;color:#295f43;font-weight:750}
+.info{background:#f1f6ee;border:1px solid #d6e3d5;border-radius:10px;padding:11px 12px;font-size:12px;color:#56705a;margin:14px 0}
+.actions{display:grid;gap:9px;margin-top:15px}
+.action{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:47px;border:1px solid #c8d9c8;border-radius:10px;background:#f4f8f1;padding:11px 13px;text-decoration:none;color:#24563a;font-weight:800;font-size:13px;overflow-wrap:anywhere}
+.action.primary{background:var(--forest);color:white;border-color:var(--forest)}
+.action:hover,.action:focus-visible{outline:2px solid #75a888;outline-offset:1px}
+.photo-item{display:flex;justify-content:space-between;align-items:center;gap:9px;padding:12px 0;border-bottom:1px solid #e5ece3;font-size:13px}
+.photo-item:last-child{border-bottom:0}
+.photo-item span{font-weight:650}
+.photo-item a{flex:none;font-weight:800;text-decoration:underline;text-underline-offset:3px}
+.notice{background:#fff7e8;border-color:#e8d9ba}
+.notice p{color:#765d32}
+.chip{display:inline-flex;background:#eaf4ec;color:#2c684d;font-weight:750;font-size:11px;border-radius:7px;padding:4px 7px}
+.sections{display:grid;gap:12px;margin:14px 0}
+.section{padding:12px;background:#f6f8f4;border:1px solid #e0e9e0;border-radius:10px}
+.section h3{margin:0 0 8px;font-size:16px}
+.section p{margin:0}
+.owner-photo{max-width:100%;height:auto;border-radius:10px;border:1px solid var(--line)}
+.small{font-size:12px!important;color:#738174!important}
+footer{margin-top:30px;font-size:11px;color:#778578}
+.hidden{display:none!important}
+@media(min-width:610px){main{padding-top:32px}.actions{grid-template-columns:1fr 1fr}.actions .primary{grid-column:1/-1}}
+</style>
+</head>
+<body>
+<header><div class="brand">✳ COFFEESHOP ATLAS</div><a id="backToMap" href="map.html">← Back to map</a></header>
+<main>
+<p class="eyebrow">AMSTERDAM · MENU INFORMATION</p>
+<h1 id="shopTitle">Loading coffeeshop…</h1>
+<p class="address" id="shopAddress"></p>
+<section id="ownerPanel" class="panel hidden" aria-live="polite"></section>
+<section id="archivePanel" class="panel hidden" aria-live="polite"></section>
+<section id="noMenuPanel" class="panel hidden">
+<h2>Menu information not available</h2>
+<p>We don't have a recent, permission-cleared menu for this address. The Atlas will not invent product lists or display old prices as current.</p>
+<a class="action" href="map.html" id="noMenuBack">Return to coffeeshops <span aria-hidden="true">→</span></a>
+</section>
+<section class="panel notice">
+<h2>About this information</h2>
+<p>This is an independent venue guide, not an online shop. Archived menu photos are historical references and may not reflect current offerings. The Atlas doesn't process orders or payments.</p>
+</section>
+<footer>Independent Amsterdam directory · 18+ · Check local rules and the venue's current arrangements.</footer>
+</main>
+<script src="assets/shops.js"></script>
+<script src="assets/shop-intel.js?v=ratings-146-branch-corrected-2026-10-18"></script>
+<script src="assets/owner-menus.js?v=1"></script>
+<script>
+(function(){
+"use strict";
+const $=id=>document.getElementById(id);
+const shops=Array.isArray(window.ATLAS_SHOPS)?window.ATLAS_SHOPS:[];
+const intel=window.ATLAS_INTEL||{menus:{},maxMenuAgeDays:120};
+const approvedMenus=window.ATLAS_OWNER_MENUS?.menus||{};
+const params=new URLSearchParams(location.search);
+const id=Number(params.get("shop"));
+const shop=Number.isSafeInteger(id)&&id>0?shops.find(s=>s.id===id):null;
+const make=(tag,text,cls)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=String(text);if(cls)e.className=cls;return e;};
+const format=date=>{const ms=Date.parse(String(date)+"T12:00:00Z");return Number.isFinite(ms)?new Date(ms).toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric",timeZone:"UTC"}):null;};
+const fresh=(date,days)=>{const ms=Date.parse(String(date)+"T12:00:00Z"),age=(Date.now()-ms)/86400000;return Number.isFinite(age)&&age>=-1&&age<=days;};
+const validSource=url=>typeof url==="string"&&url.startsWith("https://www.coffeeshopmenus.org/");
+const validOwnImage=url=>typeof url==="string"&&/^assets\/approved-menus\/[a-zA-Z0-9/_-]+\.(?:png|jpe?g|webp)$/i.test(url);
+function addLink(parent,caption,url,primary){
+ const a=make("a");a.className="action"+(primary?" primary":"");
+ a.textContent=caption;a.href=url;
+ if(url.startsWith("https://")){a.target="_blank";a.rel="noopener noreferrer";a.referrerPolicy="no-referrer";}
+ parent.appendChild(a);return a;
+}
+if(!shop){$("shopTitle").textContent="Coffeeshop not found";$("shopAddress").textContent="Please return to the Atlas map and choose a listed shop.";$("noMenuPanel").classList.remove("hidden");return;}
+document.title=(shop.name||"Coffeeshop")+" menu | Amsterdam Coffeeshop Atlas";
+$("shopTitle").textContent=shop.name||"Coffeeshop";
+$("shopAddress").textContent=shop.address;
+const back="map.html?shop="+encodeURIComponent(shop.name||shop.street);
+$("backToMap").href=back;$("noMenuBack").href=back;
+const owned=approvedMenus[id];
+const ownerOK=owned&&owned.approved===true&&owned.verifiedShop===true&&format(owned.updatedAt)&&fresh(owned.updatedAt,120);
+if(ownerOK){
+ const area=$("ownerPanel");area.classList.remove("hidden");
+ area.appendChild(make("h2","Venue-provided menu"));
+ area.appendChild(make("span","Updated "+format(owned.updatedAt),"date"));
+ area.appendChild(make("p","Information provided with venue authorisation and checked for publication. Confirm details at the venue."));
+ for(const section of Array.isArray(owned.sections)?owned.sections:[]){
+  if(typeof section.title!=="string"||!section.title.trim())continue;
+  const box=make("div",undefined,"section");box.appendChild(make("h3",section.title));
+  if(typeof section.description==="string")box.appendChild(make("p",section.description));
+  area.appendChild(box);
+ }
+ for(const image of Array.isArray(owned.photos)?owned.photos:[]){
+  if(!validOwnImage(image))continue;
+  const img=make("img");img.src=image;img.alt="Venue-authorised menu photograph";img.className="owner-photo";img.loading="lazy";area.appendChild(img);
+ }
+}
+const archive=intel.menus?.[id],archiveDate=archive?.photoDate;
+if(archive&&format(archiveDate)&&fresh(archiveDate,intel.maxMenuAgeDays||120)&&validSource(archive.url)){
+ const area=$("archivePanel");area.classList.remove("hidden");
+ area.appendChild(make("h2","Archived menu photographs"));
+ area.appendChild(make("span","Photographed "+format(archiveDate),"date"));
+ area.appendChild(make("p","The menu is held by the independent CoffeeshopMenus.org archive. We've stopped embedding its photos because they fail to load reliably inside Atlas."));
+ const actions=make("div",undefined,"actions");
+ addLink(actions,"Open menu on the original website ↗",archive.url,true);
+ const links=(Array.isArray(archive.images)?archive.images:[]).filter(validSource);
+ links.forEach((url,i)=>addLink(actions,"Open original photo "+(i+1)+" ↗",url,false));
+ area.appendChild(actions);
+ area.appendChild(make("div","The original site opens directly in your browser. Menu dates are photograph dates, not confirmation of today's stock, prices or availability.","info"));
+}
+if(!ownerOK&&!(!$("archivePanel").classList.contains("hidden")))$("noMenuPanel").classList.remove("hidden");
+})();
+</script>
+</body>
+</html>
