@@ -167,5 +167,28 @@ window.ATLAS_VERDICTS={
       observations:[],
       reviewNote:"Boerejongens Sloterdijk has many historical stars, but sampled prominent reviews were mostly years old and included past criticism of pricing; current quality is unverified."
     }
+
+    ,5:{
+      seating:{kind:"reported",label:"Private smoking room reported; current access unverified",date:"2025-10-31",url:"https://en.greenmeister.com/coffeeshop/happy-days-amsterdam"},
+      observations:[
+        {reviewer:"highlander",date:"2026-03-17",quality:5,note:"Praises range of flower, traditional hash and edibles; the account posted twice on this date.",url:"https://en.greenmeister.com/coffeeshop/happy-days-amsterdam"},
+        {reviewer:"belbin",date:"2025-10-31",quality:5,service:5,experience:4,note:"Praises flower and staff, and mentions a private smoking room.",url:"https://en.greenmeister.com/coffeeshop/happy-days-amsterdam"}
+      ],
+      reviewNote:"One older review in this listing says a historic image showed a different town's coffeeshop; old photograph claims are not used to verify seating."
+    },
+    26:{
+      observations:[
+        {reviewer:"sciencedawg94",date:"2026-04-18",quality:3,value:4,experience:4,note:"Describes decent rather than exceptional flower, fair prices and clean surroundings.",url:"https://en.greenmeister.com/coffeeshop/coffeeshop-amsterdam-oost"}
+      ],
+      reviewNote:"A 2023 comment wished for indoor seating, but it is too old to establish today's layout or a definite no-seating status."
+    },
+    8:{observations:[],reviewNote:"The prominent review sample checked did not substantiate 2026 flower and staff quality."},
+    34:{observations:[],reviewNote:"Visible prominent reviews were insufficiently recent for a responsible 2026 score."},
+    47:{observations:[],reviewNote:"A historic reputation and old review comments are not a current assessment of Dampkring flower or staff."},
+    68:{observations:[],reviewNote:"Available prominent Greenmeister comments were not independently matched to enough dated current product and service experiences."},
+    78:{observations:[],reviewNote:"The site's historical community score alone does not prove recent service and flower quality at this specific Bulldog branch."},
+    73:{observations:[],reviewNote:"The public review sample checked lacked enough recent, individually attributable quality-and-service detail for an Atlas Score."},
+    4:{observations:[],reviewNote:"Highlighted comments about high-quality products and very small seating were years old; today's seating and product quality remain unverified."},
+    157:{observations:[],reviewNote:"Visible highlighted reviews were historically positive but not sufficiently recent for the required 2026 assessment."}
   }
 };
