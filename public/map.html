@@ -722,8 +722,8 @@ function showMenuPhoto(index){
  };
  pic.onerror=()=>failed('This menu photo could not be displayed here. Open the photo directly, or use the original menu page below.');
  pic.alt='Menu photograph '+(index+1)+' of '+menuImages.length+' from CoffeeshopMenus.org, dated '+menuImageDateText;
- pic.src=url;
  menuLoadTimer=setTimeout(()=>failed('The photo is taking too long to load here. Open the photo directly, or use the original menu page below.'),12000);
+ pic.src=url;
  $('menuPhotoScroll').scrollTop=0;
  $('menuPhotoScroll').scrollLeft=0;
 }
