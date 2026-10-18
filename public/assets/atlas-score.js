@@ -29,8 +29,8 @@ function assess(shop){
  const observedMonths=new Map();
  for(const r of sample){const month=r.date.slice(0,7);observedMonths.set(month,(observedMonths.get(month)||0)+1);}
  const largestMonth=Math.max(0,...observedMonths.values());
- // Prevent single-month review bursts from manufacturing a flattering Atlas ranking.
- const spread=observedMonths.size>=3&&largestMonth<=sample.length*.6;
+ // At most half the eligible accounts may be from any single month; clustered reviews cannot earn a score.
+ const spread=observedMonths.size>=3&&largestMonth<=sample.length*.5;
  const adequate=sample.length>=4&&counts.quality>=3&&counts.service>=2&&spread;
  const measures=Object.fromEntries(dims.map(k=>{
   let sum=0,total=0;
