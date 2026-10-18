@@ -117,9 +117,9 @@ if(archive&&format(archiveDate)&&fresh(archiveDate,intel.maxMenuAgeDays||120)&&v
  const area=$("archivePanel");area.classList.remove("hidden");
  area.appendChild(make("h2","Archived menu photographs"));
  area.appendChild(make("span","Photographed "+format(archiveDate),"date"));
- area.appendChild(make("p","The menu is held by the independent CoffeeshopMenus.org archive. We've stopped embedding its photos because they fail to load reliably inside Atlas."));
+ area.appendChild(make("p","This dated menu is held by CoffeeshopMenus.org. Open the original archive page in a new tab; Atlas no longer attempts to load remote menu photographs inside its viewer."));
  const actions=make("div",undefined,"actions");
- addLink(actions,"Open menu on the original website ↗",archive.url,true);
+ addLink(actions,"View dated menu at source ↗",archive.url,true);
  const links=(Array.isArray(archive.images)?archive.images:[]).filter(validSource);
  links.forEach((url,i)=>addLink(actions,"Open original photo "+(i+1)+" ↗",url,false));
  area.appendChild(actions);
