@@ -46,7 +46,7 @@ function seating(shop){
 function listTag(shop){
  const a=assess(shop),s=seating(shop);
  return (a?.score!=null?'<span class="atlasTag">Atlas ★ '+a.score.toFixed(1)+' · '+esc(a.confidence)+' ('+a.reviewers+')</span>':'')
- +(s?.kind==="reported"?'<span class="seatTag">↳ '+esc(s.label)+'</span>':'');
+ +(s&&(s.kind==="reported"||s.kind==="none")?'<span class="seatTag'+(s.kind==="none"?' noSeats':'')+'">↳ '+esc(s.label)+'</span>':'');
 }
 function detail(shop){
  const a=assess(shop),s=seating(shop);
