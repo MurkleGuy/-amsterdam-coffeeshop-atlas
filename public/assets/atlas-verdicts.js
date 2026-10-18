@@ -10,6 +10,7 @@ window.ATLAS_VERDICTS={
     17:{
       seating:{kind:"reported",label:"Comfortable seating reported",date:"2026-09-22",url:"https://en.greenmeister.com/coffeeshop/137-amsterdam"},
       observations:[
+        {reviewer:"licking knarlynug",date:"2026-10-15",quality:5,value:4,note:"Returning visitor recommends the flower for its value.",url:"https://en.greenmeister.com/coffeeshop/137-amsterdam"},
         {reviewer:"spliffy rasta",date:"2026-09-22",quality:5,experience:5,note:"Praises the in-house flower and hash, menu and comfortable seating.",url:"https://en.greenmeister.com/coffeeshop/137-amsterdam"},
         {reviewer:"sparkling johnny",date:"2026-07-03",quality:4,service:5,value:5,note:"Positive feedback about hospitality and price-to-quality value.",url:"https://en.greenmeister.com/coffeeshop/137-amsterdam"},
         {reviewer:"misty evergreen1",date:"2026-04-24",quality:5,service:5,experience:5,note:"Praises products, helpful service and atmosphere.",url:"https://en.greenmeister.com/coffeeshop/137-amsterdam"},
