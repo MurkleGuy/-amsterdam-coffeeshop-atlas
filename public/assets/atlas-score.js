@@ -26,7 +26,12 @@ function assess(shop){
   months.set(key,count+1);sample.push(r);
  }
  const counts=Object.fromEntries(dims.map(k=>[k,sample.filter(r=>Number.isFinite(r[k])&&r[k]>=1&&r[k]<=5).length]));
- const adequate=sample.length>=4&&counts.quality>=3&&counts.service>=2;
+ const observedMonths=new Map();
+ for(const r of sample){const month=r.date.slice(0,7);observedMonths.set(month,(observedMonths.get(month)||0)+1);}
+ const largestMonth=Math.max(0,...observedMonths.values());
+ // Prevent single-month review bursts from manufacturing a flattering Atlas ranking.
+ const spread=observedMonths.size>=3&&largestMonth<=sample.length*.6;
+ const adequate=sample.length>=4&&counts.quality>=3&&counts.service>=2&&spread;
  const measures=Object.fromEntries(dims.map(k=>{
   let sum=0,total=0;
   for(const r of sample){
@@ -37,7 +42,7 @@ function assess(shop){
   return [k,{count:counts[k],value:(3.5*2.5+sum)/(2.5+total)}];
  }));
  const score=adequate?dims.reduce((x,k)=>x+weights[k]*measures[k].value,0):null;
- return {score,reviewers:sample.length,measures,sample,record,latest:sample[0]?.date,confidence:sample.length>=10?"Growing evidence":"Early evidence"};
+ return {score,reviewers:sample.length,measures,sample,record,latest:sample[0]?.date,spread,confidence:sample.length>=10?"Growing evidence":"Early evidence"};
 }
 function seating(shop){
  const s=assess(shop)?.record?.seating;
@@ -45,14 +50,24 @@ function seating(shop){
 }
 function listTag(shop){
  const a=assess(shop),s=seating(shop);
- return (a?.score!=null?'<span class="atlasTag">Atlas ★ '+a.score.toFixed(1)+' · '+esc(a.confidence)+' ('+a.reviewers+')</span>':'')
+ return (a?.score!=null?'<span class="atlasTag">Atlas ★ '+a.score.toFixed(1)+' · '+esc(a.confidence)+' ('+a.reviewers+')</span>':a?.reviewers?'<span class="atlasPendingTag">Atlas · reviewing '+a.reviewers+' recent report'+(a.reviewers===1?'':'s')+'</span>':'')
  +(s&&(s.kind==="reported"||s.kind==="none")?'<span class="seatTag'+(s.kind==="none"?' noSeats':'')+'">↳ '+esc(s.label)+'</span>':'');
 }
 function detail(shop){
  const a=assess(shop),s=seating(shop);
  const seats=s?'<a class="atlasSeat" href="'+esc(s.url)+'" target="_blank" rel="noopener">◉ '+esc(s.label)+' · '+fmt(s.date)+' ↗</a>'
   :'<span class="atlasSeat atlasUnknown">Seating arrangements not recently verified</span>';
- if(a?.score==null)return '<section class="atlasVerdict atlasPending" aria-label="Atlas Score"><div class="atlasScoreHead"><strong>Atlas Score</strong><span>Not yet assessed</span></div><p>We need enough recent, independent reports about product quality and service before giving this shop our own score.</p>'+seats+'</section>';
+ if(a?.score==null){
+  const ext=window.ATLAS_INTEL?.ratings?.[shop.id];
+  const notes=a?.sample?.slice(0,3).map(r=>'<li>'+esc(r.note)+' <a href="'+esc(r.url)+'" target="_blank" rel="noopener">'+fmt(r.date)+' ↗</a></li>').join('')||'';
+  const reason=a?.reviewers?(a.spread===false&&a.reviewers>=4?'Review dates are too clustered for a trustworthy recommendation.':'We need more independent, dated reports describing both product quality and staff service.')
+   :ext?'The available community average is historical. We have not established enough recent product and service evidence for our own score.'
+   :'No individually matched community-rating source has been validated for this address.';
+  const recentNote=a?.record?.reviewNote?'<p>'+esc(a.record.reviewNote)+'</p>':'';
+  const community=ext?'<p>'+esc(ext.source)+' historical rating: '+Number(ext.rating).toFixed(1)+'/5 from '+ext.reviews+' reviews. <a href="'+esc(ext.url)+'" target="_blank" rel="noopener">Inspect original ↗</a></p>':'';
+  const previews=notes?'<details class="atlasMore"><summary>Read '+a.reviewers+' dated reports</summary><ul>'+notes+'</ul><p>Individual remarks are not verified facts about current products or staff.</p></details>':'';
+  return '<section class="atlasVerdict atlasPending" aria-label="Atlas Score"><div class="atlasScoreHead"><strong>Atlas Score</strong><span>Not enough recent evidence</span></div><p>'+reason+'</p>'+seats+recentNote+community+previews+'</section>';
+ }
  const metrics=dims.map(k=>'<div><span>'+labels[k]+'</span><strong>'+(a.measures[k].count?a.measures[k].value.toFixed(1)+'/5':'Not verified')+'</strong></div>').join('');
  const reviews=a.sample.slice(0,4).map(r=>'<li>'+esc(r.note)+' <a href="'+esc(r.url)+'" target="_blank" rel="noopener">'+fmt(r.date)+' ↗</a></li>').join('');
  return '<section class="atlasVerdict" aria-label="Atlas Score"><div class="atlasScoreHead"><div><small>ATLAS SCORE · PROVISIONAL</small><strong>★ '+a.score.toFixed(1)+' <small>/ 5</small></strong></div><span>'+a.reviewers+' independent recent reviewers<br>'+a.confidence+' · latest '+fmt(a.latest)+'</span></div>'
