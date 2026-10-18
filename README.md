@@ -89,7 +89,9 @@ Regenerate `gvb-routes-2025.json` from newer, properly licensed **line-specific*
 - The Coffeeshop West rating is a Trustpilot **TrustScore**, not a Greenmeister arithmetic mean; its source and review count display on cards, and `excludeFromRanking` keeps it out of the Greenmeister-only ranking. There are now 146 ratings and 21 unrated address records. Google ratings remain links only; no Google review content was copied.
 
 
-## Atlas Score pilot — dated smoker-experience evidence (18 October 2026)
+## Atlas Score pilot
+
+*Dated smoker-experience evidence — 18 October 2026*
 
 Atlas Score is a **provisional, independent editorial estimate**, NOT a Google rating, a firsthand tasting, a laboratory-quality check or a guarantee of today's products. **BudMap** remains a working naming idea; the interface deliberately uses **Atlas Score** until branding is decided.
 
