@@ -14,7 +14,7 @@ const age=day=>{const d=Date.parse(String(day)+"T12:00:00Z");return Number.isFin
 function sourceEstimate(shop,detail){
  const r=window.ATLAS_INTEL?.ratings?.[shop.id];
  if(!r||r.excludeFromRanking||r.source!=="Greenmeister"||!Number.isFinite(Number(r.rating))||Number(r.rating)<1||Number(r.rating)>5||!Number.isInteger(Number(r.reviews))||Number(r.reviews)<1){
-  return detail?{...detail,score:null,kind:"unrated",confidence:"No reliable source-matched average"}:null;
+  return {...(detail||{reviewers:0,sample:[],record:null,latest:null}),score:null,kind:"unrated",confidence:"No reliable source-matched average"};
  }
  const count=Number(r.reviews),raw=Number(r.rating);
  const prior=12,baseline=3.5;
@@ -91,15 +91,16 @@ function detail(shop){
   const ext=window.ATLAS_INTEL?.ratings?.[shop.id];
   const notes=a?.sample?.slice(0,3).map(r=>'<li>'+esc(r.note)+' <a href="'+esc(r.url)+'" target="_blank" rel="noopener">'+fmt(r.date)+' ↗</a></li>').join('')||'';
   const reason=a?.reviewers?(a.spread===false&&a.reviewers>=4?'Review dates are too clustered for a trustworthy recommendation.':'We need more independent, dated reports describing both product quality and staff service.')
-   :ext?'The available community average is historical. We have not established enough recent product and service evidence for our own score.'
-   :'No individually matched community-rating source has been validated for this address.';
+   :ext?'The available rating is not an eligible shop-specific Greenmeister source average. We need branch-matched review evidence.'
+   :'There is no eligible, sufficiently matched community star average for this address. See the source checks below.';
   const recentNote=a?.record?.reviewNote?'<p>'+esc(a.record.reviewNote)+'</p>':'';
+  const sourceLink=a?.record?.reviewSource?'<p><a href="'+esc(a.record.reviewSource)+'" target="_blank" rel="noopener">Check researched source ↗</a></p>':'';
   // The separately linked community-rating card directly below is the source link; no duplicate button.
   const previews=notes?'<h4 class="atlasEvidenceLabel">Dated reports</h4><ul>'+notes+'</ul><p>Individual comments are not verified facts about current products or staff.</p>':'';
   const concise=a?.reviewers?a.reviewers+' dated report'+(a.reviewers===1?'':'s')+' · not enough to score':'Independent quality and service evidence still needed';
   return '<section class="atlasVerdict atlasPending" aria-label="Atlas Score"><div class="atlasScoreHead"><strong>Atlas Score</strong><span class="atlasAwait">Not yet rated</span></div>'
    +'<p class="atlasBrief">'+esc(concise)+'</p>'+seats
-   +'<details class="atlasMore"><summary>Why no Atlas score? · Sources</summary><p>'+reason+'</p>'+unknownSeating+recentNote+previews+'</details></section>';
+   +'<details class="atlasMore"><summary>Why no Atlas score? · Sources</summary><p>'+reason+'</p>'+unknownSeating+recentNote+sourceLink+previews+'</details></section>';
  }
  const metrics=dims.map(k=>'<div><span>'+labels[k]+'</span><strong>'+(a.measures[k].count?a.measures[k].value.toFixed(1)+'/5':'Not verified')+'</strong></div>').join('');
  const reviews=a.sample.slice(0,4).map(r=>'<li>'+esc(r.note)+' <a href="'+esc(r.url)+'" target="_blank" rel="noopener">'+fmt(r.date)+' ↗</a></li>').join('');
