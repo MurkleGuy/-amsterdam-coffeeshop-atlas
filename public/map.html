@@ -352,6 +352,21 @@ html,body{height:100%;width:100%;overflow:hidden}
 
 
 <style id="atlas-score-v1">
+/* Mobile shop-card polish: legible hierarchy and reliable touch targets. */
+@media(max-width:760px){
+ .detail .detailHead{position:sticky;top:-14px;z-index:3;background:#fff;padding:5px 0 9px;margin:-5px 0 3px;border-bottom:1px solid #e7eee8;align-items:flex-start}
+ .detail .detailHead>div:first-child{min-width:0;overflow-wrap:anywhere}
+ .detail .detailHead .eyebrow{font-size:10px;letter-spacing:.08em;line-height:1.35}
+ .detail .detailHead h3{font-size:18px;line-height:1.25;margin-top:3px}
+ .detail .detailHeadActions{gap:8px}
+ .detail .detailHeadActions button{min-width:44px;min-height:44px;touch-action:manipulation}
+ .detail .detailRouteMain button,.detail .detailRouteMore button,.detail .detailBottom a{min-height:44px!important;touch-action:manipulation}
+ .detail .shopIntel>a.shopMenuCard,.detail .shopIntel>a.shopRatingCard{min-height:76px;box-sizing:border-box}
+ .detail .atlasVerdict{line-height:1.5}
+ .detail .atlasVerdict p{font-size:11px;line-height:1.5}
+}
+@media(max-width:360px){.detail .detailHead h3{font-size:16px}.detail .detailHeadActions{gap:5px}}
+
 /* Menu references use a separate Atlas page; no third-party image hotlinking. */
 .detail .shopIntel>a.shopMenuCard{
  display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:4px;
