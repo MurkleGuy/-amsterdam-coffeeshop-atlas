@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#163f30">
 <meta name="robots" content="noindex,follow">
-<title>Menu reference | Amsterdam Coffeeshop Atlas</title>
+<title>Menu photographs | Amsterdam Coffeeshop Atlas</title>
 <style>
 :root{color-scheme:light;--dark:#163e30;--forest:#215e45;--ink:#243b30;--muted:#6a8071;--line:#dae5da;--cream:#f5f7f0}
 *{box-sizing:border-box}
@@ -48,7 +48,7 @@ footer{margin-top:30px;font-size:11px;color:#778578}
 <body>
 <header><div class="brand">✳ COFFEESHOP ATLAS</div><a id="backToMap" href="map.html">← Back to map</a></header>
 <main>
-<p class="eyebrow">AMSTERDAM · MENU INFORMATION</p>
+<p class="eyebrow">AMSTERDAM · COFFEESHOP MENUS</p>
 <h1 id="shopTitle">Loading coffeeshop…</h1>
 <p class="address" id="shopAddress"></p>
 <section id="ownerPanel" class="panel hidden" aria-live="polite"></section>
@@ -115,15 +115,21 @@ if(ownerOK){
 const archive=intel.menus?.[id],archiveDate=archive?.photoDate;
 if(archive&&format(archiveDate)&&fresh(archiveDate,intel.maxMenuAgeDays||120)&&validSource(archive.url)){
  const area=$("archivePanel");area.classList.remove("hidden");
- area.appendChild(make("h2","Archived menu photographs"));
+ area.appendChild(make("h2","Menu photographs"));
  area.appendChild(make("span","Photographed "+format(archiveDate),"date"));
- area.appendChild(make("p","This dated menu is held by CoffeeshopMenus.org. Open the original archive page in a new tab; Atlas no longer attempts to load remote menu photographs inside its viewer."));
+ area.appendChild(make("p","Tap a photo below to open the actual menu image on CoffeeshopMenus.org. Atlas does not embed third-party photos, so they open in your browser instead."));
+ const links=(Array.isArray(archive.images)?archive.images:[]).filter(url=>validSource(url)&&/\.(?:jpe?g|png|webp)(?:[?#].*)?$/i.test(url));
  const actions=make("div",undefined,"actions");
- addLink(actions,"View dated menu at source ↗",archive.url,true);
- const links=(Array.isArray(archive.images)?archive.images:[]).filter(validSource);
- links.forEach((url,i)=>addLink(actions,"Open original photo "+(i+1)+" ↗",url,false));
+ links.forEach((url,i)=>addLink(actions,links.length===1?"Open menu photograph ↗":"Open menu photo "+(i+1)+" of "+links.length+" ↗",url,i===0));
+ if(!links.length)addLink(actions,"Open menu on original archive ↗",archive.url,true);
  area.appendChild(actions);
- area.appendChild(make("div","The original site opens directly in your browser. Menu dates are photograph dates, not confirmation of today's stock, prices or availability.","info"));
+ const source=make("div",undefined,"info");
+ source.appendChild(make("span","Source: CoffeeshopMenus.org. ",""));
+ const original=make("a","View source page ↗");
+ original.href=archive.url;original.target="_blank";original.rel="noopener noreferrer";original.referrerPolicy="no-referrer";
+ source.appendChild(original);
+ source.appendChild(make("span"," · Photographs show a past menu; prices and availability may have changed."));
+ area.appendChild(source);
 }
 if(!ownerOK&&$("archivePanel").classList.contains("hidden"))$("noMenuPanel").classList.remove("hidden");
 })();
