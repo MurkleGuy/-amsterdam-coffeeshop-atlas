@@ -7,6 +7,11 @@ window.ATLAS_VERDICTS={
   "editorialName": "Atlas Score",
   "reviewWindowDays": 540,
   "evidence": {
+    "2": {
+      "observations": [],
+      "reviewNote": "No independently matched reusable community star average has been validated for this address. External reviews discuss the shop, but Atlas cannot infer separate flower/service ratings from them.",
+      "reviewSource": "https://zoek.officielebekendmakingen.nl/gmb-2025-148828.html"
+    },
     "4": {
       "seating": {
         "kind": "listed",
@@ -51,6 +56,11 @@ window.ATLAS_VERDICTS={
         }
       ],
       "reviewNote": "One older review in this listing says a historic image showed a different town's coffeeshop; old photograph claims are not used to verify seating."
+    },
+    "6": {
+      "observations": [],
+      "reviewNote": "The source listing under the earlier name Kooi matches Amstelstraat 35 but has only one review from January 2024. The current New Times 2 operation cannot responsibly inherit it as a fresh rating.",
+      "reviewSource": "https://greenmeister.com/coffeeshop/kooi-amsterdam"
     },
     "8": {
       "observations": [],
@@ -233,6 +243,11 @@ window.ATLAS_VERDICTS={
         }
       ]
     },
+    "25": {
+      "observations": [],
+      "reviewNote": "The exact-address Greenmeister listing has zero venue reviews, so no independent community average is available.",
+      "reviewSource": "https://en.greenmeister.com/coffeeshop/second-cheech-en-chong-amsterdam"
+    },
     "26": {
       "observations": [
         {
@@ -337,6 +352,11 @@ window.ATLAS_VERDICTS={
       },
       "observations": [],
       "reviewNote": "Prominent comments include complaints about price and quality from 2023; these are too old to support a 2026 verdict."
+    },
+    "45": {
+      "observations": [],
+      "reviewNote": "Cannabizzz lists this address but shows a small sample of Google-attributed reviews. Google-derived figures are not imported into Atlas as independent source ratings.",
+      "reviewSource": "https://cannabizzz.nl/en/amsterdam/the-balboa-family"
     },
     "46": {
       "observations": [
@@ -448,6 +468,11 @@ window.ATLAS_VERDICTS={
         }
       ]
     },
+    "52": {
+      "observations": [],
+      "reviewNote": "The similarly named Greenmeister Amnesia is on Bergstraat, whereas this municipal-list address is Herengracht 133H. Their ratings cannot be merged without a verified branch match.",
+      "reviewSource": "https://en.greenmeister.com/coffeeshop/amnesia-amsterdam"
+    },
     "54": {
       "observations": [
         {
@@ -461,9 +486,23 @@ window.ATLAS_VERDICTS={
         }
       ]
     },
+    "57": {
+      "observations": [],
+      "reviewNote": "An independently sourced community rating tied to the exact address has not yet been confirmed."
+    },
+    "58": {
+      "observations": [],
+      "reviewNote": "Greenmeister matches Hudsonstraat 138, but lists zero venue reviews.",
+      "reviewSource": "https://en.greenmeister.com/coffeeshop/flash-back-amsterdam"
+    },
     "59": {
       "observations": [],
       "reviewNote": "Boerejongens Sloterdijk has many historical stars, but sampled prominent reviews were mostly years old and included past criticism of pricing; current quality is unverified."
+    },
+    "62": {
+      "observations": [],
+      "reviewNote": "The Shop 96 listing matches Jan Pieter Heijestraat 96 and has zero venue reviews.",
+      "reviewSource": "https://en.greenmeister.com/coffeeshop/shop-96"
     },
     "65": {
       "seating": {
@@ -561,9 +600,18 @@ window.ATLAS_VERDICTS={
       "observations": [],
       "reviewNote": "Available prominent Greenmeister comments were not independently matched to enough dated current product and service experiences."
     },
+    "72": {
+      "observations": [],
+      "reviewNote": "The Ying Yang Greenmeister listing has zero venue reviews. Older ratings on other sites are stale and disagree with some later accounts, so no current community estimate is issued.",
+      "reviewSource": "https://en.greenmeister.com/coffeeshop/ying-yang-amsterdam"
+    },
     "73": {
       "observations": [],
       "reviewNote": "The public review sample checked lacked enough recent, individually attributable quality-and-service detail for an Atlas Score."
+    },
+    "74": {
+      "observations": [],
+      "reviewNote": "An independently sourced community rating matched to this address has not yet been confirmed."
     },
     "78": {
       "observations": [],
@@ -643,6 +691,39 @@ window.ATLAS_VERDICTS={
           "url": "https://en.greenmeister.com/coffeeshop/hunters-coffeeshop-amsterdam"
         }
       ]
+    },
+    "98": {
+      "observations": [],
+      "reviewNote": "Tha Dogg House at Marnixstraat 333 is a different venue from this Oudebrugsteeg 26 branch; do not reuse the flagship store's ratings."
+    },
+    "100": {
+      "observations": [],
+      "reviewNote": "A Greenmeister Rick's listing is at Nieuwe Hoogstraat 22, not Oudezijds Voorburgwal 250H, so its one historic review is excluded.",
+      "reviewSource": "https://en.greenmeister.com/coffeeshop/ricks-amsterdam"
+    },
+    "115": {
+      "observations": [],
+      "reviewNote": "The Greenmeister Rockland listing gives Raadhuisstraat 101, not this municipal address at number 8. The historical rating cannot be attributed confidently to this address.",
+      "reviewSource": "https://en.greenmeister.com/coffeeshop/rockland-amsterdam"
+    },
+    "120": {
+      "observations": [],
+      "reviewNote": "The exact-address Greenmeister listing at Regulierssteeg 2 has zero venue reviews.",
+      "reviewSource": "https://en.greenmeister.com/coffeeshop/the-saint-amsterdam"
+    },
+    "125": {
+      "observations": [],
+      "reviewNote": "Black Star has independent ratings, but Greenmeister identifies Rozengracht 1A whereas the municipal list shows 1H. Exact premises matching requires confirmation before importing the average.",
+      "reviewSource": "https://en.greenmeister.com/coffeeshop/the-african-blackstar-amsterdam"
+    },
+    "126": {
+      "observations": [],
+      "reviewNote": "The older Rusland Greenmeister listing is flagged closed and the newer The Plug 3 listing at this address has zero reviews. Neither is a reliable current score for the historic Rusland name.",
+      "reviewSource": "https://en.greenmeister.com/coffeeshop/the-plug-3"
+    },
+    "128": {
+      "observations": [],
+      "reviewNote": "The business name for this officially listed address is unverified. Scoring another nearby shop would be a mismatch."
     },
     "132": {
       "observations": [
@@ -745,6 +826,11 @@ window.ATLAS_VERDICTS={
       "observations": [],
       "reviewNote": "A refreshed menu is not proof that currently sold flower or service has been reviewed recently. The accessible highlighted comments were predominantly from 2023 or earlier."
     },
+    "140": {
+      "observations": [],
+      "reviewNote": "DutchCoffeeshops carries mixed individual customer comments but not a comparable independently supplied aggregate rating; the separately sourced Atlas formula cannot yet issue a numeric estimate.",
+      "reviewSource": "https://dutchcoffeeshops.com/in/amsterdam/coffeeshop-de-prijs"
+    },
     "148": {
       "observations": [
         {
@@ -786,6 +872,16 @@ window.ATLAS_VERDICTS={
       "observations": [],
       "reviewNote": "Visible highlighted reviews were historically positive but not sufficiently recent for the required 2026 assessment."
     },
+    "162": {
+      "observations": [],
+      "reviewNote": "Greenmeister matches Witte de Withstraat 106 but lists zero venue reviews.",
+      "reviewSource": "https://en.greenmeister.com/coffeeshop/el-marssa-amsterdam"
+    },
+    "163": {
+      "observations": [],
+      "reviewNote": "Greenmeister matches the name and street number at Witte de Withstraat 30a but lists zero reviews and marks it closed. Current status needs verification.",
+      "reviewSource": "https://en.greenmeister.com/coffeeshop/thedream-amsterdam"
+    },
     "166": {
       "seating": {
         "kind": "listed",
@@ -806,6 +902,12 @@ window.ATLAS_VERDICTS={
         }
       ],
       "reviewNote": "Terps Army 2 is a different Zieseniskade address. Its older 2024 reviews do not justify merging lifetime scores or current products with Terps Army main."
+    },
+    "167": {
+      "observations": [],
+      "reviewNote": "Other websites show Google-derived ratings for Zoutsteeg 14, while the similarly named Greenmeister Rokin branch is at Langebrugsteeg 7A. Do not import or combine these as one shop's independent score.",
+      "reviewSource": "https://wanderlog.com/place/details/4190078"
     }
-  }
+  },
+  "coverageCheckedAt": "2026-10-19"
 };
