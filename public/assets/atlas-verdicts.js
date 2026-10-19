@@ -355,8 +355,8 @@ window.ATLAS_VERDICTS={
     },
     "45": {
       "observations": [],
-      "reviewNote": "Cannabizzz lists this address but shows a small sample of Google-attributed reviews. Google-derived figures are not imported into Atlas as independent source ratings.",
-      "reviewSource": "https://cannabizzz.nl/en/amsterdam/the-balboa-family"
+      "reviewNote": "Weeview matches The Balboa Family at Halvemaansteeg 1 and lists 4.5/5 from 3 member reviews. Individual review dates have not been verified. Other aggregators often republish Google reviews, so we retain this independent source separately.",
+      "reviewSource": "https://weeview.nl/location/amsterdam/"
     },
     "46": {
       "observations": [
@@ -470,8 +470,8 @@ window.ATLAS_VERDICTS={
     },
     "52": {
       "observations": [],
-      "reviewNote": "The similarly named Greenmeister Amnesia is on Bergstraat, whereas this municipal-list address is Herengracht 133H. Their ratings cannot be merged without a verified branch match.",
-      "reviewSource": "https://en.greenmeister.com/coffeeshop/amnesia-amsterdam"
+      "reviewNote": "Leafly's Amnesia Coffeeshop entry matches Herengracht 133 and lists 4.3/5 from 15 reviews. Its prominently visible reports date from 2017–2019, so the result is historic and is not a reliable current flower or staff rating; unrelated Bergstraat entries are excluded.",
+      "reviewSource": "https://www.leafly.com/dispensary-info/amnesia-coffeeshop"
     },
     "54": {
       "observations": [
@@ -488,7 +488,8 @@ window.ATLAS_VERDICTS={
     },
     "57": {
       "observations": [],
-      "reviewNote": "An independently sourced community rating tied to the exact address has not yet been confirmed."
+      "reviewNote": "Greenmeister now lists Aktama 2 at Hudsonstraat 156 (the address previously labelled simply 156), with 5.0/5 from 2 reports dating March/April 2025. The sample is tiny and cannot establish current product quality.",
+      "reviewSource": "https://greenmeister.com/coffeeshop/aktama-2"
     },
     "58": {
       "observations": [],
@@ -602,8 +603,8 @@ window.ATLAS_VERDICTS={
     },
     "72": {
       "observations": [],
-      "reviewNote": "The Ying Yang Greenmeister listing has zero venue reviews. Older ratings on other sites are stale and disagree with some later accounts, so no current community estimate is issued.",
-      "reviewSource": "https://en.greenmeister.com/coffeeshop/ying-yang-amsterdam"
+      "reviewNote": "Weeview's exact Knollendamstraat 5 listing shows 5.0/5 from 3 reports dated 2020–2021. This very old sample does not demonstrate current quality; later complaints are not overridden by the old average.",
+      "reviewSource": "https://weeview.nl/shop/yin-yang/"
     },
     "73": {
       "observations": [],
@@ -611,7 +612,8 @@ window.ATLAS_VERDICTS={
     },
     "74": {
       "observations": [],
-      "reviewNote": "An independently sourced community rating matched to this address has not yet been confirmed."
+      "reviewNote": "Weedmaps lists Get Down To It at Korte Leidsedwarsstraat 77–79 (also The Internet Café), with 4.8/5 from 4 member reviews. Weeview lists 3.9/5 from 3 members; platform disagreement and unknown review ages require a low-confidence label.",
+      "reviewSource": "https://weedmaps.com/dispensaries/get-down-to-it-coffeeshop"
     },
     "78": {
       "observations": [],
@@ -694,7 +696,8 @@ window.ATLAS_VERDICTS={
     },
     "98": {
       "observations": [],
-      "reviewNote": "Tha Dogg House at Marnixstraat 333 is a different venue from this Oudebrugsteeg 26 branch; do not reuse the flagship store's ratings."
+      "reviewNote": "Weeview lists Da Dogg House at Oudebrugsteeg 26, with 4.9/5 from 3 members. This is the shop previously labelled Tha Dogg House 2, not the Snoop Dogg flagship at Marnixstraat 333; individual review dates have not been verified.",
+      "reviewSource": "https://weeview.nl/location/amsterdam/"
     },
     "100": {
       "observations": [],
@@ -703,8 +706,8 @@ window.ATLAS_VERDICTS={
     },
     "115": {
       "observations": [],
-      "reviewNote": "The Greenmeister Rockland listing gives Raadhuisstraat 101, not this municipal address at number 8. The historical rating cannot be attributed confidently to this address.",
-      "reviewSource": "https://en.greenmeister.com/coffeeshop/rockland-amsterdam"
+      "reviewNote": "Leafly's Rockland entry explicitly matches Raadhuisstraat 8 and shows 4.4/5 from 5 reviews, most visibly dated 2015–2019. Other databases show Raadhuisstraat 101, which is not used as an address match. This is historical evidence, not proof of present operations.",
+      "reviewSource": "https://www.leafly.com/dispensary-info/rockland-coffeeshop"
     },
     "120": {
       "observations": [],
@@ -718,8 +721,8 @@ window.ATLAS_VERDICTS={
     },
     "126": {
       "observations": [],
-      "reviewNote": "The older Rusland Greenmeister listing is flagged closed and the newer The Plug 3 listing at this address has zero reviews. Neither is a reliable current score for the historic Rusland name.",
-      "reviewSource": "https://en.greenmeister.com/coffeeshop/the-plug-3"
+      "reviewNote": "The current name at Rusland 16 is The Hit, succeeding earlier Rusland/The Plug branding. Weeview lists The Hit at that street number with 4.3/5 from 3 member reviews, while Greenmeister's The Hit entry has 0 reviews. Old and new operators should not have product assessments mixed.",
+      "reviewSource": "https://weeview.nl/location/amsterdam/"
     },
     "128": {
       "observations": [],
@@ -905,8 +908,8 @@ window.ATLAS_VERDICTS={
     },
     "167": {
       "observations": [],
-      "reviewNote": "Other websites show Google-derived ratings for Zoutsteeg 14, while the similarly named Greenmeister Rokin branch is at Langebrugsteeg 7A. Do not import or combine these as one shop's independent score.",
-      "reviewSource": "https://wanderlog.com/place/details/4190078"
+      "reviewNote": "Weeview lists Kadinsky Front Page at Zoutsteeg 14 with 3.6/5 from a single member review. This is separate from the Kadinsky addresses on Rosmarijnsteeg and Langebrugsteeg. A single historical opinion provides almost no independent confidence.",
+      "reviewSource": "https://weeview.nl/location/amsterdam/"
     }
   },
   "coverageCheckedAt": "2026-10-19"
