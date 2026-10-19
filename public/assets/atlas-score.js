@@ -74,7 +74,7 @@ function categoryRatings(shop){
   const monthCounts=new Map();
   for(const r of filtered){const m=r.date.slice(0,7);monthCounts.set(m,(monthCounts.get(m)||0)+1);}
   const widest=Math.max(0,...monthCounts.values());
-  const spread=monthCounts.size>=2&&widest<=filtered.length*.70;
+  const spread=monthCounts.size>=2&&widest<=filtered.length*.60;
   const adequate=filtered.length>=spec.minimum&&spread;
   let sum=0,total=0;
   for(const r of filtered){
@@ -97,7 +97,7 @@ function categoryPanel(shop){
   const count=r.count?r.count+' report'+(r.count===1?'':'s'):'No dated category reports';
   return '<div class="atlasCategoryRow"><div><strong>'+esc(spec.label)+'</strong><small>'+esc(count)+'</small></div><div class="'+(num?'atlasCategoryNumber':'atlasCategoryMissing')+'">'+figure+'</div></div>';
  }).join('');
- return '<details class="atlasMore atlasCategories"><summary>Weed · Service · Value · Location · Chill <span class="atlasCatSummary">'+esc(overview)+'</span></summary>'
+ return '<details class="atlasMore atlasCategories"><summary>Category ratings <span class="atlasCatSummary">'+esc(overview)+'</span></summary>'
   +'<div class="atlasCategoryGrid">'+rows+'</div>'
   +'<p class="atlasCategoryExplanation">Provisional category numbers require 2–3 distinct dated user accounts across at least two different months without a concentrated review burst. The numbers are editorial interpretations of those reports — <strong>not</strong> ratings the reviewers personally entered. An empty category is not scored as 3.5. “Chill” currently measures reported atmosphere, not verified facilities. Open the review sources below to see the evidence.</p></details>';
 }
