@@ -150,7 +150,7 @@
   showMessage('Requesting location permission…');
   gpsWatch=navigator.geolocation.watchPosition(
    pos=>setLocation(pos.coords.latitude,pos.coords.longitude,pos.coords.accuracy,false),
-   err=>{showMessage('Location unavailable: '+(err.code===1?'permission denied':'try again outdoors or with GPS enabled'));stopGPS()},
+   err=>{stopGPS();showMessage('Location unavailable: '+(err.code===1?'permission denied':'try again outdoors or with GPS enabled'))},
    {enableHighAccuracy:true,maximumAge:2500,timeout:17000}
   );
   $('gpsToggle').textContent='■ Stop live location';
