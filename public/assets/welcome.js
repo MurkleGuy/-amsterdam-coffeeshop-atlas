@@ -17,6 +17,7 @@
  }
  function savedHotelView(){
   const current=existingHotel();
+  intro.classList.toggle('has-saved-hotel',!!current);
   $('savedTrip').classList.toggle('hidden',!current);
   $('continueSaved').classList.toggle('hidden',!current);
   if(current){
