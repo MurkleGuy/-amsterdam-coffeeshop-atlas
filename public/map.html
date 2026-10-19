@@ -576,7 +576,18 @@ function showDetail(s){
  <p class="detailFinePrint">${s.name?'Opens Google Maps using the shop name and address; confirm the correct listing.':'Shop name not verified; this opens the published address.'} Walking routes rely on mapped footpaths and crossings.</p>`;
  $('closeDetail').onclick=()=>{showDetail(null);selected=null;renderList()};
  $('detailFav').onclick=()=>toggleFav(s.id);
- $('planWalkAtlas').onclick=()=>{showDetail(null);window.AtlasTrip?.planTo(s)};
+ $('planWalkAtlas').onclick=()=>{
+  // Mapping addresses is asynchronous; keep a usable route even before geocoding completes.
+  if(!Number.isFinite(s.lat)||!Number.isFinite(s.lng)||!window.AtlasTrip?.planTo){
+   const u=new URL(walk(s)),hotel=window.AtlasTrip?.hotel?.();
+   if(hotel&&Number.isFinite(hotel.lat)&&Number.isFinite(hotel.lng))u.searchParams.set('origin',hotel.lat+','+hotel.lng);
+   window.open(u.toString(),'_blank','noopener');
+   setStatus('Atlas walking route is not ready for this address. Google Maps opened for directions.');
+   return;
+  }
+  showDetail(null);
+  window.AtlasTrip.planTo(s);
+ };
  $('walkGoogleHotel').onclick=()=>{const h=window.AtlasTrip?.hotel();if(!h){window.AtlasTrip?.open();return;}const u=new URL(walk(s));u.searchParams.set('origin',h.lat+','+h.lng);window.open(u.toString(),'_blank','noopener')};
  $('hotelGoogleTransit').onclick=()=>{const h=window.AtlasTrip?.hotel();if(!h){window.AtlasTrip?.open();return;}const u=new URL(transit(s));u.searchParams.set('origin',h.lat+','+h.lng);window.open(u.toString(),'_blank','noopener')};
  $('walkFromGPS').onclick=()=>{showDetail(null);window.AtlasTrip?.fromGPS(s)};
