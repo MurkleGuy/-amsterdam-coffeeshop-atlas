@@ -355,7 +355,7 @@ window.ATLAS_VERDICTS={
     },
     "45": {
       "observations": [],
-      "reviewNote": "Weeview matches The Balboa Family at Halvemaansteeg 1 and lists 4.5/5 from 3 member reviews. Individual review dates have not been verified. Other aggregators often republish Google reviews, so we retain this independent source separately.",
+      "reviewNote": "The Balboa Family matches Halvemaansteeg 1 on Weeview (4.5/5, only three user reviews). Its visible reviews include 2020–2023 comments from the prior Andalucia era. This historical average must not be taken as a current Balboa flower/service endorsement.",
       "reviewSource": "https://weeview.nl/location/amsterdam/"
     },
     "46": {
@@ -470,7 +470,7 @@ window.ATLAS_VERDICTS={
     },
     "52": {
       "observations": [],
-      "reviewNote": "Leafly's Amnesia Coffeeshop entry matches Herengracht 133 and lists 4.3/5 from 15 reviews. Its prominently visible reports date from 2017–2019, so the result is historic and is not a reliable current flower or staff rating; unrelated Bergstraat entries are excluded.",
+      "reviewNote": "Amnesia at Herengracht 133 has address-matched Leafly and Weeview rating sources. Leafly's 4.3/5 (15) is largely based on reviews from 2017–2019, and Weeview's latest highlighted review is from 2024. Do not substitute the separate Bergstraat Greenmeister location.",
       "reviewSource": "https://www.leafly.com/dispensary-info/amnesia-coffeeshop"
     },
     "54": {
@@ -488,7 +488,7 @@ window.ATLAS_VERDICTS={
     },
     "57": {
       "observations": [],
-      "reviewNote": "Greenmeister now lists Aktama 2 at Hudsonstraat 156 (the address previously labelled simply 156), with 5.0/5 from 2 reports dating March/April 2025. The sample is tiny and cannot establish current product quality.",
+      "reviewNote": "Hudsonstraat 156 is listed as Aktama 2 (formerly Coffeeshop 156). Greenmeister provides only two reviews from March–April 2025; one or two users cannot establish current cannabis quality.",
       "reviewSource": "https://greenmeister.com/coffeeshop/aktama-2"
     },
     "58": {
@@ -603,7 +603,7 @@ window.ATLAS_VERDICTS={
     },
     "72": {
       "observations": [],
-      "reviewNote": "Weeview's exact Knollendamstraat 5 listing shows 5.0/5 from 3 reports dated 2020–2021. This very old sample does not demonstrate current quality; later complaints are not overridden by the old average.",
+      "reviewNote": "Weeview has an address-matched 5.0/5 score from just three 2020–2021 users. A later negative first-hand experience appears on DutchCoffeeshops.com. The older Weeview average is presented only as a very limited historical estimate, not a recommendation.",
       "reviewSource": "https://weeview.nl/shop/yin-yang/"
     },
     "73": {
@@ -612,7 +612,7 @@ window.ATLAS_VERDICTS={
     },
     "74": {
       "observations": [],
-      "reviewNote": "Weedmaps lists Get Down To It at Korte Leidsedwarsstraat 77–79 (also The Internet Café), with 4.8/5 from 4 member reviews. Weeview lists 3.9/5 from 3 members; platform disagreement and unknown review ages require a low-confidence label.",
+      "reviewNote": "Get Down To It is the same venue also known as The Internet Café at Korte Leidsedwarsstraat 77–79. Weedmaps lists 4.8/5 from four independent user reviews. Individual review ages were not established; this is a limited source-adjusted estimate.",
       "reviewSource": "https://weedmaps.com/dispensaries/get-down-to-it-coffeeshop"
     },
     "78": {
@@ -696,7 +696,7 @@ window.ATLAS_VERDICTS={
     },
     "98": {
       "observations": [],
-      "reviewNote": "Weeview lists Da Dogg House at Oudebrugsteeg 26, with 4.9/5 from 3 members. This is the shop previously labelled Tha Dogg House 2, not the Snoop Dogg flagship at Marnixstraat 333; individual review dates have not been verified.",
+      "reviewNote": "Tha Dogg House 2 at Oudebrugsteeg 26 was formerly De Kroon. Weeview's Da Dogg House location matches this address and reports three ratings, but individual dates and continuity across the change were not established. Ratings from the flagship at Marnixstraat 333 must never be merged.",
       "reviewSource": "https://weeview.nl/location/amsterdam/"
     },
     "100": {
@@ -706,7 +706,7 @@ window.ATLAS_VERDICTS={
     },
     "115": {
       "observations": [],
-      "reviewNote": "Leafly's Rockland entry explicitly matches Raadhuisstraat 8 and shows 4.4/5 from 5 reviews, most visibly dated 2015–2019. Other databases show Raadhuisstraat 101, which is not used as an address match. This is historical evidence, not proof of present operations.",
+      "reviewNote": "The Leafly Rockland entry matches Raadhuisstraat 8 with 4.4/5 from five reviews, visibly from 2015–2019. Amsterdam renewed the Rock-Land permit at number 8 in December 2025. A similarly named listing at number 101 is not the source of this score.",
       "reviewSource": "https://www.leafly.com/dispensary-info/rockland-coffeeshop"
     },
     "120": {
@@ -721,12 +721,13 @@ window.ATLAS_VERDICTS={
     },
     "126": {
       "observations": [],
-      "reviewNote": "The current name at Rusland 16 is The Hit, succeeding earlier Rusland/The Plug branding. Weeview lists The Hit at that street number with 4.3/5 from 3 member reviews, while Greenmeister's The Hit entry has 0 reviews. Old and new operators should not have product assessments mixed.",
-      "reviewSource": "https://weeview.nl/location/amsterdam/"
+      "reviewNote": "Rusland 16 is currently operated as The Hit (operator's site and 2025 Amsterdam permit). Weeview's The Hit entry reports 4.3/5 from three reviews but does not independently establish recent dates. Historic Rusland or The Plug XXX scores must not be copied into current shop evaluations.",
+      "reviewSource": "https://zoek.officielebekendmakingen.nl/gmb-2025-365965.html"
     },
     "128": {
       "observations": [],
-      "reviewNote": "The business name for this officially listed address is unverified. Scoring another nearby shop would be a mismatch."
+      "reviewNote": "Amsterdam's June 2026 publication records a refusal of an operating-permit application for Coffeeshop Sarphati at Sarphatistraat 87G. This address remains in the published list but must not be assumed to be an open, trading shop; no rating is given.",
+      "reviewSource": "https://zoek.officielebekendmakingen.nl/gmb-2026-270745.html"
     },
     "132": {
       "observations": [
@@ -908,7 +909,7 @@ window.ATLAS_VERDICTS={
     },
     "167": {
       "observations": [],
-      "reviewNote": "Weeview lists Kadinsky Front Page at Zoutsteeg 14 with 3.6/5 from a single member review. This is separate from the Kadinsky addresses on Rosmarijnsteeg and Langebrugsteeg. A single historical opinion provides almost no independent confidence.",
+      "reviewNote": "Weeview identifies Kadinsky Front Page at the exact Zoutsteeg 14 address with one 2022 user review (3.6/5). Its small, dated average is not interchangeable with Kadinsky at Rosmarijnsteeg or Langebrugsteeg, and Google-derived third-party totals are not imported.",
       "reviewSource": "https://weeview.nl/location/amsterdam/"
     }
   },
