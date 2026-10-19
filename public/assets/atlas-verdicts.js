@@ -352,7 +352,25 @@ window.ATLAS_VERDICTS={
           "url": "https://www.reddit.com/r/AmsterdamEnts/comments/1vm9msx/visit_next_week/"
         }
       ],
-      "reviewNote": " Indoor seating has been reported separately on Greenmeister; outdoor-table availability is based on an August 2026 visitor account."
+      "reviewNote": " Indoor seating has been reported separately on Greenmeister; outdoor-table availability is based on an August 2026 visitor account.",
+      "facilities": [
+        {
+          "key": "indoor-seating",
+          "label": "Indoor seating",
+          "status": "reported",
+          "date": "2026-05-19",
+          "url": "https://en.greenmeister.com/coffeeshop/katsu-amsterdam",
+          "note": "Visitors describe places to sit inside; availability can vary."
+        },
+        {
+          "key": "outdoor-seating",
+          "label": "Small outdoor table",
+          "status": "reported",
+          "date": "2026-08-12",
+          "url": "https://www.reddit.com/r/AmsterdamEnts/comments/1vm9msx/visit_next_week/",
+          "note": "One visitor reports an outdoor table, not guaranteed seating."
+        }
+      ]
     },
     "34": {
       "observations": [],
@@ -413,7 +431,33 @@ window.ATLAS_VERDICTS={
           "url": "https://en.greenmeister.com/coffeeshop/prix-dami-amsterdam"
         }
       ],
-      "reviewNote": "The venue itself confirms a large sit-in offering. Reports differ on how crowded or welcoming the service feels; many prominently visible flower reviews are older than 540 days. Lounge quality should not inflate its product score."
+      "reviewNote": "The venue itself confirms a large sit-in offering. Reports differ on how crowded or welcoming the service feels; many prominently visible flower reviews are older than 540 days. Lounge quality should not inflate its product score.",
+      "facilities": [
+        {
+          "key": "indoor-seating",
+          "label": "Large multi-room lounge",
+          "status": "listed",
+          "date": "2026-10-18",
+          "url": "https://www.prixdami.nl/en",
+          "note": "The coffeeshop describes its indoor lounge rooms."
+        },
+        {
+          "key": "food",
+          "label": "Food",
+          "status": "listed",
+          "date": "2026-10-18",
+          "url": "https://www.prixdami.nl/en",
+          "note": "Advertised by the venue; menu and availability can change."
+        },
+        {
+          "key": "drinks",
+          "label": "Drinks",
+          "status": "listed",
+          "date": "2026-10-18",
+          "url": "https://www.prixdami.nl/en",
+          "note": "Advertised by the venue; selection can change."
+        }
+      ]
     },
     "49": {
       "seating": {
@@ -922,7 +966,25 @@ window.ATLAS_VERDICTS={
         "url": "https://en.greenmeister.com/coffeeshop/hunters-amsterdam-utrechtsestraat"
       },
       "observations": [],
-      "reviewNote": "The prominent public comments examined largely predate our 540-day window. A high lifetime star rating and an owner description do not establish recent flower quality."
+      "reviewNote": "The prominent public comments examined largely predate our 540-day window. A high lifetime star rating and an owner description do not establish recent flower quality.",
+      "facilities": [
+        {
+          "key": "indoor-seating",
+          "label": "Indoor seating",
+          "status": "listed",
+          "date": "2026-10-18",
+          "url": "https://en.greenmeister.com/coffeeshop/hunters-amsterdam-utrechtsestraat",
+          "note": "Directory listing, not independently checked."
+        },
+        {
+          "key": "outdoor-seating",
+          "label": "Terrace",
+          "status": "listed",
+          "date": "2026-10-18",
+          "url": "https://en.greenmeister.com/coffeeshop/hunters-amsterdam-utrechtsestraat",
+          "note": "Directory listing, not independently checked."
+        }
+      ]
     },
     "157": {
       "observations": [],
@@ -967,5 +1029,6 @@ window.ATLAS_VERDICTS={
   },
   "coverageCheckedAt": "2026-10-19",
   "categoryAuditAt": "2026-10-19",
-  "categoryPolicy": "Separate category numbers need at least 2-3 individually dated reviewers across 2 calendar months; unknown categories stay unscored. Atmosphere reviews do not verify entertainment or seating facilities."
+  "categoryPolicy": "Separate category numbers need at least 2-3 individually dated reviewers across 2 calendar months; unknown categories stay unscored. Atmosphere reviews do not verify entertainment or seating facilities.",
+  "facilitiesPolicy": "Listed features are venue/directory claims; reported features are individual visitor accounts. Facility features do not receive numerical scores; absent evidence is unknown, not a negative rating."
 };
