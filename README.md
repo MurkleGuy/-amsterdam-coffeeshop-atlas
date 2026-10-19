@@ -228,3 +228,10 @@ Shop choices from the **directory** and return links from `menu.html?shop=<id>` 
 
 Pin popups use `bindPopup` with automatic map panning, `keepInView` and source-safe HTML escaping. The right-arrow has a 44px touch target and an accessible label. Dynamic evidence, favourites, menus and the route planner were not otherwise changed. A mocked DOM/Leaflet interaction test covered 8 preview and selection cases; live smartphone/browser confirmation remains outstanding.
 
+
+### Mobile shop-card interaction (October 2026)
+
+Tapping a coffeeshop **map marker** now opens the full detail card directly in a larger, vertically scrollable mobile sheet (~81% of the available viewport, with room for map controls). The small name-only preview and chevron were removed after mobile feedback; no extra tap is needed. Selecting a shop from the directory or returning from its dated menu page also opens this same full card. The close X restores the map. Atlas ratings, facilities, dated menu links, favourites, reviews, and hotel/GPS/transport route actions are unchanged. The mobile trip panel continues to hide an already-open shop card temporarily while the trip planner is displayed.
+
+Source-level tests passed. Actual deployed Cloudflare mobile appearance remains a separate user-device check.
+
