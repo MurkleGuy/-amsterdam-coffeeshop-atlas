@@ -4,14 +4,13 @@
 "use strict";
 const store=window.ATLAS_VERDICTS||{evidence:{},reviewWindowDays:540};
 const dims=["quality","service","experience","value"];
-const codedDimensions=[...dims,"location"];
+const codedDimensions=[...dims];
 // All numbers below are editorial interpretations, not customer-entered sub-ratings.
 // A standalone category requires comments from multiple distinct accounts over time.
 const categorySpecs=[
  {key:"quality",label:"Weed quality",minimum:3,description:"Flower and hash reports, not laboratory product tests."},
  {key:"service",label:"Service",minimum:3,description:"Staff attitude and helpfulness."},
  {key:"value",label:"Value",minimum:2,description:"Firsthand opinions on price relative to quality."},
- {key:"location",label:"Location",minimum:2,description:"Visitor opinions on convenience, not a claim about accessibility."},
  {key:"experience",label:"Chill factor",minimum:3,description:"Atmosphere and comfort comments; seating and entertainment are verified separately."}
 ];
 const weights={quality:.5,service:.25,experience:.15,value:.1};
@@ -85,6 +84,40 @@ function categoryRatings(shop){
   return [spec.key,{value,count:filtered.length,eligible:adequate,label:spec.label,description:spec.description,minimum:spec.minimum,months:monthCounts.size}];
  }));
 }
+// Facilities are dated, individually sourced factual claims, never numeric ratings.
+// Venue/directory listings are labelled "listed"; visitor observations are "reported".
+function facilities(shop){
+ const rec=store.evidence?.[shop.id],seen=new Set();
+ const explicit=Array.isArray(rec?.facilities)?rec.facilities:[];
+ const usable=explicit.filter(f=>{
+  if(!f||typeof f.key!=="string"||typeof f.label!=="string"||!/^https:\/\//.test(f.url||""))return false;
+  if(!["listed","reported"].includes(f.status)||age(f.date)<-1||age(f.date)>store.reviewWindowDays||seen.has(f.key))return false;
+  seen.add(f.key);return true;
+ });
+ if(usable.length)return usable.map(f=>({...f}));
+ const s=seating(shop);
+ if(!s||!/^https:\/\//.test(s.url||""))return [];
+ return [{
+  key:s.kind==="none"?"seating-not-available":"seating",
+  label:s.label,status:s.kind==="listed"?"listed":"reported",
+  date:s.date,url:s.url,
+  note:s.kind==="listed"?"Directory listing; current seating has not been independently confirmed.":"Visitor-reported facilities; availability may change."
+ }];
+}
+function facilityTile(shop){
+ const f=facilities(shop),n=f.length;
+ const label=n?f.map(x=>x.label).join(" · "):"Not yet verified";
+ const detail=n?'<details class="atlasFacilityDisclosure"><summary>View facility sources</summary><ul>'+
+  f.map(x=>'<li><strong>'+esc(x.label)+'</strong> <span>('+esc(x.status)+', '+fmt(x.date)+')</span>'
+   +(x.note?'<span class="atlasFacilityNote">'+esc(x.note)+'</span>':'')
+   +'<a href="'+esc(x.url)+'" target="_blank" rel="noopener noreferrer">Source ↗</a></li>').join('')+'</ul>'
+  +'<p>Listed means a venue or directory describes it. Reported means a visitor mentioned it. Neither guarantees facilities are available today. Other amenities, including entertainment, remain unverified unless sourced.</p></details>':'';
+ return '<div class="atlasCategoryRow atlasCategoryFacilities">'
+  +'<strong class="atlasCategoryLabel">Facilities</strong>'
+  +'<span class="atlasCategoryFacilityState">'+(n?n+' noted':'—')+'</span>'
+  +'<small class="atlasCategoryCount">'+esc(label)+'</small>'
+  +detail+'</div>';
+}
 function categoryPanel(shop){
  const result=categoryRatings(shop);
  const eligible=categorySpecs.filter(x=>result[x.key].value!=null);
@@ -101,11 +134,11 @@ function categoryPanel(shop){
    +'<span class="'+(rated?'atlasCategoryNumber':'atlasCategoryMissing')+'"'+(rated?' aria-label="'+r.value.toFixed(1)+' out of 5"':' aria-label="Not rated"')+'>'+score+'</span>'
    +'<small class="atlasCategoryCount">'+esc(count)+'</small></div>';
  }).join('');
- return '<details class="atlasMore atlasCategories"><summary>Category ratings <span class="atlasCatSummary">'+esc(overview)+'</span></summary>'
-  +'<div class="atlasCategoryGrid">'+tiles+'</div>'
+ return '<details class="atlasMore atlasCategories"><summary>Ratings & facilities <span class="atlasCatSummary">'+esc(overview)+'</span></summary>'
+  +'<div class="atlasCategoryGrid">'+tiles+facilityTile(shop)+'</div>'
   +'<details class="atlasCategoryHow"><summary>How ratings work</summary>'
-  +'<p>These provisional category scores are editorial interpretations of dated visitor comments, <strong>not</strong> ratings that reviewers personally entered. Weed, service and chill need at least three distinct reviewer accounts; value and location need at least two. Comments must span at least two months without a concentrated burst. Recent evidence carries more weight.</p>'
-  +'<p>Categories without enough evidence are left unrated rather than assigned 3.5/5. Chill currently reflects comments about atmosphere, not independently confirmed seating or entertainment. You can check the individual review sources in the evidence section below.</p>'
+  +'<p>These provisional category scores are editorial interpretations of dated visitor comments, <strong>not</strong> ratings that reviewers personally entered. Weed, service and chill need at least three distinct reviewer accounts; value needs at least two. Comments must span at least two months without a concentrated burst. Recent evidence carries more weight.</p>'
+  +'<p>Unrated categories are not assigned stars. Chill measures reported atmosphere, while Facilities lists source-backed information such as seating, food or drinks without a numeric score. A shop with no facilities evidence is not necessarily takeaway-only. Review sources can be opened below.</p>'
   +'</details></details>';
 }
 function seating(shop){
@@ -159,7 +192,7 @@ function detail(shop){
  return '<section class="atlasVerdict" aria-label="Atlas Score"><div class="atlasScoreHead"><div><small>ATLAS SCORE · DATED REVIEWS</small><strong>★ '+a.score.toFixed(1)+' <small>/ 5</small></strong></div><span>'+a.reviewers+' independent recent reviewers<br>'+a.confidence+' · latest '+fmt(a.latest)+'</span></div>'
   +'<p class="atlasBrief">Review-based estimate, not a product test or guarantee of current stock.</p>'+seats+categoryPanel(shop)
   +'<details class="atlasMore"><summary>Why this score? · Review evidence</summary>'+unknownSeating+'<ul>'+reviews+'</ul>'
-  +'<p>Overall Atlas Score weights: flower/hash 50%, service 25%, atmosphere 15%, value 10%. Missing overall-score dimensions use a neutral 3.5/5 statistical prior. Location has no weight in the existing overall score, and no category without enough individually dated reports receives a displayed rating. <a href="https://github.com/MurkleGuy/-amsterdam-coffeeshop-atlas#atlas-score-pilot" target="_blank" rel="noopener">Scoring policy ↗</a></p></details></section>';
+  +'<p>Overall Atlas Score weights: flower/hash 50%, service 25%, atmosphere 15%, value 10%. Missing overall-score dimensions use a neutral 3.5/5 statistical prior. Facilities are source-backed features, not part of the overall score, and no category without enough individually dated reports receives a displayed rating. <a href="https://github.com/MurkleGuy/-amsterdam-coffeeshop-atlas#atlas-score-pilot" target="_blank" rel="noopener">Scoring policy ↗</a></p></details></section>';
 }
-window.AtlasScore={assess,seating,categoryRatings,listTag,detail};
+window.AtlasScore={assess,seating,facilities,categoryRatings,listTag,detail};
 })();
