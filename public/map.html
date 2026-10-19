@@ -673,7 +673,7 @@ html,body{height:100%;width:100%;overflow:hidden}
 .detail.shopPreviewMode .shopPreviewArea{display:block;margin-bottom:3px;color:#688574;letter-spacing:.08em;font-size:9px;line-height:1.3;font-weight:800;text-transform:uppercase}
 .detail.shopPreviewMode .shopPreviewName{display:block;color:#204b34;font-size:15px;line-height:1.3;font-weight:850;overflow-wrap:anywhere}
 .detail.shopPreviewMode .shopPreviewOpen,.detail.shopPreviewMode .shopPreviewClose{display:grid;place-items:center;flex:none;cursor:pointer;touch-action:manipulation}
-.detail.shopPreviewMode .shopPreviewOpen{width:46px;height:46px;min-width:46px;min-height:46px;border-radius:12px;border:0;background:#1f6549;color:white;font-size:29px;line-height:1;font-weight:600}
+.detail.shopPreviewMode .shopPreviewOpen{width:46px;height:46px;min-width:46px;min-height:46px;border-radius:12px;border:0;background:#1f6549;color:white;font-size:29px;line-height:1;font-weight:600;text-decoration:none}
 .detail.shopPreviewMode .shopPreviewClose{width:36px;height:44px;min-width:36px;min-height:44px;border:0;border-radius:10px;background:#eff5ef;color:#4e7560;font-size:20px}
 .detail.shopPreviewMode .shopPreviewOpen:hover{background:#134e37}
 .detail.shopPreviewMode .shopPreviewClose:hover{background:#e1ede2}
@@ -887,7 +887,7 @@ function previewShop(s){
  panel.innerHTML='<div class="shopPreviewBar">'
   +'<div class="shopPreviewInfo"><span class="shopPreviewArea">'+esc(getArea(s))+' · Coffeeshop</span>'
   +'<strong class="shopPreviewName">'+esc(s.name||s.street+' '+s.number)+'</strong></div>'
-  +'<button type="button" id="shopPreviewOpen" class="shopPreviewOpen" aria-label="Open full information for '+esc(s.name||s.street+' '+s.number)+'">›</button>'
+  +'<a id="shopPreviewOpen" class="shopPreviewOpen" href="map.html?shopId='+encodeURIComponent(s.id)+'" aria-label="Open full information for '+esc(s.name||s.street+' '+s.number)+'">›</a>'
   +'<button type="button" id="shopPreviewClose" class="shopPreviewClose" aria-label="Close shop preview">×</button>'
   +'</div>';
  panel.classList.add('shopPreviewMode');
