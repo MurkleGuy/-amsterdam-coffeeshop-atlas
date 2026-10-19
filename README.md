@@ -209,3 +209,13 @@ The card can expand **View facility sources** for dates, direct links and qualif
 
 Static JavaScript validation checked all 167 shop cards, the 17 evidence-backed facility records, the absence of invented facility data on the other 150 records, unchanged numerical category coverage, menu links and route handlers. Live mobile layout remains to be verified after Cloudflare deploy.
 
+
+### October 2026 — welcome buttons and mobile trip-panel UX
+
+- The welcome page adds a **14px separation** between the saved hotel's two actions. **Open my Amsterdam map** stays the primary solid-green action; **Change my accommodation** becomes secondary when a hotel has already been saved. Both styles track the existing saved hotel without changing local storage.
+- The map's **My Amsterdam trip** panel shows the saved hotel first, with a small **×** remove control **inside the hotel card** and confirmation before removal. The removed hotel marker disappears, and pending or active walking routes are cancelled when a starting point changes.
+- Hotel/address search, nearby hotel search pins and **Pick on map** are grouped under a collapsed **Change accommodation** disclosure whenever an accommodation is already saved. The disclosure is open when no accommodation has been saved.
+- Only the live location toggle remains exposed in the planner. The old **Centre** and **Forget hotel** buttons were removed. **⌖ Centre map** now appears on the mobile map, centring on an active GPS fix, otherwise the saved hotel, otherwise central Amsterdam. It does **not** start GPS permission requests.
+- The long privacy/help text is tucked into **Privacy & navigation info**; the mobile map temporarily hides an already-open coffeeshop detail card while the trip panel is open and restores it when closed.
+- Mobile/touch controls are spaced for accessibility; the existing menu, route and community-rating sections are unchanged. Static JS checks and a simulated saved-hotel/remove-hotel interaction passed; live Cloudflare/browser rendering still needs checking on a phone.
+
