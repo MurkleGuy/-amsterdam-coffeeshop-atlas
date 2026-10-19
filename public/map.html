@@ -967,11 +967,11 @@ function addMarker(s){if(!map||!Number.isFinite(s.lat)||!Number.isFinite(s.lng)|
  m.on('click',()=>previewShop(s,m));
  m.on('popupopen',()=>{
   const button=m.getPopup()?.getElement()?.querySelector('[data-preview-open]');
-  if(button)button.addEventListener('click',e=>{
+  if(button)button.onclick=e=>{
    e.preventDefault();
    e.stopPropagation();
    selectShop(s.id);
-  });
+  };
  });
  m.on('popupclose',()=>{
   if(selected===s.id&&$('detail').classList.contains('hidden')){
