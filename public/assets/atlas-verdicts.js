@@ -26,6 +26,13 @@ window.ATLAS_VERDICTS={
           "experience": 2,
           "note": "Visited Family First but did not enjoy the vibe; explicitly says no flower was sampled, so this cannot assess its weed quality.",
           "url": "https://www.reddit.com/r/AmsterdamEnts/comments/1u90t4j/coffeeshop_review_terps_army_2/"
+        },
+        {
+          "reviewer": "brimue",
+          "date": "2026-08-13",
+          "experience": 5,
+          "note": "Regular visitor includes Family First among the shops where they have enjoyed relaxing; this does not establish seating comfort or weed quality.",
+          "url": "https://www.reddit.com/r/AmsterdamEnts/comments/1vm9msx/visit_next_week/"
         }
       ],
       "reviewNote": "Greenmeister's prominently visible Family First reviews are mostly 2024 or earlier. Independent listings include mixed newer praise and value criticism, but exact dates and branch matching must be verified before use in the numerical model."
@@ -265,9 +272,9 @@ window.ATLAS_VERDICTS={
     "29": {
       "seating": {
         "kind": "reported",
-        "label": "Sit-in space reported; can get busy",
-        "date": "2026-05-19",
-        "url": "https://en.greenmeister.com/coffeeshop/katsu-amsterdam"
+        "label": "Small outdoor table reported in August 2026; availability may vary",
+        "date": "2026-08-12",
+        "url": "https://www.reddit.com/r/AmsterdamEnts/comments/1vm9msx/visit_next_week/"
       },
       "observations": [
         {
@@ -336,8 +343,16 @@ window.ATLAS_VERDICTS={
           "value": 4,
           "note": "Praises price-to-quality ratio and menu breadth, but no specific batch assessment.",
           "url": "https://en.greenmeister.com/coffeeshop/katsu-amsterdam"
+        },
+        {
+          "reviewer": "brimue",
+          "date": "2026-08-13",
+          "experience": 5,
+          "note": "Regular visitor includes Katsu among the shops where they have enjoyed relaxing; no specific product is reviewed.",
+          "url": "https://www.reddit.com/r/AmsterdamEnts/comments/1vm9msx/visit_next_week/"
         }
-      ]
+      ],
+      "reviewNote": " Indoor seating has been reported separately on Greenmeister; outdoor-table availability is based on an August 2026 visitor account."
     },
     "34": {
       "observations": [],
@@ -371,7 +386,15 @@ window.ATLAS_VERDICTS={
       ]
     },
     "47": {
-      "observations": [],
+      "observations": [
+        {
+          "reviewer": "brimue",
+          "date": "2026-08-13",
+          "experience": 5,
+          "note": "Regular visitor includes Original Dampkring among shops where they have enjoyed relaxing; weed quality not discussed.",
+          "url": "https://www.reddit.com/r/AmsterdamEnts/comments/1vm9msx/visit_next_week/"
+        }
+      ],
       "reviewNote": "A historic reputation and old review comments are not a current assessment of Dampkring flower or staff."
     },
     "48": {
@@ -739,6 +762,13 @@ window.ATLAS_VERDICTS={
           "experience": 4,
           "note": "Returning visitor praises flower, prices and relaxed atmosphere.",
           "url": "https://en.greenmeister.com/coffeeshop/bluebird-amsterdam"
+        },
+        {
+          "reviewer": "brimue",
+          "date": "2026-08-13",
+          "experience": 5,
+          "note": "Visitor includes Bluebird among places where they have enjoyed relaxing; no recent product-quality comparison made.",
+          "url": "https://www.reddit.com/r/AmsterdamEnts/comments/1vm9msx/visit_next_week/"
         }
       ]
     },
@@ -767,6 +797,14 @@ window.ATLAS_VERDICTS={
           "value": 4,
           "note": "Praises friendly staff and price-to-quality ratio; says seating gets crowded.",
           "url": "https://en.greenmeister.com/coffeeshop/sativa-amsterdam-amsterdam"
+        },
+        {
+          "reviewer": "Hefty-Ask7324",
+          "date": "2026-08-12",
+          "quality": 4,
+          "service": 5,
+          "note": "Recently returned visitor praises the cannabis and friendly staff at Sativa, but says the drinks selection was limited.",
+          "url": "https://www.reddit.com/r/AmsterdamEnts/comments/1vm9msx/visit_next_week/"
         }
       ]
     },
