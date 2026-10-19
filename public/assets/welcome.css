@@ -33,3 +33,15 @@ h1 em{font-style:normal;color:#287d52}
 @media(max-width:880px){.welcome-layout{grid-template-columns:minmax(0,1fr);max-width:650px;padding-top:25px;gap:24px}.introduction{padding-top:0}.intro-points{gap:16px;margin-bottom:18px}.intro-copy{margin-bottom:24px}.page-footer{max-width:650px;flex-direction:column;align-items:flex-start}}
 @media(max-width:520px){.site-inner{padding:12px 17px}.site-header nav{gap:11px}.site-header nav a{font-size:11px}.brand-pin{width:39px;height:39px}.brand strong{font-size:12px}.brand small{font-size:9px}.brand em{font-size:8px}.welcome-layout{padding:25px 16px 20px;gap:23px}h1{font-size:42px;line-height:1.07;letter-spacing:-1.8px;margin:14px 0}.intro-copy{font-size:14px;line-height:1.55;margin-bottom:19px}.intro-point{gap:11px}.intro-point h2{font-size:13px}.intro-point p{font-size:11px}.step-number{width:33px;height:33px}.intro-points{gap:13px}.intro-meta span{font-size:10px}.journey-card{border-radius:19px}.stage{padding:23px 20px}.card-stripe{padding:12px 20px}.stage h2{font-size:27px}.stage p{font-size:13px}.hotel-search-row input{font-size:13px}.hotel-search-row button{padding:10px 12px}.page-footer{padding:8px 17px 28px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+
+/* Saved-hotel home screen: deliberate gap and clear primary action hierarchy. */
+#introStage>.primary-button + .primary-button:not(.hidden){margin-top:14px}
+#introStage.has-saved-hotel #chooseHotel{
+ background:#eef5eb;color:#215b41;border:1px solid #cadfce;
+ box-shadow:none;font-weight:790;
+}
+#introStage.has-saved-hotel #chooseHotel:hover,
+#introStage.has-saved-hotel #chooseHotel:focus-visible{background:#e0eedf}
+#introStage.has-saved-hotel #continueSaved{background:#1f6248;box-shadow:0 6px 17px rgba(24,83,52,.15)}
+#introStage>.primary-button:focus-visible{outline:3px solid #7bb794;outline-offset:3px}
