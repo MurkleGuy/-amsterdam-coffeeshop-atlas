@@ -816,9 +816,23 @@ window.ATLAS_VERDICTS={
           "value": 4,
           "note": "Reports satisfactory Moroccan hash at a relatively low price, around the time of the rebrand.",
           "url": "https://en.greenmeister.com/coffeeshop/mediterrane-amsterdam"
+        },
+        {
+          "reviewer": "progburt777",
+          "date": "2026-03-31",
+          "quality": 5,
+          "note": "Reports four visits in three months to DrewIsSharing, repeatedly finding the hash excellent; does not discuss staff, price or seating.",
+          "url": "https://www.reddit.com/r/AmsterdamEnts/comments/1s8q5ui/a_day_out_in_amsterdam/"
+        },
+        {
+          "reviewer": "go_forbroke_smoke",
+          "date": "2026-03-31",
+          "service": 5,
+          "note": "Reports friendly staff on the discussion of DrewIsSharing; the same visitor also says the shop's Moroccan Peaches hash was enjoyable. Not a lab-tested product claim.",
+          "url": "https://www.reddit.com/r/AmsterdamEnts/comments/1s8q5ui/a_day_out_in_amsterdam/"
         }
       ],
-      "reviewNote": "Five dated community accounts span four months and include strongly opposed reports. The source's 2019 reviews predate the rebrand and are excluded. The reported quality-control allegation is not independently established."
+      "reviewNote": "Five dated community accounts span four months and include strongly opposed reports. The source's 2019 reviews predate the rebrand and are excluded. The reported quality-control allegation is not independently established. March 2026 firsthand discussion adds favourable hash/service reports, but conflicts with the late-2025 critical quality-control report; batch quality remains uncertain."
     },
     "139": {
       "seating": {
@@ -913,5 +927,7 @@ window.ATLAS_VERDICTS={
       "reviewSource": "https://weeview.nl/location/amsterdam/"
     }
   },
-  "coverageCheckedAt": "2026-10-19"
+  "coverageCheckedAt": "2026-10-19",
+  "categoryAuditAt": "2026-10-19",
+  "categoryPolicy": "Separate category numbers need at least 2-3 individually dated reviewers across 2 calendar months; unknown categories stay unscored. Atmosphere reviews do not verify entertainment or seating facilities."
 };
