@@ -12,6 +12,7 @@
  const escTrip=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','"':'&quot;',"'":'&#39;'}[c]));
  let hotel=null,hotelMarker=null,hotelLayer=L.layerGroup().addTo(map),searchLayer=L.layerGroup().addTo(map);
  let locationMarker=null,accuracyCircle=null,gpsWatch=null,locationFix=null,walkingShape=null,walkingInfo=null,lastShop=null,maneuvers=[],gpsFollow=false;
+ let hotelLookupController=null,hotelLookupSequence=0,routeController=null,routeSequence=0;
  const validPoint=(lat,lng)=>Number.isFinite(lat)&&Number.isFinite(lng)&&lat>=52.1&&lat<=52.55&&lng>=4.55&&lng<=5.3;
  try{const h=JSON.parse(localStorage.getItem(STORAGE)||'null');if(h&&validPoint(h.lat,h.lng)&&typeof h.name==='string')hotel=h;}catch{}
  const wrap=document.createElement('div');wrap.className='tripTools';
@@ -70,23 +71,29 @@
  }
  async function hotelLookup(){
   const q=$('hotelSearch').value.trim();
+  hotelLookupSequence++;
+  hotelLookupController?.abort();
   if(q.length<3){$('hotelMatches').textContent='Enter at least three characters.';return;}
+  const sequence=hotelLookupSequence,ctrl=new AbortController();
+  hotelLookupController=ctrl;
+  $('hotelFind').disabled=true;
   $('hotelMatches').textContent='Searching hotels…';
+  searchLayer.clearLayers();
   const centre=map.getCenter();
   const url=new URL('https://photon.komoot.io/api/');
-  url.searchParams.set('q',q+' Amsterdam');url.searchParams.set('limit','12');
+  url.searchParams.set('q',/\bamsterdam\b/i.test(q)?q:q+' Amsterdam');url.searchParams.set('limit','12');
   url.searchParams.set('lat',centre.lat.toFixed(4));url.searchParams.set('lon',centre.lng.toFixed(4));
   url.searchParams.set('lang','en');
+  const timer=setTimeout(()=>ctrl.abort(),12500);
   try{
-   const ctrl=new AbortController();const timer=setTimeout(()=>ctrl.abort(),12500);
-   let res;try{res=await fetch(url.toString(),{signal:ctrl.signal});}finally{clearTimeout(timer)}
+   const res=await fetch(url.toString(),{signal:ctrl.signal});
    if(!res.ok)throw Error('Hotel search is currently unavailable');
    const data=await res.json();
+   if(sequence!==hotelLookupSequence)return;
    const matches=(data.features||[]).filter(f=>{
     const [lng,lat]=f.geometry?.coordinates||[];
     return validPoint(lat,lng)&&f.properties?.name;
    }).slice(0,12);
-   searchLayer.clearLayers();
    $('hotelMatches').innerHTML='';
    if(!matches.length){$('hotelMatches').textContent='No matches. Try an address, or use Pick on map.';return;}
    for(const item of matches){
@@ -100,7 +107,13 @@
     mark.bindPopup('<b>'+escTrip(name)+'</b><br>'+escTrip(address)+'<br><button class="hotelPick" type="button">Choose hotel</button>');
     mark.on('popupopen',e=>e.popup.getElement().querySelector('.hotelPick').onclick=()=>saveHotel(name,lat,lng,address));
    }
-  }catch(e){$('hotelMatches').textContent='Hotel search unavailable. Use Pick on map to save your hotel instead.'}
+  }catch(e){
+   if(sequence!==hotelLookupSequence)return;
+   $('hotelMatches').textContent=ctrl.signal.aborted?'Hotel search timed out. Try again or pick your hotel on the map.':'Hotel search unavailable. Use Pick on map to save your hotel instead.';
+  }finally{
+   clearTimeout(timer);
+   if(sequence===hotelLookupSequence){hotelLookupController=null;$('hotelFind').disabled=false;}
+  }
  }
  let chooseTap=false;
  function hotelByMap(){
@@ -153,29 +166,47 @@
    lat+=read();lng+=read();points.push([lat/1e6,lng/1e6]);
   }return points;
  }
- function googleFrom(s){
+ function googleFrom(s,start){
   const u=new URL(directions(s,'walking'));
-  if(hotel){u.searchParams.set('origin',hotel.name+', '+(hotel.address||'Amsterdam'));}
+  if(start&&validPoint(start.lat,start.lng))u.searchParams.set('origin',start.lat+','+start.lng);
+  else if(hotel)u.searchParams.set('origin',hotel.lat+','+hotel.lng);
   return u.toString();
  }
  async function planTo(s,startSource){
-  if(!s||!Number.isFinite(s.lat)||!Number.isFinite(s.lng)){showMessage('This coffeeshop has no verified map coordinates yet. Try Google Maps.');return;}
+  if(!s)return;
+  if(!Number.isFinite(s.lat)||!Number.isFinite(s.lng)){
+   $('tripPanel').classList.remove('hidden');$('tripToggle').setAttribute('aria-expanded','true');
+   showMessage('This shop is still being located. Open it in Google Maps for walking directions.');
+   $('googleWalkFallback').href=googleFrom(s,startSource||hotel||locationFix);
+   $('tripRoute').classList.remove('hidden');
+   $('tripRouteSummary').textContent='Atlas walking route is not ready for this address.';
+   $('tripRouteSteps').textContent='Use the Google Maps link to get directions while its map pin is being checked.';
+   return;
+  }
   if(!startSource){
    if(hotel)startSource=hotel;
    else if(locationFix)startSource=locationFix;
   }
   if(!startSource){$('tripPanel').classList.remove('hidden');$('tripToggle').setAttribute('aria-expanded','true');showMessage('Save a hotel or enable live location to plan a walk.');return;}
   lastShop=s;
+  const sequence=++routeSequence;
+  routeController?.abort();
+  if(walkingShape){map.removeLayer(walkingShape);walkingShape=null;}
+  walkingInfo=null;maneuvers=[];
   $('tripPanel').classList.remove('hidden');$('tripToggle').setAttribute('aria-expanded','true');
   $('tripRoute').classList.remove('hidden');$('tripRouteSummary').textContent='Planning walking route…';$('tripRouteSteps').innerHTML='';
-  $('googleWalkFallback').href=googleFrom(s);
+  $('googleWalkFallback').href=googleFrom(s,startSource);
   const body={locations:[{lat:startSource.lat,lon:startSource.lng},{lat:s.lat,lon:s.lng}],costing:'pedestrian',costing_options:{pedestrian:{walkway_factor:.8,sidewalk_factor:.8,alley_factor:3,driveway_factor:7,max_hiking_difficulty:0}},units:'kilometers',directions_options:{language:'en-US',units:'kilometers'}};
   try{
-   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),13000);
+   const controller=new AbortController();
+   routeController=controller;
+   const timer=setTimeout(()=>controller.abort(),13000);
    let response;
    try{response=await fetch('https://valhalla1.openstreetmap.de/route',{method:'POST',headers:{'content-type':'application/json','X-Client-Id':'amsterdam-coffeeshop-atlas.pages.dev'},body:JSON.stringify(body),signal:controller.signal});}finally{clearTimeout(timer)}
    if(!response.ok)throw Error('Walking route unavailable ('+response.status+')');
-   const json=await response.json(),leg=json.trip?.legs?.[0],shape=leg?.shape&&decodePolyline6(leg.shape);
+   const json=await response.json();
+   if(sequence!==routeSequence)return;
+   const leg=json.trip?.legs?.[0],shape=leg?.shape&&decodePolyline6(leg.shape);
    if(!shape||shape.length<2)throw Error('Routing provider supplied no walkable route');
    if(walkingShape)map.removeLayer(walkingShape);
    walkingShape=L.polyline(shape,{color:'#1581c1',weight:5,opacity:.86}).addTo(map);
@@ -187,9 +218,12 @@
    $('tripRouteSteps').innerHTML=maneuvers.slice(0,14).map((step,i)=>'<div class="tripStep"><b>'+(i+1)+'.</b> '+escTrip(step.instruction||step.verbal_pre_transition_instruction||'Continue')+'</div>').join('');
    updateWalkingProgress();
   }catch(error){
+   if(sequence!==routeSequence)return;
    walkingInfo=null;
    $('tripRouteSummary').textContent='Could not draw a walking route here. Google Maps can still guide you.';
-   $('tripRouteSteps').textContent=String(error.message||'Routing unavailable');
+   $('tripRouteSteps').textContent=error?.name==='AbortError'?'Routing timed out. Use Google Maps or tap Replan.':'This route is unavailable from the map provider. Use Google Maps or tap Replan.';
+  }finally{
+   if(sequence===routeSequence)routeController=null;
   }
  }
  function updateWalkingProgress(){
@@ -213,12 +247,12 @@
   const el=$('tripRouteSteps');
   if(el&&next)el.innerHTML=(routeOffsetMeters>warningLimit?'<div class="tripOffRoute">You may be off the walking route. Stop and check your surroundings; tap Replan or use Google Maps.</div>':'')+'<div class="tripStep"><b>Next:</b> '+escTrip(next.instruction||'Continue along the route')+'</div>'+maneuvers.filter(m=>m.begin_shape_index>nearest).slice(1,6).map(m=>'<div class="tripStep">'+escTrip(m.instruction||'Continue')+'</div>').join('');
  }
- function closeRoute(){gpsFollow=false;walkingInfo=null;maneuvers=[];if($('startNavigation'))$('startNavigation').textContent='▶ Start GPS guidance';if(walkingShape){map.removeLayer(walkingShape);walkingShape=null;}$('tripRoute').classList.add('hidden')}
+ function closeRoute(){routeSequence++;routeController?.abort();routeController=null;gpsFollow=false;walkingInfo=null;maneuvers=[];if($('startNavigation'))$('startNavigation').textContent='▶ Start GPS guidance';if(walkingShape){map.removeLayer(walkingShape);walkingShape=null;}$('tripRoute').classList.add('hidden')}
  $('tripToggle').onclick=()=>{const open=$('tripPanel').classList.contains('hidden');if(!open)closeWelcome();$('tripPanel').classList.toggle('hidden',!open);$('tripToggle').setAttribute('aria-expanded',String(open))};
  $('tripSkipWelcome').onclick=()=>{markWelcomeDone();$('tripPanel').classList.add('hidden');$('tripToggle').setAttribute('aria-expanded','false')};
  $('tripClose').onclick=()=>$('tripToggle').click();
  $('hotelFind').onclick=hotelLookup;$('nearbyHotels').onclick=()=>{$('hotelSearch').value='hotel';hotelLookup()};$('hideHotelPins').onclick=()=>{searchLayer.clearLayers();$('hotelMatches').innerHTML=''};
- $('hotelSearch').addEventListener('keydown',e=>{if(e.key==='Enter')hotelLookup()});
+ $('hotelSearch').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();hotelLookup()}});
  $('hotelByTap').onclick=hotelByMap;
  $('hotelClear').onclick=()=>{hotel=null;try{localStorage.removeItem(STORAGE)}catch{}updateHotelUI();showMessage('Saved hotel removed.')};
  $('gpsToggle').onclick=startGPS;
