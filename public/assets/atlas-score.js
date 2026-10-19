@@ -91,15 +91,22 @@ function categoryPanel(shop){
  const overview=eligible.length
   ?eligible.slice(0,2).map(x=>x.label+' '+result[x.key].value.toFixed(1)).join(' · ')
   :'Awaiting enough individual reports';
- const rows=categorySpecs.map(spec=>{
-  const r=result[spec.key],num=r.value!=null;
-  const figure=num?'★ '+r.value.toFixed(1)+'/5':r.count?'Insufficient evidence':'Not yet rated';
-  const count=r.count?r.count+' report'+(r.count===1?'':'s'):'No dated category reports';
-  return '<div class="atlasCategoryRow"><div><strong>'+esc(spec.label)+'</strong><small>'+esc(count)+'</small></div><div class="'+(num?'atlasCategoryNumber':'atlasCategoryMissing')+'">'+figure+'</div></div>';
+ const tiles=categorySpecs.map(spec=>{
+  const r=result[spec.key],rated=r.value!=null;
+  const score=rated?'★ '+r.value.toFixed(1)+'/5':'—';
+  const count=rated?r.count+' report'+(r.count===1?'':'s'):
+   r.count?r.count+' report'+(r.count===1?'':'s')+' · not enough':'Not yet rated';
+  return '<div class="atlasCategoryRow'+(rated?'':' atlasCategoryUnrated')+'">'
+   +'<strong class="atlasCategoryLabel">'+esc(spec.label)+'</strong>'
+   +'<span class="'+(rated?'atlasCategoryNumber':'atlasCategoryMissing')+'"'+(rated?' aria-label="'+r.value.toFixed(1)+' out of 5"':' aria-label="Not rated"')+'>'+score+'</span>'
+   +'<small class="atlasCategoryCount">'+esc(count)+'</small></div>';
  }).join('');
  return '<details class="atlasMore atlasCategories"><summary>Category ratings <span class="atlasCatSummary">'+esc(overview)+'</span></summary>'
-  +'<div class="atlasCategoryGrid">'+rows+'</div>'
-  +'<p class="atlasCategoryExplanation">Provisional category numbers require 2–3 distinct dated user accounts across at least two different months without a concentrated review burst. The numbers are editorial interpretations of those reports — <strong>not</strong> ratings the reviewers personally entered. An empty category is not scored as 3.5. “Chill” currently measures reported atmosphere, not verified facilities. Open the review sources below to see the evidence.</p></details>';
+  +'<div class="atlasCategoryGrid">'+tiles+'</div>'
+  +'<details class="atlasCategoryHow"><summary>How ratings work</summary>'
+  +'<p>These provisional category scores are editorial interpretations of dated visitor comments, <strong>not</strong> ratings that reviewers personally entered. Weed, service and chill need at least three distinct reviewer accounts; value and location need at least two. Comments must span at least two months without a concentrated burst. Recent evidence carries more weight.</p>'
+  +'<p>Categories without enough evidence are left unrated rather than assigned 3.5/5. Chill currently reflects comments about atmosphere, not independently confirmed seating or entertainment. You can check the individual review sources in the evidence section below.</p>'
+  +'</details></details>';
 }
 function seating(shop){
  const s=assess(shop)?.record?.seating;
