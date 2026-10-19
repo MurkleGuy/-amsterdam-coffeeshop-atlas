@@ -48,7 +48,7 @@
   if(!window.confirm('Remove "'+hotel.name+'" as your saved accommodation?'))return;
   hotel=null;
   try{localStorage.removeItem(STORAGE)}catch{}
-  if(lastShop&&walkingInfo)closeRoute();
+  if(!$('tripRoute').classList.contains('hidden'))closeRoute();
   updateHotelUI();
   showMessage('Saved accommodation removed. Choose another place to plan walks from your hotel.');
  }
@@ -84,6 +84,7 @@
  function saveHotel(name,lat,lng,address){
   if(!validPoint(lat,lng))return;
   const wasWelcome=welcomeActive;
+  if(!$('tripRoute').classList.contains('hidden'))closeRoute();
   hotel={name:String(name).slice(0,110),address:String(address||'').slice(0,180),lat,lng};
   try{localStorage.setItem(STORAGE,JSON.stringify(hotel));}catch{}
   $('hotelMatches').innerHTML='';
