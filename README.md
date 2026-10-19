@@ -219,3 +219,12 @@ Static JavaScript validation checked all 167 shop cards, the 17 evidence-backed 
 - The long privacy/help text is tucked into **Privacy & navigation info**; the mobile map temporarily hides an already-open coffeeshop detail card while the trip panel is open and restores it when closed.
 - Mobile/touch controls are spaced for accessibility; the existing menu, route and community-rating sections are unchanged. Static JS checks and a simulated saved-hotel/remove-hotel interaction passed; live Cloudflare/browser rendering still needs checking on a phone.
 
+
+### Map marker quick previews (October 2026)
+
+To keep the mobile map visible while browsing, tapping an individual coffeeshop **pin** now displays a compact Leaflet popup containing the shop name, area and an accessible right-chevron button. Tapping the chevron opens the existing full coffeeshop detail card (Atlas ratings, facilities, sourced community scores, menu-photo link, route controls and Google review link). The popup itself does **not** open copyrighted external menu photographs automatically.
+
+Shop choices from the **directory** and return links from `menu.html?shop=<id>` still open the complete detail card directly. Selecting a marker while the full card is open closes the card and replaces it with the new small preview. A different marker replaces the first popup. Closing a preview clears its highlighted selection. Marker previews intentionally **do not call `renderList()`**, since that clears and rebuilds Leaflet cluster layers, which would instantly dismiss the popup. Directory opening can still re-render because it intentionally closes the popup first.
+
+Pin popups use `bindPopup` with automatic map panning, `keepInView` and source-safe HTML escaping. The right-arrow has a 44px touch target and an accessible label. Dynamic evidence, favourites, menus and the route planner were not otherwise changed. A mocked DOM/Leaflet interaction test covered 8 preview and selection cases; live smartphone/browser confirmation remains outstanding.
+
