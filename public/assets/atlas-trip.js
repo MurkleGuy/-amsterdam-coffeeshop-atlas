@@ -140,20 +140,28 @@
   if(walkingInfo)updateWalkingProgress();
  }
  function stopGPS(){
-  if(gpsWatch!==null){navigator.geolocation.clearWatch(gpsWatch);gpsWatch=null;}
-  $('gpsToggle').textContent='◎ Start live location';gpsFollow=false;if($('startNavigation'))$('startNavigation').textContent='▶ Start GPS guidance';
-  showMessage('Live GPS stopped. Location is not saved.');
+  if(gpsWatch!==null){try{navigator.geolocation?.clearWatch(gpsWatch)}catch(e){}gpsWatch=null;}
+  gpsFollow=false;
+  locationFix=null;
+  if(locationMarker){map.removeLayer(locationMarker);locationMarker=null;}
+  if(accuracyCircle){map.removeLayer(accuracyCircle);accuracyCircle=null;}
+  $('gpsToggle').textContent='◎ Start live location';
+  if($('startNavigation'))$('startNavigation').textContent='▶ Start GPS guidance';
+  showMessage('Live GPS stopped. No current position is being tracked.');
  }
  function startGPS(){
-  if(gpsWatch!==null){stopGPS();return;}
-  if(!navigator.geolocation){showMessage('This browser does not support live GPS.');return;}
+  if(gpsWatch!==null){stopGPS();return false;}
+  if(!navigator.geolocation){showMessage('This browser does not support live GPS. Use Google Maps for navigation.');return false;}
   showMessage('Requesting location permission…');
-  gpsWatch=navigator.geolocation.watchPosition(
-   pos=>setLocation(pos.coords.latitude,pos.coords.longitude,pos.coords.accuracy,false),
-   err=>{stopGPS();showMessage('Location unavailable: '+(err.code===1?'permission denied':'try again outdoors or with GPS enabled'))},
-   {enableHighAccuracy:true,maximumAge:2500,timeout:17000}
-  );
+  try{
+   gpsWatch=navigator.geolocation.watchPosition(
+    pos=>setLocation(pos.coords.latitude,pos.coords.longitude,pos.coords.accuracy,false),
+    err=>{stopGPS();showMessage('Live GPS could not start: '+(err.code===1?'permission denied':'try again outdoors or use Google Maps'))},
+    {enableHighAccuracy:true,maximumAge:2500,timeout:17000}
+   );
+  }catch(e){stopGPS();showMessage('Live GPS could not start. Use Google Maps for navigation.');return false;}
   $('gpsToggle').textContent='■ Stop live location';
+  return true;
  }
  function decodePolyline6(str){
   let index=0,lat=0,lng=0,points=[];
@@ -259,7 +267,17 @@
  $('gpsCentre').onclick=()=>{if(locationFix)map.flyTo([locationFix.lat,locationFix.lng],16);else showMessage('Turn on live location first.')};
  $('routeClose').onclick=closeRoute;
  $('routeRefresh').onclick=()=>{if(lastShop)planTo(lastShop,locationFix||hotel)};
- $('startNavigation').onclick=()=>{if(!walkingInfo){showMessage('Plan a walking route first.');return;}if(gpsFollow){gpsFollow=false;$('startNavigation').textContent='▶ Start GPS guidance';showMessage('Map following stopped. Live location can stay on.');return;}gpsFollow=true;$('startNavigation').textContent='■ Stop following';if(gpsWatch===null)startGPS();if(locationFix)map.panTo([locationFix.lat,locationFix.lng]);showMessage('GPS guidance is on while this page is open. Keep aware of your surroundings and cross safely.')};
+ $('startNavigation').onclick=()=>{
+  if(!walkingInfo){showMessage('Plan a walking route first.');return;}
+  if(gpsFollow){
+   gpsFollow=false;$('startNavigation').textContent='▶ Start GPS guidance';
+   showMessage('Map following stopped. Live location can stay on.');return;
+  }
+  if(gpsWatch===null&&!startGPS())return;
+  gpsFollow=true;$('startNavigation').textContent='■ Stop following';
+  if(locationFix)map.panTo([locationFix.lat,locationFix.lng]);
+  showMessage(locationFix?'Following your current GPS position. Stay aware of crossings and surroundings.':'Waiting for a GPS fix. Your browser may ask for location permission; use Google Maps if it fails.');
+ };
  window.addEventListener('pagehide',stopGPS);
  updateHotelUI();
  let shouldPrompt=false;
