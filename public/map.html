@@ -564,7 +564,7 @@ function showDetail(s){
  ${window.AtlasScore?.detail(s)||""}
  <div class="shopIntel">
   ${rating?`<a class="shopRatingCard" href="${esc(rating.url)}" target="_blank" rel="noopener"><strong>★ ${rating.rating.toFixed(1)}<small> / 5</small></strong><span>${esc(rating.source||'Community')} · ${rating.reviews} reviews${rank?' · Community #'+rank:''}<small>Historical average, not our verdict${rating.reviews<INTEL.rankingMinReviews?' · Small sample':''}, checked ${fmtMenuDate(rating.checkedAt)} ↗</small></span></a>`:'<span class="shopUnrated">Community score not yet checked</span>'}
-  ${menu?`<a class="shopMenuCard" href="menu.html?shop=${encodeURIComponent(s.id)}"><strong>▤ Menu reference</strong><span class="menuDate">Photo dated ${fmtMenuDate(menu.photoDate)}</span><small class="menuHint">Open Atlas menu page</small></a>`:'<span class="shopNoMenu">No menu photo verified within the last 120 days</span>'}
+  ${menu?`<a class="shopMenuCard" href="menu.html?shop=${encodeURIComponent(s.id)}"><strong>▤ View menu photos</strong><span class="menuDate">Photo dated ${fmtMenuDate(menu.photoDate)}</span><small class="menuHint">Open menu photographs</small></a>`:'<span class="shopNoMenu">No menu photo verified within the last 120 days</span>'}
  </div>
  <div class="detailRouteMain">
   <button id="planWalkAtlas" class="action detailPrimary">🧭 Walk on map</button>
