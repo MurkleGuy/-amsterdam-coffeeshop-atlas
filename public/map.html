@@ -831,6 +831,7 @@ function showDetail(s){
  panel.setAttribute('aria-label','Selected coffeeshop details');
  if(!s){panel.classList.add('hidden');wrap.classList.remove('has-detail');return;}
  panel.classList.remove('hidden');wrap.classList.add('has-detail');
+ panel.scrollTop=0;
  const title=s.name||s.street+' '+s.number,saved=isSaved(s),rating=ratingFor(s),menu=menuFor(s),rank=rating?.reviews>=INTEL.rankingMinReviews&&!rating?.excludeFromRanking?rankedPlace(s.id):0;
  panel.innerHTML=`<div class="detailHead"><div><span class="eyebrow">${esc(getArea(s))} · ADDRESS ${s.id} / ${ALL_COUNT}</span><h3>${esc(title)}</h3></div>
  <div class="detailHeadActions"><button type="button" id="detailFav" class="detailStar ${saved?'saved':''}" aria-pressed="${saved?'true':'false'}" aria-label="${saved?'Remove from saved shops':'Save this coffeeshop'}" title="${saved?'Remove from saved':'Save this shop'}">${saved?'★':'☆'}</button><button class="close" id="closeDetail" aria-label="Close details">×</button></div></div>
@@ -891,6 +892,7 @@ function previewShop(s){
   +'</div>';
  panel.classList.add('shopPreviewMode');
  panel.classList.remove('hidden');
+ panel.scrollTop=0;
  panel.setAttribute('aria-label','Preview: '+(s.name||s.address));
  wrap.classList.add('has-detail');
  document.querySelectorAll('#shopList .listing[data-id]').forEach(el=>el.classList.toggle('selected',Number(el.dataset.id)===s.id));
