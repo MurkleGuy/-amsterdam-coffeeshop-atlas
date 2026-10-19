@@ -13,7 +13,7 @@ const age=day=>{const d=Date.parse(String(day)+"T12:00:00Z");return Number.isFin
    It is not a review of cannabis quality, service, price or seating. */
 function sourceEstimate(shop,detail){
  const r=window.ATLAS_INTEL?.ratings?.[shop.id];
- if(!r||r.excludeFromRanking||r.source!=="Greenmeister"||!Number.isFinite(Number(r.rating))||Number(r.rating)<1||Number(r.rating)>5||!Number.isInteger(Number(r.reviews))||Number(r.reviews)<1){
+ if(!r||r.excludeFromRanking||!["Greenmeister","Leafly","Weedmaps","Weeview"].includes(r.source)||!Number.isFinite(Number(r.rating))||Number(r.rating)<1||Number(r.rating)>5||!Number.isInteger(Number(r.reviews))||Number(r.reviews)<1){
   return {...(detail||{reviewers:0,sample:[],record:null,latest:null}),score:null,kind:"unrated",confidence:"No reliable source-matched average"};
  }
  const count=Number(r.reviews),raw=Number(r.rating);
@@ -78,12 +78,14 @@ function detail(shop){
   const recent=a.sample?.length?'<p>'+a.sample.length+' dated reports are on file, but they do not meet the threshold for a detailed Atlas assessment.</p>':'';
   const notes=a.sample?.slice(0,3).map(z=>'<li>'+esc(z.note)+' <a href="'+esc(z.url)+'" target="_blank" rel="noopener">'+fmt(z.date)+' ↗</a></li>').join('')||'';
   const editorial=a.record?.reviewNote?'<p>'+esc(a.record.reviewNote)+'</p>':'';
+  const ageNotice=r.sourceAgeNote?'<p class="atlasAgeNote">'+esc(r.sourceAgeNote)+'</p>':'';
+  const auditLink=a.record?.reviewSource?'<p><a href="'+esc(a.record.reviewSource)+'" target="_blank" rel="noopener">Address research source ↗</a></p>':'';
   return '<section class="atlasVerdict atlasEstimated" aria-label="Atlas community estimate"><div class="atlasScoreHead"><div><small>ATLAS ESTIMATE · COMMUNITY DATA</small><strong>★ '+a.score.toFixed(1)+' <small>/ 5</small></strong></div><span>'+esc(a.confidence)+'</span></div>'
    +'<p class="atlasBrief">Source-adjusted community average — not a flower or service assessment.</p>'+seats
    +'<details class="atlasMore"><summary>How was this estimated? · Sources</summary>'
-   +'<p>'+esc(r.source)+' lists '+raw.toFixed(1)+'/5 from '+count+' historical reviews. Atlas adjusts small samples toward 3.5/5 using 12 prior reviews, to reduce the impact of just one or two ratings. Review ages and reviewer identities are not individually verified.</p>'
+   +'<p>'+esc(r.source)+' lists '+raw.toFixed(1)+'/5 from '+count+' historical reviews. Atlas adjusts small samples toward 3.5/5 using 12 prior reviews, to reduce the impact of just one or two ratings. Review ages and reviewer identities are not individually verified.</p>'+ageNotice
    +'<p>Weed quality, staff, value, location and chill factor have NOT been rated separately for this shop. This estimate must not be treated as a product recommendation.</p>'
-   +'<p><a href="'+esc(r.url)+'" target="_blank" rel="noopener">Read original source ↗</a></p>'+recent+editorial+unknownSeating
+   +'<p><a href="'+esc(r.url)+'" target="_blank" rel="noopener">Read original source ↗</a></p>'+recent+editorial+auditLink+unknownSeating
    +(notes?'<ul>'+notes+'</ul>':'')+'</details></section>';
  }
 
