@@ -9,8 +9,20 @@ const labels={quality:"Flower & hash",service:"Staff & service",experience:"Shop
 const esc=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const fmt=day=>new Date(day+"T12:00:00Z").toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric",timeZone:"UTC"});
 const age=day=>{const d=Date.parse(String(day)+"T12:00:00Z");return Number.isFinite(d)?(Date.now()-d)/86400000:Infinity;};
+/* A transparent fallback for addresses with a source-matched community average.
+   It is not a review of cannabis quality, service, price or seating. */
+function sourceEstimate(shop,detail){
+ const r=window.ATLAS_INTEL?.ratings?.[shop.id];
+ if(!r||r.excludeFromRanking||r.source!=="Greenmeister"||!Number.isFinite(Number(r.rating))||Number(r.rating)<1||Number(r.rating)>5||!Number.isInteger(Number(r.reviews))||Number(r.reviews)<1){
+  return detail?{...detail,score:null,kind:"unrated",confidence:"No reliable source-matched average"}:null;
+ }
+ const count=Number(r.reviews),raw=Number(r.rating);
+ const prior=12,baseline=3.5;
+ const score=(raw*count+baseline*prior)/(count+prior);
+ return {...(detail||{reviewers:0,sample:[],record:null,latest:null}),score,kind:"community",sourceRating:r,confidence:count<5?"Very limited":count<15?"Limited":"Historical community data"};
+}
 function assess(shop){
- const record=store.evidence?.[shop.id];if(!record)return null;
+ const record=store.evidence?.[shop.id];if(!record)return sourceEstimate(shop,null);
  const dated=(record.observations||[]).filter(r=>r.reviewer&&r.url&&age(r.date)>=-1&&age(r.date)<=store.reviewWindowDays).sort((a,b)=>b.date.localeCompare(a.date));
  // A reviewer's latest dated comment governs each category; repeated posts do not count as extra people.
  const reviewers=new Map();
@@ -42,7 +54,8 @@ function assess(shop){
   return [k,{count:counts[k],value:(3.5*2.5+sum)/(2.5+total)}];
  }));
  const score=adequate?dims.reduce((x,k)=>x+weights[k]*measures[k].value,0):null;
- return {score,reviewers:sample.length,measures,sample,record,latest:sample[0]?.date,spread,confidence:sample.length>=10?"Growing evidence":"Early evidence"};
+ const result={score,reviewers:sample.length,measures,sample,record,latest:sample[0]?.date,spread,confidence:sample.length>=10?"Growing evidence":"Early evidence",kind:"editorial"};
+ return score!=null?result:sourceEstimate(shop,result);
 }
 function seating(shop){
  const s=assess(shop)?.record?.seating;
@@ -50,14 +63,30 @@ function seating(shop){
 }
 function listTag(shop){
  const a=assess(shop),s=seating(shop);
- const source=window.ATLAS_INTEL?.ratings?.[shop.id];
- return (a?.score!=null?'<span class="atlasTag">Atlas ★ '+a.score.toFixed(1)+' · '+esc(a.confidence)+' ('+a.reviewers+')</span>':a?.reviewers?'<span class="atlasPendingTag">Atlas · '+a.reviewers+' recent report'+(a.reviewers===1?'':'s')+' · unscored</span>':source?'<span class="atlasPendingTag">Atlas · current quality unverified</span>':'<span class="atlasPendingTag">Atlas · needs review</span>')
- +(s&&(s.kind==="reported"||s.kind==="none"||s.kind==="listed")?'<span class="seatTag'+(s.kind==="none"?' noSeats':'')+'">↳ '+esc(s.label)+'</span>':'');
+ let tag;
+ if(a?.kind==="editorial")tag='<span class="atlasTag">Atlas ★ '+a.score.toFixed(1)+' · Review-based ('+a.reviewers+')</span>';
+ else if(a?.kind==="community")tag='<span class="atlasTag atlasEstimateTag">Atlas ★ '+a.score.toFixed(1)+' · Source estimate · '+esc(a.confidence)+'</span>';
+ else tag='<span class="atlasPendingTag">Atlas · awaiting reliable ratings</span>';
+ return tag+(s&&(s.kind==="reported"||s.kind==="none"||s.kind==="listed")?'<span class="seatTag'+(s.kind==="none"?' noSeats':'')+'">↳ '+esc(s.label)+'</span>':'');
 }
 function detail(shop){
  const a=assess(shop),s=seating(shop);
  const seats=s?'<a class="atlasSeat" href="'+esc(s.url)+'" target="_blank" rel="noopener">◉ '+esc(s.label)+' · '+fmt(s.date)+' ↗</a>':'';
  const unknownSeating=s?'':'<p class="atlasUnknown">Seating has not been recently verified.</p>';
+ if(a?.kind==="community"){
+  const r=a.sourceRating,count=Number(r.reviews),raw=Number(r.rating);
+  const recent=a.sample?.length?'<p>'+a.sample.length+' dated reports are on file, but they do not meet the threshold for a detailed Atlas assessment.</p>':'';
+  const notes=a.sample?.slice(0,3).map(z=>'<li>'+esc(z.note)+' <a href="'+esc(z.url)+'" target="_blank" rel="noopener">'+fmt(z.date)+' ↗</a></li>').join('')||'';
+  const editorial=a.record?.reviewNote?'<p>'+esc(a.record.reviewNote)+'</p>':'';
+  return '<section class="atlasVerdict atlasEstimated" aria-label="Atlas community estimate"><div class="atlasScoreHead"><div><small>ATLAS ESTIMATE · COMMUNITY DATA</small><strong>★ '+a.score.toFixed(1)+' <small>/ 5</small></strong></div><span>'+esc(a.confidence)+'</span></div>'
+   +'<p class="atlasBrief">Source-adjusted community average — not a flower or service assessment.</p>'+seats
+   +'<details class="atlasMore"><summary>How was this estimated? · Sources</summary>'
+   +'<p>'+esc(r.source)+' lists '+raw.toFixed(1)+'/5 from '+count+' historical reviews. Atlas adjusts small samples toward 3.5/5 using 12 prior reviews, to reduce the impact of just one or two ratings. Review ages and reviewer identities are not individually verified.</p>'
+   +'<p>Weed quality, staff, value, location and chill factor have NOT been rated separately for this shop. This estimate must not be treated as a product recommendation.</p>'
+   +'<p><a href="'+esc(r.url)+'" target="_blank" rel="noopener">Read original source ↗</a></p>'+recent+editorial+unknownSeating
+   +(notes?'<ul>'+notes+'</ul>':'')+'</details></section>';
+ }
+
  if(a?.score==null){
   const ext=window.ATLAS_INTEL?.ratings?.[shop.id];
   const notes=a?.sample?.slice(0,3).map(r=>'<li>'+esc(r.note)+' <a href="'+esc(r.url)+'" target="_blank" rel="noopener">'+fmt(r.date)+' ↗</a></li>').join('')||'';
@@ -74,7 +103,7 @@ function detail(shop){
  }
  const metrics=dims.map(k=>'<div><span>'+labels[k]+'</span><strong>'+(a.measures[k].count?a.measures[k].value.toFixed(1)+'/5':'Not verified')+'</strong></div>').join('');
  const reviews=a.sample.slice(0,4).map(r=>'<li>'+esc(r.note)+' <a href="'+esc(r.url)+'" target="_blank" rel="noopener">'+fmt(r.date)+' ↗</a></li>').join('');
- return '<section class="atlasVerdict" aria-label="Atlas Score"><div class="atlasScoreHead"><div><small>ATLAS SCORE · PROVISIONAL</small><strong>★ '+a.score.toFixed(1)+' <small>/ 5</small></strong></div><span>'+a.reviewers+' independent recent reviewers<br>'+a.confidence+' · latest '+fmt(a.latest)+'</span></div>'
+ return '<section class="atlasVerdict" aria-label="Atlas Score"><div class="atlasScoreHead"><div><small>ATLAS SCORE · DATED REVIEWS</small><strong>★ '+a.score.toFixed(1)+' <small>/ 5</small></strong></div><span>'+a.reviewers+' independent recent reviewers<br>'+a.confidence+' · latest '+fmt(a.latest)+'</span></div>'
   +'<p class="atlasBrief">Review-based estimate, not a product test or guarantee of current stock.</p>'+seats
   +'<details class="atlasMore"><summary>Why this score? · Review evidence</summary>'+unknownSeating+'<div class="atlasBreakdown">'+metrics+'</div><ul>'+reviews+'</ul>'
   +'<p>Product 50%, service 25%, experience 15%, value 10%. Category scores interpret dated comments; reviewers did not supply these separate scores. Older reports lose weight and expire. Missing categories stay at a conservative midpoint. <a href="https://github.com/MurkleGuy/-amsterdam-coffeeshop-atlas#atlas-score-pilot" target="_blank" rel="noopener">Scoring policy ↗</a></p></details></section>';
