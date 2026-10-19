@@ -529,7 +529,7 @@ function setStatus(text,done=false){$('statusText').textContent=text;$('statusDo
 function saveFavs(){try{localStorage.setItem(FAV_KEY,JSON.stringify([...favs]))}catch(e){}}
 function saveCoords(){try{localStorage.setItem(GEO_KEY,JSON.stringify(cache))}catch(e){}}
 function isSaved(s){return favs.has(s.id)}
-function toggleFav(id){if(favs.has(id))favs.delete(id);else favs.add(id);saveFavs();$('favCount').textContent=favs.size;renderList();if(selected===id)showDetail(official[id-1]);}
+function toggleFav(id){if(favs.has(id))favs.delete(id);else favs.add(id);saveFavs();$('favCount').textContent=favs.size;renderList();if(selected===id)showDetail(official.find(s=>s.id===id)||null);}
 function filtered(){
  const q=$('search').value.trim().toLowerCase(),a=$('area').value,view=$('exploreMode').value;
  let out=official.filter(s=>(currentTab==='all'||favs.has(s.id))&&(a==='all'||getArea(s)===a)&&(!q||[s.name,...(s.aliases||[]),s.address,s.street,s.postcode,getArea(s)].join(' ').toLowerCase().includes(q)));
@@ -588,9 +588,9 @@ function showDetail(s){
   showDetail(null);
   window.AtlasTrip.planTo(s);
  };
- $('walkGoogleHotel').onclick=()=>{const h=window.AtlasTrip?.hotel();if(!h){window.AtlasTrip?.open();return;}const u=new URL(walk(s));u.searchParams.set('origin',h.lat+','+h.lng);window.open(u.toString(),'_blank','noopener')};
- $('hotelGoogleTransit').onclick=()=>{const h=window.AtlasTrip?.hotel();if(!h){window.AtlasTrip?.open();return;}const u=new URL(transit(s));u.searchParams.set('origin',h.lat+','+h.lng);window.open(u.toString(),'_blank','noopener')};
- $('walkFromGPS').onclick=()=>{showDetail(null);window.AtlasTrip?.fromGPS(s)};
+ $('walkGoogleHotel').onclick=()=>{const h=window.AtlasTrip?.hotel();if(!h){if(window.AtlasTrip?.open)window.AtlasTrip.open();else window.open(walk(s),'_blank','noopener');return;}const u=new URL(walk(s));u.searchParams.set('origin',h.lat+','+h.lng);window.open(u.toString(),'_blank','noopener')};
+ $('hotelGoogleTransit').onclick=()=>{const h=window.AtlasTrip?.hotel();if(!h){if(window.AtlasTrip?.open)window.AtlasTrip.open();else window.open(transit(s),'_blank','noopener');return;}const u=new URL(transit(s));u.searchParams.set('origin',h.lat+','+h.lng);window.open(u.toString(),'_blank','noopener')};
+ $('walkFromGPS').onclick=()=>{if(!window.AtlasTrip?.fromGPS){window.open(walk(s),'_blank','noopener');return;}showDetail(null);window.AtlasTrip.fromGPS(s)};
 }
 function selectShop(id){const s=official.find(x=>x.id===id);if(!s)return;closeShops();selected=id;showDetail(s);renderList();if(map&&s.lat!=null){map.flyTo([s.lat,s.lng],Math.max(15,map.getZoom()),{duration:.6})}}
 function refreshPinCount(){let n=official.filter(s=>Number.isFinite(s.lat)).length;$('pinnedCount').textContent=n;}
@@ -788,7 +788,14 @@ function openShops(){
 function closeShops(){
  $('shopDrawer').classList.remove('open');$('shopsToggle').setAttribute('aria-expanded','false');
 }
-function main(){restore();$('topCount').textContent=ALL_COUNT;$('favCount').textContent=favs.size;initMap();for(const s of official)if(s.lat!=null)addMarker(s);refreshPinCount();renderList();$('search').addEventListener('input',renderList);$('area').addEventListener('change',renderList);$('exploreMode').addEventListener('change',renderList);$('allTab').onclick=()=>{currentTab='all';$('allTab').classList.add('active');$('savedTab').classList.remove('active');renderList()};$('savedTab').onclick=()=>{currentTab='saved';$('savedTab').classList.add('active');$('allTab').classList.remove('active');renderList()};$('resetMap').onclick=()=>map?.flyTo([52.3695,4.8975],12);$('streetMode').onclick=()=>setMapMode('street');$('transportMode').onclick=()=>{tileFailures=0;setMapMode('bus');};$('routesMode').onclick=()=>setMapMode('routes');$('routeKeyButton').onclick=()=>{const mode=$('routePanel').dataset.mode;if(mode==='metro'&&routeLines)renderRouteKey();setRouteKeyVisible($('routePanel').classList.contains('hidden'))};$('closeRoutePanel').onclick=()=>setRouteKeyVisible(false);$('routeAll').onclick=()=>{if($('routePanel').dataset.mode==='metro'&&routeLines){enabledRouteKeys=new Set(routeLines.map(r=>r.key));drawRoutes();renderRouteKey()}};$('routeNone').onclick=()=>{if($('routePanel').dataset.mode==='metro'&&routeLines){enabledRouteKeys=new Set();drawRoutes();renderRouteKey()}};$('routeRetry').onclick=()=>{if($('routePanel').dataset.mode==='metro')loadRoutes()};$('locateMap').onclick=onLocate;$('nearby').onclick=onLocate;$('shopsToggle').onclick=()=>{$('shopDrawer').classList.contains('open')?closeShops():openShops()};$('closeShops').onclick=closeShops;$('exportBtn').onclick=downloadCSV;if(official.some(s=>s.lat!=null))setStatus(`Loaded ${official.filter(s=>s.lat!=null).length} cached markers; refreshing missing locations…`,true);geocodeAll();}
+function main(){restore();$('topCount').textContent=ALL_COUNT;$('favCount').textContent=favs.size;const mapReady=initMap();for(const s of official)if(s.lat!=null)addMarker(s);refreshPinCount();renderList();$('search').addEventListener('input',renderList);$('area').addEventListener('change',renderList);$('exploreMode').addEventListener('change',renderList);$('allTab').onclick=()=>{currentTab='all';$('allTab').classList.add('active');$('savedTab').classList.remove('active');renderList()};$('savedTab').onclick=()=>{currentTab='saved';$('savedTab').classList.add('active');$('allTab').classList.remove('active');renderList()};$('resetMap').onclick=()=>map?.flyTo([52.3695,4.8975],12);$('streetMode').onclick=()=>setMapMode('street');$('transportMode').onclick=()=>{tileFailures=0;setMapMode('bus');};$('routesMode').onclick=()=>setMapMode('routes');$('routeKeyButton').onclick=()=>{const mode=$('routePanel').dataset.mode;if(mode==='metro'&&routeLines)renderRouteKey();setRouteKeyVisible($('routePanel').classList.contains('hidden'))};$('closeRoutePanel').onclick=()=>setRouteKeyVisible(false);$('routeAll').onclick=()=>{if($('routePanel').dataset.mode==='metro'&&routeLines){enabledRouteKeys=new Set(routeLines.map(r=>r.key));drawRoutes();renderRouteKey()}};$('routeNone').onclick=()=>{if($('routePanel').dataset.mode==='metro'&&routeLines){enabledRouteKeys=new Set();drawRoutes();renderRouteKey()}};$('routeRetry').onclick=()=>{if($('routePanel').dataset.mode==='metro')loadRoutes()};$('locateMap').onclick=onLocate;$('nearby').onclick=onLocate;$('shopsToggle').onclick=()=>{$('shopDrawer').classList.contains('open')?closeShops():openShops()};$('closeShops').onclick=closeShops;$('exportBtn').onclick=downloadCSV;if(mapReady){
+ if(official.some(s=>s.lat!=null))setStatus(`Loaded ${official.filter(s=>s.lat!=null).length} cached markers; refreshing missing locations…`,true);
+ geocodeAll();
+ }else{
+  for(const id of ['resetMap','streetMode','transportMode','routesMode','routeKeyButton','routeAll','routeNone','routeRetry']){
+   const button=$(id);if(button){button.disabled=true;button.title='Map controls unavailable until the map library loads';}
+  }
+ }}
 main();
 // Restore the exact shop details when returning from its menu page.
 // Gallery queries remain searches, so the hotel-first flow is preserved.
