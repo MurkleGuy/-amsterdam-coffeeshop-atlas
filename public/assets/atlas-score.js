@@ -56,24 +56,27 @@ function listTag(shop){
 }
 function detail(shop){
  const a=assess(shop),s=seating(shop);
- const seats=s?'<a class="atlasSeat" href="'+esc(s.url)+'" target="_blank" rel="noopener">◉ '+esc(s.label)+' · '+fmt(s.date)+' ↗</a>'
-  :'<span class="atlasSeat atlasUnknown">Seating arrangements not recently verified</span>';
+ const seats=s?'<a class="atlasSeat" href="'+esc(s.url)+'" target="_blank" rel="noopener">◉ '+esc(s.label)+' · '+fmt(s.date)+' ↗</a>':'';
+ const unknownSeating=s?'':'<p class="atlasUnknown">Seating has not been recently verified.</p>';
  if(a?.score==null){
   const ext=window.ATLAS_INTEL?.ratings?.[shop.id];
   const notes=a?.sample?.slice(0,3).map(r=>'<li>'+esc(r.note)+' <a href="'+esc(r.url)+'" target="_blank" rel="noopener">'+fmt(r.date)+' ↗</a></li>').join('')||'';
   const reason=a?.reviewers?(a.spread===false&&a.reviewers>=4?'Review dates are too clustered for a trustworthy recommendation.':'We need more independent, dated reports describing both product quality and staff service.')
    :ext?'The available community average is historical. We have not established enough recent product and service evidence for our own score.'
    :'No individually matched community-rating source has been validated for this address.';
-  const recentNote=a?.record?.reviewNote?'<details class="atlasMore"><summary>Review notes</summary><p>'+esc(a.record.reviewNote)+'</p></details>':'';
+  const recentNote=a?.record?.reviewNote?'<p>'+esc(a.record.reviewNote)+'</p>':'';
   // The separately linked community-rating card directly below is the source link; no duplicate button.
-  const previews=notes?'<details class="atlasMore"><summary>Read '+a.reviewers+' dated reports</summary><ul>'+notes+'</ul><p>Individual remarks are not verified facts about current products or staff.</p></details>':'';
-  return '<section class="atlasVerdict atlasPending" aria-label="Atlas Score"><div class="atlasScoreHead"><strong>Atlas Score</strong><span>Not enough recent evidence</span></div><p>'+reason+'</p>'+seats+recentNote+previews+'</section>';
+  const previews=notes?'<h4 class="atlasEvidenceLabel">Dated reports</h4><ul>'+notes+'</ul><p>Individual comments are not verified facts about current products or staff.</p>':'';
+  const concise=a?.reviewers?a.reviewers+' dated report'+(a.reviewers===1?'':'s')+' · not enough to score':'Independent quality and service evidence still needed';
+  return '<section class="atlasVerdict atlasPending" aria-label="Atlas Score"><div class="atlasScoreHead"><strong>Atlas Score</strong><span class="atlasAwait">Not yet rated</span></div>'
+   +'<p class="atlasBrief">'+esc(concise)+'</p>'+seats
+   +'<details class="atlasMore"><summary>Why no Atlas score? · Sources</summary><p>'+reason+'</p>'+unknownSeating+recentNote+previews+'</details></section>';
  }
  const metrics=dims.map(k=>'<div><span>'+labels[k]+'</span><strong>'+(a.measures[k].count?a.measures[k].value.toFixed(1)+'/5':'Not verified')+'</strong></div>').join('');
  const reviews=a.sample.slice(0,4).map(r=>'<li>'+esc(r.note)+' <a href="'+esc(r.url)+'" target="_blank" rel="noopener">'+fmt(r.date)+' ↗</a></li>').join('');
  return '<section class="atlasVerdict" aria-label="Atlas Score"><div class="atlasScoreHead"><div><small>ATLAS SCORE · PROVISIONAL</small><strong>★ '+a.score.toFixed(1)+' <small>/ 5</small></strong></div><span>'+a.reviewers+' independent recent reviewers<br>'+a.confidence+' · latest '+fmt(a.latest)+'</span></div>'
-  +'<p>Our review-based estimate of the smoker experience — not a personal product test or a guarantee of current stock.</p>'+seats
-  +'<details class="atlasMore"><summary>Why this score? · Review evidence</summary><div class="atlasBreakdown">'+metrics+'</div><ul>'+reviews+'</ul>'
+  +'<p class="atlasBrief">Review-based estimate, not a product test or guarantee of current stock.</p>'+seats
+  +'<details class="atlasMore"><summary>Why this score? · Review evidence</summary>'+unknownSeating+'<div class="atlasBreakdown">'+metrics+'</div><ul>'+reviews+'</ul>'
   +'<p>Product 50%, service 25%, experience 15%, value 10%. Category scores interpret dated comments; reviewers did not supply these separate scores. Older reports lose weight and expire. Missing categories stay at a conservative midpoint. <a href="https://github.com/MurkleGuy/-amsterdam-coffeeshop-atlas#atlas-score-pilot" target="_blank" rel="noopener">Scoring policy ↗</a></p></details></section>';
 }
 window.AtlasScore={assess,seating,listTag,detail};
