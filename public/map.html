@@ -885,6 +885,29 @@ html,body{height:100%;width:100%;overflow:hidden}
  .mapWrap #detail .shopRatingSummaryChevron{transition:none}
 }
 </style>
+<style id="shop-full-pin-anchor-v1">
+.mapWrap #detail.detail.shopDetailPinned:not(.hidden){
+ position:absolute!important;left:var(--detail-pin-x,50%)!important;
+ top:var(--detail-pin-y,60%)!important;right:auto!important;bottom:auto!important;
+ transform:translate(-50%,-100%)!important;
+ width:min(420px,calc(100% - 22px))!important;max-width:420px!important;
+ height:auto!important;max-height:var(--detail-pin-height,55dvh)!important;
+ overflow-y:auto!important;z-index:451!important;
+ border:1px solid #cbded0!important;box-shadow:0 13px 40px rgba(8,36,22,.33)!important;
+}
+.mapWrap #detailPinTail{position:absolute;z-index:452;width:14px;height:14px;
+ left:var(--tail-pin-x,50%);top:var(--tail-pin-y,50%);
+ transform:translate(-50%,-50%) rotate(45deg);background:#fffefb;
+ border-right:1px solid #cbded0;border-bottom:1px solid #cbded0;
+ pointer-events:none;box-shadow:3px 3px 4px rgba(8,36,22,.08)}
+.mapWrap #detailPinTail.hidden{display:none}
+@media(max-width:760px){
+ .mapWrap #detail.detail.shopDetailPinned:not(.hidden){
+  width:min(405px,calc(100% - 20px))!important;max-width:none!important;
+  border-radius:17px!important;padding:13px 14px 15px!important;
+ }
+}
+</style>
 </head>
 <body>
 <div class="app">
@@ -919,6 +942,7 @@ html,body{height:100%;width:100%;overflow:hidden}
     </div>
    </div>
    <div id="detailBackdrop" class="shopDetailBackdrop hidden" aria-hidden="true"></div>
+   <span id="detailPinTail" class="hidden" aria-hidden="true"></span>
    <div id="detail" class="detail hidden" role="dialog" aria-modal="true" aria-label="Selected coffeeshop details"></div>
    <div class="mapLegend" id="legend"><b>2026 city address list</b><div class="row"><i class="legendDot"></i><span><span id="pinnedCount">0</span> pinned of 167 published addresses</span></div><div style="margin-top:4px">Markers appear as locations are checked.</div></div>
   </div>
@@ -1037,12 +1061,40 @@ function renderList(){
 }
 function refreshClusters(visible){if(!map||!clusters)return;clusters.clearLayers();for(const s of visible){const marker=geoMarkers[s.id];if(marker)clusters.addLayer(marker)}}
 
+let pinnedDetailShopId=null;
+function positionPinnedShopDetail(){
+ if(pinnedDetailShopId==null||!map)return;
+ const shop=official.find(x=>x.id===pinnedDetailShopId);
+ if(!shop||!Number.isFinite(shop.lat)||!Number.isFinite(shop.lng))return;
+ const panel=$('detail'),tail=$('detailPinTail'),wrap=document.querySelector('.mapWrap');
+ if(panel.classList.contains('hidden')||!panel.classList.contains('shopDetailPinned'))return;
+ const pt=map.latLngToContainerPoint([shop.lat,shop.lng]);
+ const width=wrap.clientWidth||map.getSize().x,height=wrap.clientHeight||map.getSize().y;
+ panel.style.setProperty('--detail-pin-height',Math.max(145,Math.min(570,height*.57,height-190))+'px');
+ const pw=panel.offsetWidth||Math.min(420,width-22),half=pw/2;
+ const x=Math.max(half+10,Math.min(width-half-10,pt.x)),y=pt.y-52;
+ panel.style.setProperty('--detail-pin-x',x+'px');
+ panel.style.setProperty('--detail-pin-y',y+'px');
+ tail.style.setProperty('--tail-pin-x',Math.max(x-half+16,Math.min(x+half-16,pt.x))+'px');
+ tail.style.setProperty('--tail-pin-y',(y+7)+'px');
+ const visible=pt.x>=-12&&pt.x<=width+12&&pt.y>80&&pt.y<height+30;
+ panel.style.visibility=visible?'visible':'hidden';
+ tail.classList.toggle('hidden',!visible);
+}
+function centrePinnedShopBelowCard(shop){
+ if(!map||pinnedDetailShopId!==shop.id)return;
+ const wrap=document.querySelector('.mapWrap'),h=wrap.clientHeight||map.getSize().y,w=wrap.clientWidth||map.getSize().x;
+ const pt=map.latLngToContainerPoint([shop.lat,shop.lng]);
+ map.panBy([pt.x-w/2,pt.y-(h-78)],{animate:false});
+ positionPinnedShopDetail();
+}
 function showDetail(s){
  const panel=$('detail'),wrap=document.querySelector('.mapWrap'),backdrop=$('detailBackdrop');
  if(!s){
   panel.classList.add('hidden');backdrop.classList.add('hidden');
-  wrap.classList.remove('has-detail');
-  panel.dataset.shopId='';
+  panel.classList.remove('shopDetailPinned');panel.style.visibility='';
+  $('detailPinTail').classList.add('hidden');pinnedDetailShopId=null;
+  wrap.classList.remove('has-detail');panel.dataset.shopId='';
   return;
  }
  const previousShopId=panel.dataset.shopId;
@@ -1055,7 +1107,12 @@ function showDetail(s){
  const atlasPanel=(window.AtlasScore?.detail(s)||'<p>Detailed Atlas evidence is not available for this shop yet.</p>')
   .replace('class="atlasMore atlasCategories"','class="atlasMore atlasCategories" open');
  panel.setAttribute('aria-label','Details for '+title);
- panel.classList.remove('hidden');backdrop.classList.remove('hidden');
+ const anchor=!!map&&Number.isFinite(s.lat)&&Number.isFinite(s.lng)&&(wrap.clientHeight||map.getSize().y)>420;
+ pinnedDetailShopId=anchor?s.id:null;
+ panel.classList.toggle('shopDetailPinned',anchor);
+ panel.setAttribute('aria-modal',anchor?'false':'true');
+ panel.style.visibility='';$('detailPinTail').classList.add('hidden');
+ panel.classList.remove('hidden');backdrop.classList.toggle('hidden',anchor);
  wrap.classList.add('has-detail');
  panel.dataset.shopId=String(s.id);
  panel.scrollTop=0;
@@ -1098,6 +1155,7 @@ function showDetail(s){
   if(h&&Number.isFinite(h.lat)&&Number.isFinite(h.lng))u.searchParams.set('origin',h.lat+','+h.lng);
   window.open(u.toString(),'_blank','noopener');
  };
+ if(anchor)positionPinnedShopDetail();
 }
 // Persistent mini card is independent of Leaflet's disposable popup DOM.
 let previewedShopId=null;
@@ -1161,7 +1219,12 @@ function selectShop(id){
  selected=id;
  showDetail(s);
  renderList();
- if(map&&s.lat!=null)map.flyTo([s.lat,s.lng],Math.max(15,map.getZoom()),{duration:.6});
+ if(map&&s.lat!=null){
+  if(pinnedDetailShopId===s.id){
+   map.setView([s.lat,s.lng],Math.max(15,map.getZoom()),{animate:false});
+   centrePinnedShopBelowCard(s);
+  }else map.flyTo([s.lat,s.lng],Math.max(15,map.getZoom()),{duration:.6});
+ }
 }
 function refreshPinCount(){let n=official.filter(s=>Number.isFinite(s.lat)).length;$('pinnedCount').textContent=n;}
 /* Cannabis pin icon: Font Awesome Free 7.3.1, by Fonticons Inc., Icons CC BY 4.0. Attribution in /credits.html. */
@@ -1372,8 +1435,11 @@ function main(){
  $('shopQuickClose').addEventListener('click',()=>hideShopPreview(true));
  restore();$('topCount').textContent=ALL_COUNT;$('favCount').textContent=favs.size;const mapReady=initMap();
  if(mapReady){
-  map.on('move zoom resize',positionShopPreview);
-  map.on('click',()=>{if(previewedShopId!=null)hideShopPreview(true)});
+  map.on('move zoom resize',()=>{positionShopPreview();positionPinnedShopDetail()});
+  map.on('click',()=>{
+   if(previewedShopId!=null)hideShopPreview(true);
+   if(pinnedDetailShopId!=null){showDetail(null);selected=null;renderList();}
+  });
  }
  for(const s of official)if(s.lat!=null)addMarker(s);refreshPinCount();renderList();$('search').addEventListener('input',renderList);$('area').addEventListener('change',renderList);$('exploreMode').addEventListener('change',renderList);$('allTab').onclick=()=>{currentTab='all';$('allTab').classList.add('active');$('savedTab').classList.remove('active');renderList()};$('savedTab').onclick=()=>{currentTab='saved';$('savedTab').classList.add('active');$('allTab').classList.remove('active');renderList()};$('resetMap').onclick=()=>map?.flyTo([52.3695,4.8975],12);$('mapCentreControl').onclick=()=>{
  const fix=window.AtlasTrip?.gps?.(),hotel=window.AtlasTrip?.hotel?.(),point=fix||hotel;
