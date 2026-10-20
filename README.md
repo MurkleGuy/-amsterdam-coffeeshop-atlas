@@ -242,3 +242,12 @@ Source-level tests passed. Actual deployed Cloudflare mobile appearance remains 
 
 The previous fixed-bottom small card and direct-full-card-on-marker behaviours are superseded by this pin-anchored design. All existing shop data, menus, favourites and walking directions are unchanged. Syntax and eight mocked marker/preview interactions were checked; verify live mobile behaviour after Cloudflare deployment.
 
+
+
+## October 2026: compact full shop modal from marker preview
+
+- Tapping a pinned coffeeshop opens the persistent small name-and-chevron preview. Both the shop name and 44px chevron open a **centred, scrollable full shop window**; tapping the directory continues to open the full view directly. The small preview avoids relying on disposable Leaflet popup nodes.
+- The full shop view is compact by default: name/address, a single collapsible Atlas rating summary, a dated menu link when available, two travel actions (**Walk on map**, **Public transport**), and a text-sized Google review link. It no longer includes duplicate Greenmeister star cards or the redundant Walk from hotel and Walk from GPS buttons.
+- Expanding the Atlas rating summary immediately reveals the existing five-section **Ratings & facilities** panel, with underlying report sources and the adjustment methodology still accessible in their independent disclosures. Source labels are not removed from the model.
+- On mobile the full view is a centred modal above a dimmed map backdrop, scrolls at limited screen height, closes via X, backdrop or Escape, and preserves the favourite toggle. Open-accordion state survives favouriting the same shop. Menu navigation and fallback walking route behaviour remain unchanged.
+- Verified with static JS parsing and simulated name-preview-to-card, rated/unrated, menu and overlay interactions. The deployed Android layout is **not** claimed as tested until checked on-device.
