@@ -261,3 +261,8 @@ The previous fixed-bottom small card and direct-full-card-on-marker behaviours a
 - Expanding repositions the map so the marker stays just below the card, while the card's maximum scrollable height respects the available map viewport. Small screens and tall review sections scroll rather than overflowing the map.
 - Shops with **no verified coordinate** continue to use the full centred card. Selecting from the directory or returning from a dated menu still opens full details directly. Closing a card, switching shops and opening route planning reset the popup cleanly.
 - Code syntax and simulated open/expand/collapse/close/other-shop/no-pin flows passed; actual Android/Cloudflare visual and gesture testing remains necessary.
+
+
+### Mobile single-row map controls (20 October 2026)
+
+The mobile map now uses one responsive top toolbar containing the hotel shortcut, coffeeshop directory button, Street/Bus/Metro view switcher, and transport Key button. The shop count remains available inside the directory but is hidden from the top button on phones to preserve space; for <=345px, the directory button becomes an accessible icon-only control. The three map-mode buttons retain at least 44px-high touch targets. Wider desktop layouts remain unchanged. The hotel trip panel opens underneath its shortcut; route Key opens beneath the row. This is a CSS/DOM arrangement change only: existing buttons retain their IDs and event handlers, route planning, pinned shop cards, menu links, and on-device hotel state are not changed. Source-level JS checks and a narrow-width Chromium layout fixture were run; live Cloudflare mobile appearance still requires verification.
