@@ -1278,7 +1278,10 @@ function openPreviewedShop(){if(previewedShopId!=null)selectShop(previewedShopId
 function selectShop(id){
  const s=official.find(x=>x.id===id);if(!s)return;
  closeShops();
- hideShopPreview();
+ // Keep the small shell visible when its own chevron is tapped, so it
+ // actually grows into the big card instead of flashing as a new popup.
+ const expandingExistingPreview=previewedShopId===id&&!$('shopQuickPreview').classList.contains('expanded');
+ if(!expandingExistingPreview)hideShopPreview();
  if(map)map.closePopup();
  selected=id;
  showDetail(s);
