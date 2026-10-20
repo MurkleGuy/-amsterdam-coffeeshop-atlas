@@ -14,7 +14,8 @@ const valid=x=>x&&typeof x.source==='string'&&x.source.trim().length>0
 function assess(shop){
  const id=String(shop?.id??'');
  const found=new Map();
- for(const record of [primary[id],additional[id]]){
+ const extra=Array.isArray(intel.extraRatings?.[id])?intel.extraRatings[id]:[];
+ for(const record of [primary[id],additional[id],...extra]){
   if(!valid(record))continue;
   const provider=record.source.trim().toLowerCase();
   if(!found.has(provider))found.set(provider,record);
