@@ -235,3 +235,10 @@ Tapping a coffeeshop **map marker** now opens the full detail card directly in a
 
 Source-level tests passed. Actual deployed Cloudflare mobile appearance remains a separate user-device check.
 
+
+### Pin-anchored coffeeshop name popup (20 October 2026)
+
+**Latest interaction (supersedes the two earlier preview experiments):** Tapping an individual map pin opens a **small name popup immediately above that exact icon**, with a subtle pointer, a close X and the existing **View full shop** button. The shop name is also tappable. This is a persistent, non-Leaflet-DOM popup so the action controls survive map marker redraws; its placement uses `map.latLngToContainerPoint`, updates on map movements, pans the map down if a tapped pin is too high to display the popup, and clamps horizontal placement on narrow screens. Tapping the full-shop button opens the same full ratings/menu/routes card as before, while directory selections and returning from a menu page still go straight to the full card. Background map taps dismiss the small popup.
+
+The previous fixed-bottom small card and direct-full-card-on-marker behaviours are superseded by this pin-anchored design. All existing shop data, menus, favourites and walking directions are unchanged. Syntax and eight mocked marker/preview interactions were checked; verify live mobile behaviour after Cloudflare deployment.
+
