@@ -1357,8 +1357,13 @@ function closeShops(){
 }
 function main(){
  $('detailBackdrop').addEventListener('click',()=>{showDetail(null);selected=null;renderList()});
- $('shopQuickOpen').addEventListener('click',openPreviewedShop);
- $('shopQuickName').addEventListener('click',openPreviewedShop);
+ document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'&&!$('detail').classList.contains('hidden')){
+   e.preventDefault();$('closeDetail')?.click();
+  }
+ });
+ $('shopQuickOpen').addEventListener('click',e=>{e.preventDefault();e.stopPropagation();openPreviewedShop()});
+ $('shopQuickName').addEventListener('click',e=>{e.preventDefault();e.stopPropagation();openPreviewedShop()});
  $('shopQuickClose').addEventListener('click',()=>hideShopPreview(true));
  restore();$('topCount').textContent=ALL_COUNT;$('favCount').textContent=favs.size;const mapReady=initMap();
  if(mapReady){
