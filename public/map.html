@@ -1123,7 +1123,8 @@ function positionShopPreview(){
  const centre=Math.max(half+8,Math.min(viewport-half-8,point.x));
  const arrow=Math.max(14,Math.min(width-14,half+point.x-centre));
  bubble.style.left=centre+'px';
- bubble.style.top=(point.y-52)+'px';
+ // With a 40px-high pin anchored at its bottom, this seats the popup pointer over the pin tip.
+  bubble.style.top=Math.round(point.y-45)+'px';
  bubble.style.setProperty('--shop-arrow-left',arrow+'px');
 }
 function showShopPreview(shop){
