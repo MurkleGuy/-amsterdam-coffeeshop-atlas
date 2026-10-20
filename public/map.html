@@ -964,6 +964,144 @@ html,body{height:100%;width:100%;overflow:hidden}
  .mapWrap #shopQuickPreview.shopQuickPreview{transition:none}
 }
 </style>
+
+<style id="shop-connected-compact-v1">
+/* Compact the pin-connected full card without reducing useful touch targets. */
+.mapWrap #shopQuickPreview.shopQuickPreview.expanded{
+ width:min(392px,calc(100% - 24px));
+ max-width:392px;
+}
+.mapWrap #shopQuickPreview.expanded #detail.detail:not(.hidden){
+ padding:11px 12px 12px!important;
+}
+.mapWrap #shopQuickPreview.expanded #detail .detailHead{
+ padding:0 0 7px!important;
+ margin:0 0 5px!important;
+ align-items:center;
+}
+.mapWrap #shopQuickPreview.expanded #detail .detailHead .eyebrow{
+ font-size:10px;
+ letter-spacing:1px;
+ line-height:1.25;
+}
+.mapWrap #shopQuickPreview.expanded #detail .detailHead h3{
+ font-size:17px;
+ line-height:1.2;
+ margin:4px 0 0;
+}
+.mapWrap #shopQuickPreview.expanded #detail .detailHeadActions{
+ gap:5px;
+}
+.mapWrap #shopQuickPreview.expanded #detail .detailHeadActions button{
+ width:40px;
+ height:40px;
+ min-width:40px;
+ min-height:40px;
+ border-radius:9px;
+}
+.mapWrap #shopQuickPreview.expanded #detail .detailAddress{
+ font-size:11px;
+ line-height:1.35;
+ margin:3px 0 9px!important;
+}
+.mapWrap #shopQuickPreview.expanded #detail .shopRatingDisclosure{
+ margin:0 0 9px;
+ border-radius:11px;
+}
+.mapWrap #shopQuickPreview.expanded #detail .shopRatingSummary{
+ min-height:54px;
+ padding:8px 10px;
+ gap:9px;
+}
+.mapWrap #shopQuickPreview.expanded #detail .shopRatingSummaryIcon{
+ width:34px;
+ height:34px;
+ font-size:21px;
+ border-radius:9px;
+}
+.mapWrap #shopQuickPreview.expanded #detail .shopRatingSummaryText strong{
+ font-size:16px;
+ line-height:1.15;
+}
+.mapWrap #shopQuickPreview.expanded #detail .shopRatingSummaryText small{
+ font-size:10px;
+ line-height:1.3;
+ margin-top:3px;
+}
+.mapWrap #shopQuickPreview.expanded #detail .shopRatingSummaryChevron{
+ font-size:18px;
+}
+.mapWrap #shopQuickPreview.expanded #detail .shopRatingExpanded{
+ padding:8px;
+}
+.mapWrap #shopQuickPreview.expanded #detail .shopCompactMenu{
+ min-height:49px;
+ padding:8px 10px;
+ gap:9px;
+ margin:0 0 9px;
+ border-radius:10px;
+}
+.mapWrap #shopQuickPreview.expanded #detail .shopCompactMenu>span:first-child{
+ font-size:17px;
+}
+.mapWrap #shopQuickPreview.expanded #detail .shopCompactMenu strong{
+ font-size:12px;
+ line-height:1.25;
+}
+.mapWrap #shopQuickPreview.expanded #detail .shopCompactMenu small{
+ font-size:9px;
+ line-height:1.25;
+ margin-top:2px;
+}
+.mapWrap #shopQuickPreview.expanded #detail .shopCompactMenu>span:last-child{
+ font-size:20px;
+}
+.mapWrap #shopQuickPreview.expanded #detail .shopNoMenuCompact{
+ padding:10px 11px;
+ margin:0 0 9px!important;
+ border-radius:10px;
+ font-size:10px!important;
+}
+.mapWrap #shopQuickPreview.expanded #detail .shopCompactActions{
+ gap:8px;
+ margin-bottom:7px;
+}
+.mapWrap #shopQuickPreview.expanded #detail .shopCompactActions button{
+ min-height:44px!important;
+ height:44px;
+ padding:7px 7px!important;
+ border-radius:10px;
+ font-size:11px!important;
+ line-height:1.2;
+}
+.mapWrap #shopQuickPreview.expanded #detail .shopGoogleReviews{
+ font-size:11px;
+ line-height:1.25;
+ padding:5px 3px;
+}
+.mapWrap #shopQuickPreview.expanded #detail .detailFinePrint{
+ font-size:9px!important;
+ line-height:1.3;
+ margin:5px 0 0!important;
+}
+@media(max-width:760px){
+ .mapWrap #shopQuickPreview.shopQuickPreview.expanded{
+  width:min(390px,calc(100% - 24px));
+  max-width:none;
+ }
+ .mapWrap #shopQuickPreview.expanded #detail.detail:not(.hidden){
+  padding:10px 11px 11px!important;
+ }
+ .mapWrap #shopQuickPreview.expanded #detail .detailHead h3{
+  font-size:16px;
+ }
+}
+@media(max-width:350px){
+ .mapWrap #shopQuickPreview.expanded #detail .shopCompactActions button{
+  font-size:10px!important;
+ }
+}
+</style>
 </head>
 <body>
 <div class="app">
