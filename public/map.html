@@ -1126,13 +1126,19 @@ function positionPinnedShopDetail(){
  bubble.style.setProperty('--shop-card-max-height',Math.max(175,Math.min(720,height-154))+'px');
  positionShopPreview();
 }
-function centrePinnedShopBelowCard(shop){
+function keepPinnedShopCardVisible(shop){
  if(!map||pinnedDetailShopId!==shop.id)return;
- const wrap=document.querySelector('.mapWrap'),height=wrap.clientHeight||map.getSize().y,width=wrap.clientWidth||map.getSize().x;
- const point=map.latLngToContainerPoint([shop.lat,shop.lng]);
- // Keep the shop's marker visible below the card, with a short pointer to its pin.
- map.panBy([point.x-width/2,point.y-(height-75)],{animate:false});
+ const bubble=$('shopQuickPreview'),wrap=document.querySelector('.mapWrap');
+ const height=wrap.clientHeight||map.getSize().y;
+ // Keep zoom unchanged. Only move the map if the expanded card would run
+ // beyond the top edge; otherwise leave the visitor's view undisturbed.
  positionPinnedShopDetail();
+ const point=map.latLngToContainerPoint([shop.lat,shop.lng]);
+ const targetY=Math.min(height-54,(bubble.offsetHeight||Math.min(550,height-154))+54);
+ if(point.y<targetY){
+  map.panBy([0,Math.round(point.y-targetY)],{animate:false});
+  positionPinnedShopDetail();
+ }
 }
 function showDetail(s){
  const panel=$('detail'),wrap=document.querySelector('.mapWrap'),backdrop=$('detailBackdrop'),bubble=$('shopQuickPreview');
@@ -1278,19 +1284,18 @@ function openPreviewedShop(){if(previewedShopId!=null)selectShop(previewedShopId
 function selectShop(id){
  const s=official.find(x=>x.id===id);if(!s)return;
  closeShops();
- // Keep the small shell visible when its own chevron is tapped, so it
- // actually grows into the big card instead of flashing as a new popup.
+ // Expanding the existing pin bubble does not recenter or zoom the map.
  const expandingExistingPreview=previewedShopId===id&&!$('shopQuickPreview').classList.contains('expanded');
  if(!expandingExistingPreview)hideShopPreview();
  if(map)map.closePopup();
  selected=id;
  showDetail(s);
  renderList();
- if(map&&s.lat!=null){
-  if(pinnedDetailShopId===s.id){
-   map.setView([s.lat,s.lng],Math.max(15,map.getZoom()),{animate:false});
-   centrePinnedShopBelowCard(s);
-  }else map.flyTo([s.lat,s.lng],Math.max(15,map.getZoom()),{duration:.6});
+ if(map&&Number.isFinite(s.lat)&&Number.isFinite(s.lng)){
+  // A selection from the shop directory may need to bring a distant pin
+  // into view, but it must preserve the user's current zoom.
+  if(!expandingExistingPreview)map.panTo([s.lat,s.lng],{animate:false});
+  if(pinnedDetailShopId===s.id)keepPinnedShopCardVisible(s);
  }
 }
 function refreshPinCount(){let n=official.filter(s=>Number.isFinite(s.lat)).length;$('pinnedCount').textContent=n;}
