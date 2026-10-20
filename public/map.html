@@ -701,21 +701,45 @@ html,body{height:100%;width:100%;overflow:hidden}
  }
 }
 </style>
-<style id="shop-quick-preview-v2">
-.shopQuickPreview{position:absolute;bottom:83px;left:50%;transform:translateX(-50%);z-index:452;width:min(345px,calc(100% - 24px));box-sizing:border-box;padding:13px;background:#fffefb;color:#204934;border:1px solid #cddfcf;border-radius:15px;box-shadow:0 13px 38px rgba(14,52,33,.27)}
+<style id="shop-pin-bubble-v3">
+/* Position this persistent preview above its actual map pin, not at screen bottom. */
+.shopQuickPreview{
+ position:absolute;left:0;top:0;bottom:auto;
+ transform:translate(-50%,-100%);z-index:452;
+ width:min(245px,calc(100% - 18px));box-sizing:border-box;
+ padding:10px 11px;overflow:visible;
+ background:#fffefb;color:#204934;border:1px solid #cddfcf;
+ border-radius:13px;box-shadow:0 9px 28px rgba(14,52,33,.24)
+}
 .shopQuickPreview.hidden{display:none!important}
-.shopQuickHead{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.shopQuickPreview::after{
+ content:"";position:absolute;left:var(--shop-arrow-left,50%);bottom:-7px;
+ width:12px;height:12px;background:#fffefb;
+ border-right:1px solid #cddfcf;border-bottom:1px solid #cddfcf;
+ transform:translateX(-50%) rotate(45deg)
+}
+.shopQuickHead{display:flex;align-items:center;justify-content:space-between;gap:7px}
 .shopQuickIdentity{min-width:0;flex:1}
-.shopQuickArea{display:block;font-size:10px;line-height:1.35;letter-spacing:1px;font-weight:800;color:#6a866f}
-.shopQuickName{display:block;max-width:100%;margin:3px 0 0;padding:0;border:0;background:none;color:#1b4b34;text-align:left;cursor:pointer;font-size:17px;line-height:1.3;font-weight:850;overflow-wrap:anywhere}
-.shopQuickName:hover{text-decoration:underline;text-underline-offset:3px}
-.shopQuickClose{flex:none;display:grid;place-items:center;width:44px;height:44px;border:0;border-radius:10px;background:#f0f6f0;color:#517b61;font-size:24px;cursor:pointer}
-.shopQuickOpen{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:48px;padding:10px 14px;margin-top:10px;border:0;border-radius:11px;background:#1d6547;color:#fff;text-align:left;cursor:pointer;font-size:13px;line-height:1.35;font-weight:850;touch-action:manipulation}
-.shopQuickOpen span{font-size:25px;line-height:1;font-weight:500}
+.shopQuickArea{display:block;font-size:9px;line-height:1.3;letter-spacing:.7px;font-weight:800;color:#708a76}
+.shopQuickName{display:block;max-width:100%;margin:2px 0 0;padding:0;border:0;background:none;
+ color:#1b4b34;text-align:left;cursor:pointer;font-size:14px;line-height:1.25;
+ font-weight:850;overflow-wrap:anywhere}
+.shopQuickName:hover{text-decoration:underline;text-underline-offset:2px}
+.shopQuickClose{flex:none;display:grid;place-items:center;width:36px;height:36px;
+ border:0;border-radius:9px;background:#f0f6f0;color:#517b61;font-size:21px;cursor:pointer}
+.shopQuickOpen{display:flex;align-items:center;justify-content:space-between;gap:7px;
+ width:100%;min-height:42px;padding:8px 11px;margin-top:8px;
+ border:0;border-radius:9px;background:#1d6547;color:#fff;
+ text-align:left;cursor:pointer;font-size:12px;line-height:1.3;font-weight:850;touch-action:manipulation}
+.shopQuickOpen span{font-size:21px;line-height:1;font-weight:500}
 .shopQuickOpen:hover{background:#154f38}
-.shopQuickOpen:focus-visible,.shopQuickName:focus-visible,.shopQuickClose:focus-visible{outline:3px solid #75b88f;outline-offset:2px}
-@media(max-width:760px){.shopQuickPreview{max-height:min(35dvh,220px);overflow:auto}.mapWrap.has-preview .mapCentreControl,.mapWrap.trip-open .shopQuickPreview:not(.hidden){visibility:hidden;pointer-events:none}}
-@media(max-width:350px){.shopQuickPreview{width:calc(100% - 18px);bottom:78px}.shopQuickName{font-size:15px}}
+.shopQuickOpen:focus-visible,.shopQuickName:focus-visible,.shopQuickClose:focus-visible{
+ outline:3px solid #75b88f;outline-offset:2px}
+@media(max-width:760px){
+ .mapWrap.has-preview .mapCentreControl,
+ .mapWrap.trip-open .shopQuickPreview:not(.hidden){visibility:hidden;pointer-events:none}
+}
+@media(max-width:350px){.shopQuickPreview{width:min(228px,calc(100% - 14px))}.shopQuickName{font-size:13px}}
 </style>
 </head>
 <body>
@@ -921,6 +945,22 @@ function hideShopPreview(clearSelection=false){
   document.querySelectorAll('#shopList .listing.selected').forEach(el=>el.classList.remove('selected'));
  }
 }
+function positionShopPreview(){
+ if(previewedShopId==null||!map)return;
+ const shop=official.find(s=>s.id===previewedShopId);
+ const bubble=$('shopQuickPreview'),wrap=document.querySelector('.mapWrap');
+ if(!shop||!Number.isFinite(shop.lat)||!Number.isFinite(shop.lng)){
+  hideShopPreview(true);return;
+ }
+ const point=map.latLngToContainerPoint([shop.lat,shop.lng]);
+ const width=bubble.offsetWidth||245,viewport=wrap.clientWidth||map.getSize().x;
+ const half=width/2;
+ const centre=Math.max(half+8,Math.min(viewport-half-8,point.x));
+ const arrow=Math.max(14,Math.min(width-14,half+point.x-centre));
+ bubble.style.left=centre+'px';
+ bubble.style.top=(point.y-52)+'px';
+ bubble.style.setProperty('--shop-arrow-left',arrow+'px');
+}
 function showShopPreview(shop){
  if(!shop)return;
  closeShops();
@@ -929,8 +969,19 @@ function showShopPreview(shop){
  $('shopQuickArea').textContent=getArea(shop).toUpperCase()+' · COFFEESHOP';
  $('shopQuickName').textContent=shop.name||shop.street+' '+shop.number;
  $('shopQuickName').setAttribute('aria-label','Open full details for '+(shop.name||shop.address));
- $('shopQuickPreview').classList.remove('hidden');
+ const bubble=$('shopQuickPreview');
+ bubble.classList.remove('hidden');
  document.querySelector('.mapWrap').classList.add('has-preview');
+ positionShopPreview();
+ // If the pin is near the top edge, move the map down to reveal the popup above it.
+ if(map){
+  const point=map.latLngToContainerPoint([shop.lat,shop.lng]);
+  const required=(bubble.offsetHeight||110)+66;
+  const available=(document.querySelector('.mapWrap').clientHeight||map.getSize().y);
+  if(point.y<required&&available>required+45){
+   map.panBy([0,-(required-point.y)],{animate:true,duration:.25});
+  }
+ }
  document.querySelectorAll('#shopList .listing[data-id]').forEach(el=>el.classList.toggle('selected',Number(el.dataset.id)===shop.id));
 }
 function openPreviewedShop(){if(previewedShopId!=null)selectShop(previewedShopId);}
@@ -1146,7 +1197,12 @@ function main(){
  $('shopQuickOpen').addEventListener('click',openPreviewedShop);
  $('shopQuickName').addEventListener('click',openPreviewedShop);
  $('shopQuickClose').addEventListener('click',()=>hideShopPreview(true));
- restore();$('topCount').textContent=ALL_COUNT;$('favCount').textContent=favs.size;const mapReady=initMap();for(const s of official)if(s.lat!=null)addMarker(s);refreshPinCount();renderList();$('search').addEventListener('input',renderList);$('area').addEventListener('change',renderList);$('exploreMode').addEventListener('change',renderList);$('allTab').onclick=()=>{currentTab='all';$('allTab').classList.add('active');$('savedTab').classList.remove('active');renderList()};$('savedTab').onclick=()=>{currentTab='saved';$('savedTab').classList.add('active');$('allTab').classList.remove('active');renderList()};$('resetMap').onclick=()=>map?.flyTo([52.3695,4.8975],12);$('mapCentreControl').onclick=()=>{
+ restore();$('topCount').textContent=ALL_COUNT;$('favCount').textContent=favs.size;const mapReady=initMap();
+ if(mapReady){
+  map.on('move zoom resize',positionShopPreview);
+  map.on('click',()=>{if(previewedShopId!=null)hideShopPreview(true)});
+ }
+ for(const s of official)if(s.lat!=null)addMarker(s);refreshPinCount();renderList();$('search').addEventListener('input',renderList);$('area').addEventListener('change',renderList);$('exploreMode').addEventListener('change',renderList);$('allTab').onclick=()=>{currentTab='all';$('allTab').classList.add('active');$('savedTab').classList.remove('active');renderList()};$('savedTab').onclick=()=>{currentTab='saved';$('savedTab').classList.add('active');$('allTab').classList.remove('active');renderList()};$('resetMap').onclick=()=>map?.flyTo([52.3695,4.8975],12);$('mapCentreControl').onclick=()=>{
  const fix=window.AtlasTrip?.gps?.(),hotel=window.AtlasTrip?.hotel?.(),point=fix||hotel;
  if(point&&Number.isFinite(point.lat)&&Number.isFinite(point.lng))map?.flyTo([point.lat,point.lng],fix?16:15);
  else map?.flyTo([52.3695,4.8975],12);
