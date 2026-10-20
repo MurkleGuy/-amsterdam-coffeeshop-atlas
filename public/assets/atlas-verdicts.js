@@ -9,8 +9,8 @@ window.ATLAS_VERDICTS={
   "evidence": {
     "2": {
       "observations": [],
-      "reviewNote": "No independently matched reusable community star average has been validated for this address. External reviews discuss the shop, but Atlas cannot infer separate flower/service ratings from them.",
-      "reviewSource": "https://zoek.officielebekendmakingen.nl/gmb-2025-148828.html"
+      "reviewNote": "Weeview lists NCC Power Flower at this Amsterdam address with zero venue ratings. Its namesake in Apeldoorn has reviews, but is a different business. No independently sourced, current star average for this Amsterdam shop was found.",
+      "reviewSource": "https://weeview.nl/location/amsterdam/"
     },
     "4": {
       "seating": {
@@ -66,8 +66,8 @@ window.ATLAS_VERDICTS={
     },
     "6": {
       "observations": [],
-      "reviewNote": "The source listing under the earlier name Kooi matches Amstelstraat 35 but has only one review from January 2024. The current New Times 2 operation cannot responsibly inherit it as a fresh rating.",
-      "reviewSource": "https://greenmeister.com/coffeeshop/kooi-amsterdam"
+      "reviewNote": "Weeview lists one rating for former Kooi at Amstelstraat 35. That does not validate a current New Times 2 score under the changed operator.",
+      "reviewSource": "https://weeview.nl/location/amsterdam/"
     },
     "8": {
       "observations": [],
@@ -118,6 +118,11 @@ window.ATLAS_VERDICTS={
           "url": "https://en.greenmeister.com/coffeeshop/boere-jongens-amsterdam"
         }
       ]
+    },
+    "10": {
+      "observations": [],
+      "reviewNote": "Trustpilot lists the same business and 10 reviews (4.4 TrustScore), with a conspicuous group of March 2026 review dates. This is business-level feedback, not a comparable, independently dated cannabis-quality aggregate; Atlas keeps it as a separately labelled link.",
+      "reviewSource": "https://nl.trustpilot.com/review/coffeeshopwest.nl"
     },
     "14": {
       "observations": [],
@@ -252,7 +257,7 @@ window.ATLAS_VERDICTS={
     },
     "25": {
       "observations": [],
-      "reviewNote": "The exact-address Greenmeister listing has zero venue reviews, so no independent community average is available.",
+      "reviewNote": "Greenmeister has zero shop-specific reviews. Other directory comments were labelled as imported Google reviews, not a separate verified source usable for an Atlas score.",
       "reviewSource": "https://en.greenmeister.com/coffeeshop/second-cheech-en-chong-amsterdam"
     },
     "26": {
@@ -560,8 +565,8 @@ window.ATLAS_VERDICTS={
     },
     "58": {
       "observations": [],
-      "reviewNote": "Greenmeister matches Hudsonstraat 138, but lists zero venue reviews.",
-      "reviewSource": "https://en.greenmeister.com/coffeeshop/flash-back-amsterdam"
+      "reviewNote": "Greenmeister has zero venue reviews. DutchCoffeeshops has individual comments with mixed opinions on pricing and selection, but no qualifying independent numerical aggregate; some review dates are only relative.",
+      "reviewSource": "https://dutchcoffeeshops.com/in/amsterdam/coffeeshop-flash-back"
     },
     "59": {
       "observations": [],
@@ -569,8 +574,8 @@ window.ATLAS_VERDICTS={
     },
     "62": {
       "observations": [],
-      "reviewNote": "The Shop 96 listing matches Jan Pieter Heijestraat 96 and has zero venue reviews.",
-      "reviewSource": "https://en.greenmeister.com/coffeeshop/shop-96"
+      "reviewNote": "Greenmeister has zero ratings for Shop 96. DutchCoffeeshops lists individual visitor experiences but no independently verified numerical average for this exact address.",
+      "reviewSource": "https://dutchcoffeeshops.com/in/amsterdam/shop-96"
     },
     "65": {
       "seating": {
@@ -768,7 +773,7 @@ window.ATLAS_VERDICTS={
     },
     "100": {
       "observations": [],
-      "reviewNote": "A Greenmeister Rick's listing is at Nieuwe Hoogstraat 22, not Oudezijds Voorburgwal 250H, so its one historic review is excluded.",
+      "reviewNote": "Do not transfer reviews from Rick's at Nieuwe Hoogstraat 22 or Rick's Tavern at Oudezijds Voorburgwal 252 to the municipal-list coffeeshop at Oudezijds Voorburgwal 250H; branch/operator match is unconfirmed.",
       "reviewSource": "https://en.greenmeister.com/coffeeshop/ricks-amsterdam"
     },
     "115": {
@@ -778,13 +783,13 @@ window.ATLAS_VERDICTS={
     },
     "120": {
       "observations": [],
-      "reviewNote": "The exact-address Greenmeister listing at Regulierssteeg 2 has zero venue reviews.",
-      "reviewSource": "https://en.greenmeister.com/coffeeshop/the-saint-amsterdam"
+      "reviewNote": "DutchCoffeeshops has a larger, mixed visitor-comment collection for The Saint, but Greenmeister shows zero venue reviews and alternative averages appear Google-derived. No independent aggregate with usable dates was found.",
+      "reviewSource": "https://dutchcoffeeshops.com/in/amsterdam/coffeeshop-the-saint/map"
     },
     "125": {
       "observations": [],
-      "reviewNote": "Black Star has independent ratings, but Greenmeister identifies Rozengracht 1A whereas the municipal list shows 1H. Exact premises matching requires confirmation before importing the average.",
-      "reviewSource": "https://en.greenmeister.com/coffeeshop/the-african-blackstar-amsterdam"
+      "reviewNote": "Weeview reports 4.1 from 3 user ratings for Black star at Rozengracht 1 and postcode 1016LP; other references use unit 1A whereas the municipal list uses 1H. Verify the premises/unit match before attaching an Atlas numerical estimate.",
+      "reviewSource": "https://weeview.nl/location/amsterdam/"
     },
     "126": {
       "observations": [],
@@ -928,7 +933,7 @@ window.ATLAS_VERDICTS={
     },
     "140": {
       "observations": [],
-      "reviewNote": "DutchCoffeeshops carries mixed individual customer comments but not a comparable independently supplied aggregate rating; the separately sourced Atlas formula cannot yet issue a numeric estimate.",
+      "reviewNote": "DutchCoffeeshops carries dozens of varied individual comments, including positives about value and negatives about edible strength. Another directory shows 4.6 without a verifiable review count/method; other sources reproduce Google aggregates. No qualifying independently established Atlas source rating yet.",
       "reviewSource": "https://dutchcoffeeshops.com/in/amsterdam/coffeeshop-de-prijs"
     },
     "148": {
@@ -992,13 +997,13 @@ window.ATLAS_VERDICTS={
     },
     "162": {
       "observations": [],
-      "reviewNote": "Greenmeister matches Witte de Withstraat 106 but lists zero venue reviews.",
-      "reviewSource": "https://en.greenmeister.com/coffeeshop/el-marssa-amsterdam"
+      "reviewNote": "Greenmeister has zero venue reviews. DutchCoffeeshops holds mixed individual feedback on staff, prices and products, but no independent numeric rating with a reusable sample count.",
+      "reviewSource": "https://dutchcoffeeshops.com/in/amsterdam/coffeeshop-el-marssa/map"
     },
     "163": {
       "observations": [],
-      "reviewNote": "Greenmeister matches the name and street number at Witte de Withstraat 30a but lists zero reviews and marks it closed. Current status needs verification.",
-      "reviewSource": "https://en.greenmeister.com/coffeeshop/thedream-amsterdam"
+      "reviewNote": "Other guides confirm a similarly named premises at Witte de Withstraat 30A, but a Greenmeister entry reports zero reviews and flags a closed status. Current trading status and an eligible independent aggregate still need confirmation.",
+      "reviewSource": "https://dutchcoffeeshops.com/in/amsterdam/coffeeshop-the-dream"
     },
     "166": {
       "seating": {
@@ -1027,7 +1032,7 @@ window.ATLAS_VERDICTS={
       "reviewSource": "https://weeview.nl/location/amsterdam/"
     }
   },
-  "coverageCheckedAt": "2026-10-19",
+  "coverageCheckedAt": "2026-10-20",
   "categoryAuditAt": "2026-10-19",
   "categoryPolicy": "Separate category numbers need at least 2-3 individually dated reviewers across 2 calendar months; unknown categories stay unscored. Atmosphere reviews do not verify entertainment or seating facilities.",
   "facilitiesPolicy": "Listed features are venue/directory claims; reported features are individual visitor accounts. Facility features do not receive numerical scores; absent evidence is unknown, not a negative rating."
