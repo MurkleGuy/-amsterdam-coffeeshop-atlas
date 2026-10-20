@@ -740,6 +740,151 @@ html,body{height:100%;width:100%;overflow:hidden}
 }
 @media(max-width:350px){.shopQuickPreview{width:min(245px,calc(100% - 14px))}.shopQuickName{font-size:13px}}
 </style>
+
+<style id="shop-card-compact-v1">
+/* Full shop opened from the existing small name-and-chevron popup. */
+.shopDetailBackdrop{
+ position:absolute;inset:0;z-index:449;
+ background:rgba(8,32,21,.32);
+}
+.shopDetailBackdrop.hidden{display:none}
+.mapWrap #detail.detail:not(.hidden){
+ position:absolute!important;
+ left:50%!important;right:auto!important;
+ top:50%!important;bottom:auto!important;
+ transform:translate(-50%,-50%)!important;
+ width:min(510px,calc(100% - 28px))!important;
+ height:auto!important;
+ max-height:min(82dvh,calc(100% - 44px))!important;
+ overflow-x:hidden!important;overflow-y:auto!important;
+ box-sizing:border-box;
+ padding:17px 18px 15px!important;
+ border-radius:19px!important;
+ box-shadow:0 20px 64px rgba(8,29,18,.36)!important;
+ background:#fffefb;
+ z-index:450;
+}
+.mapWrap #detail .detailHead{
+ position:sticky;top:-17px;z-index:5;
+ background:#fffefb;border-bottom:1px solid #e3ebe2;
+ margin:0 0 8px!important;padding:0 0 11px!important;
+ align-items:flex-start;
+}
+.mapWrap #detail .detailIdentity{min-width:0;flex:1}
+.mapWrap #detail .detailHead h3{font-size:19px;line-height:1.2;letter-spacing:-.25px}
+.mapWrap #detail .detailAddress{
+ margin:4px 0 13px!important;font-size:12px;color:#667e6e;line-height:1.4
+}
+.mapWrap #detail .shopRatingDisclosure{
+ border:1px solid #d5e5d7;background:#f1f8ef;
+ border-radius:13px;overflow:hidden;margin:0 0 12px;
+}
+.mapWrap #detail .shopRatingSummary{
+ display:flex;align-items:center;gap:10px;
+ padding:12px 13px;min-height:70px;
+ list-style:none;cursor:pointer;
+}
+.mapWrap #detail .shopRatingSummary::-webkit-details-marker{display:none}
+.mapWrap #detail .shopRatingSummaryIcon{
+ display:grid;place-items:center;width:40px;height:40px;flex:none;
+ border-radius:11px;color:#276147;background:#e0eee1;font-size:23px
+}
+.mapWrap #detail .shopRatingSummaryText{display:block;flex:1;min-width:0}
+.mapWrap #detail .shopRatingSummaryText strong{
+ display:block;font-size:18px;font-weight:900;color:#1c5037;line-height:1.3
+}
+.mapWrap #detail .shopRatingSummaryText small{
+ display:block;margin-top:3px;font-size:10px;line-height:1.45;
+ color:#637c69;font-weight:600
+}
+.mapWrap #detail .shopRatingSummaryChevron{
+ font-size:21px;line-height:1;color:#5b8768;
+ transition:transform .16s
+}
+.mapWrap #detail .shopRatingDisclosure[open] .shopRatingSummaryChevron{
+ transform:rotate(180deg)
+}
+.mapWrap #detail .shopRatingDisclosure[open] .shopRatingSummary{
+ border-bottom:1px solid #d5e5d7
+}
+.mapWrap #detail .shopRatingExpanded{padding:12px}
+.mapWrap #detail .shopRatingExpanded>.atlasVerdict{
+ margin:0!important;box-shadow:none!important
+}
+.mapWrap #detail .shopRatingExpanded .atlasMore{font-size:11px}
+.mapWrap #detail .shopCompactMenu{
+ display:flex;align-items:center;gap:11px;min-height:64px;
+ border:1px solid #cfe1ce;border-radius:12px;
+ padding:11px 13px;margin:0 0 12px;
+ text-decoration:none;background:#e8f4e8;color:#23583e
+}
+.mapWrap #detail .shopCompactMenu>span:first-child{font-size:20px;flex:none}
+.mapWrap #detail .shopCompactMenu>span:nth-child(2){min-width:0;flex:1}
+.mapWrap #detail .shopCompactMenu strong{
+ display:block;font-size:13px;font-weight:850;line-height:1.3
+}
+.mapWrap #detail .shopCompactMenu small{
+ display:block;font-size:10px;color:#64836c;margin-top:3px;line-height:1.4
+}
+.mapWrap #detail .shopCompactMenu>span:last-child{
+ font-size:25px;color:#37734f
+}
+.mapWrap #detail .shopNoMenuCompact{
+ padding:12px 13px;border:1px solid #e4eae2;border-radius:10px;
+ color:#738677;background:#f6f8f4;font-size:11px!important;
+ margin:0 0 12px!important
+}
+.mapWrap #detail .shopCompactActions{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-bottom:12px
+}
+.mapWrap #detail .shopCompactActions button{
+ box-sizing:border-box;min-height:48px!important;min-width:0;
+ border:0;border-radius:11px;padding:10px 7px!important;
+ font-size:12px!important;line-height:1.3;
+ font-weight:850;overflow-wrap:anywhere;text-align:center
+}
+.mapWrap #detail .shopCompactActions .detailPrimary{
+ color:#fff;background:#1e6447
+}
+.mapWrap #detail .shopCompactActions .secondary{
+ color:#255b42!important;background:#e6f1e4!important;
+ border:1px solid #cbdfcc
+}
+.mapWrap #detail .shopGoogleReviews{
+ display:block;text-align:center;font-size:12px;font-weight:800;
+ color:#386f51;text-decoration:underline;text-underline-offset:3px;
+ padding:5px 4px;line-height:1.4
+}
+.mapWrap #detail .detailFinePrint{
+ font-size:10px!important;color:#7b8c7f;margin:9px 0 0!important;
+ text-align:center;line-height:1.4
+}
+.mapWrap #detail .shopRatingSummary:focus-visible,
+.mapWrap #detail .shopCompactMenu:focus-visible,
+.mapWrap #detail .shopCompactActions button:focus-visible{
+ outline:3px solid #56a37b;outline-offset:2px
+}
+@media(max-width:760px){
+ .mapWrap #detail.detail:not(.hidden){
+  width:calc(100% - 26px)!important;
+  max-width:540px!important;
+  height:auto!important;
+  max-height:min(80dvh,calc(100% - 55px))!important;
+  padding:14px 14px 15px!important
+ }
+ .mapWrap #detail .detailHead{top:-14px}
+ .mapWrap #detail .detailHead h3{font-size:18px}
+ .mapWrap #detail .shopRatingExpanded{padding:9px}
+ .mapWrap #detail .shopRatingSummary{padding:10px 11px;min-height:64px}
+ .mapWrap #detail .shopCompactMenu{min-height:60px}
+}
+@media(max-width:350px){
+ .mapWrap #detail .shopCompactActions button{font-size:11px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .mapWrap #detail .shopRatingSummaryChevron{transition:none}
+}
+</style>
 </head>
 <body>
 <div class="app">
@@ -773,7 +918,8 @@ html,body{height:100%;width:100%;overflow:hidden}
      <button type="button" id="shopQuickClose" class="shopQuickClose" aria-label="Close coffeeshop preview">×</button>
     </div>
    </div>
-   <div id="detail" class="detail hidden" role="dialog" aria-label="Selected coffeeshop details"></div>
+   <div id="detailBackdrop" class="shopDetailBackdrop hidden" aria-hidden="true"></div>
+   <div id="detail" class="detail hidden" role="dialog" aria-modal="true" aria-label="Selected coffeeshop details"></div>
    <div class="mapLegend" id="legend"><b>2026 city address list</b><div class="row"><i class="legendDot"></i><span><span id="pinnedCount">0</span> pinned of 167 published addresses</span></div><div style="margin-top:4px">Markers appear as locations are checked.</div></div>
   </div>
  </div>
@@ -892,33 +1038,46 @@ function renderList(){
 function refreshClusters(visible){if(!map||!clusters)return;clusters.clearLayers();for(const s of visible){const marker=geoMarkers[s.id];if(marker)clusters.addLayer(marker)}}
 
 function showDetail(s){
- const panel=$('detail'),wrap=document.querySelector('.mapWrap');
- panel.setAttribute('aria-label','Selected coffeeshop details');
- if(!s){panel.classList.add('hidden');wrap.classList.remove('has-detail');return;}
- panel.classList.remove('hidden');wrap.classList.add('has-detail');
+ const panel=$('detail'),wrap=document.querySelector('.mapWrap'),backdrop=$('detailBackdrop');
+ if(!s){
+  panel.classList.add('hidden');backdrop.classList.add('hidden');
+  wrap.classList.remove('has-detail');
+  panel.dataset.shopId='';
+  return;
+ }
+ const previousShopId=panel.dataset.shopId;
+ const preserveExpanded=previousShopId===String(s.id)&&!!panel.querySelector('#shopRatingDisclosure')?.open;
+ const title=s.name||s.street+' '+s.number,saved=isSaved(s),menu=menuFor(s),assessment=window.AtlasScore?.assess(s);
+ const numericScore=Number.isFinite(assessment?.score)?assessment.score.toFixed(1):null;
+ const scoreKind=assessment?.kind==='editorial'?'Dated-review assessment':assessment?.kind==='community'?'Community-based estimate':'Not yet rated';
+ panel.setAttribute('aria-label','Details for '+title);
+ panel.classList.remove('hidden');backdrop.classList.remove('hidden');
+ wrap.classList.add('has-detail');
+ panel.dataset.shopId=String(s.id);
  panel.scrollTop=0;
- const title=s.name||s.street+' '+s.number,saved=isSaved(s),rating=ratingFor(s),menu=menuFor(s),rank=rating?.reviews>=INTEL.rankingMinReviews&&!rating?.excludeFromRanking?rankedPlace(s.id):0;
- panel.innerHTML=`<div class="detailHead"><div><span class="eyebrow">${esc(getArea(s))} · ADDRESS ${s.id} / ${ALL_COUNT}</span><h3>${esc(title)}</h3></div>
- <div class="detailHeadActions"><button type="button" id="detailFav" class="detailStar ${saved?'saved':''}" aria-pressed="${saved?'true':'false'}" aria-label="${saved?'Remove from saved shops':'Save this coffeeshop'}" title="${saved?'Remove from saved':'Save this shop'}">${saved?'★':'☆'}</button><button class="close" id="closeDetail" aria-label="Close details">×</button></div></div>
+ panel.innerHTML=`<div class="detailHead"><div class="detailIdentity"><span class="eyebrow">${esc(getArea(s))} · COFFEESHOP</span><h3>${esc(title)}</h3></div>
+ <div class="detailHeadActions"><button type="button" id="detailFav" class="detailStar ${saved?'saved':''}" aria-pressed="${saved?'true':'false'}" aria-label="${saved?'Remove from saved shops':'Save this coffeeshop'}" title="${saved?'Remove from saved':'Save this shop'}">${saved?'★':'☆'}</button><button type="button" class="close" id="closeDetail" aria-label="Close shop details">×</button></div></div>
  <p class="detailAddress">${esc(s.address)}</p>
- ${s.nameNote?`<div class="shopNameNotice" role="note">${esc(s.nameNote)} ${s.nameSource?`<a href="${esc(s.nameSource)}" target="_blank" rel="noopener">Check source ↗</a>`:''}</div>`:''}
- ${window.AtlasScore?.detail(s)||""}
- <div class="shopIntel">
-  ${rating?`<a class="shopRatingCard" href="${esc(rating.url)}" target="_blank" rel="noopener"><strong>★ ${rating.rating.toFixed(1)}<small> / 5</small></strong><span>${esc(rating.source||'Community')} · ${rating.reviews} reviews${rank?' · Community #'+rank:''}<small>Community average, not Atlas · checked ${fmtMenuDate(rating.checkedAt)} ↗</small></span></a>`:'<span class="shopUnrated">Community score not yet checked</span>'}
-  ${menu?`<a class="shopMenuCard" href="menu.html?shop=${encodeURIComponent(s.id)}"><strong>▤ View menu photos</strong><span class="menuDate">Photo dated ${fmtMenuDate(menu.photoDate)}</span><small class="menuHint">Open menu photographs</small></a>`:'<span class="shopNoMenu"><strong>No recent menu</strong><small>Photo not verified</small></span>'}
+ ${s.nameNote?`<div class="shopNameNotice" role="note">${esc(s.nameNote)} ${s.nameSource?`<a href="${esc(s.nameSource)}" target="_blank" rel="noopener noreferrer">Check source ↗</a>`:''}</div>`:''}
+ <details class="shopRatingDisclosure" id="shopRatingDisclosure" ${preserveExpanded?'open':''}>
+   <summary class="shopRatingSummary">
+     <span class="shopRatingSummaryIcon" aria-hidden="true">★</span>
+     <span class="shopRatingSummaryText"><strong>${numericScore?numericScore+' / 5':'Atlas rating pending'}</strong><small>${esc(numericScore?scoreKind:'Awaiting reliable evidence')} · Tap for ratings & facilities</small></span>
+     <span class="shopRatingSummaryChevron" aria-hidden="true">⌄</span>
+   </summary>
+   <div class="shopRatingExpanded">${window.AtlasScore?.detail(s)||'<p>Detailed Atlas evidence is not available for this shop yet.</p>'}</div>
+ </details>
+ ${menu?`<a class="shopCompactMenu" href="menu.html?shop=${encodeURIComponent(s.id)}"><span aria-hidden="true">▤</span><span><strong>View menu photos</strong><small>Photographed ${fmtMenuDate(menu.photoDate)} · opens Atlas menu page</small></span><span aria-hidden="true">›</span></a>`:'<p class="shopNoMenuCompact">▤ Menu photos not yet verified</p>'}
+ <div class="shopCompactActions">
+  <button type="button" id="planWalkAtlas" class="action detailPrimary">🧭 Walk on map</button>
+  <button type="button" id="hotelGoogleTransit" class="action secondary">🚋 Public transport</button>
  </div>
- <div class="detailRouteMain">
-  <button id="planWalkAtlas" class="action detailPrimary">🧭 Walk on map</button>
-  <button id="hotelGoogleTransit" class="action secondary">🚋 Public transport <small>From your hotel</small></button>
-  <button id="walkGoogleHotel" class="action secondary">⌂ Walk from hotel</button>
-  <button id="walkFromGPS" class="action secondary">◎ Walk from GPS</button>
- </div>
- <div class="detailBottom"><a class="secondary reviewLink" href="${gmaps(s)}" target="_blank" rel="noopener">${s.name?'★ Check Google reviews ↗':'View address on Google Maps ↗'}</a></div>
- <p class="detailFinePrint">${s.name?'Opens Google Maps using the shop name and address; confirm the correct listing.':'Shop name not verified; this opens the published address.'} Walking routes rely on mapped footpaths and crossings.</p>`;
- $('closeDetail').onclick=()=>{showDetail(null);selected=null;renderList()};
+ <a class="shopGoogleReviews" href="${gmaps(s)}" target="_blank" rel="noopener noreferrer">${s.name?'Check Google reviews ↗':'View this address on Google Maps ↗'}</a>
+ <p class="detailFinePrint">Ratings are estimates with source evidence, not guarantees. Routes use mapped footpaths and crossings.</p>`;
+ const close=()=>{showDetail(null);selected=null;renderList()};
+ $('closeDetail').onclick=close;
  $('detailFav').onclick=()=>toggleFav(s.id);
  $('planWalkAtlas').onclick=()=>{
-  // Mapping addresses is asynchronous; keep a usable route even before geocoding completes.
   if(!Number.isFinite(s.lat)||!Number.isFinite(s.lng)||!window.AtlasTrip?.planTo){
    const u=new URL(walk(s)),hotel=window.AtlasTrip?.hotel?.();
    if(hotel&&Number.isFinite(hotel.lat)&&Number.isFinite(hotel.lng))u.searchParams.set('origin',hotel.lat+','+hotel.lng);
@@ -929,9 +1088,12 @@ function showDetail(s){
   showDetail(null);
   window.AtlasTrip.planTo(s);
  };
- $('walkGoogleHotel').onclick=()=>{const h=window.AtlasTrip?.hotel();if(!h){if(window.AtlasTrip?.open)window.AtlasTrip.open();else window.open(walk(s),'_blank','noopener');return;}const u=new URL(walk(s));u.searchParams.set('origin',h.lat+','+h.lng);window.open(u.toString(),'_blank','noopener')};
- $('hotelGoogleTransit').onclick=()=>{const h=window.AtlasTrip?.hotel();if(!h){if(window.AtlasTrip?.open)window.AtlasTrip.open();else window.open(transit(s),'_blank','noopener');return;}const u=new URL(transit(s));u.searchParams.set('origin',h.lat+','+h.lng);window.open(u.toString(),'_blank','noopener')};
- $('walkFromGPS').onclick=()=>{if(!window.AtlasTrip?.fromGPS){window.open(walk(s),'_blank','noopener');return;}showDetail(null);window.AtlasTrip.fromGPS(s)};
+ $('hotelGoogleTransit').onclick=()=>{
+  const h=window.AtlasTrip?.hotel?.();
+  const u=new URL(transit(s));
+  if(h&&Number.isFinite(h.lat)&&Number.isFinite(h.lng))u.searchParams.set('origin',h.lat+','+h.lng);
+  window.open(u.toString(),'_blank','noopener');
+ };
 }
 // Persistent mini card is independent of Leaflet's disposable popup DOM.
 let previewedShopId=null;
@@ -1194,6 +1356,7 @@ function closeShops(){
  $('shopDrawer').classList.remove('open');$('shopsToggle').setAttribute('aria-expanded','false');
 }
 function main(){
+ $('detailBackdrop').addEventListener('click',()=>{showDetail(null);selected=null;renderList()});
  $('shopQuickOpen').addEventListener('click',openPreviewedShop);
  $('shopQuickName').addEventListener('click',openPreviewedShop);
  $('shopQuickClose').addEventListener('click',()=>hideShopPreview(true));
