@@ -1050,6 +1050,10 @@ function showDetail(s){
  const title=s.name||s.street+' '+s.number,saved=isSaved(s),menu=menuFor(s),assessment=window.AtlasScore?.assess(s);
  const numericScore=Number.isFinite(assessment?.score)?assessment.score.toFixed(1):null;
  const scoreKind=assessment?.kind==='editorial'?'Dated-review assessment':assessment?.kind==='community'?'Community-based estimate':'Not yet rated';
+ // The outer rating row is the only tap needed to see the five category/facility tiles.
+ // Keep deeper scoring methodology and source notes independently expandable.
+ const atlasPanel=(window.AtlasScore?.detail(s)||'<p>Detailed Atlas evidence is not available for this shop yet.</p>')
+  .replace('class="atlasMore atlasCategories"','class="atlasMore atlasCategories" open');
  panel.setAttribute('aria-label','Details for '+title);
  panel.classList.remove('hidden');backdrop.classList.remove('hidden');
  wrap.classList.add('has-detail');
@@ -1065,7 +1069,7 @@ function showDetail(s){
      <span class="shopRatingSummaryText"><strong>${numericScore?numericScore+' / 5':'Atlas rating pending'}</strong><small>${esc(numericScore?scoreKind:'Awaiting reliable evidence')} · Tap for ratings & facilities</small></span>
      <span class="shopRatingSummaryChevron" aria-hidden="true">⌄</span>
    </summary>
-   <div class="shopRatingExpanded">${window.AtlasScore?.detail(s)||'<p>Detailed Atlas evidence is not available for this shop yet.</p>'}</div>
+   <div class="shopRatingExpanded">${atlasPanel}</div>
  </details>
  ${menu?`<a class="shopCompactMenu" href="menu.html?shop=${encodeURIComponent(s.id)}"><span aria-hidden="true">▤</span><span><strong>View menu photos</strong><small>Photographed ${fmtMenuDate(menu.photoDate)} · opens Atlas menu page</small></span><span aria-hidden="true">›</span></a>`:'<p class="shopNoMenuCompact">▤ Menu photos not yet verified</p>'}
  <div class="shopCompactActions">
