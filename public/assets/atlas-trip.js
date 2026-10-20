@@ -16,7 +16,7 @@
  const validPoint=(lat,lng)=>Number.isFinite(lat)&&Number.isFinite(lng)&&lat>=52.1&&lat<=52.55&&lng>=4.55&&lng<=5.3;
  try{const h=JSON.parse(localStorage.getItem(STORAGE)||'null');if(h&&validPoint(h.lat,h.lng)&&typeof h.name==='string')hotel=h;}catch{}
  const wrap=document.createElement('div');wrap.className='tripTools';
- wrap.innerHTML='<button type="button" id="tripToggle" class="floating" aria-expanded="false" aria-controls="tripPanel">⌂ My hotel & routes</button>'+
+ wrap.innerHTML='<button type="button" id="tripToggle" class="floating" aria-label="My hotel and routes" title="My hotel and routes" aria-expanded="false" aria-controls="tripPanel"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 10 9-7 9 7"/><path d="M5 9v12h14V9"/><path d="M9 21v-7h6v7"/></svg></button>'+
  '<section class="tripPanel hidden" id="tripPanel" aria-label="Hotel and route planner">'+
  '<div class="tripHead"><b>My Amsterdam trip</b><button type="button" id="tripClose" aria-label="Close trip planner">×</button></div>'+ 
  '<div id="tripWelcome" class="tripWelcome hidden"><b>Welcome to Amsterdam!</b><p>Start by choosing your hotel. We’ll save it on this device, so you can plan routes to coffeeshops from there.</p><button type="button" id="tripSkipWelcome">Skip for now →</button></div>'+
