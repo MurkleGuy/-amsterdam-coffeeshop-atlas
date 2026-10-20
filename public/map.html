@@ -97,7 +97,7 @@ html,body{height:100%;width:100%;overflow:hidden}
 .detail .detailRouteMain button small{font-size:10px;font-weight:550;line-height:1.2}
 .detail .detailBottom{display:block;margin-top:9px}
 .detail .detailBottom a{display:flex;width:100%;min-height:42px;text-decoration:none;align-items:center;justify-content:center;text-align:center;background:#f1f5ef!important;color:#285b42!important}
-.detail .detailFinePrint{margin-top:7px;color:#738177;font-size:10px;line-height:1.4}.shopNameNotice{margin:9px 0;padding:9px 11px;border-radius:9px;background:#fff7e5;border:1px solid #e6d7b4;color:#765b31;font-size:11px;line-height:1.5}.shopNameNotice a{display:inline;font-weight:850;color:#5a4626;text-decoration:underline;text-underline-offset:2px}
+.detail .detailFinePrint{margin-top:7px;color:#738177;font-size:10px;line-height:1.4}
 .tripWelcome{display:block;padding:12px;background:#eaf5e9;border-radius:11px;border:1px solid #cbdccc;line-height:1.45}
 .tripWelcome.hidden{display:none}
 .tripWelcome b{font-size:15px;color:#24583f}
@@ -383,7 +383,7 @@ html,body{height:100%;width:100%;overflow:hidden}
 
 /* Keep editorial citations separate from navigation buttons. The old .detail a selector
    turned every citation into a large green button, overlapping text on narrow screens. */
-.detail .atlasVerdict a:not(.atlasSeat),.detail .shopNameNotice a{
+.detail .atlasVerdict a:not(.atlasSeat){
  display:inline;
  width:auto;
  min-width:0;
@@ -1290,15 +1290,6 @@ function keepPinnedShopCardVisible(shop){
   schedulePinAlignment();
  }
 }
-// Previous branding belongs in search aliases and source history, not in the
-// visitor-facing shop card. Keep notices only when they affect the visit itself.
-function visitorNotice(s){
- const note=String(s.nameNote||'').trim();
- if(!note)return '';
- if(/NOT Terps Army 2/i.test(note))return 'Nieuwe Nieuwstraat branch — not Terps Army 2 at Zieseniskade 22.';
- if(s.operatingStatus||/operating-permit|premises is open|tolerance-list address|tolerated address|actual coffeeshop entrance|coffeeshop entrance at/i.test(note))return note;
- return '';
-}
 function showDetail(s){
  const panel=$('detail'),wrap=document.querySelector('.mapWrap'),backdrop=$('detailBackdrop'),bubble=$('shopQuickPreview');
  if(!s){
@@ -1314,7 +1305,7 @@ function showDetail(s){
  }
  const previousShopId=panel.dataset.shopId;
  const preserveExpanded=previousShopId===String(s.id)&&!!panel.querySelector('#shopRatingDisclosure')?.open;
- const title=s.name||s.street+' '+s.number,saved=isSaved(s),menu=menuFor(s),assessment=window.AtlasScore?.assess(s),notice=visitorNotice(s);
+ const title=s.name||s.street+' '+s.number,saved=isSaved(s),menu=menuFor(s),assessment=window.AtlasScore?.assess(s);
  const numericScore=Number.isFinite(assessment?.score)?assessment.score.toFixed(1):null;
  const scoreKind=assessment?.kind==='editorial'?'Dated-review assessment':assessment?.kind==='community'?'Community-based estimate':'Not yet rated';
  // The outer rating row is the only tap needed to see the five category/facility tiles.
@@ -1344,8 +1335,7 @@ function showDetail(s){
  panel.innerHTML=`<div class="detailHead"><div class="detailIdentity"><span class="eyebrow">${esc(getArea(s))} · COFFEESHOP</span><h3>${esc(title)}</h3></div>
  <div class="detailHeadActions"><button type="button" id="collapseDetail" class="shopCollapseDetail" aria-label="Back to small shop preview" title="Back to preview">‹</button><button type="button" id="detailFav" class="detailStar ${saved?'saved':''}" aria-pressed="${saved?'true':'false'}" aria-label="${saved?'Remove from saved shops':'Save this coffeeshop'}" title="${saved?'Remove from saved':'Save this shop'}">${saved?'★':'☆'}</button><button type="button" class="close" id="closeDetail" aria-label="Close shop details">×</button></div></div>
  <p class="detailAddress">${esc(s.address)}</p>
- ${notice?`<div class="shopNameNotice" role="note">${esc(notice)} ${s.nameSource?`<a href="${esc(s.nameSource)}" target="_blank" rel="noopener noreferrer">Check source ↗</a>`:''}</div>`:''}
- <details class="shopRatingDisclosure" id="shopRatingDisclosure" ${preserveExpanded?'open':''}>
+  <details class="shopRatingDisclosure" id="shopRatingDisclosure" ${preserveExpanded?'open':''}>
    <summary class="shopRatingSummary">
      <span class="shopRatingSummaryIcon" aria-hidden="true">★</span>
      <span class="shopRatingSummaryText"><strong>${numericScore?numericScore+' / 5':'Atlas rating pending'}</strong><small>${esc(numericScore?scoreKind:'Awaiting reliable evidence')} · Tap for ratings & facilities</small></span>
