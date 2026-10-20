@@ -1138,7 +1138,8 @@ function keepPinnedShopCardVisible(shop){
  const targetY=Math.min(height-54,(bubble.offsetHeight||Math.min(550,height-154))+54);
  if(point.y<targetY){
   map.panBy([0,Math.round(point.y-targetY)],{animate:false});
-  positionPinnedShopDetail();
+  // Re-anchor after Leaflet has applied the new pane position.
+  schedulePinAlignment();
  }
 }
 function showDetail(s){
@@ -1229,6 +1230,10 @@ function showDetail(s){
  if(anchor){
   positionPinnedShopDetail();
   schedulePinAlignment();
+  // Mobile layout and map transforms can settle over several frames.
+  requestAnimationFrame(()=>requestAnimationFrame(schedulePinAlignment));
+  setTimeout(schedulePinAlignment,160);
+  setTimeout(schedulePinAlignment,380);
  }
 }
 // Persistent mini card is independent of Leaflet's disposable popup DOM.
