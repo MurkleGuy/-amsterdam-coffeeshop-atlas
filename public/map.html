@@ -1102,6 +1102,16 @@ html,body{height:100%;width:100%;overflow:hidden}
  }
 }
 </style>
+
+<style id="shop-pointer-free-v1">
+/* The marker and address already identify the selected coffeeshop. */
+.shopQuickPreview::after,
+.mapWrap #shopQuickPreview.expanded::after,
+.mapWrap #detailPinTail{
+ display:none!important;
+ content:none!important;
+}
+</style>
 </head>
 <body>
 <div class="app">
@@ -1417,11 +1427,10 @@ function positionShopPreview(){
  const viewport=wrap.clientWidth||map.getSize().x;
  const half=width/2;
  const centre=Math.max(half+8,Math.min(viewport-half-8,point.x));
- const arrow=Math.max(14,Math.min(width-14,half+point.x-centre));
  bubble.style.left=centre+'px';
- // With a 40px-high pin anchored at its bottom, this seats the popup pointer over the pin tip.
-  bubble.style.top=Math.round(point.y-45)+'px';
- bubble.style.setProperty('--shop-arrow-left',arrow+'px');
+ // Keep the card near the selected marker without a decorative pointer
+ // that can look misaligned when the map moves.
+ bubble.style.top=Math.round(point.y-45)+'px';
 }
 function showShopPreview(shop){
  if(!shop)return;
