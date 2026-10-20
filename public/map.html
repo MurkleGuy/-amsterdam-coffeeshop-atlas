@@ -1185,6 +1185,43 @@ html,body{height:100%;width:100%;overflow:hidden}
  .mapWrap #shopQuickPreview.expanded #detail .detailHead h3{font-size:15px!important}
 }
 </style>
+
+<style id="atlas-hotel-icon-v1">
+/* Compact home shortcut instead of the wide hotel-and-routes label. */
+.tripTools>#tripToggle.floating{
+ width:52px!important;
+ min-width:52px!important;
+ height:52px!important;
+ min-height:52px!important;
+ max-width:52px!important;
+ padding:0!important;
+ display:inline-flex!important;
+ align-items:center!important;
+ justify-content:center!important;
+ gap:0!important;
+ border-radius:15px!important;
+ flex:none!important;
+}
+.tripTools>#tripToggle svg{
+ width:25px;
+ height:25px;
+ display:block;
+ pointer-events:none;
+}
+.tripTools>#tripToggle:focus-visible{
+ outline:3px solid #a9d9b7!important;
+ outline-offset:3px;
+}
+@media(max-width:760px){
+ .tripTools>#tripToggle.floating{
+  width:50px!important;
+  height:50px!important;
+  min-width:50px!important;
+  min-height:50px!important;
+  max-width:50px!important;
+ }
+}
+</style>
 </head>
 <body>
 <div class="app">
@@ -1798,6 +1835,6 @@ window.addEventListener('message',event=>{
  if(field){field.value=query;field.dispatchEvent(new Event('input',{bubbles:true}));if(query)openShops();}
 });
 </script>
-<script src="assets/atlas-trip.js?v=7"></script>
+<script src="assets/atlas-trip.js?v=8"></script>
 </body>
 </html>
