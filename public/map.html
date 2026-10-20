@@ -1280,6 +1280,15 @@ function keepPinnedShopCardVisible(shop){
   schedulePinAlignment();
  }
 }
+// Previous branding belongs in search aliases and source history, not in the
+// visitor-facing shop card. Keep notices only when they affect the visit itself.
+function visitorNotice(s){
+ const note=String(s.nameNote||'').trim();
+ if(!note)return '';
+ if(/NOT Terps Army 2/i.test(note))return 'Nieuwe Nieuwstraat branch — not Terps Army 2 at Zieseniskade 22.';
+ if(s.operatingStatus||/operating-permit|premises is open|tolerance-list address|tolerated address|actual coffeeshop entrance|coffeeshop entrance at/i.test(note))return note;
+ return '';
+}
 function showDetail(s){
  const panel=$('detail'),wrap=document.querySelector('.mapWrap'),backdrop=$('detailBackdrop'),bubble=$('shopQuickPreview');
  if(!s){
@@ -1295,7 +1304,7 @@ function showDetail(s){
  }
  const previousShopId=panel.dataset.shopId;
  const preserveExpanded=previousShopId===String(s.id)&&!!panel.querySelector('#shopRatingDisclosure')?.open;
- const title=s.name||s.street+' '+s.number,saved=isSaved(s),menu=menuFor(s),assessment=window.AtlasScore?.assess(s);
+ const title=s.name||s.street+' '+s.number,saved=isSaved(s),menu=menuFor(s),assessment=window.AtlasScore?.assess(s),notice=visitorNotice(s);
  const numericScore=Number.isFinite(assessment?.score)?assessment.score.toFixed(1):null;
  const scoreKind=assessment?.kind==='editorial'?'Dated-review assessment':assessment?.kind==='community'?'Community-based estimate':'Not yet rated';
  // The outer rating row is the only tap needed to see the five category/facility tiles.
@@ -1325,7 +1334,7 @@ function showDetail(s){
  panel.innerHTML=`<div class="detailHead"><div class="detailIdentity"><span class="eyebrow">${esc(getArea(s))} · COFFEESHOP</span><h3>${esc(title)}</h3></div>
  <div class="detailHeadActions"><button type="button" id="collapseDetail" class="shopCollapseDetail" aria-label="Back to small shop preview" title="Back to preview">‹</button><button type="button" id="detailFav" class="detailStar ${saved?'saved':''}" aria-pressed="${saved?'true':'false'}" aria-label="${saved?'Remove from saved shops':'Save this coffeeshop'}" title="${saved?'Remove from saved':'Save this shop'}">${saved?'★':'☆'}</button><button type="button" class="close" id="closeDetail" aria-label="Close shop details">×</button></div></div>
  <p class="detailAddress">${esc(s.address)}</p>
- ${s.nameNote?`<div class="shopNameNotice" role="note">${esc(s.nameNote)} ${s.nameSource?`<a href="${esc(s.nameSource)}" target="_blank" rel="noopener noreferrer">Check source ↗</a>`:''}</div>`:''}
+ ${notice?`<div class="shopNameNotice" role="note">${esc(notice)} ${s.nameSource?`<a href="${esc(s.nameSource)}" target="_blank" rel="noopener noreferrer">Check source ↗</a>`:''}</div>`:''}
  <details class="shopRatingDisclosure" id="shopRatingDisclosure" ${preserveExpanded?'open':''}>
    <summary class="shopRatingSummary">
      <span class="shopRatingSummaryIcon" aria-hidden="true">★</span>
