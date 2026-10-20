@@ -158,6 +158,26 @@ function listTag(shop){
  else tag='<span class="atlasPendingTag">Atlas · awaiting reliable ratings</span>';
  return tag+(s&&(s.kind==="reported"||s.kind==="none"||s.kind==="listed")?'<span class="seatTag'+(s.kind==="none"?' noSeats':'')+'">↳ '+esc(s.label)+'</span>':'');
 }
+// Comparison is informational only. Two platforms may share contributors, have
+// different review windows, or describe an earlier trading name.
+function sourceComparison(shop){
+ const first=window.ATLAS_INTEL?.ratings?.[shop.id],second=window.ATLAS_INTEL?.crossChecks?.[shop.id];
+ if(!first||!second||!Number.isFinite(first.rating)||!Number.isFinite(second.rating)||!Number.isInteger(second.reviews)||second.reviews<1)return null;
+ const difference=Math.abs(first.rating-second.rating);
+ return {first,second,difference,disagrees:difference>=.6&&second.reviews>=5};
+}
+function crossCheckMarkup(shop){
+ const c=sourceComparison(shop);if(!c)return '';
+ const {first,second,difference,disagrees}=c;
+ return '<div class="atlasCrossCheck'+(disagrees?' atlasCrossDisagreement':'')+'">'
+  +'<strong>'+ (disagrees?'⚠ Independent rating sites differ':'Independent source comparison')+'</strong>'
+  +'<p>'+esc(first.source)+' '+first.rating.toFixed(1)+'/5 ('+first.reviews+' reviews) · '
+  +esc(second.source)+' '+second.rating.toFixed(1)+'/5 ('+second.reviews+' reviews)'
+  +(disagrees?' · difference '+difference.toFixed(1)+' stars':'')+'</p>'
+  +'<p>'+esc(second.note||'Different sites may cover different customers and periods; these numbers are not a combined score.')+'</p>'
+  +'<a href="'+esc(second.url)+'" target="_blank" rel="noopener noreferrer">Inspect other source ↗</a>'
+  +'</div>';
+}
 function detail(shop){
  const a=assess(shop),s=seating(shop);
  const seats=s?'<a class="atlasSeat" href="'+esc(s.url)+'" target="_blank" rel="noopener">◉ '+esc(s.label)+' · '+fmt(s.date)+' ↗</a>':'';
@@ -176,7 +196,7 @@ function detail(shop){
    +(a.legacy?'<p class="atlasAgeNote"><strong>Older records only:</strong> '+esc(r.evidenceEraNote||'The visible source reviews are years old.')+' This is not evidence of current stock or service.</p>':'')
    +ageNotice
    +'<p>This historical overall estimate must not be used to infer category ratings. Any categories shown above come only from individually dated accounts; categories with insufficient observations remain unrated.</p>'
-   +'<p><a href="'+esc(r.url)+'" target="_blank" rel="noopener">Read original source ↗</a></p>'+recent+editorial+auditLink+unknownSeating
+   +'<p><a href="'+esc(r.url)+'" target="_blank" rel="noopener">Read original source ↗</a></p>'+crossCheckMarkup(shop)+recent+editorial+auditLink+unknownSeating
    +(notes?'<ul>'+notes+'</ul>':'')+'</details></section>';
  }
 
@@ -198,8 +218,8 @@ function detail(shop){
  const reviews=a.sample.slice(0,4).map(r=>'<li>'+esc(r.note)+' <a href="'+esc(r.url)+'" target="_blank" rel="noopener">'+fmt(r.date)+' ↗</a></li>').join('');
  return '<section class="atlasVerdict" aria-label="Atlas Score"><div class="atlasScoreHead"><div><small>ATLAS SCORE · DATED REVIEWS</small><strong>★ '+a.score.toFixed(1)+' <small>/ 5</small></strong></div><span>'+a.reviewers+' independent recent reviewers<br>'+a.confidence+' · latest '+fmt(a.latest)+'</span></div>'
   +'<p class="atlasBrief">Review-based estimate, not a product test or guarantee of current stock.</p>'+seats+categoryPanel(shop)
-  +'<details class="atlasMore"><summary>Why this score? · Review evidence</summary>'+unknownSeating+'<ul>'+reviews+'</ul>'
+  +'<details class="atlasMore"><summary>Why this score? · Review evidence</summary>'+unknownSeating+'<ul>'+reviews+'</ul>'+crossCheckMarkup(shop)
   +'<p>Overall Atlas Score weights: flower/hash 50%, service 25%, atmosphere 15%, value 10%. Missing overall-score dimensions use a neutral 3.5/5 statistical prior. Facilities are source-backed features, not part of the overall score, and no category without enough individually dated reports receives a displayed rating. <a href="https://github.com/MurkleGuy/-amsterdam-coffeeshop-atlas#atlas-score-pilot" target="_blank" rel="noopener">Scoring policy ↗</a></p></details></section>';
 }
-window.AtlasScore={assess,seating,facilities,categoryRatings,listTag,detail};
+window.AtlasScore={assess,seating,facilities,categoryRatings,sourceComparison,listTag,detail};
 })();
