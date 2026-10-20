@@ -251,3 +251,13 @@ The previous fixed-bottom small card and direct-full-card-on-marker behaviours a
 - Expanding the Atlas rating summary immediately reveals the existing five-section **Ratings & facilities** panel, with underlying report sources and the adjustment methodology still accessible in their independent disclosures. Source labels are not removed from the model.
 - On mobile the full view is a centred modal above a dimmed map backdrop, scrolls at limited screen height, closes via X, backdrop or Escape, and preserves the favourite toggle. Open-accordion state survives favouriting the same shop. Menu navigation and fallback walking route behaviour remain unchanged.
 - Verified with static JS parsing and simulated name-preview-to-card, rated/unrated, menu and overlay interactions. The deployed Android layout is **not** claimed as tested until checked on-device.
+
+
+### One expanding popup attached to the selected shop pin (October 20, 2026)
+
+- Clicking a cannabis shop marker opens the existing small, pin-attached **name + chevron** preview. The name and chevron open the full shop details.
+- The full details are now rendered **inside that same `#shopQuickPreview` element**. It increases in width/height while keeping its triangular pointer anchored over the selected shop marker; the contents scroll in the expanded card. There is no separate centre-screen modal for shops with located pins.
+- The enlarged card has a new **‹ Back to small preview** control, plus the existing favourite, close, Atlas rating/Facilities disclosure, dated menu page, walking-route and transit actions. The outer wrapper stays connected to the marker during map moves and zooming.
+- Expanding repositions the map so the marker stays just below the card, while the card's maximum scrollable height respects the available map viewport. Small screens and tall review sections scroll rather than overflowing the map.
+- Shops with **no verified coordinate** continue to use the full centred card. Selecting from the directory or returning from a dated menu still opens full details directly. Closing a card, switching shops and opening route planning reset the popup cleanly.
+- Code syntax and simulated open/expand/collapse/close/other-shop/no-pin flows passed; actual Android/Cloudflare visual and gesture testing remains necessary.
