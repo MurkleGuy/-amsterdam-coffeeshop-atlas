@@ -2,6 +2,21 @@
 
 A mobile-friendly independent directory and map of Amsterdam cannabis coffeeshop addresses, hosted as a zero-build static website on Cloudflare Pages.
 
+## Active BudMap rating system — 20 October 2026
+
+**The live map now uses [BudMap Score](BUDMAP-SCORE-METHOD.md)**: an
+equal-weight average of distinct, address-matched, published five-star venue
+ratings, converted to a ten-point score. Individual review websites are not
+named on the main cards. The old editorial Atlas Score engine and detailed
+topic ratings are preserved for historical audit but **are no longer loaded**
+on the live map; old pilot counts further down this README have been superseded.
+
+Current coverage: **23 combined two-source scores**, **133 preliminary
+single-source scores**, and **11 without numerical ratings**. No Google Places
+scores have been imported or cached. Additional permitted, verified platforms
+can be added as `extraRatings[id]` source arrays. The ranking only includes
+shops with multiple independent published ratings.
+
 ## Features
 - Searchable directory of 167 published Amsterdam 2026 tolerance-reference addresses (151 preliminary directory name matches).
 - Interactive Leaflet / OpenStreetMap map with address lookups, map clusters and mobile list/map switching.
