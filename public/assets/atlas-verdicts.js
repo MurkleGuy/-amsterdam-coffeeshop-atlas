@@ -33,9 +33,18 @@ window.ATLAS_VERDICTS={
           "experience": 5,
           "note": "Regular visitor includes Family First among the shops where they have enjoyed relaxing; this does not establish seating comfort or weed quality.",
           "url": "https://www.reddit.com/r/AmsterdamEnts/comments/1vm9msx/visit_next_week/"
+        },
+        {
+          "reviewer": "Fedrank",
+          "date": "2026-10-20",
+          "quality": 3,
+          "service": 2,
+          "value": 2,
+          "note": "Visitor describes mixed Family First products: particularly loved one hash, but found some flower/extracts disappointing for the price and felt staff were distracted. One subjective visit, not proof of typical service.",
+          "url": "https://www.reddit.com/r/AmsterdamEnts/comments/1xaptsd/middleaged_stoner_with_an_old_school_preference/"
         }
       ],
-      "reviewNote": "Greenmeister's prominently visible Family First reviews are mostly 2024 or earlier. Independent listings include mixed newer praise and value criticism, but exact dates and branch matching must be verified before use in the numerical model."
+      "reviewNote": "Greenmeister's prominently visible Family First reviews are mostly 2024 or earlier. Independent listings include mixed newer praise and value criticism, but exact dates and branch matching must be verified before use in the numerical model. A source-linked 20 October 2026 visitor report has been added; it represents one account, not a verified product test."
     },
     "5": {
       "seating": {
@@ -392,8 +401,17 @@ window.ATLAS_VERDICTS={
       "reviewNote": "Prominent comments include complaints about price and quality from 2023; these are too old to support a 2026 verdict."
     },
     "45": {
-      "observations": [],
-      "reviewNote": "The Balboa Family matches Halvemaansteeg 1 on Weeview (4.5/5, only three user reviews). Its visible reviews include 2020–2023 comments from the prior Andalucia era. This historical average must not be taken as a current Balboa flower/service endorsement.",
+      "observations": [
+        {
+          "reviewer": "Fedrank",
+          "date": "2026-10-20",
+          "quality": 5,
+          "service": 5,
+          "note": "Visitor praises multiple classic and newer flower/hash products and attentive service at The Balboa Family, comparing favourably with other shops on the trip. Product descriptions remain individual opinion.",
+          "url": "https://www.reddit.com/r/AmsterdamEnts/comments/1xaptsd/middleaged_stoner_with_an_old_school_preference/"
+        }
+      ],
+      "reviewNote": "The Balboa Family matches Halvemaansteeg 1 on Weeview (4.5/5, only three user reviews). Its visible reviews include 2020–2023 comments from the prior Andalucia era. This historical average must not be taken as a current Balboa flower/service endorsement. A source-linked 20 October 2026 visitor report has been added; it represents one account, not a verified product test.",
       "reviewSource": "https://weeview.nl/location/amsterdam/"
     },
     "46": {
@@ -416,9 +434,24 @@ window.ATLAS_VERDICTS={
           "experience": 5,
           "note": "Regular visitor includes Original Dampkring among shops where they have enjoyed relaxing; weed quality not discussed.",
           "url": "https://www.reddit.com/r/AmsterdamEnts/comments/1vm9msx/visit_next_week/"
+        },
+        {
+          "reviewer": "Fedrank",
+          "date": "2026-10-20",
+          "quality": 5,
+          "service": 5,
+          "experience": 5,
+          "note": "Firsthand five-day visit praises multiple flower and hash products, knowledgeable staff, drinks and window seating at De Dampkring. One premium concentrate was €60/g; no general value score inferred.",
+          "url": "https://www.reddit.com/r/AmsterdamEnts/comments/1xaptsd/middleaged_stoner_with_an_old_school_preference/"
         }
       ],
-      "reviewNote": "A historic reputation and old review comments are not a current assessment of Dampkring flower or staff."
+      "reviewNote": "A historic reputation and old review comments are not a current assessment of Dampkring flower or staff. A source-linked 20 October 2026 visitor report has been added; it represents one account, not a verified product test.",
+      "seating": {
+        "kind": "reported",
+        "label": "Indoor window seating reported; drinks served",
+        "date": "2026-10-20",
+        "url": "https://www.reddit.com/r/AmsterdamEnts/comments/1xaptsd/middleaged_stoner_with_an_old_school_preference/"
+      }
     },
     "48": {
       "seating": {
@@ -692,8 +725,19 @@ window.ATLAS_VERDICTS={
       "reviewNote": "The site's historical community score alone does not prove recent service and flower quality at this specific Bulldog branch."
     },
     "81": {
-      "observations": [],
-      "reviewNote": "Recent enough evidence about both current flower quality and service is not available from the reviewed excerpts; past high ratings and complaints are not used as current findings."
+      "observations": [
+        {
+          "reviewer": "Fedrank",
+          "date": "2026-10-20",
+          "quality": 3,
+          "service": 4,
+          "experience": 4,
+          "value": 2,
+          "note": "Visitor reports mixed flower and hash experiences at 1e Hulp despite polite staff and a comfortable sit-in area; disliked some products' flavour and value. Concerns about cleanliness are unverified personal impressions.",
+          "url": "https://www.reddit.com/r/AmsterdamEnts/comments/1xaptsd/middleaged_stoner_with_an_old_school_preference/"
+        }
+      ],
+      "reviewNote": "Recent enough evidence about both current flower quality and service is not available from the reviewed excerpts; past high ratings and complaints are not used as current findings. A source-linked 20 October 2026 visitor report has been added; it represents one account, not a verified product test."
     },
     "86": {
       "observations": [],
@@ -782,9 +826,25 @@ window.ATLAS_VERDICTS={
       "reviewSource": "https://www.leafly.com/dispensary-info/rockland-coffeeshop"
     },
     "120": {
-      "observations": [],
-      "reviewNote": "DutchCoffeeshops has a larger, mixed visitor-comment collection for The Saint, but Greenmeister shows zero venue reviews and alternative averages appear Google-derived. No independent aggregate with usable dates was found.",
-      "reviewSource": "https://dutchcoffeeshops.com/in/amsterdam/coffeeshop-the-saint/map"
+      "observations": [
+        {
+          "reviewer": "Fedrank",
+          "date": "2026-10-20",
+          "quality": 5,
+          "service": 4,
+          "experience": 5,
+          "note": "Visitor reports two positive purchases of old-school-style flower at The Saint, an outdoor terrace and straightforward budtenders. Single customer account, not independent confirmation of stock or facilities.",
+          "url": "https://www.reddit.com/r/AmsterdamEnts/comments/1xaptsd/middleaged_stoner_with_an_old_school_preference/"
+        }
+      ],
+      "reviewNote": "DutchCoffeeshops has a larger, mixed visitor-comment collection for The Saint, but Greenmeister shows zero venue reviews and alternative averages appear Google-derived. No independent aggregate with usable dates was found. A source-linked 20 October 2026 visitor report has been added; it represents one account, not a verified product test.",
+      "reviewSource": "https://dutchcoffeeshops.com/in/amsterdam/coffeeshop-the-saint/map",
+      "seating": {
+        "kind": "reported",
+        "label": "Outdoor terrace seating reported; availability not guaranteed",
+        "date": "2026-10-20",
+        "url": "https://www.reddit.com/r/AmsterdamEnts/comments/1xaptsd/middleaged_stoner_with_an_old_school_preference/"
+      }
     },
     "125": {
       "observations": [],
@@ -1033,7 +1093,7 @@ window.ATLAS_VERDICTS={
     }
   },
   "coverageCheckedAt": "2026-10-20",
-  "categoryAuditAt": "2026-10-19",
+  "categoryAuditAt": "2026-10-20",
   "categoryPolicy": "Separate category numbers need at least 2-3 individually dated reviewers across 2 calendar months; unknown categories stay unscored. Atmosphere reviews do not verify entertainment or seating facilities.",
   "facilitiesPolicy": "Listed features are venue/directory claims; reported features are individual visitor accounts. Facility features do not receive numerical scores; absent evidence is unknown, not a negative rating."
 };
