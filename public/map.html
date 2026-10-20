@@ -908,6 +908,61 @@ html,body{height:100%;width:100%;overflow:hidden}
  }
 }
 </style>
+
+<style id="shop-connected-card-v2">
+/* Both views live in #shopQuickPreview; its pointer always targets the selected pin. */
+.mapWrap #shopQuickPreview.shopQuickPreview{
+ transform:translate(-50%,-100%);transform-origin:50% 100%;
+ transition:width .19s ease,border-radius .19s ease,box-shadow .19s ease;
+}
+.mapWrap #shopQuickPreview.shopQuickPreview.expanded{
+ width:min(420px,calc(100% - 20px));max-width:420px;max-height:none;
+ padding:0;border-radius:17px;background:#fffefb;z-index:453;
+ box-shadow:0 15px 44px rgba(8,37,22,.32);
+}
+.mapWrap #shopQuickPreview.expanded .shopQuickHead{display:none!important}
+.mapWrap #shopQuickPreview.expanded #detail.detail:not(.hidden){
+ position:relative!important;left:auto!important;right:auto!important;
+ top:auto!important;bottom:auto!important;transform:none!important;
+ width:100%!important;max-width:none!important;height:auto!important;
+ max-height:var(--shop-card-max-height,65dvh)!important;
+ min-height:0!important;overflow-x:hidden!important;overflow-y:auto!important;
+ border:0!important;border-radius:16px!important;box-shadow:none!important;
+ background:#fffefb!important;padding:14px 14px 15px!important;
+ visibility:visible!important;z-index:auto!important;
+ scrollbar-width:thin;overscroll-behavior:contain;
+}
+.mapWrap #shopQuickPreview.expanded #detail .detailHead{top:-14px!important;margin-top:0!important;background:#fffefb!important}
+.mapWrap #detail .shopCollapseDetail{
+ display:none;width:40px;height:40px;min-width:40px;min-height:40px;
+ align-items:center;justify-content:center;padding:0;
+ border:1px solid #d5e5d8;border-radius:10px;background:#edf5ed;
+ color:#285c43;font-size:26px;font-weight:700;line-height:1;cursor:pointer;
+}
+.mapWrap #shopQuickPreview.expanded #detail .shopCollapseDetail{display:flex}
+.mapWrap #shopQuickPreview.expanded #detail .shopCollapseDetail:focus-visible{outline:3px solid #60a87e;outline-offset:2px}
+.mapWrap #shopQuickPreview.expanded #detail .detailHeadActions{gap:6px}
+.mapWrap #shopQuickPreview.expanded::after{z-index:1}
+@media(max-width:760px){
+ .mapWrap #shopQuickPreview.shopQuickPreview.expanded{
+  width:min(405px,calc(100% - 18px));max-width:none;
+ }
+ .mapWrap #shopQuickPreview.expanded #detail.detail:not(.hidden){
+  padding:12px 12px 14px!important;
+  max-height:var(--shop-card-max-height,65dvh)!important;
+ }
+ .mapWrap #shopQuickPreview.expanded #detail .detailHead{top:-12px!important}
+ .mapWrap.trip-open #shopQuickPreview:not(.hidden){visibility:hidden;pointer-events:none}
+}
+@media(max-width:350px){
+ .mapWrap #shopQuickPreview.expanded #detail .detailHead h3{font-size:16px}
+ .mapWrap #shopQuickPreview.expanded #detail .detailHeadActions{gap:4px}
+ .mapWrap #shopQuickPreview.expanded #detail .detailHeadActions button{min-width:37px;min-height:37px}
+}
+@media(prefers-reduced-motion:reduce){
+ .mapWrap #shopQuickPreview.shopQuickPreview{transition:none}
+}
+</style>
 </head>
 <body>
 <div class="app">
@@ -1062,38 +1117,33 @@ function renderList(){
 function refreshClusters(visible){if(!map||!clusters)return;clusters.clearLayers();for(const s of visible){const marker=geoMarkers[s.id];if(marker)clusters.addLayer(marker)}}
 
 let pinnedDetailShopId=null;
+// Preview and expanded details are two states of the SAME pin-connected window.
 function positionPinnedShopDetail(){
  if(pinnedDetailShopId==null||!map)return;
- const shop=official.find(x=>x.id===pinnedDetailShopId);
- if(!shop||!Number.isFinite(shop.lat)||!Number.isFinite(shop.lng))return;
- const panel=$('detail'),tail=$('detailPinTail'),wrap=document.querySelector('.mapWrap');
- if(panel.classList.contains('hidden')||!panel.classList.contains('shopDetailPinned'))return;
- const pt=map.latLngToContainerPoint([shop.lat,shop.lng]);
- const width=wrap.clientWidth||map.getSize().x,height=wrap.clientHeight||map.getSize().y;
- panel.style.setProperty('--detail-pin-height',Math.max(145,Math.min(570,height*.57,height-190))+'px');
- const pw=panel.offsetWidth||Math.min(420,width-22),half=pw/2;
- const x=Math.max(half+10,Math.min(width-half-10,pt.x)),y=pt.y-52;
- panel.style.setProperty('--detail-pin-x',x+'px');
- panel.style.setProperty('--detail-pin-y',y+'px');
- tail.style.setProperty('--tail-pin-x',Math.max(x-half+16,Math.min(x+half-16,pt.x))+'px');
- tail.style.setProperty('--tail-pin-y',(y+7)+'px');
- const visible=pt.x>=-12&&pt.x<=width+12&&pt.y>80&&pt.y<height+30;
- panel.style.visibility=visible?'visible':'hidden';
- tail.classList.toggle('hidden',!visible);
+ const bubble=$('shopQuickPreview'),wrap=document.querySelector('.mapWrap');
+ if(bubble.classList.contains('hidden')||!bubble.classList.contains('expanded'))return;
+ const height=wrap.clientHeight||map.getSize().y;
+ bubble.style.setProperty('--shop-card-max-height',Math.max(175,Math.min(720,height-154))+'px');
+ positionShopPreview();
 }
 function centrePinnedShopBelowCard(shop){
  if(!map||pinnedDetailShopId!==shop.id)return;
- const wrap=document.querySelector('.mapWrap'),h=wrap.clientHeight||map.getSize().y,w=wrap.clientWidth||map.getSize().x;
- const pt=map.latLngToContainerPoint([shop.lat,shop.lng]);
- map.panBy([pt.x-w/2,pt.y-(h-78)],{animate:false});
+ const wrap=document.querySelector('.mapWrap'),height=wrap.clientHeight||map.getSize().y,width=wrap.clientWidth||map.getSize().x;
+ const point=map.latLngToContainerPoint([shop.lat,shop.lng]);
+ // Keep the shop's marker visible below the card, with a short pointer to its pin.
+ map.panBy([point.x-width/2,point.y-(height-75)],{animate:false});
  positionPinnedShopDetail();
 }
 function showDetail(s){
- const panel=$('detail'),wrap=document.querySelector('.mapWrap'),backdrop=$('detailBackdrop');
+ const panel=$('detail'),wrap=document.querySelector('.mapWrap'),backdrop=$('detailBackdrop'),bubble=$('shopQuickPreview');
  if(!s){
   panel.classList.add('hidden');backdrop.classList.add('hidden');
   panel.classList.remove('shopDetailPinned');panel.style.visibility='';
   $('detailPinTail').classList.add('hidden');pinnedDetailShopId=null;
+  bubble.classList.remove('expanded');bubble.classList.add('hidden');
+  bubble.setAttribute('aria-label','Selected coffeeshop preview');
+  if(panel.parentElement===bubble)wrap.appendChild(panel);
+  previewedShopId=null;wrap.classList.remove('has-preview');
   wrap.classList.remove('has-detail');panel.dataset.shopId='';
   return;
  }
@@ -1107,17 +1157,27 @@ function showDetail(s){
  const atlasPanel=(window.AtlasScore?.detail(s)||'<p>Detailed Atlas evidence is not available for this shop yet.</p>')
   .replace('class="atlasMore atlasCategories"','class="atlasMore atlasCategories" open');
  panel.setAttribute('aria-label','Details for '+title);
- const anchor=!!map&&Number.isFinite(s.lat)&&Number.isFinite(s.lng)&&(wrap.clientHeight||map.getSize().y)>420;
+ const anchor=!!map&&Number.isFinite(s.lat)&&Number.isFinite(s.lng)&&(wrap.clientHeight||map.getSize().y)>290;
  pinnedDetailShopId=anchor?s.id:null;
- panel.classList.toggle('shopDetailPinned',anchor);
+ panel.classList.remove('shopDetailPinned');
  panel.setAttribute('aria-modal',anchor?'false':'true');
  panel.style.visibility='';$('detailPinTail').classList.add('hidden');
+ if(anchor){
+  bubble.appendChild(panel);
+  bubble.classList.add('expanded');bubble.classList.remove('hidden');
+  bubble.setAttribute('aria-label','Expanded coffeeshop: '+(s.name||s.address));
+  previewedShopId=s.id;wrap.classList.add('has-preview');
+ }else{
+  if(panel.parentElement===bubble)wrap.appendChild(panel);
+  bubble.classList.remove('expanded');bubble.classList.add('hidden');
+  previewedShopId=null;wrap.classList.remove('has-preview');
+ }
  panel.classList.remove('hidden');backdrop.classList.toggle('hidden',anchor);
  wrap.classList.add('has-detail');
  panel.dataset.shopId=String(s.id);
  panel.scrollTop=0;
  panel.innerHTML=`<div class="detailHead"><div class="detailIdentity"><span class="eyebrow">${esc(getArea(s))} · COFFEESHOP</span><h3>${esc(title)}</h3></div>
- <div class="detailHeadActions"><button type="button" id="detailFav" class="detailStar ${saved?'saved':''}" aria-pressed="${saved?'true':'false'}" aria-label="${saved?'Remove from saved shops':'Save this coffeeshop'}" title="${saved?'Remove from saved':'Save this shop'}">${saved?'★':'☆'}</button><button type="button" class="close" id="closeDetail" aria-label="Close shop details">×</button></div></div>
+ <div class="detailHeadActions"><button type="button" id="collapseDetail" class="shopCollapseDetail" aria-label="Back to small shop preview" title="Back to preview">‹</button><button type="button" id="detailFav" class="detailStar ${saved?'saved':''}" aria-pressed="${saved?'true':'false'}" aria-label="${saved?'Remove from saved shops':'Save this coffeeshop'}" title="${saved?'Remove from saved':'Save this shop'}">${saved?'★':'☆'}</button><button type="button" class="close" id="closeDetail" aria-label="Close shop details">×</button></div></div>
  <p class="detailAddress">${esc(s.address)}</p>
  ${s.nameNote?`<div class="shopNameNotice" role="note">${esc(s.nameNote)} ${s.nameSource?`<a href="${esc(s.nameSource)}" target="_blank" rel="noopener noreferrer">Check source ↗</a>`:''}</div>`:''}
  <details class="shopRatingDisclosure" id="shopRatingDisclosure" ${preserveExpanded?'open':''}>
@@ -1137,6 +1197,10 @@ function showDetail(s){
  <p class="detailFinePrint">Ratings are estimates with source evidence, not guarantees. Routes use mapped footpaths and crossings.</p>`;
  const close=()=>{showDetail(null);selected=null;renderList()};
  $('closeDetail').onclick=close;
+ $('collapseDetail').onclick=()=>{
+  if(pinnedDetailShopId===s.id){showDetail(null);showShopPreview(s)}
+  else close();
+ };
  $('detailFav').onclick=()=>toggleFav(s.id);
  $('planWalkAtlas').onclick=()=>{
   if(!Number.isFinite(s.lat)||!Number.isFinite(s.lng)||!window.AtlasTrip?.planTo){
