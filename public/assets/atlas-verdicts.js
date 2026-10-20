@@ -788,8 +788,8 @@ window.ATLAS_VERDICTS={
     },
     "125": {
       "observations": [],
-      "reviewNote": "Weeview reports 4.1 from 3 user ratings for Black star at Rozengracht 1 and postcode 1016LP; other references use unit 1A whereas the municipal list uses 1H. Verify the premises/unit match before attaching an Atlas numerical estimate.",
-      "reviewSource": "https://weeview.nl/location/amsterdam/"
+      "reviewNote": "Weeview lists Black star at Rozengracht 1, 1016 LP, with a small sample of three reviewers. Amsterdam's 2021 terrace plan names The African Blackstar's public front at number 1A; the city-wide 2026 address list uses 1H. We consider the venue identity matched despite different unit notation, not the specific entrance number. The Weeview review dates are not verified; this is a low-confidence, historical shop-experience estimate, not current flower quality.",
+      "reviewSource": "https://assets.amsterdam.nl/publish/pages/1038217/20211221_concept_terrassenplan_rozengracht.pdf"
     },
     "126": {
       "observations": [],
