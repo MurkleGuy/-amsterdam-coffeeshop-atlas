@@ -1274,7 +1274,7 @@ html,body{height:100%;width:100%;overflow:hidden}
  }
  .mapWrap #mapTopBar .base-switch .floating{
   display:flex!important;flex:1 1 0%!important;min-width:0!important;width:auto!important;
-  height:40px!important;min-height:40px!important;justify-content:center!important;
+  height:44px!important;min-height:44px!important;justify-content:center!important;
   align-items:center!important;padding:6px 1px!important;font-size:10px!important;
   line-height:1!important;border-radius:8px!important;white-space:nowrap!important
  }
@@ -1307,6 +1307,12 @@ html,body{height:100%;width:100%;overflow:hidden}
  .mapWrap #mapTopBar .base-switch .floating{font-size:10px!important}
  .mapWrap #mapTopBar #routeKeyButton:not(.routeControlHidden){
   flex-basis:35px!important;width:35px!important;min-width:35px!important
+ }
+}
+@media(min-width:590px) and (max-width:760px){
+ .mapWrap #mapTopBar .mapActions{
+  flex:0 1 375px!important;
+  margin-left:auto!important;
  }
 }
 </style>
