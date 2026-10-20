@@ -1103,14 +1103,18 @@ html,body{height:100%;width:100%;overflow:hidden}
 }
 </style>
 
-<style id="shop-pointer-free-v1">
-/* The marker and address already identify the selected coffeeshop. */
-.shopQuickPreview::after,
-.mapWrap #shopQuickPreview.expanded::after,
-.mapWrap #detailPinTail{
- display:none!important;
- content:none!important;
+<style id="shop-pin-pointer-v2">
+/* The preview and expanded card share one tail, aligned to the selected pin. */
+.mapWrap #shopQuickPreview.shopQuickPreview::after,
+.mapWrap #shopQuickPreview.shopQuickPreview.expanded::after{
+ content:""!important;display:block!important;position:absolute;
+ left:var(--shop-arrow-left,50%)!important;bottom:-8px!important;
+ width:15px;height:15px;background:#fffefb;
+ border-right:1px solid #cbded0;border-bottom:1px solid #cbded0;
+ transform:translateX(-50%) rotate(45deg);pointer-events:none;
+ z-index:4;box-shadow:2px 2px 3px rgba(8,36,22,.08)
 }
+.mapWrap #detailPinTail{display:none!important}
 </style>
 
 <style id="shop-connected-compact-v2">
@@ -1485,8 +1489,11 @@ function positionShopPreview(){
  const half=width/2;
  const centre=Math.max(half+8,Math.min(viewport-half-8,point.x));
  bubble.style.left=centre+'px';
- // Keep the card near the selected marker without a decorative pointer
- // that can look misaligned when the map moves.
+ // Clamping the card to the viewport can move its centre away from the pin;
+ // calculate the arrow relative to the selected marker, not the card centre.
+ const arrowX=point.x-(centre-half);
+ bubble.style.setProperty('--shop-arrow-left',Math.round(Math.max(14,Math.min(width-14,arrowX)))+'px');
+ // 45px pin clearance leaves room for the tail to touch the marker.
  bubble.style.top=Math.round(point.y-45)+'px';
 }
 function showShopPreview(shop){
