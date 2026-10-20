@@ -1524,6 +1524,10 @@ function showDetail(s){
  const title=s.name||s.street+' '+s.number,saved=isSaved(s),menu=menuFor(s),assessment=window.AtlasScore?.assess(s);
  const numericScore=Number.isFinite(assessment?.score)?assessment.score.toFixed(1):null;
  const scoreKind=assessment?.kind==='editorial'?'Review-based rating':assessment?.kind==='community'?'Community estimate':'Not yet rated';
+ const sourceCount=assessment?.sourceRating?.reviews;
+ const scoreEvidence=assessment?.kind==='editorial'?(assessment.reviewers+' dated reports')
+  :assessment?.kind==='community'?(sourceCount+' '+(assessment.legacy?'old':'historical')+' review'+(sourceCount===1?'':'s'))
+  :'More evidence needed';
  const ratingDisagreement=!!window.AtlasScore?.sourceComparison(s)?.disagrees;
  // The outer rating row is the only tap needed to see the five category/facility tiles.
  // Keep deeper scoring methodology and source notes independently expandable.
@@ -1554,7 +1558,7 @@ function showDetail(s){
   <details class="shopRatingDisclosure" id="shopRatingDisclosure" ${preserveExpanded?'open':''}>
    <summary class="shopRatingSummary">
      <span class="shopRatingSummaryIcon" aria-hidden="true">★</span>
-     <span class="shopRatingSummaryText"><strong>${numericScore?numericScore+' / 5':'Atlas rating pending'}</strong><small>${esc(numericScore?scoreKind:'Awaiting reliable evidence')}${ratingDisagreement?' · Sources differ':''} · Ratings & facilities</small></span>
+     <span class="shopRatingSummaryText"><strong>${numericScore?numericScore+' / 5':'Atlas rating pending'}</strong><small>${esc(numericScore?scoreKind:'Awaiting reliable evidence')} · ${esc(scoreEvidence)}${ratingDisagreement?' · Sources differ':''} · Tap for details</small></span>
      <span class="shopRatingSummaryChevron" aria-hidden="true">⌄</span>
    </summary>
    <div class="shopRatingExpanded">${atlasPanel}</div>
