@@ -913,7 +913,8 @@ html,body{height:100%;width:100%;overflow:hidden}
 /* Both views live in #shopQuickPreview; its pointer always targets the selected pin. */
 .mapWrap #shopQuickPreview.shopQuickPreview{
  transform:translate(-50%,-100%);transform-origin:50% 100%;
- transition:width .19s ease,border-radius .19s ease,box-shadow .19s ease;
+ /* Avoid width animation, which leaves the tail at the preview-width position. */
+ transition:box-shadow .16s ease,border-radius .16s ease;
 }
 .mapWrap #shopQuickPreview.shopQuickPreview.expanded{
  width:min(420px,calc(100% - 20px));max-width:420px;max-height:none;
@@ -1225,10 +1226,24 @@ function showDetail(s){
   if(h&&Number.isFinite(h.lat)&&Number.isFinite(h.lng))u.searchParams.set('origin',h.lat+','+h.lng);
   window.open(u.toString(),'_blank','noopener');
  };
- if(anchor)positionPinnedShopDetail();
+ if(anchor){
+  positionPinnedShopDetail();
+  schedulePinAlignment();
+ }
 }
 // Persistent mini card is independent of Leaflet's disposable popup DOM.
-let previewedShopId=null;
+let previewedShopId=null,pinAlignmentFrame=0;
+// Recheck marker-to-card geometry once the expanded card has its final width.
+// ResizeObserver handles rating expansion and viewport changes after opening.
+function schedulePinAlignment(){
+ if(pinAlignmentFrame)cancelAnimationFrame(pinAlignmentFrame);
+ pinAlignmentFrame=requestAnimationFrame(()=>{
+  pinAlignmentFrame=0;
+  if(previewedShopId==null||!map)return;
+  positionShopPreview();
+  if(pinnedDetailShopId!=null)positionPinnedShopDetail();
+ });
+}
 function hideShopPreview(clearSelection=false){
  $('shopQuickPreview').classList.add('hidden');
  document.querySelector('.mapWrap').classList.remove('has-preview');
@@ -1246,7 +1261,8 @@ function positionShopPreview(){
   hideShopPreview(true);return;
  }
  const point=map.latLngToContainerPoint([shop.lat,shop.lng]);
- const width=bubble.offsetWidth||245,viewport=wrap.clientWidth||map.getSize().x;
+ const width=bubble.getBoundingClientRect().width||bubble.offsetWidth||245;
+ const viewport=wrap.clientWidth||map.getSize().x;
  const half=width/2;
  const centre=Math.max(half+8,Math.min(viewport-half-8,point.x));
  const arrow=Math.max(14,Math.min(width-14,half+point.x-centre));
@@ -1268,6 +1284,7 @@ function showShopPreview(shop){
  bubble.classList.remove('hidden');
  document.querySelector('.mapWrap').classList.add('has-preview');
  positionShopPreview();
+ schedulePinAlignment();
  // If the pin is near the top edge, move the map down to reveal the popup above it.
  if(map){
   const point=map.latLngToContainerPoint([shop.lat,shop.lng]);
@@ -1508,6 +1525,12 @@ function main(){
  restore();$('topCount').textContent=ALL_COUNT;$('favCount').textContent=favs.size;const mapReady=initMap();
  if(mapReady){
   map.on('move zoom resize',()=>{positionShopPreview();positionPinnedShopDetail()});
+  map.on('moveend zoomend viewreset',schedulePinAlignment);
+  window.addEventListener('resize',schedulePinAlignment);
+  if(typeof ResizeObserver!=='undefined'){
+   const pinCardObserver=new ResizeObserver(schedulePinAlignment);
+   pinCardObserver.observe($('shopQuickPreview'));
+  }
   map.on('click',()=>{
    if(previewedShopId!=null)hideShopPreview(true);
    if(pinnedDetailShopId!=null){showDetail(null);selected=null;renderList();}
