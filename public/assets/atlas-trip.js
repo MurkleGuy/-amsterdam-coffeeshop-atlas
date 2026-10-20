@@ -35,7 +35,7 @@
  '</div>'+
  '<details class="tripPrivacy"><summary>Privacy & navigation info</summary><p class="tripNote">Your hotel stays on this device. Searches use Photon/OpenStreetMap. Walking routes send coordinates to a routing service. GPS needs your permission and only runs while the page is open. Check street crossings and use a dedicated navigation app when needed.</p></details>'+
  '</section>';
- document.querySelector('.mapWrap').appendChild(wrap);
+ (document.getElementById('topHotelSlot')||document.querySelector('.mapWrap')).appendChild(wrap);
  const tripVisible=()=>{
   const open=!document.getElementById('tripPanel').classList.contains('hidden');
   document.querySelector('.mapWrap')?.classList.toggle('trip-open',open);
