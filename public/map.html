@@ -1116,24 +1116,24 @@ html,body{height:100%;width:100%;overflow:hidden}
 <style id="shop-connected-compact-v2">
 /* Smaller full card, but retain clear tap targets for navigation/actions. */
 .mapWrap #shopQuickPreview.shopQuickPreview.expanded{
- width:min(358px,calc(100% - 24px))!important;max-width:358px!important;
+ width:min(318px,calc(100% - 24px))!important;max-width:318px!important;
  border-radius:14px!important;
 }
 .mapWrap #shopQuickPreview.expanded #detail.detail:not(.hidden){
- padding:10px 11px 10px!important;border-radius:14px!important;
+ padding:9px 10px 10px!important;border-radius:14px!important;
 }
 .mapWrap #shopQuickPreview.expanded #detail .detailHead{
- align-items:center!important;padding:0 0 7px!important;margin:0 0 8px!important;gap:7px!important;
+ align-items:center!important;padding:0 0 6px!important;margin:0 0 6px!important;gap:6px!important;
 }
 .mapWrap #shopQuickPreview.expanded #detail .detailIdentity{min-width:0!important;flex:1!important}
 .mapWrap #shopQuickPreview.expanded #detail .detailHead .eyebrow{
  font-size:9px!important;line-height:1.25!important;letter-spacing:.85px!important;
 }
 .mapWrap #shopQuickPreview.expanded #detail .detailHead h3{
- font-size:16px!important;line-height:1.15!important;letter-spacing:-.25px!important;margin:4px 0 0!important;
+ font-size:15px!important;line-height:1.18!important;letter-spacing:-.25px!important;margin:3px 0 0!important;
 }
 .mapWrap #shopQuickPreview.expanded #detail .detailHead .detailAddress{
- font-size:10px!important;line-height:1.25!important;margin:4px 0 0!important;
+ font-size:10px!important;line-height:1.25!important;margin:3px 0 0!important;
  color:#6d806f!important;overflow-wrap:anywhere;
 }
 .mapWrap #shopQuickPreview.expanded #detail .detailHeadActions{gap:4px!important;align-self:flex-start}
@@ -1142,18 +1142,18 @@ html,body{height:100%;width:100%;overflow:hidden}
 }
 .mapWrap #shopQuickPreview.expanded #detail .shopRatingDisclosure{margin:0 0 7px!important;border-radius:10px!important}
 .mapWrap #shopQuickPreview.expanded #detail .shopRatingSummary{
- min-height:51px!important;padding:7px 9px!important;gap:8px!important;
+ min-height:48px!important;padding:6px 8px!important;gap:7px!important;
 }
 .mapWrap #shopQuickPreview.expanded #detail .shopRatingSummaryIcon{
- width:32px!important;height:32px!important;font-size:19px!important;border-radius:8px!important;
+ width:30px!important;height:30px!important;font-size:18px!important;border-radius:8px!important;
 }
-.mapWrap #shopQuickPreview.expanded #detail .shopRatingSummaryText strong{font-size:16px!important;line-height:1.08!important}
+.mapWrap #shopQuickPreview.expanded #detail .shopRatingSummaryText strong{font-size:15px!important;line-height:1.12!important}
 .mapWrap #shopQuickPreview.expanded #detail .shopRatingSummaryText small{
  font-size:9px!important;line-height:1.25!important;margin-top:3px!important;
 }
 .mapWrap #shopQuickPreview.expanded #detail .shopRatingSummaryChevron{font-size:17px!important}
 .mapWrap #shopQuickPreview.expanded #detail .shopCompactMenu{
- min-height:45px!important;padding:6px 9px!important;gap:8px!important;
+ min-height:43px!important;padding:6px 8px!important;gap:7px!important;
  margin:0 0 7px!important;border-radius:9px!important;
 }
 .mapWrap #shopQuickPreview.expanded #detail .shopCompactMenu strong{font-size:11px!important}
@@ -1162,13 +1162,13 @@ html,body{height:100%;width:100%;overflow:hidden}
 }
 .mapWrap #shopQuickPreview.expanded #detail .shopCompactMenu>span:first-child{font-size:16px!important}
 .mapWrap #shopQuickPreview.expanded #detail .shopNoMenuCompact{
- min-height:43px!important;display:flex;align-items:center;font-size:10px!important;
- line-height:1.3!important;padding:9px 10px!important;margin:0 0 7px!important;
+ min-height:41px!important;display:flex;align-items:center;font-size:10px!important;
+ line-height:1.3!important;padding:8px 9px!important;margin:0 0 6px!important;
 }
 .mapWrap #shopQuickPreview.expanded #detail .shopCompactActions{gap:7px!important;margin:0 0 5px!important}
 .mapWrap #shopQuickPreview.expanded #detail .shopCompactActions button{
  min-height:44px!important;height:44px!important;border-radius:9px!important;
- padding:7px 5px!important;font-size:11px!important;line-height:1.15!important;
+ padding:7px 5px!important;font-size:12px!important;line-height:1.15!important;
 }
 .mapWrap #shopQuickPreview.expanded #detail .shopGoogleReviews{
  display:flex!important;align-items:center;justify-content:center;min-height:35px!important;
@@ -1176,7 +1176,7 @@ html,body{height:100%;width:100%;overflow:hidden}
 }
 .mapWrap #shopQuickPreview.expanded #detail .shopRatingExpanded{padding:8px!important}
 @media(max-width:390px){
- .mapWrap #shopQuickPreview.shopQuickPreview.expanded{width:min(350px,calc(100% - 18px))!important}
+ .mapWrap #shopQuickPreview.shopQuickPreview.expanded{width:min(318px,calc(100% - 22px))!important}
  .mapWrap #shopQuickPreview.expanded #detail .detailHeadActions button{width:38px!important;min-width:38px!important}
  .mapWrap #shopQuickPreview.expanded #detail .detailHead h3{font-size:15px!important}
 }
@@ -1413,8 +1413,8 @@ function showDetail(s){
  </details>
  ${menu?`<a class="shopCompactMenu" href="menu.html?shop=${encodeURIComponent(s.id)}"><span aria-hidden="true">▤</span><span><strong>View menu photos</strong><small>Photo: ${fmtMenuDate(menu.photoDate)}</small></span><span aria-hidden="true">›</span></a>`:'<p class="shopNoMenuCompact">▤ No verified menu photos</p>'}
  <div class="shopCompactActions">
-  <button type="button" id="planWalkAtlas" class="action detailPrimary">🧭 Walk on map</button>
-  <button type="button" id="hotelGoogleTransit" class="action secondary">🚋 Public transport</button>
+  <button type="button" id="planWalkAtlas" class="action detailPrimary" aria-label="Plan walking route to this coffeeshop">Walk</button>
+  <button type="button" id="hotelGoogleTransit" class="action secondary" aria-label="Public transport directions to this coffeeshop">Transport</button>
  </div>
  <a class="shopGoogleReviews" href="${gmaps(s)}" target="_blank" rel="noopener noreferrer">${s.name?'★ Google reviews ↗':'View address on Google Maps ↗'}</a>`;
  const close=()=>{showDetail(null);selected=null;renderList()};
