@@ -1223,85 +1223,91 @@ html,body{height:100%;width:100%;overflow:hidden}
 }
 </style>
 
-<style id="atlas-mobile-top-controls-v1">
-/* Map mode belongs in the first row; navigation shortcuts form the second row.
-   Keep 44px+ tap targets, including phones approximately 320px wide. */
+<style id="atlas-mobile-top-controls-v2">
+.mapTopBar,.topHotelSlot{display:contents}
 @media(max-width:760px){
- .mapWrap .mapActions{
-  top:9px!important;
-  left:9px!important;
-  right:9px!important;
-  width:auto!important;
-  max-width:none!important;
-  display:flex!important;
-  align-items:stretch!important;
-  justify-content:center!important;
-  flex-wrap:nowrap!important;
-  gap:6px!important;
+ .mapWrap #mapTopBar{
+  position:absolute!important;top:9px!important;left:8px!important;right:8px!important;
+  display:flex!important;flex-wrap:nowrap!important;align-items:center!important;
+  justify-content:space-between!important;gap:4px!important;height:48px!important;
+  min-width:0!important;z-index:470!important;pointer-events:none
  }
- .mapWrap .mapActions .base-switch{
-  display:flex!important;
-  flex:1 1 0!important;
-  width:0;
-  min-width:0;
-  max-width:100%;
-  margin:0!important;
-  padding:3px!important;
-  gap:3px!important;
+ .mapWrap #mapTopBar>*{pointer-events:auto}
+ .mapWrap #mapTopBar .topHotelSlot{display:contents!important}
+ .mapWrap #mapTopBar .tripTools{
+  position:relative!important;inset:auto!important;top:auto!important;
+  left:auto!important;right:auto!important;bottom:auto!important;
+  flex:0 0 44px!important;width:44px!important;min-width:44px!important;
+  max-width:44px!important;height:44px!important;gap:0!important
  }
- .mapWrap .mapActions .base-switch .floating{
-  display:flex;
-  flex:1 1 0;
-  justify-content:center;
-  align-items:center;
-  min-width:0;
-  min-height:46px!important;
-  padding:8px 4px!important;
-  font-size:12px!important;
+ .mapWrap #mapTopBar #tripToggle.floating{
+  width:44px!important;min-width:44px!important;max-width:44px!important;
+  height:44px!important;min-height:44px!important;max-height:44px!important;
+  padding:0!important;border-radius:11px!important
  }
- .mapWrap .mapActions #routeKeyButton:not(.routeControlHidden){
-  flex:0 0 auto!important;
-  min-height:52px!important;
-  padding:8px 9px!important;
-  font-size:11px!important;
+ .mapWrap #mapTopBar #tripToggle svg{width:21px!important;height:21px!important}
+ .mapWrap #mapTopBar .tripPanel{
+  position:absolute!important;top:calc(100% + 9px)!important;left:0!important;
+  width:min(365px,calc(100vw - 16px))!important;max-width:calc(100vw - 16px)!important;
+  max-height:min(74dvh,calc(100dvh - 95px))!important;z-index:2!important
  }
- /* Hotel shortcut and Shop directory below the map-mode switch. */
- .mapWrap .tripTools{top:74px!important;left:9px!important}
- .mapWrap .shopsToggle{top:74px!important;right:9px!important}
- .mapWrap .routePanel{
-  top:136px!important;
-  max-height:calc(100% - 150px)!important;
+ .mapWrap #mapTopBar .shopsToggle{
+  position:relative!important;inset:auto!important;top:auto!important;left:auto!important;
+  right:auto!important;bottom:auto!important;display:inline-flex!important;
+  flex:0 0 auto!important;align-items:center!important;justify-content:center!important;
+  min-width:61px!important;min-height:44px!important;height:44px!important;
+  padding:4px 6px!important;margin:0!important;border-radius:11px!important;
+  white-space:nowrap!important;font-size:10px!important;line-height:1!important
  }
- /* Compact target icon above map zoom buttons; never request GPS automatically. */
+ .mapWrap #mapTopBar .shopsToggle #shopsToggleCount{display:none!important}
+ .mapWrap #mapTopBar .mapActions{
+  position:relative!important;inset:auto!important;top:auto!important;left:auto!important;
+  right:auto!important;bottom:auto!important;display:flex!important;
+  flex:1 1 0%!important;min-width:0!important;width:auto!important;max-width:none!important;
+  align-items:center!important;justify-content:flex-end!important;flex-wrap:nowrap!important;
+  gap:3px!important;margin:0!important;padding:0!important
+ }
+ .mapWrap #mapTopBar .base-switch{
+  display:flex!important;flex:1 1 0%!important;width:auto!important;min-width:0!important;
+  max-width:none!important;margin:0!important;padding:2px!important;gap:1px!important;
+  border-radius:11px!important
+ }
+ .mapWrap #mapTopBar .base-switch .floating{
+  display:flex!important;flex:1 1 0%!important;min-width:0!important;width:auto!important;
+  height:40px!important;min-height:40px!important;justify-content:center!important;
+  align-items:center!important;padding:6px 1px!important;font-size:10px!important;
+  line-height:1!important;border-radius:8px!important;white-space:nowrap!important
+ }
+ .mapWrap #mapTopBar #routeKeyButton:not(.routeControlHidden){
+  display:inline-flex!important;flex:0 0 37px!important;
+  width:37px!important;min-width:37px!important;height:44px!important;
+  min-height:44px!important;justify-content:center!important;align-items:center!important;
+  padding:3px!important;font-size:10px!important;line-height:1!important;border-radius:10px!important
+ }
+ .mapWrap #mapTopBar .routeControlHidden{display:none!important}
+ .mapWrap .routePanel{top:65px!important;max-height:calc(100% - 80px)!important}
  .mapWrap #mapCentreControl.mapCentreControl{
-  display:flex!important;
-  width:48px!important;
-  min-width:48px!important;
-  max-width:48px!important;
-  height:48px!important;
-  min-height:48px!important;
-  padding:0!important;
-  border-radius:13px!important;
-  right:10px!important;
-  bottom:126px!important;
-  align-items:center!important;
-  justify-content:center!important;
+  display:flex!important;width:48px!important;min-width:48px!important;max-width:48px!important;
+  height:48px!important;min-height:48px!important;padding:0!important;border-radius:13px!important;
+  right:10px!important;bottom:126px!important;align-items:center!important;justify-content:center!important
  }
- .mapWrap #mapCentreControl svg{
-  display:block;
-  width:24px;
-  height:24px;
-  pointer-events:none;
- }
+ .mapWrap #mapCentreControl svg{display:block;width:24px;height:24px;pointer-events:none}
  .mapWrap.has-detail #mapCentreControl.mapCentreControl,
  .mapWrap.has-preview #mapCentreControl.mapCentreControl,
  .mapWrap.trip-open #mapCentreControl.mapCentreControl{display:none!important}
 }
-@media(max-width:360px){
- .mapWrap .mapActions{gap:4px!important}
- .mapWrap .mapActions .base-switch{gap:1px!important}
- .mapWrap .mapActions .base-switch .floating{font-size:11px!important;padding:7px 2px!important}
- .mapWrap .mapActions #routeKeyButton:not(.routeControlHidden){padding:7px 6px!important;font-size:10px!important}
+@media(max-width:345px){
+ .mapWrap #mapTopBar{gap:3px!important;left:7px!important;right:7px!important}
+ .mapWrap #mapTopBar .shopsToggle{
+  flex-basis:43px!important;min-width:43px!important;width:43px!important;
+  font-size:0!important;padding:0!important
+ }
+ .mapWrap #mapTopBar .shopsToggle::before{content:"☷";display:block;font-size:20px;line-height:1}
+ .mapWrap #mapTopBar .mapActions{gap:2px!important}
+ .mapWrap #mapTopBar .base-switch .floating{font-size:10px!important}
+ .mapWrap #mapTopBar #routeKeyButton:not(.routeControlHidden){
+  flex-basis:35px!important;width:35px!important;min-width:35px!important
+ }
 }
 </style>
 </head>
@@ -1327,9 +1333,8 @@ html,body{height:100%;width:100%;overflow:hidden}
    <div class="list" id="shopList"></div>
   </aside>
   <div class="mapWrap">
-   <button type="button" class="floating shopsToggle" id="shopsToggle" aria-controls="shopDrawer" aria-expanded="false">☷ Shops <span id="shopsToggleCount">167</span></button>
    <div id="map" role="region" aria-label="Interactive map of Amsterdam coffeeshop locations"></div>
-   <div class="mapActions"><div class="base-switch" role="group" aria-label="Map view"><button type="button" id="streetMode" class="floating" aria-pressed="false">Street</button><button type="button" id="transportMode" class="floating" aria-pressed="false">Bus</button><button type="button" id="routesMode" class="floating active" aria-pressed="true">Metro</button></div><button type="button" id="routeKeyButton" class="floating routeControlHidden" aria-expanded="false" aria-controls="routePanel">▤ Key</button><button id="resetMap" class="floating">⌖ Amsterdam</button><button id="locateMap" class="floating">◎ My location</button></div><button type="button" class="mapCentreControl floating" id="mapCentreControl" title="Centre map on your position, saved hotel or Amsterdam" aria-label="Centre map on GPS position, saved accommodation or central Amsterdam"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></button><section class="routePanel hidden" id="routePanel" aria-label="Individual transport line colour key"><div class="routePanelHead"><b>Metro & tram lines · reference</b><button type="button" id="closeRoutePanel" aria-label="Close route key">×</button></div><p id="routeInfo" class="routeInfo" role="status">Choose Lines to load numbered routes.</p><div class="routePanelTools"><button type="button" id="routeAll">All</button><button type="button" id="routeNone">None</button><button type="button" id="routeRetry" class="routeControlHidden">Retry</button></div><div class="routePanelList" id="routeKey"></div><small class="routeDisclaimer">2025 municipal route map. Some routes changed in 2026; missing lines are not shown. Colours are illustrative. Use Google Maps or GVB for current journeys.</small></section>
+   <div class="mapTopBar" id="mapTopBar" aria-label="Map controls"><div class="topHotelSlot" id="topHotelSlot"></div><button type="button" class="floating shopsToggle" id="shopsToggle" aria-label="Open coffeeshop directory" aria-controls="shopDrawer" aria-expanded="false">☷ Shops <span id="shopsToggleCount">167</span></button><div class="mapActions"><div class="base-switch" role="group" aria-label="Map view"><button type="button" id="streetMode" class="floating" aria-pressed="false">Street</button><button type="button" id="transportMode" class="floating" aria-pressed="false">Bus</button><button type="button" id="routesMode" class="floating active" aria-pressed="true">Metro</button></div><button type="button" id="routeKeyButton" class="floating routeControlHidden" aria-expanded="false" aria-controls="routePanel">▤ Key</button><button id="resetMap" class="floating">⌖ Amsterdam</button><button id="locateMap" class="floating">◎ My location</button></div></div><button type="button" class="mapCentreControl floating" id="mapCentreControl" title="Centre map on your position, saved hotel or Amsterdam" aria-label="Centre map on GPS position, saved accommodation or central Amsterdam"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></button><section class="routePanel hidden" id="routePanel" aria-label="Individual transport line colour key"><div class="routePanelHead"><b>Metro & tram lines · reference</b><button type="button" id="closeRoutePanel" aria-label="Close route key">×</button></div><p id="routeInfo" class="routeInfo" role="status">Choose Lines to load numbered routes.</p><div class="routePanelTools"><button type="button" id="routeAll">All</button><button type="button" id="routeNone">None</button><button type="button" id="routeRetry" class="routeControlHidden">Retry</button></div><div class="routePanelList" id="routeKey"></div><small class="routeDisclaimer">2025 municipal route map. Some routes changed in 2026; missing lines are not shown. Colours are illustrative. Use Google Maps or GVB for current journeys.</small></section>
    <div id="shopQuickPreview" class="shopQuickPreview hidden" role="group" aria-label="Selected coffeeshop preview">
     <div class="shopQuickHead">
      <div class="shopQuickIdentity"><span class="shopQuickArea" id="shopQuickArea">COFFEESHOP</span><button type="button" id="shopQuickName" class="shopQuickName" aria-label="Open full coffeeshop details"></button></div>
@@ -1917,6 +1922,6 @@ window.addEventListener('message',event=>{
  if(field){field.value=query;field.dispatchEvent(new Event('input',{bubbles:true}));if(query)openShops();}
 });
 </script>
-<script src="assets/atlas-trip.js?v=8"></script>
+<script src="assets/atlas-trip.js?v=9"></script>
 </body>
 </html>
