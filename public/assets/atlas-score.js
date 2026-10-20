@@ -28,7 +28,12 @@ function sourceEstimate(shop,detail){
  const count=Number(r.reviews),raw=Number(r.rating);
  const prior=12,baseline=3.5;
  const score=(raw*count+baseline*prior)/(count+prior);
- return {...(detail||{reviewers:0,sample:[],record:null,latest:null}),score,kind:"community",sourceRating:r,confidence:count<5?"Very limited":count<15?"Limited":"Historical community data"};
+ // The date we last inspected a source is NOT the date its customers reviewed it.
+ // No age-based boost is applied unless the dates of those reviews were independently verified.
+ const legacy=r.evidenceEra==="legacy";
+ const sampleLevel=count<5?"Tiny sample":count<15?"Small sample":count<30?"Moderate sample":"Larger sample";
+ const confidence=legacy?"Old review evidence":sampleLevel+" · age unverified";
+ return {...(detail||{reviewers:0,sample:[],record:null,latest:null}),score,kind:"community",sourceRating:r,confidence,legacy};
 }
 function assess(shop){
  const record=store.evidence?.[shop.id];if(!record)return sourceEstimate(shop,null);
@@ -164,10 +169,12 @@ function detail(shop){
   const editorial=a.record?.reviewNote?'<p>'+esc(a.record.reviewNote)+'</p>':'';
   const ageNotice=r.sourceAgeNote?'<p class="atlasAgeNote">'+esc(r.sourceAgeNote)+'</p>':'';
   const auditLink=a.record?.reviewSource?'<p><a href="'+esc(a.record.reviewSource)+'" target="_blank" rel="noopener">Address research source ↗</a></p>':'';
-  return '<section class="atlasVerdict atlasEstimated" aria-label="Atlas community estimate"><div class="atlasScoreHead"><div><small>ATLAS ESTIMATE · COMMUNITY DATA</small><strong>★ '+a.score.toFixed(1)+' <small>/ 5</small></strong></div><span>'+esc(a.confidence)+'</span></div>'
+  return '<section class="atlasVerdict atlasEstimated" aria-label="Atlas community estimate"><div class="atlasScoreHead"><div><small>ATLAS ESTIMATE · '+(a.legacy?'OLDER REVIEWS':'COMMUNITY DATA')+'</small><strong>★ '+a.score.toFixed(1)+' <small>/ 5</small></strong></div><span>'+esc(a.confidence)+'</span></div>'
    +'<p class="atlasBrief">Source-adjusted community average — not a flower or service assessment.</p>'+seats+categoryPanel(shop)
    +'<details class="atlasMore"><summary>How was this estimated? · Sources</summary>'
-   +'<p>'+esc(r.source)+' lists '+raw.toFixed(1)+'/5 from '+count+' historical reviews. Atlas adjusts small samples toward 3.5/5 using 12 prior reviews, to reduce the impact of just one or two ratings. Review ages and reviewer identities are not individually verified.</p>'+ageNotice
+   +'<p>'+esc(r.source)+' lists '+raw.toFixed(1)+'/5 from '+count+' historical reviews. Atlas adjusts small samples toward 3.5/5 using 12 prior reviews, to reduce the impact of just one or two ratings. Review ages and reviewer identities are not individually verified.</p>'
+   +(a.legacy?'<p class="atlasAgeNote"><strong>Older records only:</strong> '+esc(r.evidenceEraNote||'The visible source reviews are years old.')+' This is not evidence of current stock or service.</p>':'')
+   +ageNotice
    +'<p>This historical overall estimate must not be used to infer category ratings. Any categories shown above come only from individually dated accounts; categories with insufficient observations remain unrated.</p>'
    +'<p><a href="'+esc(r.url)+'" target="_blank" rel="noopener">Read original source ↗</a></p>'+recent+editorial+auditLink+unknownSeating
    +(notes?'<ul>'+notes+'</ul>':'')+'</details></section>';
