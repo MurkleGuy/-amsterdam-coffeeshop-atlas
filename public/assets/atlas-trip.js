@@ -4,7 +4,8 @@
    Photon searches send the typed hotel query and the map centre. */
 (function(){
  'use strict';
- if(typeof L==='undefined'||typeof map==='undefined'||!map)return;
+ if(typeof L==='undefined'||typeof map==='undefined'||!map||!window.BudMapNavMath)return;
+ const navMath=window.BudMapNavMath;
  const STORAGE='atlas-my-hotel-v1';
  const SETUP_KEY='atlas-first-hotel-prompt-v1';
  let welcomeActive=false;
@@ -12,6 +13,7 @@
  const escTrip=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','"':'&quot;',"'":'&#39;'}[c]));
  let hotel=null,hotelMarker=null,hotelLayer=L.layerGroup().addTo(map),searchLayer=L.layerGroup().addTo(map);
  let locationMarker=null,accuracyCircle=null,gpsWatch=null,locationFix=null,walkingShape=null,walkingInfo=null,lastShop=null,maneuvers=[],gpsFollow=false;
+ let walkingProgress=null,previousProgressFix=null,nextManeuverIndex=1,arrived=false;
  let hotelLookupController=null,hotelLookupSequence=0,routeController=null,routeSequence=0;
  const validPoint=(lat,lng)=>Number.isFinite(lat)&&Number.isFinite(lng)&&lat>=52.1&&lat<=52.55&&lng>=4.55&&lng<=5.3;
  try{const h=JSON.parse(localStorage.getItem(STORAGE)||'null');if(h&&validPoint(h.lat,h.lng)&&typeof h.name==='string')hotel=h;}catch{}
@@ -36,6 +38,45 @@
  '<details class="tripPrivacy"><summary>Privacy & navigation info</summary><p class="tripNote">Your hotel stays on this device. Searches use Photon/OpenStreetMap. Walking routes send coordinates to a routing service. GPS needs your permission and only runs while the page is open. Check street crossings and use a dedicated navigation app when needed.</p></details>'+
  '</section>';
  (document.getElementById('topHotelSlot')||document.querySelector('.mapWrap')).appendChild(wrap);
+ const navigationBanner=document.createElement('aside');
+ navigationBanner.id='budmapNavBanner';
+ navigationBanner.className='budmapNavBanner hidden';
+ navigationBanner.setAttribute('aria-label','Live walking turn directions');
+ navigationBanner.innerHTML='<div class="budmapNavSymbol" id="budmapNavSymbol" aria-hidden="true">↑</div>'
+  +'<div class="budmapNavCopy"><small id="budmapNavLabel">WALKING NAVIGATION</small>'
+  +'<strong id="budmapNavInstruction" role="status" aria-live="polite">Locating you…</strong>'
+  +'<span id="budmapNavDistance" aria-live="off">Waiting for GPS</span></div>'
+  +'<div class="budmapNavButtons"><button type="button" id="budmapNavReplan" aria-label="Replan walking route from my location" title="Replan route">↻</button>'
+  +'<button type="button" id="budmapNavStop" aria-label="Stop walking guidance" title="Stop guidance">×</button></div>';
+ document.querySelector('.mapWrap').appendChild(navigationBanner);
+ const setBanner=(symbol,instruction,distance,label='NEXT TURN',warning=false)=>{
+  if(!gpsFollow)return;
+  navigationBanner.classList.remove('hidden');
+  navigationBanner.classList.toggle('warning',warning);
+  document.querySelector('.mapWrap').classList.add('nav-guiding');
+  $('budmapNavSymbol').textContent=symbol;
+  $('budmapNavLabel').textContent=label;
+  // Screen readers announce turn changes, not every GPS distance update.
+  if($('budmapNavInstruction').textContent!==instruction)$('budmapNavInstruction').textContent=instruction;
+  $('budmapNavDistance').textContent=distance;
+ };
+ const hideBanner=()=>{
+  navigationBanner.classList.add('hidden');
+  document.querySelector('.mapWrap').classList.remove('nav-guiding');
+ };
+ const endGuidance=()=>{
+  gpsFollow=false;
+  hideBanner();
+  $('startNavigation').textContent='▶ Start GPS guidance';
+ };
+ $('budmapNavStop').onclick=()=>{
+  endGuidance();
+  showMessage('Turn guidance stopped. Live GPS can remain on.');
+ };
+ $('budmapNavReplan').onclick=()=>{
+  if(lastShop)planTo(lastShop,locationFix||hotel);
+ };
+
  const tripVisible=()=>{
   const open=!document.getElementById('tripPanel').classList.contains('hidden');
   document.querySelector('.mapWrap')?.classList.toggle('trip-open',open);
@@ -167,7 +208,7 @@
  }
  function stopGPS(){
   if(gpsWatch!==null){try{navigator.geolocation?.clearWatch(gpsWatch)}catch(e){}gpsWatch=null;}
-  gpsFollow=false;
+  endGuidance();
   locationFix=null;
   if(locationMarker){map.removeLayer(locationMarker);locationMarker=null;}
   if(accuracyCircle){map.removeLayer(accuracyCircle);accuracyCircle=null;}
@@ -182,7 +223,7 @@
   try{
    gpsWatch=navigator.geolocation.watchPosition(
     pos=>setLocation(pos.coords.latitude,pos.coords.longitude,pos.coords.accuracy,false),
-    err=>{stopGPS();showMessage('Live GPS could not start: '+(err.code===1?'permission denied':'try again outdoors or use Google Maps'))},
+    err=>{stopGPS();$('tripPanel').classList.remove('hidden');$('tripToggle').setAttribute('aria-expanded','true');showMessage('Live GPS could not start: '+(err.code===1?'permission denied':'try again outdoors or use Google Maps'))},
     {enableHighAccuracy:true,maximumAge:2500,timeout:17000}
    );
   }catch(e){stopGPS();showMessage('Live GPS could not start. Use Google Maps for navigation.');return false;}
@@ -222,12 +263,14 @@
    else if(locationFix)startSource=locationFix;
   }
   if(!startSource){$('tripPanel').classList.remove('hidden');$('tripToggle').setAttribute('aria-expanded','true');showMessage('Save a hotel or enable live location to plan a walk.');return;}
+  if(!lastShop||lastShop.id!==s.id)endGuidance();
   lastShop=s;
   const sequence=++routeSequence;
   routeController?.abort();
   if(walkingShape){map.removeLayer(walkingShape);walkingShape=null;}
-  walkingInfo=null;maneuvers=[];
-  $('tripPanel').classList.remove('hidden');$('tripToggle').setAttribute('aria-expanded','true');
+  walkingInfo=null;maneuvers=[];walkingProgress=null;previousProgressFix=null;nextManeuverIndex=1;arrived=false;
+  if(gpsFollow)setBanner('↻','Replanning walking route…','Using your latest GPS position','REPLANNING');
+  else{$('tripPanel').classList.remove('hidden');$('tripToggle').setAttribute('aria-expanded','true');}
   $('tripRoute').classList.remove('hidden');$('tripRouteSummary').textContent='Planning walking route…';$('tripRouteSteps').innerHTML='';
   $('googleWalkFallback').href=googleFrom(s,startSource);
   const body={locations:[{lat:startSource.lat,lon:startSource.lng},{lat:s.lat,lon:s.lng}],costing:'pedestrian',costing_options:{pedestrian:{walkway_factor:.8,sidewalk_factor:.8,alley_factor:3,driveway_factor:7,max_hiking_difficulty:0}},units:'kilometers',directions_options:{language:'en-US',units:'kilometers'}};
@@ -244,8 +287,8 @@
    if(!shape||shape.length<2)throw Error('Routing provider supplied no walkable route');
    if(walkingShape)map.removeLayer(walkingShape);
    walkingShape=L.polyline(shape,{color:'#1581c1',weight:5,opacity:.86}).addTo(map);
-   walkingInfo={shape,destination:s};
-   maneuvers=leg.maneuvers||[];
+   walkingInfo={shape,destination:s,offsets:navMath.cumulative(shape)};
+   maneuvers=Array.isArray(leg.maneuvers)?leg.maneuvers:[];
    map.fitBounds(walkingShape.getBounds(),{padding:[30,30],maxZoom:16});
    const summary=json.trip.summary||leg.summary||{};
    $('tripRouteSummary').textContent='To '+(s.name||s.address)+' · '+Number(summary.length||0).toFixed(2)+' km · about '+Math.round(Number(summary.time||0)/60)+' min walking.';
@@ -254,6 +297,7 @@
   }catch(error){
    if(sequence!==routeSequence)return;
    walkingInfo=null;
+   if(gpsFollow)setBanner('!','Could not replan this walk','Open the planner for Google Maps or try again','ROUTE UNAVAILABLE',true);
    $('tripRouteSummary').textContent='Could not draw a walking route here. Google Maps can still guide you.';
    $('tripRouteSteps').textContent=error?.name==='AbortError'?'Routing timed out. Use Google Maps or tap Replan.':'This route is unavailable from the map provider. Use Google Maps or tap Replan.';
   }finally{
