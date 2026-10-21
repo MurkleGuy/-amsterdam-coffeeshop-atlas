@@ -79,7 +79,7 @@ the status of external product-page checks, the number of dated editorial
 quality-specific accounts already on file, and a null product score until
 a defensible, permitted scoring basis exists.
 
-The first 12 product-page spot-checks were carried out on 21 October 2026:
+The first 32 venue-product-page inspections were carried out on 21 October 2026:
 Family First (April 2023 menu), 7th Heaven (February 2026 menu),
 Tweede Kamer (November 2025 menu), Boerejongens West and Centre,
 Coffeeshop Amsterdam, ProGram, Abraxas and four separately matched
@@ -87,8 +87,13 @@ Hunters branches. Product stars were visible, but they
 have **not been licensed, imported or converted into BudMap Weed Scores**.
 The tracker also identifies 156 existing venue-rating website links as
 research leads, of which 146 point to Greenmeister venue pages. These
-are **not** verified product-rating feeds; the remaining 155 shop-product
-pages have not been spot-checked. All 167 shop records remain in scope.
+are **not** verified product-rating feeds. At this point, **32 pages have
+undergone an initial inspection**: 30 show at least one product rating,
+one (Pacific) lists no products and one (Paradox) has a source address
+ending 2R rather than the tracked 2H. The remaining **135 shops have not
+had product pages checked**. None of the inspected product ratings has
+been included in an official BudMap Weed Quality Score. All 167 shop
+records remain in scope.
 
 The full scope, evidence gates, permissions considerations and visitor
 review proposals are in [the research plan](WEED-QUALITY-RESEARCH-PLAN.md).
