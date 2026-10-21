@@ -33,40 +33,42 @@ function assess(shop){
  // Adjust each site independently, then average websites equally.
  // Do not pool all reviews: a large website must not overpower other websites.
  const displayScore=sourceCount?sources.reduce((sum,r)=>sum+adjustedSiteScore(r),0)/sourceCount:null;
- // A combined BudMap Score still needs ratings from two independent websites.
- const score=sourceCount>=2?displayScore:null;
+ // Apply the same adjusted BudMap Score even when only one site is available.
+ const score=displayScore;
  const lowSample=sources.some(r=>Number(r.reviews)<5);
  const older=sources.some(r=>r.evidenceEra==='legacy');
- return {score,displayScore,sourceAverage,sourceCount,kind:sourceCount===0?'unrated':sourceCount===1?'preliminary':'combined',
-  lowSample,older,sources,confidence:sourceCount===0?'Awaiting ratings':
-  sourceCount===1?'Preliminary':sourceCount===2?'Two-site average':'Multi-site average'};
+ const totalReviews=sources.reduce((sum,r)=>sum+Number(r.reviews),0);
+ return {score,displayScore,sourceAverage,sourceCount,totalReviews,
+  kind:sourceCount===0?'unrated':'rated',lowSample,older,sources,
+  confidence:sourceCount===0?'Awaiting ratings':sourceCount===1?'1 website':sourceCount+' websites'};
+}
+const plural=(n,a,b)=>n===1?a:b;
+function evidenceLabel(a){
+ return a.sourceCount+' '+plural(a.sourceCount,'website','websites')
+ + ' · '+a.totalReviews+' '+plural(a.totalReviews,'review','reviews');
 }
 function listTag(shop){
  const a=assess(shop);
- if(a.sourceCount===0)return '<span class="atlasPendingTag">BudMap · not yet rated</span>';
- if(a.sourceCount===1){const count=Number(a.sources[0].reviews);return '<span class="atlasTag atlasEstimateTag">★ '+a.displayScore.toFixed(1)+'/10 · Preliminary · 1 site · '+count+' review'+(count===1?'':'s')+'</span>';}
- return '<span class="atlasTag">★ BudMap '+a.score.toFixed(1)+'/10 · '+a.sourceCount+' sites · Adjusted</span>';
+ if(a.score==null)return '<span class="atlasPendingTag">BudMap · not yet rated</span>';
+ return '<span class="atlasTag">★ BudMap '+a.score.toFixed(1)+'/10 · '+evidenceLabel(a)+'</span>';
 }
 function detail(shop){
  const a=assess(shop);
- if(a.sourceCount===0)return '<section class="atlasVerdict atlasPending" aria-label="BudMap rating"><div class="atlasScoreHead"><strong>BudMap Score</strong><span class="atlasAwait">Not rated yet</span></div><p class="atlasBrief">We have not found a suitable independently published venue rating for this address. No score has been invented.</p></section>';
+ if(a.score==null)return '<section class="atlasVerdict atlasPending" aria-label="BudMap rating"><div class="atlasScoreHead"><strong>BudMap Score</strong><span class="atlasAwait">Not rated yet</span></div><p class="atlasBrief">No suitable published venue rating has been matched to this address. No score has been invented.</p></section>';
  const sampleWarning=a.lowSample?' At least one website has fewer than five reviews.':'';
  const ageWarning=a.older?' Some reviews may refer to an earlier business or trading name.':'';
- if(a.sourceCount===1){
-  const r=a.sources[0];
-  return '<section class="atlasVerdict atlasEstimated" aria-label="Preliminary confidence-adjusted venue rating">'
-   +'<div class="atlasScoreHead"><div><small>PRELIMINARY RATING · 1 SITE</small><strong>★ '+a.displayScore.toFixed(1)+' <small>/ 10</small></strong></div><span>1 website · '+Number(r.reviews)+' review'+(Number(r.reviews)===1?'':'s')+'</span></div>'
-   +'<p class="atlasBrief">Preliminary adjusted rating from one website. Ratings with few reviews are moved towards 7/10 rather than treated as reliable extremes; a second site is needed for the combined ranking.</p>'
-   +'<p class="atlasUnknown">The adjustment uses five statistical prior reviews at 7/10; these are not real reviews. Historical ratings are not a guarantee of the current experience.'+escaped(sampleWarning+ageWarning)+'</p></section>';
- }
  return '<section class="atlasVerdict" aria-label="BudMap Score">'
-  +'<div class="atlasScoreHead"><div><small>BUDMAP SCORE</small><strong>★ '+a.score.toFixed(1)+' <small>/ 10</small></strong></div><span>'+escaped(a.confidence)+'</span></div>'
-  +'<p class="atlasBrief">Adjusted average of '+a.sourceCount+' independently published venue ratings. Each website is adjusted for its own review count, then all websites count equally.</p>'
-  +'<p class="atlasUnknown">Small samples move towards 7/10 using five statistical prior reviews, not five additional customer reviews. Source ratings are dated snapshots, not tests of current products or service.'+escaped(sampleWarning+ageWarning)+'</p></section>';
+  +'<div class="atlasScoreHead"><div><small>BUDMAP SCORE</small><strong>★ '+a.score.toFixed(1)+' <small>/ 10</small></strong></div><span>'+evidenceLabel(a)+'</span></div>'
+  +'<p class="atlasBrief">Review-count-adjusted rating out of 10. Each published website average is adjusted towards 7/10 when based on fewer reviews. Available website ratings are then averaged equally.</p>'
+  +'<p class="atlasUnknown">Review counts are reported by individual websites, and the same visitor may have reviewed on more than one. Five statistical prior reviews are used in the adjustment; they are not real customer reviews. Historic ratings do not guarantee current quality.'+escaped(sampleWarning+ageWarning)+'</p></section>';
 }
 function coverage(shops){
- const out={combined:0,preliminary:0,unrated:0};
- for(const shop of shops){out[assess(shop).kind]++;}
+ const out={rated:0,unrated:0,singleSite:0,multiSite:0};
+ for(const shop of shops){
+  const a=assess(shop);
+  if(a.score==null)out.unrated++;
+  else{out.rated++;if(a.sourceCount===1)out.singleSite++;else out.multiSite++;}
+ }
  return out;
 }
 window.BudMapScore={assess,listTag,detail,coverage};
