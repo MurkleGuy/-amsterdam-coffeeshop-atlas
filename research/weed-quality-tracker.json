@@ -41,7 +41,9 @@
     "sourceRatingReuseRightsVerified": 0,
     "categoryScoringReady": 0,
     "researchPassCompletedAt": "2026-10-21",
-    "venueIdentityUnresolved": 4
+    "venueIdentityUnresolved": 4,
+    "earlyEditorialQualityEstimates": 8,
+    "shopsWithDatedQualitySpecificReports": 23
   },
   "shops": [
     {
@@ -3355,8 +3357,8 @@
       "shop": "Sativa",
       "address": "Spuistraat 118, 1012 VA, Amsterdam",
       "overallSources": 1,
-      "qualityReportCount": 2,
-      "qualityEditorialStatus": "insufficient_dated_evidence",
+      "qualityReportCount": 3,
+      "qualityEditorialStatus": "early_estimate_only",
       "productResearch": {
         "status": "product_rating_listing_found",
         "checkedAt": "2026-10-21",
@@ -3373,7 +3375,9 @@
         "url": "https://en.greenmeister.com/coffeeshop/sativa-amsterdam-amsterdam",
         "status": "existing_general_venue_rating_page_only",
         "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
-      }
+      },
+      "qualityEvidenceLastCheckedAt": "2026-10-21",
+      "qualityEvidenceNote": "Early editorial quality assessment now includes a July 2025 explicitly price-to-quality-focused shop review; score is an estimate from only three handles."
     },
     {
       "id": 136,
@@ -3901,8 +3905,8 @@
       "shop": "Relax Zuid",
       "address": "Vechtstraat 9, 1078 RE, Amsterdam",
       "overallSources": 1,
-      "qualityReportCount": 0,
-      "qualityEditorialStatus": "no_dated_product_evidence",
+      "qualityReportCount": 4,
+      "qualityEditorialStatus": "early_estimate_only",
       "productResearch": {
         "status": "venue_profile_no_product_menu",
         "checkedAt": "2026-10-21",
@@ -3920,7 +3924,9 @@
         "url": "https://en.greenmeister.com/coffeeshop/relax-zuid-amsterdam",
         "status": "existing_general_venue_rating_page_only",
         "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
-      }
+      },
+      "qualityEvidenceLastCheckedAt": "2026-10-21",
+      "qualityEvidenceNote": "Early editorial score from four quality-relevant comments concentrated September–October 2025; tight timeframe and unverified reviewer independence mean low confidence."
     },
     {
       "id": 158,
