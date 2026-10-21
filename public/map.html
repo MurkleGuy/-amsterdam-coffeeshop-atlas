@@ -1350,7 +1350,7 @@ html,body{height:100%;width:100%;overflow:hidden}
     <div class="desc">Search shops or streets, save favourites, and get walking directions.</div>
     <div class="searchWrap"><span class="glass" aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search coffeeshops, streets, postcodes…" autocomplete="off" aria-label="Search coffeeshops"></div>
     <div class="filters"><select id="area" aria-label="Filter by area"><option value="all">All Amsterdam areas</option><option value="Centrum">Centrum</option><option value="West">West / Westpoort</option><option value="Nieuw-West">Nieuw-West</option><option value="Zuid">Zuid</option><option value="Oost">Oost</option><option value="Noord">Noord</option><option value="Zuidoost">Zuidoost</option></select><button id="nearby" title="Use your location to sort by distance">⌖ Near me</button></div>
-    <div class="discoverToolbar"><label for="exploreMode">Discover</label><select id="exploreMode" aria-label="Explore early weed-quality research, overall ratings or menus"><option value="weed">✿ Best Weed · early evidence</option><option value="atlas">★ Best Overall · BudMap</option><option value="all">All coffeeshops</option><option value="menus">▤ Recent menus (120 days)</option></select><small id="discoveryInfo" aria-live="polite"></small></div>
+    <div class="discoverToolbar"><label for="exploreMode">Discover</label><select id="exploreMode" aria-label="Explore all coffeeshops, weed-quality research, overall ratings or menus"><option value="all">All coffeeshops</option><option value="weed">✿ Weed quality · Research underway</option><option value="atlas">★ Best Overall · BudMap</option><option value="menus">▤ Recent menus (120 days)</option></select><small id="discoveryInfo" aria-live="polite"></small></div>
     <div class="tabline"><small id="listCount">167 places</small><div class="tabButtons"><button id="allTab" class="active">All places</button><button id="savedTab">★ Saved <span id="favCount">0</span></button></div></div>
    </div>
    <div class="status"><span id="statusDot" class="dot"></span><span id="statusText" aria-live="polite">Loading map locations from public address records…</span></div>
@@ -1435,13 +1435,7 @@ function filtered(){
   &&(!q||[s.name,...(s.aliases||[]),s.address,s.street,s.postcode,getArea(s)].join(' ').toLowerCase().includes(q)));
  if(view==='atlas')out=out.filter(s=>budRating(s).score!=null);
  if(view==='menus')out=out.filter(s=>!!menuFor(s));
- if(view==='weed')out.sort((a,b)=>{
-  const first=weedRating(a),second=weedRating(b);
-  return Number(second.score!=null)-Number(first.score!=null)
-   ||(second.score??0)-(first.score??0)||(second.score!=null?second.count-first.count:0)
-   ||(a.name||a.street).localeCompare(b.name||b.street);
- });
- else if(view==='atlas')out.sort((a,b)=>{
+ if(view==='atlas')out.sort((a,b)=>{
   const first=budRating(a),second=budRating(b);
   return second.score-first.score||second.sourceCount-first.sourceCount
    ||second.totalReviews-first.totalReviews||(a.name||'').localeCompare(b.name||'');
@@ -1454,14 +1448,14 @@ function filtered(){
 function renderList(){
  const arr=filtered(),view=$('exploreMode').value,counts=window.BudMapScore.coverage(official),weedCounts=window.BudMapWeed.coverage(official);
  $('discoveryInfo').textContent=view==='weed'
-  ?weedCounts.rated+' early weed-quality estimates · '+weedCounts.awaiting+' shops not yet quality-rated · Limited dated reports, not a definitive city-wide top ten'
+  ?weedCounts.rated+' provisional weed estimates · '+weedCounts.awaiting+' not yet quality-rated · Alphabetical research view; Best Weed rankings paused until coverage improves'
   :view==='atlas'
   ?counts.rated+' BudMap scores · highest first · review counts shown'
   :view==='menus'?'Dated menus from the last '+INTEL.maxMenuAgeDays+' days; newest first'
   :counts.rated+' BudMap scores · '+counts.unrated+' awaiting ratings';
  $('shopsToggleCount').textContent=arr.length;
  $('listCount').textContent=arr.length+' '+(arr.length===1?'place':'places');
- $('shopList').innerHTML=arr.length?arr.map((s,index)=>`<div class="listing ${selected===s.id?'selected':''}" role="button" tabindex="0" data-id="${s.id}"><span class="num">${s.id}</span><div><div class="l-title">${esc(s.name||s.street+' '+s.number)}</div><div class="l-address">${esc(s.address)}</div><div class="l-meta">${esc(getArea(s))}${s.lat!=null?' · On map':' · Locating…'}${myPos&&s.lat!=null?' · '+hav(myPos,[s.lat,s.lng]).toFixed(1)+' km away':''}</div><div class="listIntel">${view==='weed'||view==='all'?window.BudMapWeed.listTag(s)+window.BudMapScore.listTag(s):window.BudMapScore.listTag(s)+(weedRating(s).score!=null?window.BudMapWeed.listTag(s):'')}${view==='atlas'||(view==='weed'&&weedRating(s).score!=null)?'<span class="rankTag">'+(view==='weed'?'Early #':'#')+(index+1)+'</span>':''}${menuFor(s)?'<span class="menuTag">▤ Menu '+fmtMenuDate(menuFor(s).photoDate)+'</span>':''}</div></div><button aria-label="${isSaved(s)?'Remove from':'Add to'} favourites" class="heart ${isSaved(s)?'saved':''}" data-fav="${s.id}">${isSaved(s)?'★':'☆'}</button></div>`).join(''):'<p style="margin:24px 9px;color:#708075;font-size:13px">No matches. Try another shop name, postcode, or area.</p>';
+ $('shopList').innerHTML=arr.length?arr.map((s,index)=>`<div class="listing ${selected===s.id?'selected':''}" role="button" tabindex="0" data-id="${s.id}"><span class="num">${s.id}</span><div><div class="l-title">${esc(s.name||s.street+' '+s.number)}</div><div class="l-address">${esc(s.address)}</div><div class="l-meta">${esc(getArea(s))}${s.lat!=null?' · On map':' · Locating…'}${myPos&&s.lat!=null?' · '+hav(myPos,[s.lat,s.lng]).toFixed(1)+' km away':''}</div><div class="listIntel">${view==='weed'||view==='all'?window.BudMapWeed.listTag(s)+window.BudMapScore.listTag(s):window.BudMapScore.listTag(s)+(weedRating(s).score!=null?window.BudMapWeed.listTag(s):'')}${view==='atlas'?'<span class="rankTag">#'+(index+1)+'</span>':''}${menuFor(s)?'<span class="menuTag">▤ Menu '+fmtMenuDate(menuFor(s).photoDate)+'</span>':''}</div></div><button aria-label="${isSaved(s)?'Remove from':'Add to'} favourites" class="heart ${isSaved(s)?'saved':''}" data-fav="${s.id}">${isSaved(s)?'★':'☆'}</button></div>`).join(''):'<p style="margin:24px 9px;color:#708075;font-size:13px">No matches. Try another shop name, postcode, or area.</p>';
  $('shopList').querySelectorAll('[data-id]').forEach(el=>{el.addEventListener('click',e=>{if(e.target.closest('[data-fav]'))return;selectShop(Number(el.dataset.id))});el.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();selectShop(Number(el.dataset.id))}})});
  $('shopList').querySelectorAll('[data-fav]').forEach(el=>el.addEventListener('click',e=>{e.stopPropagation();toggleFav(Number(el.dataset.fav))}));
  refreshClusters(arr);
