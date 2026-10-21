@@ -11,10 +11,11 @@ target is 167 *researched* shops, but **never force 167 numeric scores**
 by reusing general venue stars, a single old product rating, or guessed
 quality. Keep the independent overall BudMap Score unchanged.
 
-The live map currently lists all shops by default. The "Weed quality ·
-Research underway" option is alphabetical, not a city-wide top-ten
-ranking. Six existing dated-comment editorial estimates remain labelled
-**early estimates** on cards. They are **not** third-party product ratings.
+The live map lists all shops by default. **Product research · 167 shops**
+is an alphabetical evidence directory, not a city-wide top-ten ranking.
+The eight early editorial weed-quality estimates are retained only for
+research and are **not shown publicly** until coverage and verification
+improve.
 
 ## Machine-readable inventory
 
