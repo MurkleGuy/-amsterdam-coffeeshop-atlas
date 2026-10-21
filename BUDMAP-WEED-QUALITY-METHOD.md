@@ -16,6 +16,19 @@ Overall** second. Both use a /10 scale when a numeric value exists.
 A missing weed-quality number stays **Not rated**, even when that same shop
 has a high overall BudMap rating. No overall rating is used as a quality proxy.
 
+**Live per-shop research disclosure (21 October 2026):**
+`public/assets/budmap-research.js` exposes the tracker findings for every
+shop: whether individual product ratings were found on the historical source
+page, whether a dated menu exists without product votes, whether the source
+listed no products or has only overall venue ratings, and any address or
+identity issues. Each shop shows the exact recorded research note and linked
+source, plus the source-menu date when available. This is a transparent
+research record, **not** current product availability, proof of shop opening,
+or a flower rating. The page-inspection date and menu date do not establish
+the dates or independence of product reviewers. The 114 product-listing
+matches are not converted into numeric scores and are not presented as a
+114-shop Best Weed ranking.
+
 ## Evidence and scoring
 
 The only inputs for the weed-quality score are dated comments under
