@@ -4,6 +4,12 @@ This file documents the **active** map rating method. Earlier Atlas Score pilot 
 in README.md are historical records and are no longer the rating algorithm loaded by
 `public/map.html`.
 
+The rating covered here is **BudMap Overall**, which reflects overall venue
+reviews. The live map also has a separate, deliberately limited
+[Weed Quality research indicator](BUDMAP-WEED-QUALITY-METHOD.md) based only
+on dated product-specific comments. Neither calculation should be substituted
+for the other.
+
 ## Calculation
 
 For a single shop, collect independently published 1–5 star **venue-level**
