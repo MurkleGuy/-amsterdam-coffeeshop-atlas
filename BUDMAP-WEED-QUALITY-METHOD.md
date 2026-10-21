@@ -71,10 +71,23 @@ After applying the stricter **product-only** date/concentration check,
 Tweede Kamer into the small eligible pool. The new weed-only logic
 correctly withholds its rating due to clustered flower reports.
 
-The existing selected-comment early estimates are for 7th Heaven, ProGram, Abraxas,
-DrewIsSharing, Boerejongens West and Hunters (West). Other shops remain
-unrated for weed quality until a sufficiently dated, topic-specific
-sample is available. Family First has one dated product-quality report
+The first six selected-comment early estimates were for 7th Heaven, ProGram,
+Abraxas, DrewIsSharing, Boerejongens West and Hunters (West). On
+21 October 2026 the existing evidence-based category model was expanded
+to include **Relax Zuid (7.8/10; 4 quality-focused source comments across
+September–October 2025)** and **Sativa (7.7/10; 3 comments across
+July 2025, January and August 2026)**. As of that update, **8 of 167**
+have an early editorial weed-quality score. The other **159** remain
+unrated for quality until enough individually dated product-specific
+evidence exists.
+
+Relax Zuid's comments are clustered near the September/October calendar
+boundary and may not represent independent or representative sampling;
+they pass the literal two-month / 60% test but are still a *low-confidence
+early signal*, not proof of present-day stock. Sativa's third quality
+observation describes the user's perceived price-to-quality balance;
+the numerical quality value is an editorial interpretation. Neither
+shop's overall star rating was reused to create a weed score. Family First has one dated product-quality report
 in the stored research; it is **not** enough to assign a weed score,
 and that one report must not be treated as a definitive assessment.
 
