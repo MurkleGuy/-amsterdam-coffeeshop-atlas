@@ -4,9 +4,10 @@ A mobile-friendly independent directory and map of Amsterdam cannabis coffeeshop
 
 ## Active BudMap rating system — 20 October 2026
 
-**The live map now uses [BudMap Score](BUDMAP-SCORE-METHOD.md)**: an
-equal-weight average of distinct, address-matched, published five-star venue
-ratings, converted to a ten-point score. Individual review websites are not
+**The live map now uses [BudMap Score](BUDMAP-SCORE-METHOD.md)**: a
+review-count-adjusted ten-point rating using distinct, address-matched,
+published five-star venue averages. Each website is adjusted independently
+towards 7/10 with five statistical prior reviews, then combined equally. Individual review websites are not
 named on the main cards. The old editorial Atlas Score engine and detailed
 topic ratings are preserved for historical audit but **are no longer loaded**
 on the live map; old pilot counts further down this README have been superseded.
@@ -14,9 +15,11 @@ on the live map; old pilot counts further down this README have been superseded.
 Current coverage: **23 combined two-source scores**, **133 preliminary
 single-source ratings displayed out of 10 (clearly preliminary, not combined BudMap Scores)**, and **11 without rating data**.
 An audit on 21 October 2026 found 21 misleading 10/10 displays from
-single-source 5.0/5 averages, so the combined BudMap Score and ranking now require two independent
-sites. Single-source ratings use the same /10 display but are prominently
-labelled preliminary with their review counts. No Google Places
+single-source 5.0/5 averages. The new adjustment reduces these extremes
+according to the review counts (one perfect review now shows 7.5/10). Combined
+BudMap Scores and rankings still require two independent websites. Single-source
+ratings use the same /10 scale but are prominently labelled preliminary
+with their review counts. No Google Places
 scores have been imported or cached. Additional permitted, verified platforms
 can be added as `extraRatings[id]` source arrays. The ranking only includes
 shops with multiple independent published ratings.
