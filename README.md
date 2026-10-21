@@ -2,27 +2,24 @@
 
 A mobile-friendly independent directory and map of Amsterdam cannabis coffeeshop addresses, hosted as a zero-build static website on Cloudflare Pages.
 
-## Active BudMap rating system — 20 October 2026
+## Active BudMap rating system — updated 21 October 2026
 
-**The live map now uses [BudMap Score](BUDMAP-SCORE-METHOD.md)**: a
-review-count-adjusted ten-point rating using distinct, address-matched,
-published five-star venue averages. Each website is adjusted independently
-towards 7/10 with five statistical prior reviews, then combined equally. Individual review websites are not
-named on the main cards. The old editorial Atlas Score engine and detailed
-topic ratings are preserved for historical audit but **are no longer loaded**
-on the live map; old pilot counts further down this README have been superseded.
+**The live map uses [BudMap Score](BUDMAP-SCORE-METHOD.md)**:
+each published venue average is first adjusted for its review count,
+moving small samples towards 7/10 using five statistical prior reviews.
+When several independent websites are available, their adjusted ratings
+are averaged equally.
 
-Current coverage: **23 combined two-source scores**, **133 preliminary
-single-source ratings displayed out of 10 (clearly preliminary, not combined BudMap Scores)**, and **11 without rating data**.
-An audit on 21 October 2026 found 21 misleading 10/10 displays from
-single-source 5.0/5 averages. The new adjustment reduces these extremes
-according to the review counts (one perfect review now shows 7.5/10). Combined
-BudMap Scores and rankings still require two independent websites. Single-source
-ratings use the same /10 scale but are prominently labelled preliminary
-with their review counts. No Google Places
-scores have been imported or cached. Additional permitted, verified platforms
-can be added as `extraRatings[id]` source arrays. The ranking only includes
-shops with multiple independent published ratings.
+Every shop with a suitable source now has **one BudMap Score out of 10**.
+Current coverage: **156 rated shops** (133 with one website, 23 with two);
+**11 unrated**. The UI shows the number of websites and published review
+counts rather than a "Preliminary" rating label. All rated shops appear in
+the Best BudMap scores ranking, highest adjusted score first.
+
+The original ratings and source links are retained separately for
+verification. There are no Google Places rating imports. The historic
+Atlas Score evidence pilot notes elsewhere in this README are superseded
+and are not loaded on the active map.
 
 ## Features
 - Searchable directory of 167 published Amsterdam 2026 tolerance-reference addresses (151 preliminary directory name matches).
