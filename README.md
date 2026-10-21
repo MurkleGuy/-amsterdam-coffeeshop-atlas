@@ -21,37 +21,23 @@ verification. There are no Google Places rating imports. The historic
 Atlas Score evidence pilot notes elsewhere in this README are superseded
 and are not loaded on the active map.
 
-## Weed-quality research — full-coverage project, 21 October 2026
+## Product research — public weed ratings paused (21 October 2026)
 
-**Our goal is evidence-backed weed-quality coverage for all 167 coffeeshops,
-not an artificial 167/167 leaderboard.** The old "Best Weed" top-ten-style
-ranking has been paused while the evidence is too sparse. The map opens with
-**All coffeeshops**, and has an alphabetically ordered **Weed quality ·
-Research underway** discovery view with no weed-quality rank numbers.
+**Public numeric Weed Quality ratings are temporarily paused.** The earlier
+eight provisional editorial weed-quality estimates covered only 8 of 167
+shops, making their coverage inadequate for a city-wide comparison. The
+research and draft scoring engine remain in the repository, but the map
+no longer loads or displays those quality estimates.
 
-**Eight shops** now show clearly labelled **early editorial weed-quality estimates**
-based on independently dated quality-focused comments; the other **159**
-remain unscored for weed quality. The two additional early estimates
-recorded on 21 October 2026 are **Relax Zuid (7.8/10; four dated
-accounts)** and **Sativa (7.7/10; three dated accounts)**. Their
-numbers are conservative editorial interpretations of the source text,
-not user-entered flower-specific star scores or laboratory results.
-Relax Zuid's input is narrowly concentrated in September–October 2025;
-it should not be treated as evidence of today's batch quality. Separately, **156 shops retain their BudMap Overall
-Scores** and the Best Overall ranking. Both categories remain visible on
-shop cards and do not feed into each other's formula.
+The map opens with **All coffeeshops** and offers **Product research · 167
+shops** as an alphabetical evidence directory with no weed-quality
+leaderboard. Each shop has a Product Research panel showing historical
+source-page findings, links, menu dates and outstanding verification gaps.
+These are not weed-quality scores or proof of current stock quality.
 
-**Research results now appear directly on all 167 shop profiles.** In the
-Weed Quality expansion, each shop has a Product Research panel showing its
-initial evidence status, dated source page/menu where available, editorial
-research note and a source link. The directory also displays the research
-status alongside the existing Weed Quality and BudMap Overall labels.
-The public data file `public/assets/budmap-research.js` is generated from
-`research/weed-quality-tracker.json` and contains no copied numerical
-product ratings. Seeing that a source lists rated products is **not** itself
-a numerical Weed Quality rating; only the six independently assessed early
-quality estimates appear as numbers. The other 159 stay unrated for weed
-quality pending enough attributable, recent and reusable evidence.
+The independent **BudMap Overall** score remains available for 156 shops,
+including the **Best Overall · BudMap** ranking. That score is based on
+overall venue satisfaction and does not estimate weed quality.
 
 A full [167-shop research tracker](research/weed-quality-tracker.json) is maintained. An initial **research pass now covers all 167 addresses**. Of these, **142** have inspected venue/product or quality-source pages; for the other **25**, research found only a dated menu archive, general venue feedback, an unresolved identity, or insufficiently verifiable evidence. **114 shops** have source pages showing at least one individual product rating, but those source stars are not verified as recent or licensed for reuse. Across the complete tracker, **15 source pages list no products**, **5 have product listings without votes**, and other records have date, source-identity or product-evidence gaps. The 167/167 figure means initial research attempted, **not** 167 reliable or numerically rated shops. **All 167 still require the deeper rating-eligibility and rights checks** before a proper Best Weed ranking can launch.
 
