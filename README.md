@@ -35,6 +35,18 @@ for weed quality. Separately, **156 shops retain their BudMap Overall
 Scores** and the Best Overall ranking. Both categories remain visible on
 shop cards and do not feed into each other's formula.
 
+**Research results now appear directly on all 167 shop profiles.** In the
+Weed Quality expansion, each shop has a Product Research panel showing its
+initial evidence status, dated source page/menu where available, editorial
+research note and a source link. The directory also displays the research
+status alongside the existing Weed Quality and BudMap Overall labels.
+The public data file `public/assets/budmap-research.js` is generated from
+`research/weed-quality-tracker.json` and contains no copied numerical
+product ratings. Seeing that a source lists rated products is **not** itself
+a numerical Weed Quality rating; only the six independently assessed early
+quality estimates appear as numbers. The other 161 stay unrated for weed
+quality pending enough attributable, recent and reusable evidence.
+
 A full [167-shop research tracker](research/weed-quality-tracker.json) is maintained. An initial **research pass now covers all 167 addresses**. Of these, **142** have inspected venue/product or quality-source pages; for the other **25**, research found only a dated menu archive, general venue feedback, an unresolved identity, or insufficiently verifiable evidence. **114 shops** have source pages showing at least one individual product rating, but those source stars are not verified as recent or licensed for reuse. Across the complete tracker, **15 source pages list no products**, **5 have product listings without votes**, and other records have date, source-identity or product-evidence gaps. The 167/167 figure means initial research attempted, **not** 167 reliable or numerically rated shops. **All 167 still require the deeper rating-eligibility and rights checks** before a proper Best Weed ranking can launch.
 
 There are **156 existing venue-rating page leads** (146 Greenmeister, 10 other sites), but these are not licences or product-specific scores. Flagged cases include the duplicate Kadinsky venue records and an operating-permit refusal at Sarphatistraat 87G, where the currently operating shop identity needs verification.
