@@ -35,9 +35,9 @@ for weed quality. Separately, **156 shops retain their BudMap Overall
 Scores** and the Best Overall ranking. Both categories remain visible on
 shop cards and do not feed into each other's formula.
 
-A full [167-shop research tracker](research/weed-quality-tracker.json) is now
-maintained, distinguishing unresearched shops, dated editorial report
-coverage, and websites where product ratings have been spotted. An initial 156 existing venue-rating URLs have been identified as research leads (146 Greenmeister venue links and 10 other review-site links). **85** shop product or related quality-source pages have now received an initial inspection (53 additional entries checked in the latest research pass): 77 with some product-specific ratings, three with no products, one with listed products but no ratings, two with unresolved address mismatches, one with historical-only quality reviews and one with conflicting duplicate listings. **82 shops remain unchecked.** All 167 still need the stricter review-age, shop identity and data-use-rights assessment before product-based weed scores can be published.
+A full [167-shop research tracker](research/weed-quality-tracker.json) is maintained. An initial **research pass now covers all 167 addresses**. Of these, **142** have inspected venue/product or quality-source pages; for the other **25**, research found only a dated menu archive, general venue feedback, an unresolved identity, or insufficiently verifiable evidence. **114 shops** have source pages showing at least one individual product rating, but those source stars are not verified as recent or licensed for reuse. Across the complete tracker, **15 source pages list no products**, **5 have product listings without votes**, and other records have date, source-identity or product-evidence gaps. The 167/167 figure means initial research attempted, **not** 167 reliable or numerically rated shops. **All 167 still require the deeper rating-eligibility and rights checks** before a proper Best Weed ranking can launch.
+
+There are **156 existing venue-rating page leads** (146 Greenmeister, 10 other sites), but these are not licences or product-specific scores. Flagged cases include the duplicate Kadinsky venue records and an operating-permit refusal at Sarphatistraat 87G, where the currently operating shop identity needs verification.
 A source page displaying products is **not** proof of current product quality.
 The original sources' product ratings have not been bulk-imported,
 reproduced or converted into BudMap Weed Scores; data-use permission,
