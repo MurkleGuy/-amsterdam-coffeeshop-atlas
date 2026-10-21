@@ -21,6 +21,22 @@ verification. There are no Google Places rating imports. The historic
 Atlas Score evidence pilot notes elsewhere in this README are superseded
 and are not loaded on the active map.
 
+## Weed-quality discovery — early evidence, 21 October 2026
+
+The map opens with **Best Weed · early evidence**, using only dated
+flower/hash-related review observations and strict product-only account/date
+screening. **Six** shop records currently qualify for provisional numerical
+quality estimates; all remaining shops show an unscored weed-quality status.
+This is a *small editorial research sample*, not a definitive best-weed list.
+The quality value is never copied from an overall venue star rating.
+
+**Best Overall · BudMap** remains a separate ranking of the existing 156
+confidence-adjusted customer-satisfaction scores. Both Weed Quality and
+BudMap Overall appear as independent, expandable rows on each shop card.
+All 167 addresses stay available in the primary discovery view and on the
+map. See [weed-quality methodology](BUDMAP-WEED-QUALITY-METHOD.md) for the
+criteria, confidence limitations and original evidence provenance.
+
 ## Features
 - Searchable directory of 167 published Amsterdam 2026 tolerance-reference addresses (151 preliminary directory name matches).
 - Interactive Leaflet / OpenStreetMap map with address lookups, map clusters and mobile list/map switching.
