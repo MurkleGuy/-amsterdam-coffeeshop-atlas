@@ -46,39 +46,47 @@ count, and an HTTPS venue-related source link. A provider is counted **only once
 per shop. Repeated pages or translated listings on the same review platform must
 not be counted as independent ratings. Entries are not borrowed from other branches.
 
-## Display and ranking
+## Display and ranking — updated 21 October 2026
 
-- **Combined** (2+ websites): show the adjusted ten-point score and include
-  in the ranked "Best BudMap scores · compared" filter.
-- **Preliminary** (1 website): show the same **confidence-adjusted ten-point
-  rating** but with a prominent "Preliminary · 1 site" label and its actual
-  review count. This is *not* a corroborated BudMap Score and is excluded
-  from the combined ranking.
-- **Unrated** (0 websites): show that a score is pending, never a numeric guess.
-- "All rated coffeeshops" shows both combined scores and preliminary single-site ratings, with
-  combined ones listed first.
-- All displayed numerical ratings on the map use the ten-point scale. Multi-site averages are labelled BudMap Scores and single-site conversions are labelled preliminary, with the site's review count.
-  Provider brand names are not displayed in the main score cards or rankings,
-  but remain recorded with source URLs in the source dataset.
+**One BudMap Score out of 10 is shown for every coffeeshop with at least
+one suitable published rating.** The same review-count adjustment is applied
+whether the shop has one website or five.
 
-**Present coverage as of 20 October 2026**: 167 addresses; 23 with two-site
-averages, 133 preliminary single-site ratings (converted to /10 but not combined BudMap Scores), 11 unrated. The loaded datasets
-do not currently contain a three-site average for any address. New qualified
-providers may change those numbers.
+- **Rated (1+ websites)**: display the adjusted BudMap Score, the number
+  of independent websites, and the sum of the sites' published review counts.
+  Summed review counts must not be represented as unique customers.
+- **Unrated (0 websites)**: no numerical score is displayed.
+- **Best BudMap scores**: rank all rated coffeeshops by unrounded adjusted
+  score descending; break ties by more independent websites, followed by
+  larger published review totals.
+- **All coffeeshops**: list all 167 locations and their rating, if available.
+- **Recent menus**: remains a separate filter.
 
-## Perfect-score audit — 21 October 2026
+The single-source label "Preliminary" has been retired. One website's score
+is still confidence-adjusted, not independently corroborated. Website and
+review counts therefore remain visible at all times. Five statistical prior
+reviews at 7/10 are included in the calculation, but these are **not** actual
+reviews.
 
-All 21 displayed 10.0/10 ratings before the first correction were
-based on a **single** source; 15 involved fewer than five reviews and seven
-only one review. Single-source ratings remain clearly labelled preliminary and
-are now review-count-adjusted. For example, the seven one-review originals
-fall from 10.0/10 to 7.5/10. Older reviews remain a separate unresolved issue.
+Provider brand names are not presented in the main score or ranking display.
+The source dataset maintains each original platform rating, review count and
+URL for audit, and any provider's legally required attribution must still be
+honoured.
 
-## Review-count adjustment — 21 October 2026
+**Coverage as of 21 October 2026:** 167 addresses; 156 BudMap Scores
+(133 based on one website and 23 based on two), and 11 awaiting data.
 
-The confidence adjustment now applies to **every** scored coffeeshop, both
-single-source preliminary ratings and multi-source combined BudMap Scores.
-No original source star ratings, review counts or source links were overwritten.
+## Historical scoring changes
+
+The original experiment generated 21 misleading 10/10 ratings based on one
+website; seven came from only one customer review. The same review-count
+adjustment now applies across the board. For example a 5.0/5 source with
+one review yields 7.5/10 rather than 10.0/10.
+
+The former "preliminary" distinction is removed from presentation, while
+all users can still see whether the score rests on one website or several.
+The confidence-adjustment baseline is an editorial choice, not an empirically
+proven prediction of current product quality.
 
 ## Limitations and required future checks
 
@@ -104,12 +112,14 @@ not guesses from comments or text sentiment analysis.
 
 ## Testing checklist
 
-- Open all 167 shop cards; no client JavaScript errors.
-- Verify DrewIsSharing (4.3/5 over 6 reviews and 4.8/5 over 5 reviews): **8.1/10** after per-site adjustment, averaging the resulting 7.87 and 8.30 values.
-- Verify all 21 single-site 5.0/5 averages display as preliminary adjusted
-  ratings below 10.0/10, with the actual review count and never in the combined ranking.
-- Verify the 11 missing-source shops show "Not rated yet".
-- Verify the ranked filter excludes preliminary and unrated shops, and the 23 combined shops are sorted correctly.
-- Verify "All rated" includes 156 shops and "Recent menus" still works.
-- Verify hotel setup, pinned preview, full card, favourites, directions and
-  mobile map position after deployment.
+- Verify all 167 shop records are handled without client JavaScript errors.
+- Verify 156 rated coffeeshops show a BudMap Score out of ten and a visible
+  count of contributing websites and published reviews.
+- Verify 11 unrated shops show no invented score.
+- Verify the "Best BudMap scores" filter includes all 156 scored shops,
+  ranked by adjusted score, and excludes the 11 unrated shops.
+- Verify The Plug Westerdok: 5.0/5, one review → **7.5/10**, one website.
+- Verify DrewIsSharing: source ratings 4.3/5 (6) and 4.8/5 (5) →
+  **8.1/10**, two websites, 11 published reviews total.
+- Verify mobile cards, pin previews, hotel setup, favourites, directions
+  and menu links after deployment.
