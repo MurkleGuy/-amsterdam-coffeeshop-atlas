@@ -5,10 +5,11 @@ Score**; it does not replace any of the 156 overall review-based ratings.
 
 ## What visitors see
 
-The map's **Best Weed · early evidence** view is shown first. It continues
-to list and map all 167 coffeeshops, sorting the shops with qualifying
-quality-specific evidence above those without a weed rating. The count
-and label explicitly say **early estimate**, not a city-wide definitive top ten.
+The map opens with **All coffeeshops**. The dedicated **Weed quality ·
+Research underway** view lists all 167 shops **alphabetically**, with existing
+quality-specific evidence disclosed but **no city-wide weed rank numbers**.
+The earlier six-shop "Best Weed" leaderboard is paused as misleading until
+wider independently supportable coverage has been obtained.
 
 Each coffeeshop detail card presents **Weed Quality** first and **BudMap
 Overall** second. Both use a /10 scale when a numeric value exists.
@@ -57,7 +58,7 @@ After applying the stricter **product-only** date/concentration check,
 Tweede Kamer into the small eligible pool. The new weed-only logic
 correctly withholds its rating due to clustered flower reports.
 
-The available early estimates are for 7th Heaven, ProGram, Abraxas,
+The existing selected-comment early estimates are for 7th Heaven, ProGram, Abraxas,
 DrewIsSharing, Boerejongens West and Hunters (West). Other shops remain
 unrated for weed quality until a sufficiently dated, topic-specific
 sample is available. Family First has one dated product-quality report
@@ -70,11 +71,28 @@ Atlas Score model: it mixes service, venue experience and value, with
 unverified neutral priors for missing categories, and is not suitable
 as a weed-quality score.
 
+## Full-city research tracker
+
+The [weed-quality research tracker](research/weed-quality-tracker.json)
+holds one record for each of the 167 source-shop IDs. It separately stores
+the status of external product-page checks, the number of dated editorial
+quality-specific accounts already on file, and a null product score until
+a defensible, permitted scoring basis exists.
+
+The first 3 product-page spot-checks were carried out on 21 October 2026:
+Family First (April 2023 menu), 7th Heaven (February 2026 menu) and
+Tweede Kamer (November 2025 menu). Product stars were visible, but they
+have **not been licensed, imported or converted into BudMap Weed Scores**.
+Most other shop-product pages are still unresearched.
+
+The full scope, evidence gates, permissions considerations and visitor
+review proposals are in [the research plan](WEED-QUALITY-RESEARCH-PLAN.md).
+
 ## Test checklist
 
-- **Best Weed · early evidence** is the first selected discovery option;
-  six early-assessed shops appear first, then the remaining shops, with
-  all 167 available for search, map pins and directions.
+- **All coffeeshops** is the first selected discovery option; the separate
+  **Weed quality · Research underway** view lists shops alphabetically without
+  quality rank numbers. All 167 remain accessible for searching, pins and directions.
 - **Best Overall · BudMap** sorts the 156 existing adjusted overall ratings
   without altering them.
 - **Weed Quality** is the first shop-card panel, **BudMap Overall** the
