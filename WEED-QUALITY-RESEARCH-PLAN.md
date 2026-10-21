@@ -27,8 +27,11 @@ contains exactly one shop record per published address ID (1–167), with:
 - Existing quality-specific comment count and whether that selective
   editorial sample supports only an **early estimate**, is insufficient,
   or has no dated product reports.
-- Product-level source-research status; initially "not_checked" for
-  164 shops and "product_rating_listing_found" for three spot-checks.
+- Product-level source-research status; currently "not_checked" for
+  155 shops and "product_rating_listing_found" for 12 spot-checks.
+- 156 existing overall venue-rating website links as possible research
+  starting points (146 Greenmeister pages and 10 other pages); a venue
+  link does NOT establish the existence of a product rating.
 - Null `eligibleProductRating` and `productScore` for all shops. These
   fields are **not permissions to invent data**.
 
@@ -37,7 +40,7 @@ product review** and the **menu update date**. None are interchangeable.
 
 ## What the first source check showed
 
-Three source pages were examined for **product-specific rating existence**,
+Twelve source pages were examined for **product-specific rating existence**,
 without copying third-party product-level star averages into BudMap:
 
 | Shop | Menu marked updated | Preliminary finding |
@@ -45,8 +48,17 @@ without copying third-party product-level star averages into BudMap:
 | Family First | 28 Apr 2023 | Individually rated flower products exist; historical menu too old for current-batch claims. |
 | 7th Heaven | 28 Feb 2026 | Some products rated; many zero-rating products; individual product-review ages still unverified. |
 | Tweede Kamer | 10 Nov 2025 | Multiple product star ratings exist, but review recency and sample validity need a separate audit. |
+| Boerejongens West | 15 Sep 2025 | Flower and hash product stars visible; stock freshness unverified. |
+| Boerejongens Centre | 11 Sep 2025 | Flower and hash product stars visible; stock freshness unverified. |
+| Coffeeshop Amsterdam | 15 Sep 2025 | Some products rated, many unrated. |
+| ProGram | 26 Sep 2026 | Recent menu, but many products have zero or very few votes. |
+| Abraxas | 9 Apr 2023 | Historically rated products, but menu is over three years old. |
+| Hunters (Orteliusstraat 193) | 7 Aug 2026 | Branch-specific flower ratings present; other products unrated. |
+| Hunters (Utrechtsestraat 14H) | 7 Aug 2026 | Branch-specific flower ratings present; other products unrated. |
+| Hunters Noord (Papaverweg 2) | 7 Aug 2026 | Branch-specific flower ratings present; other products unrated. |
+| Hunters Bros (Waterlandplein 7) | 7 Aug 2026 | Branch-specific flower ratings present; other products unrated. |
 
-Links and check dates are in the inventory's three checked entries.
+Links and check dates are in the inventory's twelve checked entries.
 A site's product star average is not proof that stock from a particular
 shop, strain, grower, harvest or batch is still available or equivalent.
 
@@ -96,7 +108,8 @@ review-submission infrastructure is deployed now; do not imply it is.
 - Existing overall BudMap scores: **156**.
 - Quality-specific dated comments recorded: **22 shops**.
 - Shops meeting the narrow **early editorial** weed-quality threshold: **6**.
-- External product-rating pages spot-checked: **3**.
+- Existing venue-rating website URLs identified as candidate research leads: **156**.
+- External product-rating pages spot-checked: **12**.
 - Product-level data feeds confirmed authorised for redistribution: **0**.
 - Shop-level Weed Quality ratings built from licensed product star
   averages: **0**.
