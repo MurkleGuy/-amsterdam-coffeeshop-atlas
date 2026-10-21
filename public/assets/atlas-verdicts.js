@@ -901,6 +901,7 @@ window.ATLAS_VERDICTS={
         {
           "reviewer": "yellow dutchie",
           "date": "2025-07-18",
+          "quality": 4,
           "service": 5,
           "experience": 4,
           "value": 4,
@@ -1052,8 +1053,37 @@ window.ATLAS_VERDICTS={
       ]
     },
     "157": {
-      "observations": [],
-      "reviewNote": "Visible highlighted reviews were historically positive but not sufficiently recent for the required 2026 assessment."
+      "observations": [
+        {
+          "reviewer": "pixy trippie",
+          "date": "2025-10-24",
+          "quality": 4,
+          "note": "Positive firsthand comment about the products and knowledgeable staff; product wording is general, so the editorial quality interpretation is conservative.",
+          "url": "https://en.greenmeister.com/coffeeshop/relax-zuid-amsterdam"
+        },
+        {
+          "reviewer": "esfrom6",
+          "date": "2025-10-03",
+          "quality": 5,
+          "note": "Repeat visitor specifically praises consistently excellent flower, hash and prerolls.",
+          "url": "https://en.greenmeister.com/coffeeshop/relax-zuid-amsterdam"
+        },
+        {
+          "reviewer": "lit smoker420",
+          "date": "2025-09-30",
+          "quality": 5,
+          "note": "Regular visitor praises the shop's products in general; this is not verification of a current batch.",
+          "url": "https://en.greenmeister.com/coffeeshop/relax-zuid-amsterdam"
+        },
+        {
+          "reviewer": "hasjjbaby1095",
+          "date": "2025-09-30",
+          "quality": 5,
+          "note": "Reports consistently good stock quality and helpful budtenders.",
+          "url": "https://en.greenmeister.com/coffeeshop/relax-zuid-amsterdam"
+        }
+      ],
+      "reviewNote": "Quality-specific evidence is concentrated in September–October 2025. Though it spans two calendar months and four handles, the short review period could represent a promotional or unusual sample. Weed Quality is only an early editorial estimate, not a 2026 stock test."
     },
     "162": {
       "observations": [],
