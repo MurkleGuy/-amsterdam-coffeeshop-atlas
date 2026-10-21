@@ -306,26 +306,46 @@
  }
  function updateWalkingProgress(){
   if(!walkingInfo||!locationFix||!maneuvers.length)return;
-  // Find the closest point on a walking segment (not just a vertex), in metres.
-  // The longitude scale varies by latitude; correct it to avoid false alerts.
-  const points=walkingInfo.shape,metresPerLat=111320,metresPerLon=111320*Math.cos(locationFix.lat*Math.PI/180);
-  let nearest=0,smallest=Infinity;
-  for(let i=0;i<points.length-1;i++){
-   const a=points[i],b=points[i+1];
-   const ax=(a[1]-locationFix.lng)*metresPerLon,ay=(a[0]-locationFix.lat)*metresPerLat;
-   const bx=(b[1]-locationFix.lng)*metresPerLon,by=(b[0]-locationFix.lat)*metresPerLat;
-   const vx=bx-ax,vy=by-ay,lengthSquared=vx*vx+vy*vy;
-   const t=lengthSquared>0?Math.max(0,Math.min(1,-(ax*vx+ay*vy)/lengthSquared)):0;
-   const dx=ax+t*vx,dy=ay+t*vy,d=dx*dx+dy*dy;
-   if(d<smallest){smallest=d;nearest=i+(t>.5?1:0)}
+  const fix=locationFix,accuracy=Number.isFinite(fix.accuracy)?Math.max(0,fix.accuracy):80;
+  const projected=navMath.nearestOnRoute(walkingInfo.shape,walkingInfo.offsets,fix);
+  if(!projected)return;
+  const offRouteLimit=Math.max(42,Math.min(110,accuracy*1.8));
+  const offRoute=projected.offsetMeters>offRouteLimit,poorSignal=accuracy>65;
+  if(offRoute||poorSignal){
+   const warning=offRoute?'You may be off the walking route':'GPS accuracy is too low';
+   const followUp=offRoute?'Tap ↻ to replan from here, or check Google Maps.':'Move into a clearer area and check your location.';
+   if(gpsFollow)setBanner('!',warning,followUp,offRoute?'OFF ROUTE':'WEAK GPS',true);
+   $('tripRouteSteps').innerHTML='<div class="tripOffRoute">'+escTrip(warning)+'. '+escTrip(followUp)+'</div>';
+   return; // An unreliable GPS fix must not advance the next turn.
   }
-  const routeOffsetMeters=Math.sqrt(smallest);
-  const warningLimit=Math.max(90,Math.min(220,(locationFix.accuracy||25)*2));
-  const next=maneuvers.find(m=>m.begin_shape_index>=nearest)||maneuvers[maneuvers.length-1];
-  const el=$('tripRouteSteps');
-  if(el&&next)el.innerHTML=(routeOffsetMeters>warningLimit?'<div class="tripOffRoute">You may be off the walking route. Stop and check your surroundings; tap Replan or use Google Maps.</div>':'')+'<div class="tripStep"><b>Next:</b> '+escTrip(next.instruction||'Continue along the route')+'</div>'+maneuvers.filter(m=>m.begin_shape_index>nearest).slice(1,6).map(m=>'<div class="tripStep">'+escTrip(m.instruction||'Continue')+'</div>').join('');
+  if(walkingProgress===null)walkingProgress=projected.along;
+  else{
+   // Clamp big jumps and never move backwards because of GPS drift.
+   const moved=previousProgressFix?navMath.distance([previousProgressFix.lat,previousProgressFix.lng],[fix.lat,fix.lng]):0;
+   const allowed=Math.max(12,Math.min(42,moved*1.6+8));
+   walkingProgress=Math.max(walkingProgress,Math.min(projected.along,walkingProgress+allowed));
+  }
+  previousProgressFix={lat:fix.lat,lng:fix.lng};
+  const remaining=Math.max(0,walkingInfo.offsets[walkingInfo.offsets.length-1]-walkingProgress);
+  const dest=walkingInfo.destination,destDistance=navMath.distance([fix.lat,fix.lng],[dest.lat,dest.lng]);
+  if(accuracy<=35&&remaining<17&&destDistance<20){
+   arrived=true;
+   $('tripRouteSteps').innerHTML='<div class="tripStep"><b>Arrived:</b> Check the entrance and address of '+escTrip(dest.name||dest.address)+'.</div>';
+   if(gpsFollow)setBanner('⌖','You have reached your destination',dest.name||dest.address,'ARRIVED');
+   return;
+  }
+  if(arrived)return; // Do not jump back to an old instruction after arrival.
+  const next=navMath.instructionFor(maneuvers,walkingInfo.offsets,walkingProgress,nextManeuverIndex,accuracy);
+  if(!next)return;
+  nextManeuverIndex=next.index;
+  const instruction=next.maneuver.instruction||next.maneuver.verbal_pre_transition_instruction||'Continue on the walking route';
+  const label=navMath.distanceLabel(next.metres);
+  if(gpsFollow)setBanner(navMath.turnSymbol(next.maneuver.type),instruction,
+   label==='Now'?'Turn now':'In '+label,'NEXT TURN');
+  $('tripRouteSteps').innerHTML='<div class="tripStep"><b>Next:</b> '+escTrip(instruction)+' · '+escTrip(label)+'</div>'
+   +maneuvers.slice(next.index+1,next.index+5).map(m=>'<div class="tripStep">'+escTrip(m.instruction||'Continue')+'</div>').join('');
  }
- function closeRoute(){routeSequence++;routeController?.abort();routeController=null;gpsFollow=false;walkingInfo=null;maneuvers=[];if($('startNavigation'))$('startNavigation').textContent='▶ Start GPS guidance';if(walkingShape){map.removeLayer(walkingShape);walkingShape=null;}$('tripRoute').classList.add('hidden')}
+ function closeRoute(){routeSequence++;routeController?.abort();routeController=null;endGuidance();walkingInfo=null;maneuvers=[];walkingProgress=null;previousProgressFix=null;arrived=false;if(walkingShape){map.removeLayer(walkingShape);walkingShape=null;}$('tripRoute').classList.add('hidden')}
  $('tripToggle').onclick=()=>{const open=$('tripPanel').classList.contains('hidden');if(!open)closeWelcome();$('tripPanel').classList.toggle('hidden',!open);$('tripToggle').setAttribute('aria-expanded',String(open))};
  $('tripSkipWelcome').onclick=()=>{markWelcomeDone();$('tripPanel').classList.add('hidden');$('tripToggle').setAttribute('aria-expanded','false')};
  $('tripClose').onclick=()=>$('tripToggle').click();
@@ -338,13 +358,16 @@
  $('startNavigation').onclick=()=>{
   if(!walkingInfo){showMessage('Plan a walking route first.');return;}
   if(gpsFollow){
-   gpsFollow=false;$('startNavigation').textContent='▶ Start GPS guidance';
+   endGuidance();
    showMessage('Map following stopped. Live location can stay on.');return;
   }
   if(gpsWatch===null&&!startGPS())return;
   gpsFollow=true;$('startNavigation').textContent='■ Stop following';
-  if(locationFix)map.panTo([locationFix.lat,locationFix.lng]);
-  showMessage(locationFix?'Following your current GPS position. Stay aware of crossings and surroundings.':'Waiting for a GPS fix. Your browser may ask for location permission; use Google Maps if it fails.');
+  setBanner('◎','Waiting for your GPS position','Checking your location…','GETTING LOCATION');
+  if(locationFix){map.panTo([locationFix.lat,locationFix.lng]);updateWalkingProgress();}
+  // Keep the top of the screen clear during active walking guidance.
+  $('tripPanel').classList.add('hidden');$('tripToggle').setAttribute('aria-expanded','false');
+  showMessage('GPS guidance active. Follow the bottom banner and check crossings.');
  };
  window.addEventListener('pagehide',stopGPS);
  updateHotelUI();
