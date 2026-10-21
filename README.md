@@ -12,10 +12,11 @@ topic ratings are preserved for historical audit but **are no longer loaded**
 on the live map; old pilot counts further down this README have been superseded.
 
 Current coverage: **23 combined two-source scores**, **133 preliminary
-single-source five-star ratings (not BudMap Scores)**, and **11 without rating data**.
+single-source ratings displayed out of 10 (clearly preliminary, not combined BudMap Scores)**, and **11 without rating data**.
 An audit on 21 October 2026 found 21 misleading 10/10 displays from
-single-source 5.0/5 averages, so the live score now requires two independent
-ratings. Single-source averages stay visible, explicitly labelled preliminary. No Google Places
+single-source 5.0/5 averages, so the combined BudMap Score and ranking now require two independent
+sites. Single-source ratings use the same /10 display but are prominently
+labelled preliminary with their review counts. No Google Places
 scores have been imported or cached. Additional permitted, verified platforms
 can be added as `extraRatings[id]` source arrays. The ranking only includes
 shops with multiple independent published ratings.
