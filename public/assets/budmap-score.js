@@ -24,17 +24,18 @@ function assess(shop){
  const sourceCount=sources.length;
  const sourceAverage=sourceCount?sources.reduce((sum,r)=>sum+Number(r.rating),0)/sourceCount:null;
  // A genuine BudMap Score needs corroboration from at least two distinct websites.
- const score=sourceCount>=2?sourceAverage*2:null;
+ const displayScore=sourceCount?sourceAverage*2:null;
+ const score=sourceCount>=2?displayScore:null;
  const lowSample=sources.some(r=>Number(r.reviews)<5);
  const older=sources.some(r=>r.evidenceEra==='legacy');
- return {score,sourceAverage,sourceCount,kind:sourceCount===0?'unrated':sourceCount===1?'preliminary':'combined',
+ return {score,displayScore,sourceAverage,sourceCount,kind:sourceCount===0?'unrated':sourceCount===1?'preliminary':'combined',
   lowSample,older,sources,confidence:sourceCount===0?'Awaiting ratings':
   sourceCount===1?'Preliminary':sourceCount===2?'Two-site average':'Multi-site average'};
 }
 function listTag(shop){
  const a=assess(shop);
  if(a.sourceCount===0)return '<span class="atlasPendingTag">BudMap · not yet rated</span>';
- if(a.sourceCount===1)return '<span class="atlasTag atlasEstimateTag">★ '+a.sourceAverage.toFixed(1)+'/5 · Preliminary · 1 site</span>';
+ if(a.sourceCount===1){const count=Number(a.sources[0].reviews);return '<span class="atlasTag atlasEstimateTag">★ '+a.displayScore.toFixed(1)+'/10 · Preliminary · 1 site · '+count+' review'+(count===1?'':'s')+'</span>';}
  return '<span class="atlasTag">★ BudMap '+a.score.toFixed(1)+'/10 · '+a.sourceCount+' ratings combined</span>';
 }
 function detail(shop){
@@ -45,8 +46,8 @@ function detail(shop){
  if(a.sourceCount===1){
   const r=a.sources[0];
   return '<section class="atlasVerdict atlasEstimated" aria-label="Preliminary venue rating">'
-   +'<div class="atlasScoreHead"><div><small>PRELIMINARY VENUE RATING</small><strong>★ '+a.sourceAverage.toFixed(1)+' <small>/ 5</small></strong></div><span>1 website · '+Number(r.reviews)+' review'+(Number(r.reviews)===1?'':'s')+'</span></div>'
-   +'<p class="atlasBrief">BudMap Score pending. A second independently published venue rating is needed before a combined score out of 10 can be shown.</p>'
+   +'<div class="atlasScoreHead"><div><small>PRELIMINARY RATING · 1 SITE</small><strong>★ '+a.displayScore.toFixed(1)+' <small>/ 10</small></strong></div><span>1 website · '+Number(r.reviews)+' review'+(Number(r.reviews)===1?'':'s')+'</span></div>'
+   +'<p class="atlasBrief">This is a single website rating converted to a ten-point scale, not a corroborated BudMap Score. A second independent rating is needed for the combined ranking.</p>'
    +'<p class="atlasUnknown">This single-site average is historical and does not establish a perfect visitor experience.'+escaped(sampleWarning+ageWarning)+'</p></section>';
  }
  return '<section class="atlasVerdict" aria-label="BudMap Score">'
