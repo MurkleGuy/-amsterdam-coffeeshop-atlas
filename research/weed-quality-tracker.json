@@ -2,15 +2,20 @@
   "title": "BudMap - Cannabis quality evidence tracker",
   "scope": "All 167 official Amsterdam coffeeshop addresses from public/assets/shops.js",
   "checkedAt": "2026-10-21",
-  "description": "Research backlog, not a numerical product-quality ranking. No third-party product ratings reproduced or imported.",
+  "description": "Full 167-address research inventory. Venue review-page URLs are candidate links only, not product ratings. No product-star averages reproduced or imported.",
   "statusValues": {
     "not_checked": "No product-level source inspection completed",
-    "product_rating_listing_found": "Product rating listings observed on a public page; not validated for scoring or republishing"
+    "product_rating_listing_found": "Product rating listings observed on a public page; not validated for scoring or republishing",
+    "existing_general_venue_rating_page_only": "Existing overall venue-rating URL for manual product research only; product availability, correctness and permissions not yet validated."
   },
   "state": {
     "addresses": 167,
-    "productPagesSpotChecked": 3,
-    "confirmedLicencedProductDataFeeds": 0
+    "productPagesSpotChecked": 12,
+    "confirmedLicencedProductDataFeeds": 0,
+    "venueRatingPageLeadsIdentified": 156,
+    "greenmeisterVenueRatingPageLeads": 146,
+    "otherVenueRatingPageLeads": 10,
+    "productScoreAssigned": 0
   },
   "shops": [
     {
@@ -24,7 +29,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/dna-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 2,
@@ -37,7 +48,8 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": null
     },
     {
       "id": 3,
@@ -50,7 +62,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/the-old-church-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 4,
@@ -67,7 +85,13 @@
         "note": "Flower product star ratings are visible, but menu update is more than three years old; do not treat it as evidence of current batch quality."
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/familyfirst-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 5,
@@ -80,7 +104,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/happy-days-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 6,
@@ -93,7 +123,8 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": null
     },
     {
       "id": 7,
@@ -106,7 +137,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/best-friends-oudzuid-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 8,
@@ -119,7 +156,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/the-border-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 9,
@@ -129,10 +172,21 @@
       "qualityReportCount": 3,
       "qualityEditorialStatus": "early_estimate_only",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2025-09-15",
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/boere-jongens-amsterdam",
+        "productReviewDatesVerified": false,
+        "note": "Multiple product star ratings, but menu was last updated in September 2025; not current-batch evidence."
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/boere-jongens-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 10,
@@ -145,7 +199,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Trustpilot",
+        "url": "https://uk.trustpilot.com/review/coffeeshopwest.nl",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 11,
@@ -158,7 +218,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/pacific-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 12,
@@ -171,7 +237,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/the-plug-westerdok",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 13,
@@ -184,7 +256,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/babylon-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 14,
@@ -197,7 +275,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/relax-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 15,
@@ -210,7 +294,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/bij-boere-jongens",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 16,
@@ -223,7 +313,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/risky-business-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 17,
@@ -240,7 +336,13 @@
         "note": "Shop menu is more recent, but many listed products have zero ratings and the dates of product reviews need checking."
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/137-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 18,
@@ -253,7 +355,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/siberie-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 19,
@@ -266,7 +374,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/atlas-amsterdam-noord",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 20,
@@ -279,7 +393,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/massawa-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 21,
@@ -292,7 +412,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/the-bulldog-port-26-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 22,
@@ -305,7 +431,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/nogal-wiedes-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 23,
@@ -315,10 +447,21 @@
       "qualityReportCount": 5,
       "qualityEditorialStatus": "early_estimate_only",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2026-09-26",
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/program-coffeeshop-amsterdan",
+        "productReviewDatesVerified": false,
+        "note": "Recently updated menu; many listed flower/hash items still show zero ratings or tiny samples."
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/program-coffeeshop-amsterdan",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 24,
@@ -331,7 +474,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/happypeople-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 25,
@@ -344,7 +493,8 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": null
     },
     {
       "id": 26,
@@ -357,7 +507,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/coffeeshop-amsterdam-oost",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 27,
@@ -370,7 +526,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/paradox-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 28,
@@ -383,7 +545,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/the-plug-east",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 29,
@@ -396,7 +564,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/katsu-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 30,
@@ -409,7 +583,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/johnny-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 31,
@@ -422,7 +602,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/desupermarkt-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 32,
@@ -435,7 +621,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/hugo-de-groot-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 33,
@@ -448,7 +640,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/het-gelderse-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 34,
@@ -461,7 +659,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/voyagers-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 35,
@@ -474,7 +678,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/roxy-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 36,
@@ -487,7 +697,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/club-media-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 37,
@@ -500,7 +716,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/sensemillia-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 38,
@@ -513,7 +735,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/denl-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 39,
@@ -526,7 +754,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/barraka-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 40,
@@ -539,7 +773,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/barneys-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 41,
@@ -549,10 +789,21 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2025-09-15",
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/coffeeshop-amsterdam",
+        "productReviewDatesVerified": false,
+        "note": "Some flower products have rating counts; other items have none, and the menu is from September 2025."
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/coffeeshop-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 42,
@@ -565,7 +816,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/green-house-united-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 43,
@@ -578,7 +835,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/green-place-haarlemmerstraat",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 44,
@@ -591,7 +854,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/popeye-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 45,
@@ -604,7 +873,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Weeview",
+        "url": "https://weeview.nl/location/amsterdam/",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 46,
@@ -617,7 +892,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/balou-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 47,
@@ -630,7 +911,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/dampkring-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 48,
@@ -643,7 +930,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/prix-dami-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 49,
@@ -660,7 +953,13 @@
         "note": "Individual flower product star ratings are visible; review recency, sample sizes and menu freshness need checking."
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/tweede-kamer-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 50,
@@ -673,7 +972,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/resin-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 51,
@@ -686,7 +991,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/ibiza-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 52,
@@ -699,7 +1010,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Leafly",
+        "url": "https://www.leafly.com/dispensary-info/amnesia-coffeeshop",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 53,
@@ -712,7 +1029,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/best-friends-zuidoost-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 54,
@@ -725,7 +1048,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/roots-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 55,
@@ -738,7 +1067,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/ruthless-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 56,
@@ -751,7 +1086,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/new-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 57,
@@ -764,7 +1105,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://greenmeister.com/coffeeshop/aktama-2",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 58,
@@ -777,7 +1124,8 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": null
     },
     {
       "id": 59,
@@ -790,7 +1138,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/boerejongens-sloterdijk",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 60,
@@ -803,7 +1157,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/millennium-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 61,
@@ -816,7 +1176,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/kashmir-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 62,
@@ -829,7 +1195,8 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": null
     },
     {
       "id": 63,
@@ -842,7 +1209,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/loft-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 64,
@@ -855,7 +1228,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/warda-twee-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 65,
@@ -865,10 +1244,21 @@
       "qualityReportCount": 4,
       "qualityEditorialStatus": "early_estimate_only",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2023-04-09",
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/abraxas-amsterdam",
+        "productReviewDatesVerified": false,
+        "note": "Some product star ratings, but menu is from April 2023 and unsuitable as current-stock evidence."
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/abraxas-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 66,
@@ -881,7 +1271,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/happy-feelings-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 67,
@@ -894,7 +1290,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/the-dolphins-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 68,
@@ -907,7 +1309,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/green-place-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 69,
@@ -920,7 +1328,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/bagheera-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 70,
@@ -933,7 +1347,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/basjoe-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 71,
@@ -946,7 +1366,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/goa-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 72,
@@ -959,7 +1385,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Weeview",
+        "url": "https://weeview.nl/shop/yin-yang/",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 73,
@@ -972,7 +1404,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/solo-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 74,
@@ -985,7 +1423,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Weedmaps",
+        "url": "https://weedmaps.com/dispensaries/get-down-to-it-coffeeshop",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 75,
@@ -998,7 +1442,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/the-rookies-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 76,
@@ -1011,7 +1461,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/nachtegaal-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 77,
@@ -1024,7 +1480,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/kadinsky-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 78,
@@ -1037,7 +1499,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/the-bulldog-ex-police-station-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 79,
@@ -1050,7 +1518,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/de-watersnip-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 80,
@@ -1063,7 +1537,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/bronx-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 81,
@@ -1076,7 +1556,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/1e-hulp-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 82,
@@ -1089,7 +1575,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/crush-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 83,
@@ -1102,7 +1594,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/swed-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 84,
@@ -1115,7 +1613,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/t-keteltje-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 85,
@@ -1128,7 +1632,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/sensemillia-west-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 86,
@@ -1141,7 +1651,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/the-stud-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 87,
@@ -1154,7 +1670,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/catch33-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 88,
@@ -1167,7 +1689,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/best-friends-oost-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 89,
@@ -1180,7 +1708,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/de-overkant-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 90,
@@ -1193,7 +1727,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/terps-army-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 91,
@@ -1206,7 +1746,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/hotel-utopia",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 92,
@@ -1219,7 +1765,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/greenhouse-effect-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 93,
@@ -1232,7 +1784,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/de-jolly-joker-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 94,
@@ -1245,7 +1803,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/rock-it-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 95,
@@ -1258,7 +1822,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/coffeeshop-noord",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 96,
@@ -1268,10 +1838,21 @@
       "qualityReportCount": 3,
       "qualityEditorialStatus": "early_estimate_only",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2026-08-07",
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/hunters-coffeeshop-amsterdam",
+        "productReviewDatesVerified": false,
+        "note": "Individual flower rating counts visible; branch matched to Orteliusstraat 193, not other Hunters branches."
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/hunters-coffeeshop-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 97,
@@ -1284,7 +1865,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/grey-area-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 98,
@@ -1297,7 +1884,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Weeview",
+        "url": "https://weeview.nl/location/amsterdam/",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 99,
@@ -1310,7 +1903,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/420-cafe-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 100,
@@ -1323,7 +1922,8 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": null
     },
     {
       "id": 101,
@@ -1336,7 +1936,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/city-hall-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 102,
@@ -1349,7 +1955,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/feels-good-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 103,
@@ -1362,7 +1974,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/greenhouse-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 104,
@@ -1375,7 +1993,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/the-bulldog-energy-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 105,
@@ -1388,7 +2012,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/the-bulldog-the-first-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 106,
@@ -1401,7 +2031,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/blue-lagoon-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 107,
@@ -1414,7 +2050,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/vondel-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 108,
@@ -1424,10 +2066,21 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2026-08-07",
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/hunters-amsterdam-papaverweg",
+        "productReviewDatesVerified": false,
+        "note": "Some product star ratings, branch matched to Papaverweg 2, not other Hunters branches."
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/hunters-amsterdam-papaverweg",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 109,
@@ -1440,7 +2093,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/eastwood-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 110,
@@ -1453,7 +2112,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/crash-light-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 111,
@@ -1466,7 +2131,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/central-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 112,
@@ -1479,7 +2150,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/easy-times-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 113,
@@ -1492,7 +2169,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/la-tertulia-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 114,
@@ -1505,7 +2188,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/superskunk-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 115,
@@ -1518,7 +2207,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Leafly",
+        "url": "https://www.leafly.com/dispensary-info/rockland-coffeeshop",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 116,
@@ -1531,7 +2226,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/easy-times-reguliersdwarsstraat",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 117,
@@ -1544,7 +2245,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/freei-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 118,
@@ -1557,7 +2264,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/the-otherside-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 119,
@@ -1570,7 +2283,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/hashtag-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 120,
@@ -1583,7 +2302,8 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": null
     },
     {
       "id": 121,
@@ -1596,7 +2316,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/smokey-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 122,
@@ -1609,7 +2335,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/het-ballonnetje-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 123,
@@ -1622,7 +2354,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/kadinsky-spui",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 124,
@@ -1635,7 +2373,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/flower-power-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 125,
@@ -1648,7 +2392,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Weeview",
+        "url": "https://weeview.nl/location/amsterdam/",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 126,
@@ -1661,7 +2411,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Weeview",
+        "url": "https://weeview.nl/location/amsterdam/",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 127,
@@ -1674,7 +2430,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/stones-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 128,
@@ -1687,7 +2449,8 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": null
     },
     {
       "id": 129,
@@ -1700,7 +2463,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/strain-hunters-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 130,
@@ -1713,7 +2482,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/the-bulldog-rockshop-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 131,
@@ -1726,7 +2501,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/the-store-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 132,
@@ -1739,7 +2520,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/bluebird-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 133,
@@ -1752,7 +2539,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/reefer-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 134,
@@ -1765,7 +2558,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/thecorner-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 135,
@@ -1778,7 +2577,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/sativa-amsterdam-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 136,
@@ -1791,7 +2596,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/mediterrane-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 137,
@@ -1804,7 +2615,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/newtimes-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 138,
@@ -1817,7 +2634,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/coffeeshop-tyson",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 139,
@@ -1830,7 +2653,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/de-kade-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 140,
@@ -1843,7 +2672,8 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": null
     },
     {
       "id": 141,
@@ -1856,7 +2686,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/bushdocter-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 142,
@@ -1869,7 +2705,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/green-house-tol-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 143,
@@ -1882,7 +2724,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/funny-people-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 144,
@@ -1895,7 +2743,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/carmona-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 145,
@@ -1908,7 +2762,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/yoyo-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 146,
@@ -1921,7 +2781,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/mr-kandco-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 147,
@@ -1934,7 +2800,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/de-republiek-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 148,
@@ -1944,10 +2816,21 @@
       "qualityReportCount": 1,
       "qualityEditorialStatus": "insufficient_dated_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2025-09-11",
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/boerejongens-utrechtsestraat-amsterdam",
+        "productReviewDatesVerified": false,
+        "note": "Product ratings for flower and hash are visible, but the menu is from September 2025 and product review ages are unverified."
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/boerejongens-utrechtsestraat-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 149,
@@ -1957,10 +2840,21 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2026-08-07",
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/hunters-amsterdam-utrechtsestraat",
+        "productReviewDatesVerified": false,
+        "note": "Individual flower rating counts visible; branch matched to Utrechtsestraat 14H, not other Hunters branches."
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/hunters-amsterdam-utrechtsestraat",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 150,
@@ -1973,7 +2867,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/chapiteau-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 151,
@@ -1986,7 +2886,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/papillon-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 152,
@@ -1999,7 +2905,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/freedom-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 153,
@@ -2012,7 +2924,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/nice-place-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 154,
@@ -2025,7 +2943,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/blue-sea-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 155,
@@ -2038,7 +2962,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/superfly-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 156,
@@ -2051,7 +2981,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/warda-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 157,
@@ -2064,7 +3000,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/relax-zuid-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 158,
@@ -2077,7 +3019,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/coffeeshop-smokerdam-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 159,
@@ -2087,10 +3035,21 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2026-08-07",
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/hunters-amsterdam-waterlandplein",
+        "productReviewDatesVerified": false,
+        "note": "Some product star ratings, branch matched to Waterlandplein 7, not other Hunters branches."
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/hunters-amsterdam-waterlandplein",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 160,
@@ -2103,7 +3062,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/green-house-namaste-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 161,
@@ -2116,7 +3081,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/spirit-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 162,
@@ -2129,7 +3100,8 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": null
     },
     {
       "id": 163,
@@ -2142,7 +3114,8 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": null
     },
     {
       "id": 164,
@@ -2155,7 +3128,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/bullwackie-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 165,
@@ -2168,7 +3147,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/trefpunt-amsterdam",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 166,
@@ -2181,7 +3166,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Greenmeister",
+        "url": "https://en.greenmeister.com/coffeeshop/terps-army-2",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     },
     {
       "id": 167,
@@ -2194,7 +3185,13 @@
         "status": "not_checked"
       },
       "eligibleProductRating": null,
-      "productScore": null
+      "productScore": null,
+      "venueRatingResearchLead": {
+        "source": "Weeview",
+        "url": "https://weeview.nl/location/amsterdam/",
+        "status": "existing_general_venue_rating_page_only",
+        "note": "Existing venue star-rating URL only. This does not establish product-specific data or permission to reproduce it."
+      }
     }
   ]
 }
