@@ -9,13 +9,31 @@ in README.md are historical records and are no longer the rating algorithm loade
 For a single shop, collect independently published 1–5 star **venue-level**
 ratings, each verified against the correct street address/trading identity.
 
-**BudMap Score = 2 × (sum of eligible website ratings / number of eligible websites)**.
+**Confidence-adjusted source rating out of 10 = (2 × published rating × review count + 7 × 5) / (review count + 5).**
 
-Each website has equal weight, exactly as requested. Show one decimal place out of
-10. **A ten-point display does not add precision**: 4.23/5 becomes 8.5/10 when
-rounded to one decimal.
+This uses a 7/10 baseline with **five statistical prior reviews**, not five actual reviews.
+The effect is deliberately strongest for small review samples. It shrinks both
+unusually high and unusually low ratings towards the neutral baseline, without
+pretending to have new real user reviews.
 
-Example: 4.6/5, 4.0/5, 4.1/5 → 8.466…/10 → **8.5/10**.
+**BudMap Score = arithmetic mean of the adjusted per-website ratings.**
+Every independent website contributes equally, regardless of review count.
+Review counts change the reliability adjustment *within each website*, but do
+not give a big website more voting power than the smaller websites.
+
+All displayed ratings use one decimal place and the same /10 scale. Converting
+a rating to /10 does not make the input data more precise.
+
+Perfect original ratings illustrate the rule:
+- 1 review → (10 × 1 + 7 × 5) / 6 = **7.5/10**.
+- 2 reviews → 7.9/10.
+- 5 reviews → 8.5/10.
+- 10 reviews → 9.0/10.
+- 22 reviews → 9.4/10.
+- 100 reviews → 9.9/10.
+
+The 7/10 baseline and five-review strength are explicit editorial choices, not
+an empirically calibrated prediction of customers' future visits.
 
 The script `public/assets/budmap-score.js` reads:
 - `window.ATLAS_INTEL.ratings[id]` — existing primary venue rating.
@@ -30,14 +48,12 @@ not be counted as independent ratings. Entries are not borrowed from other branc
 
 ## Display and ranking
 
-- **Combined** (2+ websites): show the ten-point score and include in the
-  ranked "Best BudMap scores · compared" filter.
-- **Preliminary** (1 website): convert the single provider's published rating
-  to the same **ten-point display** (multiply by two), with a prominent
-  "Preliminary · 1 site" label and source review count. This is *not* a
-  corroborated BudMap Score and is excluded from the combined ranking.
-  A 10.0/10 preliminary figure may be based on one review; the label must
-  not be hidden or confused with a multi-site perfect score.
+- **Combined** (2+ websites): show the adjusted ten-point score and include
+  in the ranked "Best BudMap scores · compared" filter.
+- **Preliminary** (1 website): show the same **confidence-adjusted ten-point
+  rating** but with a prominent "Preliminary · 1 site" label and its actual
+  review count. This is *not* a corroborated BudMap Score and is excluded
+  from the combined ranking.
 - **Unrated** (0 websites): show that a score is pending, never a numeric guess.
 - "All rated coffeeshops" shows both combined scores and preliminary single-site ratings, with
   combined ones listed first.
@@ -52,14 +68,24 @@ providers may change those numbers.
 
 ## Perfect-score audit — 21 October 2026
 
-All 21 displayed 10.0/10 ratings before the correction were produced from a **single** source rather than the combined average; 15 involved fewer than five reviews and 7 involved just one review. Their stored averages match the source pages where they could be checked, but they were wrongly presented as independently corroborated BudMap 10s. The revised rule reserves the *combined BudMap Score* designation and ranking for 2+ websites, while also displaying preliminary scores out of 10 consistently. These 21 single-source perfect figures must remain clearly labelled preliminary. Some sources describe customer visits from 2020–2024; a published average alone is not a current quality assessment.
+All 21 displayed 10.0/10 ratings before the first correction were
+based on a **single** source; 15 involved fewer than five reviews and seven
+only one review. Single-source ratings remain clearly labelled preliminary and
+are now review-count-adjusted. For example, the seven one-review originals
+fall from 10.0/10 to 7.5/10. Older reviews remain a separate unresolved issue.
+
+## Review-count adjustment — 21 October 2026
+
+The confidence adjustment now applies to **every** scored coffeeshop, both
+single-source preliminary ratings and multi-source combined BudMap Scores.
+No original source star ratings, review counts or source links were overwritten.
 
 ## Limitations and required future checks
 
 These are historical community averages, **not** product tests or a guarantee
 of today's experience. The numbers cover review populations and periods that
 may differ; the same person may post to multiple platforms. Very small samples
-may generate unstable scores. The `checkedAt` field records **when we checked
+are adjusted towards 7/10, but the adjustment cannot establish current quality. The `checkedAt` field records **when we checked
 a page**, NOT when its customers visited.
 
 Original review-website names, rating counts, links and matching notes are
@@ -79,8 +105,9 @@ not guesses from comments or text sentiment analysis.
 ## Testing checklist
 
 - Open all 167 shop cards; no client JavaScript errors.
-- Verify DrewIsSharing: (4.3 + 4.8) / 2 × 2 = **9.1/10** (two sites).
-- Verify all 21 single-site 5.0/5 averages display as preliminary 10.0/10, prominently labelled 1 site and showing the original site's review count; they must never enter the combined BudMap ranking.
+- Verify DrewIsSharing (4.3/5 over 6 reviews and 4.8/5 over 5 reviews): **8.1/10** after per-site adjustment, averaging the resulting 7.87 and 8.30 values.
+- Verify all 21 single-site 5.0/5 averages display as preliminary adjusted
+  ratings below 10.0/10, with the actual review count and never in the combined ranking.
 - Verify the 11 missing-source shops show "Not rated yet".
 - Verify the ranked filter excludes preliminary and unrated shops, and the 23 combined shops are sorted correctly.
 - Verify "All rated" includes 156 shops and "Recent menus" still works.
