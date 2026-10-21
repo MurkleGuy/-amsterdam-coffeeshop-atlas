@@ -33,6 +33,34 @@ See [overall scoring notes](BUDMAP-SCORE-METHOD.md),
 [research plan](WEED-QUALITY-RESEARCH-PLAN.md) for historical context.
 Those are **not active features of the public map**.
 
+## Live walking guidance — bottom navigation banner
+
+When a user plans a walking route and taps **Start GPS guidance**, BudMap
+shows an unobtrusive **next-turn banner at the bottom of the map**. It shows
+a turn arrow, the upcoming written instruction and the approximate walking
+distance remaining to that manoeuvre. This is based on Valhalla route
+instructions and browser GPS, not a full commercial navigation SDK.
+
+The banner **automatically advances** after the visitor moves past the
+turn along the route; it uses route-segment snapping, a conservative
+10–22 metre turn-passing margin, and monotonic progress to reduce false
+changes from GPS drift. Weak location accuracy or distance from the
+planned path pauses turn advancement and shows a caution. **Replan** can
+request a fresh walking route from a current GPS fix; **Stop** dismisses
+turn guidance while leaving the GPS location toggle available. When
+navigation starts, the route planner closes so the upper portion of the
+map remains uncluttered. The banner sits above the bottom safe area and
+keeps attribution accessible.
+
+Implementation: `public/assets/budmap-nav-math.js` contains pure
+route-distance/projection helpers. `public/assets/atlas-trip.js`
+manages opt-in geolocation, manoeuvre updates, and banner lifecycle.
+`public/map.html` supplies the mobile-responsive bottom banner styles
+and script load order. **It is visual GPS guidance**, not voice navigation,
+background tracking, automatic route replanning, or a guarantee of safe
+road crossings. GPS permission and a route are required, the page must
+remain active, and the Google Maps fallback is preserved.
+
 ## Features
 - Searchable directory of 167 published Amsterdam 2026 tolerance-reference addresses (151 preliminary directory name matches).
 - Interactive Leaflet / OpenStreetMap map with address lookups, map clusters and mobile list/map switching.
