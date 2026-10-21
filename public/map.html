@@ -1330,9 +1330,8 @@ html,body{height:100%;width:100%;overflow:hidden}
 @media(max-width:390px){.detail .atlasEstimated .atlasScoreHead>span{font-size:10px}}
 </style>
 <style id="budmap-weed-evidence-style">
-.weedQualityTag{background:#e2f5e8!important;border-color:#b8dfbd!important;color:#125c39!important}
-.detail .shopRatingDisclosure.weedDisclosure{border-color:#afdbb8!important}
-.detail .weedDisclosure .shopRatingSummaryIcon{color:#227b49!important}
+.detail .shopRatingDisclosure.researchDisclosure{border-color:#c8dfd0!important}
+.detail .researchDisclosure .shopRatingSummaryIcon{color:#227b49!important}
 .detail .budmapResearchFindings{border-top:1px solid #d4e4d9;margin-top:9px;padding-top:9px;font-size:11px}
 .detail .budmapResearchFindings>summary{cursor:pointer;font-size:12px;font-weight:750;color:#285c40;line-height:1.5}
 .detail .budmapResearchBody{padding:7px 2px 0;font-size:11px;line-height:1.45;color:#41574a;overflow-wrap:anywhere}
@@ -1357,7 +1356,7 @@ html,body{height:100%;width:100%;overflow:hidden}
     <div class="desc">Search shops or streets, save favourites, and get walking directions.</div>
     <div class="searchWrap"><span class="glass" aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search coffeeshops, streets, postcodes…" autocomplete="off" aria-label="Search coffeeshops"></div>
     <div class="filters"><select id="area" aria-label="Filter by area"><option value="all">All Amsterdam areas</option><option value="Centrum">Centrum</option><option value="West">West / Westpoort</option><option value="Nieuw-West">Nieuw-West</option><option value="Zuid">Zuid</option><option value="Oost">Oost</option><option value="Noord">Noord</option><option value="Zuidoost">Zuidoost</option></select><button id="nearby" title="Use your location to sort by distance">⌖ Near me</button></div>
-    <div class="discoverToolbar"><label for="exploreMode">Discover</label><select id="exploreMode" aria-label="Explore all coffeeshops, weed-quality research, overall ratings or menus"><option value="all">All coffeeshops</option><option value="weed">✿ Weed quality · Research underway</option><option value="atlas">★ Best Overall · BudMap</option><option value="menus">▤ Recent menus (120 days)</option></select><small id="discoveryInfo" aria-live="polite"></small></div>
+    <div class="discoverToolbar"><label for="exploreMode">Discover</label><select id="exploreMode" aria-label="Explore all coffeeshops, product research, overall ratings or menus"><option value="all">All coffeeshops</option><option value="research">✿ Product research · 167 shops</option><option value="atlas">★ Best Overall · BudMap</option><option value="menus">▤ Recent menus (120 days)</option></select><small id="discoveryInfo" aria-live="polite"></small></div>
     <div class="tabline"><small id="listCount">167 places</small><div class="tabButtons"><button id="allTab" class="active">All places</button><button id="savedTab">★ Saved <span id="favCount">0</span></button></div></div>
    </div>
    <div class="status"><span id="statusDot" class="dot"></span><span id="statusText" aria-live="polite">Loading map locations from public address records…</span></div>
@@ -1384,8 +1383,6 @@ html,body{height:100%;width:100%;overflow:hidden}
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script src="assets/shop-intel.js?v=2026-10-20-crosscheck"></script>
 <script src="assets/budmap-score.js?v=5"></script>
-<script src="assets/atlas-verdicts.js?v=14"></script>
-<script src="assets/budmap-weed.js?v=1"></script>
 <script src="assets/budmap-research.js?v=1"></script>
 <script>
 'use strict';
@@ -1435,7 +1432,6 @@ function isSaved(s){return favs.has(s.id)}
 function toggleFav(id){if(favs.has(id))favs.delete(id);else favs.add(id);saveFavs();$('favCount').textContent=favs.size;renderList();if(selected===id)showDetail(official.find(s=>s.id===id)||null);}
 
 const budRating=shop=>window.BudMapScore?.assess(shop)||{score:null,sourceCount:0,kind:'unrated'};
-const weedRating=shop=>window.BudMapWeed?.assess(shop)||{score:null,count:0};
 const researchFor=shop=>window.BudMapResearch.assess(shop);
 
 function filtered(){
@@ -1450,21 +1446,22 @@ function filtered(){
    ||second.totalReviews-first.totalReviews||(a.name||'').localeCompare(b.name||'');
  });
  else if(view==='menus')out.sort((a,b)=>menuFor(b).photoDate.localeCompare(menuFor(a).photoDate)||(a.name||'').localeCompare(b.name||''));
+ else if(view==='research')out.sort((a,b)=>(a.name||a.street).localeCompare(b.name||b.street));
  else if(sortedByDistance&&myPos)out.sort((a,b)=>((a.lat==null)?1e9:hav(myPos,[a.lat,a.lng]))-((b.lat==null)?1e9:hav(myPos,[b.lat,b.lng])));
  else out.sort((a,b)=>(a.name||a.street).localeCompare(b.name||b.street));
  return out;
 }
 function renderList(){
- const arr=filtered(),view=$('exploreMode').value,counts=window.BudMapScore.coverage(official),weedCounts=window.BudMapWeed.coverage(official),researchCounts=window.BudMapResearch.coverage(official);
- $('discoveryInfo').textContent=view==='weed'
-  ?researchCounts.withProductRatings+' shops have product-rating listings (not quality scores) · '+weedCounts.rated+' early quality estimates · All '+researchCounts.researched+' researched · Alphabetical view'
+ const arr=filtered(),view=$('exploreMode').value,counts=window.BudMapScore.coverage(official),researchCounts=window.BudMapResearch.coverage(official);
+ $('discoveryInfo').textContent=view==='research'
+  ?researchCounts.researched+' shop records researched · '+researchCounts.withProductRatings+' with historical product-rating listings · No verified weed-quality leaderboard yet'
   :view==='atlas'
   ?counts.rated+' BudMap scores · highest first · review counts shown'
   :view==='menus'?'Dated menus from the last '+INTEL.maxMenuAgeDays+' days; newest first'
   :counts.rated+' BudMap scores · '+counts.unrated+' awaiting ratings';
  $('shopsToggleCount').textContent=arr.length;
  $('listCount').textContent=arr.length+' '+(arr.length===1?'place':'places');
- $('shopList').innerHTML=arr.length?arr.map((s,index)=>`<div class="listing ${selected===s.id?'selected':''}" role="button" tabindex="0" data-id="${s.id}"><span class="num">${s.id}</span><div><div class="l-title">${esc(s.name||s.street+' '+s.number)}</div><div class="l-address">${esc(s.address)}</div><div class="l-meta">${esc(getArea(s))}${s.lat!=null?' · On map':' · Locating…'}${myPos&&s.lat!=null?' · '+hav(myPos,[s.lat,s.lng]).toFixed(1)+' km away':''}</div><div class="listIntel">${view==='weed'||view==='all'?window.BudMapWeed.listTag(s)+window.BudMapResearch.listTag(s)+window.BudMapScore.listTag(s):window.BudMapScore.listTag(s)+(weedRating(s).score!=null?window.BudMapWeed.listTag(s):'')}${view==='atlas'?'<span class="rankTag">#'+(index+1)+'</span>':''}${menuFor(s)?'<span class="menuTag">▤ Menu '+fmtMenuDate(menuFor(s).photoDate)+'</span>':''}</div></div><button aria-label="${isSaved(s)?'Remove from':'Add to'} favourites" class="heart ${isSaved(s)?'saved':''}" data-fav="${s.id}">${isSaved(s)?'★':'☆'}</button></div>`).join(''):'<p style="margin:24px 9px;color:#708075;font-size:13px">No matches. Try another shop name, postcode, or area.</p>';
+ $('shopList').innerHTML=arr.length?arr.map((s,index)=>`<div class="listing ${selected===s.id?'selected':''}" role="button" tabindex="0" data-id="${s.id}"><span class="num">${s.id}</span><div><div class="l-title">${esc(s.name||s.street+' '+s.number)}</div><div class="l-address">${esc(s.address)}</div><div class="l-meta">${esc(getArea(s))}${s.lat!=null?' · On map':' · Locating…'}${myPos&&s.lat!=null?' · '+hav(myPos,[s.lat,s.lng]).toFixed(1)+' km away':''}</div><div class="listIntel">${view==='research'?window.BudMapResearch.listTag(s)+window.BudMapScore.listTag(s):window.BudMapScore.listTag(s)}${view==='atlas'?'<span class="rankTag">#'+(index+1)+'</span>':''}${menuFor(s)?'<span class="menuTag">▤ Menu '+fmtMenuDate(menuFor(s).photoDate)+'</span>':''}</div></div><button aria-label="${isSaved(s)?'Remove from':'Add to'} favourites" class="heart ${isSaved(s)?'saved':''}" data-fav="${s.id}">${isSaved(s)?'★':'☆'}</button></div>`).join(''):'<p style="margin:24px 9px;color:#708075;font-size:13px">No matches. Try another shop name, postcode, or area.</p>';
  $('shopList').querySelectorAll('[data-id]').forEach(el=>{el.addEventListener('click',e=>{if(e.target.closest('[data-fav]'))return;selectShop(Number(el.dataset.id))});el.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();selectShop(Number(el.dataset.id))}})});
  $('shopList').querySelectorAll('[data-fav]').forEach(el=>el.addEventListener('click',e=>{e.stopPropagation();toggleFav(Number(el.dataset.fav))}));
  refreshClusters(arr);
@@ -1511,13 +1508,13 @@ function showDetail(s){
  }
  const previousShopId=panel.dataset.shopId;
  const preserveExpanded=previousShopId===String(s.id)&&!!panel.querySelector('#shopRatingDisclosure')?.open;
- const preserveWeedExpanded=previousShopId===String(s.id)&&!!panel.querySelector('#shopWeedDisclosure')?.open;
+ const preserveResearchExpanded=previousShopId===String(s.id)&&!!panel.querySelector('#shopResearchDisclosure')?.open;
  const title=s.name||s.street+' '+s.number,saved=isSaved(s),menu=menuFor(s),assessment=budRating(s);
  const numericScore=Number.isFinite(assessment.score)?assessment.score.toFixed(1):null;
  const scoreKind=assessment.score!=null?'Adjusted · '+assessment.sourceCount+' '+(assessment.sourceCount===1?'website':'websites')+' · '+assessment.totalReviews+' '+(assessment.totalReviews===1?'review':'reviews'):'Not yet rated';
  const atlasPanel=window.BudMapScore.detail(s);
- const weedAssessment=weedRating(s),weedPanel=window.BudMapWeed.detail(s),researchAssessment=researchFor(s);
- const weedSummary=weedAssessment.score!=null?'Early estimate · '+weedAssessment.count+' dated product reports':weedAssessment.count?'Not rated · '+weedAssessment.count+' product reports · further evidence needed':'Not rated · '+researchAssessment.label+' · quality verification needed';
+ const researchAssessment=researchFor(s);
+ const researchSummary=researchAssessment.label+' · Historical source research, not a weed-quality score';
  panel.setAttribute('aria-label','Details for '+title);
  const anchor=!!map&&Number.isFinite(s.lat)&&Number.isFinite(s.lng)&&(wrap.clientHeight||map.getSize().y)>290;
  pinnedDetailShopId=anchor?s.id:null;
@@ -1540,13 +1537,13 @@ function showDetail(s){
  panel.scrollTop=0;
  panel.innerHTML=`<div class="detailHead"><div class="detailIdentity"><span class="eyebrow">${esc(getArea(s))} · COFFEESHOP</span><h3>${esc(title)}</h3><p class="detailAddress">${esc(s.address)}</p></div>
  <div class="detailHeadActions"><button type="button" id="collapseDetail" class="shopCollapseDetail" aria-label="Back to small shop preview" title="Back to preview">‹</button><button type="button" id="detailFav" class="detailStar ${saved?'saved':''}" aria-pressed="${saved?'true':'false'}" aria-label="${saved?'Remove from saved shops':'Save this coffeeshop'}" title="${saved?'Remove from saved':'Save this shop'}">${saved?'★':'☆'}</button><button type="button" class="close" id="closeDetail" aria-label="Close shop details">×</button></div></div>
-  <details class="shopRatingDisclosure weedDisclosure" id="shopWeedDisclosure" ${preserveWeedExpanded?'open':''}>
+  <details class="shopRatingDisclosure researchDisclosure" id="shopResearchDisclosure" ${preserveResearchExpanded?'open':''}>
    <summary class="shopRatingSummary">
     <span class="shopRatingSummaryIcon" aria-hidden="true">✿</span>
-    <span class="shopRatingSummaryText"><strong>${weedAssessment.score!=null?'Weed Quality '+weedAssessment.score.toFixed(1)+' / 10':'Weed Quality · not rated'}</strong><small>${esc(weedSummary)} · Tap for details</small></span>
+    <span class="shopRatingSummaryText"><strong>Product research</strong><small>${esc(researchSummary)} · Tap for findings</small></span>
     <span class="shopRatingSummaryChevron" aria-hidden="true">⌄</span>
    </summary>
-   <div class="shopRatingExpanded">${weedPanel}${window.BudMapResearch.detail(s)}</div>
+   <div class="shopRatingExpanded">${window.BudMapResearch.detail(s)}</div>
   </details>
   <details class="shopRatingDisclosure" id="shopRatingDisclosure" ${preserveExpanded?'open':''}>
    <summary class="shopRatingSummary">
