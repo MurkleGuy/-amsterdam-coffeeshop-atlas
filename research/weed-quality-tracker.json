@@ -1,0 +1,2200 @@
+{
+  "title": "BudMap - Cannabis quality evidence tracker",
+  "scope": "All 167 official Amsterdam coffeeshop addresses from public/assets/shops.js",
+  "checkedAt": "2026-10-21",
+  "description": "Research backlog, not a numerical product-quality ranking. No third-party product ratings reproduced or imported.",
+  "statusValues": {
+    "not_checked": "No product-level source inspection completed",
+    "product_rating_listing_found": "Product rating listings observed on a public page; not validated for scoring or republishing"
+  },
+  "state": {
+    "addresses": 167,
+    "productPagesSpotChecked": 3,
+    "confirmedLicencedProductDataFeeds": 0
+  },
+  "shops": [
+    {
+      "id": 1,
+      "shop": "DNA",
+      "address": "Achillesstraat 104, 1076 RH, Amsterdam",
+      "overallSources": 2,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 2,
+      "shop": "Power Flower Amsterdam",
+      "address": "Admiraal De Ruijterweg 104, 1056 GP, Amsterdam",
+      "overallSources": 0,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 3,
+      "shop": "The Old Church",
+      "address": "Amstel 8H, 1017 AA, Amsterdam",
+      "overallSources": 2,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 4,
+      "shop": "Family First",
+      "address": "Amstel 36H, 1017 AB, Amsterdam",
+      "overallSources": 2,
+      "qualityReportCount": 1,
+      "qualityEditorialStatus": "insufficient_dated_evidence",
+      "productResearch": {
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2023-04-28",
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/familyfirst-amsterdam",
+        "note": "Flower product star ratings are visible, but menu update is more than three years old; do not treat it as evidence of current batch quality."
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 5,
+      "shop": "Happy Days",
+      "address": "Amsteldijk 139, 1079 LE, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 2,
+      "qualityEditorialStatus": "insufficient_dated_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 6,
+      "shop": "New Times 2",
+      "address": "Amstelstraat 35, 1017 DA, Amsterdam",
+      "overallSources": 0,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 7,
+      "shop": "Best Friends Oud-Zuid",
+      "address": "Amstelveenseweg 61, 1075 VV, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 8,
+      "shop": "The Border",
+      "address": "Amstelveenseweg 1160, 1081 JW, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 9,
+      "shop": "Boerejongens West",
+      "address": "Baarsjesweg 239, 1058 AA, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 3,
+      "qualityEditorialStatus": "early_estimate_only",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 10,
+      "shop": "Coffeeshop West",
+      "address": "Balboastraat 19, 1057 VT, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 11,
+      "shop": "Pacific",
+      "address": "Balthasar Floriszstraat 10, 1071 VC, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 12,
+      "shop": "The Plug Westerdok",
+      "address": "Barentszstraat 130, 1013 NS, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 13,
+      "shop": "Babylon",
+      "address": "Beursstraat 27, 1012 JV, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 14,
+      "shop": "Relax Centrum",
+      "address": "Binnen Oranjestraat 9H, 1013 HZ, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 15,
+      "shop": "Boerejongens BIJ",
+      "address": "Bonairestraat 78, 1058 XL, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 16,
+      "shop": "Risky Business",
+      "address": "Bos En Lommerweg 163, 1055 DS, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 17,
+      "shop": "7th Heaven",
+      "address": "Brouwersgracht 137H, 1015 GE, Amsterdam",
+      "overallSources": 2,
+      "qualityReportCount": 7,
+      "qualityEditorialStatus": "early_estimate_only",
+      "productResearch": {
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2026-02-28",
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/137-amsterdam",
+        "note": "Shop menu is more recent, but many listed products have zero ratings and the dates of product reviews need checking."
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 18,
+      "shop": "Siberië",
+      "address": "Brouwersgracht 11H, 1015 GA, Amsterdam",
+      "overallSources": 2,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 19,
+      "shop": "Atlas",
+      "address": "Buikslotermeerplein 389, 1025 XE, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 20,
+      "shop": "Massawa",
+      "address": "Chassestraat 4, 1057 JD, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 21,
+      "shop": "The Bulldog The Port",
+      "address": "Coenhavenweg 26, 1013 BL, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 22,
+      "shop": "Nogal Wiedes",
+      "address": "Czaar Peterstraat 122H, 1018 PV, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 23,
+      "shop": "ProGram",
+      "address": "Daniel Stalpertstraat 78, 1072 XK, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 5,
+      "qualityEditorialStatus": "early_estimate_only",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 24,
+      "shop": "Happy People",
+      "address": "Dapperstraat 2, 1093 BT, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 25,
+      "shop": "Cheech & Chong",
+      "address": "De Clercqstraat 30, 1052 NE, Amsterdam",
+      "overallSources": 0,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 26,
+      "shop": "Oost",
+      "address": "Derde Oosterparkstraat 73, 1091 JV, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 1,
+      "qualityEditorialStatus": "insufficient_dated_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 27,
+      "shop": "Paradox",
+      "address": "Eerste Bloemdwarsstraat 2H, 1016 KS, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 28,
+      "shop": "The Plug East",
+      "address": "Eerste Oosterparkstraat 47, 1091 GV, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 29,
+      "shop": "Katsu",
+      "address": "Eerste Van Der Helststraat 70, 1072 NZ, Amsterdam",
+      "overallSources": 2,
+      "qualityReportCount": 1,
+      "qualityEditorialStatus": "insufficient_dated_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 30,
+      "shop": "Johnny",
+      "address": "Elandsgracht 3, 1016 TM, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 31,
+      "shop": "De Supermarkt",
+      "address": "Frederik Hendrikstraat 69, 1052 HL, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 32,
+      "shop": "The Plug West",
+      "address": "Frederik Hendrikstraat 123, 1052 HP, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 33,
+      "shop": "Het Gelderse",
+      "address": "Geldersekade 54H, 1012 BK, Amsterdam",
+      "overallSources": 2,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 34,
+      "shop": "Voyagers",
+      "address": "Geldersekade 2H, 1012 BH, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 35,
+      "shop": "Roxy",
+      "address": "Gerard Doustraat 188, 1073 XA, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 36,
+      "shop": "Club Media",
+      "address": "Gerard Doustraat 85, 1072 VN, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 37,
+      "shop": "Sensemillia",
+      "address": "Gillis Van Ledenberchstraat 135, 1052 VE, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 38,
+      "shop": "D & L",
+      "address": "Govert Flinckstraat 323, 1074 CB, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 39,
+      "shop": "Barraka",
+      "address": "Gravenstraat 9, 1012 NL, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 40,
+      "shop": "Barney's",
+      "address": "Haarlemmerstraat 102H, 1013 EW, Amsterdam",
+      "overallSources": 2,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 41,
+      "shop": "Coffeeshop Amsterdam",
+      "address": "Haarlemmerstraat 44, 1013 ES, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 42,
+      "shop": "Green House United",
+      "address": "Haarlemmerstraat 64H, 1013 ET, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 43,
+      "shop": "Green Place 2",
+      "address": "Haarlemmerstraat 6, 1013 ER, Amsterdam",
+      "overallSources": 2,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 44,
+      "shop": "Popeye",
+      "address": "Haarlemmerstraat 63H, 1013 EK, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 45,
+      "shop": "The Balboa Family",
+      "address": "Halvemaansteeg 1, 1017 CR, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 1,
+      "qualityEditorialStatus": "insufficient_dated_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 46,
+      "shop": "Balou",
+      "address": "Halvemaansteeg 5, 1017 CR, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 1,
+      "qualityEditorialStatus": "insufficient_dated_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 47,
+      "shop": "Original Dampkring",
+      "address": "Handboogstraat 29H, 1012 XM, Amsterdam",
+      "overallSources": 2,
+      "qualityReportCount": 1,
+      "qualityEditorialStatus": "insufficient_dated_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 48,
+      "shop": "Prix d'Ami",
+      "address": "Haringpakkerssteeg 3, 1012 LR, Amsterdam",
+      "overallSources": 2,
+      "qualityReportCount": 1,
+      "qualityEditorialStatus": "insufficient_dated_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 49,
+      "shop": "Tweede Kamer",
+      "address": "Heisteeg 6, 1012 WC, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 6,
+      "qualityEditorialStatus": "insufficient_dated_evidence",
+      "productResearch": {
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2025-11-10",
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/tweede-kamer-amsterdam",
+        "note": "Individual flower product star ratings are visible; review recency, sample sizes and menu freshness need checking."
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 50,
+      "shop": "Resin",
+      "address": "Hekelveld 7I, 1012 SN, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 51,
+      "shop": "Ibiza",
+      "address": "Hemonystraat 16, 1074 BP, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 52,
+      "shop": "Amnesia",
+      "address": "Herengracht 133H, 1015 BG, Amsterdam",
+      "overallSources": 2,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 53,
+      "shop": "Best Friends Zuidoost",
+      "address": "Hettenheuvelweg 35, 1101 BM, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 54,
+      "shop": "Roots",
+      "address": "Hoekenrode 14B, 1102 BR, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 1,
+      "qualityEditorialStatus": "insufficient_dated_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 55,
+      "shop": "Ruthless",
+      "address": "Hoofdweg 174, 1057 DC, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 56,
+      "shop": "New Amsterdam",
+      "address": "Hoofdweg 226, 1057 DG, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 57,
+      "shop": "Aktama 2",
+      "address": "Hudsonstraat 156, 1057 ST, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 58,
+      "shop": "Flash Back",
+      "address": "Hudsonstraat 138, 1057 SR, Amsterdam",
+      "overallSources": 0,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 59,
+      "shop": "Coffeeshop Sloterdijk",
+      "address": "Humberweg 2, 1043 AC, Amsterdam",
+      "overallSources": 2,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 60,
+      "shop": "Millennium",
+      "address": "Jan Hanzenstraat 109, 1053 SN, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 61,
+      "shop": "Kashmir",
+      "address": "Jan Pieter Heijestraat 82, 1053 GS, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 62,
+      "shop": "96",
+      "address": "Jan Pieter Heijestraat 96, 1053 GT, Amsterdam",
+      "overallSources": 0,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 63,
+      "shop": "LoFt",
+      "address": "Jan Van Galenstraat 285, 1056 CA, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 64,
+      "shop": "Warda II",
+      "address": "Javastraat 104, 1094 HN, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 65,
+      "shop": "Abraxas",
+      "address": "Jonge Roelensteeg 12H, 1012 PL, Amsterdam",
+      "overallSources": 2,
+      "qualityReportCount": 4,
+      "qualityEditorialStatus": "early_estimate_only",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 66,
+      "shop": "Happy Feelings",
+      "address": "Kerkstraat 51H, 1017 GC, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 67,
+      "shop": "The Dolphins",
+      "address": "Kerkstraat 39, 1017 GB, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 68,
+      "shop": "Green Place",
+      "address": "Kloveniersburgwal 4H, 1012 CT, Amsterdam",
+      "overallSources": 2,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 69,
+      "shop": "Bagheera",
+      "address": "Kloveniersburgwal 60H, 1012 CX, Amsterdam",
+      "overallSources": 2,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 70,
+      "shop": "Basjoe",
+      "address": "Kloveniersburgwal 62H, 1012 CX, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 71,
+      "shop": "Goa",
+      "address": "Kloveniersburgwal 42A, 1012 CW, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 72,
+      "shop": "Yin Yang",
+      "address": "Knollendamstraat 5, 1013 TL, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 73,
+      "shop": "Solo",
+      "address": "Korte Koningsstraat 2, 1011 GA, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 74,
+      "shop": "Get Down To It",
+      "address": "Korte Leidsedwarsstraat 77, 1017 PW, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 75,
+      "shop": "The Rookies",
+      "address": "Korte Leidsedwarsstraat 145, 1017 PZ, Amsterdam",
+      "overallSources": 2,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 76,
+      "shop": "Nachtegaal",
+      "address": "Krugerplein 22, 1091 KZ, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 77,
+      "shop": "Kadinsky",
+      "address": "Langebrugsteeg 7A, 1012 GB, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 78,
+      "shop": "The Bulldog Ex-Police Station",
+      "address": "Leidseplein 17, 1017 PS, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 79,
+      "shop": "De Watersnip",
+      "address": "Lodewijk Van Deysselstraat 37, 1064 HL, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 80,
+      "shop": "Bronx",
+      "address": "Marnixstraat 92H, 1015 VZ, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 81,
+      "shop": "1e Hulp",
+      "address": "Marnixstraat 194H, 1016 TJ, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 1,
+      "qualityEditorialStatus": "insufficient_dated_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 82,
+      "shop": "Crush",
+      "address": "Marnixstraat 383O, 1016 XR, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 83,
+      "shop": "Tha Dogg House",
+      "address": "Marnixstraat 333H, 1016 TC, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 84,
+      "shop": "'t Keteltje",
+      "address": "Marnixstraat 74H, 1015 VX, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 85,
+      "shop": "Sensemillia West",
+      "address": "Meer En Vaart 177B, 1068 LA, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 86,
+      "shop": "The Stud",
+      "address": "Molukkenstraat 581, 1095 BJ, Amsterdam",
+      "overallSources": 2,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 87,
+      "shop": "Catch33",
+      "address": "Nassaukade 33, 1052 CK, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 88,
+      "shop": "Best Friends Oost",
+      "address": "Niasstraat 1, 1095 TS, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 89,
+      "shop": "Hortus De Overkant",
+      "address": "Nieuwe Herengracht 71, 1011 RR, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 90,
+      "shop": "Terps Army",
+      "address": "Nieuwe Nieuwstraat 32H, 1012 NH, Amsterdam",
+      "overallSources": 2,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 91,
+      "shop": "The Plug Utopia",
+      "address": "Nieuwezijds Voorburgwal 132, 1012 SH, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 92,
+      "shop": "Greenhouse Effect",
+      "address": "Nieuwmarkt 14H, 1012 CR, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 93,
+      "shop": "Jolly Joker",
+      "address": "Nieuwmarkt 4A, 1012 CR, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 94,
+      "shop": "Rock-It",
+      "address": "Nieuwmarkt 12H, 1012 CR, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 95,
+      "shop": "Noord",
+      "address": "Ooievaarsweg 10, 1021 GZ, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 96,
+      "shop": "Hunters",
+      "address": "Orteliusstraat 193, 1056 NP, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 3,
+      "qualityEditorialStatus": "early_estimate_only",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 97,
+      "shop": "Grey Area",
+      "address": "Oude Leliestraat 2, 1015 AW, Amsterdam",
+      "overallSources": 2,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 98,
+      "shop": "Tha Dogg House 2",
+      "address": "Oudebrugsteeg 26, 1012 JP, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 99,
+      "shop": "420 Café",
+      "address": "Oudebrugsteeg 27H, 1012 JN, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 100,
+      "shop": "Rick's Coffeeshop",
+      "address": "Oudezijds Voorburgwal 250H, 1012 GK, Amsterdam",
+      "overallSources": 0,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 101,
+      "shop": "City Hall",
+      "address": "Oudezijds Voorburgwal 189, 1012 EW, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 102,
+      "shop": "Feels Good",
+      "address": "Oudezijds Voorburgwal 36H, 1012 GD, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 103,
+      "shop": "Green House Centrum",
+      "address": "Oudezijds Voorburgwal 191, 1012 EW, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 104,
+      "shop": "The Bulldog Energy",
+      "address": "Oudezijds Voorburgwal 220, 1012 GJ, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 105,
+      "shop": "The Bulldog The First",
+      "address": "Oudezijds Voorburgwal 88H, 1012 GG, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 106,
+      "shop": "Blue Lagoon",
+      "address": "Overtoom 342, 1054 JE, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 107,
+      "shop": "Vondel",
+      "address": "Overtoom 451, 1054 KH, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 108,
+      "shop": "Hunters Noord",
+      "address": "Papaverweg 2, 1032 KH, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 109,
+      "shop": "Eastwood",
+      "address": "Pieter Vlamingstraat 286, 1093 AK, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 110,
+      "shop": "Crash Light",
+      "address": "Pretoriusstraat 67, 1092 GB, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 111,
+      "shop": "Central",
+      "address": "Prins Hendrikkade 89, 1012 AE, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 112,
+      "shop": "Easy Times",
+      "address": "Prinsengracht 476H, 1017 KG, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 113,
+      "shop": "La Tertulia",
+      "address": "Prinsengracht 312H, 1016 HX, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 114,
+      "shop": "Super Skunk",
+      "address": "Prinsengracht 480H, 1017 KG, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 115,
+      "shop": "Rock-Land",
+      "address": "Raadhuisstraat 8, 1016 DE, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 116,
+      "shop": "Easy Times II",
+      "address": "Reguliersdwarsstraat 29, 1017 BJ, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 117,
+      "shop": "Free I",
+      "address": "Reguliersdwarsstraat 70H, 1017 BN, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 118,
+      "shop": "The Otherside",
+      "address": "Reguliersdwarsstraat 6, 1017 BM, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 119,
+      "shop": "Hashtag",
+      "address": "Reguliersgracht 27H, 1017 LK, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 120,
+      "shop": "The Saint",
+      "address": "Regulierssteeg 2, 1017 CP, Amsterdam",
+      "overallSources": 0,
+      "qualityReportCount": 1,
+      "qualityEditorialStatus": "insufficient_dated_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 121,
+      "shop": "Smokey",
+      "address": "Rembrandtplein 24, 1017 CV, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 122,
+      "shop": "Het Ballonnetje",
+      "address": "Roetersstraat 12H, 1018 WD, Amsterdam",
+      "overallSources": 2,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 123,
+      "shop": "Kadinsky",
+      "address": "Rosmarijnsteeg 9, 1012 RP, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 124,
+      "shop": "Flower Power",
+      "address": "Rozengracht 139, 1016 LV, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 125,
+      "shop": "African Black Star",
+      "address": "Rozengracht 1H, 1016 LP, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 126,
+      "shop": "The Hit",
+      "address": "Rusland 16, 1012 CL, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 127,
+      "shop": "Stone's",
+      "address": "Ruysdaelkade 145, 1072 AR, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 128,
+      "shop": null,
+      "address": "Sarphatistraat 87G, 1018 EZ, Amsterdam",
+      "overallSources": 0,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 129,
+      "shop": "Strain Hunters",
+      "address": "Singel 387H, 1012 WN, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 130,
+      "shop": "The Bulldog Rockshop",
+      "address": "Singel 12H, 1013 GA, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 131,
+      "shop": "The Store",
+      "address": "Singel 14H, 1013 GA, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 132,
+      "shop": "Bluebird",
+      "address": "Sint Antoniësbreestraat 71, 1011 HB, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 1,
+      "qualityEditorialStatus": "insufficient_dated_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 133,
+      "shop": "Reefer",
+      "address": "Sint Antoniësbreestraat 77, 1011 HB, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 134,
+      "shop": "The Corner",
+      "address": "Spaarndammerdijk 9, 1013 ZM, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 135,
+      "shop": "Sativa",
+      "address": "Spuistraat 118, 1012 VA, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 2,
+      "qualityEditorialStatus": "insufficient_dated_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 136,
+      "shop": "DrewIsSharing",
+      "address": "Spuistraat 80H, 1012 TX, Amsterdam",
+      "overallSources": 2,
+      "qualityReportCount": 4,
+      "qualityEditorialStatus": "early_estimate_only",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 137,
+      "shop": "New Times",
+      "address": "Spuistraat 260H, 1012 VW, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 138,
+      "shop": "Tyson 2.0",
+      "address": "Spuistraat 222H, 1012 VT, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 139,
+      "shop": "De Kade",
+      "address": "Stadionkade 107, 1076 BN, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 140,
+      "shop": "De Prijs",
+      "address": "Surinamestraat 7, 1058 GJ, Amsterdam",
+      "overallSources": 0,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 141,
+      "shop": "The Bushdoctor",
+      "address": "Thorbeckeplein 28, 1017 CS, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 142,
+      "shop": "Green House Pijp",
+      "address": "Tolstraat 91, 1074 VG, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 143,
+      "shop": "Funny People",
+      "address": "Tt Vasumweg 4C, 1033 SC, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 144,
+      "shop": "Carmona",
+      "address": "Tweede Jan Van Der Heijdenstraat 43, 1072 TJ, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 145,
+      "shop": "YoYo",
+      "address": "Tweede Jan Van Der Heijdenstraat 79, 1074 XS, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 146,
+      "shop": "Mr. K",
+      "address": "Tweede Laurierdwarsstraat 44H, 1016 RB, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 147,
+      "shop": "De Republiek",
+      "address": "Tweede Nassaustraat 1, 1052 BJ, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 148,
+      "shop": "Boerejongens Centre",
+      "address": "Utrechtsestraat 21, 1017 VH, Amsterdam",
+      "overallSources": 2,
+      "qualityReportCount": 1,
+      "qualityEditorialStatus": "insufficient_dated_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 149,
+      "shop": "Hunters",
+      "address": "Utrechtsestraat 14H, 1017 VN, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 150,
+      "shop": "Chapiteau",
+      "address": "Van Boetzelaerstraat 31, 1051 CT, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 151,
+      "shop": "Papillon",
+      "address": "Van Der Helstplein 8, 1072 PH, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 152,
+      "shop": "Freedom",
+      "address": "Van Hogendorpstraat 201, 1051 CA, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 153,
+      "shop": "Nice Place",
+      "address": "Van Ostadestraat 290, 1073 TW, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 154,
+      "shop": "Blue Sea",
+      "address": "Van Woustraat 87, 1074 AE, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 155,
+      "shop": "SuperFly Amsterdam",
+      "address": "Van Woustraat 193, 1074 AN, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 156,
+      "shop": "Warda",
+      "address": "Van Woustraat 147, 1074 AJ, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 157,
+      "shop": "Relax Zuid",
+      "address": "Vechtstraat 9, 1078 RE, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 158,
+      "shop": "Smokerdam",
+      "address": "Vechtstraat 63, 1079 JA, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 159,
+      "shop": "Hunters Bros",
+      "address": "Waterlandplein 7, 1024 LL, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 160,
+      "shop": "Green House Namaste",
+      "address": "Waterlooplein 345, 1011 PG, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 161,
+      "shop": "The Spirit",
+      "address": "Westerstraat 121H, 1015 LZ, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 162,
+      "shop": "El Marssa",
+      "address": "Witte De Withstraat 106, 1057 ZG, Amsterdam",
+      "overallSources": 0,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 163,
+      "shop": "The Dream",
+      "address": "Witte De Withstraat 30, 1057 XZ, Amsterdam",
+      "overallSources": 0,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 164,
+      "shop": "Bullwackie",
+      "address": "Woestduinstraat 76, 1058 TJ, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 165,
+      "shop": "Trefpunt",
+      "address": "Zeeburgerdijk 33, 1093 SL, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 166,
+      "shop": "Terps Army 2",
+      "address": "Zieseniskade 22, 1017 RT, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 1,
+      "qualityEditorialStatus": "insufficient_dated_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    },
+    {
+      "id": 167,
+      "shop": "Kadinsky",
+      "address": "Zoutsteeg 14, 1012 LX, Amsterdam",
+      "overallSources": 1,
+      "qualityReportCount": 0,
+      "qualityEditorialStatus": "no_dated_product_evidence",
+      "productResearch": {
+        "status": "not_checked"
+      },
+      "eligibleProductRating": null,
+      "productScore": null
+    }
+  ]
+}
