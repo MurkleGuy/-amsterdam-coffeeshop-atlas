@@ -21,21 +21,30 @@ verification. There are no Google Places rating imports. The historic
 Atlas Score evidence pilot notes elsewhere in this README are superseded
 and are not loaded on the active map.
 
-## Weed-quality discovery — early evidence, 21 October 2026
+## Weed-quality research — full-coverage project, 21 October 2026
 
-The map opens with **Best Weed · early evidence**, using only dated
-flower/hash-related review observations and strict product-only account/date
-screening. **Six** shop records currently qualify for provisional numerical
-quality estimates; all remaining shops show an unscored weed-quality status.
-This is a *small editorial research sample*, not a definitive best-weed list.
-The quality value is never copied from an overall venue star rating.
+**Our goal is evidence-backed weed-quality coverage for all 167 coffeeshops,
+not an artificial 167/167 leaderboard.** The old "Best Weed" top-ten-style
+ranking has been paused while the evidence is too sparse. The map opens with
+**All coffeeshops**, and has an alphabetically ordered **Weed quality ·
+Research underway** discovery view with no weed-quality rank numbers.
 
-**Best Overall · BudMap** remains a separate ranking of the existing 156
-confidence-adjusted customer-satisfaction scores. Both Weed Quality and
-BudMap Overall appear as independent, expandable rows on each shop card.
-All 167 addresses stay available in the primary discovery view and on the
-map. See [weed-quality methodology](BUDMAP-WEED-QUALITY-METHOD.md) for the
-criteria, confidence limitations and original evidence provenance.
+Six shops currently show clearly labelled **early editorial estimates**
+from selected dated flower/hash comments; the other 161 remain unscored
+for weed quality. Separately, **156 shops retain their BudMap Overall
+Scores** and the Best Overall ranking. Both categories remain visible on
+shop cards and do not feed into each other's formula.
+
+A full [167-shop research tracker](research/weed-quality-tracker.json) is now
+maintained, distinguishing unresearched shops, dated editorial report
+coverage, and websites where product ratings have been spotted.
+A source page displaying products is **not** proof of current product quality.
+The original sources' product ratings have not been bulk-imported,
+reproduced or converted into BudMap Weed Scores; data-use permission,
+freshness, sample sizes and shop/strain matching must be checked first.
+
+See [research and rollout plan](WEED-QUALITY-RESEARCH-PLAN.md) and the
+[early estimate method](BUDMAP-WEED-QUALITY-METHOD.md).
 
 ## Features
 - Searchable directory of 167 published Amsterdam 2026 tolerance-reference addresses (151 preliminary directory name matches).
