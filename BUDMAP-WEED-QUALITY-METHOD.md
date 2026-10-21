@@ -79,7 +79,7 @@ the status of external product-page checks, the number of dated editorial
 quality-specific accounts already on file, and a null product score until
 a defensible, permitted scoring basis exists.
 
-The first 85 venue/product-quality source-page inspections were recorded by 21 October 2026:
+The first research pass on all 167 shop records was completed on 21 October 2026. Earlier directly inspected pages included:
 Family First (April 2023 menu), 7th Heaven (February 2026 menu),
 Tweede Kamer (November 2025 menu), Boerejongens West and Centre,
 Coffeeshop Amsterdam, ProGram, Abraxas and four separately matched
@@ -87,15 +87,18 @@ Hunters branches. Product stars were visible, but they
 have **not been licensed, imported or converted into BudMap Weed Scores**.
 The tracker also identifies 156 existing venue-rating website links as
 research leads, of which 146 point to Greenmeister venue pages. These
-are **not** verified product-rating feeds. At this point, **85 shops have
-had initial source-page inspections**: 77 display some product ratings,
-3 have no product listings, 1 has zero-vote product listings, 2 are
-flagged for source-address discrepancies, 1 has only outdated
-category reviews, and 1 has conflicting same-address listings.
-The remaining **82 shops have not been checked**. Even well-reviewed
-historic products are not evidence of a current batch, and none of the
-inspected product ratings has been included in an official BudMap
-Weed Quality Score. All 167 shop records remain in scope.
+are **not** verified product-rating feeds. After the first pass, **all
+167 addresses have individual dated research attempts**; **142** have
+inspected venue/product or quality-source pages, while **25** only have
+menu-only, general review or unresolved-source findings. **114** shop
+source pages display at least some product star ratings, but the menu
+update date is not the date of each customer's review, and product
+batches change. **15** source pages have no product listings and **5**
+list products without votes. Identity conflicts and the refusal of a
+permit application at Sarphatistraat 87G are explicitly flagged.
+**None** of these product ratings has been imported or issued as an
+official BudMap Weed Quality Score. No claimed 167-shop quality leaderboard
+has been published.
 
 The full scope, evidence gates, permissions considerations and visitor
 review proposals are in [the research plan](WEED-QUALITY-RESEARCH-PLAN.md).
