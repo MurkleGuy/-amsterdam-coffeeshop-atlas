@@ -28,10 +28,12 @@ contains exactly one shop record per published address ID (1–167), with:
   editorial sample supports only an **early estimate**, is insufficient,
   or has no dated product reports.
 - Product-level source-research status; currently "not_checked" for
-  135 shops. **32** pages have undergone an initial product-listing check:
-  30 with product rating listings, one with no products and one needing
-  address verification (Paradox, 2H in the directory versus 2R on the
-  source page). These are *page inspections*, not eligible weed scores.
+  **82 shops**. **85** shops have received an initial source-page inspection.
+  **77** displayed some product ratings, **3** listed no products,
+  **1** listed products without votes, **2** had unresolved source-address
+  mismatches, **1** had only stale quality-category reviews and **1**
+  had duplicate/conflicting listings at the same address. These are
+  *research statuses*, not eligible numerical weed-quality ratings.
 - 156 existing overall venue-rating website links as possible research
   starting points (146 Greenmeister pages and 10 other pages); a venue
   link does NOT establish the existence of a product rating.
@@ -43,7 +45,7 @@ product review** and the **menu update date**. None are interchangeable.
 
 ## What the first source check showed
 
-Thirty-two venue source pages have now been inspected for **product-specific rating existence**, without copying third-party product-level star averages into BudMap. The initial 12 are listed here, followed by notes on the next 20:
+Eighty-five venue/quality source pages have now received an **initial inspection**, without copying third-party product-level star averages into BudMap. The original 12 are listed here, followed by brief findings from later checks:
 
 | Shop | Menu marked updated | Preliminary finding |
 | --- | --- | --- |
@@ -62,7 +64,9 @@ Thirty-two venue source pages have now been inspected for **product-specific rat
 
 The next 20 pages were inspected on 21 October. The sample includes DNA, The Old Church, Happy Days, Best Friends Oud-Zuid, The Border, Pacific, The Plug Westerdok, Babylon, Relax Centrum, Boerejongens BIJ, Risky Business, Siberië, Atlas (Noord), Massawa, The Bulldog Port 26, Nogal Wiedes, Happy People, Oost, Paradox and The Plug East. Pacific's page had **no products listed**. Paradox's source page reports **Eerste Bloemdwarsstraat 2R** while the tracked government address ends in **2H**; this entry is flagged for address verification. Many menus date to 2022–2025 and newer menus often contain products with just one rating. The complete per-shop source links, menu dates and caveats are in the tracker.
 
-Links and check dates for all 32 inspected pages are in the inventory.
+The following **53 additional source pages** were inspected in the latest pass. Important issues include: Sensemillia's unrated products, D&L and Bronx having no products listed, Roots' 14 versus 14B address discrepancy, and two different Kadinsky venue pages claiming Langebrugsteeg 7A. Weeview's Yin Yang quality feedback dates only to 2020–2021. Even shops such as The Stud with triple-digit historic strain votes show an old October 2023 menu. Newer menus such as 1e Hulp's September 2026 page still require actual product-review ages and batch validation. Full per-shop sources, menu dates, notes and confidence statuses are saved in the tracker.
+
+Links and check dates for all **85** inspected shops are in the inventory.
 A site's product star average is not proof that stock from a particular
 shop, strain, grower, harvest or batch is still available or equivalent.
 
@@ -113,10 +117,10 @@ review-submission infrastructure is deployed now; do not imply it is.
 - Quality-specific dated comments recorded: **22 shops**.
 - Shops meeting the narrow **early editorial** weed-quality threshold: **6**.
 - Existing venue-rating website URLs identified as candidate research leads: **156**.
-- Venue product-listing pages manually inspected: **32**.
-- Pages still awaiting initial product-listing inspection: **135**.
-- Of the 32 checked: **30** display one or more product star ratings, **1** displays no products, and **1** has an unresolved address discrepancy.
-- Product-level page inspections are NOT eligible or permitted rating-data feeds.
+- Venue/product-quality source pages initially inspected: **85**.
+- Shops still awaiting initial source-page inspection: **82**.
+- Inspected: **77** with some published product ratings; **3** with no products; **1** with zero-vote products; **2** address-mismatch flags; **1** with historical-only quality-category reviews; **1** with conflicting same-address listings.
+- Initial page inspection is **not** confirmation of rating freshness, reviewer independence or licensed use. No source-product numerical ratings have been imported.
 - Product-level data feeds confirmed authorised for redistribution: **0**.
 - Shop-level Weed Quality ratings built from licensed product star
   averages: **0**.
