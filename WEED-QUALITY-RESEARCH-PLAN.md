@@ -118,8 +118,8 @@ review-submission infrastructure is deployed now; do not imply it is.
 
 - Amsterdam addresses tracked: **167 / 167**.
 - Existing overall BudMap scores: **156**.
-- Quality-specific dated comments recorded: **22 shops**.
-- Shops meeting the narrow **early editorial** weed-quality threshold: **6**.
+- Quality-specific dated comments recorded at kickoff: **22 shops**; current date-linked quality research covers **23 shops**.
+- Shops meeting the narrow **early editorial** weed-quality threshold at kickoff: **6**; current 21 October 2026 update: **8**, with Sativa and Relax Zuid newly qualifying after additional source-linked dated observations.
 - Existing venue-rating website URLs identified as candidate research leads: **156**.
 - Initial research attempts: **167 / 167**; no shop left without a research note.
 - Directly inspected venue/product or category source pages: **142 / 167**.
