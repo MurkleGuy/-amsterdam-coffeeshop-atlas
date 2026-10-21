@@ -37,7 +37,7 @@ shop cards and do not feed into each other's formula.
 
 A full [167-shop research tracker](research/weed-quality-tracker.json) is now
 maintained, distinguishing unresearched shops, dated editorial report
-coverage, and websites where product ratings have been spotted.
+coverage, and websites where product ratings have been spotted. An initial 156 existing venue-rating URLs have been identified as research leads (146 Greenmeister venue links and 10 other review-site links). Twelve shop product listings have been manually spot-checked; all 167 shops still require an eligibility, freshness and rights review before product-based weed scores can be published.
 A source page displaying products is **not** proof of current product quality.
 The original sources' product ratings have not been bulk-imported,
 reproduced or converted into BudMap Weed Scores; data-use permission,
