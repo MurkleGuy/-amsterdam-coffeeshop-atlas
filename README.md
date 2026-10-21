@@ -2,53 +2,36 @@
 
 A mobile-friendly independent directory and map of Amsterdam cannabis coffeeshop addresses, hosted as a zero-build static website on Cloudflare Pages.
 
-## Active BudMap rating system — updated 21 October 2026
+## Current public website — simplified map (21 October 2026)
 
-**The live map uses [BudMap Score](BUDMAP-SCORE-METHOD.md)**:
-each published venue average is first adjusted for its review count,
-moving small samples towards 7/10 using five statistical prior reviews.
-When several independent websites are available, their adjusted ratings
-are averaged equally.
+BudMap is an easy way to find Amsterdam coffeeshops and plan a visit.
+The active map focuses on **167 published coffeeshop addresses**, map pins,
+neighbourhood browsing, search by name/address, favourites, recent menu-photo
+links, walking directions, public transport routing, and a Google Maps link
+for each shop.
 
-Every shop with a suitable source now has **one BudMap Score out of 10**.
-Current coverage: **156 rated shops** (133 with one website, 23 with two);
-**11 unrated**. The UI shows the number of websites and published review
-counts rather than a "Preliminary" rating label. All rated shops appear in
-the Best BudMap scores ranking, highest adjusted score first.
+**Both public rating systems and the product-research panels have been
+removed from the visitor-facing interface** at the user's request.
+The **Best Overall**, **Weed Quality**, and **Product Research** discovery
+options have also been removed; the map now offers just **All coffeeshops**
+and **Recent menus**. The shop cards show name, address, neighbourhood,
+available menu photos, favourite control and route/Google Maps actions.
+There are no public numerical coffeeshop ratings.
 
-The original ratings and source links are retained separately for
-verification. There are no Google Places rating imports. The historic
-Atlas Score evidence pilot notes elsewhere in this README are superseded
-and are not loaded on the active map.
+The underlying data and scoring code **have not been deleted from GitHub**.
+`public/assets/budmap-score.js`, `public/assets/budmap-weed.js`,
+`public/assets/budmap-research.js`, `public/assets/shop-intel.js`,
+`public/assets/atlas-verdicts.js`, and the full
+[167-shop research tracker](research/weed-quality-tracker.json) are retained
+as non-UI source/archives. `public/map.html` still loads `shop-intel.js`
+for dated menu-photo links but does **not** load the rating/research engines.
+This preserves previous work without distracting visitors or implying
+unverified weed-quality comparisons.
 
-## Product research — public weed ratings paused (21 October 2026)
-
-**Public numeric Weed Quality ratings are temporarily paused.** The earlier
-eight provisional editorial weed-quality estimates covered only 8 of 167
-shops, making their coverage inadequate for a city-wide comparison. The
-research and draft scoring engine remain in the repository, but the map
-no longer loads or displays those quality estimates.
-
-The map opens with **All coffeeshops** and offers **Product research · 167
-shops** as an alphabetical evidence directory with no weed-quality
-leaderboard. Each shop has a Product Research panel showing historical
-source-page findings, links, menu dates and outstanding verification gaps.
-These are not weed-quality scores or proof of current stock quality.
-
-The independent **BudMap Overall** score remains available for 156 shops,
-including the **Best Overall · BudMap** ranking. That score is based on
-overall venue satisfaction and does not estimate weed quality.
-
-A full [167-shop research tracker](research/weed-quality-tracker.json) is maintained. An initial **research pass now covers all 167 addresses**. Of these, **142** have inspected venue/product or quality-source pages; for the other **25**, research found only a dated menu archive, general venue feedback, an unresolved identity, or insufficiently verifiable evidence. **114 shops** have source pages showing at least one individual product rating, but those source stars are not verified as recent or licensed for reuse. Across the complete tracker, **15 source pages list no products**, **5 have product listings without votes**, and other records have date, source-identity or product-evidence gaps. The 167/167 figure means initial research attempted, **not** 167 reliable or numerically rated shops. **All 167 still require the deeper rating-eligibility and rights checks** before a proper Best Weed ranking can launch.
-
-There are **156 existing venue-rating page leads** (146 Greenmeister, 10 other sites), but these are not licences or product-specific scores. Flagged cases include the duplicate Kadinsky venue records and an operating-permit refusal at Sarphatistraat 87G, where the currently operating shop identity needs verification.
-A source page displaying products is **not** proof of current product quality.
-The original sources' product ratings have not been bulk-imported,
-reproduced or converted into BudMap Weed Scores; data-use permission,
-freshness, sample sizes and shop/strain matching must be checked first.
-
-See [research and rollout plan](WEED-QUALITY-RESEARCH-PLAN.md) and the
-[early estimate method](BUDMAP-WEED-QUALITY-METHOD.md).
+See [overall scoring notes](BUDMAP-SCORE-METHOD.md),
+[weed-quality research methodology](BUDMAP-WEED-QUALITY-METHOD.md) and
+[research plan](WEED-QUALITY-RESEARCH-PLAN.md) for historical context.
+Those are **not active features of the public map**.
 
 ## Features
 - Searchable directory of 167 published Amsterdam 2026 tolerance-reference addresses (151 preliminary directory name matches).
