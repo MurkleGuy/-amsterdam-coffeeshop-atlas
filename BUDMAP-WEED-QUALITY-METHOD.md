@@ -3,31 +3,17 @@
 Updated 21 October 2026. This is **separate from the official BudMap Overall
 Score**; it does not replace any of the 156 overall review-based ratings.
 
-## What visitors see
+## What visitors see — public weed ratings paused
 
-The map opens with **All coffeeshops**. The dedicated **Weed quality ·
-Research underway** view lists all 167 shops **alphabetically**, with existing
-quality-specific evidence disclosed but **no city-wide weed rank numbers**.
-The earlier six-shop "Best Weed" leaderboard is paused as misleading until
-wider independently supportable coverage has been obtained.
+The map opens with **All coffeeshops**. **Product research · 167 shops**
+lists all shops alphabetically with research notes, dated menu/source
+information and links, **but no numerical weed-quality ratings or Best Weed
+leaderboard**. A shop shows its Product Research disclosure and a separate
+**BudMap Overall** rating where one exists.
 
-Each coffeeshop detail card presents **Weed Quality** first and **BudMap
-Overall** second. Both use a /10 scale when a numeric value exists.
-A missing weed-quality number stays **Not rated**, even when that same shop
-has a high overall BudMap rating. No overall rating is used as a quality proxy.
-
-**Live per-shop research disclosure (21 October 2026):**
-`public/assets/budmap-research.js` exposes the tracker findings for every
-shop: whether individual product ratings were found on the historical source
-page, whether a dated menu exists without product votes, whether the source
-listed no products or has only overall venue ratings, and any address or
-identity issues. Each shop shows the exact recorded research note and linked
-source, plus the source-menu date when available. This is a transparent
-research record, **not** current product availability, proof of shop opening,
-or a flower rating. The page-inspection date and menu date do not establish
-the dates or independence of product reviewers. The 114 product-listing
-matches are not converted into numeric scores and are not presented as a
-114-shop Best Weed ranking.
+Eight draft editorial weed-quality estimates are retained in source for
+future validation, but the map no longer loads or shows that score engine.
+The 156 overall shop ratings do not serve as cannabis-quality proxies.
 
 ## Evidence and scoring
 
@@ -129,18 +115,13 @@ has been published.
 The full scope, evidence gates, permissions considerations and visitor
 review proposals are in [the research plan](WEED-QUALITY-RESEARCH-PLAN.md).
 
-## Test checklist
+## Public display checklist
 
-- **All coffeeshops** is the first selected discovery option; the separate
-  **Weed quality · Research underway** view lists shops alphabetically without
-  quality rank numbers. All 167 remain accessible for searching, pins and directions.
-- **Best Overall · BudMap** sorts the 156 existing adjusted overall ratings
-  without altering them.
-- **Weed Quality** is the first shop-card panel, **BudMap Overall** the
-  second; both can be expanded independently.
-- A shop without sufficient product reports displays no numerical weed
-  score, even if its overall score is excellent.
-- Ageing comments gradually expire after 540 days so the quality list may
-  become shorter without a fresh research update.
-- The list and detail panel never present platform names as a substitute
-  for quality evidence and do not fabricate dates or scores.
+- **All coffeeshops** is the default view with all 167 entries.
+- **Product research · 167 shops** lists shops alphabetically with linked
+  research statuses, but no weed-quality rating number or ranking.
+- Product Research appears on shop cards separately from **BudMap Overall**.
+- **Best Overall · BudMap** still sorts 156 customer-satisfaction ratings.
+- The eight draft quality estimates remain in research source but are not
+  loaded or displayed on the public map.
+- Menu dates and inspection dates never stand in for product-review dates.
