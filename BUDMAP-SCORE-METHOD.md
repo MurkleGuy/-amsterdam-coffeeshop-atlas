@@ -32,19 +32,25 @@ not be counted as independent ratings. Entries are not borrowed from other branc
 
 - **Combined** (2+ websites): show the ten-point score and include in the
   ranked "Best BudMap scores · compared" filter.
-- **Preliminary** (1 website): show the converted source score but flag it as
-  preliminary; do not place it in the compared ranking.
+- **Preliminary** (1 website): show the original source rating out of
+  **5**, with a clear preliminary label. Do **not** display a BudMap Score out
+  of 10 until a second independent website corroborates it. This avoids
+  mistaking a single 5-star review for a reliable 10/10.
 - **Unrated** (0 websites): show that a score is pending, never a numeric guess.
-- "All rated coffeeshops" shows both combined and preliminary scores, with
+- "All rated coffeeshops" shows both combined scores and preliminary single-site ratings, with
   combined ones listed first.
-- The map displays the BudMap name, ten-point score, and number of ratings used.
+- The map displays the BudMap name, ten-point score where corroborated, or preliminary five-star rating otherwise.
   Provider brand names are not displayed in the main score cards or rankings,
   but remain recorded with source URLs in the source dataset.
 
 **Present coverage as of 20 October 2026**: 167 addresses; 23 with two-site
-averages, 133 preliminary single-site scores, 11 unrated. The loaded datasets
+averages, 133 preliminary single-site ratings (without BudMap Scores), 11 unrated. The loaded datasets
 do not currently contain a three-site average for any address. New qualified
 providers may change those numbers.
+
+## Perfect-score audit — 21 October 2026
+
+All 21 displayed 10.0/10 ratings before the correction were produced from a **single** source rather than the combined average; 15 involved fewer than five reviews and 7 involved just one review. Their stored averages match the source pages where they could be checked, but they were wrongly presented as independently corroborated BudMap 10s. The revised rule reserves the /10 scale for 2+ rating websites. Some sources describe customer visits from 2020–2024; a published average alone is not a current quality assessment.
 
 ## Limitations and required future checks
 
@@ -72,9 +78,9 @@ not guesses from comments or text sentiment analysis.
 
 - Open all 167 shop cards; no client JavaScript errors.
 - Verify DrewIsSharing: (4.3 + 4.8) / 2 × 2 = **9.1/10** (two sites).
-- Verify single-source scores are labelled preliminary.
+- Verify all 21 single-site 5.0/5 averages display as preliminary /5, never as BudMap 10/10; ensure no single-site rating receives a numerical BudMap Score.
 - Verify the 11 missing-source shops show "Not rated yet".
-- Verify the ranked filter excludes preliminary and unrated shops.
+- Verify the ranked filter excludes preliminary and unrated shops, and the 23 combined shops are sorted correctly.
 - Verify "All rated" includes 156 shops and "Recent menus" still works.
 - Verify hotel setup, pinned preview, full card, favourites, directions and
   mobile map position after deployment.
