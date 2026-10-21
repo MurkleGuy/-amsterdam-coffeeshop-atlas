@@ -15,16 +15,16 @@
   },
   "state": {
     "addresses": 167,
-    "productPagesSpotChecked": 72,
+    "productPagesSpotChecked": 85,
     "confirmedLicencedProductDataFeeds": 0,
     "venueRatingPageLeadsIdentified": 156,
     "greenmeisterVenueRatingPageLeads": 146,
     "otherVenueRatingPageLeads": 10,
     "productScoreAssigned": 0,
-    "productRatingListingsFound": 65,
-    "productListingsWithoutRatings": 3,
+    "productRatingListingsFound": 77,
+    "productListingsWithoutRatings": 4,
     "addressSourceMismatches": 2,
-    "productPagesUnchecked": 95,
+    "productPagesUnchecked": 82,
     "productListingsZeroRated": 1,
     "historicalQualityOnly": 1,
     "venueIdentityCollisions": 1,
@@ -1900,7 +1900,12 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2024-10-25",
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/de-watersnip-amsterdam",
+        "productReviewDatesVerified": false,
+        "note": "De Watersnip: products with one to four votes in examples from October 2024 menu; individual quality-review dates unknown."
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -1919,7 +1924,14 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "no_products_listed",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2022-10-01",
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/bronx-amsterdam",
+        "productReviewDatesVerified": false,
+        "note": "Bronx: source explicitly says no products listed; directory street address and source Marnixstraat 92HS require a suffix check. General venue 3/5 from one visitor is NOT a flower rating.",
+        "sourceAddress": "Marnixstraat 92HS, Amsterdam",
+        "addressMatchStatus": "street_suffix_to_verify"
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -1938,7 +1950,12 @@
       "qualityReportCount": 1,
       "qualityEditorialStatus": "insufficient_dated_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2026-09-28",
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/1e-hulp-amsterdam",
+        "productReviewDatesVerified": false,
+        "note": "1e Hulp: recently dated September 2026 menu with some rated flower products (one strain with ten votes) and several zero/one-vote listings. Ratings do not certify the newest batch."
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -1957,7 +1974,12 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2022-10-01",
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/crush-amsterdam",
+        "productReviewDatesVerified": false,
+        "note": "Crush: very old October 2022 menu; product-rating samples are tiny, e.g. a one-vote White Widow."
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -1976,7 +1998,13 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2025-06-08",
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/swed-amsterdam",
+        "productReviewDatesVerified": false,
+        "note": "Tha Dogg House a Snoop Dogg Store: some products rated from one to four votes; page name differs from old SWED slug, but street identity Marnixstraat 333 matches. Menu dated June 2025.",
+        "tradingNameChecked": "Tha Dogg House a Snoop Dogg Store"
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -1995,7 +2023,12 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2022-10-01",
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/t-keteltje-amsterdam",
+        "productReviewDatesVerified": false,
+        "note": "'t Keteltje: some flower and hash products show multiple votes, but menu is from October 2022. Product-review recency and batches unverified."
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -2033,7 +2066,12 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2023-10-01",
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/the-stud-amsterdam",
+        "productReviewDatesVerified": false,
+        "note": "The Stud: numerous flower products have high historical rating counts (e.g. 119 and 168), but menu October 2023; no guarantee the same batches remain sold."
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -2052,7 +2090,12 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2023-06-25",
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/catch33-amsterdam",
+        "productReviewDatesVerified": false,
+        "note": "Catch33: few product-specific votes (some one to five), menu June 2023."
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -2071,7 +2114,12 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2026-03-27",
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/best-friends-oost-amsterdam",
+        "productReviewDatesVerified": false,
+        "note": "Best Friends Oost: March 2026 menu; multiple listed flower products rated by one or two users, others zero."
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -2109,7 +2157,12 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2023-10-01",
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/terps-army-amsterdam",
+        "productReviewDatesVerified": false,
+        "note": "Terps Army: ratings for several listed flower varieties from one to four votes; October 2023 menu, inadequate current-batch evidence."
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -2128,7 +2181,13 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": null,
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/hotel-utopia",
+        "productReviewDatesVerified": false,
+        "note": "The Plug Utopia: product ratings exist but often one vote. Menu displays a relative 'Today' label without a verifiable absolute update date.",
+        "menuUpdateLabel": "Today (relative listing date, absolute date unverified)"
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -2147,7 +2206,12 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2024-04-23",
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/greenhouse-effect-amsterdam",
+        "productReviewDatesVerified": false,
+        "note": "Greenhouse Effect: 2024 menu with a mix of unrated strains and rated items; product-review dates unverified. Different branch from Green House Centrum."
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -2166,7 +2230,12 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2022-10-01",
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/de-jolly-joker-amsterdam",
+        "productReviewDatesVerified": false,
+        "note": "De Jolly Joker: historic October 2022 menu and just one-to-three votes on listed flower products."
       },
       "eligibleProductRating": null,
       "productScore": null,
