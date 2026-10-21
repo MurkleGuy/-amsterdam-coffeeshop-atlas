@@ -2,20 +2,26 @@
   "title": "BudMap - Cannabis quality evidence tracker",
   "scope": "All 167 official Amsterdam coffeeshop addresses from public/assets/shops.js",
   "checkedAt": "2026-10-21",
-  "description": "Full 167-address research inventory. Venue review-page URLs are candidate links only, not product ratings. No product-star averages reproduced or imported.",
+  "description": "All 167 shop IDs tracked; page inspections are research status only, never a cannabis quality score. Website star ratings and products have not been bulk ingested or republished.",
   "statusValues": {
     "not_checked": "No product-level source inspection completed",
-    "product_rating_listing_found": "Product rating listings observed on a public page; not validated for scoring or republishing",
-    "existing_general_venue_rating_page_only": "Existing overall venue-rating URL for manual product research only; product availability, correctness and permissions not yet validated."
+    "product_rating_listing_found": "Product-specific stars exist on the linked page. This does not establish product-review dates, evidence eligibility, data reuse rights, or current stock.",
+    "existing_general_venue_rating_page_only": "Existing overall venue-rating URL for manual product research only; product availability, correctness and permissions not yet validated.",
+    "no_products_listed": "Checked source page currently lists no cannabis products; the absence is not a negative quality rating.",
+    "address_mismatch_pending": "Page inspected but a street-number suffix or branch address conflicts with tracker; cannot use source for a numerical product rating until resolved."
   },
   "state": {
     "addresses": 167,
-    "productPagesSpotChecked": 12,
+    "productPagesSpotChecked": 32,
     "confirmedLicencedProductDataFeeds": 0,
     "venueRatingPageLeadsIdentified": 156,
     "greenmeisterVenueRatingPageLeads": 146,
     "otherVenueRatingPageLeads": 10,
-    "productScoreAssigned": 0
+    "productScoreAssigned": 0,
+    "productRatingListingsFound": 30,
+    "productListingsWithoutRatings": 1,
+    "addressSourceMismatches": 1,
+    "productPagesUnchecked": 135
   },
   "shops": [
     {
@@ -26,7 +32,13 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2025-11-10",
+        "productReviewDatesVerified": false,
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/dna-amsterdam",
+        "note": "Multiple listed products have ratings, including one- and two-vote samples; review dates and present-day stock remain unverified.",
+        "addressMatchStatus": "matched_name_and_venue_page_link_address_subject_to_manual_validation"
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -59,7 +71,13 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2024-03-05",
+        "productReviewDatesVerified": false,
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/the-old-church-amsterdam",
+        "note": "Menu over two years old; several products have small rating counts, insufficient evidence of current batches.",
+        "addressMatchStatus": "matched_name_and_venue_page_link_address_subject_to_manual_validation"
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -101,7 +119,13 @@
       "qualityReportCount": 2,
       "qualityEditorialStatus": "insufficient_dated_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2026-03-18",
+        "productReviewDatesVerified": false,
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/happy-days-amsterdam",
+        "note": "Products have individual ratings, some 1–5 votes; no proof of current strain batches or original review dates.",
+        "addressMatchStatus": "matched_name_and_venue_page_link_address_subject_to_manual_validation"
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -134,7 +158,13 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2026-03-27",
+        "productReviewDatesVerified": false,
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/best-friends-oudzuid-amsterdam",
+        "note": "At least two listed flower products have only one rating apiece; other strains are unrated.",
+        "addressMatchStatus": "matched_name_and_venue_page_link_address_subject_to_manual_validation"
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -153,7 +183,13 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2025-11-21",
+        "productReviewDatesVerified": false,
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/the-border-amsterdam",
+        "note": "Some listed flower products have dozens of ratings; exact product-review dates and current batches need checking.",
+        "addressMatchStatus": "matched_name_and_venue_page_link_address_subject_to_manual_validation"
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -215,7 +251,13 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "no_products_listed",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2022-10-01",
+        "productReviewDatesVerified": false,
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/pacific-amsterdam",
+        "note": "Source page explicitly states 'No products yet'; historical menu metadata does not establish product quality.",
+        "addressMatchStatus": "matched_name_and_venue_page_link_address_subject_to_manual_validation"
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -234,7 +276,14 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": null,
+        "productReviewDatesVerified": false,
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/the-plug-westerdok",
+        "note": "Source menu says 'Updated: Today' without an absolute date; listed strain ratings are mostly based on just one vote.",
+        "menuUpdateLabel": "Today (relative label on source page; absolute update date unverified)",
+        "addressMatchStatus": "matched_name_and_venue_page_link_address_subject_to_manual_validation"
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -253,7 +302,13 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2022-10-01",
+        "productReviewDatesVerified": false,
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/babylon-amsterdam",
+        "note": "One listed product carries historic product rating votes; menu dates to 2022 and is too old for a current batch conclusion.",
+        "addressMatchStatus": "matched_name_and_venue_page_link_address_subject_to_manual_validation"
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -272,7 +327,13 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2025-11-10",
+        "productReviewDatesVerified": false,
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/relax-amsterdam",
+        "note": "Several historical strain/product ratings, including some with 20+ votes; current batch and review ages unverified.",
+        "addressMatchStatus": "matched_name_and_venue_page_link_address_subject_to_manual_validation"
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -291,7 +352,13 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2025-09-11",
+        "productReviewDatesVerified": false,
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/bij-boere-jongens",
+        "note": "Several flower/hash product ratings include meaningful sample counts, but menu is from September 2025.",
+        "addressMatchStatus": "matched_name_and_venue_page_link_address_subject_to_manual_validation"
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -310,7 +377,13 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2022-10-01",
+        "productReviewDatesVerified": false,
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/risky-business-amsterdam",
+        "note": "Listed flower product ratings based on one to three votes; menu dates to 2022.",
+        "addressMatchStatus": "matched_name_and_venue_page_link_address_subject_to_manual_validation"
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -352,7 +425,13 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2025-10-26",
+        "productReviewDatesVerified": false,
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/siberie-amsterdam",
+        "note": "Some listed flower products have 18–23 ratings; several others have zero votes. October 2025 menu.",
+        "addressMatchStatus": "matched_name_and_venue_page_link_address_subject_to_manual_validation"
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -371,7 +450,13 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2024-06-20",
+        "productReviewDatesVerified": false,
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/atlas-amsterdam-noord",
+        "note": "Some listed strains have 1–3 product ratings; source indicates menu June 2024 and shop may have moved; verify trading history.",
+        "addressMatchStatus": "matched_name_and_venue_page_link_address_subject_to_manual_validation"
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -390,7 +475,13 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2023-03-22",
+        "productReviewDatesVerified": false,
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/massawa-amsterdam",
+        "note": "Historical flower product averages mainly one vote per strain and many products unrated. Menu dates to March 2023.",
+        "addressMatchStatus": "matched_name_and_venue_page_link_address_subject_to_manual_validation"
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -409,7 +500,13 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2026-03-02",
+        "productReviewDatesVerified": false,
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/the-bulldog-port-26-amsterdam",
+        "note": "Listed flower products include two with three or six ratings; most products are unrated.",
+        "addressMatchStatus": "matched_name_and_venue_page_link_address_subject_to_manual_validation"
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -428,7 +525,13 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2022-10-01",
+        "productReviewDatesVerified": false,
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/nogal-wiedes-amsterdam",
+        "note": "Several historic product ratings, but menu dates to October 2022.",
+        "addressMatchStatus": "matched_name_and_venue_page_link_address_subject_to_manual_validation"
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -471,7 +574,13 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2024-09-03",
+        "productReviewDatesVerified": false,
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/happypeople-amsterdam",
+        "note": "Just one listed flower product with one rating; menu dates to September 2024.",
+        "addressMatchStatus": "matched_name_and_venue_page_link_address_subject_to_manual_validation"
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -504,7 +613,13 @@
       "qualityReportCount": 1,
       "qualityEditorialStatus": "insufficient_dated_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2025-09-15",
+        "productReviewDatesVerified": false,
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/coffeeshop-amsterdam-oost",
+        "note": "Some flower products have one to three votes; many others unrated, and the menu is from September 2025.",
+        "addressMatchStatus": "matched_name_and_venue_page_link_address_subject_to_manual_validation"
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -523,7 +638,15 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "address_mismatch_pending",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": "2023-09-25",
+        "productReviewDatesVerified": false,
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/paradox-amsterdam",
+        "note": "Greenmeister source lists Eerste Bloemdwarsstraat 2R, while the tracked official address is 2H; listed flower products have zero reviews. Branch/address identity must be resolved before score reuse.",
+        "sourceAddress": "Eerste Bloemdwarsstraat 2R, Amsterdam",
+        "trackedAddress": "Eerste Bloemdwarsstraat 2H, 1016 KS, Amsterdam",
+        "addressMatchStatus": "unresolved"
       },
       "eligibleProductRating": null,
       "productScore": null,
@@ -542,7 +665,14 @@
       "qualityReportCount": 0,
       "qualityEditorialStatus": "no_dated_product_evidence",
       "productResearch": {
-        "status": "not_checked"
+        "status": "product_rating_listing_found",
+        "checkedAt": "2026-10-21",
+        "menuUpdatedAt": null,
+        "productReviewDatesVerified": false,
+        "sourceUrl": "https://en.greenmeister.com/coffeeshop/the-plug-east",
+        "note": "Source menu says 'Updated: Today' without an absolute date. Many listed strains have exactly one vote and lack verified product-review dates.",
+        "menuUpdateLabel": "Today (relative label on source page; absolute update date unverified)",
+        "addressMatchStatus": "matched_name_and_venue_page_link_address_subject_to_manual_validation"
       },
       "eligibleProductRating": null,
       "productScore": null,
