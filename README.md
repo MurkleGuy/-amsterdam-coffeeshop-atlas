@@ -63,50 +63,48 @@ remain active, and the Google Maps fallback is preserved.
 
 ## Location accuracy audit — 22 October 2026
 
-BudMap's 167 municipal address entries have undergone an **offline syntax
-and duplicate-key audit**. All 167 have parseable Dutch postcode and house
-number/unit details, and none share the same canonical postcode/house/unit
-key. See the [167-address audit tracker](research/location-accuracy-audit.json).
+BudMap tracks **167 municipality-listed coffeeshop addresses**. The complete
+address-key audit is in [research/location-accuracy-audit.json](research/location-accuracy-audit.json).
+The official postal address is not by itself proof that the shop remains open,
+nor does its BAG coordinate guarantee the position of its front door.
 
-The browser map now requires an **exact PDOK / BAG civic-address match**:
-postcode, numeric house number, and any explicit house letter or suffix.
-The old matcher could fall back to a different unit of the same house;
-this has been removed. Cases such as `14B` and `4C`, where the letter is
-embedded in the house number, are handled explicitly. Potentially ambiguous
-or missing results are left **unpinned**, not guessed.
+**Automated official-geocoder checks** are implemented in
+[scripts/verify-locations.mjs](scripts/verify-locations.mjs) and the
+[GitHub Actions workflow](.github/workflows/verify-locations.yml). Their
+published dataset is [public/assets/verified-coordinates.json](public/assets/verified-coordinates.json).
+The audit file, not this README, is the authoritative count of matches.
 
-Coordinate cache entries now contain an exact normalized address key,
-source label and retrieval date; older, unverified browser coordinate
-caches are not reused. The new coordinates are still downloaded from
-PDOK when visitors open the map, so the first visit may take longer.
-This is a **geocoding safety improvement**, not a completed one-time
-verification of 167 real-world shop doorways.
+The location logic distinguishes:
+- **Exact BAG address**: postcode, number, and any explicit house-letter/
+  addition match the returned official PDOK record. Still only an official
+  address coordinate, not an independently observed shop entrance.
+- **Building-level BAG location**: the municipal entry does not name a unit,
+  and the available PDOK records for the same postcode and house number
+  have tightly clustered coordinate points (maximum spread **8 metres**).
+  The map card labels these as approximate building pins, not exact units.
+  A known suffix must **never** be silently substituted by a different unit.
+- **Unresolved**: ambiguous or missing records remain searchable, but no
+  coordinate is invented and no marker is placed.
 
-**External live coordinate checks completed here: 0 of 167. Physical
-shop-entrance checks completed: 0 of 167.** The working environment could
-not retrieve the PDOK API responses, so no numerical coordinates were
-invented or written into the repository.
+All 167 civic address keys are distinct and syntactically valid. The matcher
+handles house letters embedded in `14B` and `4C`, rejects mismatched
+postcodes, streets and units, rejects large discrepancies between candidate
+coordinates, and refuses truncated building-candidate result sets. Cached
+coordinates contain the source, exact address key and verification date;
+old anonymous browser caches aren't trusted. BudMap loads published matched
+coordinates first, then live-geocodes any remaining addresses where possible.
 
-The audit highlights important follow-ups:
-- **The Bulldog Energy**, Oudezijds Voorburgwal 220, has a separate
-  operator-listed entrance at **218**.
-- **The Bulldog The First**, Oudezijds Voorburgwal 88H, has a separate
-  operator-listed coffeeshop entrance at **90**.
-- **Sarphatistraat 87G** still lacks a verified current shop identity;
-  a municipal address record does not prove that a business is operating.
-- **Roots** (Hoekenrode 14B) and **Funny People** (Tt Vasumweg 4C) have
-  letters embedded in their stored house-number fields.
+Exceptions requiring human verification include **The Bulldog Energy** (city
+address Oudezijds Voorburgwal 220; operator-listed entrance 218) and
+**The Bulldog The First** (city address 88H; operator-listed entrance 90).
+They are displayed with a separate entrance note on shop cards. The trading
+identity of **Sarphatistraat 87G** is unresolved. Name changes and possible
+closures need separate checks from physical address locations.
 
-For the two operator-listed entrance exceptions, the shop information card
-now mentions the entrance difference explicitly. The map pin continues to
-represent the city-listed civic address and does **not** claim the location
-is the verified door. Google Maps searches already use the operator-listed
-address where available.
-
-Next phase: validate the live PDOK matches for every address, log BAG
-source identifiers and reject ambiguous units; then separately check the
-actual entrance and current trading identity where available. Only publish
-a durable pre-geocoded coordinate file after that second validation.
+The GitHub script may return partial results on an API outage or a genuine
+address mismatch. Review unresolved entries in the audit instead of
+mislabeling a building centroid as a confirmed storefront. The last-mile
+walking-navigation experience also needs real-device testing in Amsterdam.
 
 ## Features
 - Searchable directory of 167 published Amsterdam 2026 tolerance-reference addresses (151 preliminary directory name matches).
