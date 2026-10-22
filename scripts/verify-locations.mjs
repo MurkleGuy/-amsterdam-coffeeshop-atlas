@@ -89,8 +89,16 @@ if(!resolved.length){
  audit.summary.physicalEntrancesVerified=0;
  audit.summary.lastLiveCheckAt=generatedAt;
  audit.summary.failureReasons=failuresByReason;
+ audit.summary.addressCorrectionsRecorded=audit.records.filter(row=>row.currentDisplayAddress!==row.municipalAddress).length;
  const resultMap=new Map(results.map(r=>[r.id,r]));
  for(const row of audit.records){
+  const shop=shops.find(s=>s.id===row.id);
+  if(!shop)throw Error('Audit row has unknown shop '+row.id);
+  row.addressKey=matcher.key(shop);
+  row.currentDisplayAddress=shop.address;
+  row.cityListedAddress=shop.cityListedAddress||row.cityListedAddress||row.municipalAddress;
+  if(shop.addressCorrectionSource)row.addressCorrectionSource=shop.addressCorrectionSource;
+  if(shop.addressCorrectionNote)row.addressCorrectionNote=shop.addressCorrectionNote;
   const r=resultMap.get(row.id);
   row.livePdokMatchVerified=r?.match?.source==='pdok-bag-address';
   row.buildingLevelGeocoded=r?.match?.source==='pdok-bag-building';
