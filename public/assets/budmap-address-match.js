@@ -45,7 +45,7 @@
  function selectBuilding(shop,docs){
   const e=expected(shop);
   // Never substitute a different unit when a specific house letter is listed.
-  if(!e||e.unit||e.postcode.length!==6||!Array.isArray(docs)||!docs.length||docs.length>=50)return null;
+  if(!e||e.unit||e.postcode.length!==6||!Array.isArray(docs)||!docs.length)return null;
   const hits=docs.filter(d=>{
    const city=compact(d.woonplaatsnaam||d.woonplaats_naam||'');
    const street=compact(d.straatnaam||d.openbareruimtenaam||d.openbare_ruimte_naam||'');
@@ -53,7 +53,8 @@
     &&compact(d.postcode)===e.postcode&&Number(d.huisnummer)===e.house
     &&(!city||city==='AMSTERDAM')&&(!street||street===e.street)&&point(d);
   });
-  if(!hits.length)return null;
+  // Refuse a possibly truncated list of fifty units for this exact building.
+  if(!hits.length||hits.length>=50)return null;
   const coords=hits.map(point);
   // Only use a whole-building pin if every returned unit's BAG point is tightly clustered.
   for(const a of coords)for(const b of coords){
