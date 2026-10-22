@@ -23,7 +23,9 @@ function hasMatchingUnit(suffix,doc){
  const letter=unit(doc.huisletter),addition=unit(doc.huisnummertoevoeging);
  // Avoid assigning 88, 88-A, or 88-H to each other.
  if(!suffix)return !letter&&!addition;
- return suffix===letter||suffix===addition||suffix===(letter+addition);
+ // A request for unit H must not silently resolve to H1 or HA.
+ if(letter&&addition)return suffix===(letter+addition);
+ return suffix===letter||suffix===addition;
 }
 function exactMatch(shop,docs){
  const a=addressParts(shop);
