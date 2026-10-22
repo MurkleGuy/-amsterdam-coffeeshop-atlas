@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-22T22:44:11.751Z",
+  "generatedAt": "2026-10-22T22:46:11.063Z",
   "source": "PDOK Locatieserver v3_1, BAG civic-address centroids",
   "totalListed": 167,
   "verifiedCount": 106,
-  "buildingLevelCount": 0,
-  "pinnedCount": 106,
-  "unresolvedCount": 61,
+  "buildingLevelCount": 53,
+  "pinnedCount": 159,
+  "unresolvedCount": 8,
   "locations": {
     "1": {
       "lat": 52.34506105,
@@ -14,6 +14,16 @@
       "addressKey": "1076RH|104|",
       "bagId": "0363200000021265",
       "verifiedAt": "2026-10-22"
+    },
+    "2": {
+      "lat": 52.37256948,
+      "lng": 4.85942274,
+      "source": "pdok-bag-building",
+      "addressKey": "1056GP|104|",
+      "bagId": "0363200000022126",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
     },
     "3": {
       "lat": 52.36695814,
@@ -31,6 +41,16 @@
       "bagId": "0363200000029330",
       "verifiedAt": "2026-10-22"
     },
+    "5": {
+      "lat": 52.34659471,
+      "lng": 4.9112324,
+      "source": "pdok-bag-building",
+      "addressKey": "1079LE|139|",
+      "bagId": "0363200012073229",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
     "6": {
       "lat": 52.36626075,
       "lng": 4.89938968,
@@ -38,6 +58,16 @@
       "addressKey": "1017DA|35|",
       "bagId": "0363200000030880",
       "verifiedAt": "2026-10-22"
+    },
+    "7": {
+      "lat": 52.35394801,
+      "lng": 4.85589838,
+      "source": "pdok-bag-building",
+      "addressKey": "1075VV|61|",
+      "bagId": "0363200012086040",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
     },
     "8": {
       "lat": 52.32200106,
@@ -55,6 +85,26 @@
       "bagId": "0363200000036809",
       "verifiedAt": "2026-10-22"
     },
+    "10": {
+      "lat": 52.36887689,
+      "lng": 4.85371085,
+      "source": "pdok-bag-building",
+      "addressKey": "1057VT|19|",
+      "bagId": "0363200000038052",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
+    "11": {
+      "lat": 52.35305916,
+      "lng": 4.88468071,
+      "source": "pdok-bag-building",
+      "addressKey": "1071VC|10|",
+      "bagId": "0363200000038801",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
     "12": {
       "lat": 52.38914816,
       "lng": 4.88759162,
@@ -62,6 +112,16 @@
       "addressKey": "1013NS|130|",
       "bagId": "0363200000040074",
       "verifiedAt": "2026-10-22"
+    },
+    "13": {
+      "lat": 52.37475893,
+      "lng": 4.89656128,
+      "source": "pdok-bag-building",
+      "addressKey": "1012JV|27|",
+      "bagId": "0363200012088334",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "A"
     },
     "14": {
       "lat": 52.38218998,
@@ -78,6 +138,16 @@
       "addressKey": "1058XL|78|",
       "bagId": "0363200000053278",
       "verifiedAt": "2026-10-22"
+    },
+    "16": {
+      "lat": 52.38096393,
+      "lng": 4.85538666,
+      "source": "pdok-bag-building",
+      "addressKey": "1055DS|163|",
+      "bagId": "0363200000055580",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "A"
     },
     "17": {
       "lat": 52.3814043,
@@ -127,6 +197,16 @@
       "bagId": "0363200000075082",
       "verifiedAt": "2026-10-22"
     },
+    "23": {
+      "lat": 52.35606988,
+      "lng": 4.89103196,
+      "source": "pdok-bag-building",
+      "addressKey": "1072XK|78|",
+      "bagId": "0363200000077485",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
     "24": {
       "lat": 52.3651803,
       "lng": 4.92581437,
@@ -135,6 +215,26 @@
       "bagId": "0363200000077737",
       "verifiedAt": "2026-10-22"
     },
+    "25": {
+      "lat": 52.37135521,
+      "lng": 4.87144872,
+      "source": "pdok-bag-building",
+      "addressKey": "1052NE|30|",
+      "bagId": "0363200000079128",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
+    "26": {
+      "lat": 52.35639769,
+      "lng": 4.91627624,
+      "source": "pdok-bag-building",
+      "addressKey": "1091JV|73|",
+      "bagId": "0363200000386179",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
     "27": {
       "lat": 52.37450719,
       "lng": 4.88123638,
@@ -142,6 +242,56 @@
       "addressKey": "1016KS|2|H",
       "bagId": "0363200000006717",
       "verifiedAt": "2026-10-22"
+    },
+    "28": {
+      "lat": 52.35599925,
+      "lng": 4.90880891,
+      "source": "pdok-bag-building",
+      "addressKey": "1091GV|47|",
+      "bagId": "0363200011950960",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
+    "29": {
+      "lat": 52.35482997,
+      "lng": 4.89327696,
+      "source": "pdok-bag-building",
+      "addressKey": "1072NZ|70|",
+      "bagId": "0363200000011733",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
+    "30": {
+      "lat": 52.36990915,
+      "lng": 4.88209642,
+      "source": "pdok-bag-building",
+      "addressKey": "1016TM|3|",
+      "bagId": "0363200000093021",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
+    "31": {
+      "lat": 52.3757962,
+      "lng": 4.87376144,
+      "source": "pdok-bag-building",
+      "addressKey": "1052HL|69|",
+      "bagId": "0363200000101762",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
+    "32": {
+      "lat": 52.37398454,
+      "lng": 4.87257826,
+      "source": "pdok-bag-building",
+      "addressKey": "1052HP|123|",
+      "bagId": "0363200000101888",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
     },
     "33": {
       "lat": 52.37496861,
@@ -159,6 +309,16 @@
       "bagId": "0363200000387308",
       "verifiedAt": "2026-10-22"
     },
+    "35": {
+      "lat": 52.35640342,
+      "lng": 4.89557873,
+      "source": "pdok-bag-building",
+      "addressKey": "1073XA|188|",
+      "bagId": "0363200000106406",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
     "36": {
       "lat": 52.35582186,
       "lng": 4.89190078,
@@ -166,6 +326,26 @@
       "addressKey": "1072VN|85|",
       "bagId": "0363200000529801",
       "verifiedAt": "2026-10-22"
+    },
+    "37": {
+      "lat": 52.3751115,
+      "lng": 4.87131693,
+      "source": "pdok-bag-building",
+      "addressKey": "1052VE|135|",
+      "bagId": "0363200000109074",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
+    "38": {
+      "lat": 52.35722693,
+      "lng": 4.90129455,
+      "source": "pdok-bag-building",
+      "addressKey": "1074CB|323|",
+      "bagId": "0363200000111577",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
     },
     "39": {
       "lat": 52.37423173,
@@ -247,6 +427,26 @@
       "bagId": "0363200000120658",
       "verifiedAt": "2026-10-22"
     },
+    "49": {
+      "lat": 52.36883934,
+      "lng": 4.888393,
+      "source": "pdok-bag-building",
+      "addressKey": "1012WC|6|",
+      "bagId": "0363200000536766",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
+    "51": {
+      "lat": 52.35744576,
+      "lng": 4.90205548,
+      "source": "pdok-bag-building",
+      "addressKey": "1074BP|16|",
+      "bagId": "0363200000124171",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
     "52": {
       "lat": 52.37554707,
       "lng": 4.8890812,
@@ -271,6 +471,26 @@
       "bagId": "0363200012117968",
       "verifiedAt": "2026-10-22"
     },
+    "55": {
+      "lat": 52.36548723,
+      "lng": 4.8534286,
+      "source": "pdok-bag-building",
+      "addressKey": "1057DC|174|",
+      "bagId": "0363200000133134",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
+    "56": {
+      "lat": 52.36698572,
+      "lng": 4.852882,
+      "source": "pdok-bag-building",
+      "addressKey": "1057DG|226|",
+      "bagId": "0363200000133337",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
     "57": {
       "lat": 52.36965321,
       "lng": 4.8524681,
@@ -294,6 +514,56 @@
       "addressKey": "1043AC|2|",
       "bagId": "0363200000040803",
       "verifiedAt": "2026-10-22"
+    },
+    "60": {
+      "lat": 52.36746668,
+      "lng": 4.86397637,
+      "source": "pdok-bag-building",
+      "addressKey": "1053SN|109|",
+      "bagId": "0363200000146806",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
+    "61": {
+      "lat": 52.36402887,
+      "lng": 4.86295983,
+      "source": "pdok-bag-building",
+      "addressKey": "1053GS|82|",
+      "bagId": "0363200000147893",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
+    "62": {
+      "lat": 52.36354473,
+      "lng": 4.86322982,
+      "source": "pdok-bag-building",
+      "addressKey": "1053GT|96|",
+      "bagId": "0363200000147948",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
+    "63": {
+      "lat": 52.37266855,
+      "lng": 4.84948017,
+      "source": "pdok-bag-building",
+      "addressKey": "1056CA|285|",
+      "bagId": "0363200000149530",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
+    "64": {
+      "lat": 52.36361329,
+      "lng": 4.93666554,
+      "source": "pdok-bag-building",
+      "addressKey": "1094HN|104|",
+      "bagId": "0363200000151412",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
     },
     "65": {
       "lat": 52.37205977,
@@ -375,6 +645,16 @@
       "bagId": "0363200000437439",
       "verifiedAt": "2026-10-22"
     },
+    "76": {
+      "lat": 52.35402803,
+      "lng": 4.91932511,
+      "source": "pdok-bag-building",
+      "addressKey": "1091KZ|22|",
+      "bagId": "0363200011951003",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
     "77": {
       "lat": 52.36935298,
       "lng": 4.89299779,
@@ -382,6 +662,16 @@
       "addressKey": "1012GB|7|A",
       "bagId": "0363200000178409",
       "verifiedAt": "2026-10-22"
+    },
+    "78": {
+      "lat": 52.36394634,
+      "lng": 4.8832801,
+      "source": "pdok-bag-building",
+      "addressKey": "1017PS|17|",
+      "bagId": "0363200000480902",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "A"
     },
     "79": {
       "lat": 52.37707875,
@@ -447,6 +737,26 @@
       "bagId": "0363200000206668",
       "verifiedAt": "2026-10-22"
     },
+    "87": {
+      "lat": 52.38265286,
+      "lng": 4.87979216,
+      "source": "pdok-bag-building",
+      "addressKey": "1052CK|33|",
+      "bagId": "0363200000208578",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
+    "88": {
+      "lat": 52.36511694,
+      "lng": 4.93974816,
+      "source": "pdok-bag-building",
+      "addressKey": "1095TS|1|",
+      "bagId": "0363200000210167",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
     "89": {
       "lat": 52.36732341,
       "lng": 4.90649909,
@@ -478,6 +788,16 @@
       "addressKey": "1012CR|12|H",
       "bagId": "0363200000213193",
       "verifiedAt": "2026-10-22"
+    },
+    "95": {
+      "lat": 52.38361543,
+      "lng": 4.91252084,
+      "source": "pdok-bag-building",
+      "addressKey": "1021GZ|10|",
+      "bagId": "0363200000222159",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
     },
     "96": {
       "lat": 52.3699972,
@@ -519,6 +839,16 @@
       "bagId": "0363200000219994",
       "verifiedAt": "2026-10-22"
     },
+    "101": {
+      "lat": 52.37151279,
+      "lng": 4.89582244,
+      "source": "pdok-bag-building",
+      "addressKey": "1012EW|189|",
+      "bagId": "0363200000468665",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "A"
+    },
     "102": {
       "lat": 52.37520384,
       "lng": 4.89946755,
@@ -551,6 +881,26 @@
       "bagId": "0363200000219773",
       "verifiedAt": "2026-10-22"
     },
+    "106": {
+      "lat": 52.36062803,
+      "lng": 4.8662444,
+      "source": "pdok-bag-building",
+      "addressKey": "1054JE|342|",
+      "bagId": "0363200000229213",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
+    "107": {
+      "lat": 52.35857506,
+      "lng": 4.85931028,
+      "source": "pdok-bag-building",
+      "addressKey": "1054KH|451|",
+      "bagId": "0363200000229455",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
     "108": {
       "lat": 52.3934497,
       "lng": 4.91295911,
@@ -558,6 +908,16 @@
       "addressKey": "1032KH|2|",
       "bagId": "0363200011872493",
       "verifiedAt": "2026-10-22"
+    },
+    "110": {
+      "lat": 52.35478544,
+      "lng": 4.92222346,
+      "source": "pdok-bag-building",
+      "addressKey": "1092GB|67|",
+      "bagId": "0363200000242382",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
     },
     "111": {
       "lat": 52.37672396,
@@ -679,6 +1039,16 @@
       "bagId": "0363200012072762",
       "verifiedAt": "2026-10-22"
     },
+    "127": {
+      "lat": 52.35369896,
+      "lng": 4.88719811,
+      "source": "pdok-bag-building",
+      "addressKey": "1072AR|145|",
+      "bagId": "0363200000260190",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
     "128": {
       "lat": 52.36156719,
       "lng": 4.90907708,
@@ -775,6 +1145,16 @@
       "bagId": "0363200000277630",
       "verifiedAt": "2026-10-22"
     },
+    "140": {
+      "lat": 52.35791315,
+      "lng": 4.85400414,
+      "source": "pdok-bag-building",
+      "addressKey": "1058GJ|7|",
+      "bagId": "0363200000282456",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
     "141": {
       "lat": 52.36511243,
       "lng": 4.89555564,
@@ -783,6 +1163,16 @@
       "bagId": "0363200000285621",
       "verifiedAt": "2026-10-22"
     },
+    "142": {
+      "lat": 52.35234648,
+      "lng": 4.90346157,
+      "source": "pdok-bag-building",
+      "addressKey": "1074VG|91|",
+      "bagId": "0363200000287447",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
     "143": {
       "lat": 52.40195615,
       "lng": 4.89849723,
@@ -790,6 +1180,16 @@
       "addressKey": "1033SC|4|C",
       "bagId": "0363200000439647",
       "verifiedAt": "2026-10-22"
+    },
+    "145": {
+      "lat": 52.35633565,
+      "lng": 4.9031245,
+      "source": "pdok-bag-building",
+      "addressKey": "1074XS|79|",
+      "bagId": "0363200000014970",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
     },
     "146": {
       "lat": 52.37185909,
@@ -823,6 +1223,96 @@
       "bagId": "0363200000292767",
       "verifiedAt": "2026-10-22"
     },
+    "150": {
+      "lat": 52.38236315,
+      "lng": 4.87305384,
+      "source": "pdok-bag-building",
+      "addressKey": "1051CT|31|",
+      "bagId": "0363200000294225",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
+    "151": {
+      "lat": 52.3515905,
+      "lng": 4.89450188,
+      "source": "pdok-bag-building",
+      "addressKey": "1072PH|8|",
+      "bagId": "0363200000295747",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
+    "152": {
+      "lat": 52.38255282,
+      "lng": 4.87120099,
+      "source": "pdok-bag-building",
+      "addressKey": "1051CA|201|",
+      "bagId": "0363200000299171",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
+    "153": {
+      "lat": 52.3533377,
+      "lng": 4.89970787,
+      "source": "pdok-bag-building",
+      "addressKey": "1073TW|290|",
+      "bagId": "0363200000303603",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
+    "154": {
+      "lat": 52.35460389,
+      "lng": 4.90163151,
+      "source": "pdok-bag-building",
+      "addressKey": "1074AE|87|",
+      "bagId": "0363200000307200",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
+    "155": {
+      "lat": 52.35122378,
+      "lng": 4.90364993,
+      "source": "pdok-bag-building",
+      "addressKey": "1074AN|193|",
+      "bagId": "0363200000307557",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
+    "156": {
+      "lat": 52.35291969,
+      "lng": 4.90297095,
+      "source": "pdok-bag-building",
+      "addressKey": "1074AJ|147|",
+      "bagId": "0363200000539007",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
+    "157": {
+      "lat": 52.34841882,
+      "lng": 4.9056618,
+      "source": "pdok-bag-building",
+      "addressKey": "1078RE|9|",
+      "bagId": "0363200000309915",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
+    "158": {
+      "lat": 52.34599563,
+      "lng": 4.9065246,
+      "source": "pdok-bag-building",
+      "addressKey": "1079JA|63|",
+      "bagId": "0363200001976176",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
     "159": {
       "lat": 52.39230611,
       "lng": 4.95632959,
@@ -839,6 +1329,26 @@
       "bagId": "0363200000321379",
       "verifiedAt": "2026-10-22"
     },
+    "162": {
+      "lat": 52.36899177,
+      "lng": 4.8592891,
+      "source": "pdok-bag-building",
+      "addressKey": "1057ZG|106|",
+      "bagId": "0363200000332960",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
+    "163": {
+      "lat": 52.365901,
+      "lng": 4.85951675,
+      "source": "pdok-bag-building",
+      "addressKey": "1057XZ|30|",
+      "bagId": "0363200000332665",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
     "164": {
       "lat": 52.35209535,
       "lng": 4.84745441,
@@ -846,6 +1356,26 @@
       "addressKey": "1058TJ|76|",
       "bagId": "0363200000333603",
       "verifiedAt": "2026-10-22"
+    },
+    "165": {
+      "lat": 52.36613059,
+      "lng": 4.92982742,
+      "source": "pdok-bag-building",
+      "addressKey": "1093SL|33|",
+      "bagId": "0363200000336425",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
+    },
+    "166": {
+      "lat": 52.36167603,
+      "lng": 4.88624205,
+      "source": "pdok-bag-building",
+      "addressKey": "1017RT|22|",
+      "bagId": "0363200000456508",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
     },
     "167": {
       "lat": 52.37422684,

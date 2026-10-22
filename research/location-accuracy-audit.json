@@ -12,14 +12,14 @@
     "letterInNumber": 2,
     "operatorEntranceMismatch": 2,
     "identityUnconfirmed": 1,
-    "livePdokCoordinateUnresolved": 61,
-    "lastLiveCheckAt": "2026-10-22T22:44:11.751Z",
+    "livePdokCoordinateUnresolved": 8,
+    "lastLiveCheckAt": "2026-10-22T22:46:11.063Z",
     "failureReasons": {
-      "no_exact_pdok_bag_match": 61
+      "no_exact_pdok_bag_match": 8
     },
-    "buildingLevelCoordinates": 0
+    "buildingLevelCoordinates": 53
   },
-  "note": "PDOK/BAG civic addresses checked on 2026-10-22T22:44:11.751Z. Exact unit matches and tightly clustered building-level approximations are counted separately. None of these are verified coffeeshop door locations. Unresolved addresses remain unpinned.",
+  "note": "PDOK/BAG civic addresses checked on 2026-10-22T22:46:11.063Z. Exact unit matches and tightly clustered building-level approximations are counted separately. None of these are verified coffeeshop door locations. Unresolved addresses remain unpinned.",
   "records": [
     {
       "id": 1,
@@ -45,38 +45,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Admiraal De Ruijterweg",
-          "city": "Amsterdam",
-          "point": "POINT(4.85942274 52.37256948)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Admiraal De Ruijterweg",
-          "city": "Amsterdam",
-          "point": "POINT(4.85942274 52.37256948)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Admiraal De Ruijterweg",
-          "city": "Amsterdam",
-          "point": "POINT(4.85942274 52.37256948)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Admiraal De Ruijterweg",
-          "city": "Amsterdam",
-          "point": "POINT(4.85942274 52.37256948)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000022126",
+      "pdokCoordinates": {
+        "lat": 52.37256948,
+        "lng": 4.85942274
+      }
     },
     {
       "id": 3,
@@ -118,31 +93,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Amsteldijk",
-          "city": "Amsterdam",
-          "point": "POINT(4.9112324 52.34659471)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Amsteldijk",
-          "city": "Amsterdam",
-          "point": "POINT(4.91122485 52.3465956)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Amsteldijk",
-          "city": "Amsterdam",
-          "point": "POINT(4.91124367 52.34659891)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200012073229",
+      "pdokCoordinates": {
+        "lat": 52.34659471,
+        "lng": 4.9112324
+      }
     },
     {
       "id": 6,
@@ -168,38 +125,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Amstelveenseweg",
-          "city": "Amsterdam",
-          "point": "POINT(4.85589838 52.35394801)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Amstelveenseweg",
-          "city": "Amsterdam",
-          "point": "POINT(4.85590234 52.35394857)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Amstelveenseweg",
-          "city": "Amsterdam",
-          "point": "POINT(4.85590112 52.35395808)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Amstelveenseweg",
-          "city": "Amsterdam",
-          "point": "POINT(4.85590112 52.35395808)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200012086040",
+      "pdokCoordinates": {
+        "lat": 52.35394801,
+        "lng": 4.85589838
+      }
     },
     {
       "id": 8,
@@ -241,31 +173,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Balboastraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.85371085 52.36887689)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Balboastraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.85371085 52.36887689)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Balboastraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.85371085 52.36887689)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000038052",
+      "pdokCoordinates": {
+        "lat": 52.36887689,
+        "lng": 4.85371085
+      }
     },
     {
       "id": 11,
@@ -275,38 +189,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Balthasar Floriszstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.88468071 52.35305916)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Balthasar Floriszstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.88468071 52.35305916)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Balthasar Floriszstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.88468071 52.35305916)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Balthasar Floriszstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.88468071 52.35305916)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000038801",
+      "pdokCoordinates": {
+        "lat": 52.35305916,
+        "lng": 4.88468071
+      }
     },
     {
       "id": 12,
@@ -332,38 +221,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": "A",
-          "addition": null,
-          "street": "Beursstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.89656128 52.37475893)"
-        },
-        {
-          "letter": "B",
-          "addition": null,
-          "street": "Beursstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.89656426 52.37475992)"
-        },
-        {
-          "letter": "C",
-          "addition": null,
-          "street": "Beursstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.89656383 52.37475752)"
-        },
-        {
-          "letter": "D",
-          "addition": null,
-          "street": "Beursstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.89656682 52.37475839)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200012088334",
+      "pdokCoordinates": {
+        "lat": 52.37475893,
+        "lng": 4.89656128
+      }
     },
     {
       "id": 14,
@@ -405,38 +269,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": "A",
-          "addition": null,
-          "street": "Bos en Lommerweg",
-          "city": "Amsterdam",
-          "point": "POINT(4.85538666 52.38096393)"
-        },
-        {
-          "letter": "B",
-          "addition": null,
-          "street": "Bos en Lommerweg",
-          "city": "Amsterdam",
-          "point": "POINT(4.85538666 52.38096393)"
-        },
-        {
-          "letter": "C",
-          "addition": null,
-          "street": "Bos en Lommerweg",
-          "city": "Amsterdam",
-          "point": "POINT(4.85538666 52.38096393)"
-        },
-        {
-          "letter": "D",
-          "addition": null,
-          "street": "Bos en Lommerweg",
-          "city": "Amsterdam",
-          "point": "POINT(4.85538666 52.38096393)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000055580",
+      "pdokCoordinates": {
+        "lat": 52.38096393,
+        "lng": 4.85538666
+      }
     },
     {
       "id": 17,
@@ -542,45 +381,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Daniël Stalpertstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.89103196 52.35606988)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Daniël Stalpertstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.89103196 52.35606988)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Daniël Stalpertstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.89103196 52.35606988)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Daniël Stalpertstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.89103079 52.35606358)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Daniël Stalpertstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.89102998 52.35605756)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000077485",
+      "pdokCoordinates": {
+        "lat": 52.35606988,
+        "lng": 4.89103196
+      }
     },
     {
       "id": 24,
@@ -606,45 +413,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "De Clercqstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.87144872 52.37135521)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "De Clercqstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.87142645 52.37133858)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "De Clercqstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.87144872 52.37135521)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "De Clercqstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.87143997 52.37134167)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "De Clercqstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.87145306 52.37134371)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000079128",
+      "pdokCoordinates": {
+        "lat": 52.37135521,
+        "lng": 4.87144872
+      }
     },
     {
       "id": 26,
@@ -654,45 +429,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Derde Oosterparkstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.91627624 52.35639769)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Derde Oosterparkstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.91627624 52.35639769)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Derde Oosterparkstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.91627624 52.35639769)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Derde Oosterparkstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.91627624 52.35639769)"
-        },
-        {
-          "letter": null,
-          "addition": "4",
-          "street": "Derde Oosterparkstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.91627624 52.35639769)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000386179",
+      "pdokCoordinates": {
+        "lat": 52.35639769,
+        "lng": 4.91627624
+      }
     },
     {
       "id": 27,
@@ -718,38 +461,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Eerste Oosterparkstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.90880891 52.35599925)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Eerste Oosterparkstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.90880891 52.35599925)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Eerste Oosterparkstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.90880891 52.35599925)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Eerste Oosterparkstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.90880188 52.3560035)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200011950960",
+      "pdokCoordinates": {
+        "lat": 52.35599925,
+        "lng": 4.90880891
+      }
     },
     {
       "id": 29,
@@ -759,38 +477,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Eerste Van der Helststraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.89327696 52.35482997)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Eerste Van der Helststraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.89327696 52.35482997)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Eerste Van der Helststraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.89327696 52.35482997)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Eerste Van der Helststraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.89327696 52.35482997)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000011733",
+      "pdokCoordinates": {
+        "lat": 52.35482997,
+        "lng": 4.89327696
+      }
     },
     {
       "id": 30,
@@ -800,31 +493,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Elandsgracht",
-          "city": "Amsterdam",
-          "point": "POINT(4.88209642 52.36990915)"
-        },
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Elandsgracht",
-          "city": "Amsterdam",
-          "point": "POINT(4.88209642 52.36990915)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Elandsgracht",
-          "city": "Amsterdam",
-          "point": "POINT(4.88209642 52.36990915)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000093021",
+      "pdokCoordinates": {
+        "lat": 52.36990915,
+        "lng": 4.88209642
+      }
     },
     {
       "id": 31,
@@ -834,38 +509,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Frederik Hendrikstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.87376144 52.3757962)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Frederik Hendrikstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.87376144 52.3757962)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Frederik Hendrikstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.87376144 52.3757962)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Frederik Hendrikstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.87376144 52.3757962)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000101762",
+      "pdokCoordinates": {
+        "lat": 52.3757962,
+        "lng": 4.87376144
+      }
     },
     {
       "id": 32,
@@ -875,38 +525,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Frederik Hendrikstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.87257826 52.37398454)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Frederik Hendrikstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.87257826 52.37398454)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Frederik Hendrikstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.87257826 52.37398454)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Frederik Hendrikstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.87257826 52.37398454)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000101888",
+      "pdokCoordinates": {
+        "lat": 52.37398454,
+        "lng": 4.87257826
+      }
     },
     {
       "id": 33,
@@ -948,45 +573,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Gerard Doustraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.89557873 52.35640342)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Gerard Doustraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.89557873 52.35640342)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Gerard Doustraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.89557873 52.35640342)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Gerard Doustraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.89557873 52.35640342)"
-        },
-        {
-          "letter": null,
-          "addition": "4",
-          "street": "Gerard Doustraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.89557873 52.35640342)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000106406",
+      "pdokCoordinates": {
+        "lat": 52.35640342,
+        "lng": 4.89557873
+      }
     },
     {
       "id": 36,
@@ -1012,38 +605,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Gillis van Ledenberchstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.87131693 52.3751115)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Gillis van Ledenberchstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.87131693 52.3751115)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Gillis van Ledenberchstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.87131693 52.3751115)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Gillis van Ledenberchstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.87131693 52.3751115)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000109074",
+      "pdokCoordinates": {
+        "lat": 52.3751115,
+        "lng": 4.87131693
+      }
     },
     {
       "id": 38,
@@ -1053,24 +621,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Govert Flinckstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.90129455 52.35722693)"
-        },
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Govert Flinckstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.90129455 52.35722693)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000111577",
+      "pdokCoordinates": {
+        "lat": 52.35722693,
+        "lng": 4.90129455
+      }
     },
     {
       "id": 39,
@@ -1240,24 +797,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Heisteeg",
-          "city": "Amsterdam",
-          "point": "POINT(4.888393 52.36883934)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Heisteeg",
-          "city": "Amsterdam",
-          "point": "POINT(4.8883929 52.36884833)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000536766",
+      "pdokCoordinates": {
+        "lat": 52.36883934,
+        "lng": 4.888393
+      }
     },
     {
       "id": 50,
@@ -1301,31 +847,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Hemonystraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.90205548 52.35744576)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Hemonystraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.90205548 52.35744576)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Hemonystraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.90205548 52.35744576)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000124171",
+      "pdokCoordinates": {
+        "lat": 52.35744576,
+        "lng": 4.90205548
+      }
     },
     {
       "id": 52,
@@ -1385,38 +913,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Hoofdweg",
-          "city": "Amsterdam",
-          "point": "POINT(4.8534286 52.36548723)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Hoofdweg",
-          "city": "Amsterdam",
-          "point": "POINT(4.8534286 52.36548723)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Hoofdweg",
-          "city": "Amsterdam",
-          "point": "POINT(4.8534286 52.36548723)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Hoofdweg",
-          "city": "Amsterdam",
-          "point": "POINT(4.8534286 52.36548723)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000133134",
+      "pdokCoordinates": {
+        "lat": 52.36548723,
+        "lng": 4.8534286
+      }
     },
     {
       "id": 56,
@@ -1428,38 +931,13 @@
       "flags": [
         "trading_name_or_address_history_needs_manual_check"
       ],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Hoofdweg",
-          "city": "Amsterdam",
-          "point": "POINT(4.852882 52.36698572)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Hoofdweg",
-          "city": "Amsterdam",
-          "point": "POINT(4.852882 52.36698572)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Hoofdweg",
-          "city": "Amsterdam",
-          "point": "POINT(4.852882 52.36698572)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Hoofdweg",
-          "city": "Amsterdam",
-          "point": "POINT(4.852882 52.36698572)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000133337",
+      "pdokCoordinates": {
+        "lat": 52.36698572,
+        "lng": 4.852882
+      }
     },
     {
       "id": 57,
@@ -1519,38 +997,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Jan Hanzenstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.86397637 52.36746668)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Jan Hanzenstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.86397637 52.36746668)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Jan Hanzenstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.86397637 52.36746668)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Jan Hanzenstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.86397637 52.36746668)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000146806",
+      "pdokCoordinates": {
+        "lat": 52.36746668,
+        "lng": 4.86397637
+      }
     },
     {
       "id": 61,
@@ -1560,45 +1013,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Jan Pieter Heijestraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.86295983 52.36402887)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Jan Pieter Heijestraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.8629635 52.3640308)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Jan Pieter Heijestraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.86295983 52.36402887)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Jan Pieter Heijestraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.86295983 52.36402887)"
-        },
-        {
-          "letter": null,
-          "addition": "4",
-          "street": "Jan Pieter Heijestraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.86295983 52.36402887)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000147893",
+      "pdokCoordinates": {
+        "lat": 52.36402887,
+        "lng": 4.86295983
+      }
     },
     {
       "id": 62,
@@ -1608,45 +1029,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Jan Pieter Heijestraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.86322982 52.36354473)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Jan Pieter Heijestraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.86322982 52.36354473)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Jan Pieter Heijestraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.86322982 52.36354473)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Jan Pieter Heijestraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.86322982 52.36354473)"
-        },
-        {
-          "letter": null,
-          "addition": "4",
-          "street": "Jan Pieter Heijestraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.86325908 52.36355385)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000147948",
+      "pdokCoordinates": {
+        "lat": 52.36354473,
+        "lng": 4.86322982
+      }
     },
     {
       "id": 63,
@@ -1656,38 +1045,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Jan van Galenstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.84948017 52.37266855)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Jan van Galenstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.84948017 52.37266855)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Jan van Galenstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.84948017 52.37266855)"
-        },
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Jan van Galenstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.84948017 52.37266855)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000149530",
+      "pdokCoordinates": {
+        "lat": 52.37266855,
+        "lng": 4.84948017
+      }
     },
     {
       "id": 64,
@@ -1697,38 +1061,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Javastraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.93666554 52.36361329)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Javastraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.93666554 52.36361329)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Javastraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.93666554 52.36361329)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Javastraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.93666554 52.36361329)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000151412",
+      "pdokCoordinates": {
+        "lat": 52.36361329,
+        "lng": 4.93666554
+      }
     },
     {
       "id": 65,
@@ -1948,45 +1287,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Krugerplein",
-          "city": "Amsterdam",
-          "point": "POINT(4.91932511 52.35402803)"
-        },
-        {
-          "letter": null,
-          "addition": "1A",
-          "street": "Krugerplein",
-          "city": "Amsterdam",
-          "point": "POINT(4.91932511 52.35402803)"
-        },
-        {
-          "letter": null,
-          "addition": "1V",
-          "street": "Krugerplein",
-          "city": "Amsterdam",
-          "point": "POINT(4.91932511 52.35402803)"
-        },
-        {
-          "letter": null,
-          "addition": "2A",
-          "street": "Krugerplein",
-          "city": "Amsterdam",
-          "point": "POINT(4.91932511 52.35402803)"
-        },
-        {
-          "letter": null,
-          "addition": "2V",
-          "street": "Krugerplein",
-          "city": "Amsterdam",
-          "point": "POINT(4.91932511 52.35402803)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200011951003",
+      "pdokCoordinates": {
+        "lat": 52.35402803,
+        "lng": 4.91932511
+      }
     },
     {
       "id": 77,
@@ -2012,38 +1319,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": "A",
-          "addition": null,
-          "street": "Leidseplein",
-          "city": "Amsterdam",
-          "point": "POINT(4.8832801 52.36394634)"
-        },
-        {
-          "letter": "B",
-          "addition": null,
-          "street": "Leidseplein",
-          "city": "Amsterdam",
-          "point": "POINT(4.8832801 52.36394634)"
-        },
-        {
-          "letter": "C",
-          "addition": null,
-          "street": "Leidseplein",
-          "city": "Amsterdam",
-          "point": "POINT(4.8832801 52.36394634)"
-        },
-        {
-          "letter": "D",
-          "addition": null,
-          "street": "Leidseplein",
-          "city": "Amsterdam",
-          "point": "POINT(4.8832801 52.36394634)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000480902",
+      "pdokCoordinates": {
+        "lat": 52.36394634,
+        "lng": 4.8832801
+      }
     },
     {
       "id": 79,
@@ -2183,45 +1465,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Nassaukade",
-          "city": "Amsterdam",
-          "point": "POINT(4.87979216 52.38265286)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Nassaukade",
-          "city": "Amsterdam",
-          "point": "POINT(4.87980738 52.38266041)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Nassaukade",
-          "city": "Amsterdam",
-          "point": "POINT(4.87979814 52.38266552)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Nassaukade",
-          "city": "Amsterdam",
-          "point": "POINT(4.87979216 52.38265286)"
-        },
-        {
-          "letter": null,
-          "addition": "4",
-          "street": "Nassaukade",
-          "city": "Amsterdam",
-          "point": "POINT(4.87978041 52.38267761)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000208578",
+      "pdokCoordinates": {
+        "lat": 52.38265286,
+        "lng": 4.87979216
+      }
     },
     {
       "id": 88,
@@ -2231,45 +1481,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Niasstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.93974816 52.36511694)"
-        },
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Niasstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.93974816 52.36511694)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Niasstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.93974816 52.36511694)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Niasstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.93974816 52.36511694)"
-        },
-        {
-          "letter": null,
-          "addition": "4",
-          "street": "Niasstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.93974788 52.36514418)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000210167",
+      "pdokCoordinates": {
+        "lat": 52.36511694,
+        "lng": 4.93974816
+      }
     },
     {
       "id": 89,
@@ -2420,24 +1638,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Ooievaarsweg",
-          "city": "Amsterdam",
-          "point": "POINT(4.91252084 52.38361543)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Ooievaarsweg",
-          "city": "Amsterdam",
-          "point": "POINT(4.91252084 52.38361543)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000222159",
+      "pdokCoordinates": {
+        "lat": 52.38361543,
+        "lng": 4.91252084
+      }
     },
     {
       "id": 96,
@@ -2529,45 +1736,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": "A",
-          "addition": null,
-          "street": "Oudezijds Voorburgwal",
-          "city": "Amsterdam",
-          "point": "POINT(4.89582244 52.37151279)"
-        },
-        {
-          "letter": "B",
-          "addition": null,
-          "street": "Oudezijds Voorburgwal",
-          "city": "Amsterdam",
-          "point": "POINT(4.89582244 52.37151279)"
-        },
-        {
-          "letter": "C",
-          "addition": null,
-          "street": "Oudezijds Voorburgwal",
-          "city": "Amsterdam",
-          "point": "POINT(4.89582244 52.37151279)"
-        },
-        {
-          "letter": "D",
-          "addition": null,
-          "street": "Oudezijds Voorburgwal",
-          "city": "Amsterdam",
-          "point": "POINT(4.89582244 52.37151279)"
-        },
-        {
-          "letter": "E",
-          "addition": null,
-          "street": "Oudezijds Voorburgwal",
-          "city": "Amsterdam",
-          "point": "POINT(4.89582244 52.37151279)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000468665",
+      "pdokCoordinates": {
+        "lat": 52.37151279,
+        "lng": 4.89582244
+      }
     },
     {
       "id": 102,
@@ -2645,45 +1820,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Overtoom",
-          "city": "Amsterdam",
-          "point": "POINT(4.8662444 52.36062803)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Overtoom",
-          "city": "Amsterdam",
-          "point": "POINT(4.8662444 52.36062803)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Overtoom",
-          "city": "Amsterdam",
-          "point": "POINT(4.8662444 52.36062803)"
-        },
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Overtoom",
-          "city": "Amsterdam",
-          "point": "POINT(4.8662444 52.36062803)"
-        },
-        {
-          "letter": null,
-          "addition": "O",
-          "street": "Overtoom",
-          "city": "Amsterdam",
-          "point": "POINT(4.8662444 52.36062803)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000229213",
+      "pdokCoordinates": {
+        "lat": 52.36062803,
+        "lng": 4.8662444
+      }
     },
     {
       "id": 107,
@@ -2693,38 +1836,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Overtoom",
-          "city": "Amsterdam",
-          "point": "POINT(4.85931028 52.35857506)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Overtoom",
-          "city": "Amsterdam",
-          "point": "POINT(4.85931028 52.35857506)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Overtoom",
-          "city": "Amsterdam",
-          "point": "POINT(4.85931028 52.35857506)"
-        },
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Overtoom",
-          "city": "Amsterdam",
-          "point": "POINT(4.85931028 52.35857506)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000229455",
+      "pdokCoordinates": {
+        "lat": 52.35857506,
+        "lng": 4.85931028
+      }
     },
     {
       "id": 108,
@@ -2762,38 +1880,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Pretoriusstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.92222346 52.35478544)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Pretoriusstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.92222346 52.35478544)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Pretoriusstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.92222346 52.35478544)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Pretoriusstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.92222346 52.35478544)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000242382",
+      "pdokCoordinates": {
+        "lat": 52.35478544,
+        "lng": 4.92222346
+      }
     },
     {
       "id": 111,
@@ -3079,31 +2172,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Ruysdaelkade",
-          "city": "Amsterdam",
-          "point": "POINT(4.88719811 52.35369896)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Ruysdaelkade",
-          "city": "Amsterdam",
-          "point": "POINT(4.88719811 52.35369896)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Ruysdaelkade",
-          "city": "Amsterdam",
-          "point": "POINT(4.88719811 52.35369896)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000260190",
+      "pdokCoordinates": {
+        "lat": 52.35369896,
+        "lng": 4.88719811
+      }
     },
     {
       "id": 128,
@@ -3313,38 +2388,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Surinamestraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.85400414 52.35791315)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Surinamestraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.85400414 52.35791315)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Surinamestraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.85400414 52.35791315)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Surinamestraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.85400414 52.35791315)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000282456",
+      "pdokCoordinates": {
+        "lat": 52.35791315,
+        "lng": 4.85400414
+      }
     },
     {
       "id": 141,
@@ -3370,31 +2420,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Tolstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.90346157 52.35234648)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Tolstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.90346157 52.35234648)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Tolstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.90346157 52.35234648)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000287447",
+      "pdokCoordinates": {
+        "lat": 52.35234648,
+        "lng": 4.90346157
+      }
     },
     {
       "id": 143,
@@ -3442,45 +2474,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Tweede Jan van der Heijdenstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.9031245 52.35633565)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Tweede Jan van der Heijdenstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.9031245 52.35633565)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Tweede Jan van der Heijdenstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.9031245 52.35633565)"
-        },
-        {
-          "letter": null,
-          "addition": "4",
-          "street": "Tweede Jan van der Heijdenstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.90311989 52.3563412)"
-        },
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Tweede Jan van der Heijdenstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.9031245 52.35633565)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000014970",
+      "pdokCoordinates": {
+        "lat": 52.35633565,
+        "lng": 4.9031245
+      }
     },
     {
       "id": 146,
@@ -3554,17 +2554,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Van Boetzelaerstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.87305384 52.38236315)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000294225",
+      "pdokCoordinates": {
+        "lat": 52.38236315,
+        "lng": 4.87305384
+      }
     },
     {
       "id": 151,
@@ -3574,38 +2570,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Van der Helstplein",
-          "city": "Amsterdam",
-          "point": "POINT(4.89450188 52.3515905)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Van der Helstplein",
-          "city": "Amsterdam",
-          "point": "POINT(4.89450188 52.3515905)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Van der Helstplein",
-          "city": "Amsterdam",
-          "point": "POINT(4.89450188 52.3515905)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Van der Helstplein",
-          "city": "Amsterdam",
-          "point": "POINT(4.89450188 52.3515905)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000295747",
+      "pdokCoordinates": {
+        "lat": 52.3515905,
+        "lng": 4.89450188
+      }
     },
     {
       "id": 152,
@@ -3615,38 +2586,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Van Hogendorpstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.87120099 52.38255282)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Van Hogendorpstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.87120099 52.38255282)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Van Hogendorpstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.87120099 52.38255282)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Van Hogendorpstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.87120099 52.38255282)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000299171",
+      "pdokCoordinates": {
+        "lat": 52.38255282,
+        "lng": 4.87120099
+      }
     },
     {
       "id": 153,
@@ -3656,45 +2602,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Van Ostadestraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.89970787 52.3533377)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Van Ostadestraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.89970787 52.3533377)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Van Ostadestraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.89970787 52.3533377)"
-        },
-        {
-          "letter": null,
-          "addition": "4",
-          "street": "Van Ostadestraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.89970829 52.35333887)"
-        },
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Van Ostadestraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.89970787 52.3533377)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000303603",
+      "pdokCoordinates": {
+        "lat": 52.3533377,
+        "lng": 4.89970787
+      }
     },
     {
       "id": 154,
@@ -3704,45 +2618,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Van Woustraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.90163151 52.35460389)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Van Woustraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.90163151 52.35460389)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Van Woustraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.90163151 52.35460389)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Van Woustraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.90163151 52.35460389)"
-        },
-        {
-          "letter": null,
-          "addition": "4",
-          "street": "Van Woustraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.9016524 52.35461194)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000307200",
+      "pdokCoordinates": {
+        "lat": 52.35460389,
+        "lng": 4.90163151
+      }
     },
     {
       "id": 155,
@@ -3752,45 +2634,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Van Woustraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.90364993 52.35122378)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Van Woustraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.90364993 52.35122378)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Van Woustraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.90364993 52.35122378)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Van Woustraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.90364993 52.35122378)"
-        },
-        {
-          "letter": null,
-          "addition": "4A",
-          "street": "Van Woustraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.90366771 52.35122745)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000307557",
+      "pdokCoordinates": {
+        "lat": 52.35122378,
+        "lng": 4.90364993
+      }
     },
     {
       "id": 156,
@@ -3800,38 +2650,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Van Woustraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.90297095 52.35291969)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Van Woustraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.90292702 52.35291052)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Van Woustraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.90292702 52.35291052)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Van Woustraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.90292702 52.35291052)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000539007",
+      "pdokCoordinates": {
+        "lat": 52.35291969,
+        "lng": 4.90297095
+      }
     },
     {
       "id": 157,
@@ -3841,31 +2666,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Vechtstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.9056618 52.34841882)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Vechtstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.9056618 52.34841882)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Vechtstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.9056618 52.34841882)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000309915",
+      "pdokCoordinates": {
+        "lat": 52.34841882,
+        "lng": 4.9056618
+      }
     },
     {
       "id": 158,
@@ -3875,38 +2682,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Vechtstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.9065246 52.34599563)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Vechtstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.9065246 52.34599563)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Vechtstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.9065246 52.34599563)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Vechtstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.9065246 52.34599563)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200001976176",
+      "pdokCoordinates": {
+        "lat": 52.34599563,
+        "lng": 4.9065246
+      }
     },
     {
       "id": 159,
@@ -3989,38 +2771,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Witte de Withstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.8592891 52.36899177)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Witte de Withstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.8592891 52.36899177)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Witte de Withstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.8592891 52.36899177)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Witte de Withstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.8592891 52.36899177)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000332960",
+      "pdokCoordinates": {
+        "lat": 52.36899177,
+        "lng": 4.8592891
+      }
     },
     {
       "id": 163,
@@ -4030,45 +2787,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": "A",
-          "addition": "1",
-          "street": "Witte de Withstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.85951611 52.36595492)"
-        },
-        {
-          "letter": "A",
-          "addition": "2",
-          "street": "Witte de Withstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.85951611 52.36595492)"
-        },
-        {
-          "letter": "A",
-          "addition": "3",
-          "street": "Witte de Withstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.85951611 52.36595492)"
-        },
-        {
-          "letter": "A",
-          "addition": "H",
-          "street": "Witte de Withstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.85951611 52.36595492)"
-        },
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Witte de Withstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.85951675 52.365901)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000332665",
+      "pdokCoordinates": {
+        "lat": 52.365901,
+        "lng": 4.85951675
+      }
     },
     {
       "id": 164,
@@ -4094,45 +2819,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Zeeburgerdijk",
-          "city": "Amsterdam",
-          "point": "POINT(4.92982742 52.36613059)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Zeeburgerdijk",
-          "city": "Amsterdam",
-          "point": "POINT(4.92982742 52.36613059)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Zeeburgerdijk",
-          "city": "Amsterdam",
-          "point": "POINT(4.92982742 52.36613059)"
-        },
-        {
-          "letter": null,
-          "addition": "3",
-          "street": "Zeeburgerdijk",
-          "city": "Amsterdam",
-          "point": "POINT(4.92982742 52.36613059)"
-        },
-        {
-          "letter": null,
-          "addition": "4",
-          "street": "Zeeburgerdijk",
-          "city": "Amsterdam",
-          "point": "POINT(4.92982742 52.36613059)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000336425",
+      "pdokCoordinates": {
+        "lat": 52.36613059,
+        "lng": 4.92982742
+      }
     },
     {
       "id": 166,
@@ -4142,31 +2835,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": "H",
-          "street": "Zieseniskade",
-          "city": "Amsterdam",
-          "point": "POINT(4.88624205 52.36167603)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Zieseniskade",
-          "city": "Amsterdam",
-          "point": "POINT(4.88624205 52.36167603)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Zieseniskade",
-          "city": "Amsterdam",
-          "point": "POINT(4.88624205 52.36167603)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000456508",
+      "pdokCoordinates": {
+        "lat": 52.36167603,
+        "lng": 4.88624205
+      }
     },
     {
       "id": 167,
