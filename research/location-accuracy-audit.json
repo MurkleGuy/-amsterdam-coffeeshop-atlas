@@ -13,12 +13,12 @@
     "operatorEntranceMismatch": 2,
     "identityUnconfirmed": 1,
     "livePdokCoordinateUnresolved": 0,
-    "lastLiveCheckAt": "2026-10-22T22:53:01.678Z",
+    "lastLiveCheckAt": "2026-10-22T22:54:49.450Z",
     "failureReasons": {},
     "buildingLevelCoordinates": 56,
     "addressCorrectionsRecorded": 8
   },
-  "note": "PDOK/BAG civic addresses checked on 2026-10-22T22:53:01.678Z. Exact unit matches and tightly clustered building-level approximations are counted separately. None of these are verified coffeeshop door locations. Unresolved addresses remain unpinned.",
+  "note": "PDOK/BAG civic addresses checked on 2026-10-22T22:54:49.450Z. Exact unit matches and tightly clustered building-level approximations are counted separately. None of these are verified coffeeshop door locations. Unresolved addresses remain unpinned.",
   "records": [
     {
       "id": 1,
