@@ -1,0 +1,42 @@
+name: Verify Amsterdam address coordinates
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/verify-locations.yml
+      - scripts/verify-locations.mjs
+      - public/assets/shops.js
+      - public/assets/budmap-address-match.js
+permissions:
+  contents: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Compare addresses against current PDOK BAG records
+        id: verify
+        continue-on-error: true
+        run: node scripts/verify-locations.mjs
+      - name: Publish exact matched coordinate data and audit
+        run: |
+          if [ ! -f public/assets/verified-coordinates.json ]; then
+            echo "No verified coordinates; nothing to publish."
+            exit 1
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/assets/verified-coordinates.json research/location-accuracy-audit.json
+          if ! git diff --staged --quiet; then
+            git commit -m "Record exact PDOK BAG address coordinate matches"
+            git push
+          fi
+      - name: Report partial matches
+        if: steps.verify.outcome != 'success'
+        run: |
+          echo "Some locations could not be matched to BAG. Review research/location-accuracy-audit.json."
+          exit 1
