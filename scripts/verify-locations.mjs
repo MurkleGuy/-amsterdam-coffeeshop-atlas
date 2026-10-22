@@ -21,7 +21,7 @@ async function search(query){
  const u=new URL('https://api.pdok.nl/bzk/locatieserver/search/v3_1/free');
  u.searchParams.set('q',query);
  u.searchParams.set('fq','type:adres');
- u.searchParams.set('rows','20');
+ u.searchParams.set('rows','50');
  let error;
  for(let attempt=0;attempt<3;attempt++){
   try{
@@ -46,7 +46,7 @@ async function verify(shop){
   let docs;
   try{docs=await search(query);}
   catch(e){return{id:shop.id,reason:'pdok_unreachable',detail:String(e.message).slice(0,90)}}
-  const match=matcher.select(shop,docs);
+  const match=matcher.select(shop,docs)||matcher.selectBuilding(shop,docs);
   if(match)return {id:shop.id,match};
   for(const doc of docs){
    const dc=v=>String(v??'').toUpperCase().replace(/[^0-9A-Z]/g,'');
@@ -71,6 +71,8 @@ await Promise.all(Array.from({length:3},async()=>{
  }
 }));
 const resolved=results.filter(r=>r.match),failed=results.filter(r=>!r.match);
+const exact=resolved.filter(r=>r.match.source==='pdok-bag-address');
+const buildings=resolved.filter(r=>r.match.source==='pdok-bag-building');
 const failuresByReason=Object.fromEntries([...new Set(failed.map(r=>r.reason))].map(reason=>[reason,failed.filter(r=>r.reason===reason).length]));
 if(!resolved.length){
  console.error('Could not verify any coordinates; refusing to replace existing data',JSON.stringify(failuresByReason));
@@ -78,10 +80,11 @@ if(!resolved.length){
 }else{
  const generatedAt=new Date().toISOString();
  const locations=Object.fromEntries(resolved.map(r=>[r.id,r.match]));
- const dataset={generatedAt,source:'PDOK Locatieserver v3_1, BAG civic-address centroids',totalListed:shops.length,verifiedCount:resolved.length,unresolvedCount:failed.length,locations};
+ const dataset={generatedAt,source:'PDOK Locatieserver v3_1, BAG civic-address centroids',totalListed:shops.length,verifiedCount:exact.length,buildingLevelCount:buildings.length,pinnedCount:resolved.length,unresolvedCount:failed.length,locations};
  await write('public/assets/verified-coordinates.json',dataset);
  const audit=JSON.parse(await read('research/location-accuracy-audit.json'));
- audit.summary.livePdokCoordinatesVerified=resolved.length;
+ audit.summary.livePdokCoordinatesVerified=exact.length;
+ audit.summary.buildingLevelCoordinates=buildings.length;
  audit.summary.livePdokCoordinateUnresolved=failed.length;
  audit.summary.physicalEntrancesVerified=0;
  audit.summary.lastLiveCheckAt=generatedAt;
@@ -89,22 +92,25 @@ if(!resolved.length){
  const resultMap=new Map(results.map(r=>[r.id,r]));
  for(const row of audit.records){
   const r=resultMap.get(row.id);
-  row.livePdokMatchVerified=!!r?.match;
+  row.livePdokMatchVerified=r?.match?.source==='pdok-bag-address';
+  row.buildingLevelGeocoded=r?.match?.source==='pdok-bag-building';
   row.storefrontEntranceVerified=false;
   if(r?.match){
+   row.coordinatePrecision=r.match.source==='pdok-bag-address'?'exact_bag_unit':'building_only';
    row.pdokBagId=r.match.bagId||null;
    row.pdokCoordinates={lat:r.match.lat,lng:r.match.lng};
    delete row.unresolvedReason;
    delete row.pdokCandidateSamples;
   }else{
    row.unresolvedReason=r?.reason||'not_checked';
+   delete row.coordinatePrecision;
    row.pdokCandidateSamples=r?.candidateSamples||[];
    delete row.pdokBagId;
    delete row.pdokCoordinates;
   }
  }
- audit.note='Exact PDOK/BAG civic address coordinates checked on '+generatedAt+'. A valid address is NOT proof of a current operating coffeeshop or its door location. Unresolved matches remain unpinned.';
+ audit.note='PDOK/BAG civic addresses checked on '+generatedAt+'. Exact unit matches and tightly clustered building-level approximations are counted separately. None of these are verified coffeeshop door locations. Unresolved addresses remain unpinned.';
  await write('research/location-accuracy-audit.json',audit);
- console.log(JSON.stringify({verified:resolved.length,total:shops.length,unresolved:failed.map(r=>({id:r.id,reason:r.reason})),generatedAt},null,2));
+ console.log(JSON.stringify({exact:exact.length,buildingLevel:buildings.length,pinned:resolved.length,total:shops.length,unresolved:failed.map(r=>({id:r.id,reason:r.reason})),generatedAt},null,2));
  if(failed.length)process.exitCode=2;
 }
