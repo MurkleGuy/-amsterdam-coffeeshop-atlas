@@ -40,11 +40,23 @@
    const p=point(d),dy=(p.lat-first.lat)*111320,dx=(p.lng-first.lng)*111320*Math.cos(first.lat*Math.PI/180);
    if(Math.hypot(dx,dy)>8)return null;
   }
-  return {lat:first.lat,lng:first.lng,source:'pdok-bag-address',addressKey:key(shop),bagId:String(hits[0].nummeraanduiding_id||hits[0].id||'')};
+  return {lat:first.lat,lng:first.lng,source:'pdok-bag-address',addressKey:key(shop),bagId:String(hits[0].nummeraanduiding_id||hits[0].id||''),verifiedAt:new Date().toISOString().slice(0,10)};
  }
  function validCache(shop,c){
   const k=key(shop);
   return !!k&&c?.source==='pdok-bag-address'&&c.addressKey===k&&Number.isFinite(c.lat)&&Number.isFinite(c.lng)&&c.lat>52.15&&c.lat<52.52&&c.lng>4.58&&c.lng<5.32;
  }
- window.BudMapAddressMatch={expected,key,select,validCache};
+ // Expose the map's adapter names while retaining the strict matching rules.
+ function addressParts(shop){
+  const e=expected(shop);
+  return e?{postcode:e.postcode,number:e.house,suffix:e.unit,key:key(shop)}:null;
+ }
+ function exactMatch(shop,docs){return select(shop,docs);}
+ function cached(shop,entry){
+  if(!validCache(shop,entry))return null;
+  const stamp=Date.parse(String(entry.verifiedAt||'')+'T12:00:00Z');
+  const age=(Date.now()-stamp)/86400000;
+  return Number.isFinite(age)&&age>=-1&&age<=120?{lat:entry.lat,lng:entry.lng}:null;
+ }
+ window.BudMapAddressMatch={expected,key,select,validCache,addressParts,exactMatch,cached};
 })();
