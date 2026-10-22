@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-10-22T22:54:51.039Z",
+  "url": "https://amsterdam-coffeeshop-atlas.pages.dev/map.html",
+  "outcome": "pass",
+  "expectedCount": 167,
+  "expectedDatasetAt": "2026-10-22T22:54:49.450Z",
+  "notes": "HTTP deployment check only; no device GPS or storefront inspection",
+  "attempts": 4,
+  "onlineExact": 111,
+  "onlineBuilding": 56,
+  "onlinePinned": 167,
+  "onlineDataAt": "2026-10-22T22:54:49.450Z"
+}
