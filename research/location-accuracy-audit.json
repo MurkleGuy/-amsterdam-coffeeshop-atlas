@@ -7,18 +7,19 @@
     "total": 167,
     "structuralAddressKeysValidated": 167,
     "duplicateAddressKeys": 0,
-    "livePdokCoordinatesVerified": 105,
+    "livePdokCoordinatesVerified": 106,
     "physicalEntrancesVerified": 0,
     "letterInNumber": 2,
     "operatorEntranceMismatch": 2,
     "identityUnconfirmed": 1,
-    "livePdokCoordinateUnresolved": 62,
-    "lastLiveCheckAt": "2026-10-22T22:35:31.364Z",
+    "livePdokCoordinateUnresolved": 61,
+    "lastLiveCheckAt": "2026-10-22T22:44:11.751Z",
     "failureReasons": {
-      "no_exact_pdok_bag_match": 62
-    }
+      "no_exact_pdok_bag_match": 61
+    },
+    "buildingLevelCoordinates": 0
   },
-  "note": "Exact PDOK/BAG civic address coordinates checked on 2026-10-22T22:35:31.364Z. A valid address is NOT proof of a current operating coffeeshop or its door location. Unresolved matches remain unpinned.",
+  "note": "PDOK/BAG civic addresses checked on 2026-10-22T22:44:11.751Z. Exact unit matches and tightly clustered building-level approximations are counted separately. None of these are verified coffeeshop door locations. Unresolved addresses remain unpinned.",
   "records": [
     {
       "id": 1,
@@ -32,7 +33,9 @@
       "pdokCoordinates": {
         "lat": 52.34506105,
         "lng": 4.8641671
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 2,
@@ -72,7 +75,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.85942274 52.37256948)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 3,
@@ -86,7 +90,9 @@
       "pdokCoordinates": {
         "lat": 52.36695814,
         "lng": 4.89416971
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 4,
@@ -100,7 +106,9 @@
       "pdokCoordinates": {
         "lat": 52.36689131,
         "lng": 4.8953891
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 5,
@@ -133,7 +141,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.91124367 52.34659891)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 6,
@@ -147,7 +156,9 @@
       "pdokCoordinates": {
         "lat": 52.36626075,
         "lng": 4.89938968
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 7,
@@ -187,7 +198,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.85590112 52.35395808)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 8,
@@ -201,7 +213,9 @@
       "pdokCoordinates": {
         "lat": 52.32200106,
         "lng": 4.85711578
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 9,
@@ -215,7 +229,9 @@
       "pdokCoordinates": {
         "lat": 52.3623061,
         "lng": 4.85754821
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 10,
@@ -248,7 +264,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.85371085 52.36887689)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 11,
@@ -288,7 +305,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.88468071 52.35305916)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 12,
@@ -302,7 +320,9 @@
       "pdokCoordinates": {
         "lat": 52.38914816,
         "lng": 4.88759162
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 13,
@@ -342,7 +362,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.89656682 52.37475839)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 14,
@@ -356,7 +377,9 @@
       "pdokCoordinates": {
         "lat": 52.38218998,
         "lng": 4.88718532
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 15,
@@ -370,7 +393,9 @@
       "pdokCoordinates": {
         "lat": 52.36206289,
         "lng": 4.85542237
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 16,
@@ -410,7 +435,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.85538666 52.38096393)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 17,
@@ -424,7 +450,9 @@
       "pdokCoordinates": {
         "lat": 52.3814043,
         "lng": 4.88629825
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 18,
@@ -438,7 +466,9 @@
       "pdokCoordinates": {
         "lat": 52.37890677,
         "lng": 4.89296477
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 19,
@@ -452,7 +482,9 @@
       "pdokCoordinates": {
         "lat": 52.39807211,
         "lng": 4.94144312
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 20,
@@ -466,7 +498,9 @@
       "pdokCoordinates": {
         "lat": 52.36744899,
         "lng": 4.86200909
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 21,
@@ -480,7 +514,9 @@
       "pdokCoordinates": {
         "lat": 52.4053062,
         "lng": 4.85819524
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 22,
@@ -494,7 +530,9 @@
       "pdokCoordinates": {
         "lat": 52.37022039,
         "lng": 4.92993209
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 23,
@@ -541,7 +579,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.89102998 52.35605756)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 24,
@@ -555,7 +594,9 @@
       "pdokCoordinates": {
         "lat": 52.3651803,
         "lng": 4.92581437
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 25,
@@ -602,7 +643,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.87145306 52.37134371)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 26,
@@ -649,7 +691,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.91627624 52.35639769)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 27,
@@ -663,7 +706,9 @@
       "pdokCoordinates": {
         "lat": 52.37450719,
         "lng": 4.88123638
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 28,
@@ -703,7 +748,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.90880188 52.3560035)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 29,
@@ -743,7 +789,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.89327696 52.35482997)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 30,
@@ -776,7 +823,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.88209642 52.36990915)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 31,
@@ -816,7 +864,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.87376144 52.3757962)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 32,
@@ -856,7 +905,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.87257826 52.37398454)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 33,
@@ -870,7 +920,9 @@
       "pdokCoordinates": {
         "lat": 52.37496861,
         "lng": 4.90127641
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 34,
@@ -884,7 +936,9 @@
       "pdokCoordinates": {
         "lat": 52.37633775,
         "lng": 4.90201038
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 35,
@@ -931,7 +985,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.89557873 52.35640342)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 36,
@@ -945,7 +1000,9 @@
       "pdokCoordinates": {
         "lat": 52.35582186,
         "lng": 4.89190078
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 37,
@@ -985,7 +1042,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.87131693 52.3751115)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 38,
@@ -1011,7 +1069,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.90129455 52.35722693)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 39,
@@ -1025,7 +1084,9 @@
       "pdokCoordinates": {
         "lat": 52.37423173,
         "lng": 4.89262037
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 40,
@@ -1039,7 +1100,9 @@
       "pdokCoordinates": {
         "lat": 52.38069563,
         "lng": 4.89088863
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 41,
@@ -1053,7 +1116,9 @@
       "pdokCoordinates": {
         "lat": 52.38006601,
         "lng": 4.89292247
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 42,
@@ -1067,7 +1132,9 @@
       "pdokCoordinates": {
         "lat": 52.38030541,
         "lng": 4.89214139
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 43,
@@ -1081,7 +1148,9 @@
       "pdokCoordinates": {
         "lat": 52.37942339,
         "lng": 4.89400176
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 44,
@@ -1095,7 +1164,9 @@
       "pdokCoordinates": {
         "lat": 52.37993071,
         "lng": 4.89280649
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 45,
@@ -1109,7 +1180,9 @@
       "pdokCoordinates": {
         "lat": 52.36682148,
         "lng": 4.89588908
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 46,
@@ -1123,7 +1196,9 @@
       "pdokCoordinates": {
         "lat": 52.36674066,
         "lng": 4.89590466
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 47,
@@ -1137,7 +1212,9 @@
       "pdokCoordinates": {
         "lat": 52.36775172,
         "lng": 4.89050487
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 48,
@@ -1151,7 +1228,9 @@
       "pdokCoordinates": {
         "lat": 52.37684822,
         "lng": 4.89720254
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 49,
@@ -1177,7 +1256,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.8883929 52.36884833)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 50,
@@ -1210,7 +1290,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.89533966 52.37779941)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 51,
@@ -1243,7 +1324,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.90205548 52.35744576)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 52,
@@ -1257,7 +1339,9 @@
       "pdokCoordinates": {
         "lat": 52.37554707,
         "lng": 4.8890812
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 53,
@@ -1271,7 +1355,9 @@
       "pdokCoordinates": {
         "lat": 52.30547261,
         "lng": 4.94270274
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 54,
@@ -1287,7 +1373,9 @@
       "pdokCoordinates": {
         "lat": 52.31147266,
         "lng": 4.94842184
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 55,
@@ -1327,7 +1415,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.8534286 52.36548723)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 56,
@@ -1369,7 +1458,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.852882 52.36698572)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 57,
@@ -1385,7 +1475,9 @@
       "pdokCoordinates": {
         "lat": 52.36965321,
         "lng": 4.8524681
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 58,
@@ -1399,7 +1491,9 @@
       "pdokCoordinates": {
         "lat": 52.36876586,
         "lng": 4.85300739
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 59,
@@ -1413,7 +1507,9 @@
       "pdokCoordinates": {
         "lat": 52.39133488,
         "lng": 4.82978862
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 60,
@@ -1453,7 +1549,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.86397637 52.36746668)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 61,
@@ -1500,7 +1597,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.86295983 52.36402887)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 62,
@@ -1547,7 +1645,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.86325908 52.36355385)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 63,
@@ -1587,7 +1686,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.84948017 52.37266855)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 64,
@@ -1627,7 +1727,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.93666554 52.36361329)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 65,
@@ -1641,7 +1742,9 @@
       "pdokCoordinates": {
         "lat": 52.37205977,
         "lng": 4.89120553
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 66,
@@ -1655,7 +1758,9 @@
       "pdokCoordinates": {
         "lat": 52.36525154,
         "lng": 4.88586399
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 67,
@@ -1669,7 +1774,9 @@
       "pdokCoordinates": {
         "lat": 52.36561747,
         "lng": 4.88525789
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 68,
@@ -1716,7 +1823,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.89925192 52.37211118)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 69,
@@ -1730,7 +1838,9 @@
       "pdokCoordinates": {
         "lat": 52.37004521,
         "lng": 4.89736578
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 70,
@@ -1744,7 +1854,9 @@
       "pdokCoordinates": {
         "lat": 52.3700092,
         "lng": 4.8973515
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 71,
@@ -1758,7 +1870,9 @@
       "pdokCoordinates": {
         "lat": 52.37124537,
         "lng": 4.89852725
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 72,
@@ -1772,7 +1886,9 @@
       "pdokCoordinates": {
         "lat": 52.39051863,
         "lng": 4.87805682
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 73,
@@ -1786,7 +1902,9 @@
       "pdokCoordinates": {
         "lat": 52.37186454,
         "lng": 4.90266136
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 74,
@@ -1802,7 +1920,9 @@
       "pdokCoordinates": {
         "lat": 52.36401144,
         "lng": 4.88379322
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 75,
@@ -1816,7 +1936,9 @@
       "pdokCoordinates": {
         "lat": 52.36297508,
         "lng": 4.88525842
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 76,
@@ -1863,7 +1985,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.91932511 52.35402803)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 77,
@@ -1877,7 +2000,9 @@
       "pdokCoordinates": {
         "lat": 52.36935298,
         "lng": 4.89299779
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 78,
@@ -1917,7 +2042,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.8832801 52.36394634)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 79,
@@ -1931,7 +2057,9 @@
       "pdokCoordinates": {
         "lat": 52.37707875,
         "lng": 4.81625111
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 80,
@@ -1945,7 +2073,9 @@
       "pdokCoordinates": {
         "lat": 52.37912771,
         "lng": 4.87933315
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 81,
@@ -1959,7 +2089,9 @@
       "pdokCoordinates": {
         "lat": 52.37156298,
         "lng": 4.87583685
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 82,
@@ -1973,7 +2105,9 @@
       "pdokCoordinates": {
         "lat": 52.36572152,
         "lng": 4.88014732
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 83,
@@ -1987,7 +2121,9 @@
       "pdokCoordinates": {
         "lat": 52.37269665,
         "lng": 4.87611747
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 84,
@@ -2001,7 +2137,9 @@
       "pdokCoordinates": {
         "lat": 52.37958738,
         "lng": 4.87963631
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 85,
@@ -2017,7 +2155,9 @@
       "pdokCoordinates": {
         "lat": 52.36024009,
         "lng": 4.80790912
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 86,
@@ -2031,7 +2171,9 @@
       "pdokCoordinates": {
         "lat": 52.35874977,
         "lng": 4.94110418
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 87,
@@ -2078,7 +2220,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.87978041 52.38267761)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 88,
@@ -2125,7 +2268,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.93974788 52.36514418)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 89,
@@ -2139,7 +2283,9 @@
       "pdokCoordinates": {
         "lat": 52.36732341,
         "lng": 4.90649909
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 90,
@@ -2174,7 +2320,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.89357703 52.37535918)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 91,
@@ -2188,7 +2335,9 @@
       "pdokCoordinates": {
         "lat": 52.37509932,
         "lng": 4.89161209
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 92,
@@ -2202,7 +2351,9 @@
       "pdokCoordinates": {
         "lat": 52.37282359,
         "lng": 4.89983147
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 93,
@@ -2242,7 +2393,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.90021453 52.37270833)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 94,
@@ -2256,7 +2408,9 @@
       "pdokCoordinates": {
         "lat": 52.3728505,
         "lng": 4.89981649
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 95,
@@ -2282,7 +2436,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.91252084 52.38361543)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 96,
@@ -2296,7 +2451,9 @@
       "pdokCoordinates": {
         "lat": 52.3699972,
         "lng": 4.84904268
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 97,
@@ -2310,7 +2467,9 @@
       "pdokCoordinates": {
         "lat": 52.37467432,
         "lng": 4.88885604
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 98,
@@ -2324,7 +2483,9 @@
       "pdokCoordinates": {
         "lat": 52.37598039,
         "lng": 4.89599322
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 99,
@@ -2338,7 +2499,9 @@
       "pdokCoordinates": {
         "lat": 52.37590795,
         "lng": 4.89586186
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 100,
@@ -2354,7 +2517,9 @@
       "pdokCoordinates": {
         "lat": 52.37173522,
         "lng": 4.89527666
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 101,
@@ -2401,7 +2566,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.89582244 52.37151279)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 102,
@@ -2415,7 +2581,9 @@
       "pdokCoordinates": {
         "lat": 52.37520384,
         "lng": 4.89946755
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 103,
@@ -2429,7 +2597,9 @@
       "pdokCoordinates": {
         "lat": 52.37146761,
         "lng": 4.8957642
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 104,
@@ -2445,7 +2615,9 @@
       "pdokCoordinates": {
         "lat": 52.37251215,
         "lng": 4.89623721
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 105,
@@ -2461,7 +2633,9 @@
       "pdokCoordinates": {
         "lat": 52.37370461,
         "lng": 4.89770718
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 106,
@@ -2508,7 +2682,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.8662444 52.36062803)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 107,
@@ -2548,54 +2723,24 @@
           "city": "Amsterdam",
           "point": "POINT(4.85931028 52.35857506)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 108,
       "name": "Hunters Noord",
       "municipalAddress": "Papaverweg 2, 1032 KH, Amsterdam",
       "addressKey": "1032KH|2|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": "B",
-          "addition": "2",
-          "street": "Papaverweg",
-          "city": "Amsterdam",
-          "point": "POINT(4.91289795 52.39367414)"
-        },
-        {
-          "letter": "C",
-          "addition": "2",
-          "street": "Papaverweg",
-          "city": "Amsterdam",
-          "point": "POINT(4.91291322 52.39362028)"
-        },
-        {
-          "letter": "A",
-          "addition": "H",
-          "street": "Papaverweg",
-          "city": "Amsterdam",
-          "point": "POINT(4.9128677 52.39375491)"
-        },
-        {
-          "letter": "A",
-          "addition": "1",
-          "street": "Papaverweg",
-          "city": "Amsterdam",
-          "point": "POINT(4.9128677 52.39375491)"
-        },
-        {
-          "letter": "B",
-          "addition": "1",
-          "street": "Papaverweg",
-          "city": "Amsterdam",
-          "point": "POINT(4.91289795 52.39367414)"
-        }
-      ]
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit",
+      "pdokBagId": "0363200011872493",
+      "pdokCoordinates": {
+        "lat": 52.3934497,
+        "lng": 4.91295911
+      }
     },
     {
       "id": 109,
@@ -2606,7 +2751,8 @@
       "storefrontEntranceVerified": false,
       "flags": [],
       "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": []
+      "pdokCandidateSamples": [],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 110,
@@ -2646,7 +2792,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.92222346 52.35478544)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 111,
@@ -2660,7 +2807,9 @@
       "pdokCoordinates": {
         "lat": 52.37672396,
         "lng": 4.90194741
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 112,
@@ -2674,7 +2823,9 @@
       "pdokCoordinates": {
         "lat": 52.36433123,
         "lng": 4.88502285
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 113,
@@ -2688,7 +2839,9 @@
       "pdokCoordinates": {
         "lat": 52.36947851,
         "lng": 4.88227752
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 114,
@@ -2702,7 +2855,9 @@
       "pdokCoordinates": {
         "lat": 52.36425078,
         "lng": 4.88512653
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 115,
@@ -2716,7 +2871,9 @@
       "pdokCoordinates": {
         "lat": 52.37341387,
         "lng": 4.88834156
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 116,
@@ -2730,7 +2887,9 @@
       "pdokCoordinates": {
         "lat": 52.36655524,
         "lng": 4.8902393
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 117,
@@ -2744,7 +2903,9 @@
       "pdokCoordinates": {
         "lat": 52.36596648,
         "lng": 4.89344662
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 118,
@@ -2758,7 +2919,9 @@
       "pdokCoordinates": {
         "lat": 52.36677579,
         "lng": 4.8892531
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 119,
@@ -2772,7 +2935,9 @@
       "pdokCoordinates": {
         "lat": 52.36392885,
         "lng": 4.89622943
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 120,
@@ -2786,7 +2951,9 @@
       "pdokCoordinates": {
         "lat": 52.36680841,
         "lng": 4.8949055
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 121,
@@ -2800,7 +2967,9 @@
       "pdokCoordinates": {
         "lat": 52.36565521,
         "lng": 4.89640119
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 122,
@@ -2814,7 +2983,9 @@
       "pdokCoordinates": {
         "lat": 52.3634568,
         "lng": 4.91047559
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 123,
@@ -2828,7 +2999,9 @@
       "pdokCoordinates": {
         "lat": 52.37031764,
         "lng": 4.88941892
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 124,
@@ -2842,7 +3015,9 @@
       "pdokCoordinates": {
         "lat": 52.3727074,
         "lng": 4.8786137
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 125,
@@ -2875,7 +3050,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.88264039 52.37372226)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 126,
@@ -2891,7 +3067,9 @@
       "pdokCoordinates": {
         "lat": 52.3700268,
         "lng": 4.89633074
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 127,
@@ -2924,7 +3102,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.88719811 52.35369896)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 128,
@@ -2940,7 +3119,9 @@
       "pdokCoordinates": {
         "lat": 52.36156719,
         "lng": 4.90907708
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 129,
@@ -2956,7 +3137,9 @@
       "pdokCoordinates": {
         "lat": 52.36873992,
         "lng": 4.88826197
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 130,
@@ -2970,7 +3153,9 @@
       "pdokCoordinates": {
         "lat": 52.3790812,
         "lng": 4.89384401
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 131,
@@ -2984,7 +3169,9 @@
       "pdokCoordinates": {
         "lat": 52.37904507,
         "lng": 4.89380036
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 132,
@@ -2998,7 +3185,9 @@
       "pdokCoordinates": {
         "lat": 52.36999682,
         "lng": 4.90089037
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 133,
@@ -3012,7 +3201,9 @@
       "pdokCoordinates": {
         "lat": 52.36980857,
         "lng": 4.9010099
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 134,
@@ -3028,7 +3219,9 @@
       "pdokCoordinates": {
         "lat": 52.39179342,
         "lng": 4.87771898
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 135,
@@ -3042,7 +3235,9 @@
       "pdokCoordinates": {
         "lat": 52.3746084,
         "lng": 4.89028124
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 136,
@@ -3058,7 +3253,9 @@
       "pdokCoordinates": {
         "lat": 52.37559337,
         "lng": 4.89154783
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 137,
@@ -3072,7 +3269,9 @@
       "pdokCoordinates": {
         "lat": 52.37056498,
         "lng": 4.88893573
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 138,
@@ -3086,7 +3285,9 @@
       "pdokCoordinates": {
         "lat": 52.37147595,
         "lng": 4.88915629
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 139,
@@ -3100,7 +3301,9 @@
       "pdokCoordinates": {
         "lat": 52.34352526,
         "lng": 4.86441999
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 140,
@@ -3140,7 +3343,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.85400414 52.35791315)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 141,
@@ -3154,7 +3358,9 @@
       "pdokCoordinates": {
         "lat": 52.36511243,
         "lng": 4.89555564
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 142,
@@ -3187,7 +3393,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.90346157 52.35234648)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 143,
@@ -3203,7 +3410,9 @@
       "pdokCoordinates": {
         "lat": 52.40195615,
         "lng": 4.89849723
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 144,
@@ -3222,7 +3431,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.88787174 52.35310189)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 145,
@@ -3269,7 +3479,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.9031245 52.35633565)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 146,
@@ -3283,7 +3494,9 @@
       "pdokCoordinates": {
         "lat": 52.37185909,
         "lng": 4.87898384
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 147,
@@ -3297,7 +3510,9 @@
       "pdokCoordinates": {
         "lat": 52.38211769,
         "lng": 4.87865265
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 148,
@@ -3311,7 +3526,9 @@
       "pdokCoordinates": {
         "lat": 52.36485303,
         "lng": 4.89802507
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 149,
@@ -3325,7 +3542,9 @@
       "pdokCoordinates": {
         "lat": 52.36548014,
         "lng": 4.89753364
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 150,
@@ -3344,7 +3563,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.87305384 52.38236315)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 151,
@@ -3384,7 +3604,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.89450188 52.3515905)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 152,
@@ -3424,7 +3645,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.87120099 52.38255282)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 153,
@@ -3471,7 +3693,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.89970787 52.3533377)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 154,
@@ -3518,7 +3741,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.9016524 52.35461194)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 155,
@@ -3565,7 +3789,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.90366771 52.35122745)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 156,
@@ -3605,7 +3830,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.90292702 52.35291052)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 157,
@@ -3638,7 +3864,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.9056618 52.34841882)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 158,
@@ -3678,7 +3905,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.9065246 52.34599563)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 159,
@@ -3692,7 +3920,9 @@
       "pdokCoordinates": {
         "lat": 52.39230611,
         "lng": 4.95632959
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 160,
@@ -3706,7 +3936,9 @@
       "pdokCoordinates": {
         "lat": 52.36664997,
         "lng": 4.90224848
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 161,
@@ -3746,7 +3978,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.88294233 52.37816347)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 162,
@@ -3786,7 +4019,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.8592891 52.36899177)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 163,
@@ -3833,7 +4067,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.85951675 52.365901)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 164,
@@ -3847,7 +4082,9 @@
       "pdokCoordinates": {
         "lat": 52.35209535,
         "lng": 4.84745441
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     },
     {
       "id": 165,
@@ -3894,7 +4131,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.92982742 52.36613059)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 166,
@@ -3927,7 +4165,8 @@
           "city": "Amsterdam",
           "point": "POINT(4.88624205 52.36167603)"
         }
-      ]
+      ],
+      "buildingLevelGeocoded": false
     },
     {
       "id": 167,
@@ -3941,7 +4180,9 @@
       "pdokCoordinates": {
         "lat": 52.37422684,
         "lng": 4.89360431
-      }
+      },
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit"
     }
   ]
 }
