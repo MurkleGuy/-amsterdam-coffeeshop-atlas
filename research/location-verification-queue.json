@@ -1,0 +1,1543 @@
+{
+  "title": "BudMap Amsterdam coffeeshop address and entrance verification queue",
+  "checkedAt": "2026-10-22",
+  "reference": "https://lokaleregelgeving.overheid.nl/CVDR756282",
+  "purpose": "Track which official tolerated addresses and actual shop entrances have been independently verified. Address centroids are not entrance validation.",
+  "totals": {
+    "municipalAddressRows": 167,
+    "exactUnitRequired": 55,
+    "knownDifferentEntranceListings": 2,
+    "unnamedAddressRows": 1,
+    "verifiedEntrances": 0,
+    "approvedStaticCoordinates": 0
+  },
+  "policy": {
+    "verifiedAddress": "Only mark confirmed after an exact current BAG postcode+house+letter match and recorded coordinates.",
+    "verifiedEntrance": "Requires an independently checked business entrance; the BAG address point alone is not proof.",
+    "unknown": "Do not invent coordinates or claim a shop is open based on an allowed/tolerated street address.",
+    "neverClaim": "No entries in this file have been confirmed by direct live BAG response during this research step."
+  },
+  "shops": [
+    {
+      "id": 1,
+      "name": "DNA",
+      "address": "Achillesstraat 104, 1076 RH, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1076RH",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 2,
+      "name": "Power Flower Amsterdam",
+      "address": "Admiraal De Ruijterweg 104, 1056 GP, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1056GP",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 3,
+      "name": "The Old Church",
+      "address": "Amstel 8H, 1017 AA, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1017AA",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 4,
+      "name": "Family First",
+      "address": "Amstel 36H, 1017 AB, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1017AB",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 5,
+      "name": "Happy Days",
+      "address": "Amsteldijk 139, 1079 LE, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1079LE",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 6,
+      "name": "New Times 2",
+      "address": "Amstelstraat 35, 1017 DA, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1017DA",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 7,
+      "name": "Best Friends Oud-Zuid",
+      "address": "Amstelveenseweg 61, 1075 VV, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1075VV",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 8,
+      "name": "The Border",
+      "address": "Amstelveenseweg 1160, 1081 JW, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1081JW",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 9,
+      "name": "Boerejongens West",
+      "address": "Baarsjesweg 239, 1058 AA, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1058AA",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 10,
+      "name": "Coffeeshop West",
+      "address": "Balboastraat 19, 1057 VT, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1057VT",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 11,
+      "name": "Pacific",
+      "address": "Balthasar Floriszstraat 10, 1071 VC, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1071VC",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 12,
+      "name": "The Plug Westerdok",
+      "address": "Barentszstraat 130, 1013 NS, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1013NS",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 13,
+      "name": "Babylon",
+      "address": "Beursstraat 27, 1012 JV, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1012JV",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 14,
+      "name": "Relax Centrum",
+      "address": "Binnen Oranjestraat 9H, 1013 HZ, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1013HZ",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 15,
+      "name": "Boerejongens BIJ",
+      "address": "Bonairestraat 78, 1058 XL, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1058XL",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 16,
+      "name": "Risky Business",
+      "address": "Bos En Lommerweg 163, 1055 DS, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1055DS",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 17,
+      "name": "7th Heaven",
+      "address": "Brouwersgracht 137H, 1015 GE, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1015GE",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 18,
+      "name": "Siberië",
+      "address": "Brouwersgracht 11H, 1015 GA, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1015GA",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 19,
+      "name": "Atlas",
+      "address": "Buikslotermeerplein 389, 1025 XE, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1025XE",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 20,
+      "name": "Massawa",
+      "address": "Chassestraat 4, 1057 JD, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1057JD",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 21,
+      "name": "The Bulldog The Port",
+      "address": "Coenhavenweg 26, 1013 BL, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1013BL",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 22,
+      "name": "Nogal Wiedes",
+      "address": "Czaar Peterstraat 122H, 1018 PV, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1018PV",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 23,
+      "name": "ProGram",
+      "address": "Daniel Stalpertstraat 78, 1072 XK, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1072XK",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 24,
+      "name": "Happy People",
+      "address": "Dapperstraat 2, 1093 BT, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1093BT",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 25,
+      "name": "Cheech & Chong",
+      "address": "De Clercqstraat 30, 1052 NE, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1052NE",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 26,
+      "name": "Oost",
+      "address": "Derde Oosterparkstraat 73, 1091 JV, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1091JV",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 27,
+      "name": "Paradox",
+      "address": "Eerste Bloemdwarsstraat 2H, 1016 KS, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1016KS",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 28,
+      "name": "The Plug East",
+      "address": "Eerste Oosterparkstraat 47, 1091 GV, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1091GV",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 29,
+      "name": "Katsu",
+      "address": "Eerste Van Der Helststraat 70, 1072 NZ, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1072NZ",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 30,
+      "name": "Johnny",
+      "address": "Elandsgracht 3, 1016 TM, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1016TM",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 31,
+      "name": "De Supermarkt",
+      "address": "Frederik Hendrikstraat 69, 1052 HL, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1052HL",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 32,
+      "name": "The Plug West",
+      "address": "Frederik Hendrikstraat 123, 1052 HP, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1052HP",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 33,
+      "name": "Het Gelderse",
+      "address": "Geldersekade 54H, 1012 BK, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1012BK",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 34,
+      "name": "Voyagers",
+      "address": "Geldersekade 2H, 1012 BH, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1012BH",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 35,
+      "name": "Roxy",
+      "address": "Gerard Doustraat 188, 1073 XA, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1073XA",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 36,
+      "name": "Club Media",
+      "address": "Gerard Doustraat 85, 1072 VN, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1072VN",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 37,
+      "name": "Sensemillia",
+      "address": "Gillis Van Ledenberchstraat 135, 1052 VE, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1052VE",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 38,
+      "name": "D & L",
+      "address": "Govert Flinckstraat 323, 1074 CB, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1074CB",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 39,
+      "name": "Barraka",
+      "address": "Gravenstraat 9, 1012 NL, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1012NL",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 40,
+      "name": "Barney's",
+      "address": "Haarlemmerstraat 102H, 1013 EW, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1013EW",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 41,
+      "name": "Coffeeshop Amsterdam",
+      "address": "Haarlemmerstraat 44, 1013 ES, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1013ES",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 42,
+      "name": "Green House United",
+      "address": "Haarlemmerstraat 64H, 1013 ET, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1013ET",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 43,
+      "name": "Green Place 2",
+      "address": "Haarlemmerstraat 6, 1013 ER, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1013ER",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 44,
+      "name": "Popeye",
+      "address": "Haarlemmerstraat 63H, 1013 EK, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1013EK",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 45,
+      "name": "The Balboa Family",
+      "address": "Halvemaansteeg 1, 1017 CR, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1017CR",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 46,
+      "name": "Balou",
+      "address": "Halvemaansteeg 5, 1017 CR, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1017CR",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 47,
+      "name": "Original Dampkring",
+      "address": "Handboogstraat 29H, 1012 XM, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1012XM",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 48,
+      "name": "Prix d'Ami",
+      "address": "Haringpakkerssteeg 3, 1012 LR, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1012LR",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 49,
+      "name": "Tweede Kamer",
+      "address": "Heisteeg 6, 1012 WC, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1012WC",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 50,
+      "name": "Resin",
+      "address": "Hekelveld 7I, 1012 SN, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1012SN",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 51,
+      "name": "Ibiza",
+      "address": "Hemonystraat 16, 1074 BP, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1074BP",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 52,
+      "name": "Amnesia",
+      "address": "Herengracht 133H, 1015 BG, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1015BG",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 53,
+      "name": "Best Friends Zuidoost",
+      "address": "Hettenheuvelweg 35, 1101 BM, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1101BM",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 54,
+      "name": "Roots",
+      "address": "Hoekenrode 14B, 1102 BR, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1102BR",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false,
+      "reviewReason": "Alphanumeric house number—ensure BAG house-letter match"
+    },
+    {
+      "id": 55,
+      "name": "Ruthless",
+      "address": "Hoofdweg 174, 1057 DC, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1057DC",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 56,
+      "name": "New Amsterdam",
+      "address": "Hoofdweg 226, 1057 DG, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1057DG",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false,
+      "reviewReason": "Previously listed as Nieuw in the Atlas. Name matched to the exact street address; please verify before visiting."
+    },
+    {
+      "id": 57,
+      "name": "Aktama 2",
+      "address": "Hudsonstraat 156, 1057 ST, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1057ST",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false,
+      "reviewReason": "Also listed as Coffeeshop 156. Greenmeister identifies Aktama 2 at this exact Hudsonstraat 156 address."
+    },
+    {
+      "id": 58,
+      "name": "Flash Back",
+      "address": "Hudsonstraat 138, 1057 SR, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1057SR",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 59,
+      "name": "Coffeeshop Sloterdijk",
+      "address": "Humberweg 2, 1043 AC, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1043AC",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 60,
+      "name": "Millennium",
+      "address": "Jan Hanzenstraat 109, 1053 SN, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1053SN",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 61,
+      "name": "Kashmir",
+      "address": "Jan Pieter Heijestraat 82, 1053 GS, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1053GS",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 62,
+      "name": "96",
+      "address": "Jan Pieter Heijestraat 96, 1053 GT, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1053GT",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 63,
+      "name": "LoFt",
+      "address": "Jan Van Galenstraat 285, 1056 CA, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1056CA",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 64,
+      "name": "Warda II",
+      "address": "Javastraat 104, 1094 HN, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1094HN",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 65,
+      "name": "Abraxas",
+      "address": "Jonge Roelensteeg 12H, 1012 PL, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1012PL",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 66,
+      "name": "Happy Feelings",
+      "address": "Kerkstraat 51H, 1017 GC, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1017GC",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 67,
+      "name": "The Dolphins",
+      "address": "Kerkstraat 39, 1017 GB, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1017GB",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 68,
+      "name": "Green Place",
+      "address": "Kloveniersburgwal 4H, 1012 CT, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1012CT",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 69,
+      "name": "Bagheera",
+      "address": "Kloveniersburgwal 60H, 1012 CX, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1012CX",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 70,
+      "name": "Basjoe",
+      "address": "Kloveniersburgwal 62H, 1012 CX, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1012CX",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 71,
+      "name": "Goa",
+      "address": "Kloveniersburgwal 42A, 1012 CW, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1012CW",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 72,
+      "name": "Yin Yang",
+      "address": "Knollendamstraat 5, 1013 TL, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1013TL",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 73,
+      "name": "Solo",
+      "address": "Korte Koningsstraat 2, 1011 GA, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1011GA",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 74,
+      "name": "Get Down To It",
+      "address": "Korte Leidsedwarsstraat 77, 1017 PW, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1017PW",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false,
+      "reviewReason": "Also known as The Internet Café; the Weedmaps listing at Korte Leidsedwarsstraat 77–79 matches this shop."
+    },
+    {
+      "id": 75,
+      "name": "The Rookies",
+      "address": "Korte Leidsedwarsstraat 145, 1017 PZ, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1017PZ",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 76,
+      "name": "Nachtegaal",
+      "address": "Krugerplein 22, 1091 KZ, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1091KZ",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 77,
+      "name": "Kadinsky",
+      "address": "Langebrugsteeg 7A, 1012 GB, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1012GB",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 78,
+      "name": "The Bulldog Ex-Police Station",
+      "address": "Leidseplein 17, 1017 PS, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1017PS",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 79,
+      "name": "De Watersnip",
+      "address": "Lodewijk Van Deysselstraat 37, 1064 HL, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1064HL",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 80,
+      "name": "Bronx",
+      "address": "Marnixstraat 92H, 1015 VZ, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1015VZ",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 81,
+      "name": "1e Hulp",
+      "address": "Marnixstraat 194H, 1016 TJ, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1016TJ",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 82,
+      "name": "Crush",
+      "address": "Marnixstraat 383O, 1016 XR, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1016XR",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 83,
+      "name": "Tha Dogg House",
+      "address": "Marnixstraat 333H, 1016 TC, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1016TC",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 84,
+      "name": "'t Keteltje",
+      "address": "Marnixstraat 74H, 1015 VX, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1015VX",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 85,
+      "name": "Sensemillia West",
+      "address": "Meer En Vaart 177B, 1068 LA, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1068LA",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false,
+      "reviewReason": "Previously listed as Sensemillia in the Atlas. Name matched to the exact street address; please verify before visiting."
+    },
+    {
+      "id": 86,
+      "name": "The Stud",
+      "address": "Molukkenstraat 581, 1095 BJ, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1095BJ",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 87,
+      "name": "Catch33",
+      "address": "Nassaukade 33, 1052 CK, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1052CK",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 88,
+      "name": "Best Friends Oost",
+      "address": "Niasstraat 1, 1095 TS, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1095TS",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 89,
+      "name": "Hortus De Overkant",
+      "address": "Nieuwe Herengracht 71, 1011 RR, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1011RR",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 90,
+      "name": "Terps Army",
+      "address": "Nieuwe Nieuwstraat 32H, 1012 NH, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1012NH",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false,
+      "reviewReason": "Formerly El Guapo. This is the Nieuwe Nieuwstraat branch, NOT Terps Army 2 at Zieseniskade 22."
+    },
+    {
+      "id": 91,
+      "name": "The Plug Utopia",
+      "address": "Nieuwezijds Voorburgwal 132, 1012 SH, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1012SH",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 92,
+      "name": "Greenhouse Effect",
+      "address": "Nieuwmarkt 14H, 1012 CR, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1012CR",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 93,
+      "name": "Jolly Joker",
+      "address": "Nieuwmarkt 4A, 1012 CR, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1012CR",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 94,
+      "name": "Rock-It",
+      "address": "Nieuwmarkt 12H, 1012 CR, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1012CR",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 95,
+      "name": "Noord",
+      "address": "Ooievaarsweg 10, 1021 GZ, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1021GZ",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 96,
+      "name": "Hunters",
+      "address": "Orteliusstraat 193, 1056 NP, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1056NP",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 97,
+      "name": "Grey Area",
+      "address": "Oude Leliestraat 2, 1015 AW, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1015AW",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 98,
+      "name": "Tha Dogg House 2",
+      "address": "Oudebrugsteeg 26, 1012 JP, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1012JP",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 99,
+      "name": "420 Café",
+      "address": "Oudebrugsteeg 27H, 1012 JN, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1012JN",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 100,
+      "name": "Rick's Coffeeshop",
+      "address": "Oudezijds Voorburgwal 250H, 1012 GK, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1012GK",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false,
+      "reviewReason": "Municipal permit names Rick's Juice Bar BV; public directory lists Rick's Coffeeshop."
+    },
+    {
+      "id": 101,
+      "name": "City Hall",
+      "address": "Oudezijds Voorburgwal 189, 1012 EW, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1012EW",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 102,
+      "name": "Feels Good",
+      "address": "Oudezijds Voorburgwal 36H, 1012 GD, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1012GD",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 103,
+      "name": "Green House Centrum",
+      "address": "Oudezijds Voorburgwal 191, 1012 EW, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1012EW",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 104,
+      "name": "The Bulldog Energy",
+      "address": "Oudezijds Voorburgwal 220, 1012 GJ, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1012GJ",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false,
+      "differentEntranceListed": "Oudezijds Voorburgwal 218, 1012 GJ, Amsterdam",
+      "reviewReason": "The Bulldog lists its coffeeshop entrance at Oudezijds Voorburgwal 218; the municipality's tolerance-list address is 220."
+    },
+    {
+      "id": 105,
+      "name": "The Bulldog The First",
+      "address": "Oudezijds Voorburgwal 88H, 1012 GG, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1012GG",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false,
+      "differentEntranceListed": "Oudezijds Voorburgwal 90, 1012 GG, Amsterdam",
+      "reviewReason": "Municipal tolerated address is no. 88H; The Bulldog lists the actual coffeeshop entrance at no. 90. No. 88 is its adjacent merchandise store."
+    },
+    {
+      "id": 106,
+      "name": "Blue Lagoon",
+      "address": "Overtoom 342, 1054 JE, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1054JE",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 107,
+      "name": "Vondel",
+      "address": "Overtoom 451, 1054 KH, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1054KH",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 108,
+      "name": "Hunters Noord",
+      "address": "Papaverweg 2, 1032 KH, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1032KH",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 109,
+      "name": "Eastwood",
+      "address": "Pieter Vlamingstraat 286, 1093 AK, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1093AK",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 110,
+      "name": "Crash Light",
+      "address": "Pretoriusstraat 67, 1092 GB, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1092GB",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 111,
+      "name": "Central",
+      "address": "Prins Hendrikkade 89, 1012 AE, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1012AE",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 112,
+      "name": "Easy Times",
+      "address": "Prinsengracht 476H, 1017 KG, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1017KG",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 113,
+      "name": "La Tertulia",
+      "address": "Prinsengracht 312H, 1016 HX, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1016HX",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 114,
+      "name": "Super Skunk",
+      "address": "Prinsengracht 480H, 1017 KG, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1017KG",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 115,
+      "name": "Rock-Land",
+      "address": "Raadhuisstraat 8, 1016 DE, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1016DE",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 116,
+      "name": "Easy Times II",
+      "address": "Reguliersdwarsstraat 29, 1017 BJ, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1017BJ",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 117,
+      "name": "Free I",
+      "address": "Reguliersdwarsstraat 70H, 1017 BN, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1017BN",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 118,
+      "name": "The Otherside",
+      "address": "Reguliersdwarsstraat 6, 1017 BM, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1017BM",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 119,
+      "name": "Hashtag",
+      "address": "Reguliersgracht 27H, 1017 LK, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1017LK",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 120,
+      "name": "The Saint",
+      "address": "Regulierssteeg 2, 1017 CP, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1017CP",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 121,
+      "name": "Smokey",
+      "address": "Rembrandtplein 24, 1017 CV, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1017CV",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 122,
+      "name": "Het Ballonnetje",
+      "address": "Roetersstraat 12H, 1018 WD, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1018WD",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 123,
+      "name": "Kadinsky",
+      "address": "Rosmarijnsteeg 9, 1012 RP, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1012RP",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 124,
+      "name": "Flower Power",
+      "address": "Rozengracht 139, 1016 LV, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1016LV",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 125,
+      "name": "African Black Star",
+      "address": "Rozengracht 1H, 1016 LP, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1016LP",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 126,
+      "name": "The Hit",
+      "address": "Rusland 16, 1012 CL, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1012CL",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false,
+      "reviewReason": "Rusland 16 is now listed as The Hit, with older Rusland and The Plug branding. Historical ratings do not necessarily describe the current operator."
+    },
+    {
+      "id": 127,
+      "name": "Stone's",
+      "address": "Ruysdaelkade 145, 1072 AR, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1072AR",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 128,
+      "name": null,
+      "address": "Sarphatistraat 87G, 1018 EZ, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1018EZ",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false,
+      "reviewReason": "No confirmed current trading name"
+    },
+    {
+      "id": 129,
+      "name": "Strain Hunters",
+      "address": "Singel 387H, 1012 WN, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1012WN",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false,
+      "reviewReason": "Previously listed as 420 Cafe in the Atlas. Name matched to the exact street address; please verify before visiting."
+    },
+    {
+      "id": 130,
+      "name": "The Bulldog Rockshop",
+      "address": "Singel 12H, 1013 GA, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1013GA",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 131,
+      "name": "The Store",
+      "address": "Singel 14H, 1013 GA, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1013GA",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 132,
+      "name": "Bluebird",
+      "address": "Sint Antoniësbreestraat 71, 1011 HB, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1011HB",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 133,
+      "name": "Reefer",
+      "address": "Sint Antoniësbreestraat 77, 1011 HB, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1011HB",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 134,
+      "name": "The Corner",
+      "address": "Spaarndammerdijk 9, 1013 ZM, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1013ZM",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false,
+      "reviewReason": "Previously listed as The Wow Shop in the Atlas. Name matched to the exact street address; please verify before visiting."
+    },
+    {
+      "id": 135,
+      "name": "Sativa",
+      "address": "Spuistraat 118, 1012 VA, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1012VA",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 136,
+      "name": "DrewIsSharing",
+      "address": "Spuistraat 80H, 1012 TX, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1012TX",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false,
+      "reviewReason": "Formerly Mediterrané (also written Mediterrane). Community reviews and directories use both names for the same Spuistraat 80 location."
+    },
+    {
+      "id": 137,
+      "name": "New Times",
+      "address": "Spuistraat 260H, 1012 VW, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1012VW",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 138,
+      "name": "Tyson 2.0",
+      "address": "Spuistraat 222H, 1012 VT, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1012VT",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 139,
+      "name": "De Kade",
+      "address": "Stadionkade 107, 1076 BN, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1076BN",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 140,
+      "name": "De Prijs",
+      "address": "Surinamestraat 7, 1058 GJ, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1058GJ",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 141,
+      "name": "The Bushdoctor",
+      "address": "Thorbeckeplein 28, 1017 CS, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1017CS",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 142,
+      "name": "Green House Pijp",
+      "address": "Tolstraat 91, 1074 VG, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1074VG",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 143,
+      "name": "Funny People",
+      "address": "Tt Vasumweg 4C, 1033 SC, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1033SC",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false,
+      "reviewReason": "Alphanumeric house number—ensure BAG house-letter match"
+    },
+    {
+      "id": 144,
+      "name": "Carmona",
+      "address": "Tweede Jan Van Der Heijdenstraat 43, 1072 TJ, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1072TJ",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 145,
+      "name": "YoYo",
+      "address": "Tweede Jan Van Der Heijdenstraat 79, 1074 XS, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1074XS",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 146,
+      "name": "Mr. K",
+      "address": "Tweede Laurierdwarsstraat 44H, 1016 RB, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1016RB",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 147,
+      "name": "De Republiek",
+      "address": "Tweede Nassaustraat 1, 1052 BJ, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1052BJ",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 148,
+      "name": "Boerejongens Centre",
+      "address": "Utrechtsestraat 21, 1017 VH, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1017VH",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 149,
+      "name": "Hunters",
+      "address": "Utrechtsestraat 14H, 1017 VN, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1017VN",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 150,
+      "name": "Chapiteau",
+      "address": "Van Boetzelaerstraat 31, 1051 CT, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1051CT",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 151,
+      "name": "Papillon",
+      "address": "Van Der Helstplein 8, 1072 PH, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1072PH",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 152,
+      "name": "Freedom",
+      "address": "Van Hogendorpstraat 201, 1051 CA, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1051CA",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 153,
+      "name": "Nice Place",
+      "address": "Van Ostadestraat 290, 1073 TW, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1073TW",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 154,
+      "name": "Blue Sea",
+      "address": "Van Woustraat 87, 1074 AE, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1074AE",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 155,
+      "name": "SuperFly Amsterdam",
+      "address": "Van Woustraat 193, 1074 AN, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1074AN",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false,
+      "reviewReason": "Operator lists SuperFly Amsterdam; some older directories still call this address de Keeper."
+    },
+    {
+      "id": 156,
+      "name": "Warda",
+      "address": "Van Woustraat 147, 1074 AJ, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1074AJ",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 157,
+      "name": "Relax Zuid",
+      "address": "Vechtstraat 9, 1078 RE, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1078RE",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 158,
+      "name": "Smokerdam",
+      "address": "Vechtstraat 63, 1079 JA, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1079JA",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 159,
+      "name": "Hunters Bros",
+      "address": "Waterlandplein 7, 1024 LL, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1024LL",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 160,
+      "name": "Green House Namaste",
+      "address": "Waterlooplein 345, 1011 PG, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1011PG",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 161,
+      "name": "The Spirit",
+      "address": "Westerstraat 121H, 1015 LZ, Amsterdam",
+      "unitSpecified": true,
+      "postcode": "1015LZ",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 162,
+      "name": "El Marssa",
+      "address": "Witte De Withstraat 106, 1057 ZG, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1057ZG",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 163,
+      "name": "The Dream",
+      "address": "Witte De Withstraat 30, 1057 XZ, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1057XZ",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 164,
+      "name": "Bullwackie",
+      "address": "Woestduinstraat 76, 1058 TJ, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1058TJ",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 165,
+      "name": "Trefpunt",
+      "address": "Zeeburgerdijk 33, 1093 SL, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1093SL",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 166,
+      "name": "Terps Army 2",
+      "address": "Zieseniskade 22, 1017 RT, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1017RT",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    },
+    {
+      "id": 167,
+      "name": "Kadinsky",
+      "address": "Zoutsteeg 14, 1012 LX, Amsterdam",
+      "unitSpecified": false,
+      "postcode": "1012LX",
+      "addressPinStatus": "pending_live_BAG_match",
+      "entranceVerified": false
+    }
+  ]
+}
