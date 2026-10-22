@@ -1982,6 +1982,27 @@ function restore(){try{cache=JSON.parse(localStorage.getItem(GEO_KEY)||'{}')}cat
 async function fetchDocs(q){let u=new URL('https://api.pdok.nl/bzk/locatieserver/search/v3_1/free');u.searchParams.set('q',q);u.searchParams.set('fq','type:adres');u.searchParams.set('rows','8');const ctrl=new AbortController(),t=setTimeout(()=>ctrl.abort(),11000);try{const r=await fetch(u.href,{signal:ctrl.signal,mode:'cors'});if(!r.ok)throw Error('PDOK '+r.status);const j=await r.json();pdokErrors=0;return j.response?.docs||[]}catch(e){pdokErrors++;if(pdokErrors>=6)pdokDisabled=true;throw e}finally{clearTimeout(t)}}
 async function geocode(s){const parsed=window.BudMapAddressMatch?.addressParts(s);if(!parsed)return null;const queries=[`${s.postcode} ${parsed.number}${parsed.suffix?' '+parsed.suffix:''} Amsterdam`,`${s.street} ${parsed.number}${parsed.suffix?' '+parsed.suffix:''} ${s.postcode} Amsterdam`];for(const q of queries){if(pdokDisabled)break;try{const docs=await fetchDocs(q),match=window.BudMapAddressMatch.exactMatch(s,docs);if(match)return match;}catch(e){if(e.name==='AbortError')break}}return null;}
 async function geocodeAll(){const missing=official.filter(s=>s.lat==null);if(!missing.length){setStatus('All 167 listed addresses have matched map coordinates. Tap a pin or search a shop.',true);return}let idx=0,done=0,found=0;async function worker(){while(idx<missing.length&&!pdokDisabled){const s=missing[idx++],coord=await geocode(s);done++;if(coord){s.lat=coord.lat;s.lng=coord.lng;cache[s.id]=coord;found++;addMarker(s)}if(done%5===0||done===missing.length){saveCoords();refreshPinCount();renderList();setStatus(`Checking official address coordinates: ${done}/${missing.length} checked · ${official.filter(s=>s.lat!=null).length} pins shown`)} }}await Promise.all(Array.from({length:3},worker));saveCoords();refreshPinCount();renderList();let total=official.filter(s=>s.lat!=null).length;if(total===ALL_COUNT)setStatus('All 167 listed address coordinates matched to PDOK. Shop entrances may differ.',true);else if(total>0)setStatus(`${total} of ${ALL_COUNT} official addresses pinned. Unresolved addresses remain searchable below.`,true);else setStatus('Map pin service unavailable. All 167 addresses remain searchable; choose Google Maps or walking directions for any address.');}
+async function loadVerifiedCoordinates(){
+ // Pre-verified municipality address centroids; never claim they are shop doors.
+ try{
+  const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),7000);
+  let response;
+  try{response=await fetch('assets/verified-coordinates.json?v=1',{signal:ctrl.signal,cache:'no-cache'})}
+  finally{clearTimeout(timer)}
+  if(!response.ok)return;
+  const data=await response.json();
+  if(!data||data.source!=='PDOK Locatieserver v3_1, BAG civic-address centroids'||data.totalListed!==ALL_COUNT||!data.locations)return;
+  let seeded=0;
+  for(const shop of official){
+   if(shop.lat!=null)continue;
+   const entry=data.locations[String(shop.id)],coords=window.BudMapAddressMatch?.cached(shop,entry);
+   if(!coords)continue;
+   shop.lat=coords.lat;shop.lng=coords.lng;cache[shop.id]=entry;
+   addMarker(shop);seeded++;
+  }
+  if(seeded){saveCoords();refreshPinCount();renderList();setStatus(`Loaded ${seeded} previously checked address pins. Shop entrances may differ.`,true)}
+ }catch(e){/* Missing file or temporary network issue: fall back to live address lookups. */}
+}
 function onLocate(){if(!navigator.geolocation){setStatus('Location is unavailable on this browser. You can still search all coffeeshops.');return;}setStatus('Asking your phone for its approximate location…');navigator.geolocation.getCurrentPosition(pos=>{myPos=[pos.coords.latitude,pos.coords.longitude];sortedByDistance=true;$('nearby').classList.add('active');if(map){L.circleMarker(myPos,{radius:8,color:'#fff',weight:3,fillColor:'#2980d4',fillOpacity:1}).addTo(map).bindPopup('Your location');map.flyTo(myPos,14)}renderList();setStatus('Showing nearby shops first (where their coordinates are available).',true)},()=>setStatus('Location not shared. The full city map is still available.'),{enableHighAccuracy:false,timeout:10000,maximumAge:300000})}
 function downloadCSV(){const pins=official.filter(s=>s.lat!=null),lines=['name,address,latitude,longitude',...pins.map(s=>[s.name||'Coffeeshop',s.address,s.lat,s.lng].map(x=>'"'+String(x).replaceAll('"','""')+'"').join(','))];let blob=new Blob([lines.join('\n')],{type:'text/csv;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='amsterdam-coffeeshops-pinned.csv';a.click();URL.revokeObjectURL(a.href)}
 function openShops(){
@@ -2020,7 +2041,7 @@ function main(){
  else map?.flyTo([52.3695,4.8975],12);
 };$('streetMode').onclick=()=>setMapMode('street');$('transportMode').onclick=()=>{tileFailures=0;setMapMode('bus');};$('routesMode').onclick=()=>setMapMode('routes');$('routeKeyButton').onclick=()=>{const mode=$('routePanel').dataset.mode;if(mode==='metro'&&routeLines)renderRouteKey();setRouteKeyVisible($('routePanel').classList.contains('hidden'))};$('closeRoutePanel').onclick=()=>setRouteKeyVisible(false);$('routeAll').onclick=()=>{if($('routePanel').dataset.mode==='metro'&&routeLines){enabledRouteKeys=new Set(routeLines.map(r=>r.key));drawRoutes();renderRouteKey()}};$('routeNone').onclick=()=>{if($('routePanel').dataset.mode==='metro'&&routeLines){enabledRouteKeys=new Set();drawRoutes();renderRouteKey()}};$('routeRetry').onclick=()=>{if($('routePanel').dataset.mode==='metro')loadRoutes()};$('locateMap').onclick=onLocate;$('nearby').onclick=onLocate;$('shopsToggle').onclick=()=>{$('shopDrawer').classList.contains('open')?closeShops():openShops()};$('closeShops').onclick=closeShops;$('exportBtn').onclick=downloadCSV;if(mapReady){
  if(official.some(s=>s.lat!=null))setStatus(`Loaded ${official.filter(s=>s.lat!=null).length} cached markers; refreshing missing locations…`,true);
- geocodeAll();
+ loadVerifiedCoordinates().then(()=>geocodeAll(),()=>geocodeAll());
  }else{
   for(const id of ['resetMap','streetMode','transportMode','routesMode','routeKeyButton','routeAll','routeNone','routeRetry']){
    const button=$(id);if(button){button.disabled=true;button.title='Map controls unavailable until the map library loads';}
