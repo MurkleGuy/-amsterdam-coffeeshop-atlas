@@ -5,6 +5,7 @@ on:
     paths:
       - .github/workflows/verify-locations.yml
       - scripts/verify-locations.mjs
+      - scripts/smoke-live-site.mjs
       - public/assets/shops.js
       - public/assets/budmap-address-match.js
 permissions:
@@ -39,6 +40,29 @@ jobs:
             git rebase origin/main
             git push origin HEAD:main
           fi
+      - name: Smoke-test public Cloudflare deployment
+        id: smoke
+        continue-on-error: true
+        run: node scripts/smoke-live-site.mjs
+      - name: Save deployment smoke-test evidence
+        if: always()
+        run: |
+          if [ -f research/live-site-smoke.json ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add research/live-site-smoke.json
+            if ! git diff --staged --quiet; then
+              git commit -m "Record latest public BudMap deployment smoke test"
+              git fetch origin main
+              git rebase origin/main
+              git push origin HEAD:main
+            fi
+          fi
+      - name: Flag deployment smoke-test failure
+        if: steps.smoke.outcome != 'success'
+        run: |
+          echo "Live Cloudflare deployment could not be confirmed. Check research/live-site-smoke.json."
+          exit 1
       - name: Report partial matches
         if: steps.verify.outcome != 'success'
         run: |
