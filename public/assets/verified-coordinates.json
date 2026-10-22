@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-22T22:46:11.063Z",
+  "generatedAt": "2026-10-22T22:48:53.737Z",
   "source": "PDOK Locatieserver v3_1, BAG civic-address centroids",
   "totalListed": 167,
-  "verifiedCount": 106,
-  "buildingLevelCount": 53,
-  "pinnedCount": 159,
-  "unresolvedCount": 8,
+  "verifiedCount": 107,
+  "buildingLevelCount": 54,
+  "pinnedCount": 161,
+  "unresolvedCount": 6,
   "locations": {
     "1": {
       "lat": 52.34506105,
@@ -909,6 +909,14 @@
       "bagId": "0363200011872493",
       "verifiedAt": "2026-10-22"
     },
+    "109": {
+      "lat": 52.36514259,
+      "lng": 4.92796332,
+      "source": "pdok-bag-address",
+      "addressKey": "1093DK|286|",
+      "bagId": "0363200012086706",
+      "verifiedAt": "2026-10-22"
+    },
     "110": {
       "lat": 52.35478544,
       "lng": 4.92222346,
@@ -1180,6 +1188,16 @@
       "addressKey": "1033SC|4|C",
       "bagId": "0363200000439647",
       "verifiedAt": "2026-10-22"
+    },
+    "144": {
+      "lat": 52.355698,
+      "lng": 4.90104707,
+      "source": "pdok-bag-building",
+      "addressKey": "1074XN|43|",
+      "bagId": "0363200000014744",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "H"
     },
     "145": {
       "lat": 52.35633565,

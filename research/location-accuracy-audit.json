@@ -7,19 +7,19 @@
     "total": 167,
     "structuralAddressKeysValidated": 167,
     "duplicateAddressKeys": 0,
-    "livePdokCoordinatesVerified": 106,
+    "livePdokCoordinatesVerified": 107,
     "physicalEntrancesVerified": 0,
     "letterInNumber": 2,
     "operatorEntranceMismatch": 2,
     "identityUnconfirmed": 1,
-    "livePdokCoordinateUnresolved": 8,
-    "lastLiveCheckAt": "2026-10-22T22:46:11.063Z",
+    "livePdokCoordinateUnresolved": 6,
+    "lastLiveCheckAt": "2026-10-22T22:48:53.737Z",
     "failureReasons": {
-      "no_exact_pdok_bag_match": 8
+      "no_exact_pdok_bag_match": 6
     },
-    "buildingLevelCoordinates": 53
+    "buildingLevelCoordinates": 54
   },
-  "note": "PDOK/BAG civic addresses checked on 2026-10-22T22:46:11.063Z. Exact unit matches and tightly clustered building-level approximations are counted separately. None of these are verified coffeeshop door locations. Unresolved addresses remain unpinned.",
+  "note": "PDOK/BAG civic addresses checked on 2026-10-22T22:48:53.737Z. Exact unit matches and tightly clustered building-level approximations are counted separately. None of these are verified coffeeshop door locations. Unresolved addresses remain unpinned.",
   "records": [
     {
       "id": 1,
@@ -1865,12 +1865,16 @@
       "name": "Eastwood",
       "municipalAddress": "Pieter Vlamingstraat 286, 1093 AK, Amsterdam",
       "addressKey": "1093AK|286|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit",
+      "pdokBagId": "0363200012086706",
+      "pdokCoordinates": {
+        "lat": 52.36514259,
+        "lng": 4.92796332
+      }
     },
     {
       "id": 110,
@@ -2454,17 +2458,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": null,
-          "addition": null,
-          "street": "Eerste Jan van der Heijdenstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.88787174 52.35310189)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200000014744",
+      "pdokCoordinates": {
+        "lat": 52.355698,
+        "lng": 4.90104707
+      }
     },
     {
       "id": 145,
