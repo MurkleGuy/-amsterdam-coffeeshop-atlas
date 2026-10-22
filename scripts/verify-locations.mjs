@@ -37,6 +37,7 @@ async function search(query){
 async function verify(shop){
  const a=matcher.addressParts(shop);
  if(!a)return {id:shop.id,reason:'invalid_address_format'};
+ const nearby=[];
  const qs=[
   shop.postcode+' '+a.number+(a.suffix?' '+a.suffix:'')+' Amsterdam',
   shop.street+' '+a.number+(a.suffix?' '+a.suffix:'')+' '+shop.postcode+' Amsterdam'
@@ -47,9 +48,18 @@ async function verify(shop){
   catch(e){return{id:shop.id,reason:'pdok_unreachable',detail:String(e.message).slice(0,90)}}
   const match=matcher.select(shop,docs);
   if(match)return {id:shop.id,match};
+  for(const doc of docs){
+   const dc=v=>String(v??'').toUpperCase().replace(/[^0-9A-Z]/g,'');
+   if(dc(doc.postcode)!==dc(shop.postcode)||Number(doc.huisnummer)!==a.number)continue;
+   if(nearby.length>=5)break;
+   const candidate={letter:doc.huisletter??null,addition:doc.huisnummertoevoeging??null,
+    street:doc.straatnaam??doc.openbareruimtenaam??null,city:doc.woonplaatsnaam??null,
+    point:doc.centroide_ll??null};
+   if(!nearby.some(x=>JSON.stringify(x)===JSON.stringify(candidate)))nearby.push(candidate);
+  }
   await wait(120);
  }
- return{id:shop.id,reason:'no_exact_pdok_bag_match'};
+ return{id:shop.id,reason:'no_exact_pdok_bag_match',candidateSamples:nearby};
 }
 const results=new Array(shops.length);
 let next=0;
@@ -85,8 +95,10 @@ if(!resolved.length){
    row.pdokBagId=r.match.bagId||null;
    row.pdokCoordinates={lat:r.match.lat,lng:r.match.lng};
    delete row.unresolvedReason;
+   delete row.pdokCandidateSamples;
   }else{
    row.unresolvedReason=r?.reason||'not_checked';
+   row.pdokCandidateSamples=r?.candidateSamples||[];
    delete row.pdokBagId;
    delete row.pdokCoordinates;
   }
