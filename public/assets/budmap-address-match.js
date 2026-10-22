@@ -1,62 +1,50 @@
-/* BudMap address-to-BAG matching. No guessed coordinates or third-party venue ratings.
-   PDOK/BAG address centroids are not guaranteed to be actual storefront entrances. */
+/* Address pin safeguards for Amsterdam municipality-listed shops.
+   A PDOK BAG address centroid is not a verified coffeeshop front door. */
 (function(){
-'use strict';
-const pc=p=>String(p||'').toUpperCase().replace(/\s+/g,'');
-const unit=v=>String(v||'').toUpperCase().trim().replace(/\s+/g,'');
-function addressParts(shop){
- const m=String(shop?.number||'').trim().match(/^(\d+)\s*([A-Za-z]?)$/);
- if(!m||!/^\d{4}[A-Z]{2}$/.test(pc(shop?.postcode)))return null;
- const explicit=unit(shop.suffix),inNumber=unit(m[2]);
- if(explicit&&inNumber&&explicit!==inNumber)return null;
- return {postcode:pc(shop.postcode),number:Number(m[1]),suffix:explicit||inNumber,
-  key:pc(shop.postcode)+'|'+Number(m[1])+'|'+(explicit||inNumber)};
-}
-function location(doc){
- const str=String(doc?.centroide_ll||'');
- const match=str.match(/^POINT\s*\(\s*(-?\d+(?:\.\d+)?)\s+(-?\d+(?:\.\d+)?)\s*\)$/i);
- if(!match)return null;
- const lat=Number(match[2]),lng=Number(match[1]);
- return lat>52.15&&lat<52.52&&lng>4.58&&lng<5.32?{lat,lng}:null;
-}
-function hasMatchingUnit(suffix,doc){
- const letter=unit(doc.huisletter),addition=unit(doc.huisnummertoevoeging);
- // Avoid assigning 88, 88-A, or 88-H to each other.
- if(!suffix)return !letter&&!addition;
- // A request for unit H must not silently resolve to H1 or HA.
- if(letter&&addition)return suffix===(letter+addition);
- return suffix===letter||suffix===addition;
-}
-function exactMatch(shop,docs){
- const a=addressParts(shop);
- if(!a||!Array.isArray(docs))return null;
- const candidates=docs.filter(doc=>{
-  const dnum=Number(doc?.huisnummer);
-  if(doc?.type&&doc.type!=='adres')return false;
-  if(doc?.woonplaatsnaam&&unit(doc.woonplaatsnaam)!=='AMSTERDAM')return false;
-  return pc(doc.postcode)===a.postcode&&dnum===a.number&&hasMatchingUnit(a.suffix,doc)&&location(doc);
- });
- if(!candidates.length)return null;
- // A duplicated BAG result is safe only if its address points remain very close.
- const geo=location(candidates[0]);
- for(const doc of candidates.slice(1)){
-  const point=location(doc);
-  const dx=(point.lng-geo.lng)*68000,dy=(point.lat-geo.lat)*111320;
-  if(Math.hypot(dx,dy)>18)return null;
+ 'use strict';
+ const compact=v=>String(v??'').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toUpperCase().replace(/[^0-9A-Z]/g,'');
+ function expected(shop){
+  const raw=String(shop?.number||'').trim().match(/^(\d+)\s*([a-z]*)$/i);
+  if(!raw)return null;
+  const embedded=compact(raw[2]),explicit=compact(shop.suffix);
+  if(embedded&&explicit&&embedded!==explicit)return null;
+  return {postcode:compact(shop.postcode),house:Number(raw[1]),unit:explicit||embedded,street:compact(shop.street)};
  }
- return {lat:geo.lat,lng:geo.lng,source:'PDOK_BAG_address',
-  addressKey:a.key,sourceId:String(candidates[0].id||''),verifiedAt:new Date().toISOString().slice(0,10)};
-}
-function cached(shop,entry,days=120){
- const parts=addressParts(shop);
- if(!parts||!entry||entry.source!=='PDOK_BAG_address'||entry.addressKey!==parts.key)return null;
- const coords={lat:entry.lat,lng:entry.lng};
- if(!Number.isFinite(coords.lat)||!Number.isFinite(coords.lng)
-  ||coords.lat<=52.15||coords.lat>=52.52||coords.lng<=4.58||coords.lng>=5.32)return null;
- const then=Date.parse(String(entry.verifiedAt||'')+'T12:00:00Z');
- const age=(Date.now()-then)/86400000;
- if(!Number.isFinite(age)||age<-.8||age>days)return null;
- return coords;
-}
-window.BudMapAddressMatch={addressParts,exactMatch,cached};
+ function key(shop){const e=expected(shop);return e&&e.postcode+'|'+e.house+'|'+e.unit;}
+ function suffix(doc){return compact(doc.huisletter)+compact(doc.huisnummertoevoeging);}
+ function point(doc){
+  const value=doc?.centroide_ll;
+  const m=typeof value==='string'&&value.match(/^POINT\s*\(\s*([-+\d.]+)\s+([-+\d.]+)\s*\)$/i);
+  if(!m)return null;
+  const lat=+m[2],lng=+m[1];
+  return Number.isFinite(lat)&&Number.isFinite(lng)&&lat>52.15&&lat<52.52&&lng>4.58&&lng<5.32?{lat,lng}:null;
+ }
+ function select(shop,docs){
+  const e=expected(shop);
+  if(!e||e.postcode.length!==6||!Array.isArray(docs))return null;
+  const hits=docs.filter(d=>{
+   const city=compact(d.woonplaatsnaam||d.woonplaats_naam||'');
+   const street=compact(d.straatnaam||d.openbareruimtenaam||d.openbare_ruimte_naam||'');
+   return (!d.type||d.type==='adres')
+    &&compact(d.postcode)===e.postcode
+    &&Number(d.huisnummer)===e.house
+    &&suffix(d)===e.unit
+    &&(!city||city==='AMSTERDAM')
+    &&(!street||street===e.street)
+    &&point(d);
+  });
+  if(!hits.length)return null;
+  const first=point(hits[0]);
+  // Never choose arbitrarily between two geometrically different exact hits.
+  for(const d of hits.slice(1)){
+   const p=point(d),dy=(p.lat-first.lat)*111320,dx=(p.lng-first.lng)*111320*Math.cos(first.lat*Math.PI/180);
+   if(Math.hypot(dx,dy)>8)return null;
+  }
+  return {lat:first.lat,lng:first.lng,source:'pdok-bag-address',addressKey:key(shop),bagId:String(hits[0].nummeraanduiding_id||hits[0].id||'')};
+ }
+ function validCache(shop,c){
+  const k=key(shop);
+  return !!k&&c?.source==='pdok-bag-address'&&c.addressKey===k&&Number.isFinite(c.lat)&&Number.isFinite(c.lng)&&c.lat>52.15&&c.lat<52.52&&c.lng>4.58&&c.lng<5.32;
+ }
+ window.BudMapAddressMatch={expected,key,select,validCache};
 })();
