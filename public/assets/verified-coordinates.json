@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-22T22:49:52.042Z",
+  "generatedAt": "2026-10-22T22:51:08.390Z",
   "source": "PDOK Locatieserver v3_1, BAG civic-address centroids",
   "totalListed": 167,
-  "verifiedCount": 108,
-  "buildingLevelCount": 55,
-  "pinnedCount": 163,
-  "unresolvedCount": 4,
+  "verifiedCount": 111,
+  "buildingLevelCount": 56,
+  "pinnedCount": 167,
+  "unresolvedCount": 0,
   "locations": {
     "1": {
       "lat": 52.34506105,
@@ -437,6 +437,14 @@
       "precision": "building_only",
       "matchedUnit": "H"
     },
+    "50": {
+      "lat": 52.37777529,
+      "lng": 4.89535653,
+      "source": "pdok-bag-address",
+      "addressKey": "1012SN|7|A",
+      "bagId": "0363200000123398",
+      "verifiedAt": "2026-10-22"
+    },
     "51": {
       "lat": 52.35744576,
       "lng": 4.90205548,
@@ -775,6 +783,14 @@
       "bagId": "0363200000048478",
       "verifiedAt": "2026-10-22"
     },
+    "90": {
+      "lat": 52.37535918,
+      "lng": 4.89357703,
+      "source": "pdok-bag-address",
+      "addressKey": "1012NH|32|C",
+      "bagId": "0363200000217681",
+      "verifiedAt": "2026-10-22"
+    },
     "91": {
       "lat": 52.37509932,
       "lng": 4.89161209,
@@ -1055,6 +1071,14 @@
       "source": "pdok-bag-address",
       "addressKey": "1016LV|139|",
       "bagId": "0363200000256525",
+      "verifiedAt": "2026-10-22"
+    },
+    "125": {
+      "lat": 52.37370397,
+      "lng": 4.88256717,
+      "source": "pdok-bag-address",
+      "addressKey": "1016LP|1|A",
+      "bagId": "0363200000256287",
       "verifiedAt": "2026-10-22"
     },
     "126": {
@@ -1364,6 +1388,16 @@
       "addressKey": "1011PG|345|",
       "bagId": "0363200000321379",
       "verifiedAt": "2026-10-22"
+    },
+    "161": {
+      "lat": 52.37818594,
+      "lng": 4.88296156,
+      "source": "pdok-bag-building",
+      "addressKey": "1015LZ|121|",
+      "bagId": "0363200012087487",
+      "verifiedAt": "2026-10-22",
+      "precision": "building_only",
+      "matchedUnit": "A"
     },
     "162": {
       "lat": 52.36899177,

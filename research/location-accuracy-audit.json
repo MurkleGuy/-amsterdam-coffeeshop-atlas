@@ -7,19 +7,17 @@
     "total": 167,
     "structuralAddressKeysValidated": 167,
     "duplicateAddressKeys": 0,
-    "livePdokCoordinatesVerified": 108,
+    "livePdokCoordinatesVerified": 111,
     "physicalEntrancesVerified": 0,
     "letterInNumber": 2,
     "operatorEntranceMismatch": 2,
     "identityUnconfirmed": 1,
-    "livePdokCoordinateUnresolved": 4,
-    "lastLiveCheckAt": "2026-10-22T22:49:52.042Z",
-    "failureReasons": {
-      "no_exact_pdok_bag_match": 4
-    },
-    "buildingLevelCoordinates": 55
+    "livePdokCoordinateUnresolved": 0,
+    "lastLiveCheckAt": "2026-10-22T22:51:08.390Z",
+    "failureReasons": {},
+    "buildingLevelCoordinates": 56
   },
-  "note": "PDOK/BAG civic addresses checked on 2026-10-22T22:49:52.042Z. Exact unit matches and tightly clustered building-level approximations are counted separately. None of these are verified coffeeshop door locations. Unresolved addresses remain unpinned.",
+  "note": "PDOK/BAG civic addresses checked on 2026-10-22T22:51:08.390Z. Exact unit matches and tightly clustered building-level approximations are counted separately. None of these are verified coffeeshop door locations. Unresolved addresses remain unpinned.",
   "records": [
     {
       "id": 1,
@@ -810,34 +808,16 @@
       "name": "Resin",
       "municipalAddress": "Hekelveld 7I, 1012 SN, Amsterdam",
       "addressKey": "1012SN|7|I",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": "A",
-          "addition": null,
-          "street": "Hekelveld",
-          "city": "Amsterdam",
-          "point": "POINT(4.89535653 52.37777529)"
-        },
-        {
-          "letter": "B",
-          "addition": null,
-          "street": "Hekelveld",
-          "city": "Amsterdam",
-          "point": "POINT(4.89534612 52.37778686)"
-        },
-        {
-          "letter": "C",
-          "addition": null,
-          "street": "Hekelveld",
-          "city": "Amsterdam",
-          "point": "POINT(4.89533966 52.37779941)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit",
+      "pdokBagId": "0363200000123398",
+      "pdokCoordinates": {
+        "lat": 52.37777529,
+        "lng": 4.89535653
+      }
     },
     {
       "id": 51,
@@ -1478,36 +1458,18 @@
       "name": "Terps Army",
       "municipalAddress": "Nieuwe Nieuwstraat 32H, 1012 NH, Amsterdam",
       "addressKey": "1012NH|32|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
       "flags": [
         "trading_name_or_address_history_needs_manual_check"
       ],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": "A",
-          "addition": null,
-          "street": "Nieuwe Nieuwstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.89357693 52.37536817)"
-        },
-        {
-          "letter": "B",
-          "addition": null,
-          "street": "Nieuwe Nieuwstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.89357683 52.37537716)"
-        },
-        {
-          "letter": "C",
-          "addition": null,
-          "street": "Nieuwe Nieuwstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.89357703 52.37535918)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit",
+      "pdokBagId": "0363200000217681",
+      "pdokCoordinates": {
+        "lat": 52.37535918,
+        "lng": 4.89357703
+      }
     },
     {
       "id": 91,
@@ -2064,34 +2026,16 @@
       "name": "African Black Star",
       "municipalAddress": "Rozengracht 1H, 1016 LP, Amsterdam",
       "addressKey": "1016LP|1|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": "A",
-          "addition": null,
-          "street": "Rozengracht",
-          "city": "Amsterdam",
-          "point": "POINT(4.88256717 52.37370397)"
-        },
-        {
-          "letter": "B",
-          "addition": null,
-          "street": "Rozengracht",
-          "city": "Amsterdam",
-          "point": "POINT(4.88256717 52.37370397)"
-        },
-        {
-          "letter": null,
-          "addition": null,
-          "street": "Rozengracht",
-          "city": "Amsterdam",
-          "point": "POINT(4.88264039 52.37372226)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit",
+      "pdokBagId": "0363200000256287",
+      "pdokCoordinates": {
+        "lat": 52.37370397,
+        "lng": 4.88256717
+      }
     },
     {
       "id": 126,
@@ -2673,38 +2617,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": "A",
-          "addition": null,
-          "street": "Westerstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.88296156 52.37818594)"
-        },
-        {
-          "letter": "B",
-          "addition": null,
-          "street": "Westerstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.88291818 52.37818075)"
-        },
-        {
-          "letter": null,
-          "addition": "1",
-          "street": "Westerstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.88294233 52.37816347)"
-        },
-        {
-          "letter": null,
-          "addition": "2",
-          "street": "Westerstraat",
-          "city": "Amsterdam",
-          "point": "POINT(4.88294233 52.37816347)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200012087487",
+      "pdokCoordinates": {
+        "lat": 52.37818594,
+        "lng": 4.88296156
+      }
     },
     {
       "id": 162,
