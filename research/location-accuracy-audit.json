@@ -15,9 +15,10 @@
     "livePdokCoordinateUnresolved": 0,
     "lastLiveCheckAt": "2026-10-22T22:51:08.390Z",
     "failureReasons": {},
-    "buildingLevelCoordinates": 56
+    "buildingLevelCoordinates": 56,
+    "addressCorrectionsRecorded": 8
   },
-  "note": "PDOK/BAG civic addresses checked on 2026-10-22T22:51:08.390Z. Exact unit matches and tightly clustered building-level approximations are counted separately. None of these are verified coffeeshop door locations. Unresolved addresses remain unpinned.",
+  "note": "PDOK/BAG civic addresses checked on 2026-10-22T22:51:08.390Z. Exact unit matches and tightly clustered building-level approximations are counted separately. None of these are verified coffeeshop door locations. Unresolved addresses remain unpinned. Corrected venue-specific address details are preserved as currentDisplayAddress and annotated with their original municipal listing; civic centroid matching is not shop-door verification.",
   "records": [
     {
       "id": 1,
@@ -33,7 +34,9 @@
         "lng": 4.8641671
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Achillesstraat 104, 1076 RH, Amsterdam",
+      "cityListedAddress": "Achillesstraat 104, 1076 RH, Amsterdam"
     },
     {
       "id": 2,
@@ -49,7 +52,9 @@
       "pdokCoordinates": {
         "lat": 52.37256948,
         "lng": 4.85942274
-      }
+      },
+      "currentDisplayAddress": "Admiraal De Ruijterweg 104, 1056 GP, Amsterdam",
+      "cityListedAddress": "Admiraal De Ruijterweg 104, 1056 GP, Amsterdam"
     },
     {
       "id": 3,
@@ -65,7 +70,9 @@
         "lng": 4.89416971
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Amstel 8H, 1017 AA, Amsterdam",
+      "cityListedAddress": "Amstel 8H, 1017 AA, Amsterdam"
     },
     {
       "id": 4,
@@ -81,7 +88,9 @@
         "lng": 4.8953891
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Amstel 36H, 1017 AB, Amsterdam",
+      "cityListedAddress": "Amstel 36H, 1017 AB, Amsterdam"
     },
     {
       "id": 5,
@@ -97,7 +106,9 @@
       "pdokCoordinates": {
         "lat": 52.34659471,
         "lng": 4.9112324
-      }
+      },
+      "currentDisplayAddress": "Amsteldijk 139, 1079 LE, Amsterdam",
+      "cityListedAddress": "Amsteldijk 139, 1079 LE, Amsterdam"
     },
     {
       "id": 6,
@@ -113,7 +124,9 @@
         "lng": 4.89938968
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Amstelstraat 35, 1017 DA, Amsterdam",
+      "cityListedAddress": "Amstelstraat 35, 1017 DA, Amsterdam"
     },
     {
       "id": 7,
@@ -129,7 +142,9 @@
       "pdokCoordinates": {
         "lat": 52.35394801,
         "lng": 4.85589838
-      }
+      },
+      "currentDisplayAddress": "Amstelveenseweg 61, 1075 VV, Amsterdam",
+      "cityListedAddress": "Amstelveenseweg 61, 1075 VV, Amsterdam"
     },
     {
       "id": 8,
@@ -145,7 +160,9 @@
         "lng": 4.85711578
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Amstelveenseweg 1160, 1081 JW, Amsterdam",
+      "cityListedAddress": "Amstelveenseweg 1160, 1081 JW, Amsterdam"
     },
     {
       "id": 9,
@@ -161,7 +178,9 @@
         "lng": 4.85754821
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Baarsjesweg 239, 1058 AA, Amsterdam",
+      "cityListedAddress": "Baarsjesweg 239, 1058 AA, Amsterdam"
     },
     {
       "id": 10,
@@ -177,7 +196,9 @@
       "pdokCoordinates": {
         "lat": 52.36887689,
         "lng": 4.85371085
-      }
+      },
+      "currentDisplayAddress": "Balboastraat 19, 1057 VT, Amsterdam",
+      "cityListedAddress": "Balboastraat 19, 1057 VT, Amsterdam"
     },
     {
       "id": 11,
@@ -193,7 +214,9 @@
       "pdokCoordinates": {
         "lat": 52.35305916,
         "lng": 4.88468071
-      }
+      },
+      "currentDisplayAddress": "Balthasar Floriszstraat 10, 1071 VC, Amsterdam",
+      "cityListedAddress": "Balthasar Floriszstraat 10, 1071 VC, Amsterdam"
     },
     {
       "id": 12,
@@ -209,7 +232,9 @@
         "lng": 4.88759162
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Barentszstraat 130, 1013 NS, Amsterdam",
+      "cityListedAddress": "Barentszstraat 130, 1013 NS, Amsterdam"
     },
     {
       "id": 13,
@@ -225,7 +250,9 @@
       "pdokCoordinates": {
         "lat": 52.37475893,
         "lng": 4.89656128
-      }
+      },
+      "currentDisplayAddress": "Beursstraat 27, 1012 JV, Amsterdam",
+      "cityListedAddress": "Beursstraat 27, 1012 JV, Amsterdam"
     },
     {
       "id": 14,
@@ -241,7 +268,9 @@
         "lng": 4.88718532
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Binnen Oranjestraat 9H, 1013 HZ, Amsterdam",
+      "cityListedAddress": "Binnen Oranjestraat 9H, 1013 HZ, Amsterdam"
     },
     {
       "id": 15,
@@ -257,7 +286,9 @@
         "lng": 4.85542237
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Bonairestraat 78, 1058 XL, Amsterdam",
+      "cityListedAddress": "Bonairestraat 78, 1058 XL, Amsterdam"
     },
     {
       "id": 16,
@@ -273,7 +304,9 @@
       "pdokCoordinates": {
         "lat": 52.38096393,
         "lng": 4.85538666
-      }
+      },
+      "currentDisplayAddress": "Bos En Lommerweg 163, 1055 DS, Amsterdam",
+      "cityListedAddress": "Bos En Lommerweg 163, 1055 DS, Amsterdam"
     },
     {
       "id": 17,
@@ -289,7 +322,9 @@
         "lng": 4.88629825
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Brouwersgracht 137H, 1015 GE, Amsterdam",
+      "cityListedAddress": "Brouwersgracht 137H, 1015 GE, Amsterdam"
     },
     {
       "id": 18,
@@ -305,7 +340,9 @@
         "lng": 4.89296477
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Brouwersgracht 11H, 1015 GA, Amsterdam",
+      "cityListedAddress": "Brouwersgracht 11H, 1015 GA, Amsterdam"
     },
     {
       "id": 19,
@@ -321,7 +358,9 @@
         "lng": 4.94144312
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Buikslotermeerplein 389, 1025 XE, Amsterdam",
+      "cityListedAddress": "Buikslotermeerplein 389, 1025 XE, Amsterdam"
     },
     {
       "id": 20,
@@ -337,7 +376,9 @@
         "lng": 4.86200909
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Chassestraat 4, 1057 JD, Amsterdam",
+      "cityListedAddress": "Chassestraat 4, 1057 JD, Amsterdam"
     },
     {
       "id": 21,
@@ -353,7 +394,9 @@
         "lng": 4.85819524
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Coenhavenweg 26, 1013 BL, Amsterdam",
+      "cityListedAddress": "Coenhavenweg 26, 1013 BL, Amsterdam"
     },
     {
       "id": 22,
@@ -369,7 +412,9 @@
         "lng": 4.92993209
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Czaar Peterstraat 122H, 1018 PV, Amsterdam",
+      "cityListedAddress": "Czaar Peterstraat 122H, 1018 PV, Amsterdam"
     },
     {
       "id": 23,
@@ -385,7 +430,9 @@
       "pdokCoordinates": {
         "lat": 52.35606988,
         "lng": 4.89103196
-      }
+      },
+      "currentDisplayAddress": "Daniel Stalpertstraat 78, 1072 XK, Amsterdam",
+      "cityListedAddress": "Daniel Stalpertstraat 78, 1072 XK, Amsterdam"
     },
     {
       "id": 24,
@@ -401,7 +448,9 @@
         "lng": 4.92581437
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Dapperstraat 2, 1093 BT, Amsterdam",
+      "cityListedAddress": "Dapperstraat 2, 1093 BT, Amsterdam"
     },
     {
       "id": 25,
@@ -417,7 +466,9 @@
       "pdokCoordinates": {
         "lat": 52.37135521,
         "lng": 4.87144872
-      }
+      },
+      "currentDisplayAddress": "De Clercqstraat 30, 1052 NE, Amsterdam",
+      "cityListedAddress": "De Clercqstraat 30, 1052 NE, Amsterdam"
     },
     {
       "id": 26,
@@ -433,7 +484,9 @@
       "pdokCoordinates": {
         "lat": 52.35639769,
         "lng": 4.91627624
-      }
+      },
+      "currentDisplayAddress": "Derde Oosterparkstraat 73, 1091 JV, Amsterdam",
+      "cityListedAddress": "Derde Oosterparkstraat 73, 1091 JV, Amsterdam"
     },
     {
       "id": 27,
@@ -449,7 +502,9 @@
         "lng": 4.88123638
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Eerste Bloemdwarsstraat 2H, 1016 KS, Amsterdam",
+      "cityListedAddress": "Eerste Bloemdwarsstraat 2H, 1016 KS, Amsterdam"
     },
     {
       "id": 28,
@@ -465,7 +520,9 @@
       "pdokCoordinates": {
         "lat": 52.35599925,
         "lng": 4.90880891
-      }
+      },
+      "currentDisplayAddress": "Eerste Oosterparkstraat 47, 1091 GV, Amsterdam",
+      "cityListedAddress": "Eerste Oosterparkstraat 47, 1091 GV, Amsterdam"
     },
     {
       "id": 29,
@@ -481,7 +538,9 @@
       "pdokCoordinates": {
         "lat": 52.35482997,
         "lng": 4.89327696
-      }
+      },
+      "currentDisplayAddress": "Eerste Van Der Helststraat 70, 1072 NZ, Amsterdam",
+      "cityListedAddress": "Eerste Van Der Helststraat 70, 1072 NZ, Amsterdam"
     },
     {
       "id": 30,
@@ -497,7 +556,9 @@
       "pdokCoordinates": {
         "lat": 52.36990915,
         "lng": 4.88209642
-      }
+      },
+      "currentDisplayAddress": "Elandsgracht 3, 1016 TM, Amsterdam",
+      "cityListedAddress": "Elandsgracht 3, 1016 TM, Amsterdam"
     },
     {
       "id": 31,
@@ -513,7 +574,9 @@
       "pdokCoordinates": {
         "lat": 52.3757962,
         "lng": 4.87376144
-      }
+      },
+      "currentDisplayAddress": "Frederik Hendrikstraat 69, 1052 HL, Amsterdam",
+      "cityListedAddress": "Frederik Hendrikstraat 69, 1052 HL, Amsterdam"
     },
     {
       "id": 32,
@@ -529,7 +592,9 @@
       "pdokCoordinates": {
         "lat": 52.37398454,
         "lng": 4.87257826
-      }
+      },
+      "currentDisplayAddress": "Frederik Hendrikstraat 123, 1052 HP, Amsterdam",
+      "cityListedAddress": "Frederik Hendrikstraat 123, 1052 HP, Amsterdam"
     },
     {
       "id": 33,
@@ -545,7 +610,9 @@
         "lng": 4.90127641
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Geldersekade 54H, 1012 BK, Amsterdam",
+      "cityListedAddress": "Geldersekade 54H, 1012 BK, Amsterdam"
     },
     {
       "id": 34,
@@ -561,7 +628,9 @@
         "lng": 4.90201038
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Geldersekade 2H, 1012 BH, Amsterdam",
+      "cityListedAddress": "Geldersekade 2H, 1012 BH, Amsterdam"
     },
     {
       "id": 35,
@@ -577,7 +646,9 @@
       "pdokCoordinates": {
         "lat": 52.35640342,
         "lng": 4.89557873
-      }
+      },
+      "currentDisplayAddress": "Gerard Doustraat 188, 1073 XA, Amsterdam",
+      "cityListedAddress": "Gerard Doustraat 188, 1073 XA, Amsterdam"
     },
     {
       "id": 36,
@@ -593,7 +664,9 @@
         "lng": 4.89190078
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Gerard Doustraat 85, 1072 VN, Amsterdam",
+      "cityListedAddress": "Gerard Doustraat 85, 1072 VN, Amsterdam"
     },
     {
       "id": 37,
@@ -609,7 +682,9 @@
       "pdokCoordinates": {
         "lat": 52.3751115,
         "lng": 4.87131693
-      }
+      },
+      "currentDisplayAddress": "Gillis Van Ledenberchstraat 135, 1052 VE, Amsterdam",
+      "cityListedAddress": "Gillis Van Ledenberchstraat 135, 1052 VE, Amsterdam"
     },
     {
       "id": 38,
@@ -625,7 +700,9 @@
       "pdokCoordinates": {
         "lat": 52.35722693,
         "lng": 4.90129455
-      }
+      },
+      "currentDisplayAddress": "Govert Flinckstraat 323, 1074 CB, Amsterdam",
+      "cityListedAddress": "Govert Flinckstraat 323, 1074 CB, Amsterdam"
     },
     {
       "id": 39,
@@ -641,7 +718,9 @@
         "lng": 4.89262037
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Gravenstraat 9, 1012 NL, Amsterdam",
+      "cityListedAddress": "Gravenstraat 9, 1012 NL, Amsterdam"
     },
     {
       "id": 40,
@@ -657,7 +736,9 @@
         "lng": 4.89088863
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Haarlemmerstraat 102H, 1013 EW, Amsterdam",
+      "cityListedAddress": "Haarlemmerstraat 102H, 1013 EW, Amsterdam"
     },
     {
       "id": 41,
@@ -673,7 +754,9 @@
         "lng": 4.89292247
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Haarlemmerstraat 44, 1013 ES, Amsterdam",
+      "cityListedAddress": "Haarlemmerstraat 44, 1013 ES, Amsterdam"
     },
     {
       "id": 42,
@@ -689,7 +772,9 @@
         "lng": 4.89214139
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Haarlemmerstraat 64H, 1013 ET, Amsterdam",
+      "cityListedAddress": "Haarlemmerstraat 64H, 1013 ET, Amsterdam"
     },
     {
       "id": 43,
@@ -705,7 +790,9 @@
         "lng": 4.89400176
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Haarlemmerstraat 6, 1013 ER, Amsterdam",
+      "cityListedAddress": "Haarlemmerstraat 6, 1013 ER, Amsterdam"
     },
     {
       "id": 44,
@@ -721,7 +808,9 @@
         "lng": 4.89280649
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Haarlemmerstraat 63H, 1013 EK, Amsterdam",
+      "cityListedAddress": "Haarlemmerstraat 63H, 1013 EK, Amsterdam"
     },
     {
       "id": 45,
@@ -737,7 +826,9 @@
         "lng": 4.89588908
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Halvemaansteeg 1, 1017 CR, Amsterdam",
+      "cityListedAddress": "Halvemaansteeg 1, 1017 CR, Amsterdam"
     },
     {
       "id": 46,
@@ -753,7 +844,9 @@
         "lng": 4.89590466
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Halvemaansteeg 5, 1017 CR, Amsterdam",
+      "cityListedAddress": "Halvemaansteeg 5, 1017 CR, Amsterdam"
     },
     {
       "id": 47,
@@ -769,7 +862,9 @@
         "lng": 4.89050487
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Handboogstraat 29H, 1012 XM, Amsterdam",
+      "cityListedAddress": "Handboogstraat 29H, 1012 XM, Amsterdam"
     },
     {
       "id": 48,
@@ -785,7 +880,9 @@
         "lng": 4.89720254
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Haringpakkerssteeg 3, 1012 LR, Amsterdam",
+      "cityListedAddress": "Haringpakkerssteeg 3, 1012 LR, Amsterdam"
     },
     {
       "id": 49,
@@ -801,13 +898,15 @@
       "pdokCoordinates": {
         "lat": 52.36883934,
         "lng": 4.888393
-      }
+      },
+      "currentDisplayAddress": "Heisteeg 6, 1012 WC, Amsterdam",
+      "cityListedAddress": "Heisteeg 6, 1012 WC, Amsterdam"
     },
     {
       "id": 50,
       "name": "Resin",
       "municipalAddress": "Hekelveld 7I, 1012 SN, Amsterdam",
-      "addressKey": "1012SN|7|I",
+      "addressKey": "1012SN|7|A",
       "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
       "flags": [],
@@ -817,7 +916,11 @@
       "pdokCoordinates": {
         "lat": 52.37777529,
         "lng": 4.89535653
-      }
+      },
+      "currentDisplayAddress": "Hekelveld 7A, 1012 SN, Amsterdam",
+      "cityListedAddress": "Hekelveld 7I, 1012 SN, Amsterdam",
+      "addressCorrectionSource": "https://zoek.officielebekendmakingen.nl/gmb-2026-243718.html",
+      "addressCorrectionNote": "Amsterdam's May 2026 operating-permit renewal application identifies Resin at Hekelveld 7A. The earlier tolerance-list entry is 7I. An application is not proof of permit grant."
     },
     {
       "id": 51,
@@ -833,7 +936,9 @@
       "pdokCoordinates": {
         "lat": 52.35744576,
         "lng": 4.90205548
-      }
+      },
+      "currentDisplayAddress": "Hemonystraat 16, 1074 BP, Amsterdam",
+      "cityListedAddress": "Hemonystraat 16, 1074 BP, Amsterdam"
     },
     {
       "id": 52,
@@ -849,7 +954,9 @@
         "lng": 4.8890812
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Herengracht 133H, 1015 BG, Amsterdam",
+      "cityListedAddress": "Herengracht 133H, 1015 BG, Amsterdam"
     },
     {
       "id": 53,
@@ -865,7 +972,9 @@
         "lng": 4.94270274
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Hettenheuvelweg 35, 1101 BM, Amsterdam",
+      "cityListedAddress": "Hettenheuvelweg 35, 1101 BM, Amsterdam"
     },
     {
       "id": 54,
@@ -883,7 +992,9 @@
         "lng": 4.94842184
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Hoekenrode 14B, 1102 BR, Amsterdam",
+      "cityListedAddress": "Hoekenrode 14B, 1102 BR, Amsterdam"
     },
     {
       "id": 55,
@@ -899,7 +1010,9 @@
       "pdokCoordinates": {
         "lat": 52.36548723,
         "lng": 4.8534286
-      }
+      },
+      "currentDisplayAddress": "Hoofdweg 174, 1057 DC, Amsterdam",
+      "cityListedAddress": "Hoofdweg 174, 1057 DC, Amsterdam"
     },
     {
       "id": 56,
@@ -917,7 +1030,9 @@
       "pdokCoordinates": {
         "lat": 52.36698572,
         "lng": 4.852882
-      }
+      },
+      "currentDisplayAddress": "Hoofdweg 226, 1057 DG, Amsterdam",
+      "cityListedAddress": "Hoofdweg 226, 1057 DG, Amsterdam"
     },
     {
       "id": 57,
@@ -935,7 +1050,9 @@
         "lng": 4.8524681
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Hudsonstraat 156, 1057 ST, Amsterdam",
+      "cityListedAddress": "Hudsonstraat 156, 1057 ST, Amsterdam"
     },
     {
       "id": 58,
@@ -951,7 +1068,9 @@
         "lng": 4.85300739
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Hudsonstraat 138, 1057 SR, Amsterdam",
+      "cityListedAddress": "Hudsonstraat 138, 1057 SR, Amsterdam"
     },
     {
       "id": 59,
@@ -967,7 +1086,9 @@
         "lng": 4.82978862
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Humberweg 2, 1043 AC, Amsterdam",
+      "cityListedAddress": "Humberweg 2, 1043 AC, Amsterdam"
     },
     {
       "id": 60,
@@ -983,7 +1104,9 @@
       "pdokCoordinates": {
         "lat": 52.36746668,
         "lng": 4.86397637
-      }
+      },
+      "currentDisplayAddress": "Jan Hanzenstraat 109, 1053 SN, Amsterdam",
+      "cityListedAddress": "Jan Hanzenstraat 109, 1053 SN, Amsterdam"
     },
     {
       "id": 61,
@@ -999,7 +1122,9 @@
       "pdokCoordinates": {
         "lat": 52.36402887,
         "lng": 4.86295983
-      }
+      },
+      "currentDisplayAddress": "Jan Pieter Heijestraat 82, 1053 GS, Amsterdam",
+      "cityListedAddress": "Jan Pieter Heijestraat 82, 1053 GS, Amsterdam"
     },
     {
       "id": 62,
@@ -1015,7 +1140,9 @@
       "pdokCoordinates": {
         "lat": 52.36354473,
         "lng": 4.86322982
-      }
+      },
+      "currentDisplayAddress": "Jan Pieter Heijestraat 96, 1053 GT, Amsterdam",
+      "cityListedAddress": "Jan Pieter Heijestraat 96, 1053 GT, Amsterdam"
     },
     {
       "id": 63,
@@ -1031,7 +1158,9 @@
       "pdokCoordinates": {
         "lat": 52.37266855,
         "lng": 4.84948017
-      }
+      },
+      "currentDisplayAddress": "Jan Van Galenstraat 285, 1056 CA, Amsterdam",
+      "cityListedAddress": "Jan Van Galenstraat 285, 1056 CA, Amsterdam"
     },
     {
       "id": 64,
@@ -1047,7 +1176,9 @@
       "pdokCoordinates": {
         "lat": 52.36361329,
         "lng": 4.93666554
-      }
+      },
+      "currentDisplayAddress": "Javastraat 104, 1094 HN, Amsterdam",
+      "cityListedAddress": "Javastraat 104, 1094 HN, Amsterdam"
     },
     {
       "id": 65,
@@ -1063,7 +1194,9 @@
         "lng": 4.89120553
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Jonge Roelensteeg 12H, 1012 PL, Amsterdam",
+      "cityListedAddress": "Jonge Roelensteeg 12H, 1012 PL, Amsterdam"
     },
     {
       "id": 66,
@@ -1079,7 +1212,9 @@
         "lng": 4.88586399
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Kerkstraat 51H, 1017 GC, Amsterdam",
+      "cityListedAddress": "Kerkstraat 51H, 1017 GC, Amsterdam"
     },
     {
       "id": 67,
@@ -1095,13 +1230,15 @@
         "lng": 4.88525789
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Kerkstraat 39, 1017 GB, Amsterdam",
+      "cityListedAddress": "Kerkstraat 39, 1017 GB, Amsterdam"
     },
     {
       "id": 68,
       "name": "Green Place",
       "municipalAddress": "Kloveniersburgwal 4H, 1012 CT, Amsterdam",
-      "addressKey": "1012CT|4|H",
+      "addressKey": "1012CT|4|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
@@ -1111,7 +1248,11 @@
       "pdokCoordinates": {
         "lat": 52.37209339,
         "lng": 4.89929617
-      }
+      },
+      "currentDisplayAddress": "Kloveniersburgwal 4, 1012 CT, Amsterdam",
+      "cityListedAddress": "Kloveniersburgwal 4H, 1012 CT, Amsterdam",
+      "addressCorrectionSource": "https://greenplaceamsterdam.com/locations/",
+      "addressCorrectionNote": "The Green Place operator publishes Kloveniersburgwal 4 without a unit suffix; the 2026 municipal address list uses 4H. The map should use only building-level coordinates unless the entrance is independently identified."
     },
     {
       "id": 69,
@@ -1127,7 +1268,9 @@
         "lng": 4.89736578
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Kloveniersburgwal 60H, 1012 CX, Amsterdam",
+      "cityListedAddress": "Kloveniersburgwal 60H, 1012 CX, Amsterdam"
     },
     {
       "id": 70,
@@ -1143,7 +1286,9 @@
         "lng": 4.8973515
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Kloveniersburgwal 62H, 1012 CX, Amsterdam",
+      "cityListedAddress": "Kloveniersburgwal 62H, 1012 CX, Amsterdam"
     },
     {
       "id": 71,
@@ -1159,7 +1304,9 @@
         "lng": 4.89852725
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Kloveniersburgwal 42A, 1012 CW, Amsterdam",
+      "cityListedAddress": "Kloveniersburgwal 42A, 1012 CW, Amsterdam"
     },
     {
       "id": 72,
@@ -1175,7 +1322,9 @@
         "lng": 4.87805682
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Knollendamstraat 5, 1013 TL, Amsterdam",
+      "cityListedAddress": "Knollendamstraat 5, 1013 TL, Amsterdam"
     },
     {
       "id": 73,
@@ -1191,7 +1340,9 @@
         "lng": 4.90266136
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Korte Koningsstraat 2, 1011 GA, Amsterdam",
+      "cityListedAddress": "Korte Koningsstraat 2, 1011 GA, Amsterdam"
     },
     {
       "id": 74,
@@ -1209,7 +1360,9 @@
         "lng": 4.88379322
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Korte Leidsedwarsstraat 77, 1017 PW, Amsterdam",
+      "cityListedAddress": "Korte Leidsedwarsstraat 77, 1017 PW, Amsterdam"
     },
     {
       "id": 75,
@@ -1225,7 +1378,9 @@
         "lng": 4.88525842
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Korte Leidsedwarsstraat 145, 1017 PZ, Amsterdam",
+      "cityListedAddress": "Korte Leidsedwarsstraat 145, 1017 PZ, Amsterdam"
     },
     {
       "id": 76,
@@ -1241,7 +1396,9 @@
       "pdokCoordinates": {
         "lat": 52.35402803,
         "lng": 4.91932511
-      }
+      },
+      "currentDisplayAddress": "Krugerplein 22, 1091 KZ, Amsterdam",
+      "cityListedAddress": "Krugerplein 22, 1091 KZ, Amsterdam"
     },
     {
       "id": 77,
@@ -1257,7 +1414,9 @@
         "lng": 4.89299779
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Langebrugsteeg 7A, 1012 GB, Amsterdam",
+      "cityListedAddress": "Langebrugsteeg 7A, 1012 GB, Amsterdam"
     },
     {
       "id": 78,
@@ -1273,7 +1432,9 @@
       "pdokCoordinates": {
         "lat": 52.36394634,
         "lng": 4.8832801
-      }
+      },
+      "currentDisplayAddress": "Leidseplein 17, 1017 PS, Amsterdam",
+      "cityListedAddress": "Leidseplein 17, 1017 PS, Amsterdam"
     },
     {
       "id": 79,
@@ -1289,7 +1450,9 @@
         "lng": 4.81625111
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Lodewijk Van Deysselstraat 37, 1064 HL, Amsterdam",
+      "cityListedAddress": "Lodewijk Van Deysselstraat 37, 1064 HL, Amsterdam"
     },
     {
       "id": 80,
@@ -1305,7 +1468,9 @@
         "lng": 4.87933315
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Marnixstraat 92H, 1015 VZ, Amsterdam",
+      "cityListedAddress": "Marnixstraat 92H, 1015 VZ, Amsterdam"
     },
     {
       "id": 81,
@@ -1321,7 +1486,9 @@
         "lng": 4.87583685
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Marnixstraat 194H, 1016 TJ, Amsterdam",
+      "cityListedAddress": "Marnixstraat 194H, 1016 TJ, Amsterdam"
     },
     {
       "id": 82,
@@ -1337,7 +1504,9 @@
         "lng": 4.88014732
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Marnixstraat 383O, 1016 XR, Amsterdam",
+      "cityListedAddress": "Marnixstraat 383O, 1016 XR, Amsterdam"
     },
     {
       "id": 83,
@@ -1353,7 +1522,9 @@
         "lng": 4.87611747
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Marnixstraat 333H, 1016 TC, Amsterdam",
+      "cityListedAddress": "Marnixstraat 333H, 1016 TC, Amsterdam"
     },
     {
       "id": 84,
@@ -1369,7 +1540,9 @@
         "lng": 4.87963631
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Marnixstraat 74H, 1015 VX, Amsterdam",
+      "cityListedAddress": "Marnixstraat 74H, 1015 VX, Amsterdam"
     },
     {
       "id": 85,
@@ -1387,7 +1560,9 @@
         "lng": 4.80790912
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Meer En Vaart 177B, 1068 LA, Amsterdam",
+      "cityListedAddress": "Meer En Vaart 177B, 1068 LA, Amsterdam"
     },
     {
       "id": 86,
@@ -1403,7 +1578,9 @@
         "lng": 4.94110418
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Molukkenstraat 581, 1095 BJ, Amsterdam",
+      "cityListedAddress": "Molukkenstraat 581, 1095 BJ, Amsterdam"
     },
     {
       "id": 87,
@@ -1419,7 +1596,9 @@
       "pdokCoordinates": {
         "lat": 52.38265286,
         "lng": 4.87979216
-      }
+      },
+      "currentDisplayAddress": "Nassaukade 33, 1052 CK, Amsterdam",
+      "cityListedAddress": "Nassaukade 33, 1052 CK, Amsterdam"
     },
     {
       "id": 88,
@@ -1435,7 +1614,9 @@
       "pdokCoordinates": {
         "lat": 52.36511694,
         "lng": 4.93974816
-      }
+      },
+      "currentDisplayAddress": "Niasstraat 1, 1095 TS, Amsterdam",
+      "cityListedAddress": "Niasstraat 1, 1095 TS, Amsterdam"
     },
     {
       "id": 89,
@@ -1451,13 +1632,15 @@
         "lng": 4.90649909
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Nieuwe Herengracht 71, 1011 RR, Amsterdam",
+      "cityListedAddress": "Nieuwe Herengracht 71, 1011 RR, Amsterdam"
     },
     {
       "id": 90,
       "name": "Terps Army",
       "municipalAddress": "Nieuwe Nieuwstraat 32H, 1012 NH, Amsterdam",
-      "addressKey": "1012NH|32|H",
+      "addressKey": "1012NH|32|C",
       "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
       "flags": [
@@ -1469,7 +1652,11 @@
       "pdokCoordinates": {
         "lat": 52.37535918,
         "lng": 4.89357703
-      }
+      },
+      "currentDisplayAddress": "Nieuwe Nieuwstraat 32C, 1012 NH, Amsterdam",
+      "cityListedAddress": "Nieuwe Nieuwstraat 32H, 1012 NH, Amsterdam",
+      "addressCorrectionSource": "https://www.officielebekendmakingen.nl/gmb-2026-367264.html",
+      "addressCorrectionNote": "Amsterdam's July 2026 operating-permit renewal application identifies Terps Army at Nieuwe Nieuwstraat 32C. The earlier tolerance-list entry is 32H. An application is not proof of permit grant."
     },
     {
       "id": 91,
@@ -1485,7 +1672,9 @@
         "lng": 4.89161209
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Nieuwezijds Voorburgwal 132, 1012 SH, Amsterdam",
+      "cityListedAddress": "Nieuwezijds Voorburgwal 132, 1012 SH, Amsterdam"
     },
     {
       "id": 92,
@@ -1501,13 +1690,15 @@
         "lng": 4.89983147
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Nieuwmarkt 14H, 1012 CR, Amsterdam",
+      "cityListedAddress": "Nieuwmarkt 14H, 1012 CR, Amsterdam"
     },
     {
       "id": 93,
       "name": "Jolly Joker",
       "municipalAddress": "Nieuwmarkt 4A, 1012 CR, Amsterdam",
-      "addressKey": "1012CR|4|A",
+      "addressKey": "1012CR|4|A1",
       "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
       "flags": [],
@@ -1517,7 +1708,11 @@
       "pdokCoordinates": {
         "lat": 52.37306728,
         "lng": 4.90007843
-      }
+      },
+      "currentDisplayAddress": "Nieuwmarkt 4A-1, 1012 CR, Amsterdam",
+      "cityListedAddress": "Nieuwmarkt 4A, 1012 CR, Amsterdam",
+      "addressCorrectionSource": "https://zoek.officielebekendmakingen.nl/gmb-2025-240146.html",
+      "addressCorrectionNote": "Amsterdam's 2 June 2025 coffeeshop operating permit specifically identifies Jolly Joker at Nieuwmarkt 4A-1. The 2026 tolerance-list address omits unit 1; keep both addresses traceable."
     },
     {
       "id": 94,
@@ -1533,7 +1728,9 @@
         "lng": 4.89981649
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Nieuwmarkt 12H, 1012 CR, Amsterdam",
+      "cityListedAddress": "Nieuwmarkt 12H, 1012 CR, Amsterdam"
     },
     {
       "id": 95,
@@ -1549,7 +1746,9 @@
       "pdokCoordinates": {
         "lat": 52.38361543,
         "lng": 4.91252084
-      }
+      },
+      "currentDisplayAddress": "Ooievaarsweg 10, 1021 GZ, Amsterdam",
+      "cityListedAddress": "Ooievaarsweg 10, 1021 GZ, Amsterdam"
     },
     {
       "id": 96,
@@ -1565,7 +1764,9 @@
         "lng": 4.84904268
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Orteliusstraat 193, 1056 NP, Amsterdam",
+      "cityListedAddress": "Orteliusstraat 193, 1056 NP, Amsterdam"
     },
     {
       "id": 97,
@@ -1581,7 +1782,9 @@
         "lng": 4.88885604
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Oude Leliestraat 2, 1015 AW, Amsterdam",
+      "cityListedAddress": "Oude Leliestraat 2, 1015 AW, Amsterdam"
     },
     {
       "id": 98,
@@ -1597,7 +1800,9 @@
         "lng": 4.89599322
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Oudebrugsteeg 26, 1012 JP, Amsterdam",
+      "cityListedAddress": "Oudebrugsteeg 26, 1012 JP, Amsterdam"
     },
     {
       "id": 99,
@@ -1613,7 +1818,9 @@
         "lng": 4.89586186
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Oudebrugsteeg 27H, 1012 JN, Amsterdam",
+      "cityListedAddress": "Oudebrugsteeg 27H, 1012 JN, Amsterdam"
     },
     {
       "id": 100,
@@ -1631,7 +1838,9 @@
         "lng": 4.89527666
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Oudezijds Voorburgwal 250H, 1012 GK, Amsterdam",
+      "cityListedAddress": "Oudezijds Voorburgwal 250H, 1012 GK, Amsterdam"
     },
     {
       "id": 101,
@@ -1647,7 +1856,9 @@
       "pdokCoordinates": {
         "lat": 52.37151279,
         "lng": 4.89582244
-      }
+      },
+      "currentDisplayAddress": "Oudezijds Voorburgwal 189, 1012 EW, Amsterdam",
+      "cityListedAddress": "Oudezijds Voorburgwal 189, 1012 EW, Amsterdam"
     },
     {
       "id": 102,
@@ -1663,7 +1874,9 @@
         "lng": 4.89946755
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Oudezijds Voorburgwal 36H, 1012 GD, Amsterdam",
+      "cityListedAddress": "Oudezijds Voorburgwal 36H, 1012 GD, Amsterdam"
     },
     {
       "id": 103,
@@ -1679,7 +1892,9 @@
         "lng": 4.8957642
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Oudezijds Voorburgwal 191, 1012 EW, Amsterdam",
+      "cityListedAddress": "Oudezijds Voorburgwal 191, 1012 EW, Amsterdam"
     },
     {
       "id": 104,
@@ -1697,7 +1912,9 @@
         "lng": 4.89623721
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Oudezijds Voorburgwal 220, 1012 GJ, Amsterdam",
+      "cityListedAddress": "Oudezijds Voorburgwal 220, 1012 GJ, Amsterdam"
     },
     {
       "id": 105,
@@ -1715,7 +1932,9 @@
         "lng": 4.89770718
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Oudezijds Voorburgwal 88H, 1012 GG, Amsterdam",
+      "cityListedAddress": "Oudezijds Voorburgwal 88H, 1012 GG, Amsterdam"
     },
     {
       "id": 106,
@@ -1731,7 +1950,9 @@
       "pdokCoordinates": {
         "lat": 52.36062803,
         "lng": 4.8662444
-      }
+      },
+      "currentDisplayAddress": "Overtoom 342, 1054 JE, Amsterdam",
+      "cityListedAddress": "Overtoom 342, 1054 JE, Amsterdam"
     },
     {
       "id": 107,
@@ -1747,7 +1968,9 @@
       "pdokCoordinates": {
         "lat": 52.35857506,
         "lng": 4.85931028
-      }
+      },
+      "currentDisplayAddress": "Overtoom 451, 1054 KH, Amsterdam",
+      "cityListedAddress": "Overtoom 451, 1054 KH, Amsterdam"
     },
     {
       "id": 108,
@@ -1763,13 +1986,15 @@
       "pdokCoordinates": {
         "lat": 52.3934497,
         "lng": 4.91295911
-      }
+      },
+      "currentDisplayAddress": "Papaverweg 2, 1032 KH, Amsterdam",
+      "cityListedAddress": "Papaverweg 2, 1032 KH, Amsterdam"
     },
     {
       "id": 109,
       "name": "Eastwood",
       "municipalAddress": "Pieter Vlamingstraat 286, 1093 AK, Amsterdam",
-      "addressKey": "1093AK|286|",
+      "addressKey": "1093DK|286|",
       "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
       "flags": [],
@@ -1779,7 +2004,11 @@
       "pdokCoordinates": {
         "lat": 52.36514259,
         "lng": 4.92796332
-      }
+      },
+      "currentDisplayAddress": "Pieter Vlamingstraat 286, 1093 DK, Amsterdam",
+      "cityListedAddress": "Pieter Vlamingstraat 286, 1093 AK, Amsterdam",
+      "addressCorrectionSource": "https://zoek.officielebekendmakingen.nl/gmb-2025-50812.html",
+      "addressCorrectionNote": "Postcode corrected from 1093 AK to 1093 DK, based on Amsterdam's 2025 permit record for Eastwood."
     },
     {
       "id": 110,
@@ -1795,7 +2024,9 @@
       "pdokCoordinates": {
         "lat": 52.35478544,
         "lng": 4.92222346
-      }
+      },
+      "currentDisplayAddress": "Pretoriusstraat 67, 1092 GB, Amsterdam",
+      "cityListedAddress": "Pretoriusstraat 67, 1092 GB, Amsterdam"
     },
     {
       "id": 111,
@@ -1811,7 +2042,9 @@
         "lng": 4.90194741
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Prins Hendrikkade 89, 1012 AE, Amsterdam",
+      "cityListedAddress": "Prins Hendrikkade 89, 1012 AE, Amsterdam"
     },
     {
       "id": 112,
@@ -1827,7 +2060,9 @@
         "lng": 4.88502285
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Prinsengracht 476H, 1017 KG, Amsterdam",
+      "cityListedAddress": "Prinsengracht 476H, 1017 KG, Amsterdam"
     },
     {
       "id": 113,
@@ -1843,7 +2078,9 @@
         "lng": 4.88227752
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Prinsengracht 312H, 1016 HX, Amsterdam",
+      "cityListedAddress": "Prinsengracht 312H, 1016 HX, Amsterdam"
     },
     {
       "id": 114,
@@ -1859,7 +2096,9 @@
         "lng": 4.88512653
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Prinsengracht 480H, 1017 KG, Amsterdam",
+      "cityListedAddress": "Prinsengracht 480H, 1017 KG, Amsterdam"
     },
     {
       "id": 115,
@@ -1875,7 +2114,9 @@
         "lng": 4.88834156
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Raadhuisstraat 8, 1016 DE, Amsterdam",
+      "cityListedAddress": "Raadhuisstraat 8, 1016 DE, Amsterdam"
     },
     {
       "id": 116,
@@ -1891,7 +2132,9 @@
         "lng": 4.8902393
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Reguliersdwarsstraat 29, 1017 BJ, Amsterdam",
+      "cityListedAddress": "Reguliersdwarsstraat 29, 1017 BJ, Amsterdam"
     },
     {
       "id": 117,
@@ -1907,7 +2150,9 @@
         "lng": 4.89344662
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Reguliersdwarsstraat 70H, 1017 BN, Amsterdam",
+      "cityListedAddress": "Reguliersdwarsstraat 70H, 1017 BN, Amsterdam"
     },
     {
       "id": 118,
@@ -1923,7 +2168,9 @@
         "lng": 4.8892531
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Reguliersdwarsstraat 6, 1017 BM, Amsterdam",
+      "cityListedAddress": "Reguliersdwarsstraat 6, 1017 BM, Amsterdam"
     },
     {
       "id": 119,
@@ -1939,7 +2186,9 @@
         "lng": 4.89622943
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Reguliersgracht 27H, 1017 LK, Amsterdam",
+      "cityListedAddress": "Reguliersgracht 27H, 1017 LK, Amsterdam"
     },
     {
       "id": 120,
@@ -1955,7 +2204,9 @@
         "lng": 4.8949055
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Regulierssteeg 2, 1017 CP, Amsterdam",
+      "cityListedAddress": "Regulierssteeg 2, 1017 CP, Amsterdam"
     },
     {
       "id": 121,
@@ -1971,7 +2222,9 @@
         "lng": 4.89640119
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Rembrandtplein 24, 1017 CV, Amsterdam",
+      "cityListedAddress": "Rembrandtplein 24, 1017 CV, Amsterdam"
     },
     {
       "id": 122,
@@ -1987,7 +2240,9 @@
         "lng": 4.91047559
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Roetersstraat 12H, 1018 WD, Amsterdam",
+      "cityListedAddress": "Roetersstraat 12H, 1018 WD, Amsterdam"
     },
     {
       "id": 123,
@@ -2003,7 +2258,9 @@
         "lng": 4.88941892
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Rosmarijnsteeg 9, 1012 RP, Amsterdam",
+      "cityListedAddress": "Rosmarijnsteeg 9, 1012 RP, Amsterdam"
     },
     {
       "id": 124,
@@ -2019,13 +2276,15 @@
         "lng": 4.8786137
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Rozengracht 139, 1016 LV, Amsterdam",
+      "cityListedAddress": "Rozengracht 139, 1016 LV, Amsterdam"
     },
     {
       "id": 125,
       "name": "African Black Star",
       "municipalAddress": "Rozengracht 1H, 1016 LP, Amsterdam",
-      "addressKey": "1016LP|1|H",
+      "addressKey": "1016LP|1|A",
       "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
       "flags": [],
@@ -2035,7 +2294,11 @@
       "pdokCoordinates": {
         "lat": 52.37370397,
         "lng": 4.88256717
-      }
+      },
+      "currentDisplayAddress": "Rozengracht 1A, 1016 LP, Amsterdam",
+      "cityListedAddress": "Rozengracht 1H, 1016 LP, Amsterdam",
+      "addressCorrectionSource": "https://companyinfo.nl/organisatieprofiel/gespecialiseerde-detailhandel-in-overige-voedings-en-genotmiddelen-rest/the-african-blackstar-coffeeshop-amsterdam-82204187-000001301853",
+      "addressCorrectionNote": "2026 company-registration information identifies African Blackstar Coffeeshop at Rozengracht 1-A; the city tolerance-list entry is 1H."
     },
     {
       "id": 126,
@@ -2053,7 +2316,9 @@
         "lng": 4.89633074
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Rusland 16, 1012 CL, Amsterdam",
+      "cityListedAddress": "Rusland 16, 1012 CL, Amsterdam"
     },
     {
       "id": 127,
@@ -2069,7 +2334,9 @@
       "pdokCoordinates": {
         "lat": 52.35369896,
         "lng": 4.88719811
-      }
+      },
+      "currentDisplayAddress": "Ruysdaelkade 145, 1072 AR, Amsterdam",
+      "cityListedAddress": "Ruysdaelkade 145, 1072 AR, Amsterdam"
     },
     {
       "id": 128,
@@ -2087,7 +2354,9 @@
         "lng": 4.90907708
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Sarphatistraat 87G, 1018 EZ, Amsterdam",
+      "cityListedAddress": "Sarphatistraat 87G, 1018 EZ, Amsterdam"
     },
     {
       "id": 129,
@@ -2105,7 +2374,9 @@
         "lng": 4.88826197
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Singel 387H, 1012 WN, Amsterdam",
+      "cityListedAddress": "Singel 387H, 1012 WN, Amsterdam"
     },
     {
       "id": 130,
@@ -2121,7 +2392,9 @@
         "lng": 4.89384401
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Singel 12H, 1013 GA, Amsterdam",
+      "cityListedAddress": "Singel 12H, 1013 GA, Amsterdam"
     },
     {
       "id": 131,
@@ -2137,7 +2410,9 @@
         "lng": 4.89380036
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Singel 14H, 1013 GA, Amsterdam",
+      "cityListedAddress": "Singel 14H, 1013 GA, Amsterdam"
     },
     {
       "id": 132,
@@ -2153,7 +2428,9 @@
         "lng": 4.90089037
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Sint Antoniësbreestraat 71, 1011 HB, Amsterdam",
+      "cityListedAddress": "Sint Antoniësbreestraat 71, 1011 HB, Amsterdam"
     },
     {
       "id": 133,
@@ -2169,7 +2446,9 @@
         "lng": 4.9010099
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Sint Antoniësbreestraat 77, 1011 HB, Amsterdam",
+      "cityListedAddress": "Sint Antoniësbreestraat 77, 1011 HB, Amsterdam"
     },
     {
       "id": 134,
@@ -2187,7 +2466,9 @@
         "lng": 4.87771898
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Spaarndammerdijk 9, 1013 ZM, Amsterdam",
+      "cityListedAddress": "Spaarndammerdijk 9, 1013 ZM, Amsterdam"
     },
     {
       "id": 135,
@@ -2203,7 +2484,9 @@
         "lng": 4.89028124
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Spuistraat 118, 1012 VA, Amsterdam",
+      "cityListedAddress": "Spuistraat 118, 1012 VA, Amsterdam"
     },
     {
       "id": 136,
@@ -2221,7 +2504,9 @@
         "lng": 4.89154783
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Spuistraat 80H, 1012 TX, Amsterdam",
+      "cityListedAddress": "Spuistraat 80H, 1012 TX, Amsterdam"
     },
     {
       "id": 137,
@@ -2237,7 +2522,9 @@
         "lng": 4.88893573
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Spuistraat 260H, 1012 VW, Amsterdam",
+      "cityListedAddress": "Spuistraat 260H, 1012 VW, Amsterdam"
     },
     {
       "id": 138,
@@ -2253,7 +2540,9 @@
         "lng": 4.88915629
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Spuistraat 222H, 1012 VT, Amsterdam",
+      "cityListedAddress": "Spuistraat 222H, 1012 VT, Amsterdam"
     },
     {
       "id": 139,
@@ -2269,7 +2558,9 @@
         "lng": 4.86441999
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Stadionkade 107, 1076 BN, Amsterdam",
+      "cityListedAddress": "Stadionkade 107, 1076 BN, Amsterdam"
     },
     {
       "id": 140,
@@ -2285,7 +2576,9 @@
       "pdokCoordinates": {
         "lat": 52.35791315,
         "lng": 4.85400414
-      }
+      },
+      "currentDisplayAddress": "Surinamestraat 7, 1058 GJ, Amsterdam",
+      "cityListedAddress": "Surinamestraat 7, 1058 GJ, Amsterdam"
     },
     {
       "id": 141,
@@ -2301,7 +2594,9 @@
         "lng": 4.89555564
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Thorbeckeplein 28, 1017 CS, Amsterdam",
+      "cityListedAddress": "Thorbeckeplein 28, 1017 CS, Amsterdam"
     },
     {
       "id": 142,
@@ -2317,7 +2612,9 @@
       "pdokCoordinates": {
         "lat": 52.35234648,
         "lng": 4.90346157
-      }
+      },
+      "currentDisplayAddress": "Tolstraat 91, 1074 VG, Amsterdam",
+      "cityListedAddress": "Tolstraat 91, 1074 VG, Amsterdam"
     },
     {
       "id": 143,
@@ -2335,13 +2632,15 @@
         "lng": 4.89849723
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Tt Vasumweg 4C, 1033 SC, Amsterdam",
+      "cityListedAddress": "Tt Vasumweg 4C, 1033 SC, Amsterdam"
     },
     {
       "id": 144,
       "name": "Carmona",
       "municipalAddress": "Tweede Jan Van Der Heijdenstraat 43, 1072 TJ, Amsterdam",
-      "addressKey": "1072TJ|43|",
+      "addressKey": "1074XN|43|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
@@ -2351,7 +2650,11 @@
       "pdokCoordinates": {
         "lat": 52.355698,
         "lng": 4.90104707
-      }
+      },
+      "currentDisplayAddress": "Tweede Jan Van Der Heijdenstraat 43, 1074 XN, Amsterdam",
+      "cityListedAddress": "Tweede Jan Van Der Heijdenstraat 43, 1072 TJ, Amsterdam",
+      "addressCorrectionSource": "https://www.coffeeshopcarmona.nl/faq",
+      "addressCorrectionNote": "Postcode corrected from 1072 TJ to 1074 XN, confirmed by Carmona's venue website and 2026 KVK registration."
     },
     {
       "id": 145,
@@ -2367,7 +2670,9 @@
       "pdokCoordinates": {
         "lat": 52.35633565,
         "lng": 4.9031245
-      }
+      },
+      "currentDisplayAddress": "Tweede Jan Van Der Heijdenstraat 79, 1074 XS, Amsterdam",
+      "cityListedAddress": "Tweede Jan Van Der Heijdenstraat 79, 1074 XS, Amsterdam"
     },
     {
       "id": 146,
@@ -2383,7 +2688,9 @@
         "lng": 4.87898384
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Tweede Laurierdwarsstraat 44H, 1016 RB, Amsterdam",
+      "cityListedAddress": "Tweede Laurierdwarsstraat 44H, 1016 RB, Amsterdam"
     },
     {
       "id": 147,
@@ -2399,7 +2706,9 @@
         "lng": 4.87865265
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Tweede Nassaustraat 1, 1052 BJ, Amsterdam",
+      "cityListedAddress": "Tweede Nassaustraat 1, 1052 BJ, Amsterdam"
     },
     {
       "id": 148,
@@ -2415,7 +2724,9 @@
         "lng": 4.89802507
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Utrechtsestraat 21, 1017 VH, Amsterdam",
+      "cityListedAddress": "Utrechtsestraat 21, 1017 VH, Amsterdam"
     },
     {
       "id": 149,
@@ -2431,7 +2742,9 @@
         "lng": 4.89753364
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Utrechtsestraat 14H, 1017 VN, Amsterdam",
+      "cityListedAddress": "Utrechtsestraat 14H, 1017 VN, Amsterdam"
     },
     {
       "id": 150,
@@ -2447,7 +2760,9 @@
       "pdokCoordinates": {
         "lat": 52.38236315,
         "lng": 4.87305384
-      }
+      },
+      "currentDisplayAddress": "Van Boetzelaerstraat 31, 1051 CT, Amsterdam",
+      "cityListedAddress": "Van Boetzelaerstraat 31, 1051 CT, Amsterdam"
     },
     {
       "id": 151,
@@ -2463,7 +2778,9 @@
       "pdokCoordinates": {
         "lat": 52.3515905,
         "lng": 4.89450188
-      }
+      },
+      "currentDisplayAddress": "Van Der Helstplein 8, 1072 PH, Amsterdam",
+      "cityListedAddress": "Van Der Helstplein 8, 1072 PH, Amsterdam"
     },
     {
       "id": 152,
@@ -2479,7 +2796,9 @@
       "pdokCoordinates": {
         "lat": 52.38255282,
         "lng": 4.87120099
-      }
+      },
+      "currentDisplayAddress": "Van Hogendorpstraat 201, 1051 CA, Amsterdam",
+      "cityListedAddress": "Van Hogendorpstraat 201, 1051 CA, Amsterdam"
     },
     {
       "id": 153,
@@ -2495,7 +2814,9 @@
       "pdokCoordinates": {
         "lat": 52.3533377,
         "lng": 4.89970787
-      }
+      },
+      "currentDisplayAddress": "Van Ostadestraat 290, 1073 TW, Amsterdam",
+      "cityListedAddress": "Van Ostadestraat 290, 1073 TW, Amsterdam"
     },
     {
       "id": 154,
@@ -2511,7 +2832,9 @@
       "pdokCoordinates": {
         "lat": 52.35460389,
         "lng": 4.90163151
-      }
+      },
+      "currentDisplayAddress": "Van Woustraat 87, 1074 AE, Amsterdam",
+      "cityListedAddress": "Van Woustraat 87, 1074 AE, Amsterdam"
     },
     {
       "id": 155,
@@ -2527,7 +2850,9 @@
       "pdokCoordinates": {
         "lat": 52.35122378,
         "lng": 4.90364993
-      }
+      },
+      "currentDisplayAddress": "Van Woustraat 193, 1074 AN, Amsterdam",
+      "cityListedAddress": "Van Woustraat 193, 1074 AN, Amsterdam"
     },
     {
       "id": 156,
@@ -2543,7 +2868,9 @@
       "pdokCoordinates": {
         "lat": 52.35291969,
         "lng": 4.90297095
-      }
+      },
+      "currentDisplayAddress": "Van Woustraat 147, 1074 AJ, Amsterdam",
+      "cityListedAddress": "Van Woustraat 147, 1074 AJ, Amsterdam"
     },
     {
       "id": 157,
@@ -2559,7 +2886,9 @@
       "pdokCoordinates": {
         "lat": 52.34841882,
         "lng": 4.9056618
-      }
+      },
+      "currentDisplayAddress": "Vechtstraat 9, 1078 RE, Amsterdam",
+      "cityListedAddress": "Vechtstraat 9, 1078 RE, Amsterdam"
     },
     {
       "id": 158,
@@ -2575,7 +2904,9 @@
       "pdokCoordinates": {
         "lat": 52.34599563,
         "lng": 4.9065246
-      }
+      },
+      "currentDisplayAddress": "Vechtstraat 63, 1079 JA, Amsterdam",
+      "cityListedAddress": "Vechtstraat 63, 1079 JA, Amsterdam"
     },
     {
       "id": 159,
@@ -2591,7 +2922,9 @@
         "lng": 4.95632959
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Waterlandplein 7, 1024 LL, Amsterdam",
+      "cityListedAddress": "Waterlandplein 7, 1024 LL, Amsterdam"
     },
     {
       "id": 160,
@@ -2607,13 +2940,15 @@
         "lng": 4.90224848
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Waterlooplein 345, 1011 PG, Amsterdam",
+      "cityListedAddress": "Waterlooplein 345, 1011 PG, Amsterdam"
     },
     {
       "id": 161,
       "name": "The Spirit",
       "municipalAddress": "Westerstraat 121H, 1015 LZ, Amsterdam",
-      "addressKey": "1015LZ|121|H",
+      "addressKey": "1015LZ|121|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
@@ -2623,7 +2958,11 @@
       "pdokCoordinates": {
         "lat": 52.37818594,
         "lng": 4.88296156
-      }
+      },
+      "currentDisplayAddress": "Westerstraat 121, 1015 LZ, Amsterdam",
+      "cityListedAddress": "Westerstraat 121H, 1015 LZ, Amsterdam",
+      "addressCorrectionSource": "https://www.zazamap.com/en/netherlands/amsterdam/club/coffeeshop-the-spirit",
+      "addressCorrectionNote": "Current venue listings identify The Spirit at Westerstraat 121 without a unit suffix. City tolerance-list record uses 121H; use only building-level coordinates unless the doorway is independently checked."
     },
     {
       "id": 162,
@@ -2639,7 +2978,9 @@
       "pdokCoordinates": {
         "lat": 52.36899177,
         "lng": 4.8592891
-      }
+      },
+      "currentDisplayAddress": "Witte De Withstraat 106, 1057 ZG, Amsterdam",
+      "cityListedAddress": "Witte De Withstraat 106, 1057 ZG, Amsterdam"
     },
     {
       "id": 163,
@@ -2655,7 +2996,9 @@
       "pdokCoordinates": {
         "lat": 52.365901,
         "lng": 4.85951675
-      }
+      },
+      "currentDisplayAddress": "Witte De Withstraat 30, 1057 XZ, Amsterdam",
+      "cityListedAddress": "Witte De Withstraat 30, 1057 XZ, Amsterdam"
     },
     {
       "id": 164,
@@ -2671,7 +3014,9 @@
         "lng": 4.84745441
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Woestduinstraat 76, 1058 TJ, Amsterdam",
+      "cityListedAddress": "Woestduinstraat 76, 1058 TJ, Amsterdam"
     },
     {
       "id": 165,
@@ -2687,7 +3032,9 @@
       "pdokCoordinates": {
         "lat": 52.36613059,
         "lng": 4.92982742
-      }
+      },
+      "currentDisplayAddress": "Zeeburgerdijk 33, 1093 SL, Amsterdam",
+      "cityListedAddress": "Zeeburgerdijk 33, 1093 SL, Amsterdam"
     },
     {
       "id": 166,
@@ -2703,7 +3050,9 @@
       "pdokCoordinates": {
         "lat": 52.36167603,
         "lng": 4.88624205
-      }
+      },
+      "currentDisplayAddress": "Zieseniskade 22, 1017 RT, Amsterdam",
+      "cityListedAddress": "Zieseniskade 22, 1017 RT, Amsterdam"
     },
     {
       "id": 167,
@@ -2719,7 +3068,9 @@
         "lng": 4.89360431
       },
       "buildingLevelGeocoded": false,
-      "coordinatePrecision": "exact_bag_unit"
+      "coordinatePrecision": "exact_bag_unit",
+      "currentDisplayAddress": "Zoutsteeg 14, 1012 LX, Amsterdam",
+      "cityListedAddress": "Zoutsteeg 14, 1012 LX, Amsterdam"
     }
   ]
 }
