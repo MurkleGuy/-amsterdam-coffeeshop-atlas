@@ -7,19 +7,19 @@
     "total": 167,
     "structuralAddressKeysValidated": 167,
     "duplicateAddressKeys": 0,
-    "livePdokCoordinatesVerified": 107,
+    "livePdokCoordinatesVerified": 108,
     "physicalEntrancesVerified": 0,
     "letterInNumber": 2,
     "operatorEntranceMismatch": 2,
     "identityUnconfirmed": 1,
-    "livePdokCoordinateUnresolved": 6,
-    "lastLiveCheckAt": "2026-10-22T22:48:53.737Z",
+    "livePdokCoordinateUnresolved": 4,
+    "lastLiveCheckAt": "2026-10-22T22:49:52.042Z",
     "failureReasons": {
-      "no_exact_pdok_bag_match": 6
+      "no_exact_pdok_bag_match": 4
     },
-    "buildingLevelCoordinates": 54
+    "buildingLevelCoordinates": 55
   },
-  "note": "PDOK/BAG civic addresses checked on 2026-10-22T22:48:53.737Z. Exact unit matches and tightly clustered building-level approximations are counted separately. None of these are verified coffeeshop door locations. Unresolved addresses remain unpinned.",
+  "note": "PDOK/BAG civic addresses checked on 2026-10-22T22:49:52.042Z. Exact unit matches and tightly clustered building-level approximations are counted separately. None of these are verified coffeeshop door locations. Unresolved addresses remain unpinned.",
   "records": [
     {
       "id": 1,
@@ -1125,45 +1125,13 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": "A",
-          "addition": null,
-          "street": "Kloveniersburgwal",
-          "city": "Amsterdam",
-          "point": "POINT(4.89929617 52.37209339)"
-        },
-        {
-          "letter": "B",
-          "addition": null,
-          "street": "Kloveniersburgwal",
-          "city": "Amsterdam",
-          "point": "POINT(4.89928139 52.37210231)"
-        },
-        {
-          "letter": "C",
-          "addition": null,
-          "street": "Kloveniersburgwal",
-          "city": "Amsterdam",
-          "point": "POINT(4.89926671 52.37210225)"
-        },
-        {
-          "letter": "D",
-          "addition": null,
-          "street": "Kloveniersburgwal",
-          "city": "Amsterdam",
-          "point": "POINT(4.89925202 52.37210219)"
-        },
-        {
-          "letter": "E",
-          "addition": null,
-          "street": "Kloveniersburgwal",
-          "city": "Amsterdam",
-          "point": "POINT(4.89925192 52.37211118)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": true,
+      "coordinatePrecision": "building_only",
+      "pdokBagId": "0363200001993444",
+      "pdokCoordinates": {
+        "lat": 52.37209339,
+        "lng": 4.89929617
+      }
     },
     {
       "id": 69,
@@ -1578,41 +1546,16 @@
       "name": "Jolly Joker",
       "municipalAddress": "Nieuwmarkt 4A, 1012 CR, Amsterdam",
       "addressKey": "1012CR|4|A",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match",
-      "pdokCandidateSamples": [
-        {
-          "letter": "A",
-          "addition": "1",
-          "street": "Nieuwmarkt",
-          "city": "Amsterdam",
-          "point": "POINT(4.90007843 52.37306728)"
-        },
-        {
-          "letter": "A",
-          "addition": "2",
-          "street": "Nieuwmarkt",
-          "city": "Amsterdam",
-          "point": "POINT(4.90007843 52.37306728)"
-        },
-        {
-          "letter": "A",
-          "addition": "3",
-          "street": "Nieuwmarkt",
-          "city": "Amsterdam",
-          "point": "POINT(4.90007843 52.37306728)"
-        },
-        {
-          "letter": null,
-          "addition": null,
-          "street": "Nieuwmarkt",
-          "city": "Amsterdam",
-          "point": "POINT(4.90021453 52.37270833)"
-        }
-      ],
-      "buildingLevelGeocoded": false
+      "buildingLevelGeocoded": false,
+      "coordinatePrecision": "exact_bag_unit",
+      "pdokBagId": "0363200000213171",
+      "pdokCoordinates": {
+        "lat": 52.37306728,
+        "lng": 4.90007843
+      }
     },
     {
       "id": 94,
