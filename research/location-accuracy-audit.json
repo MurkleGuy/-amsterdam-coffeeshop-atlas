@@ -7,22 +7,32 @@
     "total": 167,
     "structuralAddressKeysValidated": 167,
     "duplicateAddressKeys": 0,
-    "livePdokCoordinatesVerified": 0,
+    "livePdokCoordinatesVerified": 105,
     "physicalEntrancesVerified": 0,
     "letterInNumber": 2,
     "operatorEntranceMismatch": 2,
-    "identityUnconfirmed": 1
+    "identityUnconfirmed": 1,
+    "livePdokCoordinateUnresolved": 62,
+    "lastLiveCheckAt": "2026-10-22T22:33:04.202Z",
+    "failureReasons": {
+      "no_exact_pdok_bag_match": 62
+    }
   },
-  "note": "Offline audit checks 167 address formats and duplicate municipality addresses. This does NOT verify any live PDOK coordinates or physically locate shop entrances; every location requires a successful exact BAG address lookup and any entrance exception needs review. Address centroids are not confirmed shop door coordinates.",
+  "note": "Exact PDOK/BAG civic address coordinates checked on 2026-10-22T22:33:04.202Z. A valid address is NOT proof of a current operating coffeeshop or its door location. Unresolved matches remain unpinned.",
   "records": [
     {
       "id": 1,
       "name": "DNA",
       "municipalAddress": "Achillesstraat 104, 1076 RH, Amsterdam",
       "addressKey": "1076RH|104|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000021265",
+      "pdokCoordinates": {
+        "lat": 52.34506105,
+        "lng": 4.8641671
+      }
     },
     {
       "id": 2,
@@ -31,25 +41,36 @@
       "addressKey": "1056GP|104|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 3,
       "name": "The Old Church",
       "municipalAddress": "Amstel 8H, 1017 AA, Amsterdam",
       "addressKey": "1017AA|8|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000029293",
+      "pdokCoordinates": {
+        "lat": 52.36695814,
+        "lng": 4.89416971
+      }
     },
     {
       "id": 4,
       "name": "Family First",
       "municipalAddress": "Amstel 36H, 1017 AB, Amsterdam",
       "addressKey": "1017AB|36|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000029330",
+      "pdokCoordinates": {
+        "lat": 52.36689131,
+        "lng": 4.8953891
+      }
     },
     {
       "id": 5,
@@ -58,16 +79,22 @@
       "addressKey": "1079LE|139|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 6,
       "name": "New Times 2",
       "municipalAddress": "Amstelstraat 35, 1017 DA, Amsterdam",
       "addressKey": "1017DA|35|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000030880",
+      "pdokCoordinates": {
+        "lat": 52.36626075,
+        "lng": 4.89938968
+      }
     },
     {
       "id": 7,
@@ -76,25 +103,36 @@
       "addressKey": "1075VV|61|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 8,
       "name": "The Border",
       "municipalAddress": "Amstelveenseweg 1160, 1081 JW, Amsterdam",
       "addressKey": "1081JW|1160|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200012156590",
+      "pdokCoordinates": {
+        "lat": 52.32200106,
+        "lng": 4.85711578
+      }
     },
     {
       "id": 9,
       "name": "Boerejongens West",
       "municipalAddress": "Baarsjesweg 239, 1058 AA, Amsterdam",
       "addressKey": "1058AA|239|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000036809",
+      "pdokCoordinates": {
+        "lat": 52.3623061,
+        "lng": 4.85754821
+      }
     },
     {
       "id": 10,
@@ -103,7 +141,8 @@
       "addressKey": "1057VT|19|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 11,
@@ -112,16 +151,22 @@
       "addressKey": "1071VC|10|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 12,
       "name": "The Plug Westerdok",
       "municipalAddress": "Barentszstraat 130, 1013 NS, Amsterdam",
       "addressKey": "1013NS|130|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000040074",
+      "pdokCoordinates": {
+        "lat": 52.38914816,
+        "lng": 4.88759162
+      }
     },
     {
       "id": 13,
@@ -130,25 +175,36 @@
       "addressKey": "1012JV|27|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 14,
       "name": "Relax Centrum",
       "municipalAddress": "Binnen Oranjestraat 9H, 1013 HZ, Amsterdam",
       "addressKey": "1013HZ|9|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000049142",
+      "pdokCoordinates": {
+        "lat": 52.38218998,
+        "lng": 4.88718532
+      }
     },
     {
       "id": 15,
       "name": "Boerejongens BIJ",
       "municipalAddress": "Bonairestraat 78, 1058 XL, Amsterdam",
       "addressKey": "1058XL|78|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000053278",
+      "pdokCoordinates": {
+        "lat": 52.36206289,
+        "lng": 4.85542237
+      }
     },
     {
       "id": 16,
@@ -157,61 +213,92 @@
       "addressKey": "1055DS|163|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 17,
       "name": "7th Heaven",
       "municipalAddress": "Brouwersgracht 137H, 1015 GE, Amsterdam",
       "addressKey": "1015GE|137|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000059362",
+      "pdokCoordinates": {
+        "lat": 52.3814043,
+        "lng": 4.88629825
+      }
     },
     {
       "id": 18,
       "name": "Siberië",
       "municipalAddress": "Brouwersgracht 11H, 1015 GA, Amsterdam",
       "addressKey": "1015GA|11|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000059087",
+      "pdokCoordinates": {
+        "lat": 52.37890677,
+        "lng": 4.89296477
+      }
     },
     {
       "id": 19,
       "name": "Atlas",
       "municipalAddress": "Buikslotermeerplein 389, 1025 XE, Amsterdam",
       "addressKey": "1025XE|389|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000449848",
+      "pdokCoordinates": {
+        "lat": 52.39807211,
+        "lng": 4.94144312
+      }
     },
     {
       "id": 20,
       "name": "Massawa",
       "municipalAddress": "Chassestraat 4, 1057 JD, Amsterdam",
       "addressKey": "1057JD|4|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000066529",
+      "pdokCoordinates": {
+        "lat": 52.36744899,
+        "lng": 4.86200909
+      }
     },
     {
       "id": 21,
       "name": "The Bulldog The Port",
       "municipalAddress": "Coenhavenweg 26, 1013 BL, Amsterdam",
       "addressKey": "1013BL|26|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000068903",
+      "pdokCoordinates": {
+        "lat": 52.4053062,
+        "lng": 4.85819524
+      }
     },
     {
       "id": 22,
       "name": "Nogal Wiedes",
       "municipalAddress": "Czaar Peterstraat 122H, 1018 PV, Amsterdam",
       "addressKey": "1018PV|122|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000075082",
+      "pdokCoordinates": {
+        "lat": 52.37022039,
+        "lng": 4.92993209
+      }
     },
     {
       "id": 23,
@@ -220,16 +307,22 @@
       "addressKey": "1072XK|78|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 24,
       "name": "Happy People",
       "municipalAddress": "Dapperstraat 2, 1093 BT, Amsterdam",
       "addressKey": "1093BT|2|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000077737",
+      "pdokCoordinates": {
+        "lat": 52.3651803,
+        "lng": 4.92581437
+      }
     },
     {
       "id": 25,
@@ -238,7 +331,8 @@
       "addressKey": "1052NE|30|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 26,
@@ -247,16 +341,22 @@
       "addressKey": "1091JV|73|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 27,
       "name": "Paradox",
       "municipalAddress": "Eerste Bloemdwarsstraat 2H, 1016 KS, Amsterdam",
       "addressKey": "1016KS|2|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000006717",
+      "pdokCoordinates": {
+        "lat": 52.37450719,
+        "lng": 4.88123638
+      }
     },
     {
       "id": 28,
@@ -265,7 +365,8 @@
       "addressKey": "1091GV|47|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 29,
@@ -274,7 +375,8 @@
       "addressKey": "1072NZ|70|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 30,
@@ -283,7 +385,8 @@
       "addressKey": "1016TM|3|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 31,
@@ -292,7 +395,8 @@
       "addressKey": "1052HL|69|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 32,
@@ -301,25 +405,36 @@
       "addressKey": "1052HP|123|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 33,
       "name": "Het Gelderse",
       "municipalAddress": "Geldersekade 54H, 1012 BK, Amsterdam",
       "addressKey": "1012BK|54|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000455137",
+      "pdokCoordinates": {
+        "lat": 52.37496861,
+        "lng": 4.90127641
+      }
     },
     {
       "id": 34,
       "name": "Voyagers",
       "municipalAddress": "Geldersekade 2H, 1012 BH, Amsterdam",
       "addressKey": "1012BH|2|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000387308",
+      "pdokCoordinates": {
+        "lat": 52.37633775,
+        "lng": 4.90201038
+      }
     },
     {
       "id": 35,
@@ -328,16 +443,22 @@
       "addressKey": "1073XA|188|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 36,
       "name": "Club Media",
       "municipalAddress": "Gerard Doustraat 85, 1072 VN, Amsterdam",
       "addressKey": "1072VN|85|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000529801",
+      "pdokCoordinates": {
+        "lat": 52.35582186,
+        "lng": 4.89190078
+      }
     },
     {
       "id": 37,
@@ -346,7 +467,8 @@
       "addressKey": "1052VE|135|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 38,
@@ -355,97 +477,148 @@
       "addressKey": "1074CB|323|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 39,
       "name": "Barraka",
       "municipalAddress": "Gravenstraat 9, 1012 NL, Amsterdam",
       "addressKey": "1012NL|9|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000112539",
+      "pdokCoordinates": {
+        "lat": 52.37423173,
+        "lng": 4.89262037
+      }
     },
     {
       "id": 40,
       "name": "Barney's",
       "municipalAddress": "Haarlemmerstraat 102H, 1013 EW, Amsterdam",
       "addressKey": "1013EW|102|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000119273",
+      "pdokCoordinates": {
+        "lat": 52.38069563,
+        "lng": 4.89088863
+      }
     },
     {
       "id": 41,
       "name": "Coffeeshop Amsterdam",
       "municipalAddress": "Haarlemmerstraat 44, 1013 ES, Amsterdam",
       "addressKey": "1013ES|44|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000119137",
+      "pdokCoordinates": {
+        "lat": 52.38006601,
+        "lng": 4.89292247
+      }
     },
     {
       "id": 42,
       "name": "Green House United",
       "municipalAddress": "Haarlemmerstraat 64H, 1013 ET, Amsterdam",
       "addressKey": "1013ET|64|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000119180",
+      "pdokCoordinates": {
+        "lat": 52.38030541,
+        "lng": 4.89214139
+      }
     },
     {
       "id": 43,
       "name": "Green Place 2",
       "municipalAddress": "Haarlemmerstraat 6, 1013 ER, Amsterdam",
       "addressKey": "1013ER|6|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000119070",
+      "pdokCoordinates": {
+        "lat": 52.37942339,
+        "lng": 4.89400176
+      }
     },
     {
       "id": 44,
       "name": "Popeye",
       "municipalAddress": "Haarlemmerstraat 63H, 1013 EK, Amsterdam",
       "addressKey": "1013EK|63|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000119176",
+      "pdokCoordinates": {
+        "lat": 52.37993071,
+        "lng": 4.89280649
+      }
     },
     {
       "id": 45,
       "name": "The Balboa Family",
       "municipalAddress": "Halvemaansteeg 1, 1017 CR, Amsterdam",
       "addressKey": "1017CR|1|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000120403",
+      "pdokCoordinates": {
+        "lat": 52.36682148,
+        "lng": 4.89588908
+      }
     },
     {
       "id": 46,
       "name": "Balou",
       "municipalAddress": "Halvemaansteeg 5, 1017 CR, Amsterdam",
       "addressKey": "1017CR|5|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000120406",
+      "pdokCoordinates": {
+        "lat": 52.36674066,
+        "lng": 4.89590466
+      }
     },
     {
       "id": 47,
       "name": "Original Dampkring",
       "municipalAddress": "Handboogstraat 29H, 1012 XM, Amsterdam",
       "addressKey": "1012XM|29|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000120484",
+      "pdokCoordinates": {
+        "lat": 52.36775172,
+        "lng": 4.89050487
+      }
     },
     {
       "id": 48,
       "name": "Prix d'Ami",
       "municipalAddress": "Haringpakkerssteeg 3, 1012 LR, Amsterdam",
       "addressKey": "1012LR|3|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000120658",
+      "pdokCoordinates": {
+        "lat": 52.37684822,
+        "lng": 4.89720254
+      }
     },
     {
       "id": 49,
@@ -454,7 +627,8 @@
       "addressKey": "1012WC|6|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 50,
@@ -463,7 +637,8 @@
       "addressKey": "1012SN|7|I",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 51,
@@ -472,36 +647,52 @@
       "addressKey": "1074BP|16|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 52,
       "name": "Amnesia",
       "municipalAddress": "Herengracht 133H, 1015 BG, Amsterdam",
       "addressKey": "1015BG|133|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200003683150",
+      "pdokCoordinates": {
+        "lat": 52.37554707,
+        "lng": 4.8890812
+      }
     },
     {
       "id": 53,
       "name": "Best Friends Zuidoost",
       "municipalAddress": "Hettenheuvelweg 35, 1101 BM, Amsterdam",
       "addressKey": "1101BM|35|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200012145145",
+      "pdokCoordinates": {
+        "lat": 52.30547261,
+        "lng": 4.94270274
+      }
     },
     {
       "id": 54,
       "name": "Roots",
       "municipalAddress": "Hoekenrode 14B, 1102 BR, Amsterdam",
       "addressKey": "1102BR|14|B",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
       "flags": [
         "house_letter_embedded_in_number"
-      ]
+      ],
+      "pdokBagId": "0363200012117968",
+      "pdokCoordinates": {
+        "lat": 52.31147266,
+        "lng": 4.94842184
+      }
     },
     {
       "id": 55,
@@ -510,7 +701,8 @@
       "addressKey": "1057DC|174|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 56,
@@ -521,36 +713,52 @@
       "storefrontEntranceVerified": false,
       "flags": [
         "trading_name_or_address_history_needs_manual_check"
-      ]
+      ],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 57,
       "name": "Aktama 2",
       "municipalAddress": "Hudsonstraat 156, 1057 ST, Amsterdam",
       "addressKey": "1057ST|156|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
       "flags": [
         "trading_name_or_address_history_needs_manual_check"
-      ]
+      ],
+      "pdokBagId": "0363200000136631",
+      "pdokCoordinates": {
+        "lat": 52.36965321,
+        "lng": 4.8524681
+      }
     },
     {
       "id": 58,
       "name": "Flash Back",
       "municipalAddress": "Hudsonstraat 138, 1057 SR, Amsterdam",
       "addressKey": "1057SR|138|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000132424",
+      "pdokCoordinates": {
+        "lat": 52.36876586,
+        "lng": 4.85300739
+      }
     },
     {
       "id": 59,
       "name": "Coffeeshop Sloterdijk",
       "municipalAddress": "Humberweg 2, 1043 AC, Amsterdam",
       "addressKey": "1043AC|2|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000040803",
+      "pdokCoordinates": {
+        "lat": 52.39133488,
+        "lng": 4.82978862
+      }
     },
     {
       "id": 60,
@@ -559,7 +767,8 @@
       "addressKey": "1053SN|109|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 61,
@@ -568,7 +777,8 @@
       "addressKey": "1053GS|82|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 62,
@@ -577,7 +787,8 @@
       "addressKey": "1053GT|96|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 63,
@@ -586,7 +797,8 @@
       "addressKey": "1056CA|285|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 64,
@@ -595,34 +807,50 @@
       "addressKey": "1094HN|104|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 65,
       "name": "Abraxas",
       "municipalAddress": "Jonge Roelensteeg 12H, 1012 PL, Amsterdam",
       "addressKey": "1012PL|12|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000156814",
+      "pdokCoordinates": {
+        "lat": 52.37205977,
+        "lng": 4.89120553
+      }
     },
     {
       "id": 66,
       "name": "Happy Feelings",
       "municipalAddress": "Kerkstraat 51H, 1017 GC, Amsterdam",
       "addressKey": "1017GC|51|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000163733",
+      "pdokCoordinates": {
+        "lat": 52.36525154,
+        "lng": 4.88586399
+      }
     },
     {
       "id": 67,
       "name": "The Dolphins",
       "municipalAddress": "Kerkstraat 39, 1017 GB, Amsterdam",
       "addressKey": "1017GB|39|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000441172",
+      "pdokCoordinates": {
+        "lat": 52.36561747,
+        "lng": 4.88525789
+      }
     },
     {
       "id": 68,
@@ -631,72 +859,108 @@
       "addressKey": "1012CT|4|H",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 69,
       "name": "Bagheera",
       "municipalAddress": "Kloveniersburgwal 60H, 1012 CX, Amsterdam",
       "addressKey": "1012CX|60|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000169307",
+      "pdokCoordinates": {
+        "lat": 52.37004521,
+        "lng": 4.89736578
+      }
     },
     {
       "id": 70,
       "name": "Basjoe",
       "municipalAddress": "Kloveniersburgwal 62H, 1012 CX, Amsterdam",
       "addressKey": "1012CX|62|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200001956363",
+      "pdokCoordinates": {
+        "lat": 52.3700092,
+        "lng": 4.8973515
+      }
     },
     {
       "id": 71,
       "name": "Goa",
       "municipalAddress": "Kloveniersburgwal 42A, 1012 CW, Amsterdam",
       "addressKey": "1012CW|42|A",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000470319",
+      "pdokCoordinates": {
+        "lat": 52.37124537,
+        "lng": 4.89852725
+      }
     },
     {
       "id": 72,
       "name": "Yin Yang",
       "municipalAddress": "Knollendamstraat 5, 1013 TL, Amsterdam",
       "addressKey": "1013TL|5|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000524508",
+      "pdokCoordinates": {
+        "lat": 52.39051863,
+        "lng": 4.87805682
+      }
     },
     {
       "id": 73,
       "name": "Solo",
       "municipalAddress": "Korte Koningsstraat 2, 1011 GA, Amsterdam",
       "addressKey": "1011GA|2|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000174826",
+      "pdokCoordinates": {
+        "lat": 52.37186454,
+        "lng": 4.90266136
+      }
     },
     {
       "id": 74,
       "name": "Get Down To It",
       "municipalAddress": "Korte Leidsedwarsstraat 77, 1017 PW, Amsterdam",
       "addressKey": "1017PW|77|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
       "flags": [
         "trading_name_or_address_history_needs_manual_check"
-      ]
+      ],
+      "pdokBagId": "0363200000441187",
+      "pdokCoordinates": {
+        "lat": 52.36401144,
+        "lng": 4.88379322
+      }
     },
     {
       "id": 75,
       "name": "The Rookies",
       "municipalAddress": "Korte Leidsedwarsstraat 145, 1017 PZ, Amsterdam",
       "addressKey": "1017PZ|145|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000437439",
+      "pdokCoordinates": {
+        "lat": 52.36297508,
+        "lng": 4.88525842
+      }
     },
     {
       "id": 76,
@@ -705,16 +969,22 @@
       "addressKey": "1091KZ|22|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 77,
       "name": "Kadinsky",
       "municipalAddress": "Langebrugsteeg 7A, 1012 GB, Amsterdam",
       "addressKey": "1012GB|7|A",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000178409",
+      "pdokCoordinates": {
+        "lat": 52.36935298,
+        "lng": 4.89299779
+      }
     },
     {
       "id": 78,
@@ -723,81 +993,122 @@
       "addressKey": "1017PS|17|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 79,
       "name": "De Watersnip",
       "municipalAddress": "Lodewijk Van Deysselstraat 37, 1064 HL, Amsterdam",
       "addressKey": "1064HL|37|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000187746",
+      "pdokCoordinates": {
+        "lat": 52.37707875,
+        "lng": 4.81625111
+      }
     },
     {
       "id": 80,
       "name": "Bronx",
       "municipalAddress": "Marnixstraat 92H, 1015 VZ, Amsterdam",
       "addressKey": "1015VZ|92|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200003683153",
+      "pdokCoordinates": {
+        "lat": 52.37912771,
+        "lng": 4.87933315
+      }
     },
     {
       "id": 81,
       "name": "1e Hulp",
       "municipalAddress": "Marnixstraat 194H, 1016 TJ, Amsterdam",
       "addressKey": "1016TJ|194|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000198484",
+      "pdokCoordinates": {
+        "lat": 52.37156298,
+        "lng": 4.87583685
+      }
     },
     {
       "id": 82,
       "name": "Crush",
       "municipalAddress": "Marnixstraat 383O, 1016 XR, Amsterdam",
       "addressKey": "1016XR|383|O",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000199139",
+      "pdokCoordinates": {
+        "lat": 52.36572152,
+        "lng": 4.88014732
+      }
     },
     {
       "id": 83,
       "name": "Tha Dogg House",
       "municipalAddress": "Marnixstraat 333H, 1016 TC, Amsterdam",
       "addressKey": "1016TC|333|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000199036",
+      "pdokCoordinates": {
+        "lat": 52.37269665,
+        "lng": 4.87611747
+      }
     },
     {
       "id": 84,
       "name": "'t Keteltje",
       "municipalAddress": "Marnixstraat 74H, 1015 VX, Amsterdam",
       "addressKey": "1015VX|74|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000197831",
+      "pdokCoordinates": {
+        "lat": 52.37958738,
+        "lng": 4.87963631
+      }
     },
     {
       "id": 85,
       "name": "Sensemillia West",
       "municipalAddress": "Meer En Vaart 177B, 1068 LA, Amsterdam",
       "addressKey": "1068LA|177|B",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
       "flags": [
         "trading_name_or_address_history_needs_manual_check"
-      ]
+      ],
+      "pdokBagId": "0363200000520779",
+      "pdokCoordinates": {
+        "lat": 52.36024009,
+        "lng": 4.80790912
+      }
     },
     {
       "id": 86,
       "name": "The Stud",
       "municipalAddress": "Molukkenstraat 581, 1095 BJ, Amsterdam",
       "addressKey": "1095BJ|581|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000206668",
+      "pdokCoordinates": {
+        "lat": 52.35874977,
+        "lng": 4.94110418
+      }
     },
     {
       "id": 87,
@@ -806,7 +1117,8 @@
       "addressKey": "1052CK|33|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 88,
@@ -815,16 +1127,22 @@
       "addressKey": "1095TS|1|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 89,
       "name": "Hortus De Overkant",
       "municipalAddress": "Nieuwe Herengracht 71, 1011 RR, Amsterdam",
       "addressKey": "1011RR|71|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000048478",
+      "pdokCoordinates": {
+        "lat": 52.36732341,
+        "lng": 4.90649909
+      }
     },
     {
       "id": 90,
@@ -835,25 +1153,36 @@
       "storefrontEntranceVerified": false,
       "flags": [
         "trading_name_or_address_history_needs_manual_check"
-      ]
+      ],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 91,
       "name": "The Plug Utopia",
       "municipalAddress": "Nieuwezijds Voorburgwal 132, 1012 SH, Amsterdam",
       "addressKey": "1012SH|132|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000218888",
+      "pdokCoordinates": {
+        "lat": 52.37509932,
+        "lng": 4.89161209
+      }
     },
     {
       "id": 92,
       "name": "Greenhouse Effect",
       "municipalAddress": "Nieuwmarkt 14H, 1012 CR, Amsterdam",
       "addressKey": "1012CR|14|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000213204",
+      "pdokCoordinates": {
+        "lat": 52.37282359,
+        "lng": 4.89983147
+      }
     },
     {
       "id": 93,
@@ -862,16 +1191,22 @@
       "addressKey": "1012CR|4|A",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 94,
       "name": "Rock-It",
       "municipalAddress": "Nieuwmarkt 12H, 1012 CR, Amsterdam",
       "addressKey": "1012CR|12|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000213193",
+      "pdokCoordinates": {
+        "lat": 52.3728505,
+        "lng": 4.89981649
+      }
     },
     {
       "id": 95,
@@ -880,54 +1215,80 @@
       "addressKey": "1021GZ|10|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 96,
       "name": "Hunters",
       "municipalAddress": "Orteliusstraat 193, 1056 NP, Amsterdam",
       "addressKey": "1056NP|193|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000225003",
+      "pdokCoordinates": {
+        "lat": 52.3699972,
+        "lng": 4.84904268
+      }
     },
     {
       "id": 97,
       "name": "Grey Area",
       "municipalAddress": "Oude Leliestraat 2, 1015 AW, Amsterdam",
       "addressKey": "1015AW|2|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000227084",
+      "pdokCoordinates": {
+        "lat": 52.37467432,
+        "lng": 4.88885604
+      }
     },
     {
       "id": 98,
       "name": "Tha Dogg House 2",
       "municipalAddress": "Oudebrugsteeg 26, 1012 JP, Amsterdam",
       "addressKey": "1012JP|26|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000227514",
+      "pdokCoordinates": {
+        "lat": 52.37598039,
+        "lng": 4.89599322
+      }
     },
     {
       "id": 99,
       "name": "420 Café",
       "municipalAddress": "Oudebrugsteeg 27H, 1012 JN, Amsterdam",
       "addressKey": "1012JN|27|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000227515",
+      "pdokCoordinates": {
+        "lat": 52.37590795,
+        "lng": 4.89586186
+      }
     },
     {
       "id": 100,
       "name": "Rick's Coffeeshop",
       "municipalAddress": "Oudezijds Voorburgwal 250H, 1012 GK, Amsterdam",
       "addressKey": "1012GK|250|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
       "flags": [
         "trading_name_or_address_history_needs_manual_check"
-      ]
+      ],
+      "pdokBagId": "0363200000219994",
+      "pdokCoordinates": {
+        "lat": 52.37173522,
+        "lng": 4.89527666
+      }
     },
     {
       "id": 101,
@@ -936,47 +1297,68 @@
       "addressKey": "1012EW|189|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 102,
       "name": "Feels Good",
       "municipalAddress": "Oudezijds Voorburgwal 36H, 1012 GD, Amsterdam",
       "addressKey": "1012GD|36|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000219655",
+      "pdokCoordinates": {
+        "lat": 52.37520384,
+        "lng": 4.89946755
+      }
     },
     {
       "id": 103,
       "name": "Green House Centrum",
       "municipalAddress": "Oudezijds Voorburgwal 191, 1012 EW, Amsterdam",
       "addressKey": "1012EW|191|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000219924",
+      "pdokCoordinates": {
+        "lat": 52.37146761,
+        "lng": 4.8957642
+      }
     },
     {
       "id": 104,
       "name": "The Bulldog Energy",
       "municipalAddress": "Oudezijds Voorburgwal 220, 1012 GJ, Amsterdam",
       "addressKey": "1012GJ|220|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
       "flags": [
         "listed_entrance_differs_from_municipal_address"
-      ]
+      ],
+      "pdokBagId": "0363200000389707",
+      "pdokCoordinates": {
+        "lat": 52.37251215,
+        "lng": 4.89623721
+      }
     },
     {
       "id": 105,
       "name": "The Bulldog The First",
       "municipalAddress": "Oudezijds Voorburgwal 88H, 1012 GG, Amsterdam",
       "addressKey": "1012GG|88|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
       "flags": [
         "listed_entrance_differs_from_municipal_address"
-      ]
+      ],
+      "pdokBagId": "0363200000219773",
+      "pdokCoordinates": {
+        "lat": 52.37370461,
+        "lng": 4.89770718
+      }
     },
     {
       "id": 106,
@@ -985,7 +1367,8 @@
       "addressKey": "1054JE|342|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 107,
@@ -994,7 +1377,8 @@
       "addressKey": "1054KH|451|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 108,
@@ -1003,7 +1387,8 @@
       "addressKey": "1032KH|2|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 109,
@@ -1012,7 +1397,8 @@
       "addressKey": "1093AK|286|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 110,
@@ -1021,133 +1407,204 @@
       "addressKey": "1092GB|67|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 111,
       "name": "Central",
       "municipalAddress": "Prins Hendrikkade 89, 1012 AE, Amsterdam",
       "addressKey": "1012AE|89|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000242823",
+      "pdokCoordinates": {
+        "lat": 52.37672396,
+        "lng": 4.90194741
+      }
     },
     {
       "id": 112,
       "name": "Easy Times",
       "municipalAddress": "Prinsengracht 476H, 1017 KG, Amsterdam",
       "addressKey": "1017KG|476|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000480947",
+      "pdokCoordinates": {
+        "lat": 52.36433123,
+        "lng": 4.88502285
+      }
     },
     {
       "id": 113,
       "name": "La Tertulia",
       "municipalAddress": "Prinsengracht 312H, 1016 HX, Amsterdam",
       "addressKey": "1016HX|312|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000243924",
+      "pdokCoordinates": {
+        "lat": 52.36947851,
+        "lng": 4.88227752
+      }
     },
     {
       "id": 114,
       "name": "Super Skunk",
       "municipalAddress": "Prinsengracht 480H, 1017 KG, Amsterdam",
       "addressKey": "1017KG|480|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000244274",
+      "pdokCoordinates": {
+        "lat": 52.36425078,
+        "lng": 4.88512653
+      }
     },
     {
       "id": 115,
       "name": "Rock-Land",
       "municipalAddress": "Raadhuisstraat 8, 1016 DE, Amsterdam",
       "addressKey": "1016DE|8|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200003692184",
+      "pdokCoordinates": {
+        "lat": 52.37341387,
+        "lng": 4.88834156
+      }
     },
     {
       "id": 116,
       "name": "Easy Times II",
       "municipalAddress": "Reguliersdwarsstraat 29, 1017 BJ, Amsterdam",
       "addressKey": "1017BJ|29|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000248426",
+      "pdokCoordinates": {
+        "lat": 52.36655524,
+        "lng": 4.8902393
+      }
     },
     {
       "id": 117,
       "name": "Free I",
       "municipalAddress": "Reguliersdwarsstraat 70H, 1017 BN, Amsterdam",
       "addressKey": "1017BN|70|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000528617",
+      "pdokCoordinates": {
+        "lat": 52.36596648,
+        "lng": 4.89344662
+      }
     },
     {
       "id": 118,
       "name": "The Otherside",
       "municipalAddress": "Reguliersdwarsstraat 6, 1017 BM, Amsterdam",
       "addressKey": "1017BM|6|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000248405",
+      "pdokCoordinates": {
+        "lat": 52.36677579,
+        "lng": 4.8892531
+      }
     },
     {
       "id": 119,
       "name": "Hashtag",
       "municipalAddress": "Reguliersgracht 27H, 1017 LK, Amsterdam",
       "addressKey": "1017LK|27|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000248589",
+      "pdokCoordinates": {
+        "lat": 52.36392885,
+        "lng": 4.89622943
+      }
     },
     {
       "id": 120,
       "name": "The Saint",
       "municipalAddress": "Regulierssteeg 2, 1017 CP, Amsterdam",
       "addressKey": "1017CP|2|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200003691481",
+      "pdokCoordinates": {
+        "lat": 52.36680841,
+        "lng": 4.8949055
+      }
     },
     {
       "id": 121,
       "name": "Smokey",
       "municipalAddress": "Rembrandtplein 24, 1017 CV, Amsterdam",
       "addressKey": "1017CV|24|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000250406",
+      "pdokCoordinates": {
+        "lat": 52.36565521,
+        "lng": 4.89640119
+      }
     },
     {
       "id": 122,
       "name": "Het Ballonnetje",
       "municipalAddress": "Roetersstraat 12H, 1018 WD, Amsterdam",
       "addressKey": "1018WD|12|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000254500",
+      "pdokCoordinates": {
+        "lat": 52.3634568,
+        "lng": 4.91047559
+      }
     },
     {
       "id": 123,
       "name": "Kadinsky",
       "municipalAddress": "Rosmarijnsteeg 9, 1012 RP, Amsterdam",
       "addressKey": "1012RP|9|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000256158",
+      "pdokCoordinates": {
+        "lat": 52.37031764,
+        "lng": 4.88941892
+      }
     },
     {
       "id": 124,
       "name": "Flower Power",
       "municipalAddress": "Rozengracht 139, 1016 LV, Amsterdam",
       "addressKey": "1016LV|139|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000256525",
+      "pdokCoordinates": {
+        "lat": 52.3727074,
+        "lng": 4.8786137
+      }
     },
     {
       "id": 125,
@@ -1156,18 +1613,24 @@
       "addressKey": "1016LP|1|H",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 126,
       "name": "The Hit",
       "municipalAddress": "Rusland 16, 1012 CL, Amsterdam",
       "addressKey": "1012CL|16|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
       "flags": [
         "trading_name_or_address_history_needs_manual_check"
-      ]
+      ],
+      "pdokBagId": "0363200012072762",
+      "pdokCoordinates": {
+        "lat": 52.3700268,
+        "lng": 4.89633074
+      }
     },
     {
       "id": 127,
@@ -1176,123 +1639,184 @@
       "addressKey": "1072AR|145|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 128,
       "name": null,
       "municipalAddress": "Sarphatistraat 87G, 1018 EZ, Amsterdam",
       "addressKey": "1018EZ|87|G",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
       "flags": [
         "trading_identity_unconfirmed"
-      ]
+      ],
+      "pdokBagId": "0363200012065527",
+      "pdokCoordinates": {
+        "lat": 52.36156719,
+        "lng": 4.90907708
+      }
     },
     {
       "id": 129,
       "name": "Strain Hunters",
       "municipalAddress": "Singel 387H, 1012 WN, Amsterdam",
       "addressKey": "1012WN|387|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
       "flags": [
         "trading_name_or_address_history_needs_manual_check"
-      ]
+      ],
+      "pdokBagId": "0363200000268788",
+      "pdokCoordinates": {
+        "lat": 52.36873992,
+        "lng": 4.88826197
+      }
     },
     {
       "id": 130,
       "name": "The Bulldog Rockshop",
       "municipalAddress": "Singel 12H, 1013 GA, Amsterdam",
       "addressKey": "1013GA|12|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000268276",
+      "pdokCoordinates": {
+        "lat": 52.3790812,
+        "lng": 4.89384401
+      }
     },
     {
       "id": 131,
       "name": "The Store",
       "municipalAddress": "Singel 14H, 1013 GA, Amsterdam",
       "addressKey": "1013GA|14|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000500172",
+      "pdokCoordinates": {
+        "lat": 52.37904507,
+        "lng": 4.89380036
+      }
     },
     {
       "id": 132,
       "name": "Bluebird",
       "municipalAddress": "Sint Antoniësbreestraat 71, 1011 HB, Amsterdam",
       "addressKey": "1011HB|71|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000276048",
+      "pdokCoordinates": {
+        "lat": 52.36999682,
+        "lng": 4.90089037
+      }
     },
     {
       "id": 133,
       "name": "Reefer",
       "municipalAddress": "Sint Antoniësbreestraat 77, 1011 HB, Amsterdam",
       "addressKey": "1011HB|77|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000276054",
+      "pdokCoordinates": {
+        "lat": 52.36980857,
+        "lng": 4.9010099
+      }
     },
     {
       "id": 134,
       "name": "The Corner",
       "municipalAddress": "Spaarndammerdijk 9, 1013 ZM, Amsterdam",
       "addressKey": "1013ZM|9|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
       "flags": [
         "trading_name_or_address_history_needs_manual_check"
-      ]
+      ],
+      "pdokBagId": "0363200000516141",
+      "pdokCoordinates": {
+        "lat": 52.39179342,
+        "lng": 4.87771898
+      }
     },
     {
       "id": 135,
       "name": "Sativa",
       "municipalAddress": "Spuistraat 118, 1012 VA, Amsterdam",
       "addressKey": "1012VA|118|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000527567",
+      "pdokCoordinates": {
+        "lat": 52.3746084,
+        "lng": 4.89028124
+      }
     },
     {
       "id": 136,
       "name": "DrewIsSharing",
       "municipalAddress": "Spuistraat 80H, 1012 TX, Amsterdam",
       "addressKey": "1012TX|80|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
       "flags": [
         "trading_name_or_address_history_needs_manual_check"
-      ]
+      ],
+      "pdokBagId": "0363200000275514",
+      "pdokCoordinates": {
+        "lat": 52.37559337,
+        "lng": 4.89154783
+      }
     },
     {
       "id": 137,
       "name": "New Times",
       "municipalAddress": "Spuistraat 260H, 1012 VW, Amsterdam",
       "addressKey": "1012VW|260|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000275716",
+      "pdokCoordinates": {
+        "lat": 52.37056498,
+        "lng": 4.88893573
+      }
     },
     {
       "id": 138,
       "name": "Tyson 2.0",
       "municipalAddress": "Spuistraat 222H, 1012 VT, Amsterdam",
       "addressKey": "1012VT|222|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000275636",
+      "pdokCoordinates": {
+        "lat": 52.37147595,
+        "lng": 4.88915629
+      }
     },
     {
       "id": 139,
       "name": "De Kade",
       "municipalAddress": "Stadionkade 107, 1076 BN, Amsterdam",
       "addressKey": "1076BN|107|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000277630",
+      "pdokCoordinates": {
+        "lat": 52.34352526,
+        "lng": 4.86441999
+      }
     },
     {
       "id": 140,
@@ -1301,16 +1825,22 @@
       "addressKey": "1058GJ|7|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 141,
       "name": "The Bushdoctor",
       "municipalAddress": "Thorbeckeplein 28, 1017 CS, Amsterdam",
       "addressKey": "1017CS|28|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000285621",
+      "pdokCoordinates": {
+        "lat": 52.36511243,
+        "lng": 4.89555564
+      }
     },
     {
       "id": 142,
@@ -1319,18 +1849,24 @@
       "addressKey": "1074VG|91|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 143,
       "name": "Funny People",
       "municipalAddress": "Tt Vasumweg 4C, 1033 SC, Amsterdam",
       "addressKey": "1033SC|4|C",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
       "flags": [
         "house_letter_embedded_in_number"
-      ]
+      ],
+      "pdokBagId": "0363200000439647",
+      "pdokCoordinates": {
+        "lat": 52.40195615,
+        "lng": 4.89849723
+      }
     },
     {
       "id": 144,
@@ -1339,7 +1875,8 @@
       "addressKey": "1072TJ|43|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 145,
@@ -1348,43 +1885,64 @@
       "addressKey": "1074XS|79|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 146,
       "name": "Mr. K",
       "municipalAddress": "Tweede Laurierdwarsstraat 44H, 1016 RB, Amsterdam",
       "addressKey": "1016RB|44|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200012076844",
+      "pdokCoordinates": {
+        "lat": 52.37185909,
+        "lng": 4.87898384
+      }
     },
     {
       "id": 147,
       "name": "De Republiek",
       "municipalAddress": "Tweede Nassaustraat 1, 1052 BJ, Amsterdam",
       "addressKey": "1052BJ|1|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000015644",
+      "pdokCoordinates": {
+        "lat": 52.38211769,
+        "lng": 4.87865265
+      }
     },
     {
       "id": 148,
       "name": "Boerejongens Centre",
       "municipalAddress": "Utrechtsestraat 21, 1017 VH, Amsterdam",
       "addressKey": "1017VH|21|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000292778",
+      "pdokCoordinates": {
+        "lat": 52.36485303,
+        "lng": 4.89802507
+      }
     },
     {
       "id": 149,
       "name": "Hunters",
       "municipalAddress": "Utrechtsestraat 14H, 1017 VN, Amsterdam",
       "addressKey": "1017VN|14|H",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000292767",
+      "pdokCoordinates": {
+        "lat": 52.36548014,
+        "lng": 4.89753364
+      }
     },
     {
       "id": 150,
@@ -1393,7 +1951,8 @@
       "addressKey": "1051CT|31|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 151,
@@ -1402,7 +1961,8 @@
       "addressKey": "1072PH|8|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 152,
@@ -1411,7 +1971,8 @@
       "addressKey": "1051CA|201|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 153,
@@ -1420,7 +1981,8 @@
       "addressKey": "1073TW|290|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 154,
@@ -1429,7 +1991,8 @@
       "addressKey": "1074AE|87|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 155,
@@ -1438,7 +2001,8 @@
       "addressKey": "1074AN|193|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 156,
@@ -1447,7 +2011,8 @@
       "addressKey": "1074AJ|147|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 157,
@@ -1456,7 +2021,8 @@
       "addressKey": "1078RE|9|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 158,
@@ -1465,25 +2031,36 @@
       "addressKey": "1079JA|63|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 159,
       "name": "Hunters Bros",
       "municipalAddress": "Waterlandplein 7, 1024 LL, Amsterdam",
       "addressKey": "1024LL|7|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200012075595",
+      "pdokCoordinates": {
+        "lat": 52.39230611,
+        "lng": 4.95632959
+      }
     },
     {
       "id": 160,
       "name": "Green House Namaste",
       "municipalAddress": "Waterlooplein 345, 1011 PG, Amsterdam",
       "addressKey": "1011PG|345|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000321379",
+      "pdokCoordinates": {
+        "lat": 52.36664997,
+        "lng": 4.90224848
+      }
     },
     {
       "id": 161,
@@ -1492,7 +2069,8 @@
       "addressKey": "1015LZ|121|H",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 162,
@@ -1501,7 +2079,8 @@
       "addressKey": "1057ZG|106|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 163,
@@ -1510,16 +2089,22 @@
       "addressKey": "1057XZ|30|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 164,
       "name": "Bullwackie",
       "municipalAddress": "Woestduinstraat 76, 1058 TJ, Amsterdam",
       "addressKey": "1058TJ|76|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000333603",
+      "pdokCoordinates": {
+        "lat": 52.35209535,
+        "lng": 4.84745441
+      }
     },
     {
       "id": 165,
@@ -1528,7 +2113,8 @@
       "addressKey": "1093SL|33|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 166,
@@ -1537,16 +2123,22 @@
       "addressKey": "1017RT|22|",
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "unresolvedReason": "no_exact_pdok_bag_match"
     },
     {
       "id": 167,
       "name": "Kadinsky",
       "municipalAddress": "Zoutsteeg 14, 1012 LX, Amsterdam",
       "addressKey": "1012LX|14|",
-      "livePdokMatchVerified": false,
+      "livePdokMatchVerified": true,
       "storefrontEntranceVerified": false,
-      "flags": []
+      "flags": [],
+      "pdokBagId": "0363200000338866",
+      "pdokCoordinates": {
+        "lat": 52.37422684,
+        "lng": 4.89360431
+      }
     }
   ]
 }
