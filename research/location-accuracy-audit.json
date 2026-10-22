@@ -13,12 +13,12 @@
     "operatorEntranceMismatch": 2,
     "identityUnconfirmed": 1,
     "livePdokCoordinateUnresolved": 62,
-    "lastLiveCheckAt": "2026-10-22T22:33:04.202Z",
+    "lastLiveCheckAt": "2026-10-22T22:35:31.364Z",
     "failureReasons": {
       "no_exact_pdok_bag_match": 62
     }
   },
-  "note": "Exact PDOK/BAG civic address coordinates checked on 2026-10-22T22:33:04.202Z. A valid address is NOT proof of a current operating coffeeshop or its door location. Unresolved matches remain unpinned.",
+  "note": "Exact PDOK/BAG civic address coordinates checked on 2026-10-22T22:35:31.364Z. A valid address is NOT proof of a current operating coffeeshop or its door location. Unresolved matches remain unpinned.",
   "records": [
     {
       "id": 1,
@@ -42,7 +42,37 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Admiraal De Ruijterweg",
+          "city": "Amsterdam",
+          "point": "POINT(4.85942274 52.37256948)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Admiraal De Ruijterweg",
+          "city": "Amsterdam",
+          "point": "POINT(4.85942274 52.37256948)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Admiraal De Ruijterweg",
+          "city": "Amsterdam",
+          "point": "POINT(4.85942274 52.37256948)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Admiraal De Ruijterweg",
+          "city": "Amsterdam",
+          "point": "POINT(4.85942274 52.37256948)"
+        }
+      ]
     },
     {
       "id": 3,
@@ -80,7 +110,30 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Amsteldijk",
+          "city": "Amsterdam",
+          "point": "POINT(4.9112324 52.34659471)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Amsteldijk",
+          "city": "Amsterdam",
+          "point": "POINT(4.91122485 52.3465956)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Amsteldijk",
+          "city": "Amsterdam",
+          "point": "POINT(4.91124367 52.34659891)"
+        }
+      ]
     },
     {
       "id": 6,
@@ -104,7 +157,37 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Amstelveenseweg",
+          "city": "Amsterdam",
+          "point": "POINT(4.85589838 52.35394801)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Amstelveenseweg",
+          "city": "Amsterdam",
+          "point": "POINT(4.85590234 52.35394857)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Amstelveenseweg",
+          "city": "Amsterdam",
+          "point": "POINT(4.85590112 52.35395808)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Amstelveenseweg",
+          "city": "Amsterdam",
+          "point": "POINT(4.85590112 52.35395808)"
+        }
+      ]
     },
     {
       "id": 8,
@@ -142,7 +225,30 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Balboastraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.85371085 52.36887689)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Balboastraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.85371085 52.36887689)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Balboastraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.85371085 52.36887689)"
+        }
+      ]
     },
     {
       "id": 11,
@@ -152,7 +258,37 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Balthasar Floriszstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.88468071 52.35305916)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Balthasar Floriszstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.88468071 52.35305916)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Balthasar Floriszstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.88468071 52.35305916)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Balthasar Floriszstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.88468071 52.35305916)"
+        }
+      ]
     },
     {
       "id": 12,
@@ -176,7 +312,37 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": "A",
+          "addition": null,
+          "street": "Beursstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.89656128 52.37475893)"
+        },
+        {
+          "letter": "B",
+          "addition": null,
+          "street": "Beursstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.89656426 52.37475992)"
+        },
+        {
+          "letter": "C",
+          "addition": null,
+          "street": "Beursstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.89656383 52.37475752)"
+        },
+        {
+          "letter": "D",
+          "addition": null,
+          "street": "Beursstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.89656682 52.37475839)"
+        }
+      ]
     },
     {
       "id": 14,
@@ -214,7 +380,37 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": "A",
+          "addition": null,
+          "street": "Bos en Lommerweg",
+          "city": "Amsterdam",
+          "point": "POINT(4.85538666 52.38096393)"
+        },
+        {
+          "letter": "B",
+          "addition": null,
+          "street": "Bos en Lommerweg",
+          "city": "Amsterdam",
+          "point": "POINT(4.85538666 52.38096393)"
+        },
+        {
+          "letter": "C",
+          "addition": null,
+          "street": "Bos en Lommerweg",
+          "city": "Amsterdam",
+          "point": "POINT(4.85538666 52.38096393)"
+        },
+        {
+          "letter": "D",
+          "addition": null,
+          "street": "Bos en Lommerweg",
+          "city": "Amsterdam",
+          "point": "POINT(4.85538666 52.38096393)"
+        }
+      ]
     },
     {
       "id": 17,
@@ -308,7 +504,44 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Daniël Stalpertstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.89103196 52.35606988)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Daniël Stalpertstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.89103196 52.35606988)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Daniël Stalpertstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.89103196 52.35606988)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Daniël Stalpertstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.89103079 52.35606358)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Daniël Stalpertstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.89102998 52.35605756)"
+        }
+      ]
     },
     {
       "id": 24,
@@ -332,7 +565,44 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "De Clercqstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.87144872 52.37135521)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "De Clercqstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.87142645 52.37133858)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "De Clercqstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.87144872 52.37135521)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "De Clercqstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.87143997 52.37134167)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "De Clercqstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.87145306 52.37134371)"
+        }
+      ]
     },
     {
       "id": 26,
@@ -342,7 +612,44 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Derde Oosterparkstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.91627624 52.35639769)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Derde Oosterparkstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.91627624 52.35639769)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Derde Oosterparkstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.91627624 52.35639769)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Derde Oosterparkstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.91627624 52.35639769)"
+        },
+        {
+          "letter": null,
+          "addition": "4",
+          "street": "Derde Oosterparkstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.91627624 52.35639769)"
+        }
+      ]
     },
     {
       "id": 27,
@@ -366,7 +673,37 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Eerste Oosterparkstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.90880891 52.35599925)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Eerste Oosterparkstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.90880891 52.35599925)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Eerste Oosterparkstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.90880891 52.35599925)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Eerste Oosterparkstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.90880188 52.3560035)"
+        }
+      ]
     },
     {
       "id": 29,
@@ -376,7 +713,37 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Eerste Van der Helststraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.89327696 52.35482997)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Eerste Van der Helststraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.89327696 52.35482997)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Eerste Van der Helststraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.89327696 52.35482997)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Eerste Van der Helststraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.89327696 52.35482997)"
+        }
+      ]
     },
     {
       "id": 30,
@@ -386,7 +753,30 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Elandsgracht",
+          "city": "Amsterdam",
+          "point": "POINT(4.88209642 52.36990915)"
+        },
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Elandsgracht",
+          "city": "Amsterdam",
+          "point": "POINT(4.88209642 52.36990915)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Elandsgracht",
+          "city": "Amsterdam",
+          "point": "POINT(4.88209642 52.36990915)"
+        }
+      ]
     },
     {
       "id": 31,
@@ -396,7 +786,37 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Frederik Hendrikstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.87376144 52.3757962)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Frederik Hendrikstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.87376144 52.3757962)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Frederik Hendrikstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.87376144 52.3757962)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Frederik Hendrikstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.87376144 52.3757962)"
+        }
+      ]
     },
     {
       "id": 32,
@@ -406,7 +826,37 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Frederik Hendrikstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.87257826 52.37398454)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Frederik Hendrikstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.87257826 52.37398454)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Frederik Hendrikstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.87257826 52.37398454)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Frederik Hendrikstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.87257826 52.37398454)"
+        }
+      ]
     },
     {
       "id": 33,
@@ -444,7 +894,44 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Gerard Doustraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.89557873 52.35640342)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Gerard Doustraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.89557873 52.35640342)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Gerard Doustraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.89557873 52.35640342)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Gerard Doustraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.89557873 52.35640342)"
+        },
+        {
+          "letter": null,
+          "addition": "4",
+          "street": "Gerard Doustraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.89557873 52.35640342)"
+        }
+      ]
     },
     {
       "id": 36,
@@ -468,7 +955,37 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Gillis van Ledenberchstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.87131693 52.3751115)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Gillis van Ledenberchstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.87131693 52.3751115)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Gillis van Ledenberchstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.87131693 52.3751115)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Gillis van Ledenberchstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.87131693 52.3751115)"
+        }
+      ]
     },
     {
       "id": 38,
@@ -478,7 +995,23 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Govert Flinckstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.90129455 52.35722693)"
+        },
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Govert Flinckstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.90129455 52.35722693)"
+        }
+      ]
     },
     {
       "id": 39,
@@ -628,7 +1161,23 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Heisteeg",
+          "city": "Amsterdam",
+          "point": "POINT(4.888393 52.36883934)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Heisteeg",
+          "city": "Amsterdam",
+          "point": "POINT(4.8883929 52.36884833)"
+        }
+      ]
     },
     {
       "id": 50,
@@ -638,7 +1187,30 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": "A",
+          "addition": null,
+          "street": "Hekelveld",
+          "city": "Amsterdam",
+          "point": "POINT(4.89535653 52.37777529)"
+        },
+        {
+          "letter": "B",
+          "addition": null,
+          "street": "Hekelveld",
+          "city": "Amsterdam",
+          "point": "POINT(4.89534612 52.37778686)"
+        },
+        {
+          "letter": "C",
+          "addition": null,
+          "street": "Hekelveld",
+          "city": "Amsterdam",
+          "point": "POINT(4.89533966 52.37779941)"
+        }
+      ]
     },
     {
       "id": 51,
@@ -648,7 +1220,30 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Hemonystraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.90205548 52.35744576)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Hemonystraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.90205548 52.35744576)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Hemonystraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.90205548 52.35744576)"
+        }
+      ]
     },
     {
       "id": 52,
@@ -702,7 +1297,37 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Hoofdweg",
+          "city": "Amsterdam",
+          "point": "POINT(4.8534286 52.36548723)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Hoofdweg",
+          "city": "Amsterdam",
+          "point": "POINT(4.8534286 52.36548723)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Hoofdweg",
+          "city": "Amsterdam",
+          "point": "POINT(4.8534286 52.36548723)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Hoofdweg",
+          "city": "Amsterdam",
+          "point": "POINT(4.8534286 52.36548723)"
+        }
+      ]
     },
     {
       "id": 56,
@@ -714,7 +1339,37 @@
       "flags": [
         "trading_name_or_address_history_needs_manual_check"
       ],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Hoofdweg",
+          "city": "Amsterdam",
+          "point": "POINT(4.852882 52.36698572)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Hoofdweg",
+          "city": "Amsterdam",
+          "point": "POINT(4.852882 52.36698572)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Hoofdweg",
+          "city": "Amsterdam",
+          "point": "POINT(4.852882 52.36698572)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Hoofdweg",
+          "city": "Amsterdam",
+          "point": "POINT(4.852882 52.36698572)"
+        }
+      ]
     },
     {
       "id": 57,
@@ -768,7 +1423,37 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Jan Hanzenstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.86397637 52.36746668)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Jan Hanzenstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.86397637 52.36746668)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Jan Hanzenstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.86397637 52.36746668)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Jan Hanzenstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.86397637 52.36746668)"
+        }
+      ]
     },
     {
       "id": 61,
@@ -778,7 +1463,44 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Jan Pieter Heijestraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.86295983 52.36402887)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Jan Pieter Heijestraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.8629635 52.3640308)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Jan Pieter Heijestraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.86295983 52.36402887)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Jan Pieter Heijestraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.86295983 52.36402887)"
+        },
+        {
+          "letter": null,
+          "addition": "4",
+          "street": "Jan Pieter Heijestraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.86295983 52.36402887)"
+        }
+      ]
     },
     {
       "id": 62,
@@ -788,7 +1510,44 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Jan Pieter Heijestraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.86322982 52.36354473)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Jan Pieter Heijestraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.86322982 52.36354473)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Jan Pieter Heijestraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.86322982 52.36354473)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Jan Pieter Heijestraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.86322982 52.36354473)"
+        },
+        {
+          "letter": null,
+          "addition": "4",
+          "street": "Jan Pieter Heijestraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.86325908 52.36355385)"
+        }
+      ]
     },
     {
       "id": 63,
@@ -798,7 +1557,37 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Jan van Galenstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.84948017 52.37266855)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Jan van Galenstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.84948017 52.37266855)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Jan van Galenstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.84948017 52.37266855)"
+        },
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Jan van Galenstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.84948017 52.37266855)"
+        }
+      ]
     },
     {
       "id": 64,
@@ -808,7 +1597,37 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Javastraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.93666554 52.36361329)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Javastraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.93666554 52.36361329)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Javastraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.93666554 52.36361329)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Javastraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.93666554 52.36361329)"
+        }
+      ]
     },
     {
       "id": 65,
@@ -860,7 +1679,44 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": "A",
+          "addition": null,
+          "street": "Kloveniersburgwal",
+          "city": "Amsterdam",
+          "point": "POINT(4.89929617 52.37209339)"
+        },
+        {
+          "letter": "B",
+          "addition": null,
+          "street": "Kloveniersburgwal",
+          "city": "Amsterdam",
+          "point": "POINT(4.89928139 52.37210231)"
+        },
+        {
+          "letter": "C",
+          "addition": null,
+          "street": "Kloveniersburgwal",
+          "city": "Amsterdam",
+          "point": "POINT(4.89926671 52.37210225)"
+        },
+        {
+          "letter": "D",
+          "addition": null,
+          "street": "Kloveniersburgwal",
+          "city": "Amsterdam",
+          "point": "POINT(4.89925202 52.37210219)"
+        },
+        {
+          "letter": "E",
+          "addition": null,
+          "street": "Kloveniersburgwal",
+          "city": "Amsterdam",
+          "point": "POINT(4.89925192 52.37211118)"
+        }
+      ]
     },
     {
       "id": 69,
@@ -970,7 +1826,44 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Krugerplein",
+          "city": "Amsterdam",
+          "point": "POINT(4.91932511 52.35402803)"
+        },
+        {
+          "letter": null,
+          "addition": "1A",
+          "street": "Krugerplein",
+          "city": "Amsterdam",
+          "point": "POINT(4.91932511 52.35402803)"
+        },
+        {
+          "letter": null,
+          "addition": "1V",
+          "street": "Krugerplein",
+          "city": "Amsterdam",
+          "point": "POINT(4.91932511 52.35402803)"
+        },
+        {
+          "letter": null,
+          "addition": "2A",
+          "street": "Krugerplein",
+          "city": "Amsterdam",
+          "point": "POINT(4.91932511 52.35402803)"
+        },
+        {
+          "letter": null,
+          "addition": "2V",
+          "street": "Krugerplein",
+          "city": "Amsterdam",
+          "point": "POINT(4.91932511 52.35402803)"
+        }
+      ]
     },
     {
       "id": 77,
@@ -994,7 +1887,37 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": "A",
+          "addition": null,
+          "street": "Leidseplein",
+          "city": "Amsterdam",
+          "point": "POINT(4.8832801 52.36394634)"
+        },
+        {
+          "letter": "B",
+          "addition": null,
+          "street": "Leidseplein",
+          "city": "Amsterdam",
+          "point": "POINT(4.8832801 52.36394634)"
+        },
+        {
+          "letter": "C",
+          "addition": null,
+          "street": "Leidseplein",
+          "city": "Amsterdam",
+          "point": "POINT(4.8832801 52.36394634)"
+        },
+        {
+          "letter": "D",
+          "addition": null,
+          "street": "Leidseplein",
+          "city": "Amsterdam",
+          "point": "POINT(4.8832801 52.36394634)"
+        }
+      ]
     },
     {
       "id": 79,
@@ -1118,7 +2041,44 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Nassaukade",
+          "city": "Amsterdam",
+          "point": "POINT(4.87979216 52.38265286)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Nassaukade",
+          "city": "Amsterdam",
+          "point": "POINT(4.87980738 52.38266041)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Nassaukade",
+          "city": "Amsterdam",
+          "point": "POINT(4.87979814 52.38266552)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Nassaukade",
+          "city": "Amsterdam",
+          "point": "POINT(4.87979216 52.38265286)"
+        },
+        {
+          "letter": null,
+          "addition": "4",
+          "street": "Nassaukade",
+          "city": "Amsterdam",
+          "point": "POINT(4.87978041 52.38267761)"
+        }
+      ]
     },
     {
       "id": 88,
@@ -1128,7 +2088,44 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Niasstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.93974816 52.36511694)"
+        },
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Niasstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.93974816 52.36511694)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Niasstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.93974816 52.36511694)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Niasstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.93974816 52.36511694)"
+        },
+        {
+          "letter": null,
+          "addition": "4",
+          "street": "Niasstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.93974788 52.36514418)"
+        }
+      ]
     },
     {
       "id": 89,
@@ -1154,7 +2151,30 @@
       "flags": [
         "trading_name_or_address_history_needs_manual_check"
       ],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": "A",
+          "addition": null,
+          "street": "Nieuwe Nieuwstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.89357693 52.37536817)"
+        },
+        {
+          "letter": "B",
+          "addition": null,
+          "street": "Nieuwe Nieuwstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.89357683 52.37537716)"
+        },
+        {
+          "letter": "C",
+          "addition": null,
+          "street": "Nieuwe Nieuwstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.89357703 52.37535918)"
+        }
+      ]
     },
     {
       "id": 91,
@@ -1192,7 +2212,37 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": "A",
+          "addition": "1",
+          "street": "Nieuwmarkt",
+          "city": "Amsterdam",
+          "point": "POINT(4.90007843 52.37306728)"
+        },
+        {
+          "letter": "A",
+          "addition": "2",
+          "street": "Nieuwmarkt",
+          "city": "Amsterdam",
+          "point": "POINT(4.90007843 52.37306728)"
+        },
+        {
+          "letter": "A",
+          "addition": "3",
+          "street": "Nieuwmarkt",
+          "city": "Amsterdam",
+          "point": "POINT(4.90007843 52.37306728)"
+        },
+        {
+          "letter": null,
+          "addition": null,
+          "street": "Nieuwmarkt",
+          "city": "Amsterdam",
+          "point": "POINT(4.90021453 52.37270833)"
+        }
+      ]
     },
     {
       "id": 94,
@@ -1216,7 +2266,23 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Ooievaarsweg",
+          "city": "Amsterdam",
+          "point": "POINT(4.91252084 52.38361543)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Ooievaarsweg",
+          "city": "Amsterdam",
+          "point": "POINT(4.91252084 52.38361543)"
+        }
+      ]
     },
     {
       "id": 96,
@@ -1298,7 +2364,44 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": "A",
+          "addition": null,
+          "street": "Oudezijds Voorburgwal",
+          "city": "Amsterdam",
+          "point": "POINT(4.89582244 52.37151279)"
+        },
+        {
+          "letter": "B",
+          "addition": null,
+          "street": "Oudezijds Voorburgwal",
+          "city": "Amsterdam",
+          "point": "POINT(4.89582244 52.37151279)"
+        },
+        {
+          "letter": "C",
+          "addition": null,
+          "street": "Oudezijds Voorburgwal",
+          "city": "Amsterdam",
+          "point": "POINT(4.89582244 52.37151279)"
+        },
+        {
+          "letter": "D",
+          "addition": null,
+          "street": "Oudezijds Voorburgwal",
+          "city": "Amsterdam",
+          "point": "POINT(4.89582244 52.37151279)"
+        },
+        {
+          "letter": "E",
+          "addition": null,
+          "street": "Oudezijds Voorburgwal",
+          "city": "Amsterdam",
+          "point": "POINT(4.89582244 52.37151279)"
+        }
+      ]
     },
     {
       "id": 102,
@@ -1368,7 +2471,44 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Overtoom",
+          "city": "Amsterdam",
+          "point": "POINT(4.8662444 52.36062803)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Overtoom",
+          "city": "Amsterdam",
+          "point": "POINT(4.8662444 52.36062803)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Overtoom",
+          "city": "Amsterdam",
+          "point": "POINT(4.8662444 52.36062803)"
+        },
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Overtoom",
+          "city": "Amsterdam",
+          "point": "POINT(4.8662444 52.36062803)"
+        },
+        {
+          "letter": null,
+          "addition": "O",
+          "street": "Overtoom",
+          "city": "Amsterdam",
+          "point": "POINT(4.8662444 52.36062803)"
+        }
+      ]
     },
     {
       "id": 107,
@@ -1378,7 +2518,37 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Overtoom",
+          "city": "Amsterdam",
+          "point": "POINT(4.85931028 52.35857506)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Overtoom",
+          "city": "Amsterdam",
+          "point": "POINT(4.85931028 52.35857506)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Overtoom",
+          "city": "Amsterdam",
+          "point": "POINT(4.85931028 52.35857506)"
+        },
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Overtoom",
+          "city": "Amsterdam",
+          "point": "POINT(4.85931028 52.35857506)"
+        }
+      ]
     },
     {
       "id": 108,
@@ -1388,7 +2558,44 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": "B",
+          "addition": "2",
+          "street": "Papaverweg",
+          "city": "Amsterdam",
+          "point": "POINT(4.91289795 52.39367414)"
+        },
+        {
+          "letter": "C",
+          "addition": "2",
+          "street": "Papaverweg",
+          "city": "Amsterdam",
+          "point": "POINT(4.91291322 52.39362028)"
+        },
+        {
+          "letter": "A",
+          "addition": "H",
+          "street": "Papaverweg",
+          "city": "Amsterdam",
+          "point": "POINT(4.9128677 52.39375491)"
+        },
+        {
+          "letter": "A",
+          "addition": "1",
+          "street": "Papaverweg",
+          "city": "Amsterdam",
+          "point": "POINT(4.9128677 52.39375491)"
+        },
+        {
+          "letter": "B",
+          "addition": "1",
+          "street": "Papaverweg",
+          "city": "Amsterdam",
+          "point": "POINT(4.91289795 52.39367414)"
+        }
+      ]
     },
     {
       "id": 109,
@@ -1398,7 +2605,8 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": []
     },
     {
       "id": 110,
@@ -1408,7 +2616,37 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Pretoriusstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.92222346 52.35478544)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Pretoriusstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.92222346 52.35478544)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Pretoriusstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.92222346 52.35478544)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Pretoriusstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.92222346 52.35478544)"
+        }
+      ]
     },
     {
       "id": 111,
@@ -1614,7 +2852,30 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": "A",
+          "addition": null,
+          "street": "Rozengracht",
+          "city": "Amsterdam",
+          "point": "POINT(4.88256717 52.37370397)"
+        },
+        {
+          "letter": "B",
+          "addition": null,
+          "street": "Rozengracht",
+          "city": "Amsterdam",
+          "point": "POINT(4.88256717 52.37370397)"
+        },
+        {
+          "letter": null,
+          "addition": null,
+          "street": "Rozengracht",
+          "city": "Amsterdam",
+          "point": "POINT(4.88264039 52.37372226)"
+        }
+      ]
     },
     {
       "id": 126,
@@ -1640,7 +2901,30 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Ruysdaelkade",
+          "city": "Amsterdam",
+          "point": "POINT(4.88719811 52.35369896)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Ruysdaelkade",
+          "city": "Amsterdam",
+          "point": "POINT(4.88719811 52.35369896)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Ruysdaelkade",
+          "city": "Amsterdam",
+          "point": "POINT(4.88719811 52.35369896)"
+        }
+      ]
     },
     {
       "id": 128,
@@ -1826,7 +3110,37 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Surinamestraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.85400414 52.35791315)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Surinamestraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.85400414 52.35791315)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Surinamestraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.85400414 52.35791315)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Surinamestraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.85400414 52.35791315)"
+        }
+      ]
     },
     {
       "id": 141,
@@ -1850,7 +3164,30 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Tolstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.90346157 52.35234648)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Tolstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.90346157 52.35234648)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Tolstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.90346157 52.35234648)"
+        }
+      ]
     },
     {
       "id": 143,
@@ -1876,7 +3213,16 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": null,
+          "street": "Eerste Jan van der Heijdenstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.88787174 52.35310189)"
+        }
+      ]
     },
     {
       "id": 145,
@@ -1886,7 +3232,44 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Tweede Jan van der Heijdenstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.9031245 52.35633565)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Tweede Jan van der Heijdenstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.9031245 52.35633565)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Tweede Jan van der Heijdenstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.9031245 52.35633565)"
+        },
+        {
+          "letter": null,
+          "addition": "4",
+          "street": "Tweede Jan van der Heijdenstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.90311989 52.3563412)"
+        },
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Tweede Jan van der Heijdenstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.9031245 52.35633565)"
+        }
+      ]
     },
     {
       "id": 146,
@@ -1952,7 +3335,16 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Van Boetzelaerstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.87305384 52.38236315)"
+        }
+      ]
     },
     {
       "id": 151,
@@ -1962,7 +3354,37 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Van der Helstplein",
+          "city": "Amsterdam",
+          "point": "POINT(4.89450188 52.3515905)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Van der Helstplein",
+          "city": "Amsterdam",
+          "point": "POINT(4.89450188 52.3515905)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Van der Helstplein",
+          "city": "Amsterdam",
+          "point": "POINT(4.89450188 52.3515905)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Van der Helstplein",
+          "city": "Amsterdam",
+          "point": "POINT(4.89450188 52.3515905)"
+        }
+      ]
     },
     {
       "id": 152,
@@ -1972,7 +3394,37 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Van Hogendorpstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.87120099 52.38255282)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Van Hogendorpstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.87120099 52.38255282)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Van Hogendorpstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.87120099 52.38255282)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Van Hogendorpstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.87120099 52.38255282)"
+        }
+      ]
     },
     {
       "id": 153,
@@ -1982,7 +3434,44 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Van Ostadestraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.89970787 52.3533377)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Van Ostadestraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.89970787 52.3533377)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Van Ostadestraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.89970787 52.3533377)"
+        },
+        {
+          "letter": null,
+          "addition": "4",
+          "street": "Van Ostadestraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.89970829 52.35333887)"
+        },
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Van Ostadestraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.89970787 52.3533377)"
+        }
+      ]
     },
     {
       "id": 154,
@@ -1992,7 +3481,44 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Van Woustraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.90163151 52.35460389)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Van Woustraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.90163151 52.35460389)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Van Woustraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.90163151 52.35460389)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Van Woustraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.90163151 52.35460389)"
+        },
+        {
+          "letter": null,
+          "addition": "4",
+          "street": "Van Woustraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.9016524 52.35461194)"
+        }
+      ]
     },
     {
       "id": 155,
@@ -2002,7 +3528,44 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Van Woustraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.90364993 52.35122378)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Van Woustraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.90364993 52.35122378)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Van Woustraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.90364993 52.35122378)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Van Woustraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.90364993 52.35122378)"
+        },
+        {
+          "letter": null,
+          "addition": "4A",
+          "street": "Van Woustraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.90366771 52.35122745)"
+        }
+      ]
     },
     {
       "id": 156,
@@ -2012,7 +3575,37 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Van Woustraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.90297095 52.35291969)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Van Woustraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.90292702 52.35291052)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Van Woustraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.90292702 52.35291052)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Van Woustraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.90292702 52.35291052)"
+        }
+      ]
     },
     {
       "id": 157,
@@ -2022,7 +3615,30 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Vechtstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.9056618 52.34841882)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Vechtstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.9056618 52.34841882)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Vechtstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.9056618 52.34841882)"
+        }
+      ]
     },
     {
       "id": 158,
@@ -2032,7 +3648,37 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Vechtstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.9065246 52.34599563)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Vechtstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.9065246 52.34599563)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Vechtstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.9065246 52.34599563)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Vechtstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.9065246 52.34599563)"
+        }
+      ]
     },
     {
       "id": 159,
@@ -2070,7 +3716,37 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": "A",
+          "addition": null,
+          "street": "Westerstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.88296156 52.37818594)"
+        },
+        {
+          "letter": "B",
+          "addition": null,
+          "street": "Westerstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.88291818 52.37818075)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Westerstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.88294233 52.37816347)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Westerstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.88294233 52.37816347)"
+        }
+      ]
     },
     {
       "id": 162,
@@ -2080,7 +3756,37 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Witte de Withstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.8592891 52.36899177)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Witte de Withstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.8592891 52.36899177)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Witte de Withstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.8592891 52.36899177)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Witte de Withstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.8592891 52.36899177)"
+        }
+      ]
     },
     {
       "id": 163,
@@ -2090,7 +3796,44 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": "A",
+          "addition": "1",
+          "street": "Witte de Withstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.85951611 52.36595492)"
+        },
+        {
+          "letter": "A",
+          "addition": "2",
+          "street": "Witte de Withstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.85951611 52.36595492)"
+        },
+        {
+          "letter": "A",
+          "addition": "3",
+          "street": "Witte de Withstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.85951611 52.36595492)"
+        },
+        {
+          "letter": "A",
+          "addition": "H",
+          "street": "Witte de Withstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.85951611 52.36595492)"
+        },
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Witte de Withstraat",
+          "city": "Amsterdam",
+          "point": "POINT(4.85951675 52.365901)"
+        }
+      ]
     },
     {
       "id": 164,
@@ -2114,7 +3857,44 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Zeeburgerdijk",
+          "city": "Amsterdam",
+          "point": "POINT(4.92982742 52.36613059)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Zeeburgerdijk",
+          "city": "Amsterdam",
+          "point": "POINT(4.92982742 52.36613059)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Zeeburgerdijk",
+          "city": "Amsterdam",
+          "point": "POINT(4.92982742 52.36613059)"
+        },
+        {
+          "letter": null,
+          "addition": "3",
+          "street": "Zeeburgerdijk",
+          "city": "Amsterdam",
+          "point": "POINT(4.92982742 52.36613059)"
+        },
+        {
+          "letter": null,
+          "addition": "4",
+          "street": "Zeeburgerdijk",
+          "city": "Amsterdam",
+          "point": "POINT(4.92982742 52.36613059)"
+        }
+      ]
     },
     {
       "id": 166,
@@ -2124,7 +3904,30 @@
       "livePdokMatchVerified": false,
       "storefrontEntranceVerified": false,
       "flags": [],
-      "unresolvedReason": "no_exact_pdok_bag_match"
+      "unresolvedReason": "no_exact_pdok_bag_match",
+      "pdokCandidateSamples": [
+        {
+          "letter": null,
+          "addition": "H",
+          "street": "Zieseniskade",
+          "city": "Amsterdam",
+          "point": "POINT(4.88624205 52.36167603)"
+        },
+        {
+          "letter": null,
+          "addition": "1",
+          "street": "Zieseniskade",
+          "city": "Amsterdam",
+          "point": "POINT(4.88624205 52.36167603)"
+        },
+        {
+          "letter": null,
+          "addition": "2",
+          "street": "Zieseniskade",
+          "city": "Amsterdam",
+          "point": "POINT(4.88624205 52.36167603)"
+        }
+      ]
     },
     {
       "id": 167,
